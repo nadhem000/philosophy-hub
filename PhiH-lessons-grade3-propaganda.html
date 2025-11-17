@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propaganda - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#3498db">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Blue-Teal Propaganda Lesson Theme */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #1abc9c;
+            --accent-color: #2980b9;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #2c3e50;
+            --heading-color: #2c3e50;
+            --background-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --definition-bg: #e1f5fe;
+            --border-color: #b3e5fc;
+            --table-even-bg: #f5f9fa;
+            --table-hover-bg: #e1f5fe;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(52, 152, 219, 0.15);
+            --gradient-primary: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            --gradient-secondary: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+            --gradient-blue: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            --gradient-teal: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #5dade2;
+            --secondary-color: #48c9b0;
+            --accent-color: #3498db;
+            --light-color: #34495e;
+            --dark-color: #1a1a1a;
+            --text-color: #ecf0f1;
+            --heading-color: #f7fafc;
+            --background-color: #2c3e50;
+            --card-bg: #34495e;
+            --definition-bg: #1a5276;
+            --border-color: #5dade2;
+            --table-even-bg: #2c3e50;
+            --table-hover-bg: #1a5276;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+            --gradient-secondary: linear-gradient(135deg, #48c9b0 0%, #1abc9c 100%);
+            --gradient-blue: linear-gradient(135deg, #5dade2 0%, #34495e 100%);
+            --gradient-teal: linear-gradient(135deg, #48c9b0 0%, #1abc9c 100%);
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Definition Cards Layout */
+        .PhiH-definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-definition-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(52, 152, 219, 0.2);
+        }
+        
+        .PhiH-definition-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-definition-card-content ul {
+            padding-left: 1.2rem;
+            margin: 0.8rem 0;
+        }
+        
+        .PhiH-definition-card-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        /* RTL support for definition cards */
+        body.rtl .PhiH-definition-card-content ul {
+            padding-left: 0;
+            padding-right: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .PhiH-definitions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-propaganda" dir="ltr">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="PhiH-lesson1-container">
+        <div class="PhiH-lesson1-header">
+            <h1 class="PhiH-lesson1-title" data-i18n="PhiH.lessons.propaganda.title">Propaganda</h1>
+            <div class="PhiH-lesson1-level" data-i18n="PhiH.lessons.propaganda.level">3rd Secondary - Philosophy</div>
+        </div>
+        
+        <!-- Introduction Section -->
+        <section class="PhiH-lesson1-content-section">
+            <h2 class="PhiH-lesson1-section-title" data-i18n="PhiH.lessons.propaganda.introduction.title">General Introduction</h2>
+            <p data-i18n="PhiH.lessons.propaganda.introduction.text1">
+                Propaganda is a prominent social and political phenomenon in contemporary societies, playing a crucial role in shaping public opinion and directing individual and collective behaviors. Propaganda relies on a set of psychological, linguistic, and technical mechanisms to influence individuals and make them accept specific ideas or positions.
+            </p>
+            <p data-i18n="PhiH.lessons.propaganda.introduction.text2">
+                Propaganda techniques have evolved with the development of media and communication, making them an effective tool in the hands of governments, parties, and various organizations to influence masses and achieve political, economic, or social objectives.
+            </p>
+        </section>
+        
+        <!-- Problematic Questions -->
+        <section class="PhiH-lesson1-content-section">
+            <h2 class="PhiH-lesson1-section-title" data-i18n="PhiH.lessons.propaganda.problematic.title">Problematic</h2>
+            <div class="PhiH-lesson1-definition-box">
+                <h3 class="PhiH-lesson1-definition-title" data-i18n="PhiH.lessons.propaganda.problematic.subtitle">Problematic Questions</h3>
+                <ul>
+                    <li data-i18n="PhiH.lessons.propaganda.problematic.q1">What is propaganda and what is the difference with advertising?</li>
+                    <li data-i18n="PhiH.lessons.propaganda.problematic.q2">How does propaganda influence minds and behaviors?</li>
+                    <li data-i18n="PhiH.lessons.propaganda.problematic.q3">What are the mechanisms used by propaganda to influence individuals?</li>
+                    <li data-i18n="PhiH.lessons.propaganda.problematic.q4">Can propaganda be considered a form of symbolic violence?</li>
+                    <li data-i18n="PhiH.lessons.propaganda.problematic.q5">How can an individual resist the influence of propaganda?</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Definitions -->
+        <section class="PhiH-lesson1-content-section">
+            <h2 class="PhiH-lesson1-section-title" data-i18n="PhiH.lessons.propaganda.definitions.title">Definitions</h2>
+            
+            <div class="PhiH-definitions-grid">
+                <!-- Card 1: Advertising -->
+                <div class="PhiH-definition-card">
+                    <h3 class="PhiH-definition-card-title" data-i18n="PhiH.lessons.propaganda.definitions.card1.title">الإشهار : Publicité</h3>
+                    <div class="PhiH-definition-card-content">
+                        <ul>
+                            <li data-i18n="PhiH.lessons.propaganda.definitions.card1.point1"><strong>الإشهار لغة:</strong> يعرفه الشيرازي على أنه المجاهر في حين أن بطرس البستاني قال أنه يعني النشر والإظهار هذا عند العرب بينما يعرفه قاموس "لاروس" الصادر عن دائرة المعارف الفرنسية على أنه : مجموعة الوسائل المستخدمة للتعريف بمنشأة تجارية أو صناعية واطراد منتاجاتها.</li>
+                            <li data-i18n="PhiH.lessons.propaganda.definitions.card1.point2">تعرف " الجمعية الأمريكية للتسويق " الإشهار بأنه شكل من أشكال تقديم الأفكار أو السلع أو الخدمات غير الشخصية والمدفوعة الأجر بواسطة معلن محدد و معروف.</li>
+                            <li data-i18n="PhiH.lessons.propaganda.definitions.card1.point3">أما " فيليب كوتلر" يعرف الإشهار أنه " شكل غير شخصي مدفوع القيمة لتقديم فكرة أو سلعة أو خدمة ويكون بواسطة جهة معلومة.</li>
+                            <li data-i18n="PhiH.lessons.propaganda.definitions.card1.point4"><strong>د. ويزمان "  نص مؤسسة الإشهار " ( كتاب الفلسفة للسنة ثالثة آداب):</strong> الإشهار يهدف إلى الزيادة في الإستهلاك كما يعمل على حث الناس من خلال الاعتماد على الجانب النفسي و الإجتماعي. حسب الكاتب في هذا النص الإشهار هو آلية توجه و تحفز على تكثيف الاستهلاك فهي آلية تجارية تهدف الى حث المواطنين على اقتناء السلع للزيادة في الربح ← الإشهار يتعلق بالبضائع و السلع ( المنتجات الاقتصادية) وهو الذي يتحكم في كل مشترياتنا اليومية وهو آلية من آليات اشتغال اليومي.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Card 2: Propaganda -->
+                <div class="PhiH-definition-card">
+                    <h3 class="PhiH-definition-card-title" data-i18n="PhiH.lessons.propaganda.definitions.card2.title">الدعاية Propagande</h3>
+                    <div class="PhiH-definition-card-content">
+                        <ul>
+                            <li data-i18n="PhiH.lessons.propaganda.definitions.card2.point1"><strong>دعاية:</strong> الدعاية هي الدعوة الى مذهب أو رأي سواء بالكتابة في الصحف أو على الإذاعة أو عن طريق الخطابة.( القاموس الجديد للطلاب).</li>
+                            <li data-i18n="PhiH.lessons.propaganda.definitions.card2.point2">يفهم المرء بشكل عام تحت مصطلح الدعاية التي يطلق عليها في اللغات الأروبية لفظ (بروباغندا) تلك الرسالة الموجهة و المعدة سلفا و بشكل مقصود من أجل التأثير على أفكار و أفعال الآخرين فردا أو جماعة وتوجههما نحو هدف مهدد وقد تكون المعلومات التي تتضمنها الرسالة صحيحة أو خاطئة . و لكنها في كل الأحوال تكون معلومات موجزة و مكثفة , ناقصة و غير شاملة. ويمكننا أن نرصد ذلك عندما تقدم الأحزاب أو بعض المنضمات السياسية نفسها.</li>
+                            <li data-i18n="PhiH.lessons.propaganda.definitions.card2.point3">الدعاية آلية سياسية هي جملة من الأقوال لاستمالة الجمهور لرأي ما أو لحزب ما أو لشخص ما كما أنها تصد الناس على رأي ما أو حزب ما أو شخص ما. ← تؤثر على التوجهات السياسية. تعتمد الدعاية على موارد علم النفس الاجتماعي : سبر الآراء, البحث حول العلاقات بين الايديولوجيات الظواهر العاطفية والانفعالية, تقنيات بسيكودرامية ثم تقنيات دينامية المجتمع.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Card 3: Consumption -->
+                <div class="PhiH-definition-card">
+                    <h3 class="PhiH-definition-card-title" data-i18n="PhiH.lessons.propaganda.definitions.card3.title">الاستهلاك consommation</h3>
+                    <div class="PhiH-definition-card-content">
+                        <ul>
+                            <li data-i18n="PhiH.lessons.propaganda.definitions.card3.point1">الاستهلاك هو استخدام سلع أو تلافها أو التمتع بخدمات و ذلك من أجل اشباع حاجات أو رغبات معينة. و يمكن النظر الى الاستهلاك على أنه الهدف أو الغاية الأساسية لكل النشاطات الاقتصادية. و للاستهلاك علاقة عضوية بالانتاج , فالاستهلاك يواجهة دائما إما بالسلع التي تنتج في ذلك الوقت و اما بالسلع التي أنتجت من قبل. و للاستهلاك دور أساسي في تركيب البنيان الاقتصادي وفي تحريك العجلة الاقتصادية إذ إن الاستثمارات وفرص العمل هما أمران متعلقان بحجم الطلب الكلي على السلع و الخدمات.</li>
+                            <li data-i18n="PhiH.lessons.propaganda.definitions.card3.point2">حسب تيودور آدرنو": هو القبول المكثف في اقتناء السلع حيث يروج له من خلال الإشهار يعتمد على التقنيات المعاصرة , وسائل الاعلام</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Text Analysis -->
+        <section class="PhiH-lesson1-content-section">
+            <h2 class="PhiH-lesson1-section-title" data-i18n="PhiH.lessons.propaganda.analysis.title">Text Analysis</h2>
+            
+            <div class="PhiH-lesson1-definition-box">
+                <h3 class="PhiH-lesson1-definition-title" data-i18n="PhiH.lessons.propaganda.analysis.text1.title">Text 1 / Author: Hannah Arendt / Title: Hannah Arendt's Position on Advertising</h3>
+                
+                <h4 class="text-analysis-level-1" data-i18n="PhiH.lessons.propaganda.analysis.text1.thesis">Thesis</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.lessons.propaganda.analysis.text1.thesisContent">Advertising relies on science in promoting its product and is called violence.</p>
+                </div>
+                
+                <h4 class="text-analysis-level-1" data-i18n="PhiH.lessons.propaganda.analysis.text1.content">Content</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.lessons.propaganda.analysis.text1.content1">
+                        It is certain that the advertising pages of any newspaper give examples of this "scientific" character that allows a producer to prove through facts and figures and with the help of a "research service" that his soap is "the best in the world".
+                    </p>
+                    
+                    <p data-i18n="PhiH.lessons.propaganda.analysis.text1.content2">
+                        It is no less certain to say that there is a kind of violence in the flights of fancy of advertising experts. A mad dream of monopoly hides behind their assertion that women who do not use this particular type of soap remain pimpled and spinsters for life, a dream that makes the producer of this "only soap that prevents pimples" able one day to deprive all women who do not use this type of soap of marriage.
+                    </p>
+                    
+                    <p data-i18n="PhiH.lessons.propaganda.analysis.text1.content3">
+                        In the field of advertising as in the field of propaganda, science is only the product of the substitution of force.
+                    </p>
+                </div>
+                
+                <h4 class="text-analysis-level-1" data-i18n="PhiH.lessons.propaganda.analysis.text1.analysis">Analysis</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.lessons.propaganda.analysis.text1.analysis1">
+                        Advertising in Hannah Arendt's view is "a kind of violence" because it oscillates between two things: enticement and intimidation.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.lessons.propaganda.analysis.text1.enticement">A. Enticement</h5>
+                    <div class="text-analysis-indent-2">
+                        <p data-i18n="PhiH.lessons.propaganda.analysis.text1.enticementContent">
+                            Enticing the public to a product to the point of annoyance and disturbance, such as finding advertising for the same product on radio, television, newspapers, and the internet. This advertising is a form of violence in the author's view because you find yourself when you move around besieged by advertisements from all sides, you see it when you ride transportation and in stations, and you hear it when you walk in the street, and all this happens against your will.
+                        </p>
+                    </div>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.lessons.propaganda.analysis.text1.intimidation">B. Intimidation</h5>
+                    <div class="text-analysis-indent-2">
+                        <p data-i18n="PhiH.lessons.propaganda.analysis.text1.intimidationContent">
+                            And as advertising seeks to entice the acquisition of a product, it simultaneously seeks to scare the consumer from leaving that product or going to another. An example of this is that the company that produces soap claims that its soap is the only one that prevents pimples, and woe to the women who do not buy it, for they will remain pimpled for life. Advertising in this form uses moral terrorism and spreads frightening but fundamentally false information.
+                        </p>
+                    </div>
+                    
+                    <p data-i18n="PhiH.lessons.propaganda.analysis.text1.impact">
+                        Advertising has its effect on the recipient and spares no one. The one who is interested in the advertised product either starts searching for it or feels frustrated by his inability to purchase it. And if he is not interested in the product, he considers the advertising as a provocation.
+                    </p>
+                </div>
+                
+                <h4 class="text-analysis-level-1" data-i18n="PhiH.lessons.propaganda.analysis.text1.critique">Critique</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.lessons.propaganda.analysis.text1.critique1">
+                        The direction that advertising exercises on the individual has an impact on him, this is certain, but describing it as "a practice of violence" exaggerates matters, because the concept of violence implies the meaning of domination using actual force. And this is what we do not find in advertising. The recipient's position on advertising is generally limited between enjoyment, response, mockery, or disgust, and in general, he does not seek to get rid of it as one gets rid of a whip on his back.
+                    </p>
+                    
+                    <p data-i18n="PhiH.lessons.propaganda.analysis.text1.critique2">
+                        The reality is that not all advertising misleads the citizen. There are useful products that match the mentioned specifications, and the solution is not to eliminate advertising because there are people who cannot know about the product except through advertising, but the solution lies in exposing any advertising that misleads and presents a trivial product as good or a harmful one as beneficial.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="PhiH-lesson1-definition-box">
+                <h3 class="PhiH-lesson1-definition-title" data-i18n="PhiH.lessons.propaganda.analysis.text2.title">Text 2 / Author: Weizmann / Title: The Power of Advertising and Propaganda</h3>
+                
+                <h4 class="text-analysis-level-1" data-i18n="PhiH.lessons.propaganda.analysis.text2.thesis">Thesis of the text</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.lessons.propaganda.analysis.text2.thesisContent">The author in the text shows the unity and intersection between advertising and propaganda despite their different goals.</p>
+                </div>
+                
+                <h4 class="text-analysis-level-1" data-i18n="PhiH.lessons.propaganda.analysis.text2.problematic">Problematic</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.lessons.propaganda.analysis.text2.problematicContent">Where do the common points between advertising and propaganda appear despite their different fields? And how do we understand their shared influence on individuals and the standardization of their choices and minds?</p>
+                </div>
+                
+                <h4 class="text-analysis-level-1" data-i18n="PhiH.lessons.propaganda.analysis.text2.analysis">Analysis</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.lessons.propaganda.analysis.text2.difference">Difference between propaganda and advertising</h5>
+                    <div class="text-analysis-indent-2">
+                        <ul>
+                            <li data-i18n="PhiH.lessons.propaganda.analysis.text2.politicalPropaganda"><strong>Political propaganda:</strong> is a set of psychological, linguistic, and technical mechanisms used by political systems and parties to influence public opinion to support a particular system.</li>
+                            <li data-i18n="PhiH.lessons.propaganda.analysis.text2.advertising"><strong>Advertising:</strong> also uses the same means to influence individuals' opinions and behaviors to promote a particular commodity and encourage its consumption over others.</li>
+                        </ul>
+                    </div>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.lessons.propaganda.analysis.text2.mechanisms">Mechanisms of influence</h5>
+                    <div class="text-analysis-indent-2">
+                        <p data-i18n="PhiH.lessons.propaganda.analysis.text2.mechanismsContent">
+                            Advertising hides the power relations embedded within its mechanisms, as the image appears honest and neutral at first, but in reality, it is not. The process of preparation, composition, broadcasting, and commentary aims to influence the individual in his political choices (propaganda field) and consumer desires (advertising field), which contributes to confusing the individual and depriving him of his freedom.
+                        </p>
+                        
+                        <p data-i18n="PhiH.lessons.propaganda.analysis.text2.erichFromm">According to "Erich Fromm", both propaganda and advertising use a psychological mechanism to achieve their goals:</p>
+                        <ul>
+                            <li data-i18n="PhiH.lessons.propaganda.analysis.text2.arousal">Arousing instincts (through sexual desire)</li>
+                            <li data-i18n="PhiH.lessons.propaganda.analysis.text2.repetition">"Continuous repetition"</li>
+                        </ul>
+                        
+                        <p data-i18n="PhiH.lessons.propaganda.analysis.text2.appeal">
+                            Advertising and propaganda do not address human reason but rather target his desires and emotions, thus linking the product with desire and hope for escape from despair. Therefore, we notice the intensive presence of the image of women in advertising spots and the excessive exploitation of her body. The association between commercial goods and instincts is supported through the "hammer" method, which manifests itself in the continuous repetition of advertising spots, thus embedding in the individual's subconscious everything that advertising wanted to convey and directing his choices.
+                        </p>
+                    </div>
+                </div>
+                
+                <h4 class="text-analysis-level-1" data-i18n="PhiH.lessons.propaganda.analysis.text2.insights">Insights of the text</h4>
+                <div class="text-analysis-indent">
+                    <ul>
+                        <li data-i18n="PhiH.lessons.propaganda.analysis.text2.insight1">Attention to the fact that propaganda and advertising images are not simple and spontaneous but seek to influence consciousness in a hidden way.</li>
+                        <li data-i18n="PhiH.lessons.propaganda.analysis.text2.insight2">Avoiding passive acceptance of the image and striving to analyze and criticize it.</li>
+                        <li data-i18n="PhiH.lessons.propaganda.analysis.text2.insight3">Propaganda and advertising deal with humans as beings of desires and fears, not as rational beings capable of choosing for themselves.</li>
+                        <li data-i18n="PhiH.lessons.propaganda.analysis.text2.insight4">Awareness that deprivation of freedom does not occur only through force but also through hidden, quiet, and gentle ways through which the individual believes he is choosing completely freely.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="PhiH-lesson1-definition-box">
+                <h3 class="PhiH-lesson1-definition-title" data-i18n="PhiH.lessons.propaganda.analysis.text3.title">Propaganda and Science</h3>
+                <p data-i18n="PhiH.lessons.propaganda.analysis.text3.p1">
+                    Science is usually viewed as the culture that liberated man from religious and mythical culture and was the basis for effective technology that met man's needs and facilitated the realization of his desires in several fields. And it seems that the field where there has been enormous and even frightening progress is the field of media and communication.
+                </p>
+                <p data-i18n="PhiH.lessons.propaganda.analysis.text3.p2">
+                    Thanks to media and communication, it was possible to exchange information, messages, and sciences very quickly and between different continents, thus enabling man to benefit from the experience of other peoples and therefore develop his life.
+                </p>
+                <p data-i18n="PhiH.lessons.propaganda.analysis.text3.p3">
+                    But are the services provided by media and communication all positive, can't they be used to serve ignoble, ideological and capitalist purposes?
+                </p>
+            </div>
+        </section>
+        
+        <!-- Conclusion -->
+        <section class="PhiH-lesson1-content-section">
+            <h2 class="PhiH-lesson1-section-title" data-i18n="PhiH.lessons.propaganda.conclusion.title">Conclusion</h2>
+            <p data-i18n="PhiH.lessons.propaganda.conclusion.text1">
+                Propaganda constitutes a complex phenomenon in contemporary societies, representing an effective tool for influencing public opinion and directing behaviors. It relies on sophisticated psychological and social mechanisms that target emotions and desires more than reason and logic.
+            </p>
+            <p data-i18n="PhiH.lessons.propaganda.conclusion.text2">
+                The danger of propaganda lies in its ability to shape individuals' consciousness and direct their choices without them realizing it, making it a form of symbolic violence exercised on minds. Therefore, it is essential to develop individuals' critical awareness to distinguish propaganda mechanisms and resist its influence.
+            </p>
+            <p data-i18n="PhiH.lessons.propaganda.conclusion.text3">
+                Ultimately, knowledge and critical awareness remain the most powerful weapons to face the influence of propaganda and advertising, and preserve the autonomy of thought and freedom of choice.
+            </p>
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Page-specific translations for propaganda lesson
+        window.translations_PhiHpropaganda = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                
+                // Propaganda lesson specific translations
+                "PhiH.lessons.propaganda.title": "Propagande",
+                "PhiH.lessons.propaganda.level": "3ème Secondaire - Philosophie",
+                
+                "PhiH.lessons.propaganda.introduction.title": "Introduction Générale",
+                "PhiH.lessons.propaganda.introduction.text1": "La propagande est un phénomène social et politique marquant dans les sociétés contemporaines, jouant un rôle crucial dans la formation de l'opinion publique et l'orientation des comportements individuels et collectifs. Elle s'appuie sur un ensemble de mécanismes psychologiques, linguistiques et techniques pour influencer les individus et les amener à accepter des idées ou des positions spécifiques.",
+                "PhiH.lessons.propaganda.introduction.text2": "Les techniques de propagande ont évolué avec le développement des médias et de la communication, en faisant un outil efficace entre les mains des gouvernements, des partis et des diverses organisations pour influencer les masses et atteindre des objectifs politiques, économiques ou sociaux.",
+                
+                "PhiH.lessons.propaganda.problematic.title": "Problématique",
+                "PhiH.lessons.propaganda.problematic.subtitle": "Questions problématiques",
+                "PhiH.lessons.propaganda.problematic.q1": "Qu'est-ce que la propagande et quelle est la différence avec la publicité ?",
+                "PhiH.lessons.propaganda.problematic.q2": "Comment la propagande influence-t-elle les esprits et les comportements ?",
+                "PhiH.lessons.propaganda.problematic.q3": "Quels sont les mécanismes utilisés par la propagande pour influencer les individus ?",
+                "PhiH.lessons.propaganda.problematic.q4": "La propagande peut-elle être considérée comme une forme de violence symbolique ?",
+                "PhiH.lessons.propaganda.problematic.q5": "Comment l'individu peut-il résister à l'influence de la propagande ?",
+                
+                "PhiH.lessons.propaganda.definitions.title": "Définitions",
+                "PhiH.lessons.propaganda.definitions.card1.title": "Publicité : الإشهار",
+                "PhiH.lessons.propaganda.definitions.card1.point1": "<strong>Publicité linguistiquement:</strong> Al-Shirazi la définit comme celui qui proclame publiquement, tandis que Butrus al-Bustani a dit qu'elle signifie la publication et la divulgation. Quant au dictionnaire français \"Larousse\", il la définit comme : l'ensemble des moyens utilisés pour faire connaître un établissement commercial ou industriel et promouvoir ses produits.",
+                "PhiH.lessons.propaganda.definitions.card1.point2": "L'\"American Marketing Association\" définit la publicité comme une forme de présentation d'idées, de biens ou de services non personnels et payés par un annonceur spécifique et connu.",
+                "PhiH.lessons.propaganda.definitions.card1.point3": "Définit la publicité comme \"une forme impersonnelle et payée pour présenter une idée, un bien ou un service et être par une entité connue\".",
+                "PhiH.lessons.propaganda.definitions.card1.point4": "<strong>Dr. Weizmann \" texte de l'institution publicitaire \" (Livre de Philosophie pour la troisième année littéraire):</strong> La publicité vise à augmenter la consommation et agit pour inciter les gens en s'appuyant sur les aspects psychologiques et sociaux. Selon l'auteur de ce texte, la publicité est un mécanisme qui oriente et encourage l'intensification de la consommation. C'est un mécanisme commercial visant à inciter les citoyens à acquérir des biens pour augmenter les profits ← La publicité concerne les marchandises et les biens (produits économiques) et c'est elle qui contrôle tous nos achats quotidiens et c'est un mécanisme parmi les mécanismes de fonctionnement quotidien.",
+                
+                "PhiH.lessons.propaganda.definitions.card2.title": "Propagande : الدعاية",
+                "PhiH.lessons.propaganda.definitions.card2.point1": "<strong>Propagande:</strong> La propagande est l'appel à une doctrine ou à une opinion, que ce soit par écrit dans les journaux, à la radio ou par le biais de discours. (Nouveau Dictionnaire des Étudiants).",
+                "PhiH.lessons.propaganda.definitions.card2.point2": "On entend généralement par le terme propagande, appelé dans les langues européennes (propaganda), ce message dirigé et préparé à l'avance et intentionnellement pour influencer les pensées et les actions des autres, individus ou groupes, et les orienter vers un objectif menacé. Les informations contenues dans le message peuvent être vraies ou fausses. Mais dans tous les cas, ce sont des informations brèves et concentrées, incomplètes et non exhaustives. Et nous pouvons le constater lorsque des partis ou certaines organisations politiques se présentent.",
+                "PhiH.lessons.propaganda.definitions.card2.point3": "La propagande est un mécanisme politique qui est un ensemble de déclarations pour attirer le public vers une opinion, un parti ou une personne, tout en éloignant les gens d'une opinion, d'un parti ou d'une personne. ← Affecte les orientations politiques. La propagande s'appuie sur les ressources de la psychologie sociale : sondages d'opinion, recherche sur les relations entre les idéologies, les phénomènes émotionnels et affectifs, les techniques psychodramatiques puis les techniques de dynamique sociale.",
+                
+                "PhiH.lessons.propaganda.definitions.card3.title": "Consommation : الاستهلاك",
+                "PhiH.lessons.propaganda.definitions.card3.point1": "La consommation est l'utilisation de biens ou leur utilisation ou la jouissance de services afin de satisfaire des besoins ou des désirs spécifiques. La consommation peut être considérée comme l'objectif ou le but fondamental de toutes les activités économiques. La consommation a une relation organique avec la production, la consommation est toujours confrontée soit aux biens produits à ce moment-là, soit aux biens produits auparavant. La consommation joue un rôle fondamental dans la structure de l'édifice économique et dans la mise en mouvement de la roue économique, car les investissements et les opportunités d'emploi sont deux choses liées à la taille de la demande globale de biens et de services.",
+                "PhiH.lessons.propaganda.definitions.card3.point2": "Selon Theodor Adorno : c'est l'acceptation intensive de l'acquisition de biens où elle est promue par la publicité qui s'appuie sur les techniques contemporaines, les médias.",
+                
+                "PhiH.lessons.propaganda.analysis.title": "Analyse des Textes",
+                "PhiH.lessons.propaganda.analysis.text1.title": "Texte 1 / Auteur : Hannah Arendt / Titre : Position de Hannah Arendt sur la publicité",
+                "PhiH.lessons.propaganda.analysis.text1.thesis": "Thèse",
+                "PhiH.lessons.propaganda.analysis.text1.thesisContent": "La publicité s'appuie sur la science dans la promotion de son produit et est appelée violence.",
+                "PhiH.lessons.propaganda.analysis.text1.content": "Contenu",
+                "PhiH.lessons.propaganda.analysis.text1.content1": "Il est certain que les pages publicitaires de tout journal donnent des exemples de ce caractère \"scientifique\" qui permet à un producteur de prouver par des faits et des chiffres et avec l'aide d'un \"service de recherche\" que son savon est \"le meilleur au monde\".",
+                "PhiH.lessons.propaganda.analysis.text1.content2": "Il n'est pas moins certain de dire qu'il existe une sorte de violence dans les élucubrations des experts en publicité. Un rêve fou de monopole se cache derrière leur affirmation que les femmes qui n'utilisent pas ce type particulier de savon restent boutonneuses et vieilles filles à vie, un rêve qui rend le producteur de ce \"seul savon qui prévient les boutons\" capable un jour de priver de mariage toutes les femmes qui n'utilisent pas ce type de savon.",
+                "PhiH.lessons.propaganda.analysis.text1.content3": "Dans le domaine de la publicité comme dans celui de la propagande, la science n'est que le produit de la substitution de la force.",
+                "PhiH.lessons.propaganda.analysis.text1.analysis": "Analyse",
+                "PhiH.lessons.propaganda.analysis.text1.analysis1": "La publicité selon Hannah Arendt est \"une sorte de violence\" car elle oscille entre deux choses : la séduction et l'intimidation.",
+                "PhiH.lessons.propaganda.analysis.text1.enticement": "A. Séduction",
+                "PhiH.lessons.propaganda.analysis.text1.enticementContent": "Séduire le public pour un produit jusqu'à l'ennui et la perturbation, comme trouver de la publicité pour le même produit à la radio, à la télévision, dans les journaux et sur Internet. Cette publicité est une forme de violence selon l'auteur parce que vous vous retrouvez lorsque vous vous déplacez assiégé par des publicités de tous côtés, vous la voyez lorsque vous prenez les transports et dans les gares, et vous l'entendez lorsque vous marchez dans la rue, et tout cela se passe contre votre volonté.",
+                "PhiH.lessons.propaganda.analysis.text1.intimidation": "B. Intimidation",
+                "PhiH.lessons.propaganda.analysis.text1.intimidationContent": "Et comme la publicité cherche à séduire l'acquisition d'un produit, elle cherche simultanément à effrayer le consommateur de quitter ce produit ou d'aller vers un autre. Un exemple en est que l'entreprise qui produit du savon prétend que son savon est le seul qui prévient les boutons, et malheur aux femmes qui ne l'achètent pas, car elles resteront boutonneuses à vie. La publicité sous cette forme utilise le terrorisme moral et diffuse des informations effrayantes mais fondamentalement fausses.",
+                "PhiH.lessons.propaganda.analysis.text1.impact": "La publicité a son effet sur le destinataire et n'épargne personne. Celui qui s'intéresse au produit annoncé soit commence à le chercher, soit se sent frustré par son incapacité à l'acheter. Et s'il n'est pas intéressé par le produit, il considère la publicité comme une provocation.",
+                "PhiH.lessons.propaganda.analysis.text1.critique": "Critique",
+                "PhiH.lessons.propaganda.analysis.text1.critique1": "La direction que la publicité exerce sur l'individu a un impact sur lui, c'est certain, mais la décrire comme \"une pratique de la violence\" exagère les choses, car le concept de violence implique le sens de la domination par la force réelle. Et c'est ce que nous ne trouvons pas dans la publicité. La position du destinataire face à la publicité se limite généralement entre le plaisir, la réponse, la moquerie ou le dégoût, et en général, il ne cherche pas à s'en débarrasser comme on se débarrasse d'un fouet sur le dos.",
+                "PhiH.lessons.propaganda.analysis.text1.critique2": "La réalité est que toutes les publicités ne trompent pas le citoyen. Il existe des produits utiles qui correspondent aux spécifications mentionnées, et la solution n'est pas d'éliminer la publicité car il y a des gens qui ne peuvent connaître le produit que par la publicité, mais la solution réside dans l'exposition de toute publicité qui trompe et présente un produit trivial comme bon ou un produit nocif comme bénéfique.",
+                
+                "PhiH.lessons.propaganda.analysis.text2.title": "Texte 2 / Auteur : Weizmann / Titre : Le pouvoir de la publicité et de la propagande",
+                "PhiH.lessons.propaganda.analysis.text2.thesis": "Thèse du texte",
+                "PhiH.lessons.propaganda.analysis.text2.thesisContent": "L'auteur dans le texte montre l'unité et l'intersection entre la publicité et la propagande malgré leurs objectifs différents.",
+                "PhiH.lessons.propaganda.analysis.text2.problematic": "Problématique",
+                "PhiH.lessons.propaganda.analysis.text2.problematicContent": "Où apparaissent les points communs entre la publicité et la propagande malgré leurs domaines différents ? Et comment comprenons-nous leur influence partagée sur les individus et la standardisation de leurs choix et de leurs esprits ?",
+                "PhiH.lessons.propaganda.analysis.text2.analysis": "Analyse",
+                "PhiH.lessons.propaganda.analysis.text2.difference": "Différence entre propagande et publicité",
+                "PhiH.lessons.propaganda.analysis.text2.politicalPropaganda": "<strong>Propagande politique :</strong> est un ensemble de mécanismes psychologiques, linguistiques et techniques utilisés par les systèmes et partis politiques pour influencer l'opinion publique afin de soutenir un système particulier.",
+                "PhiH.lessons.propaganda.analysis.text2.advertising": "<strong>Publicité :</strong> utilise également les mêmes moyens pour influencer les opinions et les comportements des individus afin de promouvoir une marchandise particulière et d'encourager sa consommation par rapport à d'autres.",
+                "PhiH.lessons.propaganda.analysis.text2.mechanisms": "Mécanismes d'influence",
+                "PhiH.lessons.propaganda.analysis.text2.mechanismsContent": "La publicité cache les relations de pouvoir intégrées dans ses mécanismes, car l'image apparaît honnête et neutre au premier abord, mais en réalité, elle ne l'est pas. Le processus de préparation, de composition, de diffusion et de commentaire vise à influencer l'individu dans ses choix politiques (domaine de la propagande) et ses désirs de consommation (domaine de la publicité), ce qui contribue à confondre l'individu et à le priver de sa liberté.",
+                "PhiH.lessons.propaganda.analysis.text2.erichFromm": "Selon \"Erich Fromm\", la propagande et la publicité utilisent toutes deux un mécanisme psychologique pour atteindre leurs objectifs :",
+                "PhiH.lessons.propaganda.analysis.text2.arousal": "Éveiller les instincts (par le désir sexuel)",
+                "PhiH.lessons.propaganda.analysis.text2.repetition": "\"Répétition continue\"",
+                "PhiH.lessons.propaganda.analysis.text2.appeal": "La publicité et la propagande ne s'adressent pas à la raison humaine mais ciblent plutôt ses désirs et ses émotions, reliant ainsi le produit au désir et à l'espoir d'échapper au désespoir. Par conséquent, nous remarquons la présence intensive de l'image de la femme dans les spots publicitaires et l'exploitation excessive de son corps. L'association entre les biens commerciaux et les instincts est soutenue par la méthode du \"marteau\", qui se manifeste par la répétition continue des spots publicitaires, intégrant ainsi dans le subconscient de l'individu tout ce que la publicité voulait transmettre et orientant ses choix.",
+                "PhiH.lessons.propaganda.analysis.text2.insights": "Perspectives du texte",
+                "PhiH.lessons.propaganda.analysis.text2.insight1": "Attention au fait que les images de propagande et de publicité ne sont pas simples et spontanées mais cherchent à influencer la conscience de manière cachée.",
+                "PhiH.lessons.propaganda.analysis.text2.insight2": "Éviter l'acceptation passive de l'image et s'efforcer de l'analyser et de la critiquer.",
+                "PhiH.lessons.propaganda.analysis.text2.insight3": "La propagande et la publicité traitent l'être humain comme un être de désirs et de peurs, et non comme un être rationnel capable de choisir par lui-même.",
+                "PhiH.lessons.propaganda.analysis.text2.insight4": "Prise de conscience que la privation de liberté ne se produit pas seulement par la force mais aussi par des moyens cachés, calmes et doux par lesquels l'individu croit qu'il choisit en toute liberté.",
+                
+                "PhiH.lessons.propaganda.analysis.text3.title": "Propagande et Science",
+                "PhiH.lessons.propaganda.analysis.text3.p1": "La science est généralement considérée comme la culture qui a libéré l'homme de la culture religieuse et mythique et a été la base d'une technologie efficace qui a répondu aux besoins de l'homme et lui a facilité la réalisation de ses désirs dans plusieurs domaines. Et il semble que le domaine où il y a eu un progrès énorme et même effrayant est le domaine des médias et de la communication.",
+                "PhiH.lessons.propaganda.analysis.text3.p2": "Grâce aux médias et à la communication, il a été possible d'échanger des informations, des messages et des sciences très rapidement et entre différents continents, permettant ainsi à l'homme de bénéficier de l'expérience d'autres peuples et donc de développer sa vie.",
+                "PhiH.lessons.propaganda.analysis.text3.p3": "Mais les services fournis par les médias et la communication sont-ils tous positifs, ne peuvent-ils pas être utilisés pour servir des objectifs ignobles, idéologiques et capitalistes ?",
+                
+                "PhiH.lessons.propaganda.conclusion.title": "Conclusion",
+                "PhiH.lessons.propaganda.conclusion.text1": "La propagande constitue un phénomène complexe dans les sociétés contemporaines, représentant un outil efficace pour influencer l'opinion publique et orienter les comportements. Elle s'appuie sur des mécanismes psychologiques et sociaux sophistiqués qui ciblent les émotions et les désirs plus que la raison et la logique.",
+                "PhiH.lessons.propaganda.conclusion.text2": "Le danger de la propagande réside dans sa capacité à façonner la conscience des individus et à orienter leurs choix sans qu'ils s'en rendent compte, ce qui en fait une forme de violence symbolique exercée sur les esprits. Par conséquent, il est essentiel de développer la conscience critique des individus pour distinguer les mécanismes de la propagande et résister à son influence.",
+                "PhiH.lessons.propaganda.conclusion.text3": "En fin de compte, la connaissance et la conscience critique restent les armes les plus puissantes pour faire face à l'influence de la propagande et de la publicité, et préserver l'autonomie de la pensée et la liberté de choix."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                
+                // Propaganda lesson specific translations
+                "PhiH.lessons.propaganda.title": "Propaganda",
+                "PhiH.lessons.propaganda.level": "3rd Secondary - Philosophy",
+                
+                "PhiH.lessons.propaganda.introduction.title": "General Introduction",
+                "PhiH.lessons.propaganda.introduction.text1": "Propaganda is a prominent social and political phenomenon in contemporary societies, playing a crucial role in shaping public opinion and directing individual and collective behaviors. Propaganda relies on a set of psychological, linguistic, and technical mechanisms to influence individuals and make them accept specific ideas or positions.",
+                "PhiH.lessons.propaganda.introduction.text2": "Propaganda techniques have evolved with the development of media and communication, making them an effective tool in the hands of governments, parties, and various organizations to influence masses and achieve political, economic, or social objectives.",
+                
+                "PhiH.lessons.propaganda.problematic.title": "Problematic",
+                "PhiH.lessons.propaganda.problematic.subtitle": "Problematic Questions",
+                "PhiH.lessons.propaganda.problematic.q1": "What is propaganda and what is the difference with advertising?",
+                "PhiH.lessons.propaganda.problematic.q2": "How does propaganda influence minds and behaviors?",
+                "PhiH.lessons.propaganda.problematic.q3": "What are the mechanisms used by propaganda to influence individuals?",
+                "PhiH.lessons.propaganda.problematic.q4": "Can propaganda be considered a form of symbolic violence?",
+                "PhiH.lessons.propaganda.problematic.q5": "How can an individual resist the influence of propaganda?",
+                
+                "PhiH.lessons.propaganda.definitions.title": "Definitions",
+                "PhiH.lessons.propaganda.definitions.card1.title": "Advertising : الإشهار",
+                "PhiH.lessons.propaganda.definitions.card1.point1": "<strong>Advertising linguistically:</strong> Al-Shirazi defines it as the one who proclaims publicly, while Butrus al-Bustani said it means publication and disclosure. As for the French dictionary \"Larousse\", it defines it as: the set of means used to make known a commercial or industrial establishment and promote its products.",
+                "PhiH.lessons.propaganda.definitions.card1.point2": "The \"American Marketing Association\" defines advertising as a form of presenting ideas, goods, or non-personal services paid for by a specific and known advertiser.",
+                "PhiH.lessons.propaganda.definitions.card1.point3": "Defines advertising as \"a non-personal paid form for presenting an idea, good, or service and being by a known entity\".",
+                "PhiH.lessons.propaganda.definitions.card1.point4": "<strong>Dr. Weizmann \" text of the advertising institution \" (Philosophy Book for the third literary year):</strong> Advertising aims to increase consumption and works to urge people by relying on the psychological and social aspects. According to the author in this text, advertising is a mechanism that directs and encourages the intensification of consumption. It is a commercial mechanism aimed at urging citizens to acquire goods to increase profits ← Advertising relates to goods and commodities (economic products) and it is what controls all our daily purchases and it is a mechanism among the mechanisms of daily work.",
+                
+                "PhiH.lessons.propaganda.definitions.card2.title": "Propaganda : الدعاية",
+                "PhiH.lessons.propaganda.definitions.card2.point1": "<strong>Propaganda:</strong> Propaganda is the call to a doctrine or opinion, whether by writing in newspapers, on radio, or through speeches. (New Student Dictionary).",
+                "PhiH.lessons.propaganda.definitions.card2.point2": "One generally understands by the term propaganda, called in European languages (propaganda), that message directed and prepared in advance and intentionally to influence the thoughts and actions of others, individuals or groups, and direct them towards a threatened goal. The information contained in the message may be true or false. But in all cases, they are brief and concentrated information, incomplete and not comprehensive. And we can monitor this when parties or some political organizations present themselves.",
+                "PhiH.lessons.propaganda.definitions.card2.point3": "Propaganda is a political mechanism that is a set of statements to attract the public to an opinion, party, or person, while also turning people away from an opinion, party, or person. ← Affects political orientations. Propaganda relies on the resources of social psychology: opinion polls, research on the relationships between ideologies, emotional and affective phenomena, psychodramatic techniques, and then community dynamics techniques.",
+                
+                "PhiH.lessons.propaganda.definitions.card3.title": "Consumption : الاستهلاك",
+                "PhiH.lessons.propaganda.definitions.card3.point1": "Consumption is the use of goods or their use or the enjoyment of services in order to satisfy specific needs or desires. Consumption can be viewed as the goal or fundamental purpose of all economic activities. Consumption has an organic relationship with production, consumption is always faced either with goods produced at that time or with goods produced before. Consumption plays a fundamental role in structuring the economic edifice and in moving the economic wheel, as investments and job opportunities are two things related to the size of the total demand for goods and services.",
+                "PhiH.lessons.propaganda.definitions.card3.point2": "According to Theodor Adorno: it is the intensive acceptance of acquiring goods where it is promoted through advertising that relies on contemporary techniques, media.",
+                
+                "PhiH.lessons.propaganda.analysis.title": "Text Analysis",
+                "PhiH.lessons.propaganda.analysis.text1.title": "Text 1 / Author: Hannah Arendt / Title: Hannah Arendt's Position on Advertising",
+                "PhiH.lessons.propaganda.analysis.text1.thesis": "Thesis",
+                "PhiH.lessons.propaganda.analysis.text1.thesisContent": "Advertising relies on science in promoting its product and is called violence.",
+                "PhiH.lessons.propaganda.analysis.text1.content": "Content",
+                "PhiH.lessons.propaganda.analysis.text1.content1": "It is certain that the advertising pages of any newspaper give examples of this \"scientific\" character that allows a producer to prove through facts and figures and with the help of a \"research service\" that his soap is \"the best in the world\".",
+                "PhiH.lessons.propaganda.analysis.text1.content2": "It is no less certain to say that there is a kind of violence in the flights of fancy of advertising experts. A mad dream of monopoly hides behind their assertion that women who do not use this particular type of soap remain pimpled and spinsters for life, a dream that makes the producer of this \"only soap that prevents pimples\" able one day to deprive all women who do not use this type of soap of marriage.",
+                "PhiH.lessons.propaganda.analysis.text1.content3": "In the field of advertising as in the field of propaganda, science is only the product of the substitution of force.",
+                "PhiH.lessons.propaganda.analysis.text1.analysis": "Analysis",
+                "PhiH.lessons.propaganda.analysis.text1.analysis1": "Advertising in Hannah Arendt's view is \"a kind of violence\" because it oscillates between two things: enticement and intimidation.",
+                "PhiH.lessons.propaganda.analysis.text1.enticement": "A. Enticement",
+                "PhiH.lessons.propaganda.analysis.text1.enticementContent": "Enticing the public to a product to the point of annoyance and disturbance, such as finding advertising for the same product on radio, television, newspapers, and the internet. This advertising is a form of violence in the author's view because you find yourself when you move around besieged by advertisements from all sides, you see it when you ride transportation and in stations, and you hear it when you walk in the street, and all this happens against your will.",
+                "PhiH.lessons.propaganda.analysis.text1.intimidation": "B. Intimidation",
+                "PhiH.lessons.propaganda.analysis.text1.intimidationContent": "And as advertising seeks to entice the acquisition of a product, it simultaneously seeks to scare the consumer from leaving that product or going to another. An example of this is that the company that produces soap claims that its soap is the only one that prevents pimples, and woe to the women who do not buy it, for they will remain pimpled for life. Advertising in this form uses moral terrorism and spreads frightening but fundamentally false information.",
+                "PhiH.lessons.propaganda.analysis.text1.impact": "Advertising has its effect on the recipient and spares no one. The one who is interested in the advertised product either starts searching for it or feels frustrated by his inability to purchase it. And if he is not interested in the product, he considers the advertising as a provocation.",
+                "PhiH.lessons.propaganda.analysis.text1.critique": "Critique",
+                "PhiH.lessons.propaganda.analysis.text1.critique1": "The direction that advertising exercises on the individual has an impact on him, this is certain, but describing it as \"a practice of violence\" exaggerates matters, because the concept of violence implies the meaning of domination using actual force. And this is what we do not find in advertising. The recipient's position on advertising is generally limited between enjoyment, response, mockery, or disgust, and in general, he does not seek to get rid of it as one gets rid of a whip on his back.",
+                "PhiH.lessons.propaganda.analysis.text1.critique2": "The reality is that not all advertising misleads the citizen. There are useful products that match the mentioned specifications, and the solution is not to eliminate advertising because there are people who cannot know about the product except through advertising, but the solution lies in exposing any advertising that misleads and presents a trivial product as good or a harmful one as beneficial.",
+                
+                "PhiH.lessons.propaganda.analysis.text2.title": "Text 2 / Author: Weizmann / Title: The Power of Advertising and Propaganda",
+                "PhiH.lessons.propaganda.analysis.text2.thesis": "Thesis of the text",
+                "PhiH.lessons.propaganda.analysis.text2.thesisContent": "The author in the text shows the unity and intersection between advertising and propaganda despite their different goals.",
+                "PhiH.lessons.propaganda.analysis.text2.problematic": "Problematic",
+                "PhiH.lessons.propaganda.analysis.text2.problematicContent": "Where do the common points between advertising and propaganda appear despite their different fields? And how do we understand their shared influence on individuals and the standardization of their choices and minds?",
+                "PhiH.lessons.propaganda.analysis.text2.analysis": "Analysis",
+                "PhiH.lessons.propaganda.analysis.text2.difference": "Difference between propaganda and advertising",
+                "PhiH.lessons.propaganda.analysis.text2.politicalPropaganda": "<strong>Political propaganda:</strong> is a set of psychological, linguistic, and technical mechanisms used by political systems and parties to influence public opinion to support a particular system.",
+                "PhiH.lessons.propaganda.analysis.text2.advertising": "<strong>Advertising:</strong> also uses the same means to influence individuals' opinions and behaviors to promote a particular commodity and encourage its consumption over others.",
+                "PhiH.lessons.propaganda.analysis.text2.mechanisms": "Mechanisms of influence",
+                "PhiH.lessons.propaganda.analysis.text2.mechanismsContent": "Advertising hides the power relations embedded within its mechanisms, as the image appears honest and neutral at first, but in reality, it is not. The process of preparation, composition, broadcasting, and commentary aims to influence the individual in his political choices (propaganda field) and consumer desires (advertising field), which contributes to confusing the individual and depriving him of his freedom.",
+                "PhiH.lessons.propaganda.analysis.text2.erichFromm": "According to \"Erich Fromm\", both propaganda and advertising use a psychological mechanism to achieve their goals:",
+                "PhiH.lessons.propaganda.analysis.text2.arousal": "Arousing instincts (through sexual desire)",
+                "PhiH.lessons.propaganda.analysis.text2.repetition": "\"Continuous repetition\"",
+                "PhiH.lessons.propaganda.analysis.text2.appeal": "Advertising and propaganda do not address human reason but rather target his desires and emotions, thus linking the product with desire and hope for escape from despair. Therefore, we notice the intensive presence of the image of women in advertising spots and the excessive exploitation of her body. The association between commercial goods and instincts is supported through the \"hammer\" method, which manifests itself in the continuous repetition of advertising spots, thus embedding in the individual's subconscious everything that advertising wanted to convey and directing his choices.",
+                "PhiH.lessons.propaganda.analysis.text2.insights": "Insights of the text",
+                "PhiH.lessons.propaganda.analysis.text2.insight1": "Attention to the fact that propaganda and advertising images are not simple and spontaneous but seek to influence consciousness in a hidden way.",
+                "PhiH.lessons.propaganda.analysis.text2.insight2": "Avoiding passive acceptance of the image and striving to analyze and criticize it.",
+                "PhiH.lessons.propaganda.analysis.text2.insight3": "Propaganda and advertising deal with humans as beings of desires and fears, not as rational beings capable of choosing for themselves.",
+                "PhiH.lessons.propaganda.analysis.text2.insight4": "Awareness that deprivation of freedom does not occur only through force but also through hidden, quiet, and gentle ways through which the individual believes he is choosing completely freely.",
+                
+                "PhiH.lessons.propaganda.analysis.text3.title": "Propaganda and Science",
+                "PhiH.lessons.propaganda.analysis.text3.p1": "Science is usually viewed as the culture that liberated man from religious and mythical culture and was the basis for effective technology that met man's needs and facilitated the realization of his desires in several fields. And it seems that the field where there has been enormous and even frightening progress is the field of media and communication.",
+                "PhiH.lessons.propaganda.analysis.text3.p2": "Thanks to media and communication, it was possible to exchange information, messages, and sciences very quickly and between different continents, thus enabling man to benefit from the experience of other peoples and therefore develop his life.",
+                "PhiH.lessons.propaganda.analysis.text3.p3": "But are the services provided by media and communication all positive, can't they be used to serve ignoble, ideological and capitalist purposes?",
+                
+                "PhiH.lessons.propaganda.conclusion.title": "Conclusion",
+                "PhiH.lessons.propaganda.conclusion.text1": "Propaganda constitutes a complex phenomenon in contemporary societies, representing an effective tool for influencing public opinion and directing behaviors. It relies on sophisticated psychological and social mechanisms that target emotions and desires more than reason and logic.",
+                "PhiH.lessons.propaganda.conclusion.text2": "The danger of propaganda lies in its ability to shape individuals' consciousness and direct their choices without them realizing it, making it a form of symbolic violence exercised on minds. Therefore, it is essential to develop individuals' critical awareness to distinguish propaganda mechanisms and resist its influence.",
+                "PhiH.lessons.propaganda.conclusion.text3": "Ultimately, knowledge and critical awareness remain the most powerful weapons to face the influence of propaganda and advertising, and preserve the autonomy of thought and freedom of choice."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                
+                // Propaganda lesson specific translations
+                "PhiH.lessons.propaganda.title": "الدعاية",
+                "PhiH.lessons.propaganda.level": "السنة الثالثة ثانوي - الفلسفة",
+                
+                "PhiH.lessons.propaganda.introduction.title": "مقدمة عامة",
+                "PhiH.lessons.propaganda.introduction.text1": "الدعاية هي أحد الظواهر الاجتماعية والسياسية البارزة في المجتمعات المعاصرة، حيث تلعب دوراً حاسماً في تشكيل الرأي العام وتوجيه السلوكيات الفردية والجماعية. تعتمد الدعاية على مجموعة من الآليات النفسية واللغوية والتقنية للتأثير على الأفراد وجعلهم يقبلون أفكاراً أو مواقف معينة.",
+                "PhiH.lessons.propaganda.introduction.text2": "تطورت تقنيات الدعاية مع تطور وسائل الإعلام والتواصل، مما جعلها أداة فعالة في يد الحكومات والأحزاب والمنظمات المختلفة للتأثير على الجماهير وتحقيق أهداف سياسية أو اقتصادية أو اجتماعية.",
+                
+                "PhiH.lessons.propaganda.problematic.title": "الإشكالية",
+                "PhiH.lessons.propaganda.problematic.subtitle": "أسئلة إشكالية",
+                "PhiH.lessons.propaganda.problematic.q1": "ما هي الدعاية وما الفرق بينها وبين الإشهار؟",
+                "PhiH.lessons.propaganda.problematic.q2": "كيف تؤثر الدعاية على العقول والسلوكيات؟",
+                "PhiH.lessons.propaganda.problematic.q3": "ما هي الآليات التي تستخدمها الدعاية للتأثير على الأفراد؟",
+                "PhiH.lessons.propaganda.problematic.q4": "هل يمكن اعتبار الدعاية شكلاً من أشكال العنف الرمزي؟",
+                "PhiH.lessons.propaganda.problematic.q5": "كيف يمكن للفرد مقاومة تأثير الدعاية؟",
+                
+                "PhiH.lessons.propaganda.definitions.title": "التعريفات",
+                "PhiH.lessons.propaganda.definitions.card1.title": "الإشهار : Publicité",
+                "PhiH.lessons.propaganda.definitions.card1.point1": "<strong>الإشهار لغة:</strong> يعرفه الشيرازي على أنه المجاهر في حين أن بطرس البستاني قال أنه يعني النشر والإظهار هذا عند العرب بينما يعرفه قاموس \"لاروس\" الصادر عن دائرة المعارف الفرنسية على أنه : مجموعة الوسائل المستخدمة للتعريف بمنشأة تجارية أو صناعية واطراد منتاجاتها.",
+                "PhiH.lessons.propaganda.definitions.card1.point2": "تعرف \" الجمعية الأمريكية للتسويق \" الإشهار بأنه شكل من أشكال تقديم الأفكار أو السلع أو الخدمات غير الشخصية والمدفوعة الأجر بواسطة معلن محدد و معروف.",
+                "PhiH.lessons.propaganda.definitions.card1.point3": "أما \" فيليب كوتلر\" يعرف الإشهار أنه \" شكل غير شخصي مدفوع القيمة لتقديم فكرة أو سلعة أو خدمة ويكون بواسطة جهة معلومة.",
+                "PhiH.lessons.propaganda.definitions.card1.point4": "<strong>د. ويزمان \"  نص مؤسسة الإشهار \" ( كتاب الفلسفة للسنة ثالثة آداب):</strong> الإشهار يهدف إلى الزيادة في الإستهلاك كما يعمل على حث الناس من خلال الاعتماد على الجانب النفسي و الإجتماعي. حسب الكاتب في هذا النص الإشهار هو آلية توجه و تحفز على تكثيف الاستهلاك فهي آلية تجارية تهدف الى حث المواطنين على اقتناء السلع للزيادة في الربح ← الإشهار يتعلق بالبضائع و السلع ( المنتجات الاقتصادية) وهو الذي يتحكم في كل مشترياتنا اليومية وهو آلية من آليات اشتغال اليومي.",
+                
+                "PhiH.lessons.propaganda.definitions.card2.title": "الدعاية Propagande",
+                "PhiH.lessons.propaganda.definitions.card2.point1": "<strong>دعاية:</strong> الدعاية هي الدعوة الى مذهب أو رأي سواء بالكتابة في الصحف أو على الإذاعة أو عن طريق الخطابة.( القاموس الجديد للطلاب).",
+                "PhiH.lessons.propaganda.definitions.card2.point2": "يفهم المرء بشكل عام تحت مصطلح الدعاية التي يطلق عليها في اللغات الأروبية لفظ (بروباغندا) تلك الرسالة الموجهة و المعدة سلفا و بشكل مقصود من أجل التأثير على أفكار و أفعال الآخرين فردا أو جماعة وتوجههما نحو هدف مهدد وقد تكون المعلومات التي تتضمنها الرسالة صحيحة أو خاطئة . و لكنها في كل الأحوال تكون معلومات موجزة و مكثفة , ناقصة و غير شاملة. ويمكننا أن نرصد ذلك عندما تقدم الأحزاب أو بعض المنضمات السياسية نفسها.",
+                "PhiH.lessons.propaganda.definitions.card2.point3": "الدعاية آلية سياسية هي جملة من الأقوال لاستمالة الجمهور لرأي ما أو لحزب ما أو لشخص ما كما أنها تصد الناس على رأي ما أو حزب ما أو شخص ما. ← تؤثر على التوجهات السياسية. تعتمد الدعاية على موارد علم النفس الاجتماعي : سبر الآراء, البحث حول العلاقات بين الايديولوجيات الظواهر العاطفية والانفعالية, تقنيات بسيكودرامية ثم تقنيات دينامية المجتمع.",
+                
+                "PhiH.lessons.propaganda.definitions.card3.title": "الاستهلاك consommation",
+                "PhiH.lessons.propaganda.definitions.card3.point1": "الاستهلاك هو استخدام سلع أو تلافها أو التمتع بخدمات و ذلك من أجل اشباع حاجات أو رغبات معينة. و يمكن النظر الى الاستهلاك على أنه الهدف أو الغاية الأساسية لكل النشاطات الاقتصادية. و للاستهلاك علاقة عضوية بالانتاج , فالاستهلاك يواجهة دائما إما بالسلع التي تنتج في ذلك الوقت و اما بالسلع التي أنتجت من قبل. و للاستهلاك دور أساسي في تركيب البنيان الاقتصادي وفي تحريك العجلة الاقتصادية إذ إن الاستثمارات وفرص العمل هما أمران متعلقان بحجم الطلب الكلي على السلع و الخدمات.",
+                "PhiH.lessons.propaganda.definitions.card3.point2": "حسب تيودور آدرنو\": هو القبول المكثف في اقتناء السلع حيث يروج له من خلال الإشهار يعتمد على التقنيات المعاصرة , وسائل الاعلام",
+                
+                "PhiH.lessons.propaganda.analysis.title": "تحليل النصوص",
+                "PhiH.lessons.propaganda.analysis.text1.title": "النص 1 / المؤلف: حنّا آرنت / العنوان: موقف حنّا آرنت من الإشهار",
+                "PhiH.lessons.propaganda.analysis.text1.thesis": "الأطروحة",
+                "PhiH.lessons.propaganda.analysis.text1.thesisContent": "يرتكز الإشهار على العلم في الدعاية لمنتوجه و يسمّى ذلك عنفا.",
+                "PhiH.lessons.propaganda.analysis.text1.content": "المحتوى",
+                "PhiH.lessons.propaganda.analysis.text1.content1": "من المؤكد أن الصفحات الاشهارية لأي صحيفة تعطي أمثلة عن هذا الطابع \"العلمي\" الذي يتيح لمنتتج ما أن يثبت عن طريق وقائع و أرقام و بمساعدة \"مصلحة بحث\" بأن صابونه هو \"الأفضل في العالم\".",
+                "PhiH.lessons.propaganda.analysis.text1.content2": "و ليس أقلّ تأكيد من ذلك، القول بوجود ضرب من العنف في شطحات خيال خبراء الإشهار. إذ يتخفى حلم مجنون بالاحتكار وراء تأكيدهم بأن النسوة اللاتي لا يستعملن هذا النوع المخصوص من الصابون يبقين مدى الحياة بثرات و عوانس، حلم يجعل منتج هذا \"الصابون الوحيد الذي يمنع البثور\" قادرا في يوم ما على أن يحرم من الزواج كلّ النساء اللاتي لا يستعملن هذا النوع من الصابون.",
+                "PhiH.lessons.propaganda.analysis.text1.content3": "ففي مجال الإشهار كما هو الشأن في مجال الدعاية لا يكون العلم إلاّ نتاجا لتعويض القوّة.",
+                "PhiH.lessons.propaganda.analysis.text1.analysis": "التحليل",
+                "PhiH.lessons.propaganda.analysis.text1.analysis1": "الإشهار في نظر حنّا آرنت هو \"ضرب من العنف\" لأنّه يتردّد بين أمرين هما: الترغيب و الترهيب.",
+                "PhiH.lessons.propaganda.analysis.text1.enticement": "أ. الترغيب",
+                "PhiH.lessons.propaganda.analysis.text1.enticementContent": "ترغيب الجمهور في سلعة ما إلى حدّ الإزعاج و الإقلاق كأن تجد إشهارا لنفس السلعة في الإذاعة و التلفزة و الجرائد و الأنترنت. هذا الإشهار هو شكل من أشكال العنف في نظر الكاتبة لأنّك تجد نفسك عندما تتنقّل محاصرا بالإعلانات من كلّ جانب و تراه عندما تركب وسائل النقل و في المحطّات و تسمعه عندما تسير في الشارع و كلّ ذلك يتمّ غصبا عنك.",
+                "PhiH.lessons.propaganda.analysis.text1.intimidation": "ب. الترهيب",
+                "PhiH.lessons.propaganda.analysis.text1.intimidationContent": "و كما يسعى الإشهار للترغيب في اقتناء سلعة ما يسعى بالمقابل لتخويف المستهلك من ترك تلك السلعة أو الذهاب إلى غيرها. مثال ذلك أن الشركة التي تنتج الصابون تدّعي أن صابونها هو الوحيد الذي يمنع البثور و ويل للنسوة اللاّئي لا يقتنينه فهنّ سيبقين مدى الحياة بثرات. فالإشهار بهذا الشكل يستخدم إرهابا معنويا و ينشر معلومات مخيفة و لكنّها في الأصل خاطئة.",
+                "PhiH.lessons.propaganda.analysis.text1.impact": "إن الإشهار يفعل فعله في المتلقّي و لا يستثني أحدا. فالذي تهمّه السلعة المعلن عنها إمّا أنّه ينطلق في البحث عنها أو أنّه يشعر بالحنق لعدم قدرته الشراء. و إن كانت لا تهمّه السلعة يعتبر الإشهار استفزازا له.",
+                "PhiH.lessons.propaganda.analysis.text1.critique": "النقد",
+                "PhiH.lessons.propaganda.analysis.text1.critique1": "إن التوجّه الذي يمارسه الإشهار على الفرد فيه تأثير عليه، هذا أكيد لكن وصفه بأنّه \"ممارسة للعنف\" فيه تهويل للأمور، لأنّ مفهوم العنف يقتضي معنى التسّلط باستخدام القوّة الفعلية. وهذا ما لا نجده في الإشهار. فموقف المتلقّي من الإشهار ينحصر عموما بين الاستمتاع أو التجاوب أو السخرية أو الإشمئزار و على العموم لا يسعى للتخلّص منه كمن يتخلّص من سوط على ظهره.",
+                "PhiH.lessons.propaganda.analysis.text1.critique2": "الواقع أنّ ليس كلّ إشهار يغالط المواطن. فهناك سلع مفيدة و مطابقة للمواصفات المذكورة و الحلّ ليس في القضاء على الإشهار لأنّ هناك أناس لا يمكن أن يعلموا بالمنتوج إلاّ عن طريق الإشهار، و لكن الحلّ يتمثّل في فضح كلّ إشهار يغالط و يظهر سلعة تافهة على أنّها جيّدة أو مضرّة على أنّها نافعة.",
+                
+                "PhiH.lessons.propaganda.analysis.text2.title": "النص 2 / المؤلف: ويزمان / العنوان: سلطة الإشهار والدعاية",
+                "PhiH.lessons.propaganda.analysis.text2.thesis": "أطروحة النص",
+                "PhiH.lessons.propaganda.analysis.text2.thesisContent": "يبين الكاتب في النص الوحدة والتقاطع بين الإشهار والدعاية رغم اختلاف أهدافهما.",
+                "PhiH.lessons.propaganda.analysis.text2.problematic": "الإشكالية",
+                "PhiH.lessons.propaganda.analysis.text2.problematicContent": "أين تظهر النقاط المشتركة بين الإشهار والدعاية رغم اختلاف مجالهما؟ وكيف نفهم اشتراكهما في التأثير على الأفراد وتنميط اختياراتهم وعقولهم؟",
+                "PhiH.lessons.propaganda.analysis.text2.analysis": "التحليل",
+                "PhiH.lessons.propaganda.analysis.text2.difference": "الفرق بين الدعاية والإشهار",
+                "PhiH.lessons.propaganda.analysis.text2.politicalPropaganda": "<strong>الدعاية السياسية:</strong> هي مجموعة من الآليات النفسية واللغوية والتقنية تستعملها الأنظمة والأحزاب السياسية من اجل التأثير على الرأي العام لتأييد نظام معين.",
+                "PhiH.lessons.propaganda.analysis.text2.advertising": "<strong>الإشهار:</strong> يستعمل هو الآخر نفس الوسائل من أجل التأثير على آراء وسلوكيات الأفراد لترويج بضاعة معينة والحث على استهلاكها دون غيرها.",
+                "PhiH.lessons.propaganda.analysis.text2.mechanisms": "آليات التأثير",
+                "PhiH.lessons.propaganda.analysis.text2.mechanismsContent": "يحجب الإشهار العلاقات السلطوية المبثوثة داخل آلياته اذ تظهر الصورة صادقة وحيادية في أول الأمر إلا أنها في الحقيقة ليست كذلك فعملية الإعداد والتركيب والبث والتعليق تهدف الي التأثير على الفرد في اختياراته السياسية (مجال الدعاية) ورغباته الاستهلاكية (مجال الإشهار) وهذا ما يساهم في إرباك الفرد وسلبه حريته.",
+                "PhiH.lessons.propaganda.analysis.text2.erichFromm": "حسب \"إريك فروم\" تستخدم كل من الدعاية والإشهار آلية نفسية من أجل بلوغ أهدافهما:",
+                "PhiH.lessons.propaganda.analysis.text2.arousal": "إثارة الغرائز (عن طريق الشهوة الجنسية)",
+                "PhiH.lessons.propaganda.analysis.text2.repetition": "\"التكرار المستمر\"",
+                "PhiH.lessons.propaganda.analysis.text2.appeal": "فالإشهار والدعاية لا يخاطبان عقل الإنسان وإنما يتوجهان الي رغباته وانفعالاته وبهذا يتم الربط بين المنتج والرغبة والأمل في الهروب من اليأس لذلك نلاحظ الحضور المكثف لصورة المرأة في الومضات الإشهارية والاستغلال المفرط لجسدها ويدعم الاقتران بين البضاعة التجارية والغرائز من خلال اسلوب \"المطرقة\" الذي يتجسم بالتكرار المستمر للومضات الإشهارية فيرسخ في لاوعي الفرد كل ما أراد الإشهار تمريره ويوجه اختياراته.",
+                "PhiH.lessons.propaganda.analysis.text2.insights": "مكاسب النص",
+                "PhiH.lessons.propaganda.analysis.text2.insight1": "الانتباه الي ان الصورة الدعائية والإشهارية ليست بسيطة وعفوية بل هي تسعى الي التأثير في الوعي بشكل خفي.",
+                "PhiH.lessons.propaganda.analysis.text2.insight2": "الابتعاد عن التقبل السلبي للصورة والسعي الي تحليلها ونقدها.",
+                "PhiH.lessons.propaganda.analysis.text2.insight3": "تتعامل الدعاية والاشهار مع الإنسان ككائن رغبات ومخاوف وليس ككائن عاقل قادر على الاختيار بنفسه.",
+                "PhiH.lessons.propaganda.analysis.text2.insight4": "الوعي بأن سلب الحرية لا يتم عن طريق القوة فحسب بل بطرق خفية هادئة وناعمة يعتقد من خلالها الفرد انه يختار بكل حرية.",
+                
+                "PhiH.lessons.propaganda.analysis.text3.title": "الدعاية والعلم",
+                "PhiH.lessons.propaganda.analysis.text3.p1": "يُنظَر للعلم عادة على أنّه الثقافة التي خلّصت الإنسان من الثقافة الدينية والأسطورية وكان الأساس لتقنية فعّالة لبّت حاجيات الإنسان وسهّلت عليه تحقيق رغباته في عدّة مجالات. و يبدو أن المجال الذي حصل فيه تقدّم هائل و حتّى مفزع هو مجال الإعلام و التواصل.",
+                "PhiH.lessons.propaganda.analysis.text3.p2": "فبفضل وسائل الإعلام و التواصل أمكن تبادل المعلومات و الرسائل و العلوم بسرعة كبيرة و بين مختلف القارّات و بذلك تمكّن الإنسان من الاستفادة من تجارب الشعوب الأخرى و التالي تطوير حياته.",
+                "PhiH.lessons.propaganda.analysis.text3.p3": "لكن هل أن الخدمات التي تقدّمها وسائل الإعلام و التواصل كلّها ايجابية، ألا يمكن توظيفها في خدمة غايات دنيئة، إيديولوجية و رأسمالية؟",
+                
+                "PhiH.lessons.propaganda.conclusion.title": "الخاتمة",
+                "PhiH.lessons.propaganda.conclusion.text1": "تشكل الدعاية ظاهرة معقدة في المجتمعات المعاصرة، حيث تمثل أداة فعالة للتأثير على الرأي العام وتوجيه السلوكيات. تعتمد على آليات نفسية واجتماعية متطورة تستهدف العواطف والرغبات أكثر من العقل والمنطق.",
+                "PhiH.lessons.propaganda.conclusion.text2": "تكمن خطورة الدعاية في قدرتها على تشكيل وعي الأفراد وتوجيه اختياراتهم دون أن يدركوا ذلك، مما يجعلها شكلاً من أشكال العنف الرمزي الذي يمارس على العقول. لذلك، من الضروري تطوير الوعي النقدي لدى الأفراد لتمييز آليات الدعاية ومقاومة تأثيرها.",
+                "PhiH.lessons.propaganda.conclusion.text3": "في النهاية، تبقى المعرفة والوعي النقدي هما السلاح الأقوى لمواجهة تأثير الدعاية والإشهار، والحفاظ على استقلالية الفكر وحرية الاختيار."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHpropaganda;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

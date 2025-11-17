@@ -395,6 +395,11 @@
             </div>
         </div>
     </div>
+	<!-- Manual Install Button (Fallback) -->
+<button id="manual-install-btn" class="PhiH-pwa-install-btn" style="display: none;">
+    <span class="PhiH-pwa-install-icon">📱</span>
+    <span data-i18n="PhiH.pwa.install">Install App</span>
+</button>
 </header>
     
     <main class="PhiH-homepage-main">
@@ -1006,8 +1011,20 @@
     
     <!-- Include PWA Handler -->
     <script src="scripts/pwa-handler.js"></script>
-    
     <script>
+// Manual service worker registration as backup
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+                console.log('SW registered: ', registration);
+            })
+            .catch(function(registrationError) {
+                console.log('SW registration failed: ', registrationError);
+            });
+    });
+}
+
         // Homepage specific functionality
         document.addEventListener('DOMContentLoaded', function() {
             // Modal functionality
@@ -1062,6 +1079,31 @@
                 });
             });
         });
-    </script>
+// Manual install button handler
+document.addEventListener('DOMContentLoaded', function() {
+    const manualInstallBtn = document.getElementById('manual-install-btn');
+    let deferredPrompt;
+    
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        manualInstallBtn.style.display = 'flex';
+    });
+    
+    if (manualInstallBtn) {
+        manualInstallBtn.addEventListener('click', async () => {
+            if (!deferredPrompt) return;
+            
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            
+            if (outcome === 'accepted') {
+                manualInstallBtn.style.display = 'none';
+                deferredPrompt = null;
+            }
+        });
+    }
+});
+</script>
 </body>
 </html>

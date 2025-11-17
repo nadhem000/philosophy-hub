@@ -43,6 +43,8 @@ class PWAHandler {
             // Listen for claiming of service worker
             navigator.serviceWorker.addEventListener('controllerchange', () => {
                 console.log('ServiceWorker controller changed');
+                // Refresh the page to ensure the latest service worker controls it
+                window.location.reload();
             });
         }
     }
@@ -57,6 +59,9 @@ class PWAHandler {
             this.deferredPrompt = e;
             // Show install button
             this.showInstallButton();
+            
+            // Also update the button text based on availability
+            this.updateInstallButtonText(true);
         });
 
         window.addEventListener('appinstalled', (evt) => {
@@ -69,15 +74,35 @@ class PWAHandler {
 
     // Create install button
     createInstallButton() {
-        // Create button element
-        this.installButton = document.createElement('button');
-        this.installButton.id = 'pwa-install-btn';
-        this.installButton.className = 'PhiH-pwa-install-btn';
-        this.installButton.innerHTML = `
-            <span class="PhiH-pwa-install-icon">📱</span>
-            <span data-i18n="PhiH.pwa.install">Install App</span>
-        `;
+        // Try to find existing button first
+        this.installButton = document.getElementById('pwa-install-btn');
         
+        // If button doesn't exist, create it
+        if (!this.installButton) {
+            this.installButton = document.createElement('button');
+            this.installButton.id = 'pwa-install-btn';
+            this.installButton.className = 'PhiH-pwa-install-btn';
+            this.installButton.innerHTML = `
+                <span class="PhiH-pwa-install-icon">📱</span>
+                <span class="PhiH-pwa-install-text" data-i18n="PhiH.pwa.install">Install App</span>
+            `;
+            
+            // Add to header controls
+            const headerControls = document.querySelector('.PhiH-general-header-controls');
+            if (headerControls) {
+                headerControls.appendChild(this.installButton);
+            } else {
+                console.warn('Header controls not found, adding install button to body');
+                document.body.appendChild(this.installButton);
+                
+                // Add some basic positioning
+                this.installButton.style.position = 'fixed';
+                this.installButton.style.bottom = '20px';
+                this.installButton.style.right = '20px';
+                this.installButton.style.zIndex = '1000';
+            }
+        }
+
         // Add click event
         this.installButton.addEventListener('click', () => {
             this.installPWA();
@@ -85,12 +110,6 @@ class PWAHandler {
 
         // Initially hide the button
         this.installButton.style.display = 'none';
-
-        // Add to header controls
-        const headerControls = document.querySelector('.PhiH-general-header-controls');
-        if (headerControls) {
-            headerControls.appendChild(this.installButton);
-        }
 
         // Add translations for the install button
         this.addPwaTranslations();
@@ -111,10 +130,27 @@ class PWAHandler {
         }
     }
 
+    // Update install button text based on availability
+    updateInstallButtonText(canInstall) {
+        if (this.installButton) {
+            const textElement = this.installButton.querySelector('.PhiH-pwa-install-text');
+            if (textElement) {
+                const lang = localStorage.getItem('preferredLanguage') || 'en';
+                const translations = {
+                    en: canInstall ? "Install App" : "Already Installed",
+                    fr: canInstall ? "Installer l'App" : "Déjà Installé",
+                    ar: canInstall ? "تثبيت التطبيق" : "مثبت بالفعل"
+                };
+                textElement.textContent = translations[lang] || translations.en;
+            }
+        }
+    }
+
     // Install PWA
     async installPWA() {
         if (!this.deferredPrompt) {
             console.log('No install prompt available');
+            this.showCannotInstallMessage();
             return;
         }
 
@@ -130,14 +166,15 @@ class PWAHandler {
             // We've used the prompt, and can't use it again, throw it away
             this.deferredPrompt = null;
             
-            // Hide the install button regardless of outcome
-            this.hideInstallButton();
-
             if (outcome === 'accepted') {
                 this.showInstallSuccessMessage();
+                this.hideInstallButton();
+            } else {
+                this.showInstallDeclinedMessage();
             }
         } catch (error) {
             console.error('Error during PWA installation:', error);
+            this.showInstallErrorMessage();
         }
     }
 
@@ -156,6 +193,12 @@ class PWAHandler {
             this.hideInstallButton();
         }
 
+        // Check if the app is already installed
+        if (this.isAppInstalled()) {
+            this.isStandalone = true;
+            this.hideInstallButton();
+        }
+
         // Listen for display mode changes
         window.matchMedia('(display-mode: standalone)').addEventListener('change', (e) => {
             this.isStandalone = e.matches;
@@ -165,40 +208,48 @@ class PWAHandler {
         });
     }
 
+    // Check if app is already installed
+    isAppInstalled() {
+        return localStorage.getItem('pwa-installed') === 'true' || 
+               window.matchMedia('(display-mode: standalone)').matches ||
+               window.navigator.standalone === true;
+    }
+
     // Show update notification
     showUpdateNotification() {
-        // You can implement a custom update notification here
         console.log('New version available! Refresh to update.');
         
-        // Example: Show a refresh button
-        if (this.showRefreshPrompt()) {
-            const refreshBtn = document.createElement('button');
-            refreshBtn.id = 'pwa-refresh-btn';
-            refreshBtn.className = 'PhiH-pwa-refresh-btn';
-            refreshBtn.innerHTML = `
-                <span class="PhiH-pwa-refresh-icon">🔄</span>
-                <span data-i18n="PhiH.pwa.updateAvailable">Update Available</span>
-            `;
-            refreshBtn.addEventListener('click', () => {
-                window.location.reload();
-            });
+        // Create refresh button
+        const refreshBtn = document.createElement('button');
+        refreshBtn.id = 'pwa-refresh-btn';
+        refreshBtn.className = 'PhiH-pwa-refresh-btn';
+        refreshBtn.innerHTML = `
+            <span class="PhiH-pwa-refresh-icon">🔄</span>
+            <span class="PhiH-pwa-refresh-text" data-i18n="PhiH.pwa.updateAvailable">Update Available</span>
+        `;
+        refreshBtn.addEventListener('click', () => {
+            window.location.reload();
+        });
 
-            const headerControls = document.querySelector('.PhiH-general-header-controls');
-            if (headerControls) {
-                headerControls.appendChild(refreshBtn);
+        // Add to header controls or body
+        const headerControls = document.querySelector('.PhiH-general-header-controls');
+        if (headerControls) {
+            // Remove existing refresh button if any
+            const existingBtn = document.getElementById('pwa-refresh-btn');
+            if (existingBtn) {
+                existingBtn.remove();
             }
-
-            // Update translations for refresh button
-            this.updateTranslations();
+            headerControls.appendChild(refreshBtn);
         }
+
+        // Update translations
+        this.updateTranslations();
     }
 
     // Show install success message
     showInstallSuccessMessage() {
-        // You can implement a custom success message here
-        console.log('App installed successfully!');
+        localStorage.setItem('pwa-installed', 'true');
         
-        // Example: Show a temporary success message
         const successMsg = document.createElement('div');
         successMsg.className = 'PhiH-pwa-success-msg';
         successMsg.innerHTML = `
@@ -210,10 +261,11 @@ class PWAHandler {
             right: 20px;
             background: var(--secondary-color);
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
             z-index: 10000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            box-shadow: var(--box-shadow);
+            font-weight: 600;
         `;
 
         document.body.appendChild(successMsg);
@@ -225,18 +277,58 @@ class PWAHandler {
             }
         }, 3000);
 
-        // Update translations for success message
         this.updateTranslations();
     }
 
-    // Check if we should show refresh prompt
-    showRefreshPrompt() {
-        return true; // Customize this logic as needed
+    // Show cannot install message
+    showCannotInstallMessage() {
+        this.showTemporaryMessage('PhiH.pwa.cannotInstall', 'var(--primary-color)');
+    }
+
+    // Show install declined message
+    showInstallDeclinedMessage() {
+        this.showTemporaryMessage('PhiH.pwa.installDeclined', 'var(--accent-color)');
+    }
+
+    // Show install error message
+    showInstallErrorMessage() {
+        this.showTemporaryMessage('PhiH.pwa.installError', '#ff4757');
+    }
+
+    // Helper for temporary messages
+    showTemporaryMessage(translationKey, backgroundColor) {
+        const msg = document.createElement('div');
+        msg.className = 'PhiH-pwa-temp-msg';
+        msg.innerHTML = `<span data-i18n="${translationKey}">Installation not available</span>`;
+        msg.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: ${backgroundColor};
+            color: white;
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
+            z-index: 10000;
+            box-shadow: var(--box-shadow);
+            font-weight: 600;
+        `;
+
+        document.body.appendChild(msg);
+
+        setTimeout(() => {
+            if (msg.parentNode) {
+                msg.parentNode.removeChild(msg);
+            }
+        }, 3000);
+
+        this.updateTranslations();
     }
 
     // Add PWA translations
     addPwaTranslations() {
-        if (!window.currentTranslations) return;
+        if (!window.currentTranslations) {
+            window.currentTranslations = {};
+        }
 
         // Add PWA translations to all language sets
         const pwaTranslations = {
@@ -254,16 +346,37 @@ class PWAHandler {
                 en: "App installed successfully!",
                 fr: "Application installée avec succès !",
                 ar: "تم تثبيت التطبيق بنجاح!"
+            },
+            cannotInstall: {
+                en: "Installation not available",
+                fr: "Installation non disponible",
+                ar: "التثبيت غير متاح"
+            },
+            installDeclined: {
+                en: "Installation cancelled",
+                fr: "Installation annulée",
+                ar: "تم إلغاء التثبيت"
+            },
+            installError: {
+                en: "Installation failed",
+                fr: "Échec de l'installation",
+                ar: "فشل التثبيت"
             }
         };
 
-        // Merge PWA translations with existing translations
-        Object.keys(window.currentTranslations).forEach(lang => {
-            if (window.currentTranslations[lang]) {
-                window.currentTranslations[lang]["PhiH.pwa.install"] = pwaTranslations.install[lang] || pwaTranslations.install.en;
-                window.currentTranslations[lang]["PhiH.pwa.updateAvailable"] = pwaTranslations.updateAvailable[lang] || pwaTranslations.updateAvailable.en;
-                window.currentTranslations[lang]["PhiH.pwa.installSuccess"] = pwaTranslations.installSuccess[lang] || pwaTranslations.installSuccess.en;
+        // Ensure all language objects exist
+        ['en', 'fr', 'ar'].forEach(lang => {
+            if (!window.currentTranslations[lang]) {
+                window.currentTranslations[lang] = {};
             }
+        });
+
+        // Merge PWA translations
+        Object.keys(pwaTranslations).forEach(key => {
+            const translation = pwaTranslations[key];
+            Object.keys(translation).forEach(lang => {
+                window.currentTranslations[lang][`PhiH.pwa.${key}`] = translation[lang];
+            });
         });
     }
 
@@ -280,17 +393,20 @@ class PWAHandler {
 
 // Initialize PWA Handler when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    window.pwaHandler = new PWAHandler();
+    // Wait a bit for other scripts to initialize
+    setTimeout(() => {
+        window.pwaHandler = new PWAHandler();
+    }, 1000);
 });
 
-// Add PWA button styles to main.css
+// Add PWA button styles
 const pwaStyles = `
 /* PWA Install Button Styles */
 .PhiH-pwa-install-btn {
     background: linear-gradient(135deg, var(--accent-color) 0%, #8a7cff 100%);
     color: white;
     border: none;
-    padding: 8px 16px;
+    padding: 10px 16px;
     border-radius: var(--border-radius);
     cursor: pointer;
     font-weight: 600;
@@ -302,13 +418,11 @@ const pwaStyles = `
     box-shadow: var(--box-shadow);
     border: 1px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
-    background-color: rgba(162, 155, 254, 0.9) !important;
 }
 
 .PhiH-pwa-install-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(162, 155, 254, 0.4);
-    background-color: rgba(162, 155, 254, 1) !important;
 }
 
 .PhiH-pwa-install-icon {
@@ -319,7 +433,7 @@ const pwaStyles = `
     background: linear-gradient(135deg, var(--secondary-color) 0%, #f9c74f 100%);
     color: white;
     border: none;
-    padding: 8px 16px;
+    padding: 10px 16px;
     border-radius: var(--border-radius);
     cursor: pointer;
     font-weight: 600;
@@ -330,14 +444,11 @@ const pwaStyles = `
     transition: all 0.3s ease;
     box-shadow: var(--box-shadow);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    background-color: rgba(253, 203, 110, 0.9) !important;
 }
 
 .PhiH-pwa-refresh-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(253, 203, 110, 0.4);
-    background-color: rgba(253, 203, 110, 1) !important;
 }
 
 .PhiH-pwa-refresh-icon {
@@ -352,26 +463,18 @@ const pwaStyles = `
 
 /* Dark mode adjustments for PWA buttons */
 [data-theme="dark"] .PhiH-pwa-install-btn {
-    background-color: rgba(162, 155, 254, 0.8) !important;
-}
-
-[data-theme="dark"] .PhiH-pwa-install-btn:hover {
-    background-color: rgba(162, 155, 254, 1) !important;
+    background: linear-gradient(135deg, #7c6ef7 0%, #6c5ce7 100%);
 }
 
 [data-theme="dark"] .PhiH-pwa-refresh-btn {
-    background-color: rgba(255, 215, 0, 0.8) !important;
-}
-
-[data-theme="dark"] .PhiH-pwa-refresh-btn:hover {
-    background-color: rgba(255, 215, 0, 1) !important;
+    background: linear-gradient(135deg, #ffd700 0%, #fdcb6e 100%);
 }
 
 /* Responsive adjustments for PWA buttons */
 @media (max-width: 768px) {
     .PhiH-pwa-install-btn,
     .PhiH-pwa-refresh-btn {
-        padding: 6px 12px;
+        padding: 8px 12px;
         font-size: 0.8rem;
     }
     
@@ -382,17 +485,32 @@ const pwaStyles = `
 }
 
 @media (max-width: 480px) {
-    .PhiH-general-header-controls {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
     .PhiH-pwa-install-btn,
     .PhiH-pwa-refresh-btn {
         order: 3;
         margin-top: 0.5rem;
-        width: 100%;
-        justify-content: center;
+        width: auto;
+    }
+}
+
+/* Floating button style for when header controls not found */
+.PhiH-pwa-install-btn.floating {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
     }
 }
 `;

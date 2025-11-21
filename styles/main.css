@@ -596,3 +596,150 @@ em {
 [data-theme="dark"] .PhiH-lesson1-content-section {
     color: #e2e8f0;
 }
+    /* Enhanced Styling for Related Quotes and Texts */
+    .PhiH-quotes-container {
+        margin-top: 2rem;
+    }
+    
+    .PhiH-quotes-section-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        text-align: center;
+        position: relative;
+        padding-bottom: 0.8rem;
+    }
+    
+    .PhiH-quotes-section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--gradient-primary);
+        border-radius: 2px;
+    }
+    
+    .PhiH-quotes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+    
+    .PhiH-quote-card {
+        background-color: var(--card-bg);
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        padding: 1.8rem;
+        transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .PhiH-quote-card::before {
+        content: '"';
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        font-size: 4rem;
+        color: var(--primary-color);
+        opacity: 0.15;
+        font-family: Georgia, serif;
+        line-height: 1;
+    }
+    
+    .PhiH-quote-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 15px 30px rgba(60, 179, 113, 0.25);
+    }
+    
+    .PhiH-quote-text {
+        font-style: italic;
+        line-height: 1.7;
+        margin-bottom: 1.2rem;
+        position: relative;
+        z-index: 1;
+        flex-grow: 1;
+        font-size: 1.05rem;
+    }
+    
+    .PhiH-quote-author {
+        font-weight: 600;
+        color: var(--accent-color);
+        text-align: right;
+        margin-top: auto;
+        padding-top: 1rem;
+        border-top: 1px dashed var(--border-color);
+        font-size: 0.95rem;
+    }
+    
+    .PhiH-quote-author::before {
+        content: "— ";
+    }
+    
+    .PhiH-quote-source {
+        font-size: 0.85rem;
+        color: var(--secondary-color);
+        font-style: italic;
+        margin-top: 0.3rem;
+        text-align: right;
+    }
+    
+    /* Different color variants for quote cards */
+    .PhiH-quote-card:nth-child(3n+1) {
+        border-top: 4px solid var(--primary-color);
+    }
+    
+    .PhiH-quote-card:nth-child(3n+2) {
+        border-top: 4px solid var(--accent-color);
+    }
+    
+    .PhiH-quote-card:nth-child(3n+3) {
+        border-top: 4px solid var(--secondary-color);
+    }
+    
+    /* RTL support for quotes */
+    body.rtl .PhiH-quote-card::before {
+        left: auto;
+        right: 15px;
+    }
+    
+    body.rtl .PhiH-quote-author {
+        text-align: left;
+    }
+    
+    body.rtl .PhiH-quote-source {
+        text-align: left;
+    }
+    
+    @media (max-width: 768px) {
+        .PhiH-quotes-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .PhiH-quote-card {
+            padding: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .PhiH-quote-card {
+            padding: 1.2rem;
+        }
+        
+        .PhiH-quote-text {
+            font-size: 1rem;
+        }
+    }

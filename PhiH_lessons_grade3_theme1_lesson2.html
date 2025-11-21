@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevailing Opinion - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#3cb371">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Medium Sea Green + Dark Gray Theme */
+        :root {
+            --primary-color: #3cb371;
+            --secondary-color: #696969;
+            --accent-color: #2e8b57;
+            --light-color: #f0f8f4;
+            --dark-color: #2f4f4f;
+            --text-color: #2f4f4f;
+            --heading-color: #2f4f4f;
+            --background-color: #f9fdfb;
+            --card-bg: #ffffff;
+            --definition-bg: #e8f5e9;
+            --border-color: #a8d5b5;
+            --table-even-bg: #f5f9f6;
+            --table-hover-bg: #e8f5e9;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(60, 179, 113, 0.15);
+            --gradient-primary: linear-gradient(135deg, #3cb371 0%, #2e8b57 100%);
+            --gradient-secondary: linear-gradient(135deg, #696969 0%, #2f4f4f 100%);
+            --gradient-green: linear-gradient(135deg, #3cb371 0%, #2f4f4f 100%);
+            --gradient-gray: linear-gradient(135deg, #696969 0%, #2f4f4f 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #4cd98c;
+            --secondary-color: #808080;
+            --accent-color: #3cb371;
+            --light-color: #3a4a3a;
+            --dark-color: #1a1a1a;
+            --text-color: #e0f0e5;
+            --heading-color: #f7fafc;
+            --background-color: #2f4f4f;
+            --card-bg: #3a4a3a;
+            --definition-bg: #2d5a3d;
+            --border-color: #4cd98c;
+            --table-even-bg: #2f4f4f;
+            --table-hover-bg: #2d5a3d;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #4cd98c 0%, #3cb371 100%);
+            --gradient-secondary: linear-gradient(135deg, #808080 0%, #696969 100%);
+            --gradient-green: linear-gradient(135deg, #4cd98c 0%, #3a4a3a 100%);
+            --gradient-gray: linear-gradient(135deg, #808080 0%, #696969 100%);
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Definition Cards Layout */
+        .PhiH-definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-definition-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(60, 179, 113, 0.2);
+        }
+        
+        .PhiH-definition-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-definition-card-content ul {
+            padding-left: 1.2rem;
+            margin: 0.8rem 0;
+        }
+        
+        .PhiH-definition-card-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        /* Expand/Collapse Functionality */
+        .PhiH-expandable-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .PhiH-expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .PhiH-expandable-header:hover {
+            background: var(--gradient-green);
+        }
+        
+        .PhiH-expandable-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        .PhiH-expandable-content {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            border-top: none;
+        }
+        
+        .PhiH-expandable-content.hidden {
+            display: none;
+        }
+        
+        .PhiH-expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-expand-icon.expanded {
+            transform: rotate(180deg);
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        /* RTL support for definition cards */
+        body.rtl .PhiH-definition-card-content ul {
+            padding-left: 0;
+            padding-right: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .PhiH-definitions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-prevailing-opinion" dir="ltr">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="PhiH-lesson1-container">
+        <div class="PhiH-lesson1-header">
+            <h1 class="PhiH-lesson1-title" data-i18n="PhiH.lessons.prevailingOpinion.title">الرأي السائد</h1>
+            <div class="PhiH-lesson1-level" data-i18n="PhiH.lessons.prevailingOpinion.level">السنة الثالثة ثانوي - الفلسفة</div>
+        </div>
+        
+        <!-- Introduction Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="introHeader">
+                <h3 data-i18n="PhiH.lessons.prevailingOpinion.introduction.title">التمهيد</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="introContent">
+                <p data-i18n="PhiH.lessons.prevailingOpinion.introduction.text1">
+                    إنّ وجود الإنسان في العالم لا يكون إلاّ وجودا مع الآخرين. غير أنّ هذه المَعِيّة لا تخلو من مفارقة.
+                </p>
+                <p data-i18n="PhiH.lessons.prevailingOpinion.introduction.text2">
+                    ففي الوقت الذي يُنظَر فيه إلى عصرنا على أنّه الإعلانُ الفعليّ عن ولادة الفرد في نطاق مجتمعات
+                    موسومة بالتنوّع تعترف بحريّة الأفراد في تأصيل هويّتهم، يكشف الواقع عن صورة مغايرة لهذه
+                    المجتمعات التي أضحت أحاديّة تُفرَضُ فيها أنماط تفكير وإحساس وسلوك بواسطة وسائل الإعلام
+                    والدعاية وصناعة الترفيه مما يؤدي إلى ذوبان الأفراد داخل حشود غير متمايزة.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Definitions -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="definitionsHeader">
+                <h3 data-i18n="PhiH.lessons.prevailingOpinion.definitions.title">التعريفات</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="definitionsContent">
+                <div class="PhiH-definitions-grid">
+                    <!-- Card 1: Rationalization -->
+                    <div class="PhiH-definition-card">
+                        <h3 class="PhiH-definition-card-title" data-i18n="PhiH.lessons.prevailingOpinion.definitions.card1.title">العقلنة Rationalité</h3>
+                        <div class="PhiH-definition-card-content">
+                            <ul>
+                                <li data-i18n="PhiH.lessons.prevailingOpinion.definitions.card1.point1"><strong>العقلنة لغة:</strong> نوع من الحماية اللا إدراكية التي يقوم بها العقل في حالة تعرضه للضغط أو القلق لمواجهة الخوف الشخصي أو المشاكل.</li>
+                                <li data-i18n="PhiH.lessons.prevailingOpinion.definitions.card1.point2">العقلنة مسار معرفي أخلاقي في مقاربة مشكلات الواقع الاجتماعي بتشعباته و تعقيداته و اتجاهاته المختلفة, وهو المسار الآمن التي تعتمده الأمم الحية التي تسعى الى التقدم و التنمية و حل المشاكل بعيدا عن الانفعال و التعصب والانجراف وراء الغرائز والأهواء. "بقلم زهير فياض"</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2: Crowd -->
+                    <div class="PhiH-definition-card">
+                        <h3 class="PhiH-definition-card-title" data-i18n="PhiH.lessons.prevailingOpinion.definitions.card2.title">الحشد Foule</h3>
+                        <div class="PhiH-definition-card-content">
+                            <ul>
+                                <li data-i18n="PhiH.lessons.prevailingOpinion.definitions.card2.point1"><strong>الحشد لغة:</strong> الحشد من الرجال, من الأمكنة, المجموعة. ← جماعة من الناس في مكان محدود نسبيا والجمع : حشود. وهو أوسع من الجماعة.</li>
+                                <li data-i18n="PhiH.lessons.prevailingOpinion.definitions.card2.point2">الحشد محدود في الزمان و المكان , مؤقت و نادر , يعاد تكوينه بنفس الشكل قد يكون أعضاؤه محددي الهوية يتقاسمون نفس الاهتمامات ولكن لا توجد بينهم بينية ولا تنظيم اجتماعي أو معنوي يربط بينهم , أعضاؤه متساوون ومدركون أن تجمعهم مؤقت أملاه الحدث العارض ويمكن أن يحقق هدفا ما.</li>
+                                <li data-i18n="PhiH.lessons.prevailingOpinion.definitions.card2.point3">الحشد هو تجمع كبير للناس في موقف معين نحو هدف معين وفي مكان معين تختفي فيه صور الأفراد وينتج عنه سلوك مختلف عن السلوك العادي للأفراد.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3: Public -->
+                    <div class="PhiH-definition-card">
+                        <h3 class="PhiH-definition-card-title" data-i18n="PhiH.lessons.prevailingOpinion.definitions.card3.title">الجمهور Public</h3>
+                        <div class="PhiH-definition-card-content">
+                            <ul>
+                                <li data-i18n="PhiH.lessons.prevailingOpinion.definitions.card3.point1"><strong>الجمهور لغة:</strong> الجمهور من الناس : جلهم و أشرافهم- ومن الأشياء معضمها (ج) جماهير "القاموس الجديد للطلاب"</li>
+                                <li data-i18n="PhiH.lessons.prevailingOpinion.definitions.card3.point2">الجمهور : يخرج بإرادته من أجل قضية تشغله يكون أكثر حرية و لا يحركه أحد وغير محدد الهوية , أعضاؤه مدركون أن تجمعهم دائم حتى الانتهاء من الحدث.</li>
+                                <li data-i18n="PhiH.lessons.prevailingOpinion.definitions.card3.point3">إن العملية الإعلامية ترتكز أساسا على أربع عناصر أساسية هي المرسل أو الذي يقوم بتوجيه عنصر الرسالة عن طريق الوسيلة الإعلامية (الصحيفة,الإذاعة,التلفاز, الأنترنات..)إلى المتلقي أو وهو ما يعرف بالجمهور أما العملية الاتصالية فيكون فيه بالإضافة إلى عناصر العملية الإعلامية عنصر رجع الصدى حيث تنعكس فيه العملية الإعلامية فيصبح المتلقي مرسلا والمرسل متلقيا.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4: Fanaticism -->
+                    <div class="PhiH-definition-card">
+                        <h3 class="PhiH-definition-card-title" data-i18n="PhiH.lessons.prevailingOpinion.definitions.card4.title">التعصب Fanatisme</h3>
+                        <div class="PhiH-definition-card-content">
+                            <ul>
+                                <li data-i18n="PhiH.lessons.prevailingOpinion.definitions.card4.point1"><strong>التعصب لغة:</strong> تعصب,يتعصب,تعصبا لفلان و معه : مال إليه وقام بنصرته.</li>
+                                <li data-i18n="PhiH.lessons.prevailingOpinion.definitions.card4.point2">التعصب هو عدم قبول الحق عند ظهور الدليل. التعصب ظاهرة قديمة حديثة ترتبط بها العديد من المفاهيم كالتمييز العنصري والديني و الطائفي و الطبقي و لعلك استنتجت من دراستك للحروب و الصراعات التاريخية أن كثيرا منها كان سببه التعصب للدين أو للعروق أو اللون و مازالت هذه الظاهرة تتجدد باستمرار في عصرنا الحالي و تشكل آفة تدمر الشعوب.</li>
+                                <li data-i18n="PhiH.lessons.prevailingOpinion.definitions.card4.point3">وقد صدر عن الجمعية العامة للأمم المتحدة في تشرين الثاني عام 1981م إعلان خاص بشأن القضاء على جميع أشكال التعصب و التمييز القائمين على أساس الدين أو المعتقدات , وتعني أي تمييز أو استثناء أو تقييد أو تفضيل يقوم على أساس الدين أو المعتقد ويكون أثره تعطيل الاعتراف بحقوق الإنسان و الحريات الأساسية أو التمتع بها أو ممارستها على أساس من المساواة. "ويكيبيديا"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Text Analysis -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="text1Header">
+                <h3 data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.title">النص 1: في استبداد "الهم" - مارتان هيدغير</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="text1Content">
+                
+                <!-- Text Introduction -->
+                <div class="PhiH-text-card">
+                    <h4 class="PhiH-text-card-title" data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.introduction.title">مقدمة النص</h4>
+                    <p data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.introduction.content">
+                        يناقش النص مفهوم "الهم" (Das Man) عند هيدغير كسلطة مجهولة وغير شخصية تفرض نمطاً موحداً للتفكير والشعور والسلوك في الحياة اليومية، مما يؤدي إلى فقدان الفرد لأصالته وتفرده.
+                    </p>
+                </div>
+                
+                <!-- Text Content -->
+                <div class="PhiH-text-card">
+                    <h4 class="PhiH-text-card-title" data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.text.title">النص</h4>
+                    <div class="text-analysis-indent">
+                        <p data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.text.p1">
+                            ينطوي العالم (1) المحيط المباشر، فوريًا، على تنظيم لعالم محيط
+                            عموميّ وعلى انشغال به. فكلّ فردٍ باستعماله لوسائل النقل
+                            المشتركة ولخدمات الإعلام (الصحف مثلا) هو شبيه بأيّ فردٍ آخر.
+                            وهذا الوجود المشترك يذوّبني تماما كموجود إنسانيّ مخصوص
+                            في نمط وجود الآخر بحيث أنّ الآخرين لا يزدادون
+                            إلا اختفاء على مستوى ما لديهم من تميّز ومن خصوصيّة صريحة.
+                            إنّ وضع اللاّاختلاف واللاّتميّز هذا هو ما يُتيح للهُم أن ينمّي استبداده الخاص.
+                            فنحن نلهو ونتسلّى مثلما "الهُم" يلهو، ونحن نرى ونحكم على الأدب أو الفنّ مثلما "الهُم" يرى
+                            ويحكم، ونحن ننأى عن "الجموع الغفيرة" مثلما ينأى "الهُم" عنها،
+                            ونعتبر "مُشيناً" ما يعتبره "الهُم" كذلك. إنّ هذا "الهُم" وهو ليس
+                            شخصا بعينه وهو كل النّاس، بالرغم من كونه ليس حاصل
+                            مجموعهم، هو الذي يُملي على الواقع اليوميّ نمط وجوده.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Author Presentation -->
+                <div class="PhiH-text-card">
+                    <h4 class="PhiH-text-card-title" data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.author.title">تقديم المؤلف</h4>
+                    <div class="PhiH-author-card">
+                        <div class="PhiH-author-image-container">
+                            <!-- Placeholder for author image -->
+                            <div class="PhiH-author-image" style="background-color: var(--border-color); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                                🧠
+                            </div>
+                        </div>
+                        <div class="PhiH-author-info">
+                            <p data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.author.content">
+                                مارتان هيدغير (1889-1976) فيلسوف ألمانيّ معاصر. المسألة الأساسيّة بالنسبة إلى الفكر الفلسفي،
+                                في نظره، هي تلك التي استهلّها اليونانيون بسؤال: ما هو الوجود ؟ غير
+                                أنّ هذا السؤال تعرّض إلى مصير غريب جعله يُنسى لينساق الفلاسفة
+                                نحو البحث في موجود ما على أنّه هو الوجود. إنّ هذا النسيان هو ما
+                                ينبغي إنهاؤه لاستعادة السؤال من جديد في ضوء التمييز الصارم بين
+                                الوجود والموجود. وهو ما لا يُمكن أن يتحقّق إلا انطلاقا من تحليل
+                                للموجود الذي ينفرد بطرح هذا السؤال وهو الإنسان. يكشف ذلك
+                                التحليل أنّ الإنسان كائن الزمنيّة بما هي حركة تعال دائم بين بُعديْ
+                                الماضي والحاضر انطلاقا من المستقبل، حركة تجعله خارج ذاته
+                                باستمرار ليصوغ مشروع عالم ممكن. من مؤلّفاته الوجود
+                                والزمان (1927) ... ما هي الميتافيزيقا (...)، شعاب (1950) مسائل
+                                (I وII وIII وIV)، رسالة حول النزعة الإنسانيّة (...)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lexical -->
+                <div class="PhiH-text-card">
+                    <h4 class="PhiH-text-card-title" data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.lexical.title">المفاهيم والمصطلحات</h4>
+                    <ul>
+                        <li data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.lexical.item1"><strong>العالم:</strong> ليس العالم، في نظر "هيدغير"، مجموع الموجودات التي تؤلّف الكون، بل هو أفقٌ دلاليّ يتكوّن بالإنسان ويكوّنه، فهو الإطار الماديّ والثقافيّ الذي يكون فيه الفرد مباشرة مع آخرين فيعي ذاته وواقعه ولكنّه يمتلك القدرة على التعالي عليه وتجاوزه نحو صياغة مشروع عالم مغاير يكون منطلقا لدلالات جديدة تغيّر فهم العالم وتهيئ بالتالي شروط تحويله.</li>
+                        <li data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.lexical.item2"><strong>الموجود الإنسانيّ:</strong> لا يتحدّد الإنسان، في نظر "هيدغير"، كذات يحتويها عالم من الموضوعات بل ككائن في العالم، فهو كائن "تكمن ماهيته في وجوده" باعتباره وجودا يقوم على الانفتاح والتعالي والتجاوز. فالإنسان لا يكون إلا مع الآخرين في إطار سياق اجتماعي وثقافيّ محدّد، ولكنّه في آن واحد لا يكون إلا خارج ذاته فيدرك أنه كائن قُذف به في العالم ويتجّه نحو الموت فيستمد من ذلك القدرة على تجاوز الوجود الجماعي المشترك والرتيب لينحت لنفسه أصالة من خلال مشروع ينفتح على المستقبل.</li>
+                        <li data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.lexical.item3"><strong>الهُم:</strong> هو السمة التي تطبع الوجود مع الآخرين في عالم عموميّ مشترك بحيث يَمثُل كسلطة استبداديّة غير مشخّصة تفرض نظاما من القيم يحدّد النمط الذي ينبغي أن يوجّه الحكم أو الإحساس أو الفعل فيسبّب ذلك توحيدا وتماثلا ينحطّان بالموجود الإنسانيّ ويُفرغانه من كل أصالة وتفرّد.</li>
+                    </ul>
+                </div>
+                
+                <!-- Questions -->
+                <div class="PhiH-text-card">
+                    <h4 class="PhiH-text-card-title" data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.questions.title">أسئلة الفهم والتحليل</h4>
+                    <ol>
+                        <li data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.questions.q1">ما الذي يجعل من الانخراط في اليوميّ مصدر نفي لكل خصوصيّة وتفرّد ؟</li>
+                        <li data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.questions.q2">بيّن من خلال الأمثلة الواردة في النصّ كيف يُمارس "الهُم" استبداده ؟</li>
+                        <li data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.questions.q3">هل من تناقض بين اعتبار "الهُم" سلطة مستبدّة وبين القول أنّه ليس شخصا بعينه ولا حاصل مجموع كل النّاس ؟</li>
+                        <li data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.questions.q4">كيف تتحدّد سُبل التحرّر من سلطة "الهُم" باتجاه التفرّد والأصالة واستعادة الإنسان لمسؤوليّته عن ذاته؟</li>
+                        <li data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.questions.q5">هل يكفي أن نتمرّد على بعض الظواهر الاجتماعية كي نضمن أصالة الفكر والممارسة ؟</li>
+                    </ol>
+                </div>
+                
+                <!-- Answers -->
+                <div class="PhiH-text-card">
+                    <h4 class="PhiH-text-card-title" data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.answers.title">إجابات مقترحة</h4>
+                    <div class="text-analysis-indent">
+                        <h5 class="text-analysis-level-2" data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                        <p data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.answers.a1.content">
+                            الانخراط في اليومي يؤدي إلى نفي الخصوصية والتفرّد لأنه يفرض نمطاً موحداً للتفكير والشعور والسلوك. فوسائل النقل المشتركة وخدمات الإعلام تجعل كل فرد يشبه أي فرد آخر، مما يؤدي إلى ذوبان الموجود الإنساني المخصوص في نمط وجود الآخر، وبالتالي اختفاء التميّز والخصوصية الصريحة.
+                        </p>
+                        
+                        <h5 class="text-analysis-level-2" data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                        <p data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.answers.a2.content">
+                            يمارس "الهُم" استبداده من خلال تحديد أنماط التسلية والترفيه، وتوجيه الأحكام حول الأدب والفن، وتحديد ما يعتبر مشيناً أو مقبولاً. فالنص يوضح أن "نحن نلهو ونتسلّى مثلما 'الهُم' يلهو، ونحن نرى ونحكم على الأدب أو الفنّ مثلما 'الهُم' يرى ويحكم".
+                        </p>
+                        
+                        <h5 class="text-analysis-level-2" data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                        <p data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.answers.a3.content">
+                            لا يوجد تناقض بين اعتبار "الهُم" سلطة مستبدّة وبين كونه ليس شخصاً بعينه ولا حاصل مجموع كل الناس. فـ"الهُم" هو سلطة مجهولة وغير مشخصة، تمثل نمطاً سائداً للتفكير والسلوك يفرض نفسه على الأفراد دون أن يكون مرتبطاً بشخص معين أو مجموعة محددة.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Text Analysis -->
+                <div class="PhiH-text-card">
+                    <h4 class="PhiH-text-card-title" data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.analysis.title">تحليل النص</h4>
+                    <div class="text-analysis-indent">
+                        <h5 class="text-analysis-level-2" data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                        <p data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.analysis.thesis.content">
+                            يطرح هيدغير فكرة "الهُم" (Das Man) كسلطة مجهولة تفرض نمطاً موحداً للوجود اليومي، مما يؤدي إلى فقدان الأصالة والتفرد لدى الإنسان.
+                        </p>
+                        
+                        <h5 class="text-analysis-level-2" data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.title">آليات عمل "الهُم":</h5>
+                        <ul>
+                            <li data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.item1">وسائل النقل المشتركة وخدمات الإعلام التي تجعل الأفراد متشابهين.</li>
+                            <li data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.item2">تحديد أنماط التسلية والترفيه المقبولة.</li>
+                            <li data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.item3">توجيه الأحكام حول الأدب والفن.</li>
+                            <li data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.item4">تحديد ما يعتبر مشيناً أو مقبولاً في السلوك.</li>
+                        </ul>
+                        
+                        <h5 class="text-analysis-level-2" data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.title">نتائج سيطرة "الهُم":</h5>
+                        <ul>
+                            <li data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.item1">فقدان الخصوصية والتفرّد.</li>
+                            <li data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.item2">ذوبان الموجود الإنساني في نمط وجود الآخر.</li>
+                            <li data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.item3">اختفاء التميّز والخصوصية الصريحة.</li>
+                            <li data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.item4">فرض نمط موحد للوجود اليومي.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Quotes -->
+                <div class="PhiH-text-card">
+                    <h4 class="PhiH-text-card-title" data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.quotes.title">شواهد ونصوص ذات صلة</h4>
+                    <div class="text-analysis-indent">
+                        <blockquote>
+                            <p data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.quotes.quote1">
+                                "إن الذين حافظوا على العقيدة القديمة خشوا من أن يكونوا قد
+                                بقوا وحدهم أوفياء لها، وما داموا يخشون العزلة أكثر من خشيتهم
+                                الخطأ، فإنّهم قد التحقوا بالحشد دون التفكير على شاكلته. وما لم
+                                يكن غير إحساس جزء من الأمة بدا كما لو كان رأي الجميع ولاح من
+                                ثمّة قاهرا حتّى بالنسبة إلى أولئك الذين أضفوا عليه ذلك المظهر
+                                الزائف." - ألكسيس دي توكفيل، النظام القديم والثورة.
+                            </p>
+                        </blockquote>
+                        
+                        <blockquote>
+                            <p data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.quotes.quote2">
+                                "إن أعظم عقاب بالنسبة إليّ هو أن أكون وحيدا في الجنّة" - غوته، خواطر.
+                            </p>
+                        </blockquote>
+                        
+                        <blockquote>
+                            <p data-i18n="PhiH.lessons.prevailingOpinion.analysis.text1.quotes.quote3">
+                                "في العزلة يضني المعتزل قلبه بنفسه، ومع الجماعة فإنّ الحشد هو ما يضنيه" - نيتشه، إنساني مفرط في الإنسانية.
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Conclusion -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="conclusionHeader">
+                <h3 data-i18n="PhiH.lessons.prevailingOpinion.conclusion.title">الخاتمة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="conclusionContent">
+                <p data-i18n="PhiH.lessons.prevailingOpinion.conclusion.text1">
+                    يبرز مفهوم الرأي السائد كقوة خفية تؤثر بشكل كبير على حياة الأفراد والمجتمعات. فمن خلال وسائل الإعلام والتواصل الاجتماعي والدعاية، يفرض "الهُم" - كما يصفه هيدغير - نمطاً موحداً للتفكير والشعور والسلوك، مما يؤدي إلى فقدان الأصالة والتفرد.
+                </p>
+                <p data-i18n="PhiH.lessons.prevailingOpinion.conclusion.text2">
+                    يواجه الفرد المعاصر تحدياً حقيقياً في الحفاظ على استقلاليته الفكرية وأصالته في مواجهة هذه القوى الاجتماعية المسيطرة. فالقدرة على مقاومة الرأي السائد تتطلب وعياً نقدياً وشجاعة فكرية تمكن الفرد من تجاوز النمطية والتماثل نحو التفرّد والإبداع.
+                </p>
+                <p data-i18n="PhiH.lessons.prevailingOpinion.conclusion.text3">
+                    في النهاية، تبقى الفلسفة أداة أساسية لفهم هذه الظواهر الاجتماعية المعقدة وتطوير آليات نقدية تمكن الفرد من الحفاظ على حريته الفكرية واستقلاليته في عالم يتسم بتزايد الضغوط نحو التوحيد والتماثل.
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Page-specific translations for prevailing opinion lesson
+        window.translations_PhiHprevailing = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                
+                // Prevailing Opinion lesson specific translations
+                "PhiH.lessons.prevailingOpinion.title": "L'Opinion Courante",
+                "PhiH.lessons.prevailingOpinion.level": "3ème Secondaire - Philosophie",
+                
+                "PhiH.lessons.prevailingOpinion.introduction.title": "Introduction",
+                "PhiH.lessons.prevailingOpinion.introduction.text1": "L'existence de l'être humain dans le monde ne peut être qu'une existence avec les autres. Cependant, cette coexistence n'est pas sans paradoxe.",
+                "PhiH.lessons.prevailingOpinion.introduction.text2": "À une époque où notre ère est considérée comme l'annonce effective de la naissance de l'individu dans des sociétés marquées par la diversité qui reconnaissent la liberté des individus à ancrer leur identité, la réalité révèle une image différente de ces sociétés devenues monolithiques où des modes de pensée, de sensation et de comportement sont imposés par les médias, la propagande et l'industrie du divertissement, conduisant à la dissolution des individus dans des foules indifférenciées.",
+                
+                "PhiH.lessons.prevailingOpinion.definitions.title": "Définitions",
+                "PhiH.lessons.prevailingOpinion.definitions.card1.title": "Rationalisation : العقلنة",
+                "PhiH.lessons.prevailingOpinion.definitions.card1.point1": "<strong>Rationalisation linguistiquement:</strong> type de protection non cognitive que l'esprit effectue lorsqu'il est exposé à une pression ou à une anxiété pour faire face à la peur personnelle ou aux problèmes.",
+                "PhiH.lessons.prevailingOpinion.definitions.card1.point2": "La rationalisation est une voie cognitive et éthique pour aborder les problèmes de la réalité sociale avec ses ramifications, ses complexités et ses différentes orientations. C'est la voie sûre adoptée par les nations vivantes qui cherchent le progrès, le développement et la résolution des problèmes loin de l'émotion, du fanatisme et de la dérive derrière les instincts et les désirs. \"Par Zuhair Fayyad\"",
+                
+                "PhiH.lessons.prevailingOpinion.definitions.card2.title": "Foule : الحشد",
+                "PhiH.lessons.prevailingOpinion.definitions.card2.point1": "<strong>Foule linguistiquement:</strong> la foule d'hommes, de lieux, le groupe. ← un groupe de personnes dans un espace relativement limité et le pluriel : foules. C'est plus large que le groupe.",
+                "PhiH.lessons.prevailingOpinion.definitions.card2.point2": "La foule est limitée dans le temps et l'espace, temporaire et rare, reconstituée de la même manière, ses membres peuvent avoir une identité définie partageant les mêmes intérêts mais il n'y a pas de structure ni d'organisation sociale ou morale qui les relie, ses membres sont égaux et conscients que leur rassemblement est temporaire dicté par l'événement fortuit et peut atteindre un certain objectif.",
+                "PhiH.lessons.prevailingOpinion.definitions.card2.point3": "La foule est un grand rassemblement de personnes dans une situation particulière vers un objectif spécifique et dans un lieu spécifique où les images des individus disparaissent et où il en résulte un comportement différent du comportement ordinaire des individus.",
+                
+                "PhiH.lessons.prevailingOpinion.definitions.card3.title": "Public : الجمهور",
+                "PhiH.lessons.prevailingOpinion.definitions.card3.point1": "<strong>Public linguistiquement:</strong> le public des gens : la plupart d'entre eux et leurs nobles - et des choses la plupart d'entre elles (pluriel) publics \"Le Nouveau Dictionnaire des Étudiants\"",
+                "PhiH.lessons.prevailingOpinion.definitions.card3.point2": "Le public : sort de son propre gré pour une cause qui le préoccupe, il est plus libre et personne ne le pousse et il n'a pas d'identité définie, ses membres sont conscients que leur rassemblement est permanent jusqu'à la fin de l'événement.",
+                "PhiH.lessons.prevailingOpinion.definitions.card3.point3": "Le processus médiatique repose essentiellement sur quatre éléments fondamentaux : l'émetteur ou celui qui dirige l'élément du message via le média (journal, radio, télévision, Internet...) vers le récepteur ou ce qu'on appelle le public, tandis que le processus de communication comprend en plus des éléments du processus médiatique l'élément de rétroaction où le processus médiatique se reflète, faisant du récepteur un émetteur et de l'émetteur un récepteur.",
+                
+                "PhiH.lessons.prevailingOpinion.definitions.card4.title": "Fanatisme : التعصب",
+                "PhiH.lessons.prevailingOpinion.definitions.card4.point1": "<strong>Fanatisme linguistiquement:</strong> fanatisme, être fanatique, fanatisme envers quelqu'un et avec lui : s'est incliné vers lui et l'a soutenu.",
+                "PhiH.lessons.prevailingOpinion.definitions.card4.point2": "Le fanatisme est le refus d'accepter la vérité lorsque la preuve apparaît. Le fanatisme est un phénomène ancien et moderne lié à de nombreux concepts tels que la discrimination raciale, religieuse, sectaire et de classe, et vous avez peut-être déduit de votre étude des guerres et des conflits historiques que beaucoup d'entre eux étaient dus au fanatisme religieux, ethnique ou racial, et ce phénomène continue de se renouveler constamment à notre époque et constitue un fléau qui détruit les peuples.",
+                "PhiH.lessons.prevailingOpinion.definitions.card4.point3": "L'Assemblée générale des Nations Unies a publié en novembre 1981 une déclaration spéciale sur l'élimination de toutes les formes d'intolérance et de discrimination fondées sur la religion ou les croyances, signifiant toute distinction, exclusion, restriction ou préférence fondée sur la religion ou la croyance et dont l'effet est d'annuler la reconnaissance des droits de l'homme et des libertés fondamentales ou d'en jouir ou de les exercer sur une base d'égalité. \"Wikipedia\"",
+                
+                "PhiH.lessons.prevailingOpinion.analysis.text1.title": "Texte 1 : Sur la tyrannie du \"On\" - Martin Heidegger",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.introduction.title": "Introduction au texte",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.introduction.content": "Le texte discute du concept du \"On\" (Das Man) chez Heidegger en tant que pouvoir anonyme et impersonnel qui impose un modèle uniforme de pensée, de sentiment et de comportement dans la vie quotidienne, conduisant à la perte de l'authenticité et de l'individualité de la personne.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.text.title": "Texte",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.text.p1": "Le monde environnant immédiat implique, de manière immédiate, une organisation d'un monde environnant général et une préoccupation pour celui-ci. Chaque individu, en utilisant les moyens de transport communs et les services d'information (journaux par exemple), est semblable à tout autre individu. Et cette coexistence me dissout complètement en tant qu'être humain particulier dans le mode d'être de l'autre, de sorte que les autres ne font qu'augmenter leur disparition au niveau de ce qu'ils ont de distinctif et de particularité explicite. Cette situation de non-différence et de non-distinction est ce qui permet au \"On\" de développer sa propre tyrannie. Nous nous amusons et nous divertissons comme le \"On\" s'amuse, nous voyons et jugeons la littérature ou l'art comme le \"On\" voit et juge, nous nous éloignons des \"foules immenses\" comme le \"On\" s'en éloigne, et nous considérons comme \"honteux\" ce que le \"On\" considère comme tel. Ce \"On\" qui n'est personne en particulier et qui est tout le monde, bien qu'il ne soit pas la somme d'entre eux, est celui qui dicte au quotidien son mode d'existence.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.author.title": "Présentation de l'auteur",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.author.content": "Martin Heidegger (1889-1976) philosophe allemand contemporain. La question fondamentale pour la pensée philosophique, selon lui, est celle que les Grecs ont inaugurée par la question : qu'est-ce que l'être ? Mais cette question a connu un destin étrange qui l'a fait oublier, conduisant les philosophes à rechercher un étant particulier comme étant l'être. Cet oubli est ce qui doit être mis fin pour retrouver la question à nouveau à la lumière de la distinction rigoureuse entre l'être et l'étant. Ce qui ne peut être réalisé qu'à partir d'une analyse de l'étant qui est seul à poser cette question, à savoir l'homme. Cette analyse révèle que l'homme est l'être de la temporalité en tant que mouvement constant de dépassement entre les deux dimensions du passé et du présent à partir du futur, un mouvement qui le met constamment hors de lui-même pour formuler un projet de monde possible. Parmi ses œuvres : Être et Temps (1927) ... Qu'est-ce que la métaphysique ? (...), Chemins (1950), Questions (I et II et III et IV), Lettre sur l'humanisme (...)",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.lexical.title": "Concepts et terminologie",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.lexical.item1": "<strong>Le monde:</strong> Le monde, selon Heidegger, n'est pas l'ensemble des étants qui composent l'univers, mais un horizon sémantique qui se constitue par l'homme et le constitue, c'est le cadre matériel et culturel dans lequel l'individu est directement avec d'autres, prend conscience de lui-même et de sa réalité, mais possède la capacité de le dépasser et de le transcender vers la formulation d'un projet de monde différent qui est le point de départ de nouvelles significations qui changent la compréhension du monde et préparent ainsi les conditions de sa transformation.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.lexical.item2": "<strong>L'être humain:</strong> L'homme, selon Heidegger, n'est pas déterminé comme un sujet contenant un monde d'objets, mais comme un être-dans-le-monde, c'est un être \"dont l'essence réside dans son existence\" en tant qu'existence fondée sur l'ouverture, le dépassement et la transcendance. L'homme n'est qu'avec les autres dans un contexte social et culturel spécifique, mais en même temps, il n'est qu'en dehors de lui-même, réalisant qu'il est un être jeté dans le monde et se dirigeant vers la mort, tirant de cela la capacité de dépasser l'existence collective commune et routinière pour sculpter sa propre authenticité à travers un projet qui s'ouvre sur l'avenir.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.lexical.item3": "<strong>Le \"On\":</strong> C'est la caractéristique qui marque l'existence avec les autres dans un monde commun général de sorte qu'il apparaît comme un pouvoir tyrannique non personnifié qui impose un système de valeurs déterminant le mode qui doit orienter le jugement, le sentiment ou l'action, provoquant ainsi une unification et une similitude qui dégradent l'être humain et le vident de toute authenticité et singularité.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.title": "Questions de compréhension et d'analyse",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.q1": "Qu'est-ce qui fait que l'engagement dans le quotidien est une source de négation de toute particularité et singularité ?",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.q2": "Montrez à travers les exemples mentionnés dans le texte comment le \"On\" exerce sa tyrannie ?",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.q3": "Y a-t-il une contradiction entre considérer le \"On\" comme un pouvoir tyrannique et dire qu'il n'est personne en particulier ni la somme de tous les gens ?",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.q4": "Comment déterminer les voies de libération du pouvoir du \"On\" vers la singularité et l'authenticité et la restauration de la responsabilité de l'homme envers lui-même ?",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.q5": "Suffit-il de se rebeller contre certains phénomènes sociaux pour garantir l'authenticité de la pensée et de la pratique ?",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.title": "Réponses suggérées",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a1.title": "Réponse à la première question:",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a1.content": "L'engagement dans le quotidien conduit à la négation de la particularité et de la singularité car il impose un modèle uniforme de pensée, de sentiment et de comportement. Les moyens de transport communs et les services médiatiques rendent chaque individu semblable à tout autre individu, conduisant à la dissolution de l'être humain particulier dans le mode d'être de l'autre, et donc à la disparition de la distinction et de la particularité explicite.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a2.content": "Le \"On\" exerce sa tyrannie en déterminant les modes de divertissement et de loisir, en orientant les jugements sur la littérature et l'art, et en déterminant ce qui est considéré comme honteux ou acceptable. Le texte précise que \"nous nous amusons et nous divertissons comme le 'On' s'amuse, nous voyons et jugeons la littérature ou l'art comme le 'On' voit et juge\".",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a3.content": "Il n'y a pas de contradiction entre considérer le \"On\" comme un pouvoir tyrannique et le fait qu'il ne soit personne en particulier ni la somme de tous les gens. Le \"On\" est un pouvoir anonyme et non personnifié, représentant un modèle dominant de pensée et de comportement qui s'impose aux individus sans être lié à une personne spécifique ou à un groupe défini.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.title": "Analyse du texte",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.thesis.title": "Thèse principale:",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.thesis.content": "Heidegger présente l'idée du \"On\" (Das Man) comme un pouvoir anonyme qui impose un modèle uniforme d'existence quotidienne, conduisant à la perte d'authenticité et d'individualité chez l'homme.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.title": "Mécanismes de fonctionnement du \"On\":",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.item1": "Les moyens de transport communs et les services médiatiques qui rendent les individus similaires.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.item2": "La détermination des modes de divertissement et de loisir acceptables.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.item3": "L'orientation des jugements sur la littérature et l'art.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.item4": "La détermination de ce qui est considéré comme honteux ou acceptable dans le comportement.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.title": "Conséquences de la domination du \"On\":",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.item1": "Perte de particularité et de singularité.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.item2": "Dissolution de l'être humain dans le mode d'être de l'autre.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.item3": "Disparition de la distinction et de la particularité explicite.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.item4": "Imposition d'un modèle uniforme d'existence quotidienne.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.quotes.title": "Citations et textes connexes",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.quotes.quote1": "\"Ceux qui ont maintenu l'ancienne croyance craignaient d'être restés seuls fidèles à elle, et tant qu'ils craignaient la solitude plus qu'ils ne craignaient l'erreur, ils ont rejoint la foule sans penser à leur manière. Et ce n'était qu'un sentiment d'une partie de la nation qui semblait être l'opinion de tous et apparaissait alors comme contraignant même pour ceux qui lui avaient donné cette apparence trompeuse.\" - Alexis de Tocqueville, L'Ancien Régime et la Révolution.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.quotes.quote2": "\"Le plus grand châtiment pour moi serait d'être seul au paradis\" - Goethe, Pensées.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.quotes.quote3": "\"Dans la solitude, le solitaire consume son cœur par lui-même, et avec la communauté, c'est la foule qui le consume\" - Nietzsche, Humain, trop humain.",
+                
+                "PhiH.lessons.prevailingOpinion.conclusion.title": "Conclusion",
+                "PhiH.lessons.prevailingOpinion.conclusion.text1": "Le concept de l'opinion courante émerge comme une force cachée qui influence considérablement la vie des individus et des sociétés. À travers les médias, les réseaux sociaux et la propagande, le \"On\" - comme le décrit Heidegger - impose un modèle uniforme de pensée, de sentiment et de comportement, conduisant à la perte d'authenticité et d'individualité.",
+                "PhiH.lessons.prevailingOpinion.conclusion.text2": "L'individu contemporain fait face à un véritable défi pour préserver son indépendance intellectuelle et son authenticité face à ces forces sociales dominantes. La capacité à résister à l'opinion courante nécessite une conscience critique et un courage intellectuel permettant à l'individu de dépasser la standardisation et la similitude vers la singularité et la créativité.",
+                "PhiH.lessons.prevailingOpinion.conclusion.text3": "En fin de compte, la philosophie reste un outil essentiel pour comprendre ces phénomènes sociaux complexes et développer des mécanismes critiques permettant à l'individu de préserver sa liberté intellectuelle et son indépendance dans un monde caractérisé par des pressions croissantes vers l'unification et la similitude."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                
+                // Prevailing Opinion lesson specific translations
+                "PhiH.lessons.prevailingOpinion.title": "Prevailing Opinion",
+                "PhiH.lessons.prevailingOpinion.level": "3rd Secondary - Philosophy",
+                
+                "PhiH.lessons.prevailingOpinion.introduction.title": "Introduction",
+                "PhiH.lessons.prevailingOpinion.introduction.text1": "Human existence in the world can only be an existence with others. However, this coexistence is not without paradox.",
+                "PhiH.lessons.prevailingOpinion.introduction.text2": "At a time when our era is considered the actual announcement of the birth of the individual in societies marked by diversity that recognize the freedom of individuals to establish their identity, reality reveals a different picture of these societies that have become monolithic where patterns of thinking, feeling and behavior are imposed through media, propaganda and the entertainment industry, leading to the dissolution of individuals into undifferentiated crowds.",
+                
+                "PhiH.lessons.prevailingOpinion.definitions.title": "Definitions",
+                "PhiH.lessons.prevailingOpinion.definitions.card1.title": "Rationalization : العقلنة",
+                "PhiH.lessons.prevailingOpinion.definitions.card1.point1": "<strong>Rationalization linguistically:</strong> a type of non-cognitive protection that the mind performs when exposed to pressure or anxiety to confront personal fear or problems.",
+                "PhiH.lessons.prevailingOpinion.definitions.card1.point2": "Rationalization is a cognitive and ethical path in approaching the problems of social reality with its ramifications, complexities and different directions. It is the safe path adopted by living nations that seek progress, development and problem-solving away from emotion, fanaticism and drifting behind instincts and desires. \"By Zuhair Fayyad\"",
+                
+                "PhiH.lessons.prevailingOpinion.definitions.card2.title": "Crowd : الحشد",
+                "PhiH.lessons.prevailingOpinion.definitions.card2.point1": "<strong>Crowd linguistically:</strong> the crowd of men, of places, the group. ← a group of people in a relatively limited space and the plural: crowds. It is broader than the group.",
+                "PhiH.lessons.prevailingOpinion.definitions.card2.point2": "The crowd is limited in time and space, temporary and rare, reconstituted in the same way, its members may have a defined identity sharing the same interests but there is no structure or social or moral organization linking them, its members are equal and aware that their gathering is temporary dictated by the fortuitous event and can achieve a certain goal.",
+                "PhiH.lessons.prevailingOpinion.definitions.card2.point3": "The crowd is a large gathering of people in a particular situation towards a specific goal and in a specific place where the images of individuals disappear and it results in behavior different from the ordinary behavior of individuals.",
+                
+                "PhiH.lessons.prevailingOpinion.definitions.card3.title": "Public : الجمهور",
+                "PhiH.lessons.prevailingOpinion.definitions.card3.point1": "<strong>Public linguistically:</strong> the public of people: most of them and their nobles - and of things most of them (plural) publics \"The New Student Dictionary\"",
+                "PhiH.lessons.prevailingOpinion.definitions.card3.point2": "The public: goes out of their own will for a cause that concerns them, they are more free and no one pushes them and they have no defined identity, its members are aware that their gathering is permanent until the end of the event.",
+                "PhiH.lessons.prevailingOpinion.definitions.card3.point3": "The media process is based essentially on four basic elements: the sender or the one who directs the message element via the media (newspaper, radio, television, Internet...) to the receiver or what is known as the public, while the communication process includes in addition to the elements of the media process the feedback element where the media process is reflected, making the receiver a sender and the sender a receiver.",
+                
+                "PhiH.lessons.prevailingOpinion.definitions.card4.title": "Fanaticism : التعصب",
+                "PhiH.lessons.prevailingOpinion.definitions.card4.point1": "<strong>Fanaticism linguistically:</strong> fanaticism, to be fanatical, fanaticism towards someone and with him: leaned towards him and supported him.",
+                "PhiH.lessons.prevailingOpinion.definitions.card4.point2": "Fanaticism is the refusal to accept the truth when evidence appears. Fanaticism is an ancient and modern phenomenon related to many concepts such as racial, religious, sectarian and class discrimination, and you may have deduced from your study of wars and historical conflicts that many of them were due to religious, ethnic or racial fanaticism, and this phenomenon continues to renew itself constantly in our time and constitutes a scourge that destroys peoples.",
+                "PhiH.lessons.prevailingOpinion.definitions.card4.point3": "The United Nations General Assembly issued in November 1981 a special declaration on the elimination of all forms of intolerance and discrimination based on religion or belief, meaning any distinction, exclusion, restriction or preference based on religion or belief and whose effect is to annul the recognition of human rights and fundamental freedoms or to enjoy or exercise them on a basis of equality. \"Wikipedia\"",
+                
+                "PhiH.lessons.prevailingOpinion.analysis.text1.title": "Text 1: On the Tyranny of the \"They\" - Martin Heidegger",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.introduction.title": "Text Introduction",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.introduction.content": "The text discusses Heidegger's concept of the \"They\" (Das Man) as an anonymous and impersonal power that imposes a uniform pattern of thinking, feeling and behavior in daily life, leading to the loss of authenticity and individuality of the person.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.text.title": "Text",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.text.p1": "The immediate surrounding world immediately involves an organization of a general surrounding world and a preoccupation with it. Every individual, by using common means of transport and information services (newspapers for example), is similar to any other individual. And this coexistence completely dissolves me as a particular human being in the mode of being of the other, so that the others only increase their disappearance at the level of what they have of distinctive and explicit particularity. This situation of non-difference and non-distinction is what allows the \"They\" to develop its own tyranny. We amuse ourselves and entertain ourselves as the \"They\" amuses itself, we see and judge literature or art as the \"They\" sees and judges, we distance ourselves from the \"immense crowds\" as the \"They\" distances itself from them, and we consider \"shameful\" what the \"They\" considers as such. This \"They\" which is no one in particular and which is everyone, although it is not the sum of them, is the one that dictates to daily reality its mode of existence.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.author.title": "Author Presentation",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.author.content": "Martin Heidegger (1889-1976) contemporary German philosopher. The fundamental question for philosophical thought, in his view, is the one that the Greeks initiated with the question: what is being? But this question underwent a strange fate that made it forgotten, leading philosophers to search for a particular being as being. This forgetting is what must be ended to recover the question again in the light of the rigorous distinction between being and being. This can only be achieved through an analysis of the being that alone poses this question, namely man. This analysis reveals that man is the being of temporality as a constant movement of transcendence between the two dimensions of the past and the present from the future, a movement that constantly puts him outside himself to formulate a project of a possible world. Among his works: Being and Time (1927) ... What is Metaphysics? (...), Paths (1950), Questions (I and II and III and IV), Letter on Humanism (...)",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.lexical.title": "Concepts and Terminology",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.lexical.item1": "<strong>The world:</strong> The world, according to Heidegger, is not the set of beings that make up the universe, but a semantic horizon that is constituted by man and constitutes him, it is the material and cultural framework in which the individual is directly with others, becomes aware of himself and his reality, but possesses the capacity to transcend it and go beyond it towards the formulation of a project of a different world that is the starting point for new meanings that change the understanding of the world and thus prepare the conditions for its transformation.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.lexical.item2": "<strong>Human being:</strong> Man, according to Heidegger, is not determined as a subject containing a world of objects, but as a being-in-the-world, he is a being \"whose essence lies in his existence\" as an existence based on openness, transcendence and going beyond. Man is only with others in a specific social and cultural context, but at the same time, he is only outside himself, realizing that he is a being thrown into the world and heading towards death, drawing from that the ability to transcend common and routine collective existence to carve out his own authenticity through a project that opens onto the future.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.lexical.item3": "<strong>The \"They\":</strong> It is the characteristic that marks existence with others in a general common world so that it appears as a non-personified tyrannical power that imposes a system of values determining the mode that should guide judgment, feeling or action, thus causing a unification and similarity that degrade the human being and empty him of all authenticity and singularity.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.title": "Comprehension and Analysis Questions",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.q1": "What makes engagement in the daily a source of denial of all particularity and singularity?",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.q2": "Show through the examples mentioned in the text how the \"They\" exercises its tyranny?",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.q3": "Is there a contradiction between considering the \"They\" as a tyrannical power and saying that it is no one in particular nor the sum of all people?",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.q4": "How to determine the paths of liberation from the power of the \"They\" towards singularity and authenticity and the restoration of man's responsibility for himself?",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.q5": "Is it enough to rebel against some social phenomena to guarantee the authenticity of thought and practice?",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.title": "Suggested Answers",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a1.title": "Answer to the first question:",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a1.content": "Engagement in the daily leads to the denial of particularity and singularity because it imposes a uniform pattern of thinking, feeling and behavior. Common means of transport and media services make every individual similar to any other individual, leading to the dissolution of the particular human being in the mode of being of the other, and thus the disappearance of distinction and explicit particularity.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a2.title": "Answer to the second question:",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a2.content": "The \"They\" exercises its tyranny by determining the modes of entertainment and leisure, directing judgments about literature and art, and determining what is considered shameful or acceptable. The text specifies that \"we amuse ourselves and entertain ourselves as the 'They' amuses itself, we see and judge literature or art as the 'They' sees and judges\".",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a3.title": "Answer to the third question:",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a3.content": "There is no contradiction between considering the \"They\" as a tyrannical power and the fact that it is no one in particular nor the sum of all people. The \"They\" is an anonymous and non-personified power, representing a dominant pattern of thinking and behavior that imposes itself on individuals without being linked to a specific person or a defined group.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.title": "Text Analysis",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.thesis.title": "Main thesis:",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.thesis.content": "Heidegger presents the idea of the \"They\" (Das Man) as an anonymous power that imposes a uniform pattern of daily existence, leading to the loss of authenticity and individuality in man.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.title": "Mechanisms of the \"They\" functioning:",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.item1": "Common means of transport and media services that make individuals similar.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.item2": "Determination of acceptable modes of entertainment and leisure.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.item3": "Direction of judgments about literature and art.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.item4": "Determination of what is considered shameful or acceptable in behavior.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.title": "Consequences of the domination of the \"They\":",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.item1": "Loss of particularity and singularity.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.item2": "Dissolution of the human being in the mode of being of the other.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.item3": "Disappearance of distinction and explicit particularity.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.item4": "Imposition of a uniform pattern of daily existence.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.quotes.title": "Related Quotes and Texts",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.quotes.quote1": "\"Those who maintained the old belief feared that they had remained alone faithful to it, and as long as they feared solitude more than they feared error, they joined the crowd without thinking in their own way. And it was only a feeling of a part of the nation that seemed to be the opinion of all and appeared then as binding even for those who had given it that deceptive appearance.\" - Alexis de Tocqueville, The Old Regime and the Revolution.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.quotes.quote2": "\"The greatest punishment for me would be to be alone in paradise\" - Goethe, Thoughts.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.quotes.quote3": "\"In solitude, the solitary consumes his heart by himself, and with the community, it is the crowd that consumes him\" - Nietzsche, Human, All Too Human.",
+                
+                "PhiH.lessons.prevailingOpinion.conclusion.title": "Conclusion",
+                "PhiH.lessons.prevailingOpinion.conclusion.text1": "The concept of prevailing opinion emerges as a hidden force that significantly influences the lives of individuals and societies. Through media, social networks and propaganda, the \"They\" - as described by Heidegger - imposes a uniform pattern of thinking, feeling and behavior, leading to the loss of authenticity and individuality.",
+                "PhiH.lessons.prevailingOpinion.conclusion.text2": "The contemporary individual faces a real challenge in preserving his intellectual independence and authenticity in the face of these dominant social forces. The ability to resist prevailing opinion requires critical awareness and intellectual courage enabling the individual to transcend standardization and similarity towards singularity and creativity.",
+                "PhiH.lessons.prevailingOpinion.conclusion.text3": "Ultimately, philosophy remains an essential tool for understanding these complex social phenomena and developing critical mechanisms that enable the individual to preserve his intellectual freedom and independence in a world characterized by increasing pressures towards unification and similarity."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                
+                // Prevailing Opinion lesson specific translations
+                "PhiH.lessons.prevailingOpinion.title": "الرأي السائد",
+                "PhiH.lessons.prevailingOpinion.level": "السنة الثالثة ثانوي - الفلسفة",
+                
+                "PhiH.lessons.prevailingOpinion.introduction.title": "التمهيد",
+                "PhiH.lessons.prevailingOpinion.introduction.text1": "إنّ وجود الإنسان في العالم لا يكون إلاّ وجودا مع الآخرين. غير أنّ هذه المَعِيّة لا تخلو من مفارقة.",
+                "PhiH.lessons.prevailingOpinion.introduction.text2": "ففي الوقت الذي يُنظَر فيه إلى عصرنا على أنّه الإعلانُ الفعليّ عن ولادة الفرد في نطاق مجتمعات موسومة بالتنوّع تعترف بحريّة الأفراد في تأصيل هويّتهم، يكشف الواقع عن صورة مغايرة لهذه المجتمعات التي أضحت أحاديّة تُفرَضُ فيها أنماط تفكير وإحساس وسلوك بواسطة وسائل الإعلام والدعاية وصناعة الترفيه مما يؤدي إلى ذوبان الأفراد داخل حشود غير متمايزة.",
+                
+                "PhiH.lessons.prevailingOpinion.definitions.title": "التعريفات",
+                "PhiH.lessons.prevailingOpinion.definitions.card1.title": "العقلنة Rationalité",
+                "PhiH.lessons.prevailingOpinion.definitions.card1.point1": "<strong>العقلنة لغة:</strong> نوع من الحماية اللا إدراكية التي يقوم بها العقل في حالة تعرضه للضغط أو القلق لمواجهة الخوف الشخصي أو المشاكل.",
+                "PhiH.lessons.prevailingOpinion.definitions.card1.point2": "العقلنة مسار معرفي أخلاقي في مقاربة مشكلات الواقع الاجتماعي بتشعباته و تعقيداته و اتجاهاته المختلفة, وهو المسار الآمن التي تعتمده الأمم الحية التي تسعى الى التقدم و التنمية و حل المشاكل بعيدا عن الانفعال و التعصب والانجراف وراء الغرائز والأهواء. \"بقلم زهير فياض\"",
+                
+                "PhiH.lessons.prevailingOpinion.definitions.card2.title": "الحشد Foule",
+                "PhiH.lessons.prevailingOpinion.definitions.card2.point1": "<strong>الحشد لغة:</strong> الحشد من الرجال, من الأمكنة, المجموعة. ← جماعة من الناس في مكان محدود نسبيا والجمع : حشود. وهو أوسع من الجماعة.",
+                "PhiH.lessons.prevailingOpinion.definitions.card2.point2": "الحشد محدود في الزمان و المكان , مؤقت و نادر , يعاد تكوينه بنفس الشكل قد يكون أعضاؤه محددي الهوية يتقاسمون نفس الاهتمامات ولكن لا توجد بينهم بينية ولا تنظيم اجتماعي أو معنوي يربط بينهم , أعضاؤه متساوون ومدركون أن تجمعهم مؤقت أملاه الحدث العارض ويمكن أن يحقق هدفا ما.",
+                "PhiH.lessons.prevailingOpinion.definitions.card2.point3": "الحشد هو تجمع كبير للناس في موقف معين نحو هدف معين وفي مكان معين تختفي فيه صور الأفراد وينتج عنه سلوك مختلف عن السلوك العادي للأفراد.",
+                
+                "PhiH.lessons.prevailingOpinion.definitions.card3.title": "الجمهور Public",
+                "PhiH.lessons.prevailingOpinion.definitions.card3.point1": "<strong>الجمهور لغة:</strong> الجمهور من الناس : جلهم و أشرافهم- ومن الأشياء معضمها (ج) جماهير \"القاموس الجديد للطلاب\"",
+                "PhiH.lessons.prevailingOpinion.definitions.card3.point2": "الجمهور : يخرج بإرادته من أجل قضية تشغله يكون أكثر حرية و لا يحركه أحد وغير محدد الهوية , أعضاؤه مدركون أن تجمعهم دائم حتى الانتهاء من الحدث.",
+                "PhiH.lessons.prevailingOpinion.definitions.card3.point3": "إن العملية الإعلامية ترتكز أساسا على أربع عناصر أساسية هي المرسل أو الذي يقوم بتوجيه عنصر الرسالة عن طريق الوسيلة الإعلامية (الصحيفة,الإذاعة,التلفاز, الأنترنات..)إلى المتلقي أو وهو ما يعرف بالجمهور أما العملية الاتصالية فيكون فيه بالإضافة إلى عناصر العملية الإعلامية عنصر رجع الصدى حيث تنعكس فيه العملية الإعلامية فيصبح المتلقي مرسلا والمرسل متلقيا.",
+                
+                "PhiH.lessons.prevailingOpinion.definitions.card4.title": "التعصب Fanatisme",
+                "PhiH.lessons.prevailingOpinion.definitions.card4.point1": "<strong>التعصب لغة:</strong> تعصب,يتعصب,تعصبا لفلان و معه : مال إليه وقام بنصرته.",
+                "PhiH.lessons.prevailingOpinion.definitions.card4.point2": "التعصب هو عدم قبول الحق عند ظهور الدليل. التعصب ظاهرة قديمة حديثة ترتبط بها العديد من المفاهيم كالتمييز العنصري والديني و الطائفي و الطبقي و لعلك استنتجت من دراستك للحروب و الصراعات التاريخية أن كثيرا منها كان سببه التعصب للدين أو للعروق أو اللون و مازالت هذه الظاهرة تتجدد باستمرار في عصرنا الحالي و تشكل آفة تدمر الشعوب.",
+                "PhiH.lessons.prevailingOpinion.definitions.card4.point3": "وقد صدر عن الجمعية العامة للأمم المتحدة في تشرين الثاني عام 1981م إعلان خاص بشأن القضاء على جميع أشكال التعصب و التمييز القائمين على أساس الدين أو المعتقدات , وتعني أي تمييز أو استثناء أو تقييد أو تفضيل يقوم على أساس الدين أو المعتقد ويكون أثره تعطيل الاعتراف بحقوق الإنسان و الحريات الأساسية أو التمتع بها أو ممارستها على أساس من المساواة. \"ويكيبيديا\"",
+                
+                "PhiH.lessons.prevailingOpinion.analysis.text1.title": "النص 1: في استبداد \"الهم\" - مارتان هيدغير",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.introduction.title": "مقدمة النص",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.introduction.content": "يناقش النص مفهوم \"الهم\" (Das Man) عند هيدغير كسلطة مجهولة وغير شخصية تفرض نمطاً موحداً للتفكير والشعور والسلوك في الحياة اليومية، مما يؤدي إلى فقدان الفرد لأصالته وتفرده.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.text.title": "النص",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.text.p1": "ينطوي العالم (1) المحيط المباشر، فوريًا، على تنظيم لعالم محيط عموميّ وعلى انشغال به. فكلّ فردٍ باستعماله لوسائل النقل المشتركة ولخدمات الإعلام (الصحف مثلا) هو شبيه بأيّ فردٍ آخر. وهذا الوجود المشترك يذوّبني تماما كموجود إنسانيّ مخصوص في نمط وجود الآخر بحيث أنّ الآخرين لا يزدادون إلا اختفاء على مستوى ما لديهم من تميّز ومن خصوصيّة صريحة. إنّ وضع اللاّاختلاف واللاّتميّز هذا هو ما يُتيح للهُم أن ينمّي استبداده الخاص. فنحن نلهو ونتسلّى مثلما \"الهُم\" يلهو، ونحن نرى ونحكم على الأدب أو الفنّ مثلما \"الهُم\" يرى ويحكم، ونحن ننأى عن \"الجموع الغفيرة\" مثلما ينأى \"الهُم\" عنها، ونعتبر \"مُشيناً\" ما يعتبره \"الهُم\" كذلك. إنّ هذا \"الهُم\" وهو ليس شخصا بعينه وهو كل النّاس، بالرغم من كونه ليس حاصل مجموعهم، هو الذي يُملي على الواقع اليوميّ نمط وجوده.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.author.title": "تقديم المؤلف",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.author.content": "مارتان هيدغير (1889-1976) فيلسوف ألمانيّ معاصر. المسألة الأساسيّة بالنسبة إلى الفكر الفلسفي، في نظره، هي تلك التي استهلّها اليونانيون بسؤال: ما هو الوجود ؟ غير أنّ هذا السؤال تعرّض إلى مصير غريب جعله يُنسى لينساق الفلاسفة نحو البحث في موجود ما على أنّه هو الوجود. إنّ هذا النسيان هو ما ينبغي إنهاؤه لاستعادة السؤال من جديد في ضوء التمييز الصارم بين الوجود والموجود. وهو ما لا يُمكن أن يتحقّق إلا انطلاقا من تحليل للموجود الذي ينفرد بطرح هذا السؤال وهو الإنسان. يكشف ذلك التحليل أنّ الإنسان كائن الزمنيّة بما هي حركة تعال دائم بين بُعديْ الماضي والحاضر انطلاقا من المستقبل، حركة تجعله خارج ذاته باستمرار ليصوغ مشروع عالم ممكن. من مؤلّفاته الوجود والزمان (1927) ... ما هي الميتافيزيقا (...)، شعاب (1950) مسائل (I وII وIII وIV)، رسالة حول النزعة الإنسانيّة (...)",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.lexical.title": "المفاهيم والمصطلحات",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.lexical.item1": "<strong>العالم:</strong> ليس العالم، في نظر \"هيدغير\"، مجموع الموجودات التي تؤلّف الكون، بل هو أفقٌ دلاليّ يتكوّن بالإنسان ويكوّنه، فهو الإطار الماديّ والثقافيّ الذي يكون فيه الفرد مباشرة مع آخرين فيعي ذاته وواقعه ولكنّه يمتلك القدرة على التعالي عليه وتجاوزه نحو صياغة مشروع عالم مغاير يكون منطلقا لدلالات جديدة تغيّر فهم العالم وتهيئ بالتالي شروط تحويله.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.lexical.item2": "<strong>الموجود الإنسانيّ:</strong> لا يتحدّد الإنسان، في نظر \"هيدغير\"، كذات يحتويها عالم من الموضوعات بل ككائن في العالم، فهو كائن \"تكمن ماهيته في وجوده\" باعتباره وجودا يقوم على الانفتاح والتعالي والتجاوز. فالإنسان لا يكون إلا مع الآخرين في إطار سياق اجتماعي وثقافيّ محدّد، ولكنّه في آن واحد لا يكون إلا خارج ذاته فيدرك أنه كائن قُذف به في العالم ويتجّه نحو الموت فيستمد من ذلك القدرة على تجاوز الوجود الجماعي المشترك والرتيب لينحت لنفسه أصالة من خلال مشروع ينفتح على المستقبل.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.lexical.item3": "<strong>الهُم:</strong> هو السمة التي تطبع الوجود مع الآخرين في عالم عموميّ مشترك بحيث يَمثُل كسلطة استبداديّة غير مشخّصة تفرض نظاما من القيم يحدّد النمط الذي ينبغي أن يوجّه الحكم أو الإحساس أو الفعل فيسبّب ذلك توحيدا وتماثلا ينحطّان بالموجود الإنسانيّ ويُفرغانه من كل أصالة وتفرّد.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.title": "أسئلة الفهم والتحليل",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.q1": "ما الذي يجعل من الانخراط في اليوميّ مصدر نفي لكل خصوصيّة وتفرّد ؟",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.q2": "بيّن من خلال الأمثلة الواردة في النصّ كيف يُمارس \"الهُم\" استبداده ؟",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.q3": "هل من تناقض بين اعتبار \"الهُم\" سلطة مستبدّة وبين القول أنّه ليس شخصا بعينه ولا حاصل مجموع كل النّاس ؟",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.q4": "كيف تتحدّد سُبل التحرّر من سلطة \"الهُم\" باتجاه التفرّد والأصالة واستعادة الإنسان لمسؤوليّته عن ذاته؟",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.questions.q5": "هل يكفي أن نتمرّد على بعض الظواهر الاجتماعية كي نضمن أصالة الفكر والممارسة ؟",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.title": "إجابات مقترحة",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a1.content": "الانخراط في اليومي يؤدي إلى نفي الخصوصية والتفرّد لأنه يفرض نمطاً موحداً للتفكير والشعور والسلوك. فوسائل النقل المشتركة وخدمات الإعلام تجعل كل فرد يشبه أي فرد آخر، مما يؤدي إلى ذوبان الموجود الإنساني المخصوص في نمط وجود الآخر، وبالتالي اختفاء التميّز والخصوصية الصريحة.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a2.content": "يمارس \"الهُم\" استبداده من خلال تحديد أنماط التسلية والترفيه، وتوجيه الأحكام حول الأدب والفن، وتحديد ما يعتبر مشيناً أو مقبولاً. فالنص يوضح أن \"نحن نلهو ونتسلّى مثلما 'الهُم' يلهو، ونحن نرى ونحكم على الأدب أو الفنّ مثلما 'الهُم' يرى ويحكم\".",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.answers.a3.content": "لا يوجد تناقض بين اعتبار \"الهُم\" سلطة مستبدّة وبين كونه ليس شخصاً بعينه ولا حاصل مجموع كل الناس. فـ\"الهُم\" هو سلطة مجهولة وغير مشخصة، تمثل نمطاً سائداً للتفكير والسلوك يفرض نفسه على الأفراد دون أن يكون مرتبطاً بشخص معين أو مجموعة محددة.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.title": "تحليل النص",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.thesis.content": "يطرح هيدغير فكرة \"الهُم\" (Das Man) كسلطة مجهولة تفرض نمطاً موحداً للوجود اليومي، مما يؤدي إلى فقدان الأصالة والتفرد لدى الإنسان.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.title": "آليات عمل \"الهُم\":",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.item1": "وسائل النقل المشتركة وخدمات الإعلام التي تجعل الأفراد متشابهين.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.item2": "تحديد أنماط التسلية والترفيه المقبولة.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.item3": "توجيه الأحكام حول الأدب والفن.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.mechanisms.item4": "تحديد ما يعتبر مشيناً أو مقبولاً في السلوك.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.title": "نتائج سيطرة \"الهُم\":",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.item1": "فقدان الخصوصية والتفرّد.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.item2": "ذوبان الموجود الإنساني في نمط وجود الآخر.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.item3": "اختفاء التميّز والخصوصية الصريحة.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.analysis.consequences.item4": "فرض نمط موحد للوجود اليومي.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.quotes.title": "شواهد ونصوص ذات صلة",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.quotes.quote1": "\"إن الذين حافظوا على العقيدة القديمة خشوا من أن يكونوا قد بقوا وحدهم أوفياء لها، وما داموا يخشون العزلة أكثر من خشيتهم الخطأ، فإنّهم قد التحقوا بالحشد دون التفكير على شاكلته. وما لم يكن غير إحساس جزء من الأمة بدا كما لو كان رأي الجميع ولاح من ثمّة قاهرا حتّى بالنسبة إلى أولئك الذين أضفوا عليه ذلك المظهر الزائف.\" - ألكسيس دي توكفيل، النظام القديم والثورة.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.quotes.quote2": "\"إن أعظم عقاب بالنسبة إليّ هو أن أكون وحيدا في الجنّة\" - غوته، خواطر.",
+                "PhiH.lessons.prevailingOpinion.analysis.text1.quotes.quote3": "\"في العزلة يضني المعتزل قلبه بنفسه، ومع الجماعة فإنّ الحشد هو ما يضنيه\" - نيتشه، إنساني مفرط في الإنسانية.",
+                
+                "PhiH.lessons.prevailingOpinion.conclusion.title": "الخاتمة",
+                "PhiH.lessons.prevailingOpinion.conclusion.text1": "يبرز مفهوم الرأي السائد كقوة خفية تؤثر بشكل كبير على حياة الأفراد والمجتمعات. فمن خلال وسائل الإعلام والتواصل الاجتماعي والدعاية، يفرض \"الهُم\" - كما يصفه هيدغير - نمطاً موحداً للتفكير والشعور والسلوك، مما يؤدي إلى فقدان الأصالة والتفرد.",
+                "PhiH.lessons.prevailingOpinion.conclusion.text2": "يواجه الفرد المعاصر تحدياً حقيقياً في الحفاظ على استقلاليته الفكرية وأصالته في مواجهة هذه القوى الاجتماعية المسيطرة. فالقدرة على مقاومة الرأي السائد تتطلب وعياً نقدياً وشجاعة فكرية تمكن الفرد من تجاوز النمطية والتماثل نحو التفرّد والإبداع.",
+                "PhiH.lessons.prevailingOpinion.conclusion.text3": "في النهاية، تبقى الفلسفة أداة أساسية لفهم هذه الظواهر الاجتماعية المعقدة وتطوير آليات نقدية تمكن الفرد من الحفاظ على حريته الفكرية واستقلاليته في عالم يتسم بتزايد الضغوط نحو التوحيد والتماثل."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHprevailing;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+    
+    <script>
+        // Expand/Collapse functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all expandable headers
+            const expandableHeaders = document.querySelectorAll('.PhiH-expandable-header');
+            
+            // Add click event to each header
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.PhiH-expand-icon');
+                    
+                    // Toggle content visibility
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('expanded');
+                    } else {
+                        content.classList.add('hidden');
+                        icon.classList.remove('expanded');
+                    }
+                });
+            });
+            
+            // Initially hide all expandable content
+            document.querySelectorAll('.PhiH-expandable-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

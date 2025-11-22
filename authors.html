@@ -1,128 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authors - Philosophy Learning Hub</title>
-    
-    <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#6c5ce7">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
-    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
-    
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles/main.css">
-    
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="manifest.json">
-    
-    <style>
-        /* Authors Page Specific Styles */
-        .PhiH-authors-page {
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Authors - Philosophy Learning Hub</title>
+		
+		<!-- PWA Meta Tags -->
+		<meta name="theme-color" content="#3cb371">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="default">
+		<meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+		<link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+		
+		<!-- Link to external CSS -->
+		<link rel="stylesheet" href="styles/main.css">
+		
+		<!-- Web App Manifest -->
+		<link rel="manifest" href="manifest.json">
+		
+		<style>
+			/* Medium Sea Green + Dark Gray Theme - Matching your site */
+			:root {
+            --primary-color: #3cb371;
+            --secondary-color: #696969;
+            --accent-color: #2e8b57;
+            --light-color: #f0f8f4;
+            --dark-color: #2f4f4f;
+            --text-color: #2f4f4f;
+            --heading-color: #2f4f4f;
+            --background-color: #f9fdfb;
+            --card-bg: #ffffff;
+            --definition-bg: #e8f5e9;
+            --border-color: #a8d5b5;
+            --table-even-bg: #f5f9f6;
+            --table-hover-bg: #e8f5e9;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(60, 179, 113, 0.15);
+            --gradient-primary: linear-gradient(135deg, #3cb371 0%, #2e8b57 100%);
+            --gradient-secondary: linear-gradient(135deg, #696969 0%, #2f4f4f 100%);
+            --gradient-green: linear-gradient(135deg, #3cb371 0%, #2f4f4f 100%);
+            --gradient-gray: linear-gradient(135deg, #696969 0%, #2f4f4f 100%);
+			}
+			
+			[data-theme="dark"] {
+            --primary-color: #4cd98c;
+            --secondary-color: #808080;
+            --accent-color: #3cb371;
+            --light-color: #3a4a3a;
+            --dark-color: #1a1a1a;
+            --text-color: #e0f0e5;
+            --heading-color: #f7fafc;
+            --background-color: #2f4f4f;
+            --card-bg: #3a4a3a;
+            --definition-bg: #2d5a3d;
+            --border-color: #4cd98c;
+            --table-even-bg: #2f4f4f;
+            --table-hover-bg: #2d5a3d;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #4cd98c 0%, #3cb371 100%);
+            --gradient-secondary: linear-gradient(135deg, #808080 0%, #696969 100%);
+            --gradient-green: linear-gradient(135deg, #4cd98c 0%, #3a4a3a 100%);
+            --gradient-gray: linear-gradient(135deg, #808080 0%, #696969 100%);
+			}
+			
+			/* Authors Page Specific Styles */
+			.PhiH-authors-page {
             min-height: 100vh;
             background: var(--background-color);
             display: flex;
             flex-direction: column;
-        }
-
-        .PhiH-authors-main {
+			}
+			
+			.PhiH-authors-main {
             flex: 1;
             padding: 2rem;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             width: 100%;
-        }
-
-        .PhiH-authors-header {
+			}
+			
+			.PhiH-authors-header {
             text-align: center;
             margin-bottom: 3rem;
-        }
-
-        .PhiH-authors-title {
-            font-size: 3rem;
+			}
+			
+			.PhiH-authors-title {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             color: var(--heading-color);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .PhiH-authors-subtitle {
+			}
+			
+			.PhiH-authors-subtitle {
             font-size: 1.2rem;
             color: var(--text-color);
             max-width: 600px;
             margin: 0 auto;
-        }
-
-        /* Filters Section */
-        .PhiH-authors-filters {
+			}
+			
+			/* Filters Section */
+			.PhiH-authors-filters {
             background-color: var(--card-bg);
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             padding: 1.5rem;
             margin-bottom: 2rem;
             border: 1px solid var(--border-color);
-        }
-
-        .PhiH-filters-title {
+			}
+			
+			.PhiH-filters-title {
             font-size: 1.3rem;
             margin-bottom: 1rem;
             color: var(--primary-color);
             display: flex;
             align-items: center;
-        }
-
-        .PhiH-filters-title::before {
+			}
+			
+			.PhiH-filters-title::before {
             content: "🔍";
             margin-right: 10px;
             font-size: 1.2rem;
-        }
-
-        .PhiH-filters-grid {
+			}
+			
+			.PhiH-filters-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 1rem;
-        }
-
-        .PhiH-filter-group {
+			}
+			
+			.PhiH-filter-group {
             display: flex;
             flex-direction: column;
-        }
-
-        .PhiH-filter-label {
+			}
+			
+			.PhiH-filter-label {
             margin-bottom: 0.5rem;
             font-weight: 600;
             color: var(--text-color);
-        }
-
-        .PhiH-filter-select, .PhiH-filter-input {
+			}
+			
+			.PhiH-filter-select, .PhiH-filter-input {
             padding: 0.8rem;
             border-radius: 8px;
             border: 1px solid var(--border-color);
             background-color: var(--card-bg);
             color: var(--text-color);
             font-size: 1rem;
-        }
-
-        .PhiH-filter-select:focus, .PhiH-filter-input:focus {
+			}
+			
+			.PhiH-filter-select:focus, .PhiH-filter-input:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.2);
-        }
-
-        .PhiH-filter-reset {
+            box-shadow: 0 0 0 2px rgba(60, 179, 113, 0.2);
+			}
+			
+			.PhiH-filter-reset {
             grid-column: 1 / -1;
             display: flex;
             justify-content: center;
             margin-top: 1rem;
-        }
-
-        .PhiH-reset-btn {
-            background: var(--gradient-secondary);
+			}
+			
+			.PhiH-reset-btn {
+            background: var(--gradient-primary);
             color: white;
             border: none;
             padding: 0.8rem 1.5rem;
@@ -130,84 +169,69 @@
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s ease;
-        }
-
-        .PhiH-reset-btn:hover {
+			}
+			
+			.PhiH-reset-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(253, 203, 110, 0.3);
-        }
-
-        /* Authors Grid */
-        .PhiH-authors-grid {
+            box-shadow: 0 5px 15px rgba(60, 179, 113, 0.3);
+			}
+			
+			/* Authors Grid */
+			.PhiH-authors-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .PhiH-author-card {
+            gap: 1.5rem;
+			}
+			
+			.PhiH-author-card {
             background-color: var(--card-bg);
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            overflow: hidden;
+            padding: 1.5rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
             height: 100%;
-        }
-
-        .PhiH-author-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-
-        .PhiH-author-image-container {
-            height: 250px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .PhiH-author-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .PhiH-author-card:hover .PhiH-author-image {
-            transform: scale(1.05);
-        }
-
-        .PhiH-author-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-            color: white;
-            padding: 1rem;
-        }
-
-        .PhiH-author-name {
-            font-size: 1.5rem;
-            margin: 0;
-            font-weight: 700;
-        }
-
-        .PhiH-author-dates {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            margin-top: 0.2rem;
-        }
-
-        .PhiH-author-content {
-            padding: 1.5rem;
-            flex: 1;
+			}
+			
+			.PhiH-author-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(60, 179, 113, 0.2);
+			}
+			
+			.PhiH-author-header {
             display: flex;
-            flex-direction: column;
-        }
-
-        .PhiH-author-school {
+            gap: 1.5rem;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+			}
+			
+			.PhiH-author-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+			}
+			
+			.PhiH-author-info {
+            flex: 1;
+			}
+			
+			.PhiH-author-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+			}
+			
+			.PhiH-author-dates {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+			}
+			
+			.PhiH-author-school {
             display: inline-block;
             background: var(--gradient-primary);
             color: white;
@@ -215,42 +239,25 @@
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .PhiH-author-bio {
+			}
+			
+			.PhiH-author-bio {
             color: var(--text-color);
             line-height: 1.6;
             flex: 1;
             overflow: hidden;
             display: -webkit-box;
-            -webkit-line-clamp: 4;
+            -webkit-line-clamp: 6;
             -webkit-box-orient: vertical;
-        }
-
-        .PhiH-author-footer {
+			}
+			
+			.PhiH-author-footer {
             margin-top: 1.5rem;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .PhiH-author-themes {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .PhiH-author-theme {
-            background-color: var(--definition-bg);
-            color: var(--primary-color);
-            padding: 0.3rem 0.6rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .PhiH-author-more {
+            justify-content: flex-end;
+			}
+			
+			.PhiH-author-more {
             background: var(--gradient-primary);
             color: white;
             border: none;
@@ -259,29 +266,29 @@
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s ease;
-        }
-
-        .PhiH-author-more:hover {
+			}
+			
+			.PhiH-author-more:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
-        }
-
-        /* No Results */
-        .PhiH-no-results {
+            box-shadow: 0 5px 15px rgba(60, 179, 113, 0.3);
+			}
+			
+			/* No Results */
+			.PhiH-no-results {
             text-align: center;
             padding: 3rem;
             color: var(--text-color);
             grid-column: 1 / -1;
-        }
-
-        .PhiH-no-results-icon {
+			}
+			
+			.PhiH-no-results-icon {
             font-size: 4rem;
             margin-bottom: 1rem;
             opacity: 0.5;
-        }
-
-        /* Author Modal */
-        .PhiH-author-modal {
+			}
+			
+			/* Author Modal */
+			.PhiH-author-modal {
             display: none;
             position: fixed;
             z-index: 1000;
@@ -292,9 +299,9 @@
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.8);
             animation: fadeIn 0.3s ease;
-        }
-
-        .PhiH-author-modal-content {
+			}
+			
+			.PhiH-author-modal-content {
             background-color: var(--card-bg);
             margin: 5% auto;
             padding: 2rem;
@@ -306,9 +313,9 @@
             border-top: 6px solid var(--primary-color);
             max-height: 80vh;
             overflow-y: auto;
-        }
-
-        .PhiH-author-modal-close {
+			}
+			
+			.PhiH-author-modal-close {
             position: absolute;
             top: 15px;
             right: 20px;
@@ -317,43 +324,43 @@
             font-weight: bold;
             cursor: pointer;
             transition: color 0.2s ease;
-        }
-
-        .PhiH-author-modal-close:hover {
+			}
+			
+			.PhiH-author-modal-close:hover {
             color: var(--accent-color);
-        }
-
-        .PhiH-author-modal-header {
+			}
+			
+			.PhiH-author-modal-header {
             display: flex;
             gap: 2rem;
             margin-bottom: 2rem;
-        }
-
-        .PhiH-author-modal-image {
+			}
+			
+			.PhiH-author-modal-image {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--primary-color);
-        }
-
-        .PhiH-author-modal-info {
+			}
+			
+			.PhiH-author-modal-info {
             flex: 1;
-        }
-
-        .PhiH-author-modal-name {
+			}
+			
+			.PhiH-author-modal-name {
             font-size: 2rem;
             margin-bottom: 0.5rem;
             color: var(--heading-color);
-        }
-
-        .PhiH-author-modal-dates {
+			}
+			
+			.PhiH-author-modal-dates {
             font-size: 1.1rem;
             color: var(--secondary-color);
             margin-bottom: 1rem;
-        }
-
-        .PhiH-author-modal-school {
+			}
+			
+			.PhiH-author-modal-school {
             display: inline-block;
             background: var(--gradient-primary);
             color: white;
@@ -362,711 +369,736 @@
             font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 1rem;
-        }
-
-        .PhiH-author-modal-bio {
+			}
+			
+			.PhiH-author-modal-bio {
             color: var(--text-color);
             line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-
-        .PhiH-author-modal-themes {
-            margin-bottom: 1.5rem;
-        }
-
-        .PhiH-author-modal-themes-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-            color: var(--primary-color);
-        }
-
-        .PhiH-author-modal-themes-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .PhiH-author-modal-theme {
-            background-color: var(--definition-bg);
-            color: var(--primary-color);
-            padding: 0.4rem 0.8rem;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .PhiH-author-modal-works {
-            margin-bottom: 1.5rem;
-        }
-
-        .PhiH-author-modal-works-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-            color: var(--primary-color);
-        }
-
-        .PhiH-author-modal-works-list {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-            color: var(--text-color);
-        }
-
-        .PhiH-author-modal-works-list li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
+			}
+			
+			/* Responsive adjustments */
+			@media (max-width: 768px) {
             .PhiH-authors-title {
-                font-size: 2.5rem;
+			font-size: 2rem;
             }
             
             .PhiH-authors-subtitle {
-                font-size: 1rem;
+			font-size: 1rem;
             }
             
             .PhiH-authors-grid {
-                grid-template-columns: 1fr;
+			grid-template-columns: 1fr;
             }
             
             .PhiH-filters-grid {
-                grid-template-columns: 1fr;
+			grid-template-columns: 1fr;
+            }
+            
+            .PhiH-author-header {
+			flex-direction: column;
+			text-align: center;
+            }
+            
+            .PhiH-author-image {
+			align-self: center;
             }
             
             .PhiH-author-modal-header {
-                flex-direction: column;
-                text-align: center;
+			flex-direction: column;
+			text-align: center;
             }
             
             .PhiH-author-modal-image {
-                align-self: center;
+			align-self: center;
             }
             
             .PhiH-author-modal-content {
-                width: 90%;
-                margin: 10% auto;
+			width: 90%;
+			margin: 10% auto;
             }
-        }
-
-        @keyframes fadeIn {
+			}
+			
+			@keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
-        }
-    </style>
-</head>
-<body class="PhiH-authors-page">
-    <header class="PhiH-general-header">
-        <div class="PhiH-general-header-content">
-            <!-- Column 1: Icon - Now clickable -->
-            <div class="PhiH-general-logo-container">
-                <a href="index.html">
-                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+			}
+  
+<!-- Add RTL/LTR handling -->
+
+  /* RTL/LTR Support for Cards and Modal */
+  [dir="rtl"] .PhiH-author-header,
+  [dir="rtl"] .PhiH-author-modal-header {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+  
+  [dir="rtl"] .PhiH-author-info,
+  [dir="rtl"] .PhiH-author-modal-info {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .PhiH-author-footer {
+    justify-content: flex-start;
+  }
+  
+  [dir="ltr"] .PhiH-author-footer {
+    justify-content: flex-end;
+  }
+  
+  [dir="rtl"] .PhiH-filters-title::before {
+    margin-right: 0;
+    margin-left: 10px;
+  }
+  
+  [dir="rtl"] .PhiH-author-modal-close {
+    right: auto;
+    left: 20px;
+  }
+  
+  /* Text alignment based on direction */
+  [dir="rtl"] .PhiH-author-card,
+  [dir="rtl"] .PhiH-author-modal-content {
+    text-align: right;
+  }
+  
+  [dir="ltr"] .PhiH-author-card,
+  [dir="ltr"] .PhiH-author-modal-content {
+    text-align: left;
+  }
+  
+  /* Adjust filter layout for RTL */
+  [dir="rtl"] .PhiH-filter-reset {
+    text-align: right;
+  }
+  
+  [dir="ltr"] .PhiH-filter-reset {
+    text-align: left;
+  }
+  
+  /* Update existing styles to be direction-agnostic */
+  .PhiH-author-header {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+  
+  .PhiH-author-info {
+    flex: 1;
+  }
+  
+  .PhiH-author-footer {
+    margin-top: 1.5rem;
+    display: flex;
+  }
+  
+  .PhiH-filters-title {
+    display: flex;
+    align-items: center;
+  }
+  
+  .PhiH-filters-title::before {
+    content: "🔍";
+    font-size: 1.2rem;
+  }
+  
+  [dir="ltr"] .PhiH-filters-title::before {
+    margin-right: 10px;
+  }
+  
+  [dir="rtl"] .PhiH-filters-title::before {
+    margin-left: 10px;
+  }
+  
+  /* Responsive adjustments for RTL */
+  @media (max-width: 768px) {
+    [dir="rtl"] .PhiH-author-header,
+    [dir="rtl"] .PhiH-author-modal-header {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    [dir="rtl"] .PhiH-author-info,
+    [dir="rtl"] .PhiH-author-modal-info {
+      text-align: center;
+    }
+  }
+		</style>
+	</head>
+	<body class="PhiH-authors-page">
+		<header class="PhiH-general-header">
+			<div class="PhiH-general-header-content">
+				<!-- Column 1: Icon - Now clickable -->
+				<div class="PhiH-general-logo-container">
+					<a href="index.html">
+						<img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+					</a>
+				</div>
+				
+				<!-- Column 2: Title -->
+				<div class="PhiH-general-title-container">
+					<h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+				</div>
+				
+				<!-- Column 3: Options -->
+				<div class="PhiH-general-header-controls">
+            <!-- Authors Button -->
+            <div class="PhiH-general-authors-link">
+                <a href="authors.html" class="PhiH-general-authors-btn">
+                    <span class="PhiH-general-authors-icon">👥</span>
+                    <span data-i18n="PhiH.general.authors">Philosophers</span>
                 </a>
             </div>
+					<div class="PhiH-general-theme-toggle">
+						<label class="PhiH-theme-toggle-label">
+							<span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+							<div class="PhiH-theme-toggle-switch">
+								<input type="checkbox" id="themeToggle">
+								<span class="PhiH-theme-toggle-slider"></span>
+							</div>
+						</label>
+					</div>
+					<div class="PhiH-general-language-selector">
+						<select class="PhiH-general-language-dropdown" id="languageSelect">
+							<option value="en">English</option>
+							<option value="fr">Français</option>
+							<option value="ar">العربية</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		<main class="PhiH-authors-main">
+			<div class="PhiH-authors-header">
+				<h1 class="PhiH-authors-title" data-i18n="PhiH.authors.title">المؤلفون الفلسفيون</h1>
+				<p class="PhiH-authors-subtitle" data-i18n="PhiH.authors.subtitle">استكشف المفكرين الذين شكلوا الفكر الفلسفي عبر التاريخ</p>
+			</div>
+			
+			<!-- Filters Section -->
+			<section class="PhiH-authors-filters">
+				<h2 class="PhiH-filters-title" data-i18n="PhiH.authors.filters.title">تصفية المؤلفين</h2>
+				<div class="PhiH-filters-grid">
+					<div class="PhiH-filter-group">
+						<label class="PhiH-filter-label" for="searchFilter" data-i18n="PhiH.authors.filters.search">البحث بالاسم</label>
+						<input type="text" id="searchFilter" class="PhiH-filter-input" data-i18n-placeholder="PhiH.authors.filters.searchPlaceholder" placeholder="اكتب اسم المؤلف...">
+					</div>
+					
+					<div class="PhiH-filter-group">
+						<label class="PhiH-filter-label" for="centuryFilter" data-i18n="PhiH.authors.filters.century">القرن</label>
+						<select id="centuryFilter" class="PhiH-filter-select">
+    <option value="" data-i18n="PhiH.authors.filters.allCenturies">جميع القرون</option>
+    <option value="20th" data-i18n="PhiH.authors.filters.20th">القرن العشرين</option>
+    <option value="19th" data-i18n="PhiH.authors.filters.19th">القرن التاسع عشر</option>
+    <option value="ancient" data-i18n="PhiH.authors.filters.ancient">القديم</option>
+</select>
+					</div>
+					
+					<div class="PhiH-filter-group">
+						<label class="PhiH-filter-label" for="themeFilter" data-i18n="PhiH.authors.filters.theme">المواضيع الرئيسية</label>
+						<select id="themeFilter" class="PhiH-filter-select">
+    <option value="" data-i18n="PhiH.authors.filters.allThemes">جميع المواضيع</option>
+    <option value="being" data-i18n="PhiH.authors.filters.being">الوجود</option>
+    <option value="time" data-i18n="PhiH.authors.filters.time">الزمن</option>
+    <option value="metaphysics" data-i18n="PhiH.authors.filters.metaphysics">الميتافيزيقا</option>
+</select>
+					</div>
+					
+					<div class="PhiH-filter-reset">
+						<button id="resetFilters" class="PhiH-reset-btn" data-i18n="PhiH.authors.filters.reset">إعادة تعيين الفلاتر</button>
+					</div>
+				</div>
+			</section>
+			
+			<!-- Authors Grid -->
+			<div class="PhiH-authors-grid" id="authorsGrid">
+				<!-- Authors will be dynamically loaded here -->
+			</div>
+			
+			<!-- No Results Message -->
+			<div class="PhiH-no-results" id="noResults" style="display: none;">
+				<div class="PhiH-no-results-icon">🔍</div>
+				<h3 data-i18n="PhiH.authors.noResults.title">لم يتم العثور على مؤلفين</h3>
+				<p data-i18n="PhiH.authors.noResults.message">حاول تعديل الفلاتر أو مصطلحات البحث</p>
+			</div>
+		</main>
+		
+		<!-- Author Modal -->
+		<div id="authorModal" class="PhiH-author-modal">
+			<div class="PhiH-author-modal-content">
+				<span class="PhiH-author-modal-close">&times;</span>
+				<div id="authorModalContent">
+					<!-- Author details will be dynamically loaded here -->
+				</div>
+			</div>
+		</div>
+		
+		<footer class="PhiH-general-footer">
+			<div class="PhiH-general-footer-content">
+				<div class="PhiH-general-footer-column">
+					<h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+					<p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+				</div>
+				<div class="PhiH-general-footer-column">
+					<h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+					<p data-i18n="PhiH.general.version">v1.0.0</p>
+				</div>
+				<div class="PhiH-general-footer-column">
+					<h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+					<div class="PhiH-general-footer-links">
+						<a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+						<a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<!-- Include data.js -->
+		<script src="scripts/data.js"></script>
+		
+		<script>
+    // Page-specific translations for authors page
+    window.translations_PhiHauthors = {
+        fr: {
+            // General translations
+            "PhiH.general.siteName": "Philosophy Learning Hub",
+            "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+            "PhiH.general.present": "X",
+            "PhiH.general.absent": "",
+            "PhiH.general.developerTitle": "Développeur",
+            "PhiH.general.developer": "Mejri Ziad",
+            "PhiH.general.versionTitle": "Version",
+            "PhiH.general.version": "v1.0.0",
+            "PhiH.general.linksTitle": "Liens",
+            "PhiH.general.termsOfUse": "Conditions d'utilisation",
+            "PhiH.general.privacyPolicy": "Politique de confidentialité",
+            "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
             
-            <!-- Column 2: Title -->
-            <div class="PhiH-general-title-container">
-                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
-            </div>
+            // Authors page translations
+            "PhiH.authors.title": "Auteurs Philosophiques",
+            "PhiH.authors.subtitle": "Découvrez les penseurs qui ont façonné la pensée philosophique à travers l'histoire",
             
-            <!-- Column 3: Options -->
-            <div class="PhiH-general-header-controls">
-                <div class="PhiH-general-theme-toggle">
-                    <label class="PhiH-theme-toggle-label">
-                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
-                        <div class="PhiH-theme-toggle-switch">
-                            <input type="checkbox" id="themeToggle">
-                            <span class="PhiH-theme-toggle-slider"></span>
-                        </div>
-                    </label>
-                </div>
-                <div class="PhiH-general-language-selector">
-                    <select class="PhiH-general-language-dropdown" id="languageSelect">
-                        <option value="en">English</option>
-                        <option value="fr">Français</option>
-                        <option value="ar">العربية</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </header>
+            "PhiH.authors.filters.title": "Filtrer les Auteurs",
+            "PhiH.authors.filters.search": "Rechercher par nom",
+            "PhiH.authors.filters.century": "Siècle",
+            "PhiH.authors.filters.allCenturies": "Tous les Siècles",
+            "PhiH.authors.filters.theme": "Thèmes Principaux",
+            "PhiH.authors.filters.allThemes": "Tous les Thèmes",
+            "PhiH.authors.filters.reset": "Réinitialiser les Filtres",
+            "PhiH.authors.filters.20th": "20ème Siècle",
+            "PhiH.authors.filters.19th": "19ème Siècle", 
+            "PhiH.authors.filters.ancient": "Ancien",
+            "PhiH.authors.filters.being": "Être",
+            "PhiH.authors.filters.time": "Temps",
+            "PhiH.authors.filters.metaphysics": "Métaphysique",
+            "PhiH.authors.filters.searchPlaceholder": "Tapez le nom de l'auteur...",
+            
+            "PhiH.authors.noResults.title": "Aucun auteur trouvé",
+            "PhiH.authors.noResults.message": "Essayez d'ajuster vos filtres ou termes de recherche",
+            
+            "PhiH.authors.readMore": "Lire plus"
+        },
+        en: {
+            // General translations
+            "PhiH.general.siteName": "Philosophy Learning Hub",
+            "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+            "PhiH.general.present": "X",
+            "PhiH.general.absent": "",
+            "PhiH.general.developerTitle": "Developer",
+            "PhiH.general.developer": "Mejri Ziad",
+            "PhiH.general.versionTitle": "Version",
+            "PhiH.general.version": "v1.0.0",
+            "PhiH.general.linksTitle": "Links",
+            "PhiH.general.termsOfUse": "Terms of Use",
+            "PhiH.general.privacyPolicy": "Privacy Policy",
+            "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+            
+            // Authors page translations
+            "PhiH.authors.title": "Philosophical Authors",
+            "PhiH.authors.subtitle": "Explore the thinkers who shaped philosophical thought throughout history",
+            
+            "PhiH.authors.filters.title": "Filter Authors",
+            "PhiH.authors.filters.search": "Search by name",
+            "PhiH.authors.filters.century": "Century",
+            "PhiH.authors.filters.allCenturies": "All Centuries",
+            "PhiH.authors.filters.theme": "Main Themes",
+            "PhiH.authors.filters.allThemes": "All Themes",
+            "PhiH.authors.filters.reset": "Reset Filters",
+            "PhiH.authors.filters.20th": "20th Century",
+            "PhiH.authors.filters.19th": "19th Century",
+            "PhiH.authors.filters.ancient": "Ancient", 
+            "PhiH.authors.filters.being": "Being",
+            "PhiH.authors.filters.time": "Time",
+            "PhiH.authors.filters.metaphysics": "Metaphysics",
+            "PhiH.authors.filters.searchPlaceholder": "Type author name...",
+            
+            "PhiH.authors.noResults.title": "No authors found",
+            "PhiH.authors.noResults.message": "Try adjusting your filters or search terms",
+            
+            "PhiH.authors.readMore": "Read more"
+        },
+        ar: {
+            // General translations
+            "PhiH.general.siteName": "مركز تعلم الفلسفة",
+            "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+            "PhiH.general.present": "X",
+            "PhiH.general.absent": "",
+            "PhiH.general.developerTitle": "المطور",
+            "PhiH.general.developer": "مجرى زياد",
+            "PhiH.general.versionTitle": "الإصدار",
+            "PhiH.general.version": "v1.0.0",
+            "PhiH.general.linksTitle": "الروابط",
+            "PhiH.general.termsOfUse": "شروط الاستخدام",
+            "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+            "PhiH.general.themeToggle": "الوضع الداكن",
+            "PhiH.general.authors": "الفلاسفة",
+            // Authors page translations
+            "PhiH.authors.title": "المؤلفون الفلسفيون",
+            "PhiH.authors.subtitle": "استكشف المفكرين الذين شكلوا الفكر الفلسفي عبر التاريخ",
+            
+            "PhiH.authors.filters.title": "تصفية المؤلفين",
+            "PhiH.authors.filters.search": "البحث بالاسم",
+            "PhiH.authors.filters.century": "القرن",
+            "PhiH.authors.filters.allCenturies": "جميع القرون",
+            "PhiH.authors.filters.theme": "المواضيع الرئيسية",
+            "PhiH.authors.filters.allThemes": "جميع المواضيع",
+            "PhiH.authors.filters.reset": "إعادة تعيين الفلاتر",
+            "PhiH.authors.filters.20th": "القرن العشرين",
+            "PhiH.authors.filters.19th": "القرن التاسع عشر",
+            "PhiH.authors.filters.ancient": "القديم",
+            "PhiH.authors.filters.being": "الوجود",
+            "PhiH.authors.filters.time": "الزمن", 
+            "PhiH.authors.filters.metaphysics": "الميتافيزيقا",
+            "PhiH.authors.filters.searchPlaceholder": "اكتب اسم المؤلف...",
+            
+            "PhiH.authors.noResults.title": "لم يتم العثور على مؤلفين",
+            "PhiH.authors.noResults.message": "حاول تعديل الفلاتر أو مصطلحات البحث",
+            
+            "PhiH.authors.readMore": "اقرأ المزيد"
+        }
+    };
     
-    <main class="PhiH-authors-main">
-        <div class="PhiH-authors-header">
-            <h1 class="PhiH-authors-title" data-i18n="PhiH.authors.title">Philosophical Authors</h1>
-            <p class="PhiH-authors-subtitle" data-i18n="PhiH.authors.subtitle">Explore the thinkers who shaped philosophical thought throughout history</p>
-        </div>
-        
-        <!-- Filters Section -->
-        <section class="PhiH-authors-filters">
-            <h2 class="PhiH-filters-title" data-i18n="PhiH.authors.filters.title">Filter Authors</h2>
-            <div class="PhiH-filters-grid">
-                <div class="PhiH-filter-group">
-                    <label class="PhiH-filter-label" for="searchFilter" data-i18n="PhiH.authors.filters.search">Search by name</label>
-                    <input type="text" id="searchFilter" class="PhiH-filter-input" placeholder="Type author name...">
-                </div>
-                
-                <div class="PhiH-filter-group">
-                    <label class="PhiH-filter-label" for="schoolFilter" data-i18n="PhiH.authors.filters.school">Philosophical School</label>
-                    <select id="schoolFilter" class="PhiH-filter-select">
-                        <option value="" data-i18n="PhiH.authors.filters.allSchools">All Schools</option>
-                        <option value="existentialism">Existentialism</option>
-                        <option value="phenomenology">Phenomenology</option>
-                        <option value="analytic">Analytic Philosophy</option>
-                        <option value="continental">Continental Philosophy</option>
-                        <option value="german_idealism">German Idealism</option>
-                        <option value="stoicism">Stoicism</option>
-                        <option value="platonism">Platonism</option>
-                        <option value="aristotelianism">Aristotelianism</option>
-                    </select>
-                </div>
-                
-                <div class="PhiH-filter-group">
-                    <label class="PhiH-filter-label" for="centuryFilter" data-i18n="PhiH.authors.filters.century">Century</label>
-                    <select id="centuryFilter" class="PhiH-filter-select">
-                        <option value="" data-i18n="PhiH.authors.filters.allCenturies">All Centuries</option>
-                        <option value="ancient">Ancient</option>
-                        <option value="medieval">Medieval</option>
-                        <option value="modern">Modern</option>
-                        <option value="19th">19th Century</option>
-                        <option value="20th">20th Century</option>
-                        <option value="contemporary">Contemporary</option>
-                    </select>
-                </div>
-                
-                <div class="PhiH-filter-group">
-                    <label class="PhiH-filter-label" for="themeFilter" data-i18n="PhiH.authors.filters.theme">Main Themes</label>
-                    <select id="themeFilter" class="PhiH-filter-select">
-                        <option value="" data-i18n="PhiH.authors.filters.allThemes">All Themes</option>
-                        <option value="being">Being & Existence</option>
-                        <option value="ethics">Ethics & Morality</option>
-                        <option value="knowledge">Knowledge & Epistemology</option>
-                        <option value="language">Language & Meaning</option>
-                        <option value="politics">Politics & Society</option>
-                        <option value="aesthetics">Aesthetics & Art</option>
-                        <option value="metaphysics">Metaphysics</option>
-                        <option value="logic">Logic & Reason</option>
-                    </select>
-                </div>
-                
-                <div class="PhiH-filter-reset">
-                    <button id="resetFilters" class="PhiH-reset-btn" data-i18n="PhiH.authors.filters.reset">Reset Filters</button>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Authors Grid -->
-        <div class="PhiH-authors-grid" id="authorsGrid">
-            <!-- Authors will be dynamically loaded here -->
-        </div>
-        
-        <!-- No Results Message -->
-        <div class="PhiH-no-results" id="noResults" style="display: none;">
-            <div class="PhiH-no-results-icon">🔍</div>
-            <h3 data-i18n="PhiH.authors.noResults.title">No authors found</h3>
-            <p data-i18n="PhiH.authors.noResults.message">Try adjusting your filters or search terms</p>
-        </div>
-    </main>
-    
-    <!-- Author Modal -->
-    <div id="authorModal" class="PhiH-author-modal">
-        <div class="PhiH-author-modal-content">
-            <span class="PhiH-author-modal-close">&times;</span>
-            <div id="authorModalContent">
-                <!-- Author details will be dynamically loaded here -->
-            </div>
-        </div>
-    </div>
-    
-    <footer class="PhiH-general-footer">
-        <div class="PhiH-general-footer-content">
-            <div class="PhiH-general-footer-column">
-                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
-                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
-            </div>
-            <div class="PhiH-general-footer-column">
-                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
-                <p data-i18n="PhiH.general.version">v1.0.0</p>
-            </div>
-            <div class="PhiH-general-footer-column">
-                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
-                <div class="PhiH-general-footer-links">
-                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
-                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-    <!-- Include data.js -->
-    <script src="scripts/data.js"></script>
-    
-    <script>
-        // Page-specific translations for authors page
-        window.translations_PhiHauthors = {
-            fr: {
-                // General translations
-                "PhiH.general.siteName": "Philosophy Learning Hub",
-                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
-                "PhiH.general.present": "X",
-                "PhiH.general.absent": "",
-                "PhiH.general.developerTitle": "Développeur",
-                "PhiH.general.developer": "Mejri Ziad",
-                "PhiH.general.versionTitle": "Version",
-                "PhiH.general.version": "v1.0.0",
-                "PhiH.general.linksTitle": "Liens",
-                "PhiH.general.termsOfUse": "Conditions d'utilisation",
-                "PhiH.general.privacyPolicy": "Politique de confidentialité",
-                "PhiH.general.themeToggle": "Mode sombre",
-                
-                // Authors page translations
-                "PhiH.authors.title": "Auteurs Philosophiques",
-                "PhiH.authors.subtitle": "Découvrez les penseurs qui ont façonné la pensée philosophique à travers l'histoire",
-                
-                "PhiH.authors.filters.title": "Filtrer les Auteurs",
-                "PhiH.authors.filters.search": "Rechercher par nom",
-                "PhiH.authors.filters.school": "École Philosophique",
-                "PhiH.authors.filters.allSchools": "Toutes les Écoles",
-                "PhiH.authors.filters.century": "Siècle",
-                "PhiH.authors.filters.allCenturies": "Tous les Siècles",
-                "PhiH.authors.filters.theme": "Thèmes Principaux",
-                "PhiH.authors.filters.allThemes": "Tous les Thèmes",
-                "PhiH.authors.filters.reset": "Réinitialiser les Filtres",
-                
-                "PhiH.authors.noResults.title": "Aucun auteur trouvé",
-                "PhiH.authors.noResults.message": "Essayez d'ajuster vos filtres ou termes de recherche",
-                
-                "PhiH.authors.readMore": "Lire plus",
-                "PhiH.authors.modal.themes": "Thèmes principaux",
-                "PhiH.authors.modal.works": "Œuvres principales"
-            },
-            en: {
-                // General translations
-                "PhiH.general.siteName": "Philosophy Learning Hub",
-                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
-                "PhiH.general.present": "X",
-                "PhiH.general.absent": "",
-                "PhiH.general.developerTitle": "Developer",
-                "PhiH.general.developer": "Mejri Ziad",
-                "PhiH.general.versionTitle": "Version",
-                "PhiH.general.version": "v1.0.0",
-                "PhiH.general.linksTitle": "Links",
-                "PhiH.general.termsOfUse": "Terms of Use",
-                "PhiH.general.privacyPolicy": "Privacy Policy",
-                "PhiH.general.themeToggle": "Dark mode",
-                
-                // Authors page translations
-                "PhiH.authors.title": "Philosophical Authors",
-                "PhiH.authors.subtitle": "Explore the thinkers who shaped philosophical thought throughout history",
-                
-                "PhiH.authors.filters.title": "Filter Authors",
-                "PhiH.authors.filters.search": "Search by name",
-                "PhiH.authors.filters.school": "Philosophical School",
-                "PhiH.authors.filters.allSchools": "All Schools",
-                "PhiH.authors.filters.century": "Century",
-                "PhiH.authors.filters.allCenturies": "All Centuries",
-                "PhiH.authors.filters.theme": "Main Themes",
-                "PhiH.authors.filters.allThemes": "All Themes",
-                "PhiH.authors.filters.reset": "Reset Filters",
-                
-                "PhiH.authors.noResults.title": "No authors found",
-                "PhiH.authors.noResults.message": "Try adjusting your filters or search terms",
-                
-                "PhiH.authors.readMore": "Read more",
-                "PhiH.authors.modal.themes": "Main themes",
-                "PhiH.authors.modal.works": "Major works"
-            },
-            ar: {
-                // General translations
-                "PhiH.general.siteName": "مركز تعلم الفلسفة",
-                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
-                "PhiH.general.present": "X",
-                "PhiH.general.absent": "",
-                "PhiH.general.developerTitle": "المطور",
-                "PhiH.general.developer": "مجرى زياد",
-                "PhiH.general.versionTitle": "الإصدار",
-                "PhiH.general.version": "v1.0.0",
-                "PhiH.general.linksTitle": "الروابط",
-                "PhiH.general.termsOfUse": "شروط الاستخدام",
-                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
-                "PhiH.general.themeToggle": "الوضع الداكن",
-                
-                // Authors page translations
-                "PhiH.authors.title": "المؤلفون الفلسفيون",
-                "PhiH.authors.subtitle": "استكشف المفكرين الذين شكلوا الفكر الفلسفي عبر التاريخ",
-                
-                "PhiH.authors.filters.title": "تصفية المؤلفين",
-                "PhiH.authors.filters.search": "البحث بالاسم",
-                "PhiH.authors.filters.school": "المدرسة الفلسفية",
-                "PhiH.authors.filters.allSchools": "جميع المدارس",
-                "PhiH.authors.filters.century": "القرن",
-                "PhiH.authors.filters.allCenturies": "جميع القرون",
-                "PhiH.authors.filters.theme": "المواضيع الرئيسية",
-                "PhiH.authors.filters.allThemes": "جميع المواضيع",
-                "PhiH.authors.filters.reset": "إعادة تعيين الفلاتر",
-                
-                "PhiH.authors.noResults.title": "لم يتم العثور على مؤلفين",
-                "PhiH.authors.noResults.message": "حاول تعديل الفلاتر أو مصطلحات البحث",
-                
-                "PhiH.authors.readMore": "اقرأ المزيد",
-                "PhiH.authors.modal.themes": "المواضيع الرئيسية",
-                "PhiH.authors.modal.works": "الأعمال الرئيسية"
-            }
-        };
-        
-        // Set the current translations for the translation.js file to use
-        window.currentTranslations = window.translations_PhiHauthors;
-    </script>
-    
-    <!-- Include the external translation file -->
-    <script src="scripts/translation.js"></script>
-    
-    <!-- Include PWA Handler -->
-    <script src="scripts/pwa-handler.js"></script>
-    
-    <script>
-        // Extended author data with additional properties for filtering
-        const extendedAuthorsData = {
-            "martin_heidegger": {
-                ...PhiH_Authors.martin_heidegger,
-                century: "20th",
-                school: "existentialism",
-                themes: ["being", "existence", "time", "technology"],
-                works: ["Being and Time", "What is Metaphysics?", "Letter on Humanism", "The Question Concerning Technology"],
-                birthYear: 1889,
-                deathYear: 1976
-            },
-            "friedrich_nietzsche": {
-                ar: {
-                    name: "فريدريك نيتشه",
-                    image: "assets/images/friedrich_nietzsche.jpg",
-                    alt: "فريدريك نيتشه",
-                    content: "فريدريك نيتشه (1844-1900) فيلسوف ألماني، ناقد ثقافي، شاعر، وملحن. اشتهر بمفهوم 'موت الإله'، 'الإرادة إلى القوة'، 'الإنسان الأعلى'، و 'العود الأبدي'. انتقد نيتشه الثقافة الغربية، الدين، والأخلاق التقليدية. من مؤلفاته: 'هكذا تكلم زرادشت'، 'ما وراء الخير والشر'، 'أفول الأصنام'."
-                },
-                fr: {
-                    name: "Friedrich Nietzsche",
-                    image: "assets/images/friedrich_nietzsche.jpg",
-                    alt: "Friedrich Nietzsche",
-                    content: "Friedrich Nietzsche (1844-1900) philosophe, critique culturel, poète et compositeur allemand. Il est connu pour ses concepts de 'mort de Dieu', 'volonté de puissance', 'surhomme' et 'éternel retour'. Nietzsche a critiqué la culture occidentale, la religion et la morale traditionnelle. Parmi ses œuvres : 'Ainsi parlait Zarathoustra', 'Par-delà bien et mal', 'Crépuscule des idoles'."
-                },
-                en: {
-                    name: "Friedrich Nietzsche",
-                    image: "assets/images/friedrich_nietzsche.jpg",
-                    alt: "Friedrich Nietzsche",
-                    content: "Friedrich Nietzsche (1844-1900) German philosopher, cultural critic, poet, and composer. He is known for his concepts of 'God is dead', 'will to power', 'overman', and 'eternal recurrence'. Nietzsche criticized Western culture, religion, and traditional morality. Among his works: 'Thus Spoke Zarathustra', 'Beyond Good and Evil', 'Twilight of the Idols'."
-                },
-                century: "19th",
-                school: "existentialism",
-                themes: ["morality", "nihilism", "power", "aesthetics"],
-                works: ["Thus Spoke Zarathustra", "Beyond Good and Evil", "On the Genealogy of Morality", "The Birth of Tragedy"],
-                birthYear: 1844,
-                deathYear: 1900
-            },
-            "jean_paul_sartre": {
-                ar: {
-                    name: "جان بول سارتر",
-                    image: "assets/images/jean_paul_sartre.jpg",
-                    alt: "جان بول سارتر",
-                    content: "جان بول سارتر (1905-1980) فيلسوف فرنسي، كاتب مسرحي، روائي، وناشط سياسي. كان أحد أبرز وجوه الوجودية والماركسية في القرن العشرين. اشتهر بمقولته 'الوجود يسبق الماهية' وبتأكيده على حرية الإنسان ومسؤوليته. من مؤلفاته: 'الوجود والعدم'، 'الغثيان'، 'الذباب'."
-                },
-                fr: {
-                    name: "Jean-Paul Sartre",
-                    image: "assets/images/jean_paul_sartre.jpg",
-                    alt: "Jean-Paul Sartre",
-                    content: "Jean-Paul Sartre (1905-1980) philosophe, dramaturge, romancier et militant politique français. Il fut l'une des figures majeures de l'existentialisme et du marxisme au XXe siècle. Il est célèbre pour sa phrase 'l'existence précède l'essence' et pour son insistance sur la liberté et la responsabilité humaines. Parmi ses œuvres : 'L'Être et le Néant', 'La Nausée', 'Les Mouches'."
-                },
-                en: {
-                    name: "Jean-Paul Sartre",
-                    image: "assets/images/jean_paul_sartre.jpg",
-                    alt: "Jean-Paul Sartre",
-                    content: "Jean-Paul Sartre (1905-1980) French philosopher, playwright, novelist, and political activist. He was one of the key figures in existentialism and Marxism in the 20th century. He is famous for his statement 'existence precedes essence' and for his emphasis on human freedom and responsibility. Among his works: 'Being and Nothingness', 'Nausea', 'The Flies'."
-                },
-                century: "20th",
-                school: "existentialism",
-                themes: ["freedom", "responsibility", "consciousness", "politics"],
-                works: ["Being and Nothingness", "Nausea", "No Exit", "The Words"],
-                birthYear: 1905,
-                deathYear: 1980
-            },
-            "plato": {
-                ar: {
-                    name: "أفلاطون",
-                    image: "assets/images/plato.jpg",
-                    alt: "أفلاطون",
-                    content: "أفلاطون (428-348 ق.م) فيلسوف يوناني كلاسيكي، تلميذ سقراط ومعلم أرسطو. أسس الأكاديمية في أثينا، أول مؤسسة للتعليم العالي في العالم الغربي. اشتهر بنظريته عن المُثُل، والجمهورية المثالية، والحوارات السقراطية. من مؤلفاته: 'الجمهورية'، 'المأدبة'، 'فيدون'."
-                },
-                fr: {
-                    name: "Platon",
-                    image: "assets/images/plato.jpg",
-                    alt: "Platon",
-                    content: "Platon (428-348 av. J.-C.) philosophe classique grec, élève de Socrate et maître d'Aristote. Il a fondé l'Académie d'Athènes, la première institution d'enseignement supérieur du monde occidental. Il est célèbre pour sa théorie des Formes, la République idéale et les dialogues socratiques. Parmi ses œuvres : 'La République', 'Le Banquet', 'Phédon'."
-                },
-                en: {
-                    name: "Plato",
-                    image: "assets/images/plato.jpg",
-                    alt: "Plato",
-                    content: "Plato (428-348 BC) classical Greek philosopher, student of Socrates and teacher of Aristotle. He founded the Academy in Athens, the first institution of higher learning in the Western world. He is famous for his theory of Forms, the ideal Republic, and Socratic dialogues. Among his works: 'The Republic', 'The Symposium', 'Phaedo'."
-                },
-                century: "ancient",
-                school: "platonism",
-                themes: ["forms", "justice", "knowledge", "politics"],
-                works: ["The Republic", "The Symposium", "Phaedo", "The Apology"],
-                birthYear: -428,
-                deathYear: -348
-            },
-            "aristotle": {
-                ar: {
-                    name: "أرسطو",
-                    image: "assets/images/aristotle.jpg",
-                    alt: "أرسطو",
-                    content: "أرسطو (384-322 ق.م) فيلسوف يوناني، تلميذ أفلاطون ومعلم الإسكندر الأكبر. أسس مدرسة الليسيوم ومدرسة الفلسفة الأرسطية. ساهم في مجالات متعددة منها المنطق، الميتافيزيقا، الأخلاق، والسياسة. من مؤلفاته: 'الميتافيزيقا'، 'الأخلاق النيقوماخية'، 'السياسة'."
-                },
-                fr: {
-                    name: "Aristote",
-                    image: "assets/images/aristotle.jpg",
-                    alt: "Aristote",
-                    content: "Aristote (384-322 av. J.-C.) philosophe grec, élève de Platon et précepteur d'Alexandre le Grand. Il a fondé le Lycée et l'école de philosophie aristotélicienne. Il a contribué à de nombreux domaines dont la logique, la métaphysique, l'éthique et la politique. Parmi ses œuvres : 'Métaphysique', 'Éthique à Nicomaque', 'Politique'."
-                },
-                en: {
-                    name: "Aristotle",
-                    image: "assets/images/aristotle.jpg",
-                    alt: "Aristotle",
-                    content: "Aristotle (384-322 BC) Greek philosopher, student of Plato and teacher of Alexander the Great. He founded the Lyceum and the Aristotelian school of philosophy. He contributed to many fields including logic, metaphysics, ethics, and politics. Among his works: 'Metaphysics', 'Nicomachean Ethics', 'Politics'."
-                },
-                century: "ancient",
-                school: "aristotelianism",
-                themes: ["logic", "ethics", "metaphysics", "biology"],
-                works: ["Metaphysics", "Nicomachean Ethics", "Politics", "Organon"],
-                birthYear: -384,
-                deathYear: -322
-            }
-        };
+    // Set the current translations for the translation.js file to use
+    window.currentTranslations = window.translations_PhiHauthors;
+</script>
 
-        // Authors page functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const authorsGrid = document.getElementById('authorsGrid');
-            const noResults = document.getElementById('noResults');
-            const authorModal = document.getElementById('authorModal');
-            const authorModalContent = document.getElementById('authorModalContent');
-            const closeModal = document.querySelector('.PhiH-author-modal-close');
-            const searchFilter = document.getElementById('searchFilter');
-            const schoolFilter = document.getElementById('schoolFilter');
-            const centuryFilter = document.getElementById('centuryFilter');
-            const themeFilter = document.getElementById('themeFilter');
-            const resetFilters = document.getElementById('resetFilters');
+<!-- Include the external translation file -->
+<script src="scripts/translation.js"></script>
+
+<!-- Include PWA Handler -->
+<script src="scripts/pwa-handler.js"></script>
+
+<script>
+    // Authors page functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const authorsGrid = document.getElementById('authorsGrid');
+        const noResults = document.getElementById('noResults');
+        const authorModal = document.getElementById('authorModal');
+        const authorModalContent = document.getElementById('authorModalContent');
+        const closeModal = document.querySelector('.PhiH-author-modal-close');
+        const searchFilter = document.getElementById('searchFilter');
+        const centuryFilter = document.getElementById('centuryFilter');
+        const themeFilter = document.getElementById('themeFilter');
+        const resetFilters = document.getElementById('resetFilters');
+        const languageSelect = document.getElementById('languageSelect');
+        
+        // Get current language from translation system
+        let currentLanguage = localStorage.getItem('preferredLanguage') || 'en';
+        
+        // Function to get author data for current language
+        function getAuthorData(author, lang) {
+            const authorLangData = author[lang] || author.en || author.fr || author.ar;
+            return {
+                name: authorLangData.name,
+                image: authorLangData.image,
+                alt: authorLangData.alt,
+                content: authorLangData.content,
+                century: authorLangData.century,
+                school: authorLangData.school,
+                themes: authorLangData.themes,
+                birthYear: authorLangData.birthYear,
+                deathYear: authorLangData.deathYear
+            };
+        }
+        
+        // Function to render authors
+        function renderAuthors() {
+            authorsGrid.innerHTML = '';
+            noResults.style.display = 'none';
             
-            let currentLanguage = 'en'; // Default language
-            let filteredAuthors = Object.keys(extendedAuthorsData);
-            
-            // Function to render authors
-            function renderAuthors() {
-                authorsGrid.innerHTML = '';
-                noResults.style.display = 'none';
-                
-                if (filteredAuthors.length === 0) {
-                    noResults.style.display = 'block';
-                    return;
-                }
-                
-                filteredAuthors.forEach(authorKey => {
-                    const author = extendedAuthorsData[authorKey];
-                    const authorData = author[currentLanguage] || author.en;
-                    
-                    const authorCard = document.createElement('div');
-                    authorCard.className = 'PhiH-author-card';
-                    authorCard.innerHTML = `
-                        <div class="PhiH-author-image-container">
-                            <img src="${authorData.image}" alt="${authorData.alt}" class="PhiH-author-image">
-                            <div class="PhiH-author-overlay">
-                                <h2 class="PhiH-author-name">${authorData.name}</h2>
-                                <div class="PhiH-author-dates">${author.birthYear} - ${author.deathYear}</div>
-                            </div>
-                        </div>
-                        <div class="PhiH-author-content">
-                            <div class="PhiH-author-school">${getSchoolName(author.school)}</div>
-                            <p class="PhiH-author-bio">${authorData.content}</p>
-                            <div class="PhiH-author-footer">
-                                <div class="PhiH-author-themes">
-                                    ${author.themes.slice(0, 2).map(theme => 
-                                        `<span class="PhiH-author-theme">${getThemeName(theme)}</span>`
-                                    ).join('')}
-                                </div>
-                                <button class="PhiH-author-more" data-author="${authorKey}" data-i18n="PhiH.authors.readMore">Read more</button>
-                            </div>
-                        </div>
-                    `;
-                    
-                    authorsGrid.appendChild(authorCard);
-                });
-                
-                // Add event listeners to "Read more" buttons
-                document.querySelectorAll('.PhiH-author-more').forEach(button => {
-                    button.addEventListener('click', function() {
-                        const authorKey = this.getAttribute('data-author');
-                        showAuthorModal(authorKey);
-                    });
-                });
+            if (filteredAuthors.length === 0) {
+                noResults.style.display = 'block';
+                return;
             }
             
-            // Function to show author modal
-            function showAuthorModal(authorKey) {
-                const author = extendedAuthorsData[authorKey];
-                const authorData = author[currentLanguage] || author.en;
+            filteredAuthors.forEach(authorKey => {
+                const author = PhiH_Authors[authorKey];
+                const authorData = getAuthorData(author, currentLanguage);
                 
-                authorModalContent.innerHTML = `
-                    <div class="PhiH-author-modal-header">
-                        <img src="${authorData.image}" alt="${authorData.alt}" class="PhiH-author-modal-image">
-                        <div class="PhiH-author-modal-info">
-                            <h2 class="PhiH-author-modal-name">${authorData.name}</h2>
-                            <div class="PhiH-author-modal-dates">${author.birthYear} - ${author.deathYear}</div>
-                            <div class="PhiH-author-modal-school">${getSchoolName(author.school)}</div>
-                            <p class="PhiH-author-modal-bio">${authorData.content}</p>
+                const authorCard = document.createElement('div');
+                authorCard.className = 'PhiH-author-card';
+                authorCard.innerHTML = `
+                    <div class="PhiH-author-header">
+                        <img src="${authorData.image}" alt="${authorData.alt}" class="PhiH-author-image" onerror="this.src='assets/icons/icon-96x96.png'">
+                        <div class="PhiH-author-info">
+                            <h2 class="PhiH-author-name">${authorData.name}</h2>
+                            <div class="PhiH-author-dates">${authorData.birthYear} - ${authorData.deathYear}</div>
+                            <div class="PhiH-author-school">${getSchoolName(authorData.school, currentLanguage)}</div>
                         </div>
                     </div>
-                    <div class="PhiH-author-modal-themes">
-                        <h3 class="PhiH-author-modal-themes-title" data-i18n="PhiH.authors.modal.themes">Main themes</h3>
-                        <div class="PhiH-author-modal-themes-list">
-                            ${author.themes.map(theme => 
-                                `<span class="PhiH-author-modal-theme">${getThemeName(theme)}</span>`
-                            ).join('')}
-                        </div>
-                    </div>
-                    <div class="PhiH-author-modal-works">
-                        <h3 class="PhiH-author-modal-works-title" data-i18n="PhiH.authors.modal.works">Major works</h3>
-                        <ul class="PhiH-author-modal-works-list">
-                            ${author.works.map(work => 
-                                `<li>${work}</li>`
-                            ).join('')}
-                        </ul>
+                    <p class="PhiH-author-bio">${authorData.content}</p>
+                    <div class="PhiH-author-footer">
+                        <button class="PhiH-author-more" data-author="${authorKey}">${getTranslation('PhiH.authors.readMore')}</button>
                     </div>
                 `;
                 
-                authorModal.style.display = 'block';
+                authorsGrid.appendChild(authorCard);
+            });
+            
+            // Add event listeners to "Read more" buttons
+            document.querySelectorAll('.PhiH-author-more').forEach(button => {
+                button.addEventListener('click', function() {
+                    const authorKey = this.getAttribute('data-author');
+                    showAuthorModal(authorKey);
+                });
+            });
+        }
+        
+        // Helper function to get translations
+        function getTranslation(key) {
+            return window.currentTranslations && window.currentTranslations[currentLanguage] && window.currentTranslations[currentLanguage][key] || key;
+        }
+        
+        // Function to show author modal
+        function showAuthorModal(authorKey) {
+            const author = PhiH_Authors[authorKey];
+            const authorData = getAuthorData(author, currentLanguage);
+            
+            authorModalContent.innerHTML = `
+                <div class="PhiH-author-modal-header">
+                    <img src="${authorData.image}" alt="${authorData.alt}" class="PhiH-author-modal-image" onerror="this.src='assets/icons/icon-96x96.png'">
+                    <div class="PhiH-author-modal-info">
+                        <h2 class="PhiH-author-modal-name">${authorData.name}</h2>
+                        <div class="PhiH-author-modal-dates">${authorData.birthYear} - ${authorData.deathYear}</div>
+                        <div class="PhiH-author-modal-school">${getSchoolName(authorData.school, currentLanguage)}</div>
+                        <p class="PhiH-author-modal-bio">${authorData.content}</p>
+                    </div>
+                </div>
+            `;
+            
+            authorModal.style.display = 'block';
+        }
+        
+        // Function to get school name based on key and language
+        function getSchoolName(schoolKey, language) {
+            const schools = {
+                'phenomenology': {
+                    'ar': 'الفينومينولوجيا',
+                    'fr': 'Phénoménologie', 
+                    'en': 'Phenomenology'
+                },
+                'phenomenologie': {
+                    'ar': 'الفينومينولوجيا',
+                    'fr': 'Phénoménologie',
+                    'en': 'Phenomenology'
+                },
+                'الفينومينولوجيا': {
+                    'ar': 'الفينومينولوجيا',
+                    'fr': 'Phénoménologie',
+                    'en': 'Phenomenology'
+                },
+                'existentialism': {
+                    'ar': 'الوجودية',
+                    'fr': 'Existentialisme',
+                    'en': 'Existentialism'
+                },
+                'existentialisme': {
+                    'ar': 'الوجودية', 
+                    'fr': 'Existentialisme',
+                    'en': 'Existentialism'
+                },
+                'الوجودية': {
+                    'ar': 'الوجودية',
+                    'fr': 'Existentialisme', 
+                    'en': 'Existentialism'
+                }
+            };
+            
+            // If we have a mapping for this school key, use it
+            if (schools[schoolKey]) {
+                return schools[schoolKey][language] || schoolKey;
+            }
+            
+            // Otherwise, return the original key
+            return schoolKey;
+        }
+        
+        // Function to filter authors
+        function filterAuthors() {
+            const searchTerm = searchFilter.value.toLowerCase();
+            const selectedCentury = centuryFilter.value;
+            const selectedTheme = themeFilter.value;
+            
+            filteredAuthors = Object.keys(PhiH_Authors).filter(authorKey => {
+                const author = PhiH_Authors[authorKey];
+                const authorData = getAuthorData(author, currentLanguage);
                 
-                // Update translations for modal content
+                // Search filter
+                if (searchTerm && !authorData.name.toLowerCase().includes(searchTerm)) {
+                    return false;
+                }
+                
+                // Century filter
+                if (selectedCentury) {
+                    // Handle different language representations of centuries
+                    const centuryMapping = {
+                        '20th': ['20th', '20th Century', '20ème', '20ème Siècle', 'القرن العشرين'],
+                        '19th': ['19th', '19th Century', '19ème', '19ème Siècle', 'القرن التاسع عشر'],
+                        'ancient': ['ancient', 'Ancient', 'ancien', 'Ancien', 'القديم']
+                    };
+                    
+                    const validCenturies = centuryMapping[selectedCentury] || [selectedCentury];
+                    if (!validCenturies.includes(authorData.century)) {
+                        return false;
+                    }
+                }
+                
+                // Theme filter
+                if (selectedTheme) {
+                    // Handle different language representations of themes
+                    const themeMapping = {
+                        'being': ['being', 'etre', 'الوجود', 'الماهية', 'existence', 'être'],
+                        'time': ['time', 'temps', 'الزمن', 'temporalité', 'زمان'],
+                        'metaphysics': ['metaphysics', 'metaphysique', 'الميتافيزيقا', 'ميتافيزيقا']
+                    };
+                    
+                    const validThemes = themeMapping[selectedTheme] || [selectedTheme];
+                    
+                    if (!hasMatchingTheme(authorData.themes, validThemes)) {
+                        return false;
+                    }
+                }
+                
+                return true;
+            });
+            
+            renderAuthors();
+        }
+        
+        // Function to update filter placeholders based on language
+        function updateFilterPlaceholders() {
+            if (window.currentTranslations && window.currentTranslations[currentLanguage]) {
+                const placeholder = window.currentTranslations[currentLanguage]['PhiH.authors.filters.searchPlaceholder'];
+                if (placeholder) {
+                    searchFilter.placeholder = placeholder;
+                }
+            }
+        }
+        
+        // Function to update page language and refresh content
+        function updatePageLanguage(lang) {
+            currentLanguage = lang;
+            updateFilterPlaceholders();
+            
+            // Force a complete refresh of the authors data
+            filteredAuthors = Object.keys(PhiH_Authors);
+            filterAuthors();
+            
+            // Update filter options text
+            updateFilterOptions();
+            
+            // Re-apply translations to any dynamically created elements
+            setTimeout(() => {
                 if (window.updateTranslations) {
                     window.updateTranslations();
                 }
+            }, 100);
+        }
+        
+        // Helper function to safely check themes
+        function hasMatchingTheme(authorThemes, validThemes) {
+            if (!authorThemes || !Array.isArray(authorThemes)) {
+                return false;
             }
             
-            // Function to get school name based on key
-            function getSchoolName(schoolKey) {
-                const schools = {
-                    'existentialism': 'Existentialism',
-                    'phenomenology': 'Phenomenology',
-                    'analytic': 'Analytic Philosophy',
-                    'continental': 'Continental Philosophy',
-                    'german_idealism': 'German Idealism',
-                    'stoicism': 'Stoicism',
-                    'platonism': 'Platonism',
-                    'aristotelianism': 'Aristotelianism'
-                };
-                return schools[schoolKey] || schoolKey;
-            }
+            return authorThemes.some(theme => 
+                validThemes.includes(theme.toLowerCase())
+            );
+        }    
+        
+        // Function to update filter options text
+        function updateFilterOptions() {
+            const centuryOptions = {
+                '': 'PhiH.authors.filters.allCenturies',
+                '20th': 'PhiH.authors.filters.20th',
+                '19th': 'PhiH.authors.filters.19th',
+                'ancient': 'PhiH.authors.filters.ancient'
+            };
             
-            // Function to get theme name based on key
-            function getThemeName(themeKey) {
-                const themes = {
-                    'being': 'Being',
-                    'existence': 'Existence',
-                    'time': 'Time',
-                    'technology': 'Technology',
-                    'morality': 'Morality',
-                    'nihilism': 'Nihilism',
-                    'power': 'Power',
-                    'aesthetics': 'Aesthetics',
-                    'freedom': 'Freedom',
-                    'responsibility': 'Responsibility',
-                    'consciousness': 'Consciousness',
-                    'politics': 'Politics',
-                    'forms': 'Forms',
-                    'justice': 'Justice',
-                    'knowledge': 'Knowledge',
-                    'logic': 'Logic',
-                    'ethics': 'Ethics',
-                    'metaphysics': 'Metaphysics',
-                    'biology': 'Biology',
-                    'language': 'Language'
-                };
-                return themes[themeKey] || themeKey;
-            }
+            const themeOptions = {
+                '': 'PhiH.authors.filters.allThemes',
+                'being': 'PhiH.authors.filters.being',
+                'time': 'PhiH.authors.filters.time',
+                'metaphysics': 'PhiH.authors.filters.metaphysics'
+            };
             
-            // Function to filter authors
-            function filterAuthors() {
-                const searchTerm = searchFilter.value.toLowerCase();
-                const selectedSchool = schoolFilter.value;
-                const selectedCentury = centuryFilter.value;
-                const selectedTheme = themeFilter.value;
-                
-                filteredAuthors = Object.keys(extendedAuthorsData).filter(authorKey => {
-                    const author = extendedAuthorsData[authorKey];
-                    const authorData = author[currentLanguage] || author.en;
-                    
-                    // Search filter
-                    if (searchTerm && !authorData.name.toLowerCase().includes(searchTerm)) {
-                        return false;
-                    }
-                    
-                    // School filter
-                    if (selectedSchool && author.school !== selectedSchool) {
-                        return false;
-                    }
-                    
-                    // Century filter
-                    if (selectedCentury && author.century !== selectedCentury) {
-                        return false;
-                    }
-                    
-                    // Theme filter
-                    if (selectedTheme && !author.themes.includes(selectedTheme)) {
-                        return false;
-                    }
-                    
-                    return true;
-                });
-                
-                renderAuthors();
-            }
-            
-            // Event listeners for filters
-            searchFilter.addEventListener('input', filterAuthors);
-            schoolFilter.addEventListener('change', filterAuthors);
-            centuryFilter.addEventListener('change', filterAuthors);
-            themeFilter.addEventListener('change', filterAuthors);
-            
-            // Reset filters
-            resetFilters.addEventListener('click', function() {
-                searchFilter.value = '';
-                schoolFilter.value = '';
-                centuryFilter.value = '';
-                themeFilter.value = '';
-                filterAuthors();
-            });
-            
-            // Close modal
-            closeModal.addEventListener('click', function() {
-                authorModal.style.display = 'none';
-            });
-            
-            // Close modal when clicking outside
-            window.addEventListener('click', function(event) {
-                if (event.target === authorModal) {
-                    authorModal.style.display = 'none';
+            // Update century filter options
+            Object.keys(centuryOptions).forEach(value => {
+                const option = centuryFilter.querySelector(`option[value="${value}"]`);
+                if (option && window.currentTranslations && window.currentTranslations[currentLanguage]) {
+                    option.textContent = window.currentTranslations[currentLanguage][centuryOptions[value]] || value;
                 }
             });
             
-            // Language change handling
-            const languageSelect = document.getElementById('languageSelect');
-            if (languageSelect) {
-                languageSelect.addEventListener('change', function() {
-                    currentLanguage = this.value;
-                    filterAuthors();
-                });
-            }
-            
-            // Initialize
-            renderAuthors();
+            // Update theme filter options
+            Object.keys(themeOptions).forEach(value => {
+                const option = themeFilter.querySelector(`option[value="${value}"]`);
+                if (option && window.currentTranslations && window.currentTranslations[currentLanguage]) {
+                    option.textContent = window.currentTranslations[currentLanguage][themeOptions[value]] || value;
+                }
+            });
+        }
+        
+        // Override the applyLanguage function to handle dynamic content
+        const originalApplyLanguage = window.applyLanguage;
+        window.applyLanguage = function(lang) {
+            originalApplyLanguage(lang);
+            updatePageLanguage(lang);
+        };
+        
+        // Event listeners for filters
+        searchFilter.addEventListener('input', filterAuthors);
+        centuryFilter.addEventListener('change', filterAuthors);
+        themeFilter.addEventListener('change', filterAuthors);
+        
+        // Reset filters
+        resetFilters.addEventListener('click', function() {
+            searchFilter.value = '';
+            centuryFilter.value = '';
+            themeFilter.value = '';
+            filterAuthors();
         });
-    </script>
-</body>
+        
+        // Close modal
+        closeModal.addEventListener('click', function() {
+            authorModal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === authorModal) {
+                authorModal.style.display = 'none';
+            }
+        });
+        
+        // Initialize
+        let filteredAuthors = Object.keys(PhiH_Authors);
+        updateFilterPlaceholders();
+        updateFilterOptions();
+        renderAuthors();
+    });
+</script>
+	</body>
 </html>

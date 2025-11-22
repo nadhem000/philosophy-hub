@@ -45,7 +45,28 @@ function applyLanguage(lang) {
             element.alt = window.currentTranslations[lang][key];
         }
     });
+    
+    // Update select options with data-i18n attributes
+    document.querySelectorAll('select option[data-i18n]').forEach(option => {
+        const key = option.getAttribute('data-i18n');
+        if (window.currentTranslations && window.currentTranslations[lang] && window.currentTranslations[lang][key]) {
+            option.textContent = window.currentTranslations[lang][key];
+        }
+    });
+	// Update input placeholders with data-i18n-placeholder
+document.querySelectorAll('[data-i18n-placeholder]').forEach(input => {
+    const key = input.getAttribute('data-i18n-placeholder');
+    if (window.currentTranslations && window.currentTranslations[lang] && window.currentTranslations[lang][key]) {
+        input.placeholder = window.currentTranslations[lang][key];
+    }
+});
 }
+
+// Expose updateTranslations globally for dynamic content
+window.updateTranslations = function() {
+    const lang = localStorage.getItem('preferredLanguage') || 'en';
+    applyLanguage(lang);
+};
 
 // Theme switching functionality with persistence
 function initializeThemeSwitcher() {

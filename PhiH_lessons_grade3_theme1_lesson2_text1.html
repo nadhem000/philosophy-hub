@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analysis: Heidegger's "The They" - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Indigo + Slate Color Palette */
+        :root {
+            --primary-color: #4f46e5;
+            --primary-light: #6366f1;
+            --primary-dark: #4338ca;
+            --secondary-color: #64748b;
+            --secondary-light: #94a3b8;
+            --secondary-dark: #475569;
+            --accent-color: #7c3aed;
+            --accent-light: #8b5cf6;
+            --accent-dark: #6d28d9;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --definition-bg: #eef2ff;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #e0e7ff;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.1), 0 2px 4px -1px rgba(79, 70, 229, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(79, 70, 229, 0.1), 0 4px 6px -2px rgba(79, 70, 229, 0.05);
+            --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            --gradient-secondary: linear-gradient(135deg, #64748b 0%, #475569 100%);
+            --gradient-accent: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --secondary-color: #94a3b8;
+            --secondary-light: #cbd5e1;
+            --secondary-dark: #64748b;
+            --accent-color: #8b5cf6;
+            --accent-light: #a78bfa;
+            --accent-dark: #7c3aed;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #1e1b4b;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #312e81;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            --gradient-secondary: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+            --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(79, 70, 229, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(100, 116, 139, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(124, 58, 237, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(79, 70, 229, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="ltr">
+    <!-- The rest of the HTML content remains exactly the same -->
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+            <!-- Authors Button -->
+            <div class="PhiH-general-authors-link">
+                <a href="authors.html" class="PhiH-general-authors-btn">
+                    <span class="PhiH-general-authors-icon">👥</span>
+                    <span data-i18n="PhiH.general.authors">Philosophers</span>
+                </a>
+            </div>
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.heidegger.title">تحليل النص: في استبداد "الهم" - مارتان هيدغير</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.heidegger.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.heidegger.introduction.title">مقدمة النص</h4>
+                <p data-i18n="PhiH.textAnalysis.heidegger.introduction.content">
+                    يناقش النص مفهوم "الهم" (Das Man) عند هيدغير كسلطة مجهولة وغير شخصية تفرض نمطاً موحداً للتفكير والشعور والسلوك في الحياة اليومية، مما يؤدي إلى فقدان الفرد لأصالته وتفرده.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.heidegger.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.heidegger.text.content">
+                        ينطوي العالم (1) المحيط المباشر، فوريًا، على تنظيم لعالم محيط
+                        عموميّ وعلى انشغال به. فكلّ فردٍ باستعماله لوسائل النقل
+                        المشتركة ولخدمات الإعلام (الصحف مثلا) هو شبيه بأيّ فردٍ آخر.
+                        وهذا الوجود المشترك يذوّبني تماما كموجود إنسانيّ مخصوص
+                        في نمط وجود الآخر بحيث أنّ الآخرين لا يزدادون
+                        إلا اختفاء على مستوى ما لديهم من تميّز ومن خصوصيّة صريحة.
+                        إنّ وضع اللاّاختلاف واللاّتميّز هذا هو ما يُتيح للهُم أن ينمّي استبداده الخاص.
+                        فنحن نلهو ونتسلّى مثلما "الهُم" يلهو، ونحن نرى ونحكم على الأدب أو الفنّ مثلما "الهُم" يرى
+                        ويحكم، ونحن ننأى عن "الجموع الغفيرة" مثلما ينأى "الهُم" عنها،
+                        ونعتبر "مُشيناً" ما يعتبره "الهُم" كذلك. إنّ هذا "الهُم" وهو ليس
+                        شخصا بعينه وهو كل النّاس، بالرغم من كونه ليس حاصل
+                        مجموعهم، هو الذي يُملي على الواقع اليوميّ نمط وجوده.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.heidegger.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/martin_heidegger.jpg" alt="مارتان هيدغير" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.heidegger.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.heidegger.author.content">
+                            مارتان هيدغير (1889-1976) فيلسوف ألمانيّ معاصر. المسألة الأساسيّة بالنسبة إلى الفكر الفلسفي،
+                            في نظره، هي تلك التي استهلّها اليونانيون بسؤال: ما هو الوجود ؟ غير
+                            أنّ هذا السؤال تعرّض إلى مصير غريب جعله يُنسى لينساق الفلاسفة
+                            نحو البحث في موجود ما على أنّه هو الوجود. إنّ هذا النسيان هو ما
+                            ينبغي إنهاؤه لاستعادة السؤال من جديد في ضوء التمييز الصارم بين
+                            الوجود والموجود. وهو ما لا يُمكن أن يتحقّق إلا انطلاقا من تحليل
+                            للموجود الذي ينفرد بطرح هذا السؤال وهو الإنسان. يكشف ذلك
+                            التحليل أنّ الإنسان كائن الزمنيّة بما هي حركة تعال دائم بين بُعديْ
+                            الماضي والحاضر انطلاقا من المستقبل، حركة تجعله خارج ذاته
+                            باستمرار ليصوغ مشروع عالم ممكن. من مؤلّفاته الوجود
+                            والزمان (1927) ... ما هي الميتافيزيقا (...)، شعاب (1950) مسائل
+                            (I وII وIII وIV)، رسالة حول النزعة الإنسانيّة (...)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.heidegger.lexical.title">المفاهيم والمصطلحات</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.heidegger.lexical.item1"><strong>العالم:</strong> ليس العالم، في نظر "هيدغير"، مجموع الموجودات التي تؤلّف الكون، بل هو أفقٌ دلاليّ يتكوّن بالإنسان ويكوّنه، فهو الإطار الماديّ والثقافيّ الذي يكون فيه الفرد مباشرة مع آخرين فيعي ذاته وواقعه ولكنّه يمتلك القدرة على التعالي عليه وتجاوزه نحو صياغة مشروع عالم مغاير يكون منطلقا لدلالات جديدة تغيّر فهم العالم وتهيئ بالتالي شروط تحويله.</li>
+                    <li data-i18n="PhiH.textAnalysis.heidegger.lexical.item2"><strong>الموجود الإنسانيّ:</strong> لا يتحدّد الإنسان، في نظر "هيدغير"، كذات يحتويها عالم من الموضوعات بل ككائن في العالم، فهو كائن "تكمن ماهيته في وجوده" باعتباره وجودا يقوم على الانفتاح والتعالي والتجاوز. فالإنسان لا يكون إلا مع الآخرين في إطار سياق اجتماعي وثقافيّ محدّد، ولكنّه في آن واحد لا يكون إلا خارج ذاته فيدرك أنه كائن قُذف به في العالم ويتجّه نحو الموت فيستمد من ذلك القدرة على تجاوز الوجود الجماعي المشترك والرتيب لينحت لنفسه أصالة من خلال مشروع ينفتح على المستقبل.</li>
+                    <li data-i18n="PhiH.textAnalysis.heidegger.lexical.item3"><strong>الهُم:</strong> هو السمة التي تطبع الوجود مع الآخرين في عالم عموميّ مشترك بحيث يَمثُل كسلطة استبداديّة غير مشخّصة تفرض نظاما من القيم يحدّد النمط الذي ينبغي أن يوجّه الحكم أو الإحساس أو الفعل فيسبّب ذلك توحيدا وتماثلا ينحطّان بالموجود الإنسانيّ ويُفرغانه من كل أصالة وتفرّد.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.heidegger.questions.title">أسئلة الفهم والتحليل</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.heidegger.questions.q1">ما الذي يجعل من الانخراط في اليوميّ مصدر نفي لكل خصوصيّة وتفرّد ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.heidegger.questions.q2">بيّن من خلال الأمثلة الواردة في النصّ كيف يُمارس "الهُم" استبداده ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.heidegger.questions.q3">هل من تناقض بين اعتبار "الهُم" سلطة مستبدّة وبين القول أنّه ليس شخصا بعينه ولا حاصل مجموع كل النّاس ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.heidegger.questions.q4">كيف تتحدّد سُبل التحرّر من سلطة "الهُم" باتجاه التفرّد والأصالة واستعادة الإنسان لمسؤوليّته عن ذاته؟</li>
+                    <li data-i18n="PhiH.textAnalysis.heidegger.questions.q5">هل يكفي أن نتمرّد على بعض الظواهر الاجتماعية كي نضمن أصالة الفكر والممارسة ؟</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.heidegger.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.heidegger.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.heidegger.answers.a1.content">
+                        الانخراط في اليومي يؤدي إلى نفي الخصوصية والتفرّد لأنه يفرض نمطاً موحداً للتفكير والشعور والسلوك. فوسائل النقل المشتركة وخدمات الإعلام تجعل كل فرد يشبه أي فرد آخر، مما يؤدي إلى ذوبان الموجود الإنساني المخصوص في نمط وجود الآخر، وبالتالي اختفاء التميّز والخصوصية الصريحة.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.heidegger.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.heidegger.answers.a2.content">
+                        يمارس "الهُم" استبداده من خلال تحديد أنماط التسلية والترفيه، وتوجيه الأحكام حول الأدب والفن، وتحديد ما يعتبر مشيناً أو مقبولاً. فالنص يوضح أن "نحن نلهو ونتسلّى مثلما 'الهُم' يلهو، ونحن نرى ونحكم على الأدب أو الفنّ مثلما 'الهُم' يرى ويحكم".
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.heidegger.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.heidegger.answers.a3.content">
+                        لا يوجد تناقض بين اعتبار "الهُم" سلطة مستبدّة وبين كونه ليس شخصاً بعينه ولا حاصل مجموع كل الناس. فـ"الهُم" هو سلطة مجهولة وغير مشخصة، تمثل نمطاً سائداً للتفكير والسلوك يفرض نفسه على الأفراد دون أن يكون مرتبطاً بشخص معين أو مجموعة محددة.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.heidegger.answers.a4.title">الإجابة عن السؤال الرابع:</h5>
+                    <p data-i18n="PhiH.textAnalysis.heidegger.answers.a4.content">
+                        تتحدد سبل التحرر من سلطة "الهُم" من خلال الوعي النقدي والتفكير المستقل والقدرة على اتخاذ القرارات الشخصية. هذا يتطلب:
+                        <br>- الوعي بوجود هذه السلطة وآليات عملها
+                        <br>- ممارسة التفكير النقدي تجاه الأنماط السائدة
+                        <br>- تحمل المسؤولية عن الخيارات الشخصية
+                        <br>- الشجاعة في اتخاذ المواقف المخالفة للرأي السائد
+                        <br>- الانفتاح على إمكانيات الوجود المختلفة والمغايرة
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.heidegger.answers.a5.title">الإجابة عن السؤال الخامس:</h5>
+                    <p data-i18n="PhiH.textAnalysis.heidegger.answers.a5.content">
+                        لا يكفي التمرد على بعض الظواهر الاجتماعية لضمان أصالة الفكر والممارسة، لأن التمرد قد يكون مجرد رد فعل عكسي لا يختلف جوهرياً عن الانصياع. الأصالة الحقيقية تتطلب:
+                        <br>- تأسيس مشروع وجودي شخصي
+                        <br>- التفكير المستقل والمبدع
+                        <br>- المسؤولية عن الذات والخيارات
+                        <br>- الالتزام بالقيم التي يتبناها الفرد عن قناعة
+                        <br>- القدرة على تجاوز الثنائيات البسيطة (طاعة/تمرد) نحو إبداع حقيقي
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.heidegger.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.heidegger.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.heidegger.thesis.content">
+                        يطرح هيدغير فكرة "الهُم" (Das Man) كسلطة مجهولة تفرض نمطاً موحداً للوجود اليومي، مما يؤدي إلى فقدان الأصالة والتفرد لدى الإنسان. يرى هيدغير أن هذه السلطة غير المشخصة تمثل قوة خفية تسيطر على حياة الأفراد وتوجه تفكيرهم وسلوكهم دون أن يكونوا واعين بذلك.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.heidegger.mechanisms.title">آليات عمل "الهُم":</h5>
+                    <p data-i18n="PhiH.textAnalysis.heidegger.mechanisms.content">
+                        تعمل آليات "الهُم" من خلال عدة قنوات رئيسية تبدأ بوسائل النقل المشتركة وخدمات الإعلام التي تسهم في جعل الأفراد متشابهين في تفكيرهم وسلوكهم. كما تتجلى هذه الآليات في تحديد أنماط التسلية والترفيه المقبولة اجتماعياً، وتوجيه الأحكام حول الأدب والفن بما يتوافق مع الذوق العام السائد. بالإضافة إلى ذلك، يمارس "الهُم" سلطته من خلال تحديد ما يعتبر مشيناً أو مقبولاً في السلوك اليومي، مما يخلق نظاماً من القيم والمعايير التي يتبناها الأفراد دون تمحيص أو نقد.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.heidegger.consequences.title">نتائج سيطرة "الهُم":</h5>
+                    <p data-i18n="PhiH.textAnalysis.heidegger.consequences.content">
+                        تؤدي سيطرة "الهُم" إلى مجموعة من النتائج السلبية على الوجود الإنساني، أبرزها فقدان الخصوصية والتفرّد حيث يذوب الموجود الإنساني في نمط وجود الآخر. كما يترتب على ذلك اختفاء التميّز والخصوصية الصريحة التي تميز كل فرد عن الآخر، وفرض نمط موحد للوجود اليومي يلغي الإبداع والتفرد. هذه النتائج تجعل الإنسان يعيش حياة غير أصيلة، بعيدة عن مشروعه الوجودي الشخصي، ويصبح مجرد صدى للرأي السائد السطحي الذي يفرضه "الهُم".
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.heidegger.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.heidegger.significance.content">
+                        يحمل مفهوم "الهُم" عند هيدغير دلالات عميقة تتجاوز التحليل السوسيولوجي البسيط إلى أبعاد أنطولوجية تمس جوهر الوجود الإنساني. فـ"الهُم" ليس مجرد ضغط اجتماعي عادي، بل هو نمط وجودي يهدد إمكانية العيش الأصيل. يتجلى "الهُم" في الحياة اليومية من خلال اللغة المشتركة، العادات المتوارثة، التوقعات الاجتماعية، وأنماط الاستهلاك والإعلام التي تسهم في خلق كائنات بشرية متشابهة تفقد قدرتها على التفكير المستقل واتخاذ القرارات الحرة. يرى هيدغير أن التحرر من سلطة "الهُم" يتطلب وعياً نقدياً وجرأة وجودية للخروج من القطيع والبحث عن الذات الحقيقية beyond الأنماط الجاهزة والمسلمات غير المفحوصة.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.heidegger.level": "3ème Secondaire - Philosophie",
+                
+                // Text Analysis specific translations
+                
+                "PhiH.textAnalysis.heidegger.title": "Texte 1 : Sur la tyrannie du \"On\" - Martin Heidegger",
+                "PhiH.textAnalysis.heidegger.introduction.title": "Introduction au texte",
+                "PhiH.textAnalysis.heidegger.introduction.content": "Le texte discute du concept du \"On\" (Das Man) chez Heidegger en tant que pouvoir anonyme et impersonnel qui impose un modèle uniforme de pensée, de sentiment et de comportement dans la vie quotidienne, conduisant à la perte de l'authenticité et de l'individualité de la personne.",
+                "PhiH.textAnalysis.heidegger.text.title": "Texte",
+                "PhiH.textAnalysis.heidegger.text.content": "Le monde environnant immédiat implique, de manière immédiate, une organisation d'un monde environnant général et une préoccupation pour celui-ci. Chaque individu, en utilisant les moyens de transport communs et les services d'information (journaux par exemple), est semblable à tout autre individu. Et cette coexistence me dissout complètement en tant qu'être humain particulier dans le mode d'être de l'autre, de sorte que les autres ne font qu'augmenter leur disparition au niveau de ce qu'ils ont de distinctif et de particularité explicite. Cette situation de non-différence et de non-distinction est ce qui permet au \"On\" de développer sa propre tyrannie. Nous nous amusons et nous divertissons comme le \"On\" s'amuse, nous voyons et jugeons la littérature ou l'art comme le \"On\" voit et juge, nous nous éloignons des \"foules immenses\" comme le \"On\" s'en éloigne, et nous considérons comme \"honteux\" ce que le \"On\" considère comme tel. Ce \"On\" qui n'est personne en particulier et qui est tout le monde, bien qu'il ne soit pas la somme d'entre eux, est celui qui dicte au quotidien son mode d'existence.",
+                "PhiH.textAnalysis.heidegger.author.title": "Présentation de l'auteur",
+				"PhiH.textAnalysis.heidegger.author.alt": "Martin Heidegger",
+                "PhiH.textAnalysis.heidegger.author.content": "Martin Heidegger (1889-1976) philosophe allemand contemporain. La question fondamentale pour la pensée philosophique, selon lui, est celle que les Grecs ont inaugurée par la question : qu'est-ce que l'être ? Mais cette question a connu un destin étrange qui l'a fait oublier, conduisant les philosophes à rechercher un étant particulier comme étant l'être. Cet oubli est ce qui doit être mis fin pour retrouver la question à nouveau à la lumière de la distinction rigoureuse entre l'être et l'étant. Ce qui ne peut être réalisé qu'à partir d'une analyse de l'étant qui est seul à poser cette question, à savoir l'homme. Cette analyse révèle que l'homme est l'être de la temporalité en tant que mouvement constant de dépassement entre les deux dimensions du passé et du présent à partir du futur, un mouvement qui le met constamment hors de lui-même pour formuler un projet de monde possible. Parmi ses œuvres : Être et Temps (1927) ... Qu'est-ce que la métaphysique ? (...), Chemins (1950), Questions (I et II et III et IV), Lettre sur l'humanisme (...)",
+                "PhiH.textAnalysis.heidegger.lexical.title": "Concepts et terminologie",
+                "PhiH.textAnalysis.heidegger.lexical.item1": "<strong>Le monde:</strong> Le monde, selon Heidegger, n'est pas l'ensemble des étants qui composent l'univers, mais un horizon sémantique qui se constitue par l'homme et le constitue, c'est le cadre matériel et culturel dans lequel l'individu est directement avec d'autres, prend conscience de lui-même et de sa réalité, mais possède la capacité de le dépasser et de le transcender vers la formulation d'un projet de monde différent qui est le point de départ de nouvelles significations qui changent la compréhension du monde et préparent ainsi les conditions de sa transformation.",
+                "PhiH.textAnalysis.heidegger.lexical.item2": "<strong>L'être humain:</strong> L'homme, selon Heidegger, n'est pas déterminé comme un sujet contenant un monde d'objets, mais comme un être-dans-le-monde, c'est un être \"dont l'essence réside dans son existence\" en tant qu'existence fondée sur l'ouverture, le dépassement et la transcendance. L'homme n'est qu'avec les autres dans un contexte social et culturel spécifique, mais en même temps, il n'est qu'en dehors de lui-même, réalisant qu'il est un être jeté dans le monde et se dirigeant vers la mort, tirant de cela la capacité de dépasser l'existence collective commune et routinière pour sculpter sa propre authenticité à travers un projet qui s'ouvre sur l'avenir.",
+                "PhiH.textAnalysis.heidegger.lexical.item3": "<strong>Le \"On\":</strong> C'est la caractéristique qui marque l'existence avec les autres dans un monde commun général de sorte qu'il apparaît comme un pouvoir tyrannique non personnifié qui impose un système de valeurs déterminant le mode qui doit orienter le jugement, le sentiment ou l'action, provoquant ainsi une unification et une similitude qui dégradent l'être humain et le vident de toute authenticité et singularité.",
+                "PhiH.textAnalysis.heidegger.questions.title": "Questions de compréhension et d'analyse",
+                "PhiH.textAnalysis.heidegger.questions.q1": "Qu'est-ce qui fait que l'engagement dans le quotidien est une source de négation de toute particularité et singularité ?",
+                "PhiH.textAnalysis.heidegger.questions.q2": "Montrez à travers les exemples mentionnés dans le texte comment le \"On\" exerce sa tyrannie ?",
+                "PhiH.textAnalysis.heidegger.questions.q3": "Y a-t-il une contradiction entre considérer le \"On\" comme un pouvoir tyrannique et dire qu'il n'est personne en particulier ni la somme de tous les gens ?",
+                "PhiH.textAnalysis.heidegger.questions.q4": "Comment déterminer les voies de libération du pouvoir du \"On\" vers la singularité et l'authenticité et la restauration de la responsabilité de l'homme envers lui-même ?",
+                "PhiH.textAnalysis.heidegger.questions.q5": "Suffit-il de se rebeller contre certains phénomènes sociaux pour garantir l'authenticité de la pensée et de la pratique ?",
+                "PhiH.textAnalysis.heidegger.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.heidegger.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.heidegger.answers.a1.content": "L'engagement dans le quotidien conduit à la négation de la particularité et de la singularité car il impose un modèle uniforme de pensée, de sentiment et de comportement. Les moyens de transport communs et les services médiatiques rendent chaque individu semblable à tout autre individu, conduisant à la dissolution de l'être humain particulier dans le mode d'être de l'autre, et donc à la disparition de la distinction et de la particularité explicite.",
+                "PhiH.textAnalysis.heidegger.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.heidegger.answers.a2.content": "Le \"On\" exerce sa tyrannie en déterminant les modes de divertissement et de loisir, en orientant les jugements sur la littérature et l'art, et en déterminant ce qui est considéré comme honteux ou acceptable. Le texte précise que \"nous nous amusons et nous divertissons comme le 'On' s'amuse, nous voyons et jugeons la littérature ou l'art comme le 'On' voit et juge\".",
+                "PhiH.textAnalysis.heidegger.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.heidegger.answers.a3.content": "Il n'y a pas de contradiction entre considérer le \"On\" comme un pouvoir tyrannique et le fait qu'il ne soit personne en particulier ni la somme de tous les gens. Le \"On\" est un pouvoir anonyme et non personnifié, représentant un modèle dominant de pensée et de comportement qui s'impose aux individus sans être lié à une personne spécifique ou à un groupe défini.",
+				"PhiH.textAnalysis.heidegger.answers.a4.title": "Réponse à la quatrième question:",
+"PhiH.textAnalysis.heidegger.answers.a4.content": "Les voies de libération du pouvoir du \"On\" se déterminent par la conscience critique, la pensée indépendante et la capacité à prendre des décisions personnelles. Cela nécessite :<br>- La conscience de l'existence de ce pouvoir et de ses mécanismes<br>- La pratique de la pensée critique envers les modèles dominants<br>- L'assumption de la responsabilité des choix personnels<br>- Le courage de prendre des positions contraires à l'opinion courante<br>- L'ouverture aux possibilités d'existence différentes et alternatives",
+"PhiH.textAnalysis.heidegger.answers.a5.title": "Réponse à la cinquième question:",
+"PhiH.textAnalysis.heidegger.answers.a5.content": "Il ne suffit pas de se rebeller contre certains phénomènes sociaux pour garantir l'authenticité de la pensée et de la pratique, car la rébellion peut n'être qu'une réaction inverse qui ne diffère pas fondamentalement de la soumission. L'authenticité véritable exige :<br>- L'établissement d'un projet existentiel personnel<br>- La pensée indépendante et créative<br>- La responsabilité envers soi-même et ses choix<br>- L'engagement envers les valeurs que l'individu adopte par conviction<br>- La capacité à dépasser les dualités simples (obéissance/rébellion) vers une création véritable",
+                "PhiH.textAnalysis.heidegger.title": "Analyse du texte",
+"PhiH.textAnalysis.heidegger.thesis.title": "Thèse principale:",
+"PhiH.textAnalysis.heidegger.thesis.content": "Heidegger présente l'idée du \"On\" (Das Man) comme un pouvoir anonyme qui impose un modèle uniforme d'existence quotidienne, conduisant à la perte d'authenticité et d'individualité chez l'homme. Heidegger considère que ce pouvoir non personnifié représente une force cachée qui contrôle la vie des individus et oriente leur pensée et leur comportement sans qu'ils en soient conscients.",
+"PhiH.textAnalysis.heidegger.mechanisms.title": "Mécanismes de fonctionnement du \"On\":",
+"PhiH.textAnalysis.heidegger.mechanisms.content": "Les mécanismes du \"On\" opèrent à travers plusieurs canaux principaux, commençant par les moyens de transport communs et les services médiatiques qui contribuent à rendre les individus similaires dans leur pensée et leur comportement. Ces mécanismes se manifestent également dans la détermination des modes de divertissement et de loisir socialement acceptables, et dans l'orientation des jugements sur la littérature et l'art conformément au goût général dominant. De plus, le \"On\" exerce son pouvoir en déterminant ce qui est considéré comme honteux ou acceptable dans le comportement quotidien, créant ainsi un système de valeurs et de normes que les individus adoptent sans examen ni critique.",
+"PhiH.textAnalysis.heidegger.consequences.title": "Conséquences de la domination du \"On\":",
+"PhiH.textAnalysis.heidegger.consequences.content": "La domination du \"On\" entraîne une série de conséquences négatives sur l'existence humaine, notamment la perte de particularité et de singularité où l'être humain se dissout dans le mode d'être de l'autre. Il en résulte également la disparition de la distinction et de la particularité explicite qui distinguent chaque individu des autres, et l'imposition d'un modèle uniforme d'existence quotidienne qui abolit la créativité et la singularité. Ces conséquences font que l'homme vit une vie inauthentique, loin de son projet existentiel personnel, et devient simplement un écho de l'opinion courante superficielle imposée par le \"On\".",
+"PhiH.textAnalysis.heidegger.significance.title": "Significations et dimensions du concept:",
+"PhiH.textAnalysis.heidegger.significance.content": "Le concept du \"On\" chez Heidegger porte des significations profondes qui dépassent l'analyse sociologique simple pour atteindre des dimensions ontologiques touchant l'essence de l'existence humaine. Le \"On\" n'est pas seulement une pression sociale ordinaire, mais un mode existentiel qui menace la possibilité de vivre authentiquement. Le \"On\" se manifeste dans la vie quotidienne à travers le langage commun, les habitudes héritées, les attentes sociales, et les modes de consommation et de médias qui contribuent à créer des êtres humains similaires perdant leur capacité à penser de manière indépendante et à prendre des décisions libres. Heidegger estime que la libération du pouvoir du \"On\" nécessite une conscience critique et un courage existentiel pour sortir du troupeau et chercher le vrai soi au-delà des modèles préétablis et des postulats non examinés."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.heidegger.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.heidegger.title": "Text 1: On the Tyranny of the \"They\" - Martin Heidegger",
+                "PhiH.textAnalysis.heidegger.introduction.title": "Text Introduction",
+                "PhiH.textAnalysis.heidegger.introduction.content": "The text discusses Heidegger's concept of the \"They\" (Das Man) as an anonymous and impersonal power that imposes a uniform pattern of thinking, feeling and behavior in daily life, leading to the loss of authenticity and individuality of the person.",
+                "PhiH.textAnalysis.heidegger.text.title": "Text",
+                "PhiH.textAnalysis.heidegger.text.content": "The immediate surrounding world immediately involves an organization of a general surrounding world and a preoccupation with it. Every individual, by using common means of transport and information services (newspapers for example), is similar to any other individual. And this coexistence completely dissolves me as a particular human being in the mode of being of the other, so that the others only increase their disappearance at the level of what they have of distinctive and explicit particularity. This situation of non-difference and non-distinction is what allows the \"They\" to develop its own tyranny. We amuse ourselves and entertain ourselves as the \"They\" amuses itself, we see and judge literature or art as the \"They\" sees and judges, we distance ourselves from the \"immense crowds\" as the \"They\" distances itself from them, and we consider \"shameful\" what the \"They\" considers as such. This \"They\" which is no one in particular and which is everyone, although it is not the sum of them, is the one that dictates to daily reality its mode of existence.",
+                "PhiH.textAnalysis.heidegger.author.title": "Author Presentation",
+				"PhiH.textAnalysis.heidegger.author.alt": "Martin Heidegger",
+                "PhiH.textAnalysis.heidegger.author.content": "Martin Heidegger (1889-1976) contemporary German philosopher. The fundamental question for philosophical thought, in his view, is the one that the Greeks initiated with the question: what is being? But this question underwent a strange fate that made it forgotten, leading philosophers to search for a particular being as being. This forgetting is what must be ended to recover the question again in the light of the rigorous distinction between being and being. This can only be achieved through an analysis of the being that alone poses this question, namely man. This analysis reveals that man is the being of temporality as a constant movement of transcendence between the two dimensions of the past and the present from the future, a movement that constantly puts him outside himself to formulate a project of a possible world. Among his works: Being and Time (1927) ... What is Metaphysics? (...), Paths (1950), Questions (I and II and III and IV), Letter on Humanism (...)",
+                "PhiH.textAnalysis.heidegger.lexical.title": "Concepts and Terminology",
+                "PhiH.textAnalysis.heidegger.lexical.item1": "<strong>The world:</strong> The world, according to Heidegger, is not the set of beings that make up the universe, but a semantic horizon that is constituted by man and constitutes him, it is the material and cultural framework in which the individual is directly with others, becomes aware of himself and his reality, but possesses the capacity to transcend it and go beyond it towards the formulation of a project of a different world that is the starting point for new meanings that change the understanding of the world and thus prepare the conditions for its transformation.",
+                "PhiH.textAnalysis.heidegger.lexical.item2": "<strong>Human being:</strong> Man, according to Heidegger, is not determined as a subject containing a world of objects, but as a being-in-the-world, he is a being \"whose essence lies in his existence\" as an existence based on openness, transcendence and going beyond. Man is only with others in a specific social and cultural context, but at the same time, he is only outside himself, realizing that he is a being thrown into the world and heading towards death, drawing from that the ability to transcend common and routine collective existence to carve out his own authenticity through a project that opens onto the future.",
+                "PhiH.textAnalysis.heidegger.lexical.item3": "<strong>The \"They\":</strong> It is the characteristic that marks existence with others in a general common world so that it appears as a non-personified tyrannical power that imposes a system of values determining the mode that should guide judgment, feeling or action, thus causing a unification and similarity that degrade the human being and empty him of all authenticity and singularity.",
+                "PhiH.textAnalysis.heidegger.questions.title": "Comprehension and Analysis Questions",
+                "PhiH.textAnalysis.heidegger.questions.q1": "What makes engagement in the daily a source of denial of all particularity and singularity?",
+                "PhiH.textAnalysis.heidegger.questions.q2": "Show through the examples mentioned in the text how the \"They\" exercises its tyranny?",
+                "PhiH.textAnalysis.heidegger.questions.q3": "Is there a contradiction between considering the \"They\" as a tyrannical power and saying that it is no one in particular nor the sum of all people?",
+                "PhiH.textAnalysis.heidegger.questions.q4": "How to determine the paths of liberation from the power of the \"They\" towards singularity and authenticity and the restoration of man's responsibility for himself?",
+                "PhiH.textAnalysis.heidegger.questions.q5": "Is it enough to rebel against some social phenomena to guarantee the authenticity of thought and practice?",
+                "PhiH.textAnalysis.heidegger.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.heidegger.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.heidegger.answers.a1.content": "Engagement in the daily leads to the denial of particularity and singularity because it imposes a uniform pattern of thinking, feeling and behavior. Common means of transport and media services make every individual similar to any other individual, leading to the dissolution of the particular human being in the mode of being of the other, and thus the disappearance of distinction and explicit particularity.",
+                "PhiH.textAnalysis.heidegger.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.heidegger.answers.a2.content": "The \"They\" exercises its tyranny by determining the modes of entertainment and leisure, directing judgments about literature and art, and determining what is considered shameful or acceptable. The text specifies that \"we amuse ourselves and entertain ourselves as the 'They' amuses itself, we see and judge literature or art as the 'They' sees and judges\".",
+                "PhiH.textAnalysis.heidegger.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.heidegger.answers.a3.content": "There is no contradiction between considering the \"They\" as a tyrannical power and the fact that it is no one in particular nor the sum of all people. The \"They\" is an anonymous and non-personified power, representing a dominant pattern of thinking and behavior that imposes itself on individuals without being linked to a specific person or a defined group.",
+				"PhiH.textAnalysis.heidegger.answers.a4.title": "Answer to the fourth question:",
+"PhiH.textAnalysis.heidegger.answers.a4.content": "The paths of liberation from the power of the \"They\" are determined through critical awareness, independent thinking and the ability to make personal decisions. This requires:<br>- Awareness of the existence of this power and its mechanisms<br>- Practicing critical thinking towards dominant patterns<br>- Taking responsibility for personal choices<br>- Courage to take positions contrary to prevailing opinion<br>- Openness to different and alternative possibilities of existence",
+
+"PhiH.textAnalysis.heidegger.answers.a5.title": "Answer to the fifth question:",
+"PhiH.textAnalysis.heidegger.answers.a5.content": "It is not enough to rebel against some social phenomena to guarantee the authenticity of thought and practice, because rebellion may be merely an inverse reaction that does not fundamentally differ from submission. True authenticity requires:<br>- Establishing a personal existential project<br>- Independent and creative thinking<br>- Responsibility for self and choices<br>- Commitment to values that the individual adopts by conviction<br>- The ability to transcend simple dualities (obedience/rebellion) towards genuine creation",
+                "PhiH.textAnalysis.heidegger.title": "Text Analysis",
+"PhiH.textAnalysis.heidegger.thesis.title": "Main thesis:",
+"PhiH.textAnalysis.heidegger.thesis.content": "Heidegger presents the idea of the \"They\" (Das Man) as an anonymous power that imposes a uniform pattern of daily existence, leading to the loss of authenticity and individuality in man. Heidegger sees this non-personified power as a hidden force that controls individuals' lives and directs their thinking and behavior without them being aware of it.",
+"PhiH.textAnalysis.heidegger.mechanisms.title": "Mechanisms of the \"They\" functioning:",
+"PhiH.textAnalysis.heidegger.mechanisms.content": "The mechanisms of the \"They\" operate through several main channels, beginning with common means of transport and media services that contribute to making individuals similar in their thinking and behavior. These mechanisms are also evident in determining socially acceptable modes of entertainment and leisure, and directing judgments about literature and art in line with the prevailing general taste. Additionally, the \"They\" exercises its power by determining what is considered shameful or acceptable in daily behavior, thus creating a system of values and standards that individuals adopt without scrutiny or criticism.",
+"PhiH.textAnalysis.heidegger.consequences.title": "Consequences of the domination of the \"They\":",
+"PhiH.textAnalysis.heidegger.consequences.content": "The domination of the \"They\" leads to a series of negative consequences on human existence, most notably the loss of particularity and singularity where the human being dissolves into the mode of being of the other. This also results in the disappearance of distinction and explicit particularity that distinguishes each individual from others, and the imposition of a uniform pattern of daily existence that abolishes creativity and uniqueness. These consequences make man live an inauthentic life, far from his personal existential project, and become merely an echo of the superficial prevailing opinion imposed by the \"They\".",
+"PhiH.textAnalysis.heidegger.significance.title": "Significance and dimensions of the concept:",
+"PhiH.textAnalysis.heidegger.significance.content": "Heidegger's concept of the \"They\" carries deep meanings that go beyond simple sociological analysis to ontological dimensions touching the essence of human existence. The \"They\" is not just ordinary social pressure, but an existential mode that threatens the possibility of authentic living. The \"They\" manifests in daily life through common language, inherited habits, social expectations, and consumption and media patterns that contribute to creating similar human beings who lose their ability to think independently and make free decisions. Heidegger believes that liberation from the power of the \"They\" requires critical awareness and existential courage to break away from the herd and search for the true self beyond ready-made patterns and unexamined assumptions."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+            "PhiH.general.authors": "الفلاسفة",
+                "PhiH.textAnalysis.heidegger.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.heidegger.title": "النص 1: في استبداد \"الهم\" - مارتان هيدغير",
+                "PhiH.textAnalysis.heidegger.introduction.title": "مقدمة النص",
+                "PhiH.textAnalysis.heidegger.introduction.content": "يناقش النص مفهوم \"الهم\" (Das Man) عند هيدغير كسلطة مجهولة وغير شخصية تفرض نمطاً موحداً للتفكير والشعور والسلوك في الحياة اليومية، مما يؤدي إلى فقدان الفرد لأصالته وتفرده.",
+                "PhiH.textAnalysis.heidegger.text.title": "النص",
+                "PhiH.textAnalysis.heidegger.text.content": "ينطوي العالم (1) المحيط المباشر، فوريًا، على تنظيم لعالم محيط عموميّ وعلى انشغال به. فكلّ فردٍ باستعماله لوسائل النقل المشتركة ولخدمات الإعلام (الصحف مثلا) هو شبيه بأيّ فردٍ آخر. وهذا الوجود المشترك يذوّبني تماما كموجود إنسانيّ مخصوص في نمط وجود الآخر بحيث أنّ الآخرين لا يزدادون إلا اختفاء على مستوى ما لديهم من تميّز ومن خصوصيّة صريحة. إنّ وضع اللاّاختلاف واللاّتميّز هذا هو ما يُتيح للهُم أن ينمّي استبداده الخاص. فنحن نلهو ونتسلّى مثلما \"الهُم\" يلهو، ونحن نرى ونحكم على الأدب أو الفنّ مثلما \"الهُم\" يرى ويحكم، ونحن ننأى عن \"الجموع الغفيرة\" مثلما ينأى \"الهُم\" عنها، ونعتبر \"مُشيناً\" ما يعتبره \"الهُم\" كذلك. إنّ هذا \"الهُم\" وهو ليس شخصا بعينه وهو كل النّاس، بالرغم من كونه ليس حاصل مجموعهم، هو الذي يُملي على الواقع اليوميّ نمط وجوده.",
+                "PhiH.textAnalysis.heidegger.author.title": "تقديم المؤلف",
+				"PhiH.textAnalysis.heidegger.author.alt": "مارتان هيدغير",
+                "PhiH.textAnalysis.heidegger.author.content": "مارتان هيدغير (1889-1976) فيلسوف ألمانيّ معاصر. المسألة الأساسيّة بالنسبة إلى الفكر الفلسفي، في نظره، هي تلك التي استهلّها اليونانيون بسؤال: ما هو الوجود ؟ غير أنّ هذا السؤال تعرّض إلى مصير غريب جعله يُنسى لينساق الفلاسفة نحو البحث في موجود ما على أنّه هو الوجود. إنّ هذا النسيان هو ما ينبغي إنهاؤه لاستعادة السؤال من جديد في ضوء التمييز الصارم بين الوجود والموجود. وهو ما لا يُمكن أن يتحقّق إلا انطلاقا من تحليل للموجود الذي ينفرد بطرح هذا السؤال وهو الإنسان. يكشف ذلك التحليل أنّ الإنسان كائن الزمنيّة بما هي حركة تعال دائم بين بُعديْ الماضي والحاضر انطلاقا من المستقبل، حركة تجعله خارج ذاته باستمرار ليصوغ مشروع عالم ممكن. من مؤلّفاته الوجود والزمان (1927) ... ما هي الميتافيزيقا (...)، شعاب (1950) مسائل (I وII وIII وIV)، رسالة حول النزعة الإنسانيّة (...)",
+                "PhiH.textAnalysis.heidegger.lexical.title": "المفاهيم والمصطلحات",
+                "PhiH.textAnalysis.heidegger.lexical.item1": "<strong>العالم:</strong> ليس العالم، في نظر \"هيدغير\"، مجموع الموجودات التي تؤلّف الكون، بل هو أفقٌ دلاليّ يتكوّن بالإنسان ويكوّنه، فهو الإطار الماديّ والثقافيّ الذي يكون فيه الفرد مباشرة مع آخرين فيعي ذاته وواقعه ولكنّه يمتلك القدرة على التعالي عليه وتجاوزه نحو صياغة مشروع عالم مغاير يكون منطلقا لدلالات جديدة تغيّر فهم العالم وتهيئ بالتالي شروط تحويله.",
+                "PhiH.textAnalysis.heidegger.lexical.item2": "<strong>الموجود الإنسانيّ:</strong> لا يتحدّد الإنسان، في نظر \"هيدغير\"، كذات يحتويها عالم من الموضوعات بل ككائن في العالم، فهو كائن \"تكمن ماهيته في وجوده\" باعتباره وجودا يقوم على الانفتاح والتعالي والتجاوز. فالإنسان لا يكون إلا مع الآخرين في إطار سياق اجتماعي وثقافيّ محدّد، ولكنّه في آن واحد لا يكون إلا خارج ذاته فيدرك أنه كائن قُذف به في العالم ويتجّه نحو الموت فيستمد من ذلك القدرة على تجاوز الوجود الجماعي المشترك والرتيب لينحت لنفسه أصالة من خلال مشروع ينفتح على المستقبل.",
+                "PhiH.textAnalysis.heidegger.lexical.item3": "<strong>الهُم:</strong> هو السمة التي تطبع الوجود مع الآخرين في عالم عموميّ مشترك بحيث يَمثُل كسلطة استبداديّة غير مشخّصة تفرض نظاما من القيم يحدّد النمط الذي ينبغي أن يوجّه الحكم أو الإحساس أو الفعل فيسبّب ذلك توحيدا وتماثلا ينحطّان بالموجود الإنسانيّ ويُفرغانه من كل أصالة وتفرّد.",
+                "PhiH.textAnalysis.heidegger.questions.title": "أسئلة الفهم والتحليل",
+                "PhiH.textAnalysis.heidegger.questions.q1": "ما الذي يجعل من الانخراط في اليوميّ مصدر نفي لكل خصوصيّة وتفرّد ؟",
+                "PhiH.textAnalysis.heidegger.questions.q2": "بيّن من خلال الأمثلة الواردة في النصّ كيف يُمارس \"الهُم\" استبداده ؟",
+                "PhiH.textAnalysis.heidegger.questions.q3": "هل من تناقض بين اعتبار \"الهُم\" سلطة مستبدّة وبين القول أنّه ليس شخصا بعينه ولا حاصل مجموع كل النّاس ؟",
+                "PhiH.textAnalysis.heidegger.questions.q4": "كيف تتحدّد سُبل التحرّر من سلطة \"الهُم\" باتجاه التفرّد والأصالة واستعادة الإنسان لمسؤوليّته عن ذاته؟",
+                "PhiH.textAnalysis.heidegger.questions.q5": "هل يكفي أن نتمرّد على بعض الظواهر الاجتماعية كي نضمن أصالة الفكر والممارسة ؟",
+                "PhiH.textAnalysis.heidegger.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.heidegger.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.heidegger.answers.a1.content": "الانخراط في اليومي يؤدي إلى نفي الخصوصية والتفرّد لأنه يفرض نمطاً موحداً للتفكير والشعور والسلوك. فوسائل النقل المشتركة وخدمات الإعلام تجعل كل فرد يشبه أي فرد آخر، مما يؤدي إلى ذوبان الموجود الإنساني المخصوص في نمط وجود الآخر، وبالتالي اختفاء التميّز والخصوصية الصريحة.",
+                "PhiH.textAnalysis.heidegger.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.heidegger.answers.a2.content": "يمارس \"الهُم\" استبداده من خلال تحديد أنماط التسلية والترفيه، وتوجيه الأحكام حول الأدب والفن، وتحديد ما يعتبر مشيناً أو مقبولاً. فالنص يوضح أن \"نحن نلهو ونتسلّى مثلما 'الهُم' يلهو، ونحن نرى ونحكم على الأدب أو الفنّ مثلما 'الهُم' يرى ويحكم\".",
+                "PhiH.textAnalysis.heidegger.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.heidegger.answers.a3.content": "لا يوجد تناقض بين اعتبار \"الهُم\" سلطة مستبدّة وبين كونه ليس شخصاً بعينه ولا حاصل مجموع كل الناس. فـ\"الهُم\" هو سلطة مجهولة وغير مشخصة، تمثل نمطاً سائداً للتفكير والسلوك يفرض نفسه على الأفراد دون أن يكون مرتبطاً بشخص معين أو مجموعة محددة.",
+				"PhiH.textAnalysis.heidegger.answers.a4.title": "الإجابة عن السؤال الرابع:",
+"PhiH.textAnalysis.heidegger.answers.a4.content": "تتحدد سبل التحرر من سلطة \"الهُم\" من خلال الوعي النقدي والتفكير المستقل والقدرة على اتخاذ القرارات الشخصية. هذا يتطلب:<br>- الوعي بوجود هذه السلطة وآليات عملها<br>- ممارسة التفكير النقدي تجاه الأنماط السائدة<br>- تحمل المسؤولية عن الخيارات الشخصية<br>- الشجاعة في اتخاذ المواقف المخالفة للرأي السائد<br>- الانفتاح على إمكانيات الوجود المختلفة والمغايرة",
+"PhiH.textAnalysis.heidegger.answers.a5.title": "الإجابة عن السؤال الخامس:",
+"PhiH.textAnalysis.heidegger.answers.a5.content": "لا يكفي التمرد على بعض الظواهر الاجتماعية لضمان أصالة الفكر والممارسة، لأن التمرد قد يكون مجرد رد فعل عكسي لا يختلف جوهرياً عن الانصياع. الأصالة الحقيقية تتطلب:<br>- تأسيس مشروع وجودي شخصي<br>- التفكير المستقل والمبدع<br>- المسؤولية عن الذات والخيارات<br>- الالتزام بالقيم التي يتبناها الفرد عن قناعة<br>- القدرة على تجاوز الثنائيات البسيطة (طاعة/تمرد) نحو إبداع حقيقي",
+                "PhiH.textAnalysis.heidegger.title": "تحليل النص",
+"PhiH.textAnalysis.heidegger.thesis.title": "الأطروحة الأساسية:",
+"PhiH.textAnalysis.heidegger.thesis.content": "يطرح هيدغير فكرة \"الهُم\" (Das Man) كسلطة مجهولة تفرض نمطاً موحداً للوجود اليومي، مما يؤدي إلى فقدان الأصالة والتفرد لدى الإنسان. يرى هيدغير أن هذه السلطة غير المشخصة تمثل قوة خفية تسيطر على حياة الأفراد وتوجه تفكيرهم وسلوكهم دون أن يكونوا واعين بذلك.",
+"PhiH.textAnalysis.heidegger.mechanisms.title": "آليات عمل \"الهُم\":",
+"PhiH.textAnalysis.heidegger.mechanisms.content": "تعمل آليات \"الهُم\" من خلال عدة قنوات رئيسية تبدأ بوسائل النقل المشتركة وخدمات الإعلام التي تسهم في جعل الأفراد متشابهين في تفكيرهم وسلوكهم. كما تتجلى هذه الآليات في تحديد أنماط التسلية والترفيه المقبولة اجتماعياً، وتوجيه الأحكام حول الأدب والفن بما يتوافق مع الذوق العام السائد. بالإضافة إلى ذلك، يمارس \"الهُم\" سلطته من خلال تحديد ما يعتبر مشيناً أو مقبولاً في السلوك اليومي، مما يخلق نظاماً من القيم والمعايير التي يتبناها الأفراد دون تمحيص أو نقد.",
+"PhiH.textAnalysis.heidegger.consequences.title": "نتائج سيطرة \"الهُم\":",
+"PhiH.textAnalysis.heidegger.consequences.content": "تؤدي سيطرة \"الهُم\" إلى مجموعة من النتائج السلبية على الوجود الإنساني، أبرزها فقدان الخصوصية والتفرّد حيث يذوب الموجود الإنساني في نمط وجود الآخر. كما يترتب على ذلك اختفاء التميّز والخصوصية الصريحة التي تميز كل فرد عن الآخر، وفرض نمط موحد للوجود اليومي يلغي الإبداع والتفرد. هذه النتائج تجعل الإنسان يعيش حياة غير أصيلة، بعيدة عن مشروعه الوجودي الشخصي، ويصبح مجرد صدى للرأي السائد السطحي الذي يفرضه \"الهُم\".",
+"PhiH.textAnalysis.heidegger.significance.title": "دلالات وأبعاد المفهوم:",
+"PhiH.textAnalysis.heidegger.significance.content": "يحمل مفهوم \"الهُم\" عند هيدغير دلالات عميقة تتجاوز التحليل السوسيولوجي البسيط إلى أبعاد أنطولوجية تمس جوهر الوجود الإنساني. فـ\"الهُم\" ليس مجرد ضغط اجتماعي عادي، بل هو نمط وجودي يهدد إمكانية العيش الأصيل. يتجلى \"الهُم\" في الحياة اليومية من خلال اللغة المشتركة، العادات المتوارثة، التوقعات الاجتماعية، وأنماط الاستهلاك والإعلام التي تسهم في خلق كائنات بشرية متشابهة تفقد قدرتها على التفكير المستقل واتخاذ القرارات الحرة. يرى هيدغير أن التحرر من سلطة \"الهُم\" يتطلب وعياً نقدياً وجرأة وجودية للخروج من القطيع والبحث عن الذات الحقيقية beyond الأنماط الجاهزة والمسلمات غير المفحوصة."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

@@ -332,83 +332,71 @@
         .PhiH-homepage-lesson.coming-soon a::before {
             content: "⏳";
         }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .PhiH-homepage-title {
-                font-size: 2.5rem;
-            }
-            
-            .PhiH-homepage-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .PhiH-homepage-cards {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .PhiH-homepage-card {
-                width: 100%;
-                max-width: 350px;
-            }
-            
-            .PhiH-homepage-modal-content {
-                width: 90%;
-                margin: 10% auto;
-            }
-        }
     </style>
 </head>
 <body class="PhiH-homepage">
     <header class="PhiH-general-header">
-    <div class="PhiH-general-header-content">
-        <!-- Column 1: Icon - Now clickable -->
-        <div class="PhiH-general-logo-container">
-            <a href="index.html">
-                <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
-            </a>
-        </div>
-        
-        <!-- Column 2: Title -->
-        <div class="PhiH-general-title-container">
-            <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
-        </div>
-        
-        <!-- Column 3: Options -->
-        <div class="PhiH-general-header-controls">
-            <!-- Authors Button -->
-            <div class="PhiH-general-authors-link">
-                <a href="authors.html" class="PhiH-general-authors-btn">
-                    <span class="PhiH-general-authors-icon">👥</span>
-                    <span data-i18n="PhiH.general.authors">Philosophers</span>
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
                 </a>
             </div>
             
-            <div class="PhiH-general-theme-toggle">
-                <label class="PhiH-theme-toggle-label">
-                    <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
-                    <div class="PhiH-theme-toggle-switch">
-                        <input type="checkbox" id="themeToggle">
-                        <span class="PhiH-theme-toggle-slider"></span>
-                    </div>
-                </label>
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
             </div>
-            <div class="PhiH-general-language-selector">
-                <select class="PhiH-general-language-dropdown" id="languageSelect">
-                    <option value="en">English</option>
-                    <option value="fr">Français</option>
-                    <option value="ar">العربية</option>
-                </select>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Manual Install Button (Fallback) -->
-    <button id="manual-install-btn" class="PhiH-pwa-install-btn" style="display: none;">
-        <span class="PhiH-pwa-install-icon">📱</span>
-        <span data-i18n="PhiH.pwa.install">Install App</span>
-    </button>
-</header>
+        <!-- Manual Install Button (Fallback) -->
+        <button id="manual-install-btn" class="PhiH-pwa-install-btn" style="display: none;">
+            <span class="PhiH-pwa-install-icon">📱</span>
+            <span data-i18n="PhiH.pwa.install">Install App</span>
+        </button>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="#" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
     
     <main class="PhiH-homepage-main">
         <h1 class="PhiH-homepage-title" data-i18n="PhiH.index.title">Philosophy Learning Hub</h1>
@@ -718,6 +706,12 @@
                 "PhiH.general.themeToggle": "Mode sombre",
                 "PhiH.general.authors": "Philosophes",
                 
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
                 // Index specific translations
                 "PhiH.index.title": "Philosophy Learning Hub",
                 "PhiH.index.subtitle": "Explorez le monde de la philosophie avec des leçons interactives, des exercices de pensée critique et des ressources philosophiques",
@@ -821,6 +815,12 @@
                 "PhiH.general.themeToggle": "Dark mode",
                 "PhiH.general.authors": "Philosophers",
                 
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                
                 // Index specific translations
                 "PhiH.index.title": "Philosophy Learning Hub",
                 "PhiH.index.subtitle": "Explore the world of philosophy with interactive lessons, critical thinking exercises, and philosophical resources",
@@ -922,7 +922,13 @@
                 "PhiH.general.termsOfUse": "شروط الاستخدام",
                 "PhiH.general.privacyPolicy": "سياسة الخصوصية",
                 "PhiH.general.themeToggle": "الوضع الداكن",
-            "PhiH.general.authors": "الفلاسفة",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
                 
                 // Index specific translations
                 "PhiH.index.title": "مركز تعلم الفلسفة",
@@ -1088,6 +1094,18 @@ if ('serviceWorker' in navigator) {
                 content.addEventListener('click', function(event) {
                     event.stopPropagation();
                 });
+            });
+            
+            // Windows bar active state management
+            const currentPage = window.location.pathname.split('/').pop();
+            const windowItems = document.querySelectorAll('.PhiH-window-item');
+            
+            windowItems.forEach(item => {
+                if (item.getAttribute('href') === currentPage) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
             });
         });
 // Manual install button handler

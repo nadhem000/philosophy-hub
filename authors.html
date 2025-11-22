@@ -19,7 +19,7 @@
 		<link rel="manifest" href="manifest.json">
 		
 		<style>
-			/* Medium Sea Green + Dark Gray Theme - Matching your site */
+			/* Medium Sea Green + Dark Gray Theme */
 			:root {
             --primary-color: #3cb371;
             --secondary-color: #696969;
@@ -527,47 +527,62 @@
 	</head>
 	<body class="PhiH-authors-page">
 		<header class="PhiH-general-header">
-			<div class="PhiH-general-header-content">
-				<!-- Column 1: Icon - Now clickable -->
-				<div class="PhiH-general-logo-container">
-					<a href="index.html">
-						<img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
-					</a>
-				</div>
-				
-				<!-- Column 2: Title -->
-				<div class="PhiH-general-title-container">
-					<h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
-				</div>
-				
-				<!-- Column 3: Options -->
-				<div class="PhiH-general-header-controls">
-            <!-- Authors Button -->
-            <div class="PhiH-general-authors-link">
-                <a href="authors.html" class="PhiH-general-authors-btn">
-                    <span class="PhiH-general-authors-icon">👥</span>
-                    <span data-i18n="PhiH.general.authors">Philosophers</span>
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
                 </a>
             </div>
-					<div class="PhiH-general-theme-toggle">
-						<label class="PhiH-theme-toggle-label">
-							<span data-i18n="PhiH.general.themeToggle">Dark mode</span>
-							<div class="PhiH-theme-toggle-switch">
-								<input type="checkbox" id="themeToggle">
-								<span class="PhiH-theme-toggle-slider"></span>
-							</div>
-						</label>
-					</div>
-					<div class="PhiH-general-language-selector">
-						<select class="PhiH-general-language-dropdown" id="languageSelect">
-							<option value="en">English</option>
-							<option value="fr">Français</option>
-							<option value="ar">العربية</option>
-						</select>
-					</div>
-				</div>
-			</div>
-		</header>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="#" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
 		
 		<main class="PhiH-authors-main">
 			<div class="PhiH-authors-header">
@@ -674,6 +689,12 @@
             "PhiH.general.privacyPolicy": "Politique de confidentialité",
             "PhiH.general.themeToggle": "Mode sombre",
                 "PhiH.general.authors": "Philosophes",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
             
             // Authors page translations
             "PhiH.authors.title": "Auteurs Philosophiques",
@@ -714,6 +735,12 @@
             "PhiH.general.privacyPolicy": "Privacy Policy",
             "PhiH.general.themeToggle": "Dark mode",
                 "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
             
             // Authors page translations
             "PhiH.authors.title": "Philosophical Authors",
@@ -754,6 +781,12 @@
             "PhiH.general.privacyPolicy": "سياسة الخصوصية",
             "PhiH.general.themeToggle": "الوضع الداكن",
             "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
             // Authors page translations
             "PhiH.authors.title": "المؤلفون الفلسفيون",
             "PhiH.authors.subtitle": "استكشف المفكرين الذين شكلوا الفكر الفلسفي عبر التاريخ",
@@ -923,7 +956,37 @@
                     'ar': 'الوجودية',
                     'fr': 'Existentialisme', 
                     'en': 'Existentialism'
-                }
+                },
+'literature_philosophy': {
+    'ar': 'الأدب والفلسفة',
+    'fr': 'Littérature et Philosophie', 
+    'en': 'Literature and Philosophy'
+},
+'littérature_et_philosophie': {
+    'ar': 'الأدب والفلسفة',
+    'fr': 'Littérature et Philosophie',
+    'en': 'Literature and Philosophy'
+},
+'الأدب والفلسفة': {
+    'ar': 'الأدب والفلسفة',
+    'fr': 'Littérature et Philosophie',
+    'en': 'Literature and Philosophy'
+},
+'idealism': {
+    'ar': 'المثالية',
+    'fr': 'Idéalisme',
+    'en': 'Idealism'
+},
+'idealisme': {
+    'ar': 'المثالية',
+    'fr': 'Idéalisme',
+    'en': 'Idealism'
+},
+'المثالية': {
+    'ar': 'المثالية',
+    'fr': 'Idéalisme',
+    'en': 'Idealism'
+}
             };
             
             // If we have a mapping for this school key, use it

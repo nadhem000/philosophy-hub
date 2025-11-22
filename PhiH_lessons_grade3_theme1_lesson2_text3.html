@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: أمثولة الكهف لأفلاطون - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#7c3aed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Purple + Violet Color Palette */
+        :root {
+            --primary-color: #7c3aed;
+            --primary-light: #8b5cf6;
+            --primary-dark: #6d28d9;
+            --secondary-color: #a78bfa;
+            --secondary-light: #c4b5fd;
+            --secondary-dark: #8b5cf6;
+            --accent-color: #a78bfa;
+            --accent-light: #c4b5fd;
+            --accent-dark: #8b5cf6;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #faf5ff;
+            --card-bg: #ffffff;
+            --definition-bg: #f3e8ff;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #e9d5ff;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.1), 0 2px 4px -1px rgba(124, 58, 237, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(124, 58, 237, 0.1), 0 4px 6px -2px rgba(124, 58, 237, 0.05);
+            --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+            --gradient-secondary: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+            --gradient-accent: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #8b5cf6;
+            --primary-light: #a78bfa;
+            --primary-dark: #7c3aed;
+            --secondary-color: #c4b5fd;
+            --secondary-light: #ddd6fe;
+            --secondary-dark: #a78bfa;
+            --accent-color: #c4b5fd;
+            --accent-light: #ddd6fe;
+            --accent-dark: #a78bfa;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #2e1065;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #4c1d95;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #c4b5fd 100%);
+            --gradient-secondary: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 100%);
+            --gradient-accent: linear-gradient(135deg, #c4b5fd 0%, #8b5cf6 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(124, 58, 237, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(167, 139, 250, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(167, 139, 250, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(124, 58, 237, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="#" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.plato.title">تحليل النص: أمثولة الكهف لأفلاطون</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.plato.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.plato.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.plato.introduction.content">
+                    كثيرا ما يقع استهجان ما هو نظريّ ومجرّد فيُماهى بينه وبين ما هو خياليّ وزائف، ويعتقد في المقابل أنّ الواقع الفعليّ هو ما هو عينيّ وما هو معطى في التجربة الحسيّة أو مدرَك حسيّا. ولكنّ أسبابا عديدة تدعونا إلى التشكيك في "واقعيّة" معطيات التجربة الحسيّة وفي مصداقيّة المعرفة المقترنة بها. وقد كان لأفلاطون السبق في تشخيص الاعتقاد في واقعيّة معطيّات التجربة الحسيّة والاعتقاد في بداهة الإدراك الحسيّ، والعمل مقابل ذلك على تأسيس قيمة النظر العقليّ.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.plato.text.title">أمثولة الكهف</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.plato.text.content">
+                        سقراط: ... تخيّل رجالا قبعوا في مسكن تحت الأرض في شكل كهف تُطِلُّ فتحته على النور ويليها ممرّ يوصل إلى الكهف، هناك ظلّ هؤلاء النّاس منذ طفولتهم وقد فُّدت أرجلهم وأعناقهم بأغلال بحيث لا يستطيعون التحرّك من أماكنهم ولا رؤية أيّ شيء سوى ما يقع تحت أنظارهم إذ تمنعهم الأغلال من التلفّت حولهم، ومن ورائهم تضيء نار اشتعلت عن بعد في موقع عال، وبين النّار والسجناء طريق مرتفع، ولتتخيّل على طول هذا الطريق جدارا صغيرا مشابها لتلك الحواجز التي نجدها في مسرح العرائس المتحرّكة والتي يقيمها اللاعبون أمام الجمهور ليعرضوا عليها ألعابهم.  
+                        <br><br>
+                        غلوكون: إنّي لأتخيّل ذلك.  
+                        <br><br>
+                        سقراط: ولتتصوّر الآن على طول الجدار الصغير، رجالا يحملون أشياء شتى تعلو الجدار كما يحملون تماثيل لأناسٍ ولحيوانات صُنعت من الحجارة أو من الخشب أو من مواد أخرى مختلفة. وطبيعيّ أنْ يكون بين حملة هذه المصنوعات من يتكلّم ومن هو صامت.  
+                        <br><br>
+                        غلوكون: إنّها صورة غريبة تصف نوعا غريبا من السجناء.  
+                        <br><br>
+                        سقراط: إنّهم ليشبهوننا، وبالفعل هل تعتقد بداية أنّ السجناء في موقعهم ذاك لا يرون من أنفسهم ومن الآخرين شيئا غير الظلال التي تلقيها النّار على الجدار المواجه لهم من الكهف ؟  
+                        <br><br>
+                        غلوكون: وكيف يكون الأمر على خلاف ذلك ما داموا عاجزين طوال حياتهم عن تحريك رؤوسهم ؟  
+                        <br><br>
+                        سقراط: أوليس الأمر كذلك فيما يتعلّق بالأشياء التي تمرّ أمامهم ؟  
+                        <br><br>
+                        غلوكون: بلا جدال.  
+                        <br><br>
+                        سقراط: وإن أمكنهم إذن أن يتخاطبوا فيما بينهم ألا تظنّهم يعتقدون أنّ كلماتهم تُشيرُ إلى الأشياء الواقعيّة نفسها ؟  
+                        <br><br>
+                        غلوكون: هذا ضروريّ.  
+                        <br><br>
+                        سقراط: وإن كان هناك صدى يتردّد من الجدار المواجه لهم، أفلا يظنّون أنّه كلّما تحدّث أحد الذين يمرون من ورائهم، أنّ الصوت آت من شيء آخر غير الظلّ الذي يمرّ أمامهم ؟  
+                        <br><br>
+                        غلوكون: لا وحقّ "زوس"!  
+                        <br><br>
+                        سقراط: يقيني أنّ هؤلاء النّاس لا يُضفون صفة الواقعية على شيء آخر غير ظلال الأشياء المصنوعة.  
+                        <br><br>
+                        غلوكون: لا مفرّ من ذلك.  
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.plato.text.source">أفلاطون: الجمهورية، الكتاب السابع</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.plato.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/plato.jpg" alt="أفلاطون" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.plato.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.plato.author.content">
+                            أفلاطون (427-347 ق.م) فيلسوف يوناني كلاسيكي، رياضياتي، كاتب لعدد من الحوارات الفلسفية، ومؤسس لأكاديمية أثينا التي كانت أول معهد للتعليم العالي في العالم الغربي. يعتبر أفلاطون من أهم الشخصيات في تطور الفلسفة الغربية. كان تلميذاً لسقراط ومعلماً لأرسطو. كتب أفلاطون عن مواضيع فلسفية عديدة تشمل الفلسفة السياسية، علم الجمال، نظرية المعرفة، علم الكونيات، علم اللغة، وفلسفة العقل. من أشهر أعماله "الجمهورية" التي تتناول مفهوم العدالة والنظام السياسي المثالي، و"فيدون" الذي يناقش خلود النفس، و"المأدبة" الذي يتناول مفهوم الحب. تميزت فلسفة أفلاطون بنظرية المُثُل التي ترى أن العالم الحسي ما هو إلا انعكاس لعالم المُثُل الأبدي الثابت.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.plato.lexical.title">المفاهيم والمصطلحات</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.plato.lexical.item1"><strong>الأمثولة:</strong> (allegorie) قصّة تلجأ إلى الرمز الحسيّ من أجل توضيح أفكار مجرّدة. تستخدم الأمثولة صوراً حسية لتوصيل مفاهيم فلسفية عميقة.</li>
+                    <li data-i18n="PhiH.textAnalysis.plato.lexical.item2"><strong>الكهف:</strong> يرمز إلى العالم الحسي الذي نعيش فيه، وهو عالم الظلال والوهم حيث يعيش البشر مقيدين بحواسهم.</li>
+                    <li data-i18n="PhiH.textAnalysis.plato.lexical.item3"><strong>السجناء:</strong> يمثلون البشر الذين يعيشون في العالم الحسي مقيدين بحواسهم، لا يرون إلا ما هو أمامهم ولا يدركون الحقيقة.</li>
+                    <li data-i18n="PhiH.textAnalysis.plato.lexical.item4"><strong>النار:</strong> مصدر ضوء اصطناعي يرمز إلى المصادر المشوهة للمعرفة مثل الرأي العام والتقليد والثقافة السائدة.</li>
+                    <li data-i18n="PhiH.textAnalysis.plato.lexical.item5"><strong>الظلال:</strong> تمثل المعرفة الحسية الناقصة التي يعتقد السجناء أنها الحقيقة المطلقة.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.plato.questions.title">أسئلة الفهم والتحليل</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.plato.questions.q1">أرصُدُ عناصر المَشهد الّذي تصفه الأمثولة وأتأوّلُ دلالتها الفلسفيّة.</li>
+                    <li data-i18n="PhiH.textAnalysis.plato.questions.q2">ما هي درجاتُ المعرفة الّتي تتحقّق للسّجناء داخل الكهف ؟ ماذا يُمكن أن نعيبَ عليها ؟ عدّد الصّيغ الدّالّة على هذا العيب في النّصّ ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.plato.questions.q3">تخيّل سقراط حاضرًا بيننا اليوم : أيّة قيود يُمكنه تشخيصُها في حياتنا اليوميّة ؟ حرّر فقرة في الغرض واعرضها للحوار مع رفاقك.</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.plato.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.plato.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.plato.answers.a1.content">
+                        عناصر المشهد في أمثولة الكهف ودلالاتها الفلسفية:
+                        <br><br>
+                        <strong>الكهف:</strong> يمثل العالم الحسي الذي نعيش فيه، وهو عالم الظلال والوهم.
+                        <br>
+                        <strong>السجناء:</strong> هم البشر الذين يعيشون في هذا العالم مقيدين بحواسهم، لا يرون إلا ما هو أمامهم.
+                        <br>
+                        <strong>الأغلال:</strong> ترمز إلى قيود الجسد والحواس التي تمنعنا من رؤية الحقيقة.
+                        <br>
+                        <strong>النار:</strong> مصدر ضوء اصطناعي يرمز إلى المصادر المشوهة للمعرفة (كالرأي العام والتقليد).
+                        <br>
+                        <strong>الطريق المرتفع والجدار الصغير:</strong> يمثلان الوسائط التي تقدم لنا صور مشوهة عن الواقع (كالإعلام والثقافة السائدة).
+                        <br>
+                        <strong>التماثيل والأشياء المحمولة:</strong> تمثل الأشياء الحقيقية في العالم العقلي، ولكن السجناء لا يرون سوى ظلالها.
+                        <br>
+                        <strong>الظلال:</strong> تمثل المعرفة الحسية الناقصة التي يعتقد السجناء أنها الحقيقة.
+                        <br>
+                        <strong>الصدى:</strong> يرمز إلى المعلومات المغلوطة التي تصل إلى السجناء فيعتقدون أنها حقيقية.
+                        <br><br>
+                        الدلالة الفلسفية: تهدف الأمثولة إلى بيان أن المعرفة الحسية ناقصة ومشوبة بالوهم، وأن المعرفة الحقيقية هي المعرفة العقلية المجردة. كما ترمز إلى رحلة الفيلسوف في الخروج من عالم الظلال (العالم الحسي) إلى عالم النور (العالم العقلي) وعودته لمحاولة تحرير الآخرين.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.plato.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.plato.answers.a2.content">
+                        درجات المعرفة داخل الكهف:
+                        <br><br>
+                        1. <strong>المعرفة الحسية:</strong> وهي محدودة بالظلال التي يرونها على الجدار.
+                        <br>
+                        2. <strong>الاعتقاد في واقعية الظلال:</strong> حيث يعتقدون أن الظلال هي الأشياء الحقيقية.
+                        <br><br>
+                        العيوب في هذه المعرفة:
+                        <br>
+                        - أنها معتمد على الحواس وهي خادعة.
+                        <br>
+                        - أنها غير قادرة على إدراك الحقائق المجردة.
+                        <br>
+                        - أنها تقبل بالوهم على أنه حقيقة.
+                        <br><br>
+                        الصيغ الدالة على هذا العيب في النص:
+                        <br>
+                        - "ألا تظنهم يعتقدون أنّ كلماتهم تُشيرُ إلى الأشياء الواقعيّة نفسها ؟"
+                        <br>
+                        - "أفلا يظنّون أنّه كلّما تحدّث أحد الذين يمرون من ورائهم، أنّ الصوت آت من شيء آخر غير الظلّ الذي يمرّ أمامهم ؟"
+                        <br>
+                        - "يقيني أنّ هؤلاء النّاس لا يُضفون صفة الواقعية على شيء آخر غير ظلال الأشياء المصنوعة."
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.plato.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.plato.answers.a3.content">
+                        لو كان سقراط بيننا اليوم، لشخّص العديد من القيود في حياتنا اليومية، منها:
+                        <br><br>
+                        - <strong>التبعية للتقنية والأجهزة الذكية:</strong> حيث أصبحنا نعيش في عالم افتراضي، نشاهد فيه صورًا ورسائل متعددة، ونعتقد أن هذه هي الحقيقة، بينما هي مجرد تمثيلات مشوهة للواقع.
+                        <br>
+                        - <strong>الرأي العام والإعلام:</strong> يمارس الإعلام دورًا مشابهًا للنار في الكهف، حيث يقدم لنا صورًا ونماذج نعتقد أنها الحقيقة، بينما هي محض اصطناعات.
+                        <br>
+                        - <strong>الاستهلاكية والمادية:</strong> نحن مقيدون بملذات العالم المادي واستهلاك منتجات لا نعرف حقيقتها، مما يشبه ظلال الكهف.
+                        <br>
+                        - <strong>عدم التفكير النقدي:</strong> نحن نتبع آراء الآخرين دون تمحيص، كما كان السجناء يتخاطبون معتقدين أن كلماتهم تشير إلى الأشياء الواقعية.
+                        <br><br>
+                        لقد أصبحنا سجناء في كهف حديث، مقيدين بتقنياتنا وأفكارنا المسبقة، ونحتاج إلى من يحررنا من هذه الأغلال بالتفكير النقدي والسؤال الفلسفي.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.plato.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.plato.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.plato.analysis.thesis.content">
+                        تطرح أمثولة الكهف لأفلاطون فكرة أن المعرفة الحسية ناقصة ومشوبة بالوهم، وأن المعرفة الحقيقية هي المعرفة العقلية المجردة. كما تؤكد على ضرورة الخروج من العالم الحسي إلى العالم العقلي لفهم الحقائق المطلقة.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.plato.analysis.mechanisms.title">آليات عمل الوهم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.plato.analysis.mechanisms.content">
+                        تعمل آليات الوهم في الكهف من خلال:
+                        <br>
+                        - <strong>القيود الحسية:</strong> حيث أن السجناء مقيدون ولا يستطيعون رؤية إلا ما هو أمامهم.
+                        <br>
+                        - <strong>مصادر الضوء الاصطناعي:</strong> النار تخلق ظلالاً يتم الخلط بينها وبين الواقع.
+                        <br>
+                        - <strong>الوسائط:</strong> كالجدار الصغير والأشياء المحمولة التي تخلق صورًا مشوهة.
+                        <br>
+                        - <strong>اللغة والصدى:</strong> حيث يربط السجناء الكلمات والأصوات بالظلال، فيعتقدون أنها حقيقية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.plato.analysis.consequences.title">نتائج الوهم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.plato.analysis.consequences.content">
+                        - <strong>الجهل:</strong> عيش السجناء في ظلام دامس من الجهل.
+                        <br>
+                        - <strong>الاعتقاد في الزيف:</strong> اعتبار الظلال حقيقة مطلقة.
+                        <br>
+                        - <strong>عدم القدرة على إدراك الحقائق المجردة:</strong> كالعدالة والجمال والحقيقة في ذاتها.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.plato.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.plato.analysis.significance.content">
+                        تمثل أمثولة الكهف رؤية أفلاطون للمعرفة والوجود. فالعالم الحسي هو عالم متغير وزائل، أما العالم العقلي فهو عالم المثل الثابتة والأبدية. الخروج من الكهف يرمز إلى رحلة التعليم الفلسفي التي تقود إلى المعرفة الحقيقية. كما أن عودة الفيلسوف إلى الكهف لتحرير الآخرين ترمز إلى واجب الفيلسوف في نشر الحكمة وتحقيق العدالة في المجتمع.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.plato.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.plato.title": "Analyse du texte: L'Allégorie de la caverne de Platon",
+                "PhiH.textAnalysis.plato.introduction.title": "Introduction",
+                "PhiH.textAnalysis.plato.introduction.content": "Souvent, ce qui est théorique et abstrait est méprisé et assimilé à ce qui est imaginaire et faux, tandis qu'on croit que la réalité effective est ce qui est concret et donné dans l'expérience sensible ou perçu sensoriellement. Mais de nombreuses raisons nous incitent à douter de la «réalité» des données de l'expérience sensible et de la crédibilité de la connaissance qui y est associée. Platon a été le premier à diagnostiquer la croyance en la réalité des données de l'expérience sensible et la croyance en l'évidence de la perception sensible, et à travailler en contrepartie à fonder la valeur de la raison théorique.",
+                "PhiH.textAnalysis.plato.text.title": "Allégorie de la caverne",
+                "PhiH.textAnalysis.plato.text.content": "Socrate: ... Imagine des hommes retenus dans une demeure souterraine en forme de caverne, dont l'entrée s'ouvre à la lumière et qu'un couloir relie à la caverne; là, ces hommes sont depuis leur enfance enchaînés par les jambes et le cou, de sorte qu'ils ne peuvent bouger de leur place ni voir autre chose que ce qui se trouve devant eux, car les chaînes les empêchent de tourner la tête. Derrière eux brûle un feu allumé au loin en hauteur, et entre le feu et les prisonniers passe une route élevée; imagine tout le long de cette route un petit mur semblable aux cloisons que dressent les montreurs de marionnettes devant les spectateurs et sur lesquelles ils exhibent leurs merveilles...",
+                "PhiH.textAnalysis.plato.text.source": "Platon: La République, Livre VII",
+                "PhiH.textAnalysis.plato.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.plato.author.alt": "Platon",
+                "PhiH.textAnalysis.plato.author.content": "Platon (427-347 av. J.-C.) est un philosophe grec classique, mathématicien, auteur de nombreux dialogues philosophiques et fondateur de l'Académie d'Athènes, qui fut le premier établissement d'enseignement supérieur du monde occidental. Platon est considéré comme l'une des figures les plus importantes du développement de la philosophie occidentale. Il fut l'élève de Socrate et le maître d'Aristote. Platon a écrit sur de nombreux sujets philosophiques incluant la philosophie politique, l'esthétique, la théorie de la connaissance, la cosmologie, la linguistique et la philosophie de l'esprit. Parmi ses œuvres les plus célèbres figurent \"La République\" qui traite du concept de justice et de l'ordre politique idéal, \"Phédon\" qui discute de l'immortalité de l'âme, et \"Le Banquet\" qui aborde le concept de l'amour. La philosophie de Platon se distingue par sa théorie des Formes qui considère que le monde sensible n'est qu'un reflet du monde éternel et immuable des Formes.",
+                "PhiH.textAnalysis.plato.lexical.title": "Concepts et terminologie",
+                "PhiH.textAnalysis.plato.lexical.item1": "<strong>Allégorie:</strong> (allegorie) histoire qui recourt au symbole sensible pour clarifier des idées abstraites. L'allégorie utilise des images sensibles pour transmettre des concepts philosophiques profonds.",
+                "PhiH.textAnalysis.plato.lexical.item2": "<strong>La caverne:</strong> symbolise le monde sensible dans lequel nous vivons, un monde d'ombres et d'illusions où les humains vivent enchaînés par leurs sens.",
+                "PhiH.textAnalysis.plato.lexical.item3": "<strong>Les prisonniers:</strong> représentent les humains qui vivent dans le monde sensible enchaînés par leurs sens, ne voyant que ce qui est devant eux et ne percevant pas la vérité.",
+                "PhiH.textAnalysis.plato.lexical.item4": "<strong>Le feu:</strong> source de lumière artificielle symbolisant les sources déformées de connaissance comme l'opinion publique, la tradition et la culture dominante.",
+                "PhiH.textAnalysis.plato.lexical.item5": "<strong>Les ombres:</strong> représentent la connaissance sensible incomplète que les prisonniers croient être la vérité absolue.",
+                "PhiH.textAnalysis.plato.questions.title": "Questions de compréhension et d'analyse",
+                "PhiH.textAnalysis.plato.questions.q1": "Recensez les éléments de la scène décrite par l'allégorie et interprétez leur signification philosophique.",
+                "PhiH.textAnalysis.plato.questions.q2": "Quels sont les degrés de connaissance atteints par les prisonniers dans la caverne ? Quels défauts peut-on leur reprocher ? Énumérez les formules indiquant ce défaut dans le texte ?",
+                "PhiH.textAnalysis.plato.questions.q3": "Imaginez que Socrate soit présent parmi nous aujourd'hui : quelles contraintes pourrait-il diagnostiquer dans notre vie quotidienne ? Rédigez un paragraphe sur le sujet et présentez-le pour discussion avec vos camarades.",
+                "PhiH.textAnalysis.plato.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.plato.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.plato.answers.a1.content": "Éléments de la scène dans l'allégorie de la caverne et leurs significations philosophiques:<br><br><strong>La caverne:</strong> représente le monde sensible dans lequel nous vivons, un monde d'ombres et d'illusions.<br><strong>Les prisonniers:</strong> sont les humains qui vivent dans ce monde enchaînés par leurs sens, ne voyant que ce qui est devant eux.<br><strong>Les chaînes:</strong> symbolisent les contraintes du corps et des sens qui nous empêchent de voir la vérité.<br><strong>Le feu:</strong> source de lumière artificielle symbolisant les sources déformées de connaissance (comme l'opinion publique et la tradition).<br><strong>La route élevée et le petit mur:</strong> représentent les médias qui nous présentent des images déformées de la réalité (comme les médias et la culture dominante).<br><strong>Les statues et objets portés:</strong> représentent les véritables objets du monde intelligible, mais les prisonniers n'en voient que les ombres.<br><strong>Les ombres:</strong> représentent la connaissance sensible incomplète que les prisonniers croient être la vérité.<br><strong>L'écho:</strong> symbolise les informations erronées qui atteignent les prisonniers et qu'ils croient être vraies.<br><br>Signification philosophique: L'allégorie vise à montrer que la connaissance sensible est incomplète et entachée d'illusion, et que la véritable connaissance est la connaissance intellectuelle abstraite. Elle symbolise également le voyage du philosophe qui sort du monde des ombres (le monde sensible) vers le monde de la lumière (le monde intelligible) et son retour pour tenter de libérer les autres.",
+                "PhiH.textAnalysis.plato.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.plato.answers.a2.content": "Degrés de connaissance dans la caverne:<br><br>1. <strong>Connaissance sensible:</strong> limitée aux ombres qu'ils voient sur le mur.<br>2. <strong>Croyance en la réalité des ombres:</strong> où ils croient que les ombres sont les véritables objets.<br><br>Défauts de cette connaissance:<br>- Elle repose sur les sens qui sont trompeurs.<br>- Elle est incapable de percevoir les vérités abstraites.<br>- Elle accepte l'illusion comme réalité.<br><br>Formules indiquant ce défaut dans le texte:<br>- \"Ne penses-tu pas qu'ils croiraient que leurs mots se réfèrent aux choses réelles elles-mêmes ?\"<br>- \"Ne penseraient-ils pas que chaque fois que parle l'un de ceux qui passent derrière eux, le son vient d'autre chose que de l'ombre qui passe devant eux ?\"<br>- \"Je suis certain que ces gens n'attribuent la réalité à rien d'autre qu'aux ombres des objets fabriqués.\"",
+                "PhiH.textAnalysis.plato.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.plato.answers.a3.content": "Si Socrate était parmi nous aujourd'hui, il diagnostiquerait de nombreuses contraintes dans notre vie quotidienne, notamment:<br><br>- <strong>La dépendance à la technologie et aux appareils intelligents:</strong> où nous vivons dans un monde virtuel, regardant des images et des messages multiples, et croyant que c'est la réalité, alors que ce ne sont que des représentations déformées de la réalité.<br>- <strong>L'opinion publique et les médias:</strong> les médias jouent un rôle similaire au feu dans la caverne, nous présentant des images et des modèles que nous croyons être la vérité, alors qu'ils ne sont que des fabrications.<br>- <strong>Le consumérisme et le matérialisme:</strong> nous sommes enchaînés par les plaisirs du monde matériel et la consommation de produits dont nous ignorons la véritable nature, ressemblant aux ombres de la caverne.<br>- <strong>L'absence de pensée critique:</strong> nous suivons les opinions des autres sans examen, tout comme les prisonniers communiquaient entre eux en croyant que leurs mots se référaient aux choses réelles.<br><br>Nous sommes devenus des prisonniers dans une caverne moderne, enchaînés par nos technologies et nos idées préconçues, et nous avons besoin de quelqu'un pour nous libérer de ces chaînes par la pensée critique et le questionnement philosophique.",
+                "PhiH.textAnalysis.plato.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.plato.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.plato.analysis.thesis.content": "L'allégorie de la caverne de Platon présente l'idée que la connaissance sensible est incomplète et entachée d'illusion, et que la véritable connaissance est la connaissance intellectuelle abstraite. Elle souligne également la nécessité de sortir du monde sensible vers le monde intelligible pour comprendre les vérités absolues.",
+                "PhiH.textAnalysis.plato.analysis.mechanisms.title": "Mécanismes de l'illusion:",
+                "PhiH.textAnalysis.plato.analysis.mechanisms.content": "Les mécanismes de l'illusion dans la caverne fonctionnent à travers:<br>- <strong>Les contraintes sensibles:</strong> les prisonniers sont enchaînés et ne peuvent voir que ce qui est devant eux.<br>- <strong>Les sources de lumière artificielle:</strong> le feu crée des ombres qui sont confondues avec la réalité.<br>- <strong>Les médias:</strong> comme le petit mur et les objets portés qui créent des images déformées.<br>- <strong>Le langage et l'écho:</strong> où les prisonniers associent les mots et les sons aux ombres, les croyant réels.",
+                "PhiH.textAnalysis.plato.analysis.consequences.title": "Conséquences de l'illusion:",
+                "PhiH.textAnalysis.plato.analysis.consequences.content": "- <strong>L'ignorance:</strong> les prisonniers vivent dans des ténèbres d'ignorance.<br>- <strong>La croyance dans le faux:</strong> considérer les ombres comme vérité absolue.<br>- <strong>L'incapacité à percevoir les vérités abstraites:</strong> comme la justice, la beauté et la vérité en elles-mêmes.",
+                "PhiH.textAnalysis.plato.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.plato.analysis.significance.content": "L'allégorie de la caverne représente la vision platonicienne de la connaissance et de l'existence. Le monde sensible est un monde changeant et périssable, tandis que le monde intelligible est celui des Formes éternelles et immuables. La sortie de la caverne symbolise le voyage de l'éducation philosophique qui mène à la véritable connaissance. Le retour du philosophe dans la caverne pour libérer les autres symbolise le devoir du philosophe de répandre la sagesse et de réaliser la justice dans la société."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.plato.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.plato.title": "Text Analysis: Plato's Allegory of the Cave",
+                "PhiH.textAnalysis.plato.introduction.title": "Introduction",
+                "PhiH.textAnalysis.plato.introduction.content": "Often, what is theoretical and abstract is scorned and equated with what is imaginary and false, while it is believed that actual reality is what is concrete and given in sensory experience or perceived sensually. But many reasons lead us to doubt the 'reality' of sensory experience data and the credibility of the associated knowledge. Plato was the first to diagnose the belief in the reality of sensory experience data and the belief in the self-evidence of sensory perception, and to work instead to establish the value of rational theory.",
+                "PhiH.textAnalysis.plato.text.title": "Allegory of the Cave",
+                "PhiH.textAnalysis.plato.text.content": "Socrates: ... Imagine men living in an underground cave-like dwelling, with its entrance open to the light and a passage connecting it to the cave; there, these men have been since childhood, chained by their legs and necks, so that they cannot move from their place nor see anything other than what is in front of them, for the chains prevent them from turning their heads. Behind them burns a fire lit at a distance on high, and between the fire and the prisoners runs an elevated road; imagine along this road a small wall similar to the partitions that puppet masters set up before the spectators and on which they display their wonders...",
+                "PhiH.textAnalysis.plato.text.source": "Plato: The Republic, Book VII",
+                "PhiH.textAnalysis.plato.author.title": "Author Presentation",
+                "PhiH.textAnalysis.plato.author.alt": "Plato",
+                "PhiH.textAnalysis.plato.author.content": "Plato (427-347 BC) was a classical Greek philosopher, mathematician, writer of numerous philosophical dialogues, and founder of the Academy in Athens, which was the first institution of higher learning in the Western world. Plato is considered one of the most important figures in the development of Western philosophy. He was a student of Socrates and teacher of Aristotle. Plato wrote on many philosophical subjects including political philosophy, aesthetics, epistemology, cosmology, linguistics, and philosophy of mind. Among his most famous works are \"The Republic\" which deals with the concept of justice and the ideal political order, \"Phaedo\" which discusses the immortality of the soul, and \"Symposium\" which addresses the concept of love. Plato's philosophy is distinguished by his Theory of Forms which holds that the sensible world is merely a reflection of the eternal and unchanging world of Forms.",
+                "PhiH.textAnalysis.plato.lexical.title": "Concepts and Terminology",
+                "PhiH.textAnalysis.plato.lexical.item1": "<strong>Allegory:</strong> a story that uses sensory symbols to clarify abstract ideas. Allegory uses sensory images to convey deep philosophical concepts.",
+                "PhiH.textAnalysis.plato.lexical.item2": "<strong>The Cave:</strong> symbolizes the sensible world in which we live, a world of shadows and illusions where humans live chained by their senses.",
+                "PhiH.textAnalysis.plato.lexical.item3": "<strong>The Prisoners:</strong> represent humans who live in the sensible world chained by their senses, seeing only what is in front of them and not perceiving the truth.",
+                "PhiH.textAnalysis.plato.lexical.item4": "<strong>The Fire:</strong> an artificial light source symbolizing distorted sources of knowledge such as public opinion, tradition, and dominant culture.",
+                "PhiH.textAnalysis.plato.lexical.item5": "<strong>The Shadows:</strong> represent incomplete sensory knowledge that the prisoners believe to be absolute truth.",
+                "PhiH.textAnalysis.plato.questions.title": "Comprehension and Analysis Questions",
+                "PhiH.textAnalysis.plato.questions.q1": "Identify the elements of the scene described by the allegory and interpret their philosophical significance.",
+                "PhiH.textAnalysis.plato.questions.q2": "What are the degrees of knowledge achieved by the prisoners in the cave? What defects can we attribute to them? List the phrases indicating this defect in the text?",
+                "PhiH.textAnalysis.plato.questions.q3": "Imagine Socrates present among us today: what constraints could he diagnose in our daily lives? Write a paragraph on the subject and present it for discussion with your classmates.",
+                "PhiH.textAnalysis.plato.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.plato.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.plato.answers.a1.content": "Elements of the scene in Plato's Allegory of the Cave and their philosophical meanings:<br><br><strong>The Cave:</strong> represents the sensible world in which we live, a world of shadows and illusions.<br><strong>The Prisoners:</strong> are humans who live in this world chained by their senses, seeing only what is in front of them.<br><strong>The Chains:</strong> symbolize the constraints of the body and senses that prevent us from seeing the truth.<br><strong>The Fire:</strong> an artificial light source symbolizing distorted sources of knowledge (such as public opinion and tradition).<br><strong>The Elevated Road and Small Wall:</strong> represent the media that present us with distorted images of reality (such as media and dominant culture).<br><strong>The Statues and Carried Objects:</strong> represent the true objects of the intelligible world, but the prisoners only see their shadows.<br><strong>The Shadows:</strong> represent incomplete sensory knowledge that the prisoners believe to be the truth.<br><strong>The Echo:</strong> symbolizes the erroneous information that reaches the prisoners and which they believe to be true.<br><br>Philosophical Significance: The allegory aims to show that sensory knowledge is incomplete and tainted by illusion, and that true knowledge is abstract intellectual knowledge. It also symbolizes the philosopher's journey out of the world of shadows (the sensible world) into the world of light (the intelligible world) and his return to attempt to liberate others.",
+                "PhiH.textAnalysis.plato.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.plato.answers.a2.content": "Degrees of knowledge in the cave:<br><br>1. <strong>Sensory Knowledge:</strong> limited to the shadows they see on the wall.<br>2. <strong>Belief in the Reality of Shadows:</strong> where they believe the shadows are the real objects.<br><br>Defects in this knowledge:<br>- It relies on the senses which are deceptive.<br>- It is incapable of perceiving abstract truths.<br>- It accepts illusion as reality.<br><br>Phrases indicating this defect in the text:<br>- \"Don't you think they would believe their words refer to the real things themselves?\"<br>- \"Wouldn't they think that whenever one of those passing behind them speaks, the sound comes from something other than the shadow passing in front of them?\"<br>- \"I am certain that these people attribute reality to nothing other than the shadows of manufactured objects.\"",
+                "PhiH.textAnalysis.plato.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.plato.answers.a3.content": "If Socrates were among us today, he would diagnose many constraints in our daily lives, including:<br><br>- <strong>Dependence on technology and smart devices:</strong> where we live in a virtual world, watching multiple images and messages, and believing this is reality, when they are merely distorted representations of reality.<br>- <strong>Public opinion and media:</strong> the media plays a role similar to the fire in the cave, presenting us with images and models we believe to be the truth, when they are mere fabrications.<br>- <strong>Consumerism and materialism:</strong> we are chained by the pleasures of the material world and consumption of products whose true nature we do not know, resembling the shadows of the cave.<br>- <strong>Lack of critical thinking:</strong> we follow others' opinions without examination, just as the prisoners communicated with each other believing their words referred to real things.<br><br>We have become prisoners in a modern cave, chained by our technologies and preconceived ideas, and we need someone to free us from these chains through critical thinking and philosophical questioning.",
+                "PhiH.textAnalysis.plato.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.plato.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.plato.analysis.thesis.content": "Plato's Allegory of the Cave presents the idea that sensory knowledge is incomplete and tainted by illusion, and that true knowledge is abstract intellectual knowledge. It also emphasizes the necessity of moving from the sensible world to the intelligible world to understand absolute truths.",
+                "PhiH.textAnalysis.plato.analysis.mechanisms.title": "Mechanisms of illusion:",
+                "PhiH.textAnalysis.plato.analysis.mechanisms.content": "The mechanisms of illusion in the cave work through:<br>- <strong>Sensory constraints:</strong> the prisoners are chained and can only see what is in front of them.<br>- <strong>Artificial light sources:</strong> the fire creates shadows that are confused with reality.<br>- <strong>Media:</strong> like the small wall and carried objects that create distorted images.<br>- <strong>Language and echo:</strong> where prisoners associate words and sounds with shadows, believing them to be real.",
+                "PhiH.textAnalysis.plato.analysis.consequences.title": "Consequences of illusion:",
+                "PhiH.textAnalysis.plato.analysis.consequences.content": "- <strong>Ignorance:</strong> prisoners live in profound darkness of ignorance.<br>- <strong>Belief in falsehood:</strong> considering shadows as absolute truth.<br>- <strong>Inability to perceive abstract truths:</strong> such as justice, beauty, and truth in themselves.",
+                "PhiH.textAnalysis.plato.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.plato.analysis.significance.content": "The Allegory of the Cave represents Plato's vision of knowledge and existence. The sensible world is a changing and perishable world, while the intelligible world is that of eternal and unchanging Forms. The exit from the cave symbolizes the journey of philosophical education that leads to true knowledge. The philosopher's return to the cave to liberate others symbolizes the philosopher's duty to spread wisdom and achieve justice in society."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.plato.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.plato.title": "تحليل النص: أمثولة الكهف لأفلاطون",
+                "PhiH.textAnalysis.plato.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.plato.introduction.content": "كثيرا ما يقع استهجان ما هو نظريّ ومجرّد فيُماهى بينه وبين ما هو خياليّ وزائف، ويعتقد في المقابل أنّ الواقع الفعليّ هو ما هو عينيّ وما هو معطى في التجربة الحسيّة أو مدرَك حسيّا. ولكنّ أسبابا عديدة تدعونا إلى التشكيك في \"واقعيّة\" معطيات التجربة الحسيّة وفي مصداقيّة المعرفة المقترنة بها. وقد كان لأفلاطون السبق في تشخيص الاعتقاد في واقعيّة معطيّات التجربة الحسيّة والاعتقاد في بداهة الإدراك الحسيّ، والعمل مقابل ذلك على تأسيس قيمة النظر العقليّ.",
+                "PhiH.textAnalysis.plato.text.title": "أمثولة الكهف",
+                "PhiH.textAnalysis.plato.text.content": "سقراط: ... تخيّل رجالا قبعوا في مسكن تحت الأرض في شكل كهف تُطِلُّ فتحته على النور ويليها ممرّ يوصل إلى الكهف، هناك ظلّ هؤلاء النّاس منذ طفولتهم وقد فُّدت أرجلهم وأعناقهم بأغلال بحيث لا يستطيعون التحرّك من أماكنهم ولا رؤية أيّ شيء سوى ما يقع تحت أنظارهم إذ تمنعهم الأغلال من التلفّت حولهم، ومن ورائهم تضيء نار اشتعلت عن بعد في موقع عال، وبين النّار والسجناء طريق مرتفع، ولتتخيّل على طول هذا الطريق جدارا صغيرا مشابها لتلك الحواجز التي نجدها في مسرح العرائس المتحرّكة والتي يقيمها اللاعبون أمام الجمهور ليعرضوا عليها ألعابهم.  غلوكون: إنّي لأتخيّل ذلك.  سقراط: ولتتصوّر الآن على طول الجدار الصغير، رجالا يحملون أشياء شتى تعلو الجدار كما يحملون تماثيل لأناسٍ ولحيوانات صُنعت من الحجارة أو من الخشب أو من مواد أخرى مختلفة. وطبيعيّ أنْ يكون بين حملة هذه المصنوعات من يتكلّم ومن هو صامت.  غلوكون: إنّها صورة غريبة تصف نوعا غريبا من السجناء.  سقراط: إنّهم ليشبهوننا، وبالفعل هل تعتقد بداية أنّ السجناء في موقعهم ذاك لا يرون من أنفسهم ومن الآخرين شيئا غير الظلال التي تلقيها النّار على الجدار المواجه لهم من الكهف ؟  غلوكون: وكيف يكون الأمر على خلاف ذلك ما داموا عاجزين طوال حياتهم عن تحريك رؤوسهم ؟  سقراط: أوليس الأمر كذلك فيما يتعلّق بالأشياء التي تمرّ أمامهم ؟  غلوكون: بلا جدال.  سقراط: وإن أمكنهم إذن أن يتخاطبوا فيما بينهم ألا تظنّهم يعتقدون أنّ كلماتهم تُشيرُ إلى الأشياء الواقعيّة نفسها ؟  غلوكون: هذا ضروريّ.  سقراط: وإن كان هناك صدى يتردّد من الجدار المواجه لهم، أفلا يظنّون أنّه كلّما تحدّث أحد الذين يمرون من ورائهم، أنّ الصوت آت من شيء آخر غير الظلّ الذي يمرّ أمامهم ؟  غلوكون: لا وحقّ \"زوس\"!  سقراط: يقيني أنّ هؤلاء النّاس لا يُضفون صفة الواقعية على شيء آخر غير ظلال الأشياء المصنوعة.  غلوكون: لا مفرّ من ذلك.",
+                "PhiH.textAnalysis.plato.text.source": "أفلاطون: الجمهورية، الكتاب السابع",
+                "PhiH.textAnalysis.plato.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.plato.author.alt": "أفلاطون",
+                "PhiH.textAnalysis.plato.author.content": "أفلاطون (427-347 ق.م) فيلسوف يوناني كلاسيكي، رياضياتي، كاتب لعدد من الحوارات الفلسفية، ومؤسس لأكاديمية أثينا التي كانت أول معهد للتعليم العالي في العالم الغربي. يعتبر أفلاطون من أهم الشخصيات في تطور الفلسفة الغربية. كان تلميذاً لسقراط ومعلماً لأرسطو. كتب أفلاطون عن مواضيع فلسفية عديدة تشمل الفلسفة السياسية، علم الجمال، نظرية المعرفة، علم الكونيات، علم اللغة، وفلسفة العقل. من أشهر أعماله \"الجمهورية\" التي تتناول مفهوم العدالة والنظام السياسي المثالي، و\"فيدون\" الذي يناقش خلود النفس، و\"المأدبة\" الذي يتناول مفهوم الحب. تميزت فلسفة أفلاطون بنظرية المُثُل التي ترى أن العالم الحسي ما هو إلا انعكاس لعالم المُثُل الأبدي الثابت.",
+                "PhiH.textAnalysis.plato.lexical.title": "المفاهيم والمصطلحات",
+                "PhiH.textAnalysis.plato.lexical.item1": "<strong>الأمثولة:</strong> (allegorie) قصّة تلجأ إلى الرمز الحسيّ من أجل توضيح أفكار مجرّدة. تستخدم الأمثولة صوراً حسية لتوصيل مفاهيم فلسفية عميقة.",
+                "PhiH.textAnalysis.plato.lexical.item2": "<strong>الكهف:</strong> يرمز إلى العالم الحسي الذي نعيش فيه، وهو عالم الظلال والوهم حيث يعيش البشر مقيدين بحواسهم.",
+                "PhiH.textAnalysis.plato.lexical.item3": "<strong>السجناء:</strong> يمثلون البشر الذين يعيشون في العالم الحسي مقيدين بحواسهم، لا يرون إلا ما هو أمامهم ولا يدركون الحقيقة.",
+                "PhiH.textAnalysis.plato.lexical.item4": "<strong>النار:</strong> مصدر ضوء اصطناعي يرمز إلى المصادر المشوهة للمعرفة مثل الرأي العام والتقليد والثقافة السائدة.",
+                "PhiH.textAnalysis.plato.lexical.item5": "<strong>الظلال:</strong> تمثل المعرفة الحسية الناقصة التي يعتقد السجناء أنها الحقيقة المطلقة.",
+                "PhiH.textAnalysis.plato.questions.title": "أسئلة الفهم والتحليل",
+                "PhiH.textAnalysis.plato.questions.q1": "أرصُدُ عناصر المَشهد الّذي تصفه الأمثولة وأتأوّلُ دلالتها الفلسفيّة.",
+                "PhiH.textAnalysis.plato.questions.q2": "ما هي درجاتُ المعرفة الّتي تتحقّق للسّجناء داخل الكهف ؟ ماذا يُمكن أن نعيبَ عليها ؟ عدّد الصّيغ الدّالّة على هذا العيب في النّصّ ؟",
+                "PhiH.textAnalysis.plato.questions.q3": "تخيّل سقراط حاضرًا بيننا اليوم : أيّة قيود يُمكنه تشخيصُها في حياتنا اليوميّة ؟ حرّر فقرة في الغرض واعرضها للحوار مع رفاقك.",
+                "PhiH.textAnalysis.plato.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.plato.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.plato.answers.a1.content": "عناصر المشهد في أمثولة الكهف ودلالاتها الفلسفية:<br><br><strong>الكهف:</strong> يمثل العالم الحسي الذي نعيش فيه، وهو عالم الظلال والوهم.<br><strong>السجناء:</strong> هم البشر الذين يعيشون في هذا العالم مقيدين بحواسهم، لا يرون إلا ما هو أمامهم.<br><strong>الأغلال:</strong> ترمز إلى قيود الجسد والحواس التي تمنعنا من رؤية الحقيقة.<br><strong>النار:</strong> مصدر ضوء اصطناعي يرمز إلى المصادر المشوهة للمعرفة (كالرأي العام والتقليد).<br><strong>الطريق المرتفع والجدار الصغير:</strong> يمثلان الوسائط التي تقدم لنا صور مشوهة عن الواقع (كالإعلام والثقافة السائدة).<br><strong>التماثيل والأشياء المحمولة:</strong> تمثل الأشياء الحقيقية في العالم العقلي، ولكن السجناء لا يرون سوى ظلالها.<br><strong>الظلال:</strong> تمثل المعرفة الحسية الناقصة التي يعتقد السجناء أنها الحقيقة.<br><strong>الصدى:</strong> يرمز إلى المعلومات المغلوطة التي تصل إلى السجناء فيعتقدون أنها حقيقية.<br><br>الدلالة الفلسفية: تهدف الأمثولة إلى بيان أن المعرفة الحسية ناقصة ومشوبة بالوهم، وأن المعرفة الحقيقية هي المعرفة العقلية المجردة. كما ترمز إلى رحلة الفيلسوف في الخروج من عالم الظلال (العالم الحسي) إلى عالم النور (العالم العقلي) وعودته لمحاولة تحرير الآخرين.",
+                "PhiH.textAnalysis.plato.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.plato.answers.a2.content": "درجات المعرفة داخل الكهف:<br><br>1. <strong>المعرفة الحسية:</strong> وهي محدودة بالظلال التي يرونها على الجدار.<br>2. <strong>الاعتقاد في واقعية الظلال:</strong> حيث يعتقدون أن الظلال هي الأشياء الحقيقية.<br><br>العيوب في هذه المعرفة:<br>- أنها معتمد على الحواس وهي خادعة.<br>- أنها غير قادرة على إدراك الحقائق المجردة.<br>- أنها تقبل بالوهم على أنه حقيقة.<br><br>الصيغ الدالة على هذا العيب في النص:<br>- \"ألا تظنهم يعتقدون أنّ كلماتهم تُشيرُ إلى الأشياء الواقعيّة نفسها ؟\"<br>- \"أفلا يظنّون أنّه كلّما تحدّث أحد الذين يمرون من ورائهم، أنّ الصوت آت من شيء آخر غير الظلّ الذي يمرّ أمامهم ؟\"<br>- \"يقيني أنّ هؤلاء النّاس لا يُضفون صفة الواقعية على شيء آخر غير ظلال الأشياء المصنوعة.\"",
+                "PhiH.textAnalysis.plato.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.plato.answers.a3.content": "لو كان سقراط بيننا اليوم، لشخّص العديد من القيود في حياتنا اليومية، منها:<br><br>- <strong>التبعية للتقنية والأجهزة الذكية:</strong> حيث أصبحنا نعيش في عالم افتراضي، نشاهد فيه صورًا ورسائل متعددة، ونعتقد أن هذه هي الحقيقة، بينما هي مجرد تمثيلات مشوهة للواقع.<br>- <strong>الرأي العام والإعلام:</strong> يمارس الإعلام دورًا مشابهًا للنار في الكهف، حيث يقدم لنا صورًا ونماذج نعتقد أنها الحقيقة، بينما هي محض اصطناعات.<br>- <strong>الاستهلاكية والمادية:</strong> نحن مقيدون بملذات العالم المادي واستهلاك منتجات لا نعرف حقيقتها، مما يشبه ظلال الكهف.<br>- <strong>عدم التفكير النقدي:</strong> نحن نتبع آراء الآخرين دون تمحيص، كما كان السجناء يتخاطبون معتقدين أن كلماتهم تشير إلى الأشياء الواقعية.<br><br>لقد أصبحنا سجناء في كهف حديث، مقيدين بتقنياتنا وأفكارنا المسبقة، ونحتاج إلى من يحررنا من هذه الأغلال بالتفكير النقدي والسؤال الفلسفي.",
+                "PhiH.textAnalysis.plato.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.plato.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.plato.analysis.thesis.content": "تطرح أمثولة الكهف لأفلاطون فكرة أن المعرفة الحسية ناقصة ومشوبة بالوهم، وأن المعرفة الحقيقية هي المعرفة العقلية المجردة. كما تؤكد على ضرورة الخروج من العالم الحسي إلى العالم العقلي لفهم الحقائق المطلقة.",
+                "PhiH.textAnalysis.plato.analysis.mechanisms.title": "آليات عمل الوهم:",
+                "PhiH.textAnalysis.plato.analysis.mechanisms.content": "تعمل آليات الوهم في الكهف من خلال:<br>- <strong>القيود الحسية:</strong> حيث أن السجناء مقيدون ولا يستطيعون رؤية إلا ما هو أمامهم.<br>- <strong>مصادر الضوء الاصطناعي:</strong> النار تخلق ظلالاً يتم الخلط بينها وبين الواقع.<br>- <strong>الوسائط:</strong> كالجدار الصغير والأشياء المحمولة التي تخلق صورًا مشوهة.<br>- <strong>اللغة والصدى:</strong> حيث يربط السجناء الكلمات والأصوات بالظلال، فيعتقدون أنها حقيقية.",
+                "PhiH.textAnalysis.plato.analysis.consequences.title": "نتائج الوهم:",
+                "PhiH.textAnalysis.plato.analysis.consequences.content": "- <strong>الجهل:</strong> عيش السجناء في ظلام دامس من الجهل.<br>- <strong>الاعتقاد في الزيف:</strong> اعتبار الظلال حقيقة مطلقة.<br>- <strong>عدم القدرة على إدراك الحقائق المجردة:</strong> كالعدالة والجمال والحقيقة في ذاتها.",
+                "PhiH.textAnalysis.plato.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.plato.analysis.significance.content": "تمثل أمثولة الكهف رؤية أفلاطون للمعرفة والوجود. فالعالم الحسي هو عالم متغير وزائل، أما العالم العقلي فهو عالم المثل الثابتة والأبدية. الخروج من الكهف يرمز إلى رحلة التعليم الفلسفي التي تقود إلى المعرفة الحقيقية. كما أن عودة الفيلسوف إلى الكهف لتحرير الآخرين ترمز إلى واجب الفيلسوف في نشر الحكمة وتحقيق العدالة في المجتمع."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

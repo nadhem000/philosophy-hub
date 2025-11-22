@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: الحياة والمعنى - ميخائيل نعيمة - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#059669">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Emerald + Teal Color Palette */
+        :root {
+            --primary-color: #059669;
+            --primary-light: #10b981;
+            --primary-dark: #047857;
+            --secondary-color: #0d9488;
+            --secondary-light: #14b8a6;
+            --secondary-dark: #0f766e;
+            --accent-color: #0d9488;
+            --accent-light: #14b8a6;
+            --accent-dark: #0f766e;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #f0fdfa;
+            --card-bg: #ffffff;
+            --definition-bg: #ecfdf5;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #d1fae5;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.1), 0 2px 4px -1px rgba(5, 150, 105, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(5, 150, 105, 0.1), 0 4px 6px -2px rgba(5, 150, 105, 0.05);
+            --gradient-primary: linear-gradient(135deg, #059669 0%, #0d9488 100%);
+            --gradient-secondary: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+            --gradient-accent: linear-gradient(135deg, #0d9488 0%, #059669 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #10b981;
+            --primary-light: #34d399;
+            --primary-dark: #059669;
+            --secondary-color: #14b8a6;
+            --secondary-light: #2dd4bf;
+            --secondary-dark: #0d9488;
+            --accent-color: #14b8a6;
+            --accent-light: #2dd4bf;
+            --accent-dark: #0d9488;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #064e3b;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #065f46;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+            --gradient-secondary: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            --gradient-accent: linear-gradient(135deg, #14b8a6 0%, #10b981 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(5, 150, 105, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(13, 148, 136, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(13, 148, 136, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(5, 150, 105, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="#" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.nuaima.title">تحليل النص: الحياة والمعنى - ميخائيل نعيمة</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.nuaima.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nuaima.introduction.title">مقدمة النص</h4>
+                <p data-i18n="PhiH.textAnalysis.nuaima.introduction.content">
+                    يتّسم الوجود العفوي للإنسان بطابع مباشر يعبّر عن وعي فاقد لكلّ مسافة نقديّة بينه وبين العالم سواء من جهة علاقته بذاته أو بالأشياء أو بالآخرين. ولكن بعض تنبيهات اليومي قد تجعل استفاقة الإنسان على وضعه هذا أمرا ممكنا بل ومأمولا.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nuaima.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.nuaima.text.content">
+                        يبدو أنني بدأت أفكّر<sup>1</sup> وقبل اليوم لم أكن أفكّر، قبل اليوم كنت أسعى لأن الناس من حوالي يسعون، وأحب وأكره لأنّهم<sup>2</sup> يحبّون ويكرهون. تعلّمت لأنهم يتعلّمون وعلّمت لأنّ التعليم مهنة من المهن الكثيرة التي بها يرتزقون، وهي، في نظرهم، مهنة شريفة، وتزوّجت وبنيت بيتا لأنّهم يتزوّجون ويبنون البيوت، كنت وإيّاهم زوارق متفاوتة الشّكل واللون والحجم تتقاذفها أمواج نهر هائل لا تعرف له بداية أو نهاية. ولا هي تُبصر ضفافه أو تُدرك قعره. وهذه الزوارق كان بعضها يترافق هنا، ويتفارق هناك، ويتصادم هنالك. ثمّ يغمره الموج وليس من يدري إلى أين يَمضي وماذا يحلّ به حيث يمضي.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.nuaima.text.source">ميخائيل نعيمة، اليوم الأخير، مؤسسة نوفل للنشر، ص: 22</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nuaima.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/mikhail_naimy.jpg" alt="ميخائيل نعيمة" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.nuaima.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.nuaima.author.content">
+                            ميخائيل نعيمة (1889-1988) هو أديب وشاعر وفيلسوف لبناني، يُعتبر أحد أبرز رواد الأدب العربي الحديث. ولد في بسكنتا بلبنان، وهاجر إلى الولايات المتحدة الأمريكية حيث درس الحقوق والأدب. انضم إلى الرابطة القلمية التي أسسها جبران خليل جبران، وكان من أبرز أعضائها. تميزت كتاباته بالعمق الفلسفي والروحانية، حيث تناول موضوعات الوجود والموت والحياة والمعنى. من أشهر مؤلفاته: "الغربال" (نقد أدبي)، "سبعون" (سيرة ذاتية)، "مرداد" (رواية فلسفية)، و"همس الجفون" (شعر). عُرف نعيمة بفكره المستقل ونقده اللاذع للتقليد والجمود الفكري.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nuaima.lexical.title">المفاهيم والمصطلحات</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.nuaima.lexical.item1"><strong>التفكير:</strong> التفكير عند الكاتب يقترن بالمساءلة كما يتّضح في قوله: ((إنّي الآن أسأل " لماذا " كما لم أقلها مرّة في حياتي من قبل ... إنّ الذي يملك القدرة على طرح السؤال يملك القدرة على الجواب عليه.)). التفكير هنا ليس مجرد عملية عقلية، بل هو يقظة وجودية ووعي نقدي بالذات والعالم.</li>
+                    <li data-i18n="PhiH.textAnalysis.nuaima.lexical.item2"><strong>"لأنّهم":</strong> ضمير غير محدّد يتضمّن دلالة تحيل على الآخرين وعلى تبعيّة الذات وانفعالها وخضوعها لسلطة خارجة عنها. يمثل هذا الضمير قوة الجماعة والرأي السائد الذي يوجه حياة الفرد دون وعي منه.</li>
+                    <li data-i18n="PhiH.textAnalysis.nuaima.lexical.item3"><strong>الزوارق والنهر:</strong> مجاز يستخدمه الكاتب لوصف الوجود الإنساني في شكله التقليدي. فالزوارق تمثل الأفراد بمختلف أشكالهم وألوانهم، والنهر الهائل يرمز للحياة أو القدر المجهول، والأمواج ترمز لتقلبات الحياة وقوى خارجية توجه الأفراد دون إرادتهم.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nuaima.questions.title">أسئلة الفهم والتحليل</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.nuaima.questions.q1">أسْتخرجُ من الأنشطة التي يعرض لها الكاتب في النص نمط الوجود المميّز للحياة اليومية، وبيّن إن كان يخلو حقًا من كلّ تفكير.</li>
+                    <li data-i18n="PhiH.textAnalysis.nuaima.questions.q2">أُبيّنُ الأبعاد الدلالية للمجاز الموظّفِ في النص.</li>
+                    <li data-i18n="PhiH.textAnalysis.nuaima.questions.q3">قال الكاتب : "قبل اليوم لم أكن أفكّر." هل من سنّ للتفكير؟</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nuaima.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nuaima.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nuaima.answers.a1.content">
+                        الأنشطة التي يعرضها الكاتب تمثل نمط الحياة اليومية التقليدية التي تخلو من التفكير النقدي، وتشمل:
+                        <br>- السعي لأن الآخرين يسعون (الانخراط في الأنشطة دون غاية شخصية).
+                        <br>- الحب والكره انسياقًا مع مشاعر الآخرين.
+                        <br>- التعلم والتعليم كوسيلة للرزق وليس كقيمة في ذاتها.
+                        <br>- الزواج وبناء البيت لأنها عادات اجتماعية.
+                        <br><br>
+                        هذه الأنشطة لا تخلو من التفكير تمامًا، ولكنها تفتقد إلى التفكير المسائل والنقدي. التفكير هنا مقترن بالوعي الذاتي والمساءلة، وهو ما كان غائبًا في حياة الراوي قبل استيقاظه.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nuaima.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nuaima.answers.a2.content">
+                        المجاز الموظف في النص (زوارق في نهر هائل) يحمل أبعادًا دلالية عميقة:
+                        <br>- <strong>الزوارق:</strong> تمثل الأفراد في المجتمع، بمختلف أشكالهم وألوانهم وأحجامهم، مما يشير إلى التنوع الظاهري بين الناس رغم وحدة مصيرهم.
+                        <br>- <strong>النهر الهائل:</strong> يرمز إلى الحياة أو القدر، وهو غير معروف البداية أو النهاية، مما يعكس غموض الوجود وعدم يقينية المسار.
+                        <br>- <strong>أمواج النهر:</strong> ترمز إلى تقلبات الحياة وقوى خارجية تسير الأفراد دون إرادتهم.
+                        <br>- <strong>عدم معرفة الضفاف أو القعر:</strong> يعبر عن فقدان الاتجاه والمعنى في الحياة اليومية.
+                        <br><br>
+                        هذا المجاز يعكس فكرة العيش العشوائي الخاضع لقوى خارجية، دون وعي أو تحكم ذاتي.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nuaima.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nuaima.answers.a3.content">
+                        لا يوجد سن محدد للتفكير بالمعنى الذي يقصده الكاتب. التفكير هنا ليس مرتبطًا بالعمر الزمني، بل بالاستيقاظ الوجودي والوعي الذاتي. قد يبدأ التفكير في أي مرحلة عمرية عندما يبدأ الفرد في مساءلة حياته وعلاقته بالعالم. القول "قبل اليوم لم أكن أفكّر" يشير إلى لحظة تحول فلسفي وليس إلى عمر بيولوجي. التفكير الحقيقي يبدأ عندما يطرح الفرد أسئلة جذرية عن معنى وجوده وسلوكه.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nuaima.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nuaima.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nuaima.analysis.thesis.content">
+                        يطرح ميخائيل نعيمة فكرة أن الوجود الإنساني في شكله اليومي والعفوي يفتقد إلى المسافة النقدية، مما يجعل الفرد يعيش حياة تقليدية يتبع فيها الآخرين دون وعي. إلا أن استيقاظ الفرد على هذا الوضع يمكن أن يؤدي إلى بداية التفكير المسائل والأصيل.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nuaima.analysis.mechanisms.title">آليات عمل الحياة اليومية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nuaima.analysis.mechanisms.content">
+                        تعمل الحياة اليومية من خلال عدة آليات تفرض نمطًا موحدًا على الأفراد:
+                        <br>- <strong>التبعية الاجتماعية:</strong> حيث يتبع الفرد الآخرين في السعي والحب والكره والتعلم والعمل.
+                        <br>- <strong>العادات والتقاليد:</strong> مثل الزواج وبناء البيت، التي تُمارس لأنها معايير اجتماعية مقبولة.
+                        <br>- <strong>الخضوع لسلطة الجماعة:</strong> حيث يذوب الفرد في الجماعة ويفقد فرديته، كما يتجلى في استخدام ضمير "لأنهم".
+                        <br><br>
+                        هذه الآليات تجعل الفرد يعيش حياة سطحية دون مساءلة أو نقد.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nuaima.analysis.consequences.title">نتائج الحياة اليومية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nuaima.analysis.consequences.content">
+                        تؤدي الحياة اليومية إلى:
+                        <br>- <strong>فقدان الأصالة والتفرد:</strong> حيث يصبح الفرد نسخة من الآخرين.
+                        <br>- <strong>الغموض وعدم اليقين:</strong> كما في مجاز الزوارق في النهر، حيث لا يعرف الفرد مصيره أو اتجاهه.
+                        <br>- <strong>الاستلاب:</strong> حيث يخضع الفرد لقوى خارجية تفقده سيطرته على حياته.
+                        <br>- <strong>تأجيل التفكير الحقيقي:</strong> حيث يعيش الفرد في وهم أنه يفكر بينما هو فقط يردد أفكار الآخرين.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nuaima.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nuaima.analysis.significance.content">
+                        يحمل النص دلالات وجودية عميقة تتجاوز النقد الاجتماعي إلى أبعاد فلسفية. فـ"التفكير" عند نعيمة ليس مجرد عملية عقلية، بل هو يقظة وجودية تمكن الفرد من استعادة ذاته ومعنى حياته. المجاز المستخدم يعكس رؤية للوجود كرحلة غامضة، لكن الاستيقاظ الذاتي يمكن أن يمنح الفرد القدرة على تجاوز هذا الغموض. النص يدعو إلى الخروج من القطيع واعتناق المسؤولية الفردية في صياغة المشروع الوجودي الشخصي.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.nuaima.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.nuaima.title": "Texte 2 : La Vie et le Sens - Mikhail Naïma",
+                "PhiH.textAnalysis.nuaima.introduction.title": "Introduction au texte",
+                "PhiH.textAnalysis.nuaima.introduction.content": "L'existence spontanée de l'homme se caractérise par un caractère direct qui exprime une conscience dépourvue de toute distance critique entre lui et le monde, que ce soit dans sa relation avec lui-même, avec les choses ou avec les autres. Mais certaines alertes du quotidien peuvent rendre l'éveil de l'homme à cette situation possible, voire souhaitable.",
+                "PhiH.textAnalysis.nuaima.text.title": "Texte",
+                "PhiH.textAnalysis.nuaima.text.content": "Il semble que j'ai commencé à penser<sup>1</sup> et qu'avant aujourd'hui je ne pensais pas, avant aujourd'hui je poursuivais parce que les gens autour de moi poursuivent, j'aime et je déteste parce qu'ils<sup>2</sup> aiment et détestent. J'ai appris parce qu'ils apprennent et j'ai enseigné parce que l'enseignement est une profession parmi les nombreuses professions par lesquelles ils gagnent leur vie, et c'est, à leurs yeux, une profession honorable, je me suis marié et j'ai construit une maison parce qu'ils se marient et construisent des maisons, j'étais avec eux comme des bateaux de formes, de couleurs et de tailles variées ballottés par les vagues d'un fleuve immense dont on ne connaît ni le début ni la fin. Et ils ne voient pas ses rives ni n'en atteignent le fond. Et ces bateaux, certains se rapprochaient ici, se séparaient là, se heurtaient ailleurs. Puis la vague les submergeait et personne ne sait où ils vont ni ce qui leur arrive là où ils vont.",
+				"PhiH.textAnalysis.nuaima.text.source": "Mikhail Naïma, Le Dernier Jour, Éditions Nawfal, p. 22",
+                "PhiH.textAnalysis.nuaima.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.nuaima.author.alt": "Mikhail Naïma",
+                "PhiH.textAnalysis.nuaima.author.content": "Mikhail Naïma (1889-1988) est un écrivain, poète et philosophe libanais, considéré comme l'un des pionniers les plus importants de la littérature arabe moderne. Né à Baskinta au Liban, il a émigré aux États-Unis où il a étudié le droit et la littérature. Il a rejoint la Ligue de la Plume fondée par Khalil Gibran et en fut l'un des membres les plus éminents. Ses écrits se distinguent par leur profondeur philosophique et leur spiritualité, abordant des thèmes tels que l'existence, la mort, la vie et le sens. Parmi ses œuvres les plus célèbres : \"Le Crible\" (critique littéraire), \"Soixante-dix\" (autobiographie), \"Murdad\" (roman philosophique) et \"Murmure des paupières\" (poésie). Naïma était connu pour sa pensée indépendante et sa critique acerbe de la tradition et de la rigidité intellectuelle.",
+                "PhiH.textAnalysis.nuaima.lexical.title": "Concepts et terminologie",
+                "PhiH.textAnalysis.nuaima.lexical.item1": "<strong>La pensée:</strong> La pensée chez l'auteur est associée à l'interrogation, comme le montre sa déclaration : ((Maintenant, je demande \"pourquoi\" comme je ne l'ai jamais fait de ma vie... Celui qui a la capacité de poser la question a la capacité d'y répondre.)). La pensée ici n'est pas seulement un processus mental, mais un éveil existentiel et une conscience critique de soi et du monde.",
+                "PhiH.textAnalysis.nuaima.lexical.item2": "<strong>\"Parce qu'ils\":</strong> Un pronom indéfini qui contient une signification renvoyant aux autres et à la dépendance de soi, à sa réactivité et à sa soumission à un pouvoir extérieur. Ce pronom représente la force du groupe et de l'opinion dominante qui guide la vie de l'individu sans qu'il en soit conscient.",
+                "PhiH.textAnalysis.nuaima.lexical.item3": "<strong>Les bateaux et la rivière:</strong> Une métaphore utilisée par l'auteur pour décrire l'existence humaine sous sa forme traditionnelle. Les bateaux représentent les individus dans leurs différentes formes et couleurs, la rivière immense symbolise la vie ou le destin inconnu, et les vagues symbolisent les fluctuations de la vie et les forces extérieures qui dirigent les individus sans leur volonté.",
+                "PhiH.textAnalysis.nuaima.questions.title": "Questions de compréhension et d'analyse",
+                "PhiH.textAnalysis.nuaima.questions.q1": "Extrayez des activités présentées par l'auteur dans le texte le mode d'existence caractéristique de la vie quotidienne, et montrez s'il est vraiment dépourvu de toute pensée.",
+                "PhiH.textAnalysis.nuaima.questions.q2": "Expliquez les dimensions sémantiques de la métaphore utilisée dans le texte.",
+                "PhiH.textAnalysis.nuaima.questions.q3": "L'auteur a dit : \"Avant aujourd'hui je ne pensais pas.\" Y a-t-il un âge pour penser ?",
+                "PhiH.textAnalysis.nuaima.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.nuaima.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.nuaima.answers.a1.content": "Les activités présentées par l'auteur représentent le mode de vie quotidien traditionnel dépourvu de pensée critique, comprenant :<br>- Poursuivre parce que les autres poursuivent (s'engager dans des activités sans but personnel).<br>- Aimer et détester en suivant les sentiments des autres.<br>- Apprendre et enseigner comme moyen de subsistance et non comme valeur en soi.<br>- Se marier et construire une maison parce que ce sont des coutumes sociales.<br><br>Ces activités ne sont pas entièrement dépourvues de pensée, mais elles manquent de pensée interrogative et critique. La pensée ici est associée à la conscience de soi et à l'interrogation, ce qui était absent dans la vie du narrateur avant son éveil.",
+                "PhiH.textAnalysis.nuaima.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.nuaima.answers.a2.content": "La métaphore utilisée dans le texte (bateaux dans une rivière immense) porte des dimensions sémantiques profondes :<br>- <strong>Les bateaux:</strong> Représentent les individus dans la société, avec leurs différentes formes, couleurs et tailles, indiquant la diversité superficielle entre les gens malgré l'unité de leur destin.<br>- <strong>La rivière immense:</strong> Symbolise la vie ou le destin, dont on ne connaît ni le début ni la fin, reflétant le mystère de l'existence et l'incertitude du chemin.<br>- <strong>Les vagues de la rivière:</strong> Symbolisent les fluctuations de la vie et les forces extérieures qui dirigent les individus sans leur volonté.<br>- <strong>L'ignorance des rives ou du fond:</strong> Exprime la perte de direction et de sens dans la vie quotidienne.<br><br>Cette métaphore reflète l'idée d'une vie aléatoire soumise à des forces extérieures, sans conscience ni contrôle de soi.",
+                "PhiH.textAnalysis.nuaima.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.nuaima.answers.a3.content": "Il n'y a pas d'âge spécifique pour penser au sens où l'entend l'auteur. La pensée ici n'est pas liée à l'âge chronologique, mais à l'éveil existentiel et à la conscience de soi. La pensée peut commencer à n'importe quel stade de la vie lorsque l'individu commence à interroger sa vie et sa relation avec le monde. La déclaration \"Avant aujourd'hui je ne pensais pas\" fait référence à un moment de transformation philosophique et non à un âge biologique. La pensée véritable commence lorsque l'individu pose des questions radicales sur le sens de son existence et de son comportement.",
+                "PhiH.textAnalysis.nuaima.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.nuaima.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.nuaima.analysis.thesis.content": "Mikhail Naïma présente l'idée que l'existence humaine dans sa forme quotidienne et spontanée manque de distance critique, ce qui amène l'individu à vivre une vie traditionnelle où il suit les autres sans conscience. Cependant, l'éveil de l'individu à cette situation peut conduire au début d'une pensée interrogative et authentique.",
+                "PhiH.textAnalysis.nuaima.analysis.mechanisms.title": "Mécanismes de fonctionnement de la vie quotidienne:",
+                "PhiH.textAnalysis.nuaima.analysis.mechanisms.content": "La vie quotidienne fonctionne à travers plusieurs mécanismes qui imposent un modèle uniforme aux individus :<br>- <strong>La dépendance sociale:</strong> Où l'individu suit les autres dans la poursuite, l'amour, la haine, l'apprentissage et le travail.<br>- <strong>Les habitudes et traditions:</strong> Comme le mariage et la construction d'une maison, pratiquées parce que ce sont des normes sociales acceptées.<br>- <strong>La soumission à l'autorité du groupe:</strong> Où l'individu se dissout dans le groupe et perd son individualité, comme le montre l'utilisation du pronom \"parce qu'ils\".<br><br>Ces mécanismes font que l'individu vit une vie superficielle sans interrogation ni critique.",
+                "PhiH.textAnalysis.nuaima.analysis.consequences.title": "Conséquences de la vie quotidienne:",
+                "PhiH.textAnalysis.nuaima.analysis.consequences.content": "La vie quotidienne conduit à :<br>- <strong>La perte d'authenticité et d'individualité:</strong> Où l'individu devient une copie des autres.<br>- <strong>Le mystère et l'incertitude:</strong> Comme dans la métaphore des bateaux dans la rivière, où l'individu ne connaît pas son destin ni sa direction.<br>- <strong>L'aliénation:</strong> Où l'individu est soumis à des forces extérieures qui lui font perdre le contrôle de sa vie.<br>- <strong>Le report de la pensée véritable:</strong> Où l'individu vit dans l'illusion qu'il pense alors qu'il ne fait que répéter les pensées des autres.",
+                "PhiH.textAnalysis.nuaima.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.nuaima.analysis.significance.content": "Le texte porte des significations existentielles profondes qui vont au-delà de la critique sociale vers des dimensions philosophiques. La \"pensée\" chez Naïma n'est pas seulement un processus mental, mais un éveil existentiel qui permet à l'individu de retrouver son soi et le sens de sa vie. La métaphore utilisée reflète une vision de l'existence comme un voyage mystérieux, mais l'éveil personnel peut donner à l'individu la capacité de dépasser ce mystère. Le texte appelle à sortir du troupeau et à embrasser la responsabilité individuelle dans la formulation du projet existentiel personnel."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.nuaima.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.nuaima.title": "Text 2: Life and Meaning - Mikhail Naimy",
+                "PhiH.textAnalysis.nuaima.introduction.title": "Text Introduction",
+                "PhiH.textAnalysis.nuaima.introduction.content": "Man's spontaneous existence is characterized by a direct nature that expresses a consciousness lacking any critical distance between himself and the world, whether in his relationship with himself, with things, or with others. But some daily alerts can make man's awakening to this situation possible, even desirable.",
+                "PhiH.textAnalysis.nuaima.text.title": "Text",
+                "PhiH.textAnalysis.nuaima.text.content": "It seems that I have started to think<sup>1</sup> and before today I was not thinking, before today I was striving because the people around me are striving, and I love and hate because they<sup>2</sup> love and hate. I learned because they learn and I taught because teaching is one of the many professions by which they earn their living, and it is, in their view, an honorable profession, and I got married and built a house because they get married and build houses, I was with them like boats of varying shapes, colors and sizes tossed by the waves of a huge river that has no known beginning or end. And they do not see its banks or fathom its depth. And these boats, some would accompany each other here, separate there, collide elsewhere. Then the wave would engulf them and no one knows where they are going or what happens to them where they go.",
+				"PhiH.textAnalysis.nuaima.text.source": "Mikhail Naimy, The Last Day, Nawfal Publishing, p. 22",
+                "PhiH.textAnalysis.nuaima.author.title": "Author Presentation",
+                "PhiH.textAnalysis.nuaima.author.alt": "Mikhail Naimy",
+                "PhiH.textAnalysis.nuaima.author.content": "Mikhail Naimy (1889-1988) is a Lebanese writer, poet and philosopher, considered one of the most prominent pioneers of modern Arabic literature. Born in Baskinta, Lebanon, he immigrated to the United States where he studied law and literature. He joined the Pen League founded by Kahlil Gibran and was one of its most prominent members. His writings are distinguished by their philosophical depth and spirituality, addressing themes such as existence, death, life and meaning. Among his most famous works: \"The Sieve\" (literary criticism), \"Seventy\" (autobiography), \"Mirdad\" (philosophical novel), and \"Whisper of the Eyelids\" (poetry). Naimy was known for his independent thinking and sharp criticism of tradition and intellectual rigidity.",
+                "PhiH.textAnalysis.nuaima.lexical.title": "Concepts and Terminology",
+                "PhiH.textAnalysis.nuaima.lexical.item1": "<strong>Thinking:</strong> Thinking for the author is associated with questioning, as shown in his statement: ((Now I ask \"why\" as I have never said it before in my life... He who has the ability to ask the question has the ability to answer it.)). Thinking here is not just a mental process, but an existential awakening and critical awareness of self and the world.",
+                "PhiH.textAnalysis.nuaima.lexical.item2": "<strong>\"Because they\":</strong> An indefinite pronoun that contains a meaning referring to others and to the self's dependence, reactivity and submission to an external authority. This pronoun represents the force of the group and the prevailing opinion that guides the individual's life without their awareness.",
+                "PhiH.textAnalysis.nuaima.lexical.item3": "<strong>Boats and River:</strong> A metaphor used by the author to describe human existence in its traditional form. The boats represent individuals in their different shapes and colors, the huge river symbolizes life or unknown destiny, and the waves symbolize life's fluctuations and external forces that direct individuals without their will.",
+                "PhiH.textAnalysis.nuaima.questions.title": "Comprehension and Analysis Questions",
+                "PhiH.textAnalysis.nuaima.questions.q1": "Extract from the activities presented by the author in the text the mode of existence characteristic of daily life, and show whether it is truly devoid of all thinking.",
+                "PhiH.textAnalysis.nuaima.questions.q2": "Explain the semantic dimensions of the metaphor used in the text.",
+                "PhiH.textAnalysis.nuaima.questions.q3": "The author said: \"Before today I was not thinking.\" Is there an age for thinking?",
+                "PhiH.textAnalysis.nuaima.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.nuaima.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.nuaima.answers.a1.content": "The activities presented by the author represent the traditional daily lifestyle devoid of critical thinking, including:<br>- Striving because others are striving (engaging in activities without personal purpose).<br>- Loving and hating in accordance with others' feelings.<br>- Learning and teaching as a means of livelihood and not as a value in itself.<br>- Marriage and building a house because they are social customs.<br><br>These activities are not completely devoid of thinking, but they lack interrogative and critical thinking. Thinking here is associated with self-awareness and questioning, which was absent in the narrator's life before his awakening.",
+                "PhiH.textAnalysis.nuaima.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.nuaima.answers.a2.content": "The metaphor used in the text (boats in a huge river) carries deep semantic dimensions:<br>- <strong>Boats:</strong> Represent individuals in society, with their different shapes, colors and sizes, indicating the superficial diversity among people despite the unity of their destiny.<br>- <strong>Huge River:</strong> Symbolizes life or destiny, with no known beginning or end, reflecting the mystery of existence and the uncertainty of the path.<br>- <strong>River Waves:</strong> Symbolize life's fluctuations and external forces that direct individuals without their will.<br>- <strong>Not knowing the banks or bottom:</strong> Expresses the loss of direction and meaning in daily life.<br><br>This metaphor reflects the idea of random living subject to external forces, without awareness or self-control.",
+                "PhiH.textAnalysis.nuaima.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.nuaima.answers.a3.content": "There is no specific age for thinking in the sense meant by the author. Thinking here is not related to chronological age, but to existential awakening and self-awareness. Thinking can begin at any stage of life when the individual begins to question their life and relationship with the world. The statement \"Before today I was not thinking\" refers to a moment of philosophical transformation and not to a biological age. True thinking begins when the individual asks radical questions about the meaning of their existence and behavior.",
+                "PhiH.textAnalysis.nuaima.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.nuaima.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.nuaima.analysis.thesis.content": "Mikhail Naimy presents the idea that human existence in its daily and spontaneous form lacks critical distance, leading the individual to live a traditional life where they follow others without awareness. However, the individual's awakening to this situation can lead to the beginning of interrogative and authentic thinking.",
+                "PhiH.textAnalysis.nuaima.analysis.mechanisms.title": "Mechanisms of daily life functioning:",
+                "PhiH.textAnalysis.nuaima.analysis.mechanisms.content": "Daily life works through several mechanisms that impose a uniform pattern on individuals:<br>- <strong>Social dependence:</strong> Where the individual follows others in striving, loving, hating, learning and working.<br>- <strong>Habits and traditions:</strong> Like marriage and building a house, practiced because they are accepted social norms.<br>- <strong>Submission to group authority:</strong> Where the individual dissolves into the group and loses their individuality, as shown by the use of the pronoun \"because they\".<br><br>These mechanisms make the individual live a superficial life without questioning or criticism.",
+                "PhiH.textAnalysis.nuaima.analysis.consequences.title": "Consequences of daily life:",
+                "PhiH.textAnalysis.nuaima.analysis.consequences.content": "Daily life leads to:<br>- <strong>Loss of authenticity and individuality:</strong> Where the individual becomes a copy of others.<br>- <strong>Mystery and uncertainty:</strong> As in the metaphor of boats in the river, where the individual does not know their destiny or direction.<br>- <strong>Alienation:</strong> Where the individual is subjected to external forces that make them lose control of their life.<br>- <strong>Postponement of true thinking:</strong> Where the individual lives under the illusion that they are thinking while they are only repeating others' thoughts.",
+                "PhiH.textAnalysis.nuaima.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.nuaima.analysis.significance.content": "The text carries deep existential meanings that go beyond social criticism to philosophical dimensions. \"Thinking\" for Naimy is not just a mental process, but an existential awakening that enables the individual to regain their self and the meaning of their life. The metaphor used reflects a vision of existence as a mysterious journey, but personal awakening can give the individual the ability to transcend this mystery. The text calls for breaking away from the herd and embracing individual responsibility in formulating the personal existential project."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.nuaima.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.nuaima.title": "تحليل النص: الحياة والمعنى - ميخائيل نعيمة",
+                "PhiH.textAnalysis.nuaima.introduction.title": "مقدمة النص",
+                "PhiH.textAnalysis.nuaima.introduction.content": "يتّسم الوجود العفوي للإنسان بطابع مباشر يعبّر عن وعي فاقد لكلّ مسافة نقديّة بينه وبين العالم سواء من جهة علاقته بذاته أو بالأشياء أو بالآخرين. ولكن بعض تنبيهات اليومي قد تجعل استفاقة الإنسان على وضعه هذا أمرا ممكنا بل ومأمولا.",
+                "PhiH.textAnalysis.nuaima.text.title": "النص",
+                "PhiH.textAnalysis.nuaima.text.content": "يبدو أنني بدأت أفكّر<sup>1</sup> وقبل اليوم لم أكن أفكّر، قبل اليوم كنت أسعى لأن الناس من حوالي يسعون، وأحب وأكره لأنّهم<sup>2</sup> يحبّون ويكرهون. تعلّمت لأنهم يتعلّمون وعلّمت لأنّ التعليم مهنة من المهن الكثيرة التي بها يرتزقون، وهي، في نظرهم، مهنة شريفة، وتزوّجت وبنيت بيتا لأنّهم يتزوّجون ويبنون البيوت، كنت وإيّاهم زوارق متفاوتة الشّكل واللون والحجم تتقاذفها أمواج نهر هائل لا تعرف له بداية أو نهاية. ولا هي تُبصر ضفافه أو تُدرك قعره. وهذه الزوارق كان بعضها يترافق هنا، ويتفارق هناك، ويتصادم هنالك. ثمّ يغمره الموج وليس من يدري إلى أين يَمضي وماذا يحلّ به حيث يمضي.",
+				"PhiH.textAnalysis.nuaima.text.source": "ميخائيل نعيمة، اليوم الأخير، مؤسسة نوفل للنشر، ص: 22",
+                "PhiH.textAnalysis.nuaima.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.nuaima.author.alt": "ميخائيل نعيمة",
+                "PhiH.textAnalysis.nuaima.author.content": "ميخائيل نعيمة (1889-1988) هو أديب وشاعر وفيلسوف لبناني، يُعتبر أحد أبرز رواد الأدب العربي الحديث. ولد في بسكنتا بلبنان، وهاجر إلى الولايات المتحدة الأمريكية حيث درس الحقوق والأدب. انضم إلى الرابطة القلمية التي أسسها جبران خليل جبران، وكان من أبرز أعضائها. تميزت كتاباته بالعمق الفلسفي والروحانية، حيث تناول موضوعات الوجود والموت والحياة والمعنى. من أشهر مؤلفاته: \"الغربال\" (نقد أدبي)، \"سبعون\" (سيرة ذاتية)، \"مرداد\" (رواية فلسفية)، و\"همس الجفون\" (شعر). عُرف نعيمة بفكره المستقل ونقده اللاذع للتقليد والجمود الفكري.",
+                "PhiH.textAnalysis.nuaima.lexical.title": "المفاهيم والمصطلحات",
+                "PhiH.textAnalysis.nuaima.lexical.item1": "<strong>التفكير:</strong> التفكير عند الكاتب يقترن بالمساءلة كما يتّضح في قوله: ((إنّي الآن أسأل \" لماذا \" كما لم أقلها مرّة في حياتي من قبل ... إنّ الذي يملك القدرة على طرح السؤال يملك القدرة على الجواب عليه.)). التفكير هنا ليس مجرد عملية عقلية، بل هو يقظة وجودية ووعي نقدي بالذات والعالم.",
+                "PhiH.textAnalysis.nuaima.lexical.item2": "<strong>\"لأنّهم\":</strong> ضمير غير محدّد يتضمّن دلالة تحيل على الآخرين وعلى تبعيّة الذات وانفعالها وخضوعها لسلطة خارجة عنها. يمثل هذا الضمير قوة الجماعة والرأي السائد الذي يوجه حياة الفرد دون وعي منه.",
+                "PhiH.textAnalysis.nuaima.lexical.item3": "<strong>الزوارق والنهر:</strong> مجاز يستخدمه الكاتب لوصف الوجود الإنساني في شكله التقليدي. فالزوارق تمثل الأفراد بمختلف أشكالهم وألوانهم، والنهر الهائل يرمز للحياة أو القدر المجهول، والأمواج ترمز لتقلبات الحياة وقوى خارجية توجه الأفراد دون إرادتهم.",
+                "PhiH.textAnalysis.nuaima.questions.title": "أسئلة الفهم والتحليل",
+                "PhiH.textAnalysis.nuaima.questions.q1": "أسْتخرجُ من الأنشطة التي يعرض لها الكاتب في النص نمط الوجود المميّز للحياة اليومية، وبيّن إن كان يخلو حقًا من كلّ تفكير.",
+                "PhiH.textAnalysis.nuaima.questions.q2": "أُبيّنُ الأبعاد الدلالية للمجاز الموظّفِ في النص.",
+                "PhiH.textAnalysis.nuaima.questions.q3": "قال الكاتب : \"قبل اليوم لم أكن أفكّر.\" هل من سنّ للتفكير؟",
+                "PhiH.textAnalysis.nuaima.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.nuaima.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.nuaima.answers.a1.content": "الأنشطة التي يعرضها الكاتب تمثل نمط الحياة اليومية التقليدية التي تخلو من التفكير النقدي، وتشمل:<br>- السعي لأن الآخرين يسعون (الانخراط في الأنشطة دون غاية شخصية).<br>- الحب والكره انسياقًا مع مشاعر الآخرين.<br>- التعلم والتعليم كوسيلة للرزق وليس كقيمة في ذاتها.<br>- الزواج وبناء البيت لأنها عادات اجتماعية.<br><br>هذه الأنشطة لا تخلو من التفكير تمامًا، ولكنها تفتقد إلى التفكير المسائل والنقدي. التفكير هنا مقترن بالوعي الذاتي والمساءلة، وهو ما كان غائبًا في حياة الراوي قبل استيقاظه.",
+                "PhiH.textAnalysis.nuaima.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.nuaima.answers.a2.content": "المجاز الموظف في النص (زوارق في نهر هائل) يحمل أبعادًا دلالية عميقة:<br>- <strong>الزوارق:</strong> تمثل الأفراد في المجتمع، بمختلف أشكالهم وألوانهم وأحجامهم، مما يشير إلى التنوع الظاهري بين الناس رغم وحدة مصيرهم.<br>- <strong>النهر الهائل:</strong> يرمز إلى الحياة أو القدر، وهو غير معروف البداية أو النهاية، مما يعكس غموض الوجود وعدم يقينية المسار.<br>- <strong>أمواج النهر:</strong> ترمز إلى تقلبات الحياة وقوى خارجية تسير الأفراد دون إرادتهم.<br>- <strong>عدم معرفة الضفاف أو القعر:</strong> يعبر عن فقدان الاتجاه والمعنى في الحياة اليومية.<br><br>هذا المجاز يعكس فكرة العيش العشوائي الخاضع لقوى خارجية، دون وعي أو تحكم ذاتي.",
+                "PhiH.textAnalysis.nuaima.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.nuaima.answers.a3.content": "لا يوجد سن محدد للتفكير بالمعنى الذي يقصده الكاتب. التفكير هنا ليس مرتبطًا بالعمر الزمني، بل بالاستيقاظ الوجودي والوعي الذاتي. قد يبدأ التفكير في أي مرحلة عمرية عندما يبدأ الفرد في مساءلة حياته وعلاقته بالعالم. القول \"قبل اليوم لم أكن أفكّر\" يشير إلى لحظة تحول فلسفي وليس إلى عمر بيولوجي. التفكير الحقيقي يبدأ عندما يطرح الفرد أسئلة جذرية عن معنى وجوده وسلوكه.",
+                "PhiH.textAnalysis.nuaima.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.nuaima.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.nuaima.analysis.thesis.content": "يطرح ميخائيل نعيمة فكرة أن الوجود الإنساني في شكله اليومي والعفوي يفتقد إلى المسافة النقدية، مما يجعل الفرد يعيش حياة تقليدية يتبع فيها الآخرين دون وعي. إلا أن استيقاظ الفرد على هذا الوضع يمكن أن يؤدي إلى بداية التفكير المسائل والأصيل.",
+                "PhiH.textAnalysis.nuaima.analysis.mechanisms.title": "آليات عمل الحياة اليومية:",
+                "PhiH.textAnalysis.nuaima.analysis.mechanisms.content": "تعمل الحياة اليومية من خلال عدة آليات تفرض نمطًا موحدًا على الأفراد:<br>- <strong>التبعية الاجتماعية:</strong> حيث يتبع الفرد الآخرين في السعي والحب والكره والتعلم والعمل.<br>- <strong>العادات والتقاليد:</strong> مثل الزواج وبناء البيت، التي تُمارس لأنها معايير اجتماعية مقبولة.<br>- <strong>الخضوع لسلطة الجماعة:</strong> حيث يذوب الفرد في الجماعة ويفقد فرديته، كما يتجلى في استخدام ضمير \"لأنهم\".<br><br>هذه الآليات تجعل الفرد يعيش حياة سطحية دون مساءلة أو نقد.",
+                "PhiH.textAnalysis.nuaima.analysis.consequences.title": "نتائج الحياة اليومية:",
+                "PhiH.textAnalysis.nuaima.analysis.consequences.content": "تؤدي الحياة اليومية إلى:<br>- <strong>فقدان الأصالة والتفرد:</strong> حيث يصبح الفرد نسخة من الآخرين.<br>- <strong>الغموض وعدم اليقين:</strong> كما في مجاز الزوارق في النهر، حيث لا يعرف الفرد مصيره أو اتجاهه.<br>- <strong>الاستلاب:</strong> حيث يخضع الفرد لقوى خارجية تفقده سيطرته على حياته.<br>- <strong>تأجيل التفكير الحقيقي:</strong> حيث يعيش الفرد في وهم أنه يفكر بينما هو فقط يردد أفكار الآخرين.",
+                "PhiH.textAnalysis.nuaima.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.nuaima.analysis.significance.content": "يحمل النص دلالات وجودية عميقة تتجاوز النقد الاجتماعي إلى أبعاد فلسفية. فـ\"التفكير\" عند نعيمة ليس مجرد عملية عقلية، بل هو يقظة وجودية تمكن الفرد من استعادة ذاته ومعنى حياته. المجاز المستخدم يعكس رؤية للوجود كرحلة غامضة، لكن الاستيقاظ الذاتي يمكن أن يمنح الفرد القدرة على تجاوز هذا الغموض. النص يدعو إلى الخروج من القطيع واعتناق المسؤولية الفردية في صياغة المشروع الوجودي الشخصي."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

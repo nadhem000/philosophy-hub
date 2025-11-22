@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Quotes - Philosophy Learning Hub</title>
+		
+		<!-- PWA Meta Tags -->
+		<meta name="theme-color" content="#3cb371">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="default">
+		<meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+		<link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+		
+		<!-- Link to external CSS -->
+		<link rel="stylesheet" href="styles/main.css">
+		
+		<!-- Web App Manifest -->
+		<link rel="manifest" href="manifest.json">
+		
+		<style>
+			/* Medium Sea Green + Dark Gray Theme */
+			:root {
+    --primary-color: #6a5acd;
+    --secondary-color: #9370db;
+    --accent-color: #483d8b;
+    --light-color: #f5f0ff;
+    --dark-color: #2f2f4f;
+    --text-color: #2f2f4f;
+    --heading-color: #2f2f4f;
+    --background-color: #f9f7ff;
+    --card-bg: #ffffff;
+    --definition-bg: #ede7ff;
+    --border-color: #c9bfff;
+    --table-even-bg: #f5f2ff;
+    --table-hover-bg: #ede7ff;
+    --border-radius: 16px;
+    --box-shadow: 0 8px 20px rgba(106, 90, 205, 0.15);
+    --gradient-primary: linear-gradient(135deg, #6a5acd 0%, #483d8b 100%);
+    --gradient-secondary: linear-gradient(135deg, #9370db 0%, #2f2f4f 100%);
+    --gradient-green: linear-gradient(135deg, #6a5acd 0%, #2f2f4f 100%);
+    --gradient-gray: linear-gradient(135deg, #9370db 0%, #2f2f4f 100%);
+}
+
+[data-theme="dark"] {
+    --primary-color: #7b68ee;
+    --secondary-color: #a892ff;
+    --accent-color: #6a5acd;
+    --light-color: #3a3a5a;
+    --dark-color: #1a1a2e;
+    --text-color: #e0e0ff;
+    --heading-color: #f7f7ff;
+    --background-color: #2f2f4f;
+    --card-bg: #3a3a5a;
+    --definition-bg: #2d2d5a;
+    --border-color: #7b68ee;
+    --table-even-bg: #2f2f4f;
+    --table-hover-bg: #2d2d5a;
+    --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    --gradient-primary: linear-gradient(135deg, #7b68ee 0%, #6a5acd 100%);
+    --gradient-secondary: linear-gradient(135deg, #a892ff 0%, #9370db 100%);
+    --gradient-green: linear-gradient(135deg, #7b68ee 0%, #3a3a5a 100%);
+    --gradient-gray: linear-gradient(135deg, #a892ff 0%, #9370db 100%);
+}
+			
+			/* Quotes Page Specific Styles */
+			.PhiH-quotes-page {
+            min-height: 100vh;
+            background: var(--background-color);
+            display: flex;
+            flex-direction: column;
+			}
+			
+			.PhiH-quotes-main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+			}
+			
+			.PhiH-quotes-header {
+            text-align: center;
+            margin-bottom: 3rem;
+			}
+			
+			.PhiH-quotes-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--heading-color);
+			}
+			
+			.PhiH-quotes-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 0 auto;
+			}
+			
+			/* Authors List Navigation */
+			.PhiH-authors-nav {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+			}
+			
+			.PhiH-authors-nav-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+			}
+			
+			.PhiH-authors-nav-title::before {
+            content: "👤";
+            margin-right: 10px;
+            font-size: 1.2rem;
+			}
+			
+			.PhiH-authors-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+			}
+			
+			.PhiH-author-btn {
+            background: var(--gradient-secondary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+			}
+			
+			.PhiH-author-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(105, 105, 105, 0.3);
+			}
+			
+			.PhiH-author-btn.active {
+            background: var(--gradient-primary);
+            box-shadow: 0 4px 10px rgba(60, 179, 113, 0.3);
+			}
+			
+			/* Quotes Grid */
+			.PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 1.5rem;
+			}
+			
+			.PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+			}
+			
+			.PhiH-quote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(60, 179, 113, 0.2);
+			}
+			
+			.PhiH-quote-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.3;
+            font-family: serif;
+            line-height: 1;
+			}
+			
+			.PhiH-quote-text {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            font-size: 1.1rem;
+            padding-left: 2rem;
+            flex: 1;
+			}
+			
+			.PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+			}
+			
+			.PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+			}
+			
+			/* No Quotes Message */
+			.PhiH-no-quotes {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-color);
+            grid-column: 1 / -1;
+			}
+			
+			.PhiH-no-quotes-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+			}
+			
+			/* Responsive adjustments */
+			@media (max-width: 768px) {
+            .PhiH-quotes-title {
+			font-size: 2rem;
+            }
+            
+            .PhiH-quotes-subtitle {
+			font-size: 1rem;
+            }
+            
+            .PhiH-quotes-grid {
+			grid-template-columns: 1fr;
+            }
+            
+            .PhiH-authors-list {
+			justify-content: flex-start;
+            }
+            
+            .PhiH-author-btn {
+			font-size: 0.8rem;
+			padding: 0.4rem 0.8rem;
+            }
+			}
+			
+			@keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+			}
+			
+			/* RTL/LTR Support */
+			[dir="rtl"] .PhiH-quote-card::before {
+            left: auto;
+            right: 15px;
+			}
+			
+			[dir="rtl"] .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 2rem;
+			}
+			
+			[dir="rtl"] .PhiH-authors-nav-title::before {
+            margin-right: 0;
+            margin-left: 10px;
+			}
+		</style>
+	</head>
+	<body class="PhiH-quotes-page">
+		<header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- Manual Install Button (Fallback) -->
+        <button id="manual-install-btn" class="PhiH-pwa-install-btn" style="display: none;">
+            <span class="PhiH-pwa-install-icon">📱</span>
+            <span data-i18n="PhiH.pwa.install">Install App</span>
+        </button>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="#" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
+		
+		<main class="PhiH-quotes-main">
+			<div class="PhiH-quotes-header">
+				<h1 class="PhiH-quotes-title" data-i18n="PhiH.quotes.title">Quotes & Wisdom</h1>
+				<p class="PhiH-quotes-subtitle" data-i18n="PhiH.quotes.subtitle">Inspiring thoughts from great philosophers throughout history</p>
+			</div>
+			
+			<!-- Authors Navigation -->
+			<section class="PhiH-authors-nav">
+				<h2 class="PhiH-authors-nav-title" data-i18n="PhiH.quotes.authorsNav">Browse by Author</h2>
+				<div class="PhiH-authors-list" id="authorsList">
+					<!-- Authors will be dynamically loaded here -->
+				</div>
+			</section>
+			
+			<!-- Quotes Grid -->
+			<div class="PhiH-quotes-grid" id="quotesGrid">
+				<!-- Quotes will be dynamically loaded here -->
+			</div>
+			
+			<!-- No Quotes Message -->
+			<div class="PhiH-no-quotes" id="noQuotes" style="display: none;">
+				<div class="PhiH-no-quotes-icon">💭</div>
+				<h3 data-i18n="PhiH.quotes.noQuotes.title">No quotes found</h3>
+				<p data-i18n="PhiH.quotes.noQuotes.message">Select a different author or check back later</p>
+			</div>
+		</main>
+		
+		<footer class="PhiH-general-footer">
+			<div class="PhiH-general-footer-content">
+				<div class="PhiH-general-footer-column">
+					<h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+					<p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+				</div>
+				<div class="PhiH-general-footer-column">
+					<h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+					<p data-i18n="PhiH.general.version">v1.0.0</p>
+				</div>
+				<div class="PhiH-general-footer-column">
+					<h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+					<div class="PhiH-general-footer-links">
+						<a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+						<a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<!-- Include data.js -->
+		<script src="scripts/data.js"></script>
+		
+		<script>
+    // Page-specific translations for quotes page
+    window.translations_PhiHquotes = {
+        fr: {
+            // General translations
+            "PhiH.general.siteName": "Philosophy Learning Hub",
+            "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+            "PhiH.general.present": "X",
+            "PhiH.general.absent": "",
+            "PhiH.general.developerTitle": "Développeur",
+            "PhiH.general.developer": "Mejri Ziad",
+            "PhiH.general.versionTitle": "Version",
+            "PhiH.general.version": "v1.0.0",
+            "PhiH.general.linksTitle": "Liens",
+            "PhiH.general.termsOfUse": "Conditions d'utilisation",
+            "PhiH.general.privacyPolicy": "Politique de confidentialité",
+            "PhiH.general.themeToggle": "Mode sombre",
+            "PhiH.general.authors": "Philosophes",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+            
+            // Quotes page translations
+            "PhiH.quotes.title": "Citations & Sagesse",
+            "PhiH.quotes.subtitle": "Pensées inspirantes des grands philosophes à travers l'histoire",
+            "PhiH.quotes.authorsNav": "Parcourir par auteur",
+            "PhiH.quotes.allAuthors": "Tous les auteurs",
+            "PhiH.quotes.noQuotes.title": "Aucune citation trouvée",
+            "PhiH.quotes.noQuotes.message": "Sélectionnez un autre auteur ou revenez plus tard"
+        },
+        en: {
+            // General translations
+            "PhiH.general.siteName": "Philosophy Learning Hub",
+            "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+            "PhiH.general.present": "X",
+            "PhiH.general.absent": "",
+            "PhiH.general.developerTitle": "Developer",
+            "PhiH.general.developer": "Mejri Ziad",
+            "PhiH.general.versionTitle": "Version",
+            "PhiH.general.version": "v1.0.0",
+            "PhiH.general.linksTitle": "Links",
+            "PhiH.general.termsOfUse": "Terms of Use",
+            "PhiH.general.privacyPolicy": "Privacy Policy",
+            "PhiH.general.themeToggle": "Dark mode",
+            "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+            
+            // Quotes page translations
+            "PhiH.quotes.title": "Quotes & Wisdom",
+            "PhiH.quotes.subtitle": "Inspiring thoughts from great philosophers throughout history",
+            "PhiH.quotes.authorsNav": "Browse by Author",
+            "PhiH.quotes.allAuthors": "All Authors",
+            "PhiH.quotes.noQuotes.title": "No quotes found",
+            "PhiH.quotes.noQuotes.message": "Select a different author or check back later"
+        },
+        ar: {
+            // General translations
+            "PhiH.general.siteName": "مركز تعلم الفلسفة",
+            "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+            "PhiH.general.present": "X",
+            "PhiH.general.absent": "",
+            "PhiH.general.developerTitle": "المطور",
+            "PhiH.general.developer": "مجرى زياد",
+            "PhiH.general.versionTitle": "الإصدار",
+            "PhiH.general.version": "v1.0.0",
+            "PhiH.general.linksTitle": "الروابط",
+            "PhiH.general.termsOfUse": "شروط الاستخدام",
+            "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+            "PhiH.general.themeToggle": "الوضع الداكن",
+            "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+            
+            // Quotes page translations
+            "PhiH.quotes.title": "الأقوال والحكم",
+            "PhiH.quotes.subtitle": "أفكار ملهمة من كبار الفلاسفة عبر التاريخ",
+            "PhiH.quotes.authorsNav": "تصفح حسب المؤلف",
+            "PhiH.quotes.allAuthors": "جميع المؤلفين",
+            "PhiH.quotes.noQuotes.title": "لم يتم العثور على أقوال",
+            "PhiH.quotes.noQuotes.message": "اختر مؤلفاً مختلفاً أو عد لاحقاً"
+        }
+    };
+    
+    // Set the current translations for the translation.js file to use
+    window.currentTranslations = window.translations_PhiHquotes;
+</script>
+
+<!-- Include the external translation file -->
+<script src="scripts/translation.js"></script>
+
+<!-- Include PWA Handler -->
+<script src="scripts/pwa-handler.js"></script>
+
+<script>
+    // Quotes page functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const authorsList = document.getElementById('authorsList');
+        const quotesGrid = document.getElementById('quotesGrid');
+        const noQuotes = document.getElementById('noQuotes');
+        const languageSelect = document.getElementById('languageSelect');
+        
+        // Get current language from translation system
+        let currentLanguage = localStorage.getItem('preferredLanguage') || 'en';
+        let currentAuthor = 'all';
+        
+        // Function to get unique authors from quotes
+        function getUniqueAuthors() {
+            const authors = new Set();
+            
+            if (PhiH_Quotes && PhiH_Quotes.quotes) {
+                PhiH_Quotes.quotes.forEach(quote => {
+                    if (quote[currentLanguage]) {
+                        authors.add(quote[currentLanguage].author);
+                    } else if (quote.en) {
+                        authors.add(quote.en.author);
+                    }
+                });
+            }
+            
+            return Array.from(authors).sort();
+        }
+        
+        // Function to render authors navigation
+        function renderAuthorsNav() {
+            authorsList.innerHTML = '';
+            
+            // Add "All Authors" button
+            const allAuthorsBtn = document.createElement('button');
+            allAuthorsBtn.className = `PhiH-author-btn ${currentAuthor === 'all' ? 'active' : ''}`;
+            allAuthorsBtn.textContent = getTranslation('PhiH.quotes.allAuthors');
+            allAuthorsBtn.setAttribute('data-author', 'all');
+            allAuthorsBtn.addEventListener('click', function() {
+                setActiveAuthor('all');
+            });
+            authorsList.appendChild(allAuthorsBtn);
+            
+            // Add individual author buttons
+            const authors = getUniqueAuthors();
+            authors.forEach(author => {
+                const authorBtn = document.createElement('button');
+                authorBtn.className = `PhiH-author-btn ${currentAuthor === author ? 'active' : ''}`;
+                authorBtn.textContent = author;
+                authorBtn.setAttribute('data-author', author);
+                authorBtn.addEventListener('click', function() {
+                    setActiveAuthor(author);
+                });
+                authorsList.appendChild(authorBtn);
+            });
+        }
+        
+        // Function to render quotes
+        function renderQuotes() {
+            quotesGrid.innerHTML = '';
+            noQuotes.style.display = 'none';
+            
+            let filteredQuotes = [];
+            
+            if (PhiH_Quotes && PhiH_Quotes.quotes) {
+                if (currentAuthor === 'all') {
+                    filteredQuotes = PhiH_Quotes.quotes;
+                } else {
+                    filteredQuotes = PhiH_Quotes.quotes.filter(quote => {
+                        const quoteData = getQuoteData(quote, currentLanguage);
+                        return quoteData.author === currentAuthor;
+                    });
+                }
+            }
+            
+            if (filteredQuotes.length === 0) {
+                noQuotes.style.display = 'block';
+                return;
+            }
+            
+            filteredQuotes.forEach(quote => {
+                const quoteData = getQuoteData(quote, currentLanguage);
+                
+                const quoteCard = document.createElement('div');
+                quoteCard.className = 'PhiH-quote-card';
+                quoteCard.innerHTML = `
+                    <p class="PhiH-quote-text">${quoteData.text}</p>
+                    <div class="PhiH-quote-author">${quoteData.author}</div>
+                    <div class="PhiH-quote-source">${quoteData.source}</div>
+                `;
+                
+                quotesGrid.appendChild(quoteCard);
+            });
+        }
+        
+        // Helper function to get quote data for current language
+        function getQuoteData(quote, lang) {
+            const quoteLangData = quote[lang] || quote.en || quote.fr || quote.ar;
+            return {
+                text: quoteLangData.text,
+                author: quoteLangData.author,
+                source: quoteLangData.source
+            };
+        }
+        
+        // Helper function to get translations
+        function getTranslation(key) {
+            return window.currentTranslations && window.currentTranslations[currentLanguage] && window.currentTranslations[currentLanguage][key] || key;
+        }
+        
+        // Function to set active author and update display
+        function setActiveAuthor(author) {
+            currentAuthor = author;
+            renderAuthorsNav();
+            renderQuotes();
+        }
+        
+        // Function to update page language and refresh content
+        function updatePageLanguage(lang) {
+            currentLanguage = lang;
+            renderAuthorsNav();
+            renderQuotes();
+            
+            // Re-apply translations to any dynamically created elements
+            setTimeout(() => {
+                if (window.updateTranslations) {
+                    window.updateTranslations();
+                }
+            }, 100);
+        }
+        
+        // Override the applyLanguage function to handle dynamic content
+        const originalApplyLanguage = window.applyLanguage;
+        window.applyLanguage = function(lang) {
+            originalApplyLanguage(lang);
+            updatePageLanguage(lang);
+        };
+        
+        // Initialize
+        renderAuthorsNav();
+        renderQuotes();
+    });
+</script>
+	</body>
+</html>

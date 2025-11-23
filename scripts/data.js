@@ -104,9 +104,150 @@ const PhiH_Authors = {
 			"birthYear": "428 BC",
 			"deathYear": "348 BC"
 		}
+	},
+    "rene_descartes": {
+        "ar": {
+            "name": "روني ديكارت",
+            "image": "assets/images/rene_descartes.jpg",
+            "alt": "روني ديكارت",
+            "content": "روني ديكارت (1596-1650) فيلسوف وعالم فرنسي يُعدّ مؤسّس العقلانيّة الحديثة، فالعقل لديه ((أعدل الأشياء توزعا بين البشر)) غير أنّ استعماله لا يكون سديدا في الحكم وقادرا على تحرير الإنسان من الأخطاء والأوهام وسلطة القدامى إلا بمنهج ينبغي استلهام قواعده من معقوليّة الرياضيات نظرا لما تتميّز به من يقين وبداهة. لذلك يتعيّنِ ممارسة شك منهجيّ في كل المعارف المكتسبة مما يهيئ لاكتشاف أنّ الأنا أفكر هو اليقين الذي يُمثّل شرط إمكان كل يقين. من مؤلفاته: قواعد في توجيه الذهن (1628)، حديث الطريقة (1637)، تأمّلات ميتافيزيقيّة (1641)، مبادئ الفلسفة (1644).",
+			"century": "17th",
+			"school": "العقلانية",
+			"themes": ["العقل", "المعرفة", "الميتافيزيقا", "المنهج"],
+			"birthYear": "1596",
+			"deathYear": "1650"
+		},
+        "fr": {
+            "name": "René Descartes",
+            "image": "assets/images/rene_descartes.jpg",
+            "alt": "René Descartes",
+            "content": "René Descartes (1596-1650) philosophe et scientifique français considéré comme le fondateur du rationalisme moderne. Pour lui, la raison est « la chose du monde la mieux partagée » mais son usage ne peut être judicieux dans le jugement et capable de libérer l'homme des erreurs, des illusions et de l'autorité des anciens que par une méthode dont les règles doivent s'inspirer de la rationalité des mathématiques en raison de leur certitude et évidence. Il faut donc pratiquer un doute méthodique dans toutes les connaissances acquises, ce qui prépare à découvrir que le « je pense » est la certitude qui représente la condition de possibilité de toute certitude. Parmi ses œuvres : Règles pour la direction de l'esprit (1628), Discours de la méthode (1637), Méditations métaphysiques (1641), Principes de la philosophie (1644).",
+			"century": "17th",
+			"school": "Rationalisme",
+			"themes": ["raison", "connaissance", "métaphysique", "méthode"],
+			"birthYear": "1596",
+			"deathYear": "1650"
+		},
+        "en": {
+            "name": "René Descartes",
+            "image": "assets/images/rene_descartes.jpg",
+            "alt": "René Descartes",
+            "content": "René Descartes (1596-1650) French philosopher and scientist considered the founder of modern rationalism. For him, reason is \"the most equally distributed thing in the world\" but its use cannot be sound in judgment and capable of freeing man from errors, illusions and the authority of the ancients except through a method whose rules should be inspired by the rationality of mathematics due to their certainty and self-evidence. Therefore, it is necessary to practice methodological doubt in all acquired knowledge, which prepares for the discovery that the \"I think\" is the certainty that represents the condition of possibility of all certainty. Among his works: Rules for the Direction of the Mind (1628), Discourse on the Method (1637), Meditations on First Philosophy (1641), Principles of Philosophy (1644).",
+			"century": "17th",
+			"school": "Rationalism",
+			"themes": ["reason", "knowledge", "metaphysics", "method"],
+			"birthYear": "1596",
+			"deathYear": "1650"
+		}
+	},
+    "christian_thomasius": {
+        "ar": {
+            "name": "كرستيان توماسيوس",
+            "image": "assets/images/christian_thomasius.jpg",
+            "alt": "كرستيان توماسيوس",
+            "content": "كرستيان توماسيوس (1655–1728) فيلسوف ولاهوتي وفقيه في القانون، ألماني الجنسية، يعتبر أبا للتّنوير الألماني، دعا إلى التّسامح الدّيني وإلى الحوار ومقاومة الأحكام المسبقة وإلغاء التّعذيب ومطاردة الشّعوذة وهي المبادئ الّتي عرض لها في مؤلّفاته التّالية: في فلسفة إنسان البلاط (1688)، في المنطق (1691)، في الأخلاق (1692). انبنى فكره على الإيمان الكامل بالنّور الطّبيعي (العقل). اهتمّ بالصّحافة في بلاده وكان صاحب شأن في ذلك.",
+			"century": "17th",
+			"school": "التنوير",
+			"themes": ["التسامح", "العقل", "الأخلاق", "القانون"],
+			"birthYear": "1655",
+			"deathYear": "1728"
+		},
+        "fr": {
+            "name": "Christian Thomasius",
+            "image": "assets/images/christian_thomasius.jpg",
+            "alt": "Christian Thomasius",
+            "content": "Christian Thomasius (1655–1728) philosophe, théologien et juriste allemand, considéré comme le père des Lumières allemandes. Il a plaidé pour la tolérance religieuse, le dialogue, la résistance aux préjugés, l'abolition de la torture et la chasse à la sorcellerie, principes qu'il a exposés dans ses œuvres suivantes : Sur la philosophie de l'homme de cour (1688), Sur la logique (1691), Sur l'éthique (1692). Sa pensée était fondée sur une foi complète dans la lumière naturelle (la raison). Il s'est intéressé au journalisme dans son pays et y a joué un rôle important.",
+			"century": "17th",
+			"school": "Lumières",
+			"themes": ["tolérance", "raison", "éthique", "droit"],
+			"birthYear": "1655",
+			"deathYear": "1728"
+		},
+        "en": {
+            "name": "Christian Thomasius",
+            "image": "assets/images/christian_thomasius.jpg",
+            "alt": "Christian Thomasius",
+            "content": "Christian Thomasius (1655–1728) German philosopher, theologian and legal scholar, considered the father of the German Enlightenment. He advocated for religious tolerance, dialogue, resistance to prejudices, abolition of torture and witch-hunting, principles he presented in his following works: On the Philosophy of the Courtier (1688), On Logic (1691), On Ethics (1692). His thought was based on complete faith in natural light (reason). He was interested in journalism in his country and played a significant role in it.",
+			"century": "17th",
+			"school": "Enlightenment",
+			"themes": ["tolerance", "reason", "ethics", "law"],
+			"birthYear": "1655",
+			"deathYear": "1728"
+		}
+	},
+    "john_stuart_mill": {
+        "ar": {
+            "name": "جون ستيوارت ميل",
+            "image": "assets/images/john_stuart_mill.jpg",
+            "alt": "جون ستيوارت ميل",
+            "content": "جون ستيوارت ميل (1806-1873) فيلسوف ورجل اقتصاد إنجليزي ليبرالي النزعة عصامي التكوين، حذق لغات عديدة وبرع في الرياضيات والمنطق منذ حداثة سنه، من منظري النزعة النّفعيّة انتخب نائبا بمجلس العموم البريطاني دافع عن حق المرأة في الانتخاب وكان ذلك من بين أسباب عدم إعادة انتخابه. من بين مؤلفاته: مبادئ الاقتصاد السياسي (1848)، الحرية (1859)، النزعة النفعية (1861)، في استعباد النساء (1869)، نسق المنطق الاستنتاجي والاستقرائي (1869 ط 6).",
+			"century": "19th",
+			"school": "النفعية",
+			"themes": ["الحرية", "الأخلاق", "الاقتصاد", "المنطق"],
+			"birthYear": "1806",
+			"deathYear": "1873"
+		},
+        "fr": {
+            "name": "John Stuart Mill",
+            "image": "assets/images/john_stuart_mill.jpg",
+            "alt": "John Stuart Mill",
+            "content": "John Stuart Mill (1806-1873) philosophe et économiste anglais de tendance libérale, autodidacte de formation, maîtrisa plusieurs langues et excellait en mathématiques et en logique dès son jeune âge. Théoricien de l'utilitarisme, il fut élu député à la Chambre des communes britannique, défendit le droit de vote des femmes, ce qui fut l'une des raisons de sa non-réélection. Parmi ses œuvres : Principes d'économie politique (1848), De la liberté (1859), L'utilitarisme (1861), De l'assujettissement des femmes (1869), Système de logique déductive et inductive (6e éd. 1869).",
+			"century": "19th",
+			"school": "Utilitarisme",
+			"themes": ["liberté", "éthique", "économie", "logique"],
+			"birthYear": "1806",
+			"deathYear": "1873"
+		},
+        "en": {
+            "name": "John Stuart Mill",
+            "image": "assets/images/john_stuart_mill.jpg",
+            "alt": "John Stuart Mill",
+            "content": "John Stuart Mill (1806-1873) English philosopher and economist of liberal tendency, self-taught in formation, mastered several languages and excelled in mathematics and logic from a young age. A theorist of utilitarianism, he was elected as a Member of Parliament to the British House of Commons, defended women's suffrage, which was one of the reasons for his non-reelection. Among his works: Principles of Political Economy (1848), On Liberty (1859), Utilitarianism (1861), The Subjection of Women (1869), A System of Logic, Ratiocinative and Inductive (6th ed. 1869).",
+			"century": "19th",
+			"school": "Utilitarianism",
+			"themes": ["liberty", "ethics", "economy", "logic"],
+			"birthYear": "1806",
+			"deathYear": "1873"
+		}
+	},
+    "pierre_bayle": {
+        "ar": {
+            "name": "بيار بابل",
+            "image": "assets/images/pierre_bayle.jpg",
+            "alt": "بيار بابل",
+            "content": "بيار بابل (1647-1706) فيلسوف وناقد فرنسي أصدر أوّل عمل له تحت عنوان: خواطر حول المذنّب وفيه هاجم بلا هوادة الأفكار المسبقة الّتي تعزو للمذنّبات بعض التأثير على مجرى أحداث الأرض. واكب الخصومات الّتي عاشتها المذاهب الدّينية وعَايَن ويلاتها واستفزّه ذلك للكتابة بحيث ألّف: المبادئ العامّة للتّسامح وهو كتاب في أربعة مجلّدات. كان من دعاة حرّية المعتقد فأورثه ذلك سخط البروتستانتيين. انكبّ على وضع القاموس التّاريخي والنّقدي (1695 - 1697) وهو العمل الّذي توّج به حياته الفكريّة والأدبية. يقول فولتير في شأنه: \"لقد كان كبيرا وحكيما بحيث لم يتشيّع لمذهب من المذاهب، بل عمل على تقويضها كلّها، وحارب حتّى نفسه\".",
+			"century": "17th",
+			"school": "النقد",
+			"themes": ["التسامح", "النقد", "حرية المعتقد", "التنوير"],
+			"birthYear": "1647",
+			"deathYear": "1706"
+		},
+        "fr": {
+            "name": "Pierre Bayle",
+            "image": "assets/images/pierre_bayle.jpg",
+            "alt": "Pierre Bayle",
+            "content": "Pierre Bayle (1647-1706) philosophe et critique français publia son premier ouvrage sous le titre : Pensées sur la comète dans lequel il attaqua sans relâche les idées préconçues qui attribuent aux comètes une certaine influence sur le cours des événements terrestres. Il accompagna les querelles que vécurent les doctrines religieuses et en constata les malheurs, ce qui le poussa à écrire et à composer : Les Principes généraux de la tolérance, un livre en quatre volumes. Il était un défenseur de la liberté de conscience, ce qui lui valut la colère des Protestants. Il se consacra à la rédaction du Dictionnaire historique et critique (1695 - 1697), œuvre qui couronna sa vie intellectuelle et littéraire. Voltaire dit de lui : \"Il fut si grand et si sage qu'il n'embrassa aucune secte, mais travailla à les miner toutes, et combattit jusqu'à lui-même\".",
+			"century": "17th",
+			"school": "Critique",
+			"themes": ["tolérance", "critique", "liberté de conscience", "Lumières"],
+			"birthYear": "1647",
+			"deathYear": "1706"
+		},
+        "en": {
+            "name": "Pierre Bayle",
+            "image": "assets/images/pierre_bayle.jpg",
+            "alt": "Pierre Bayle",
+            "content": "Pierre Bayle (1647-1706) French philosopher and critic published his first work under the title: Thoughts on the Comet in which he relentlessly attacked the preconceived ideas that attribute to comets some influence on the course of earthly events. He accompanied the quarrels experienced by religious doctrines and witnessed their misfortunes, which prompted him to write and compose: The General Principles of Tolerance, a book in four volumes. He was an advocate of freedom of conscience, which earned him the anger of Protestants. He devoted himself to writing the Historical and Critical Dictionary (1695 - 1697), the work that crowned his intellectual and literary life. Voltaire said of him: \"He was so great and so wise that he embraced no sect, but worked to undermine them all, and fought even himself\".",
+			"century": "17th",
+			"school": "Criticism",
+			"themes": ["tolerance", "criticism", "freedom of conscience", "Enlightenment"],
+			"birthYear": "1647",
+			"deathYear": "1706"
+		}
 	}
 };
 
+// Quotes Variable
 // Quotes Variable
 const PhiH_Quotes = {
     "quotes": [
@@ -200,7 +341,6 @@ const PhiH_Quotes = {
                 "source": "The Great Cemeteries Under the Moon"
 			}
 		},
-		
         {
             "id": "quote6",
             "ar": {
@@ -271,6 +411,205 @@ const PhiH_Quotes = {
                 "text": "\"Life is woven from illusions, and among these illusions, some have endured, and those are what make reality\"",
                 "author": "Jacques Audiberti",
                 "source": "Works"
+            }
+        },
+        // New quotes start here
+        {
+            "id": "quote10",
+            "ar": {
+                "text": "\"الطفل هو براءة ونسيان، بداية جديدة، ولعب، وعجلة ذاتية الدوران، وحركة أولى وإرادة إثبات مقدّسة\"",
+                "author": "نيتشه",
+                "source": "هكذا تكلّم زرادشت"
+            },
+            "fr": {
+                "text": "\"L'enfant est innocence et oubli, un nouveau commencement, un jeu, une roue qui roule d'elle-même, un premier mouvement, une sainte affirmation.\"",
+                "author": "Nietzsche",
+                "source": "Ainsi parlait Zarathoustra"
+            },
+            "en": {
+                "text": "\"The child is innocence and forgetting, a new beginning, a game, a self-propelled wheel, a first movement, a sacred 'Yes'.\"",
+                "author": "Nietzsche",
+                "source": "Thus Spoke Zarathustra"
+            }
+        },
+        {
+            "id": "quote11",
+            "ar": {
+                "text": "\"إنّ الحقيقة هي ما نعتقد أنّه الحقيقة\"",
+                "author": "روني برجفال",
+                "source": "يوميّات رجل بسيط"
+            },
+            "fr": {
+                "text": "\"La vérité est ce que nous croyons être la vérité\"",
+                "author": "René Berjaval",
+                "source": "Journal d'un homme simple"
+            },
+            "en": {
+                "text": "\"Truth is what we believe to be the truth\"",
+                "author": "René Berjaval",
+                "source": "Diary of a Simple Man"
+            }
+        },
+        {
+            "id": "quote12",
+            "ar": {
+                "text": "\"لا أحد يودّ أن يظلّ طفلا حتّى لو كان متيقّنا من التمتّع إلى الحدّ الأقصى بكلّ ملذّات الطفولة\"",
+                "author": "أرسطو",
+                "source": "أخلاق نيقوماخوس"
+            },
+            "fr": {
+                "text": "\"Personne ne voudrait rester un enfant, même s'il était assuré de jouir au maximum de tous les plaisirs de l'enfance\"",
+                "author": "Aristote",
+                "source": "Éthique à Nicomaque"
+            },
+            "en": {
+                "text": "\"No one would wish to remain a child, even if assured of enjoying to the maximum all the pleasures of childhood\"",
+                "author": "Aristotle",
+                "source": "Nicomachean Ethics"
+            }
+        },
+        {
+            "id": "quote13",
+            "ar": {
+                "text": "\"يُصاب أغلب الناس برأي مثلما يُصابون بالحصبة وذلك بفعل العدوى\"",
+                "author": "جيل بايو",
+                "source": "إفلاس التعليم"
+            },
+            "fr": {
+                "text": "\"La plupart des gens attrapent une opinion comme on attrape la rougeole, par contagion\"",
+                "author": "Gilles Bayon",
+                "source": "La Faillite de l'éducation"
+            },
+            "en": {
+                "text": "\"Most people catch an opinion like they catch measles, through contagion\"",
+                "author": "Gilles Bayon",
+                "source": "The Bankruptcy of Education"
+            }
+        },
+        {
+            "id": "quote14",
+            "ar": {
+                "text": "\"تحتلّ الأحكام المسبقة من الفكر قسما ولكنّها تَسُدُّ كلّ ما تبقّى منه\"",
+                "author": "مالبرانش",
+                "source": "في البحث عن الحقيقة"
+            },
+            "fr": {
+                "text": "\"Les préjugés occupent une partie de l'esprit mais obstruent tout ce qui en reste\"",
+                "author": "Malebranche",
+                "source": "De la recherche de la vérité"
+            },
+            "en": {
+                "text": "\"Prejudices occupy a part of the mind but obstruct all that remains of it\"",
+                "author": "Malebranche",
+                "source": "The Search After Truth"
+            }
+        },
+        {
+            "id": "quote15",
+            "ar": {
+                "text": "\"إنّ المغالاة في عقلنة الأحاسيس غالبا ما تفضي إلى فسادها\"",
+                "author": "الطاهر بن جلون",
+                "source": "فندق الفقراء"
+            },
+            "fr": {
+                "text": "\"L'excès de rationalisation des sentiments mène souvent à leur corruption\"",
+                "author": "Tahar Ben Jelloun",
+                "source": "L'Hôtel des pauvres"
+            },
+            "en": {
+                "text": "\"Excessive rationalization of feelings often leads to their corruption\"",
+                "author": "Tahar Ben Jelloun",
+                "source": "Hotel of the Poor"
+            }
+        },
+        {
+            "id": "quote16",
+            "ar": {
+                "text": "\"للقلب دواع لا يدركها العقل\"",
+                "author": "باسكال",
+                "source": "خواطر"
+            },
+            "fr": {
+                "text": "\"Le cœur a ses raisons que la raison ne connaît point\"",
+                "author": "Pascal",
+                "source": "Pensées"
+            },
+            "en": {
+                "text": "\"The heart has its reasons which reason knows nothing of\"",
+                "author": "Pascal",
+                "source": "Thoughts"
+            }
+        },
+        {
+            "id": "quote17",
+            "ar": {
+                "text": "\"سبات العقل يولّد مسوخا\"",
+                "author": "فرنسيسكو غويا",
+                "source": ""
+            },
+            "fr": {
+                "text": "\"Le sommeil de la raison engendre des monstres\"",
+                "author": "Francisco Goya",
+                "source": ""
+            },
+            "en": {
+                "text": "\"The sleep of reason produces monsters\"",
+                "author": "Francisco Goya",
+                "source": ""
+            }
+        },
+        {
+            "id": "quote18",
+            "ar": {
+                "text": "\"إنّ استمرار رأي ما في البقاء لا يثبت شيئا في شأن قيمته، فما يزال يوجد إلى اليوم منجّمون\"",
+                "author": "جان روستان",
+                "source": "مفكّرة عالم أحياء"
+            },
+            "fr": {
+                "text": "\"La persistance d'une opinion ne prouve rien quant à sa valeur, il existe encore aujourd'hui des astrologues\"",
+                "author": "Jean Rostand",
+                "source": "Carnets d'un biologiste"
+            },
+            "en": {
+                "text": "\"The persistence of an opinion proves nothing about its value, astrologers still exist today\"",
+                "author": "Jean Rostand",
+                "source": "Notebooks of a Biologist"
+            }
+        },
+        {
+            "id": "quote19",
+            "ar": {
+                "text": "\"إنّ للمحاكاة تأثيرا عاما في أحكامنا: لأنّ هناك سببا قويّا لأنّ نعتبر حقيقيّا ما أقرّ آخرون أنّه كذلك\"",
+                "author": "كانط",
+                "source": "المنطق"
+            },
+            "fr": {
+                "text": "\"L'imitation a une influence générale sur nos jugements : car il y a une forte raison de considérer comme vrai ce que d'autres ont reconnu comme tel\"",
+                "author": "Kant",
+                "source": "Logique"
+            },
+            "en": {
+                "text": "\"Imitation has a general influence on our judgments: for there is a strong reason to consider as true what others have acknowledged as such\"",
+                "author": "Kant",
+                "source": "Logic"
+            }
+        },
+        {
+            "id": "quote20",
+            "ar": {
+                "text": "\"إنّ العلامة الدالة على الأسوأ هي إجماع الحشد\"",
+                "author": "سينيكا",
+                "source": ""
+            },
+            "fr": {
+                "text": "\"Le signe indicateur du pire est l'unanimité de la foule\"",
+                "author": "Sénèque",
+                "source": ""
+            },
+            "en": {
+                "text": "\"The indicator of the worst is the unanimity of the crowd\"",
+                "author": "Seneca",
+                "source": ""
             }
         }
 	],

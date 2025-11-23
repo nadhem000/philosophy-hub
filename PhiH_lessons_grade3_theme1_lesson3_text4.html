@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: سلطة رأي الأغلبية - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#7c3aed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Purple + Violet Color Palette */
+        :root {
+            --primary-color: #7c3aed;
+            --primary-light: #8b5cf6;
+            --primary-dark: #6d28d9;
+            --secondary-color: #6d28d9;
+            --secondary-light: #7c3aed;
+            --secondary-dark: #5b21b6;
+            --accent-color: #6d28d9;
+            --accent-light: #7c3aed;
+            --accent-dark: #5b21b6;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #faf5ff;
+            --card-bg: #ffffff;
+            --definition-bg: #f3e8ff;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #e9d5ff;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.1), 0 2px 4px -1px rgba(124, 58, 237, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(124, 58, 237, 0.1), 0 4px 6px -2px rgba(124, 58, 237, 0.05);
+            --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            --gradient-secondary: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%);
+            --gradient-accent: linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #8b5cf6;
+            --primary-light: #a78bfa;
+            --primary-dark: #7c3aed;
+            --secondary-color: #7c3aed;
+            --secondary-light: #8b5cf6;
+            --secondary-dark: #6d28d9;
+            --accent-color: #7c3aed;
+            --accent-light: #8b5cf6;
+            --accent-dark: #6d28d9;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #4c1d95;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #5b21b6;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            --gradient-secondary: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            --gradient-accent: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(124, 58, 237, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(109, 40, 217, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(109, 40, 217, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(124, 58, 237, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="#" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.majorityOpinion.title">تحليل النص: سلطة رأي الأغلبية</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.majorityOpinion.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.majorityOpinion.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.majorityOpinion.introduction.content">
+                    كثيرا ما اعتبر الإجماع دليلا على صواب الآراء والأحكام والتّصوّرات الْمُجْمع عليها، غير أنّ هذا ما كذّبته وقائع عديدة من تاريخ الفكر العلمي والفلسفي بحيث صار التّمادي في الاطمئنان اللّمشروط للقناعات السّائدة ضربا من الكسل الفكري. وهو ما أضحى يُلزمنا أكثر فأكثر بضرورة تفكيك الآليات الذّهنيّة التي تُحَوّل رأيا ما إلى رأي أغلبيّ وتُصوّره لنا في صورة حكم صائب.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.majorityOpinion.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.majorityOpinion.text.content">
+                        بما أنّنا لا نقدر على رؤية ما يحدث في أذهان النّاس ساعة اختيارهم لرأي ما فإنّني على يقين من أنه- لو كان ذلك ممكنا- لكُنّا سنرجع قبول عدد لا حصر له من النّاس بهذا الرّأي، إلى سلطة شخصين أو ثلاثة أشخاص إذ عمدوا إلى التّرويج لمذهب يُقَدَّر أنّهم عالجوه بعمق، استمالوا<sup>1</sup> به كثيرين آخرين وذلك بفضل ما يتمتّعون به من ثقة مسبقة في جدارتهم. كما استمال به هؤلاء آخرين كثيرين، وجدوا من الأفضل لهم، وبسبب كسلهم الطّبيعي<sup>2</sup>، أن يسارعوا إلى الاعتقاد في كلّ ما يقال لهم، بدلا من أن يفحصوه بعناية. وهكذا فإنّ العدد المتزايد يوما بعد يوم من التّابعين الكسالى والسُذّج، غدا التزاما جديدا لغيرهم بالتّخلّصِ من عناء فحص رأي رأوا فيه من التعميم ما جعلهم يقتنعون بيسر أنّه ما كان لهذا الرأي أن يصير كذلك لولا قوّة الحجج<sup>3</sup> التي اعتمدت في تأسيسه. وأخيرا، إنّ المرء ليجد نفسه مضطرا إلى الاعتقاد في ما يعتقده النّاس جميعا مخافة أن يؤخذ مأخذ المشاغب، الّذي يريد وحده أن يعرف أكثر من الآخرين كلّهم، والّذي يريد أن يكذّب الموروث الجليل<sup>4</sup>.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.majorityOpinion.lexical.title">المفاهيم والمصطلحات</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.majorityOpinion.lexical.item1"><strong>استمال:</strong> أثّر على غيره لحمله على اعتناق فكرة أو عقيدة وجعله يشاركه إياها، وفي النص تأخذ العبارة معنى انتقاصيا لأنها لا تقوم على تمثل حجج عقلية وإنما على الثقة العمياء في صاحب الزعم أو فيما يمليه الكسل الطبيعي على البعض من اعتقاد فيما يقال لهم دون تمحيص.</li>
+                    <li data-i18n="PhiH.textAnalysis.majorityOpinion.lexical.item2"><strong>الكسل الطبيعي:</strong> هو حكم قيمة على مبدأ تشتغل وفقه القدرات والملكات هو الاقتصاد في الجهد العقلي، ويشير في النص إلي إسراع البعض إلى الاعتقاد فيما يقال لهم حتى يتخلّصوا من مشقة التفكير بأنفسهم.</li>
+                    <li data-i18n="PhiH.textAnalysis.majorityOpinion.lexical.item3"><strong>قوّة الحجج:</strong> هي عبارة دالة على الثقة المسبقة في الآراء السائدة واعتبار أن رواجها وعموميتها دليل على قوة الحجج التي تسندها. إنها قوّة مُفترضة أساسها حجة مغالطة ترى في ازدياد عدد التابعين دليلا على صدق عقيدة ما.</li>
+                    <li data-i18n="PhiH.textAnalysis.majorityOpinion.lexical.item4"><strong>الموروث الجليل:</strong> حكم قيمة يعتبر أنّ الحقيقة في صفائها تكمن في الأصل وفي ما حدّده الأقدمون لقربهم منه، وعليه فإنّ المتأخر في الزمن متراجع في القيمة لبعده عن الأصل.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.majorityOpinion.questions.title">أسئلة الفهم والتحليل</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.majorityOpinion.questions.q1">هل يكفي أن تسود قناعة ما حتّى يكون ذلك حجّة على صحّتها ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.majorityOpinion.questions.q2">هل بوسع النّاس أن يُجمعوا على أفكار خاطئة ؟ علّل إجابتك بالعودة إلى النص وإلى معيشك.</li>
+                    <li data-i18n="PhiH.textAnalysis.majorityOpinion.questions.q3">أيّة مشقّة تتكّدها الذّات جرّاء تفكيرها تفكيرا شخصيًا وأيّ غُنم تجنيه من ذلك ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.majorityOpinion.questions.q4">استحضر عيّنات من تاريخ الفكر تدلّ على صواب رأي الأقليّة في مواجهة سلطة رأي الأغلبية.</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.majorityOpinion.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.majorityOpinion.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.majorityOpinion.answers.a1.content">
+                        لا، لا يكفي أن تسود قناعة ما لتكون حجة على صحتها، وذلك للأسباب التالية:
+                        <br>- <strong>الكسل الفكري:</strong> كثير من الناس يتبنون الآراء السائدة لتجنب مشقة التفكير والبحث.
+                        <br>- <strong>التبعية للسلطة:</strong> تأثير شخصيات قليلة قد يكون السبب الحقيقي وراء انتشار رأي ما.
+                        <br>- <strong>الخوف من العزلة:</strong> يدفع الناس إلى تبني آراء الأغلبية تجنباً للنقد والاستبعاد.
+                        <br>- <strong>الوهم الإحصائي:</strong> اعتقاد خاطئ بأن كثرة المؤيدين تعني صحة الرأي.
+                        <br>- <strong>غياب النقد:</strong> عدم وجود فحص نقدي حقيقي للآراء السائدة.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.majorityOpinion.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.majorityOpinion.answers.a2.content">
+                        نعم، يمكن للناس أن يجمعوا على أفكار خاطئة، وذلك للأسباب التالية:
+                        <br>- <strong>آليات الانتشار:</strong> كما ورد في النص، قد يبدأ الرأي من شخصين أو ثلاثة ثم ينتشر بسبب الثقة العمياء والكسل الفكري.
+                        <br>- <strong>التاريخ يشهد:</strong> كثير من المعتقدات الخاطئة كانت سائدة في الماضي ثم تبين خطؤها لاحقاً.
+                        <br>- <strong>من حياتنا:</strong> الكثير من الخرافات والمعتقدات الشعبية تنتشر رغم عدم صحتها.
+                        <br>- <strong>التجارب العلمية:</strong> ظواهر مثل "حكمة الجماهير" لا تنطبق دائماً، وقد تخطئ الجماهير في تقديرها.
+                        <br>- <strong>الضغوط الاجتماعية:</strong> تدفع الناس إلى تبني آراء خاطئة لمجرد أنها شائعة.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.majorityOpinion.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.majorityOpinion.answers.a3.content">
+                        المشقة والغنم الناتجان عن التفكير الشخصي:
+                        <br>- <strong>المشقة:</strong>
+                        <br>  • العزلة الاجتماعية والنقد من الآخرين
+                        <br>  • الجهد الفكري المستمر والبحث المتواصل
+                        <br>  • تحمل مسؤولية الأفكار والمواقف
+                        <br>  • الصراع الداخلي بين الرأي الشخصي والرأي السائد
+                        <br>  • احتمالية الخطأ والارتباك
+                        <br>- <strong>الغنم:</strong>
+                        <br>  • الاستقلالية الفكرية والتحرر من التبعية
+                        <br>  • الوصول إلى الحقيقة بعيداً عن الأوهام
+                        <br>  • تطوير الشخصية والقدرات النقدية
+                        <br>  • الإسهام في تطور المعرفة والمجتمع
+                        <br>  • الشعور بالرضا والثقة بالنفس
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.majorityOpinion.answers.a4.title">الإجابة عن السؤال الرابع:</h5>
+                    <p data-i18n="PhiH.textAnalysis.majorityOpinion.answers.a4.content">
+                        أمثلة تاريخية على صواب رأي الأقلية:
+                        <br>- <strong>جاليليو جاليلي:</strong> دافع عن نظرية مركزية الشمس رغم معارضة الكنيسة والأغلبية.
+                        <br>- <strong>تشارلز داروين:</strong> طرح نظرية التطور التي قوبلت برفض واسع في بدايتها.
+                        <br>- <strong>ألبرت أينشتاين:</strong> قدم نظرياته النسبية التي خالفت الفهم السائد للفيزياء.
+                        <br>- <strong>سيغموند فرويد:</strong> قدم نظريات في التحليل النفسي قوبلت بالشك والرفض.
+                        <br>- <strong>المهاتما غاندي:</strong> دافع عن فكرة المقاومة السلمية رغم معارضة الأغلبية.
+                        <br>- <strong>مارتن لوثر كينغ:</strong> ناضل من أجل الحقوق المدنية رغم معارضة الأغلبية البيضاء.
+                        <br>- <strong>علماء المناعة:</strong> دافعوا عن نظرية الجراثيم في وقت كان الأطباء يعتقدون بنظرية الأخلاط.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.majorityOpinion.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.majorityOpinion.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.majorityOpinion.analysis.thesis.content">
+                        يطرح النص فكرة أن انتشار رأي ما وتبنيه من قبل الأغلبية لا يشكل دليلاً على صحته، بل قد يكون نتيجة لآليات نفسية واجتماعية مثل الكسل الفكري، والتبعية للسلطة، والخوف من العزلة الاجتماعية، مما يستدعي الحذر من الخضوع لسلطة الرأي السائد والتمسك بالتفكير النقدي المستقل.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.majorityOpinion.analysis.mechanisms.title">آليات تشكل سلطة الرأي السائد:</h5>
+                    <p data-i18n="PhiH.textAnalysis.majorityOpinion.analysis.mechanisms.content">
+                        تعمل آليات تشكل سلطة الرأي السائد من خلال:
+                        <br>- <strong>دور النخبة المؤثرة:</strong> تأثير شخصيات قليلة تتمتع بثقة المجتمع.
+                        <br>- <strong>الكسل الفكري:</strong> ميل الناس إلى تبني الآراء الجاهزة لتجنب مشقة التفكير.
+                        <br>- <strong>الوهم الإحصائي:</strong> اعتقاد خاطئ بأن كثرة المؤيدين تعني صحة الرأي.
+                        <br>- <strong>الضغط الاجتماعي:</strong> الخوف من العزلة والنقد يدفع إلى تبني الرأي السائد.
+                        <br>- <strong>الثقة العمياء:</strong> الاعتماد على سلطة الآخرين دون فحص نقدي.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.majorityOpinion.analysis.consequences.title">نتائج الخضوع لسلطة الرأي السائد:</h5>
+                    <p data-i18n="PhiH.textAnalysis.majorityOpinion.analysis.consequences.content">
+                        يؤدي الخضوع لسلطة الرأي السائد إلى:
+                        <br>- <strong>تكريس الأخطاء الفكرية:</strong> استمرار المعتقدات الخاطئة.
+                        <br>- <strong>عائق للتقدم:</strong> إعاقة تطور المعرفة والفكر.
+                        <br>- <strong>الجمود الفكري:</strong> مقاومة الأفكار الجديدة والمختلفة.
+                        <br>- <strong>ضياع الحقيقة:</strong> طمس الحقائق تحت وطأة الرأي السائد.
+                        <br>- <strong>القمع الخفي:</strong> إسكات الأصوات المخالفة بشكل غير مباشر.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.majorityOpinion.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.majorityOpinion.analysis.significance.content">
+                        يمثل مفهوم "سلطة رأي الأغلبية" مدخلاً لفهم إشكالية العلاقة بين الفرد والمجتمع في مجال المعرفة والفكر. فهو يبرز الصراع بين الاستقلال الفكري والتبعية الاجتماعية، وبين الحقيقة والشيوع. كما يوضح ضرورة التفكير النقدي والاستقلال الفكري كأدوات للتحرر من قيود الرأي السائد، ويدفع نحو تأسيس معرفة قائمة على البرهان والعقل، بعيداً عن سلطة العدد والانتشار.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.majorityOpinion.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.majorityOpinion.title": "Analyse du texte: L'Autorité de l'Opinion Majoritaire",
+                "PhiH.textAnalysis.majorityOpinion.introduction.title": "Introduction",
+                "PhiH.textAnalysis.majorityOpinion.introduction.content": "Souvent, le consensus a été considéré comme une preuve de la justesse des opinions, des jugements et des conceptions sur lesquels il porte, mais cela a été contredit par de nombreux faits de l'histoire de la pensée scientifique et philosophique, de sorte que la persistance dans la quiétude inconditionnelle des convictions dominantes est devenue une forme de paresse intellectuelle. Ce qui nous oblige de plus en plus à déconstruire les mécanismes mentaux qui transforment une opinion en opinion majoritaire et nous la présentent comme un jugement correct.",
+                "PhiH.textAnalysis.majorityOpinion.text.title": "Texte",
+                "PhiH.textAnalysis.majorityOpinion.text.content": "Puisque nous ne pouvons pas voir ce qui se passe dans l'esprit des gens au moment où ils choisissent une opinion, je suis convaincu que - si cela était possible - nous attribuerions l'acceptation d'un nombre infini de personnes de cette opinion, à l'autorité de deux ou trois personnes qui ont entrepris de promouvoir une doctrine qu'ils ont traitée en profondeur, ils ont influencé<sup>1</sup> ainsi de nombreuses autres personnes grâce à la confiance préalable dont ils jouissent dans leur compétence. Et ces derniers ont influencé beaucoup d'autres, qui ont trouvé préférable pour eux, et à cause de leur paresse naturelle<sup>2</sup>, de se précipiter à croire tout ce qu'on leur dit, au lieu de l'examiner attentivement. Ainsi, le nombre croissant jour après jour de partisans paresseux et naïfs, est devenu un nouvel engagement pour d'autres à se débarrasser de la difficulté d'examiner une opinion dans laquelle ils ont vu une généralisation qui les a convaincus facilement que cette opinion n'aurait pas pu le devenir sans la force des arguments<sup>3</sup> sur lesquels elle a été fondée. Enfin, on se trouve obligé de croire à ce que tout le monde croit de peur d'être pris pour un perturbateur, qui veut seul en savoir plus que tous les autres, et qui veut contredire l'héritage glorieux<sup>4</sup>.",
+                "PhiH.textAnalysis.majorityOpinion.lexical.title": "Concepts et terminologie",
+                "PhiH.textAnalysis.majorityOpinion.lexical.item1": "<strong>Influencé:</strong> A influencé les autres pour les amener à adopter une idée ou une croyance et à la partager avec lui, et dans le texte, l'expression prend un sens péjoratif car elle ne repose pas sur la compréhension d'arguments rationnels mais sur une confiance aveugle en celui qui avance l'idée ou sur ce que dicte la paresse naturelle à certains de croire ce qu'on leur dit sans examen.",
+                "PhiH.textAnalysis.majorityOpinion.lexical.item2": "<strong>Paresse naturelle:</strong> C'est un jugement de valeur sur un principe selon lequel les capacités et les facultés fonctionnent est l'économie de l'effort intellectuel, et dans le texte, il se réfère à l'empressement de certains à croire ce qu'on leur dit afin de se débarrasser de la difficulté de penser par eux-mêmes.",
+                "PhiH.textAnalysis.majorityOpinion.lexical.item3": "<strong>Force des arguments:</strong> C'est une expression indicative de la confiance préalable dans les opinions dominantes et de la considération que leur popularité et leur généralité sont une preuve de la force des arguments qui les soutiennent. C'est une force présumée basée sur un argument fallacieux qui voit dans l'augmentation du nombre de partisans une preuve de la vérité d'une croyance.",
+                "PhiH.textAnalysis.majorityOpinion.lexical.item4": "<strong>Héritage glorieux:</strong> Jugement de valeur qui considère que la vérité dans sa pureté réside dans l'origine et dans ce que les anciens ont déterminé en raison de leur proximité avec elle, et donc celui qui vient plus tard dans le temps est en retrait en valeur en raison de son éloignement de l'origine.",
+                "PhiH.textAnalysis.majorityOpinion.questions.title": "Questions de compréhension et d'analyse",
+                "PhiH.textAnalysis.majorityOpinion.questions.q1": "Est-il suffisant qu'une conviction prévale pour que cela soit une preuve de sa justesse ?",
+                "PhiH.textAnalysis.majorityOpinion.questions.q2": "Les gens peuvent-ils s'accorder sur des idées erronées ? Justifiez votre réponse en vous référant au texte et à votre vécu.",
+                "PhiH.textAnalysis.majorityOpinion.questions.q3": "Quelle difficulté le soi endure-t-il en raison de sa pensée personnelle et quel bénéfice en tire-t-il ?",
+                "PhiH.textAnalysis.majorityOpinion.questions.q4": "Rappelez des exemples de l'histoire de la pensée qui montrent la justesse de l'opinion de la minorité face à l'autorité de l'opinion majoritaire.",
+                "PhiH.textAnalysis.majorityOpinion.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.majorityOpinion.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.majorityOpinion.answers.a1.content": "Non, il ne suffit pas qu'une conviction prévale pour être une preuve de sa justesse, pour les raisons suivantes :<br>- <strong>Paresse intellectuelle:</strong> Beaucoup de gens adoptent les opinions dominantes pour éviter la difficulté de penser et de rechercher.<br>- <strong>Dépendance à l'autorité:</strong> L'influence de quelques personnalités peut être la vraie raison derrière la propagation d'une opinion.<br>- <strong>Peur de l'isolement:</strong> Pousse les gens à adopter les opinions de la majorité pour éviter la critique et l'exclusion.<br>- <strong>Illusion statistique:</strong> Croyance erronée que le grand nombre de partisans signifie la justesse de l'opinion.<br>- <strong>Absence de critique:</strong> Manque d'examen critique réel des opinions dominantes.",
+                "PhiH.textAnalysis.majorityOpinion.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.majorityOpinion.answers.a2.content": "Oui, les gens peuvent s'accorder sur des idées erronées, pour les raisons suivantes :<br>- <strong>Mécanismes de propagation:</strong> Comme mentionné dans le texte, une opinion peut commencer avec deux ou trois personnes puis se propager à cause de la confiance aveugle et de la paresse intellectuelle.<br>- <strong>L'histoire en témoigne:</strong> Beaucoup de croyances erronées étaient dominantes dans le passé puis se sont révélées fausses plus tard.<br>- <strong>De notre vie:</strong> Beaucoup de superstitions et de croyances populaires se propagent malgré leur inexactitude.<br>- <strong>Expériences scientifiques:</strong> Des phénomènes comme la \"sagesse des foules\" ne s'appliquent pas toujours, et les foules peuvent se tromper dans leur estimation.<br>- <strong>Pressions sociales:</strong> Poussent les gens à adopter des opinions erronées simplement parce qu'elles sont courantes.",
+                "PhiH.textAnalysis.majorityOpinion.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.majorityOpinion.answers.a3.content": "La difficulté et le bénéfice résultant de la pensée personnelle :<br>- <strong>Difficulté:</strong><br>  • Isolement social et critique des autres<br>  • Effort intellectuel continu et recherche permanente<br>  • Assumer la responsabilité des idées et des positions<br>  • Conflit interne entre l'opinion personnelle et l'opinion dominante<br>  • Possibilité d'erreur et de confusion<br>- <strong>Bénéfice:</strong><br>  • Indépendance intellectuelle et libération de la dépendance<br>  • Accès à la vérité loin des illusions<br>  • Développement de la personnalité et des capacités critiques<br>  • Contribution à l'évolution de la connaissance et de la société<br>  • Sentiment de satisfaction et de confiance en soi",
+                "PhiH.textAnalysis.majorityOpinion.answers.a4.title": "Réponse à la quatrième question:",
+                "PhiH.textAnalysis.majorityOpinion.answers.a4.content": "Exemples historiques de la justesse de l'opinion de la minorité :<br>- <strong>Galilée Galilée:</strong> A défendu la théorie de l'héliocentrisme malgré l'opposition de l'Église et de la majorité.<br>- <strong>Charles Darwin:</strong> A proposé la théorie de l'évolution qui a été largement rejetée au début.<br>- <strong>Albert Einstein:</strong> A présenté ses théories de la relativité qui contredisaient la compréhension dominante de la physique.<br>- <strong>Sigmund Freud:</strong> A présenté des théories en psychanalyse qui ont été accueillies avec scepticisme et rejet.<br>- <strong>Mahatma Gandhi:</strong> A défendu l'idée de résistance non violente malgré l'opposition de la majorité.<br>- <strong>Martin Luther King:</strong> A lutté pour les droits civiques malgré l'opposition de la majorité blanche.<br>- <strong>Immunologistes:</strong> Ont défendu la théorie des germes à une époque où les médecins croyaient à la théorie des humeurs.",
+                "PhiH.textAnalysis.majorityOpinion.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.majorityOpinion.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.majorityOpinion.analysis.thesis.content": "Le texte présente l'idée que la propagation d'une opinion et son adoption par la majorité ne constituent pas une preuve de sa justesse, mais peuvent être le résultat de mécanismes psychologiques et sociaux tels que la paresse intellectuelle, la dépendance à l'autorité et la peur de l'isolement social, ce qui nécessite de se méfier de la soumission à l'autorité de l'opinion dominante et de s'accrocher à la pensée critique indépendante.",
+                "PhiH.textAnalysis.majorityOpinion.analysis.mechanisms.title": "Mécanismes de formation de l'autorité de l'opinion dominante:",
+                "PhiH.textAnalysis.majorityOpinion.analysis.mechanisms.content": "Les mécanismes de formation de l'autorité de l'opinion dominante fonctionnent à travers :<br>- <strong>Rôle de l'élite influente:</strong> Influence de quelques personnalités jouissant de la confiance de la société.<br>- <strong>Paresse intellectuelle:</strong> Tendance des gens à adopter des opinions toutes faites pour éviter la difficulté de penser.<br>- <strong>Illusion statistique:</strong> Croyance erronée que le grand nombre de partisans signifie la justesse de l'opinion.<br>- <strong>Pression sociale:</strong> Peur de l'isolement et de la critique pousse à adopter l'opinion dominante.<br>- <strong>Confiance aveugle:</strong> Dépendance à l'autorité des autres sans examen critique.",
+                "PhiH.textAnalysis.majorityOpinion.analysis.consequences.title": "Conséquences de la soumission à l'autorité de l'opinion dominante:",
+                "PhiH.textAnalysis.majorityOpinion.analysis.consequences.content": "La soumission à l'autorité de l'opinion dominante conduit à :<br>- <strong>Perpétuation des erreurs intellectuelles:</strong> Persistance des croyances erronées.<br>- <strong>Obstacle au progrès:</strong> Entrave à l'évolution de la connaissance et de la pensée.<br>- <strong>Stagnation intellectuelle:</strong> Résistance aux idées nouvelles et différentes.<br>- <strong>Perte de la vérité:</strong> Occultation des vérités sous le poids de l'opinion dominante.<br>- <strong>Répression cachée:</strong> Silenciement indirect des voix dissidentes.",
+                "PhiH.textAnalysis.majorityOpinion.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.majorityOpinion.analysis.significance.content": "Le concept d'\"autorité de l'opinion majoritaire\" représente une entrée pour comprendre la problématique de la relation entre l'individu et la société dans le domaine de la connaissance et de la pensée. Il met en lumière le conflit entre l'indépendance intellectuelle et la dépendance sociale, et entre la vérité et la popularité. Il clarifie également la nécessité de la pensée critique et de l'indépendance intellectuelle comme outils de libération des contraintes de l'opinion dominante, et pousse vers l'établissement d'une connaissance basée sur la preuve et la raison, loin de l'autorité du nombre et de la propagation."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.majorityOpinion.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.majorityOpinion.title": "Text Analysis: The Authority of Majority Opinion",
+                "PhiH.textAnalysis.majorityOpinion.introduction.title": "Introduction",
+                "PhiH.textAnalysis.majorityOpinion.introduction.content": "Consensus has often been considered evidence of the correctness of opinions, judgments, and conceptions agreed upon, but this has been contradicted by numerous facts from the history of scientific and philosophical thought, so that persistence in unconditional reassurance of dominant convictions has become a form of intellectual laziness. This increasingly obliges us to deconstruct the mental mechanisms that transform an opinion into a majority opinion and present it to us as a correct judgment.",
+                "PhiH.textAnalysis.majorityOpinion.text.title": "Text",
+                "PhiH.textAnalysis.majorityOpinion.text.content": "Since we cannot see what happens in people's minds at the moment they choose an opinion, I am convinced that - if that were possible - we would attribute the acceptance of an infinite number of people of this opinion, to the authority of two or three people who undertook to promote a doctrine that they are estimated to have treated in depth, they influenced<sup>1</sup> many others with it thanks to the prior confidence they enjoy in their competence. And these influenced many others, who found it preferable for them, and because of their natural laziness<sup>2</sup>, to rush to believe everything they are told, instead of examining it carefully. Thus, the increasing number day after day of lazy and naive followers, became a new commitment for others to get rid of the difficulty of examining an opinion in which they saw a generalization that convinced them easily that this opinion could not have become so without the strength of the arguments<sup>3</sup> on which it was based. Finally, one finds oneself obliged to believe what everyone believes for fear of being taken for a troublemaker, who wants alone to know more than all the others, and who wants to contradict the glorious heritage<sup>4</sup>.",
+                "PhiH.textAnalysis.majorityOpinion.lexical.title": "Concepts and Terminology",
+                "PhiH.textAnalysis.majorityOpinion.lexical.item1": "<strong>Influenced:</strong> Influenced others to get them to adopt an idea or belief and to share it with him, and in the text, the expression takes a pejorative meaning because it is not based on understanding rational arguments but on blind trust in the one who puts forward the idea or on what natural laziness dictates to some to believe what they are told without examination.",
+                "PhiH.textAnalysis.majorityOpinion.lexical.item2": "<strong>Natural laziness:</strong> It is a value judgment on a principle according to which capacities and faculties work is the economy of intellectual effort, and in the text, it refers to the eagerness of some to believe what they are told in order to get rid of the difficulty of thinking for themselves.",
+                "PhiH.textAnalysis.majorityOpinion.lexical.item3": "<strong>Strength of arguments:</strong> It is an expression indicative of prior confidence in dominant opinions and the consideration that their popularity and generality are evidence of the strength of the arguments that support them. It is a presumed strength based on a fallacious argument that sees in the increase in the number of supporters proof of the truth of a belief.",
+                "PhiH.textAnalysis.majorityOpinion.lexical.item4": "<strong>Glorious heritage:</strong> Value judgment that considers that truth in its purity lies in the origin and in what the ancients determined due to their proximity to it, and therefore the one who comes later in time is behind in value due to his distance from the origin.",
+                "PhiH.textAnalysis.majorityOpinion.questions.title": "Comprehension and Analysis Questions",
+                "PhiH.textAnalysis.majorityOpinion.questions.q1": "Is it sufficient for a conviction to prevail for that to be proof of its correctness?",
+                "PhiH.textAnalysis.majorityOpinion.questions.q2": "Can people agree on erroneous ideas? Justify your answer by referring to the text and your experience.",
+                "PhiH.textAnalysis.majorityOpinion.questions.q3": "What difficulty does the self endure due to its personal thinking and what benefit does it gain from it?",
+                "PhiH.textAnalysis.majorityOpinion.questions.q4": "Recall examples from the history of thought that show the correctness of the minority opinion in the face of the authority of the majority opinion.",
+                "PhiH.textAnalysis.majorityOpinion.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.majorityOpinion.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.majorityOpinion.answers.a1.content": "No, it is not sufficient for a conviction to prevail to be proof of its correctness, for the following reasons:<br>- <strong>Intellectual laziness:</strong> Many people adopt dominant opinions to avoid the difficulty of thinking and researching.<br>- <strong>Dependence on authority:</strong> The influence of a few personalities may be the real reason behind the propagation of an opinion.<br>- <strong>Fear of isolation:</strong> Pushes people to adopt majority opinions to avoid criticism and exclusion.<br>- <strong>Statistical illusion:</strong> Erroneous belief that a large number of supporters means the correctness of the opinion.<br>- <strong>Lack of criticism:</strong> Lack of real critical examination of dominant opinions.",
+                "PhiH.textAnalysis.majorityOpinion.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.majorityOpinion.answers.a2.content": "Yes, people can agree on erroneous ideas, for the following reasons:<br>- <strong>Propagation mechanisms:</strong> As mentioned in the text, an opinion may start with two or three people then spread due to blind trust and intellectual laziness.<br>- <strong>History testifies:</strong> Many erroneous beliefs were dominant in the past then proved to be false later.<br>- <strong>From our life:</strong> Many superstitions and popular beliefs spread despite their inaccuracy.<br>- <strong>Scientific experiments:</strong> Phenomena like \"wisdom of crowds\" do not always apply, and crowds can be wrong in their estimation.<br>- <strong>Social pressures:</strong> Push people to adopt erroneous opinions simply because they are common.",
+                "PhiH.textAnalysis.majorityOpinion.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.majorityOpinion.answers.a3.content": "The difficulty and benefit resulting from personal thinking:<br>- <strong>Difficulty:</strong><br>  • Social isolation and criticism from others<br>  • Continuous intellectual effort and ongoing research<br>  • Assuming responsibility for ideas and positions<br>  • Internal conflict between personal opinion and dominant opinion<br>  • Possibility of error and confusion<br>- <strong>Benefit:</strong><br>  • Intellectual independence and liberation from dependence<br>  • Access to truth away from illusions<br>  • Development of personality and critical abilities<br>  • Contribution to the evolution of knowledge and society<br>  • Feeling of satisfaction and self-confidence",
+                "PhiH.textAnalysis.majorityOpinion.answers.a4.title": "Answer to the fourth question:",
+                "PhiH.textAnalysis.majorityOpinion.answers.a4.content": "Historical examples of the correctness of the minority opinion:<br>- <strong>Galileo Galilei:</strong> Defended the heliocentric theory despite opposition from the Church and the majority.<br>- <strong>Charles Darwin:</strong> Proposed the theory of evolution which was widely rejected at first.<br>- <strong>Albert Einstein:</strong> Presented his theories of relativity which contradicted the dominant understanding of physics.<br>- <strong>Sigmund Freud:</strong> Presented theories in psychoanalysis which were met with skepticism and rejection.<br>- <strong>Mahatma Gandhi:</strong> Defended the idea of non-violent resistance despite opposition from the majority.<br>- <strong>Martin Luther King:</strong> Fought for civil rights despite opposition from the white majority.<br>- <strong>Immunologists:</strong> Defended the germ theory at a time when doctors believed in the humoral theory.",
+                "PhiH.textAnalysis.majorityOpinion.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.majorityOpinion.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.majorityOpinion.analysis.thesis.content": "The text presents the idea that the propagation of an opinion and its adoption by the majority does not constitute proof of its correctness, but may be the result of psychological and social mechanisms such as intellectual laziness, dependence on authority, and fear of social isolation, which requires caution against submission to the authority of the dominant opinion and holding onto independent critical thinking.",
+                "PhiH.textAnalysis.majorityOpinion.analysis.mechanisms.title": "Mechanisms of formation of the authority of the dominant opinion:",
+                "PhiH.textAnalysis.majorityOpinion.analysis.mechanisms.content": "The mechanisms of formation of the authority of the dominant opinion work through:<br>- <strong>Role of influential elite:</strong> Influence of a few personalities enjoying society's trust.<br>- <strong>Intellectual laziness:</strong> People's tendency to adopt ready-made opinions to avoid the difficulty of thinking.<br>- <strong>Statistical illusion:</strong> Erroneous belief that a large number of supporters means the correctness of the opinion.<br>- <strong>Social pressure:</strong> Fear of isolation and criticism pushes to adopt the dominant opinion.<br>- <strong>Blind trust:</strong> Dependence on the authority of others without critical examination.",
+                "PhiH.textAnalysis.majorityOpinion.analysis.consequences.title": "Consequences of submission to the authority of the dominant opinion:",
+                "PhiH.textAnalysis.majorityOpinion.analysis.consequences.content": "Submission to the authority of the dominant opinion leads to:<br>- <strong>Perpetuation of intellectual errors:</strong> Persistence of erroneous beliefs.<br>- <strong>Obstacle to progress:</strong> Hindrance to the evolution of knowledge and thought.<br>- <strong>Intellectual stagnation:</strong> Resistance to new and different ideas.<br>- <strong>Loss of truth:</strong> Obscuring truths under the weight of the dominant opinion.<br>- <strong>Hidden repression:</strong> Indirect silencing of dissenting voices.",
+                "PhiH.textAnalysis.majorityOpinion.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.majorityOpinion.analysis.significance.content": "The concept of \"authority of majority opinion\" represents an entry point for understanding the problematic of the relationship between the individual and society in the field of knowledge and thought. It highlights the conflict between intellectual independence and social dependence, and between truth and popularity. It also clarifies the necessity of critical thinking and intellectual independence as tools for liberation from the constraints of the dominant opinion, and pushes towards the establishment of knowledge based on proof and reason, away from the authority of numbers and propagation."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.majorityOpinion.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.majorityOpinion.title": "تحليل النص: سلطة رأي الأغلبية",
+                "PhiH.textAnalysis.majorityOpinion.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.majorityOpinion.introduction.content": "كثيرا ما اعتبر الإجماع دليلا على صواب الآراء والأحكام والتّصوّرات الْمُجْمع عليها، غير أنّ هذا ما كذّبته وقائع عديدة من تاريخ الفكر العلمي والفلسفي بحيث صار التّمادي في الاطمئنان اللّمشروط للقناعات السّائدة ضربا من الكسل الفكري. وهو ما أضحى يُلزمنا أكثر فأكثر بضرورة تفكيك الآليات الذّهنيّة التي تُحَوّل رأيا ما إلى رأي أغلبيّ وتُصوّره لنا في صورة حكم صائب.",
+                "PhiH.textAnalysis.majorityOpinion.text.title": "النص",
+                "PhiH.textAnalysis.majorityOpinion.text.content": "بما أنّنا لا نقدر على رؤية ما يحدث في أذهان النّاس ساعة اختيارهم لرأي ما فإنّني على يقين من أنه- لو كان ذلك ممكنا- لكُنّا سنرجع قبول عدد لا حصر له من النّاس بهذا الرّأي، إلى سلطة شخصين أو ثلاثة أشخاص إذ عمدوا إلى التّرويج لمذهب يُقَدَّر أنّهم عالجوه بعمق، استمالوا<sup>1</sup> به كثيرين آخرين وذلك بفضل ما يتمتّعون به من ثقة مسبقة في جدارتهم. كما استمال به هؤلاء آخرين كثيرين، وجدوا من الأفضل لهم، وبسبب كسلهم الطّبيعي<sup>2</sup>، أن يسارعوا إلى الاعتقاد في كلّ ما يقال لهم، بدلا من أن يفحصوه بعناية. وهكذا فإنّ العدد المتزايد يوما بعد يوم من التّابعين الكسالى والسُذّج، غدا التزاما جديدا لغيرهم بالتّخلّصِ من عناء فحص رأي رأوا فيه من التعميم ما جعلهم يقتنعون بيسر أنّه ما كان لهذا الرأي أن يصير كذلك لولا قوّة الحجج<sup>3</sup> التي اعتمدت في تأسيسه. وأخيرا، إنّ المرء ليجد نفسه مضطرا إلى الاعتقاد في ما يعتقده النّاس جميعا مخافة أن يؤخذ مأخذ المشاغب، الّذي يريد وحده أن يعرف أكثر من الآخرين كلّهم، والّذي يريد أن يكذّب الموروث الجليل<sup>4</sup>.",
+                "PhiH.textAnalysis.majorityOpinion.lexical.title": "المفاهيم والمصطلحات",
+                "PhiH.textAnalysis.majorityOpinion.lexical.item1": "<strong>استمال:</strong> أثّر على غيره لحمله على اعتناق فكرة أو عقيدة وجعله يشاركه إياها، وفي النص تأخذ العبارة معنى انتقاصيا لأنها لا تقوم على تمثل حجج عقلية وإنما على الثقة العمياء في صاحب الزعم أو فيما يمليه الكسل الطبيعي على البعض من اعتقاد فيما يقال لهم دون تمحيص.",
+                "PhiH.textAnalysis.majorityOpinion.lexical.item2": "<strong>الكسل الطبيعي:</strong> هو حكم قيمة على مبدأ تشتغل وفقه القدرات والملكات هو الاقتصاد في الجهد العقلي، ويشير في النص إلي إسراع البعض إلى الاعتقاد فيما يقال لهم حتى يتخلّصوا من مشقة التفكير بأنفسهم.",
+                "PhiH.textAnalysis.majorityOpinion.lexical.item3": "<strong>قوّة الحجج:</strong> هي عبارة دالة على الثقة المسبقة في الآراء السائدة واعتبار أن رواجها وعموميتها دليل على قوة الحجج التي تسندها. إنها قوّة مُفترضة أساسها حجة مغالطة ترى في ازدياد عدد التابعين دليلا على صدق عقيدة ما.",
+                "PhiH.textAnalysis.majorityOpinion.lexical.item4": "<strong>الموروث الجليل:</strong> حكم قيمة يعتبر أنّ الحقيقة في صفائها تكمن في الأصل وفي ما حدّده الأقدمون لقربهم منه، وعليه فإنّ المتأخر في الزمن متراجع في القيمة لبعده عن الأصل.",
+                "PhiH.textAnalysis.majorityOpinion.questions.title": "أسئلة الفهم والتحليل",
+                "PhiH.textAnalysis.majorityOpinion.questions.q1": "هل يكفي أن تسود قناعة ما حتّى يكون ذلك حجّة على صحّتها ؟",
+                "PhiH.textAnalysis.majorityOpinion.questions.q2": "هل بوسع النّاس أن يُجمعوا على أفكار خاطئة ؟ علّل إجابتك بالعودة إلى النص وإلى معيشك.",
+                "PhiH.textAnalysis.majorityOpinion.questions.q3": "أيّة مشقّة تتكّدها الذّات جرّاء تفكيرها تفكيرا شخصيًا وأيّ غُنم تجنيه من ذلك ؟",
+                "PhiH.textAnalysis.majorityOpinion.questions.q4": "استحضر عيّنات من تاريخ الفكر تدلّ على صواب رأي الأقليّة في مواجهة سلطة رأي الأغلبية.",
+                "PhiH.textAnalysis.majorityOpinion.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.majorityOpinion.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.majorityOpinion.answers.a1.content": "لا، لا يكفي أن تسود قناعة ما لتكون حجة على صحتها، وذلك للأسباب التالية:<br>- <strong>الكسل الفكري:</strong> كثير من الناس يتبنون الآراء السائدة لتجنب مشقة التفكير والبحث.<br>- <strong>التبعية للسلطة:</strong> تأثير شخصيات قليلة قد يكون السبب الحقيقي وراء انتشار رأي ما.<br>- <strong>الخوف من العزلة:</strong> يدفع الناس إلى تبني آراء الأغلبية تجنباً للنقد والاستبعاد.<br>- <strong>الوهم الإحصائي:</strong> اعتقاد خاطئ بأن كثرة المؤيدين تعني صحة الرأي.<br>- <strong>غياب النقد:</strong> عدم وجود فحص نقدي حقيقي للآراء السائدة.",
+                "PhiH.textAnalysis.majorityOpinion.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.majorityOpinion.answers.a2.content": "نعم، يمكن للناس أن يجمعوا على أفكار خاطئة، وذلك للأسباب التالية:<br>- <strong>آليات الانتشار:</strong> كما ورد في النص، قد يبدأ الرأي من شخصين أو ثلاثة ثم ينتشر بسبب الثقة العمياء والكسل الفكري.<br>- <strong>التاريخ يشهد:</strong> كثير من المعتقدات الخاطئة كانت سائدة في الماضي ثم تبين خطؤها لاحقاً.<br>- <strong>من حياتنا:</strong> الكثير من الخرافات والمعتقدات الشعبية تنتشر رغم عدم صحتها.<br>- <strong>التجارب العلمية:</strong> ظواهر مثل \"حكمة الجماهير\" لا تنطبق دائماً، وقد تخطئ الجماهير في تقديرها.<br>- <strong>الضغوط الاجتماعية:</strong> تدفع الناس إلى تبني آراء خاطئة لمجرد أنها شائعة.",
+                "PhiH.textAnalysis.majorityOpinion.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.majorityOpinion.answers.a3.content": "المشقة والغنم الناتجان عن التفكير الشخصي:<br>- <strong>المشقة:</strong><br>  • العزلة الاجتماعية والنقد من الآخرين<br>  • الجهد الفكري المستمر والبحث المتواصل<br>  • تحمل مسؤولية الأفكار والمواقف<br>  • الصراع الداخلي بين الرأي الشخصي والرأي السائد<br>  • احتمالية الخطأ والارتباك<br>- <strong>الغنم:</strong><br>  • الاستقلالية الفكرية والتحرر من التبعية<br>  • الوصول إلى الحقيقة بعيداً عن الأوهام<br>  • تطوير الشخصية والقدرات النقدية<br>  • الإسهام في تطور المعرفة والمجتمع<br>  • الشعور بالرضا والثقة بالنفس",
+                "PhiH.textAnalysis.majorityOpinion.answers.a4.title": "الإجابة عن السؤال الرابع:",
+                "PhiH.textAnalysis.majorityOpinion.answers.a4.content": "أمثلة تاريخية على صواب رأي الأقلية:<br>- <strong>جاليليو جاليلي:</strong> دافع عن نظرية مركزية الشمس رغم معارضة الكنيسة والأغلبية.<br>- <strong>تشارلز داروين:</strong> طرح نظرية التطور التي قوبلت برفض واسع في بدايتها.<br>- <strong>ألبرت أينشتاين:</strong> قدم نظرياته النسبية التي خالفت الفهم السائد للفيزياء.<br>- <strong>سيغموند فرويد:</strong> قدم نظريات في التحليل النفسي قوبلت بالشك والرفض.<br>- <strong>المهاتما غاندي:</strong> دافع عن فكرة المقاومة السلمية رغم معارضة الأغلبية.<br>- <strong>مارتن لوثر كينغ:</strong> ناضل من أجل الحقوق المدنية رغم معارضة الأغلبية البيضاء.<br>- <strong>علماء المناعة:</strong> دافعوا عن نظرية الجراثيم في وقت كان الأطباء يعتقدون بنظرية الأخلاط.",
+                "PhiH.textAnalysis.majorityOpinion.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.majorityOpinion.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.majorityOpinion.analysis.thesis.content": "يطرح النص فكرة أن انتشار رأي ما وتبنيه من قبل الأغلبية لا يشكل دليلاً على صحته، بل قد يكون نتيجة لآليات نفسية واجتماعية مثل الكسل الفكري، والتبعية للسلطة، والخوف من العزلة الاجتماعية، مما يستدعي الحذر من الخضوع لسلطة الرأي السائد والتمسك بالتفكير النقدي المستقل.",
+                "PhiH.textAnalysis.majorityOpinion.analysis.mechanisms.title": "آليات تشكل سلطة الرأي السائد:",
+                "PhiH.textAnalysis.majorityOpinion.analysis.mechanisms.content": "تعمل آليات تشكل سلطة الرأي السائد من خلال:<br>- <strong>دور النخبة المؤثرة:</strong> تأثير شخصيات قليلة تتمتع بثقة المجتمع.<br>- <strong>الكسل الفكري:</strong> ميل الناس إلى تبني الآراء الجاهزة لتجنب مشقة التفكير.<br>- <strong>الوهم الإحصائي:</strong> اعتقاد خاطئ بأن كثرة المؤيدين تعني صحة الرأي.<br>- <strong>الضغط الاجتماعي:</strong> الخوف من العزلة والنقد يدفع إلى تبني الرأي السائد.<br>- <strong>الثقة العمياء:</strong> الاعتماد على سلطة الآخرين دون فحص نقدي.",
+                "PhiH.textAnalysis.majorityOpinion.analysis.consequences.title": "نتائج الخضوع لسلطة الرأي السائد:",
+                "PhiH.textAnalysis.majorityOpinion.analysis.consequences.content": "يؤدي الخضوع لسلطة الرأي السائد إلى:<br>- <strong>تكريس الأخطاء الفكرية:</strong> استمرار المعتقدات الخاطئة.<br>- <strong>عائق للتقدم:</strong> إعاقة تطور المعرفة والفكر.<br>- <strong>الجمود الفكري:</strong> مقاومة الأفكار الجديدة والمختلفة.<br>- <strong>ضياع الحقيقة:</strong> طمس الحقائق تحت وطأة الرأي السائد.<br>- <strong>القمع الخفي:</strong> إسكات الأصوات المخالفة بشكل غير مباشر.",
+                "PhiH.textAnalysis.majorityOpinion.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.majorityOpinion.analysis.significance.content": "يمثل مفهوم \"سلطة رأي الأغلبية\" مدخلاً لفهم إشكالية العلاقة بين الفرد والمجتمع في مجال المعرفة والفكر. فهو يبرز الصراع بين الاستقلال الفكري والتبعية الاجتماعية، وبين الحقيقة والشيوع. كما يوضح ضرورة التفكير النقدي والاستقلال الفكري كأدوات للتحرر من قيود الرأي السائد، ويدفع نحو تأسيس معرفة قائمة على البرهان والعقل، بعيداً عن سلطة العدد والانتشار."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certitude - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#4169e1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Royal Blue + Slate Gray Theme */
+        :root {
+            --primary-color: #4169e1;
+            --secondary-color: #708090;
+            --accent-color: #2a4fbd;
+            --light-color: #f0f4ff;
+            --dark-color: #2f3542;
+            --text-color: #2f3542;
+            --heading-color: #2f3542;
+            --background-color: #f9fbff;
+            --card-bg: #ffffff;
+            --definition-bg: #e8ecff;
+            --border-color: #b8c5ff;
+            --table-even-bg: #f5f7ff;
+            --table-hover-bg: #e8ecff;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(65, 105, 225, 0.15);
+            --gradient-primary: linear-gradient(135deg, #4169e1 0%, #2a4fbd 100%);
+            --gradient-secondary: linear-gradient(135deg, #708090 0%, #2f3542 100%);
+            --gradient-blue: linear-gradient(135deg, #4169e1 0%, #2f3542 100%);
+            --gradient-gray: linear-gradient(135deg, #708090 0%, #2f3542 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #5a7de8;
+            --secondary-color: #8a9ba8;
+            --accent-color: #4169e1;
+            --light-color: #3a3f4d;
+            --dark-color: #1a1d24;
+            --text-color: #e0e7ff;
+            --heading-color: #f7fafc;
+            --background-color: #2f3542;
+            --card-bg: #3a3f4d;
+            --definition-bg: #2d355a;
+            --border-color: #5a7de8;
+            --table-even-bg: #2f3542;
+            --table-hover-bg: #2d355a;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #5a7de8 0%, #4169e1 100%);
+            --gradient-secondary: linear-gradient(135deg, #8a9ba8 0%, #708090 100%);
+            --gradient-blue: linear-gradient(135deg, #5a7de8 0%, #3a3f4d 100%);
+            --gradient-gray: linear-gradient(135deg, #8a9ba8 0%, #708090 100%);
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Definition Cards Layout */
+        .PhiH-definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-definition-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(65, 105, 225, 0.2);
+        }
+        
+        .PhiH-definition-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-definition-card-content ul {
+            padding-left: 1.2rem;
+            margin: 0.8rem 0;
+        }
+        
+        .PhiH-definition-card-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        /* Expand/Collapse Functionality */
+        .PhiH-expandable-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .PhiH-expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .PhiH-expandable-header:hover {
+            background: var(--gradient-blue);
+        }
+        
+        .PhiH-expandable-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        .PhiH-expandable-content {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            border-top: none;
+        }
+        
+        .PhiH-expandable-content.hidden {
+            display: none;
+        }
+        
+        .PhiH-expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-expand-icon.expanded {
+            transform: rotate(180deg);
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Section Styling */
+        .PhiH-quotes-container {
+            margin-top: 1rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(65, 105, 225, 0.2);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        /* RTL support for definition cards */
+        body.rtl .PhiH-definition-card-content ul {
+            padding-left: 0;
+            padding-right: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .PhiH-definitions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-certitude" dir="ltr">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="#" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-lesson1-container">
+        <div class="PhiH-lesson1-header">
+    <h1 class="PhiH-lesson1-title" data-i18n="PhiH.lessons.certitude.title">الوثوقية</h1>
+    <div class="PhiH-lesson1-level" data-i18n="PhiH.lessons.certitude.level">السنة الثالثة ثانوي - الفلسفة</div>
+</div>
+        
+        <!-- Introduction Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="introHeader">
+                <h3 data-i18n="PhiH.lessons.certitude.introduction.title">التمهيد</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="introContent">
+                <p data-i18n="PhiH.lessons.certitude.introduction.text1">
+                    ترتبط الوثوقية الفكرية بالثبات والجمود، وهو ما يجعلها في نظر البعض حالة من الأمان المعرفي،
+                    ويجعل منها البعض الآخر شرط الاستقرار الفكري من حيث هو قائم على يقين راسخ. غير أنّ كل ذلك لا ينبغي
+                    أن يحجب مدى السلبيّة التي تلازم الوثوقية كحالة موسومة بالانغلاق والتصلب بسبب عدم قدرة
+                    الوثوقيين على مراجعة أفكارهم والحكم على الأشياء بشكل نقدي مما يستدعي التفكير في العلاقة بين
+                    إعمال العقل والنزعة الوثوقية.
+                </p>
+                <p data-i18n="PhiH.lessons.certitude.introduction.text2">
+                    ففي الوقت الذي يُنظَر فيه إلى اليقين على أنّه غاية المعرفة وضالة الفكر، يكشف الواقع عن صورة مغايرة
+                    لهذه الغاية التي قد تتحول إلى قيد يحد من تطور المعرفة ويقيد حرية الفكر. فالوثوقية بوصفها إيماناً
+                    مطلقاً بالمعتقدات والأفكار دون تمحيص أو نقد، تهدد بتحويل الفكر إلى عقيدة جامدة ترفض المراجعة
+                    والتطوير، مما يؤدي إلى جمود فكري يعيق التقدم المعرفي والاجتماعي.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Definitions -->
+        <section class="PhiH-expandable-section">
+    <div class="PhiH-expandable-header" id="definitionsHeader">
+        <h3 data-i18n="PhiH.lessons.certitude.definitions.title">التعريفات</h3>
+        <span class="PhiH-expand-icon">▼</span>
+    </div>
+    <div class="PhiH-expandable-content" id="definitionsContent">
+        <div class="PhiH-definitions-grid">
+            <!-- Card 1: الوثوقية (الدغمائية) -->
+            <div class="PhiH-definition-card">
+                <h3 class="PhiH-definition-card-title" data-i18n="PhiH.lessons.certitude.definitions.card1.title">الوثوقية (الدغمائية) Dogmatisme</h3>
+                <div class="PhiH-definition-card-content">
+                    <ul>
+                        <li data-i18n="PhiH.lessons.certitude.definitions.card1.point1"><strong>الوثوقية لغة:</strong> مشتقة من فعل وثق, يثق, ثقة ,وموثقا, ووثوقا, ووثاقة الرجل بغيره :ائتمنه فهو واثق به ,والمفعول موثوق به, وهي موثوق بها, وهم موثوق بهم. " القاموس الجديد للطلاب "</li>
+                        <li data-i18n="PhiH.lessons.certitude.definitions.card1.point2">"معجم المصطلحات و الشواهد الفلسفية": هي مذهب من يثق بالعقل و بقدرته المطلقة على إدراك الحقيقة و الوصول إلى اليقين وهي بهذا المعنى مقابلة للريبية (scepticisme) و الدغمائية عموما هي صفة من يثق بعقله وبنظرياته ويعترف لها بسلطان عظيم دون التفكير في امكان اشتمالها على الخطأ و الظلال.</li>
+                        <li data-i18n="PhiH.lessons.certitude.definitions.card1.point3">الدغمائية في نظر كانط Kant: هي الميل الى التسليم بالمبادئ التي يعتمدها العقل منذ قديم دون البحث في طبيعة هذه المبادئ وشرعيتها وقيمتها أي دون القيام بنقد مبادئ العقل المحض وهي بهذا المعنى مقابلة للنقدية (La criticisme) الكانطية.</li>
+                        <li data-i18n="PhiH.lessons.certitude.definitions.card1.point4">باسكال: ان عجزنا عن الاستدلال لا تقدر على تجاوزه أية نزعة دغمائية وعلى العكس إن الفكرة التي نملكها عن الحقيقة لا تزعزعها أية نزعة شكية.</li>
+                        <li data-i18n="PhiH.lessons.certitude.definitions.card1.point5">أرنست رينان E.Renan: إننا نرمي عرض الحائط بكل من النزعة الشكية الساذجة والنزعة الدغمائية المدرسية, فنحن إذن دغمائيون نقديون.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Card 2: الوهم -->
+            <div class="PhiH-definition-card">
+                <h3 class="PhiH-definition-card-title" data-i18n="PhiH.lessons.certitude.definitions.card2.title">الوهم illusion</h3>
+                <div class="PhiH-definition-card-content">
+                    <ul>
+                        <li data-i18n="PhiH.lessons.certitude.definitions.card2.point1"><strong>لغة:</strong> الوهم هو ما يقع في الذهن من الخاطر / الطريق الواسع (ج) أوهام, ووهوم, ووهم- يقال: لا وهم من ذلك أي لابد منه. (القاموس الجديد للطلاب)</li>
+                        <li data-i18n="PhiH.lessons.certitude.definitions.card2.point2">فلسفيا: هو كل خطأ في الادراك أو الحكم أو التفكير و الاستدلال بشرط أن يكون خطأ طبيعيا, لأن الذي يقع فيه إنما تخدعه الظواهر. فالوهم هو أن يتمثل المرء في ذهنه صورا كاذبة أو ظواهر غير حقيقية يعتقد أنها موجودة حقا في الخارج مثلما يتمثلها في حين أنها غير موجودة على النحو الذي يتمثلها: مثال ذلك: رؤية العصا في الماء منكسرة في حين أنها مستقيمة,ورؤية البرج مستديرا في حين أنها بعيدة جدا وعظيمة. و ينبغي التمييز بين الوهم والهلوسة (hallucination). باعتبار أن الهلوسة تنشأ في غياب الموضوعات الخارجية.</li>
+                        <li data-i18n="PhiH.lessons.certitude.definitions.card2.point3">فاليري (P.valéry): لا يعيش المجتمع إلا بالأوهام وكل مجتمع انما هو عبارة عن حلم جماعي. وتصبح هذه الأوهام أوهاما خطيرة عندما تكف عن الإيهام. و إما الكابوس فهو أن يستيقظ المرء من هذا النوع من الحلم.</li>
+                        <li data-i18n="PhiH.lessons.certitude.definitions.card2.point4">جوبير (Joubert): يحصل الوهم في الحواس و يحصل الخطأ في الأحكام. و يمكننا في نفس الوقت أن نتمتع بالوهم وأن ندرك الحقيقة. (معجم المصطلحات و الشواهد الفلسفية)</li>
+                        <li data-i18n="PhiH.lessons.certitude.definitions.card2.point5">فرويد: الوهم متغرع من رغبات إنسانية "توهم كريستوف كولومبس اكتشافه طريق بحرية جديدة للهند, توهم عرق بشري حضريا على الآخر..." فالوهم تصعيد لرغبات نفسية لا شعورية "مجاله نفسي". (كتاب الفلسفة للسنة ثالثة آداب).</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Card 3: الاستلاب (الاغتراب) -->
+            <div class="PhiH-definition-card">
+                <h3 class="PhiH-definition-card-title" data-i18n="PhiH.lessons.certitude.definitions.card3.title">الاستلاب (الاغتراب) acculturation</h3>
+                <div class="PhiH-definition-card-content">
+                    <ul>
+                        <li data-i18n="PhiH.lessons.certitude.definitions.card3.point1"><strong>لغة:</strong> استلاب [س, ل,ب] (مصدر استلب): حاول استلاب أمواله: أي اختلاسها. يعيش حياة استلاب: حياة خضوع و استعباد بفعل ظروف اجتماعية, اقتصادية, أو فكرية, أو سياسية خارجة عن إرادته, استهواء, إغواء (قاموس المعاني. قاموس عربي عربي)</li>
+                        <li data-i18n="PhiH.lessons.certitude.definitions.card3.point2">فلسفيا: هو عموما حالة من يكون ملكا لشيء آخر غيره. ويمكن تتبع مصادر فكرة الاستلاب أو الاغتراب إلى مفكري عصر التنوير بفرنسا (جون جاك روسو) وبألمانيا حيث كانت تعبر هذه الفكرة عن الاحتجاج ضد الصفة اللاإنسانية التي تتصف بها علاقات الملكية الخاصة. ولقد اتخذت هذه الفكرة بعدا مثاليا في القرن 19 مع هيجل (Hegel) اذ رأى أن العالم الموضعي يبدو "كروح مستلبة" وأن غرض التطور هو التغلب على هذا الاستلاب في عملية الادراك والوعي. وقد نظر فويرباخ (Feuerbach) الى الدين على أنه استلاب للماهية الانسانية, كما اعتبر المثالية استلابا للعقل. وخصص ماركس (Marx) جانبا من أعماله لتحليل فكرة الاستلاب لا سيما في "المخطوطات الاقتصادية والفلسفية" فانطلق من المبدأ القائل أن الاستلاب يميز التناقضات القائمة في كل مرحلة من مراحل تطور المجتمع وربط الاستلاب بالملكية الخاصة وبعلاقات الإنتاج القائمة على الاستغلال وعلى التقسيم المتطاحن للعمل. وعموما فالاستلاب عند ماركس هو أن يفقد الإنسان حريته واستقلاله الذاتي بتأثير الأسباب الاقتصادية أو الاجتماعية أو الدينية ويصبح ملكا لغيره أو عبدا للأشياء المادية وأن تتصرف السلطات الحاكمة فيه تصرقها في السلع التجارية.</li>
+                        <li data-i18n="PhiH.lessons.certitude.definitions.card3.point3">روجي غارودي (R. Garaudy): الاغتراب هو ازدواج النسان الذي خلق رموزا ومؤسسات ولم يعد يتعرف عليها كنتاج نشاطه فأصبح يعتبرها مستقلة عن إنسانيته وصعبة المنال.</li>
+                        <li data-i18n="PhiH.lessons.certitude.definitions.card3.point4">جورج غسدورف (G. Gusdorf): أن أخشى ما أخشاه هو الاستلاب الفكري الذي يترك سبيل العالم العيني ويجري وراء أوهام الخطاب.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Card 4: الحقيقة -->
+            <div class="PhiH-definition-card">
+                <h3 class="PhiH-definition-card-title" data-i18n="PhiH.lessons.certitude.definitions.card4.title">الحقيقة La vérité</h3>
+                <div class="PhiH-definition-card-content">
+                    <ul>
+                        <li data-i18n="PhiH.lessons.certitude.definitions.card4.point1">يمكن تعريف الحقيقة بمعنيين: معنى يدل على الموجود والشيء والموضوع والكائن بإطلاق ويدل على الثابت فيه والأساسي والضروري, في مقابل المتغير فيه وغير الحقيقي والباطل والمتوهم والظاهر والسراب. ومعنى يدل على توافق القول مع حقيقة الوجود, أو تطابق المعرفة مع موضوعها في مقابل الخطأ والإبهام. وفي لسان العرب تقال الحقيقة علة معان مختلفة فهي "ما يسير إليه حق الأمر ووجوبه" وما يتصل بذلك من قولهم: "بلغ حقيقة الأمر أي يقين شأنه". وهي أيضا "خالص الأمر ومحضه وكنهه" (الموسوعة الفلسفية العربية).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        <!-- Texts Section -->
+<section class="PhiH-expandable-section">
+    <div class="PhiH-expandable-header" id="textsHeader">
+        <h3 data-i18n="PhiH.lessons.certitude.texts.title">النصوص</h3>
+        <span class="PhiH-expand-icon">▼</span>
+    </div>
+    <div class="PhiH-expandable-content" id="textsContent">
+        <div class="PhiH-texts-container">
+            <ul class="PhiH-texts-list">
+                <li class="PhiH-text-item">
+                    <a href="PhiH_lessons_grade3_theme1_lesson3_text1.html" class="PhiH-text-link">
+                        <span data-i18n="PhiH.lessons.certitude.texts.text1">النص 1: سلطان الفكرة الأولى - ديكارت</span>
+                    </a>
+                </li>
+                <li class="PhiH-text-item">
+                    <a href="PhiH_lessons_grade3_theme1_lesson3_text2.html" class="PhiH-text-link">
+                        <span data-i18n="PhiH.lessons.certitude.texts.text2">النص 2: في الأحكام المسبقة - كريستيان توماسيوس</span>
+                    </a>
+                </li>
+                <li class="PhiH-text-item">
+                    <a href="PhiH_lessons_grade3_theme1_lesson3_text3.html" class="PhiH-text-link">
+                        <span data-i18n="PhiH.lessons.certitude.texts.text3">النص 3: سلطان الرأي - جون ستيوارت ميل</span>
+                    </a>
+                </li>
+                <li class="PhiH-text-item">
+                    <a href="PhiH_lessons_grade3_theme1_lesson3_text4.html" class="PhiH-text-link">
+                        <span data-i18n="PhiH.lessons.certitude.texts.text4">النص 4: سلطة رأي الأغلبية - بيار بابل</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+        
+        <!-- Quotes Section -->
+<section class="PhiH-expandable-section">
+    <div class="PhiH-expandable-header" id="quotesHeader">
+        <h3 data-i18n="PhiH.lessons.certitude.quotes.title">شواهد ونصوص ذات صلة</h3>
+        <span class="PhiH-expand-icon">▼</span>
+    </div>
+    <div class="PhiH-expandable-content" id="quotesContent">
+        <div class="PhiH-quotes-container">
+            <div class="PhiH-quotes-grid">
+                <!-- Quote 1 -->
+                <div class="PhiH-quote-card">
+                    <div class="PhiH-quote-text" data-i18n="PhiH.lessons.certitude.quotes.quote1">
+                        "الطفل هو براءة ونسيان، بداية  
+جديدة، ولعب، وعجلة ذاتية  
+الدوران، وحركة أولى وإرادة  
+إثبات مقدّسة"
+                    </div>
+                    <div class="PhiH-quote-author" data-i18n="PhiH.lessons.certitude.quotes.author1">نيتشه</div>
+                    <div class="PhiH-quote-source" data-i18n="PhiH.lessons.certitude.quotes.source1">هكذا تكلّم زرادشت</div>
+                </div>
+                
+                <!-- Quote 2 -->
+                <div class="PhiH-quote-card">
+                    <div class="PhiH-quote-text" data-i18n="PhiH.lessons.certitude.quotes.quote2">
+                        "إنّ الحقيقة هي ما نعتقد أنّه  
+الحقيقة"
+                    </div>
+                    <div class="PhiH-quote-author" data-i18n="PhiH.lessons.certitude.quotes.author2">روني برجفال</div>
+                    <div class="PhiH-quote-source" data-i18n="PhiH.lessons.certitude.quotes.source2">يوميّات رجل بسيط</div>
+                </div>
+                
+                <!-- Quote 3 -->
+                <div class="PhiH-quote-card">
+                    <div class="PhiH-quote-text" data-i18n="PhiH.lessons.certitude.quotes.quote3">
+                        "لا أحد يودّ أن يظلّ طفلا حتّى لو  
+كان متيقّنا منِ التمتّع إلى الحدّ  
+الأقصى بكلّ ملذّاتِ الطفولة"
+                    </div>
+                    <div class="PhiH-quote-author" data-i18n="PhiH.lessons.certitude.quotes.author3">أرسطو</div>
+                    <div class="PhiH-quote-source" data-i18n="PhiH.lessons.certitude.quotes.source3">أخلاق نيقوماخوس</div>
+                </div>
+
+                <!-- Quote 4 -->
+                <div class="PhiH-quote-card">
+                    <div class="PhiH-quote-text" data-i18n="PhiH.lessons.certitude.quotes.quote4">
+                        "يُصاب أغلب الناس برأي مثلما يُصابون بالحصبة وذلك بفعل العدوى"
+                    </div>
+                    <div class="PhiH-quote-author" data-i18n="PhiH.lessons.certitude.quotes.author4">جيل بايو</div>
+                    <div class="PhiH-quote-source" data-i18n="PhiH.lessons.certitude.quotes.source4">إفلاس التعليم</div>
+                </div>
+
+                <!-- Quote 5 -->
+                <div class="PhiH-quote-card">
+                    <div class="PhiH-quote-text" data-i18n="PhiH.lessons.certitude.quotes.quote5">
+                        "تحتلّ الأحكام المسبقة من الفكر قسما ولكنّها تَسُدُّ كلّ ما تبقّى منه"
+                    </div>
+                    <div class="PhiH-quote-author" data-i18n="PhiH.lessons.certitude.quotes.author5">مالبرانش</div>
+                    <div class="PhiH-quote-source" data-i18n="PhiH.lessons.certitude.quotes.source5">في البحث عن الحقيقة</div>
+                </div>
+
+                <!-- Quote 6 -->
+                <div class="PhiH-quote-card">
+                    <div class="PhiH-quote-text" data-i18n="PhiH.lessons.certitude.quotes.quote6">
+                        "إنّ المغالاة في عقلنة الأحاسيس  
+غالبا ما تفضي إلى فسادها"
+                    </div>
+                    <div class="PhiH-quote-author" data-i18n="PhiH.lessons.certitude.quotes.author6">الطاهر بن جلون</div>
+                    <div class="PhiH-quote-source" data-i18n="PhiH.lessons.certitude.quotes.source6">فندق الفقراء</div>
+                </div>
+
+                <!-- Quote 7 -->
+                <div class="PhiH-quote-card">
+                    <div class="PhiH-quote-text" data-i18n="PhiH.lessons.certitude.quotes.quote7">
+                        "للقلب دواع لا يدركها العقل"
+                    </div>
+                    <div class="PhiH-quote-author" data-i18n="PhiH.lessons.certitude.quotes.author7">باسكال</div>
+                    <div class="PhiH-quote-source" data-i18n="PhiH.lessons.certitude.quotes.source7">خواطر</div>
+                </div>
+
+                <!-- Quote 8 -->
+                <div class="PhiH-quote-card">
+                    <div class="PhiH-quote-text" data-i18n="PhiH.lessons.certitude.quotes.quote8">
+                        "سبات العقل يولّد مسوخا"
+                    </div>
+                    <div class="PhiH-quote-author" data-i18n="PhiH.lessons.certitude.quotes.author8">فرنسيسكو غويا</div>
+                    <div class="PhiH-quote-source" data-i18n="PhiH.lessons.certitude.quotes.source8"></div>
+                </div>
+
+                <!-- Quote 9 -->
+                <div class="PhiH-quote-card">
+                    <div class="PhiH-quote-text" data-i18n="PhiH.lessons.certitude.quotes.quote9">
+                        "إنّ استمرار رأي ما في البقاء لا يثبت شيئا في شأن قيمته، فما يزال يوجد إلى اليوم منجّمون"
+                    </div>
+                    <div class="PhiH-quote-author" data-i18n="PhiH.lessons.certitude.quotes.author9">جان روستان</div>
+                    <div class="PhiH-quote-source" data-i18n="PhiH.lessons.certitude.quotes.source9">مفكّرة عالم أحياء</div>
+                </div>
+
+                <!-- Quote 10 -->
+                <div class="PhiH-quote-card">
+                    <div class="PhiH-quote-text" data-i18n="PhiH.lessons.certitude.quotes.quote10">
+                        "إنّ للمحاكاة تأثيرا عاما في أحكامنا: لأنّ هناك سببا قويّا لأنّ نعتبر حقيقيّا ما أقرّ آخرون أنّه كذلك"
+                    </div>
+                    <div class="PhiH-quote-author" data-i18n="PhiH.lessons.certitude.quotes.author10">كانط</div>
+                    <div class="PhiH-quote-source" data-i18n="PhiH.lessons.certitude.quotes.source10">المنطق</div>
+                </div>
+
+                <!-- Quote 11 -->
+                <div class="PhiH-quote-card">
+                    <div class="PhiH-quote-text" data-i18n="PhiH.lessons.certitude.quotes.quote11">
+                        "إنّ العلامة الدالة على الأسوأ هي إجماع الحشد"
+                    </div>
+                    <div class="PhiH-quote-author" data-i18n="PhiH.lessons.certitude.quotes.author11">سيناك</div>
+                    <div class="PhiH-quote-source" data-i18n="PhiH.lessons.certitude.quotes.source11"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        <!-- Conclusion -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="conclusionHeader">
+                <h3 data-i18n="PhiH.lessons.certitude.conclusion.title">الخاتمة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="conclusionContent">
+                <p data-i18n="PhiH.lessons.certitude.conclusion.text1">
+                    تبرز الوثوقية كظاهرة فكرية تهدد بتجميد العقل وإيقاف عجلة التطور المعرفي. فمن خلال تمسكها باليقين المطلق ورفضها لكل شكل من أشكال الشك والنقد، تحول الوثوقية الفكر من حقل للإبداع والتجديد إلى سجن للأفكار الجامدة.
+                </p>
+                <p data-i18n="PhiH.lessons.certitude.conclusion.text2">
+                    يواجه الفكر المعاصر تحدياً حقيقياً في الحفاظ على حيويته ومرونته في مواجهة هذه النزعة الوثوقية المسيطرة. فالقدرة على تجاوز الوثوقية تتطلب وعياً نقدياً وشجاعة فكرية تمكن العقل من التحرر من قيود اليقين المطلق نحو فضاء الشك الخلاق والمعرفة المتطورة.
+                </p>
+                <p data-i18n="PhiH.lessons.certitude.conclusion.text3">
+                    في النهاية، تبقى الفلسفة أداة أساسية لفهم ظاهرة الوثوقية وتطوير آليات نقدية تمكن العقل من الحفاظ على حريته وحيويته في عالم يتسم بتزايد الضغوط نحو الجمود الفكري والتصلب العقائدي.
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Page-specific translations for certitude lesson
+        window.translations_PhiHcertitude = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                
+                // Certitude lesson specific translations
+                "PhiH.lessons.certitude.title": "Dogmatisme",
+                "PhiH.lessons.certitude.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                "PhiH.lessons.certitude.introduction.title": "Introduction",
+                "PhiH.lessons.certitude.introduction.text1": "La certitude intellectuelle est associée à la stabilité et à la rigidité, ce qui en fait pour certains un état de sécurité cognitive, et pour d'autres une condition de stabilité intellectuelle en tant que fondée sur une certitude solide. Cependant, tout cela ne doit pas masquer la négativité qui accompagne la certitude en tant qu'état marqué par la fermeture et la rigidité en raison de l'incapacité des dogmatiques à réviser leurs idées et à juger les choses de manière critique, ce qui nécessite de réfléchir à la relation entre l'exercice de la raison et la tendance dogmatique.",
+                "PhiH.lessons.certitude.introduction.text2": "Alors que la certitude est considérée comme le but de la connaissance et l'objectif de la pensée, la réalité révèle une image différente de cet objectif qui peut se transformer en une contrainte limitant le développement de la connaissance et restreignant la liberté de pensée. Le dogmatisme, en tant que foi absolue dans les croyances et les idées sans examen ni critique, menace de transformer la pensée en un dogme rigide qui refuse la révision et le développement, conduisant à une stagnation intellectuelle qui entrave le progrès cognitif et social.",
+                
+                "PhiH.lessons.certitude.definitions.title": "Définitions",
+    
+    "PhiH.lessons.certitude.definitions.card1.title": "Dogmatisme (Doctrinarisme) Dogmatisme",
+    "PhiH.lessons.certitude.definitions.card1.point1": "<strong>Dogmatisme linguistiquement:</strong> Dérivé du verbe faire confiance, avoir confiance, confiance, et confiant, et confiance, et la confiance d'un homme envers un autre : il lui a fait confiance donc il est confiant en lui, et l'objet est digne de confiance, et elle est digne de confiance, et ils sont dignes de confiance. \"Le Nouveau Dictionnaire des Étudiants\"",
+    "PhiH.lessons.certitude.definitions.card1.point2": "\"Dictionnaire des Termes et Témoignages Philosophiques\": C'est la doctrine de ceux qui font confiance à la raison et à sa capacité absolue à percevoir la vérité et à atteindre la certitude, et en ce sens elle s'oppose au scepticisme (scepticisme). Le dogmatisme en général est la caractéristique de celui qui a confiance en son esprit et en ses théories et leur reconnaît une grande autorité sans penser à la possibilité qu'elles contiennent des erreurs et des illusions.",
+    "PhiH.lessons.certitude.definitions.card1.point3": "Le dogmatisme selon Kant: C'est la tendance à accepter les principes que la raison a adoptés depuis longtemps sans rechercher la nature de ces principes, leur légitimité et leur valeur, c'est-à-dire sans entreprendre une critique des principes de la raison pure. En ce sens, il s'oppose à la critique (La criticisme) kantienne.",
+    "PhiH.lessons.certitude.definitions.card1.point4": "Pascal: Notre incapacité à raisonner ne peut être surmontée par aucune tendance dogmatique, et au contraire, l'idée que nous avons de la vérité n'est pas ébranlée par aucune tendance sceptique.",
+    "PhiH.lessons.certitude.definitions.card1.point5": "Ernest Renan E.Renan: Nous jetons par-dessus bord à la fois le scepticisme naïf et le dogmatisme scolaire, nous sommes donc des dogmatiques critiques.",
+    
+    "PhiH.lessons.certitude.definitions.card2.title": "L'illusion illusion",
+    "PhiH.lessons.certitude.definitions.card2.point1": "<strong>Linguistiquement:</strong> L'illusion est ce qui vient à l'esprit comme une pensée / le chemin large (pluriel) illusions, et illusions, et illusion - On dit: aucune illusion à ce sujet, c'est-à-dire inévitable. (Le Nouveau Dictionnaire des Étudiants)",
+    "PhiH.lessons.certitude.definitions.card2.point2": "Philosophiquement: C'est toute erreur dans la perception, le jugement, la pensée ou le raisonnement, à condition que ce soit une erreur naturelle, car celui qui la commet est trompé par les apparences. L'illusion est que l'individu se représente dans son esprit des images fausses ou des phénomènes non réels qu'il croit exister réellement à l'extérieur comme il se les représente, alors qu'ils n'existent pas de la manière dont il se les représente: exemple: voir un bâton dans l'eau comme brisé alors qu'il est droit, et voir une tour comme ronde alors qu'elle est très éloignée et grande. Et il faut distinguer entre l'illusion et l'hallucination (hallucination). Considérant que l'hallucination survient en l'absence d'objets externes.",
+    "PhiH.lessons.certitude.definitions.card2.point3": "Valéry (P.valéry): La société ne vit que d'illusions et toute société n'est qu'un rêve collectif. Et ces illusions deviennent des illusions dangereuses lorsqu'elles cessent d'être illusoires. Et le cauchemar, c'est de se réveiller de ce genre de rêve.",
+    "PhiH.lessons.certitude.definitions.card2.point4": "Joubert: L'illusion se produit dans les sens et l'erreur se produit dans les jugements. Et nous pouvons en même temps profiter de l'illusion et percevoir la vérité. (Dictionnaire des Termes et Témoignages Philosophiques)",
+    "PhiH.lessons.certitude.definitions.card2.point5": "Freud: L'illusion émane de désirs humains \"l'illusion de Christophe Colomb découvrant une nouvelle route maritime vers l'Inde, l'illusion d'une race humaine plus civilisée qu'une autre...\" L'illusion est une sublimation de désirs psychiques inconscients \"son domaine est psychique\". (Livre de Philosophie pour la Troisième Année Littéraire).",
+    
+    "PhiH.lessons.certitude.definitions.card3.title": "L'aliénation (l'acculturation) acculturation",
+    "PhiH.lessons.certitude.definitions.card3.point1": "<strong>Linguistiquement:</strong> Aliénation [a, l, i] (source d'aliéner): Il a tenté d'aliéner son argent: c'est-à-dire de le détourner. Il vit une vie d'aliénation: une vie de soumission et d'asservissement due à des circonstances sociales, économiques, intellectuelles ou politiques indépendantes de sa volonté, séduction, tentation (Dictionnaire des Significations. Dictionnaire Arabe-Arabe)",
+    "PhiH.lessons.certitude.definitions.card3.point2": "Philosophiquement: C'est généralement l'état de quelqu'un qui appartient à autre chose que lui-même. On peut retracer les sources de l'idée d'aliénation ou d'acculturation aux penseurs des Lumières en France (Jean-Jacques Rousseau) et en Allemagne où cette idée exprimait une protestation contre le caractère inhumain des relations de propriété privée. Cette idée a pris une dimension idéale au 19ème siècle avec Hegel (Hegel) qui voyait le monde objectif apparaître comme \"un esprit aliéné\" et dont le but du développement était de surmonter cette aliénation dans le processus de perception et de conscience. Feuerbach (Feuerbach) considérait la religion comme une aliénation de l'essence humaine, et considérait l'idéalisme comme une aliénation de la raison. Marx (Marx) a consacré une partie de ses travaux à l'analyse de l'idée d'aliénation, notamment dans les \"Manuscrits économiques et philosophiques\", partant du principe que l'aliénation caractérise les contradictions existantes à chaque étape du développement de la société et liant l'aliénation à la propriété privée et aux relations de production basées sur l'exploitation et sur la division du travail déchirante. En général, l'aliénation selon Marx est que l'homme perd sa liberté et son indépendance autonome sous l'influence de causes économiques, sociales ou religieuses et devient la propriété d'autrui ou l'esclave des choses matérielles et que les autorités gouvernantes le traitent comme des marchandises commerciales.",
+    "PhiH.lessons.certitude.definitions.card3.point3": "Roger Garaudy (R. Garaudy): L'aliénation est le dédoublement de l'homme qui a créé des symboles et des institutions et ne les reconnaît plus comme le produit de son activité, et a commencé à les considérer comme indépendantes de son humanité et difficiles à atteindre.",
+    "PhiH.lessons.certitude.definitions.card3.point4": "Georges Gusdorf (G. Gusdorf): Ce que je crains le plus est l'aliénation intellectuelle qui abandonne le monde sensible et court après les illusions du discours.",
+    
+    "PhiH.lessons.certitude.definitions.card4.title": "La vérité La vérité",
+    "PhiH.lessons.certitude.definitions.card4.point1": "La vérité peut être définie en deux sens: un sens qui désigne l'existant, la chose, l'objet et l'être de manière absolue et désigne ce qui est constant, fondamental et nécessaire, par opposition à ce qui est variable, non réel, faux, illusoire, apparent et mirage. Et un sens qui désigne la conformité de la parole avec la vérité de l'existence, ou la correspondance de la connaissance avec son objet, par opposition à l'erreur et à l'ambiguïté. Dans la langue arabe, la vérité est dite pour des significations différentes, c'est \"ce vers quoi va le droit de la chose et son obligation\" et ce qui est lié à cela de leur parole: \"a atteint la vérité de la chose c'est-à-dire la certitude de son affaire\". C'est aussi \"le cœur de l'affaire, son pur et son essence\" (L'Encyclopédie Philosophique Arabe).",
+                
+                "PhiH.lessons.certitude.texts.title": "Textes",
+                "PhiH.lessons.certitude.texts.text1": "Texte 1: La souveraineté de la première idée - Descartes",
+                
+                // Quotes section translations
+                "PhiH.lessons.certitude.quotes.title": "Citations et textes connexes",
+                "PhiH.lessons.certitude.quotes.quote1": "\"L'enfant est innocence et oubli, un nouveau commencement, un jeu, une roue qui roule d'elle-même, un premier mouvement, une sainte affirmation.\"",
+                "PhiH.lessons.certitude.quotes.quote2": "\"La vérité est ce que nous croyons être la vérité.\"",
+                "PhiH.lessons.certitude.quotes.quote3": "\"Personne ne voudrait rester un enfant même s'il était certain de jouir au maximum de tous les plaisirs de l'enfance.\"",
+                "PhiH.lessons.certitude.quotes.author1": "Nietzsche",
+                "PhiH.lessons.certitude.quotes.source1": "Ainsi parlait Zarathoustra",
+                "PhiH.lessons.certitude.quotes.author2": "René Brangival",
+                "PhiH.lessons.certitude.quotes.source2": "Journal d'un homme simple",
+                "PhiH.lessons.certitude.quotes.author3": "Aristote",
+                "PhiH.lessons.certitude.quotes.source3": "Éthique à Nicomaque",
+                
+                "PhiH.lessons.certitude.conclusion.title": "Conclusion",
+                "PhiH.lessons.certitude.conclusion.text1": "Le dogmatisme émerge comme un phénomène intellectuel qui menace de figer l'esprit et d'arrêter la roue du développement cognitif. En s'accrochant à la certitude absolue et en refusant toute forme de doute et de critique, le dogmatisme transforme la pensée d'un champ de créativité et d'innovation en une prison d'idées rigides.",
+                "PhiH.lessons.certitude.conclusion.text2": "La pensée contemporaine fait face à un véritable défi pour maintenir sa vitalité et sa flexibilité face à cette tendance dogmatique dominante. La capacité à dépasser le dogmatisme nécessite une conscience critique et un courage intellectuel permettant à l'esprit de se libérer des contraintes de la certitude absolue vers l'espace du doute créateur et de la connaissance évolutive.",
+                "PhiH.lessons.certitude.conclusion.text3": "En fin de compte, la philosophie reste un outil essentiel pour comprendre le phénomène du dogmatisme et développer des mécanismes critiques permettant à l'esprit de préserver sa liberté et sa vitalité dans un monde caractérisé par des pressions croissantes vers la stagnation intellectuelle et la rigidité doctrinale.",
+				// Add these to the existing fr object:
+"PhiH.lessons.certitude.texts.text2": "Texte 2: Dans les Préjugés - Christian Thomasius",
+"PhiH.lessons.certitude.texts.text3": "Texte 3: La Souveraineté de l'Opinion - John Stuart Mill", 
+"PhiH.lessons.certitude.texts.text4": "Texte 4: Le Pouvoir de l'Opinion Majoritaire - Pierre Bayle",
+
+"PhiH.lessons.certitude.quotes.quote4": "La plupart des gens attrapent une opinion comme ils attrapent la rougeole, par contagion",
+"PhiH.lessons.certitude.quotes.author4": "Gilles Bachelot",
+"PhiH.lessons.certitude.quotes.source4": "La Faillite de l'Éducation",
+
+"PhiH.lessons.certitude.quotes.quote5": "Les préjugés occupent une partie de l'esprit mais ils bouchent tout le reste",
+"PhiH.lessons.certitude.quotes.author5": "Malebranche", 
+"PhiH.lessons.certitude.quotes.source5": "De la Recherche de la Vérité",
+
+"PhiH.lessons.certitude.quotes.quote6": "L'excès de rationalisation des sentiments conduit souvent à leur corruption",
+"PhiH.lessons.certitude.quotes.author6": "Tahar Ben Jelloun",
+"PhiH.lessons.certitude.quotes.source6": "L'Hôtel des Pauvres",
+
+"PhiH.lessons.certitude.quotes.quote7": "Le cœur a ses raisons que la raison ne connaît point",
+"PhiH.lessons.certitude.quotes.author7": "Pascal",
+"PhiH.lessons.certitude.quotes.source7": "Pensées",
+
+"PhiH.lessons.certitude.quotes.quote8": "Le sommeil de la raison engendre des monstres",
+"PhiH.lessons.certitude.quotes.author8": "Francisco Goya",
+"PhiH.lessons.certitude.quotes.source8": "",
+
+"PhiH.lessons.certitude.quotes.quote9": "La persistance d'une opinion ne prouve rien quant à sa valeur, il existe encore aujourd'hui des astrologues",
+"PhiH.lessons.certitude.quotes.author9": "Jean Rostand", 
+"PhiH.lessons.certitude.quotes.source9": "Carnet d'un Biologiste",
+
+"PhiH.lessons.certitude.quotes.quote10": "L'imitation a une influence générale sur nos jugements : car il y a une forte raison de considérer comme vrai ce que d'autres ont reconnu comme tel",
+"PhiH.lessons.certitude.quotes.author10": "Kant",
+"PhiH.lessons.certitude.quotes.source10": "Logique",
+
+"PhiH.lessons.certitude.quotes.quote11": "Le signe indicateur du pire est l'unanimité de la foule",
+"PhiH.lessons.certitude.quotes.author11": "Sénèque",
+"PhiH.lessons.certitude.quotes.source11": ""
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                
+                // Certitude lesson specific translations
+    "PhiH.lessons.certitude.title": "Dogmatism",
+                "PhiH.lessons.certitude.level": "3rd Secondary - Philosophy",
+                
+                "PhiH.lessons.certitude.introduction.title": "Introduction",
+                "PhiH.lessons.certitude.introduction.text1": "Intellectual certainty is associated with stability and rigidity, which makes it for some a state of cognitive security, and for others a condition of intellectual stability as it is based on solid certainty. However, all this should not obscure the negativity that accompanies certainty as a state marked by closure and rigidity due to the inability of dogmatists to revise their ideas and judge things critically, which requires thinking about the relationship between the exercise of reason and the dogmatic tendency.",
+                "PhiH.lessons.certitude.introduction.text2": "While certainty is considered the goal of knowledge and the aim of thought, reality reveals a different picture of this goal which can turn into a constraint limiting the development of knowledge and restricting freedom of thought. Dogmatism, as an absolute faith in beliefs and ideas without examination or criticism, threatens to transform thought into a rigid dogma that refuses revision and development, leading to intellectual stagnation that hinders cognitive and social progress.",
+                
+                "PhiH.lessons.certitude.definitions.title": "Definitions",
+    
+    "PhiH.lessons.certitude.definitions.card1.title": "Dogmatism (Doctrinairism)",
+    "PhiH.lessons.certitude.definitions.card1.point1": "<strong>Dogmatism linguistically:</strong> Derived from the verb to trust, to have trust, trust, and trustworthy, and trust, and a man's trust in others: he trusted him so he is confident in him, and the object is trustworthy, and she is trustworthy, and they are trustworthy. \"The New Student Dictionary\"",
+    "PhiH.lessons.certitude.definitions.card1.point2": "\"Dictionary of Philosophical Terms and Testimonies\": It is the doctrine of those who trust reason and its absolute ability to perceive truth and reach certainty, and in this sense it is opposite to skepticism (scepticisme). Dogmatism in general is the characteristic of someone who trusts his mind and his theories and recognizes for them great authority without thinking about the possibility that they contain error and misguidance.",
+    "PhiH.lessons.certitude.definitions.card1.point3": "Dogmatism according to Kant: It is the tendency to accept the principles that reason has relied upon since ancient times without researching the nature of these principles, their legitimacy and their value, meaning without undertaking a critique of the principles of pure reason, and in this sense it is opposite to the Kantian critical philosophy (La criticisme).",
+    "PhiH.lessons.certitude.definitions.card1.point4": "Pascal: Our inability to reason cannot be overcome by any dogmatic tendency, and on the contrary, the idea we have of truth is not shaken by any skeptical tendency.",
+    "PhiH.lessons.certitude.definitions.card1.point5": "Ernest Renan E.Renan: We throw overboard both naive skepticism and scholastic dogmatism, so we are critical dogmatists.",
+    
+    "PhiH.lessons.certitude.definitions.card2.title": "Illusion",
+    "PhiH.lessons.certitude.definitions.card2.point1": "<strong>Linguistically:</strong> Illusion is what occurs in the mind as a thought/the wide path (plural) illusions, and illusions, and illusion - It is said: no illusion about that, meaning it is inevitable. (The New Student Dictionary)",
+    "PhiH.lessons.certitude.definitions.card2.point2": "Philosophically: It is any error in perception, judgment, thinking or reasoning, provided it is a natural error, because the one who falls into it is deceived by appearances. Illusion is when a person represents in his mind false images or unreal phenomena that he believes truly exist externally as he represents them, while they do not exist in the way he represents them: example: seeing a stick in water as broken while it is straight, and seeing a tower as round while it is very far away and large. And one should distinguish between illusion and hallucination (hallucination). Considering that hallucination arises in the absence of external objects.",
+    "PhiH.lessons.certitude.definitions.card2.point3": "Valéry (P.valéry): Society lives only on illusions and every society is but a collective dream. And these illusions become dangerous illusions when they cease to be illusory. And the nightmare is to wake up from this kind of dream.",
+    "PhiH.lessons.certitude.definitions.card2.point4": "Joubert: Illusion occurs in the senses and error occurs in judgments. And we can at the same time enjoy illusion and perceive truth. (Dictionary of Philosophical Terms and Testimonies)",
+    "PhiH.lessons.certitude.definitions.card2.point5": "Freud: Illusion stems from human desires \"the illusion of Christopher Columbus discovering a new sea route to India, the illusion of one human race being more civilized than another...\" Illusion is a sublimation of unconscious psychological desires \"its domain is psychological\". (Philosophy Book for Third Year Literature).",
+    
+    "PhiH.lessons.certitude.definitions.card3.title": "Alienation (Acculturation)",
+    "PhiH.lessons.certitude.definitions.card3.point1": "<strong>Linguistically:</strong> Alienation [a, l, i] (source of alienate): He attempted to alienate his money: meaning to embezzle it. He lives a life of alienation: a life of submission and enslavement due to social, economic, intellectual, or political circumstances beyond his will, seduction, temptation (Dictionary of Meanings. Arabic-Arabic Dictionary)",
+    "PhiH.lessons.certitude.definitions.card3.point2": "Philosophically: It is generally the state of being owned by something other than oneself. The sources of the idea of alienation or acculturation can be traced back to Enlightenment thinkers in France (Jean-Jacques Rousseau) and in Germany where this idea expressed protest against the inhuman character of private property relations. This idea took on an ideal dimension in the 19th century with Hegel (Hegel) who saw the objective world appear as \"an alienated spirit\" and whose purpose of development was to overcome this alienation in the process of perception and consciousness. Feuerbach (Feuerbach) viewed religion as an alienation of human essence, and considered idealism an alienation of reason. Marx (Marx) devoted part of his work to analyzing the idea of alienation, especially in the \"Economic and Philosophic Manuscripts\", starting from the principle that alienation characterizes the existing contradictions at every stage of society's development and linking alienation to private property and production relations based on exploitation and on the tearing division of labor. In general, alienation according to Marx is that man loses his freedom and his self-independence under the influence of economic, social or religious causes and becomes the property of others or a slave to material things and that the ruling authorities treat him as commercial goods.",
+    "PhiH.lessons.certitude.definitions.card3.point3": "Roger Garaudy (R. Garaudy): Alienation is the doubling of man who created symbols and institutions and no longer recognizes them as the product of his activity, and began to consider them independent of his humanity and difficult to attain.",
+    "PhiH.lessons.certitude.definitions.card3.point4": "Georges Gusdorf (G. Gusdorf): What I fear most is intellectual alienation that abandons the sensible world and runs after the illusions of discourse.",
+    
+    "PhiH.lessons.certitude.definitions.card4.title": "Truth",
+    "PhiH.lessons.certitude.definitions.card4.point1": "Truth can be defined in two meanings: a meaning that indicates the existent, the thing, the object and the being absolutely and indicates the constant, fundamental and necessary in it, in contrast to the variable in it and the unreal, false, illusory, apparent and mirage. And a meaning that indicates the agreement of speech with the truth of existence, or the correspondence of knowledge with its object, in contrast to error and ambiguity. In the Arabic language, truth is said for different meanings, it is \"what the right of the matter and its obligation goes to\" and what is connected to that from their saying: \"reached the truth of the matter meaning the certainty of its affair\". It is also \"the pure matter, its essence and its core\" (The Arabic Philosophical Encyclopedia).",
+                
+                "PhiH.lessons.certitude.texts.title": "Texts",
+                "PhiH.lessons.certitude.texts.text1": "Text 1: The Sovereignty of the First Idea - Descartes",
+                "PhiH.lessons.certitude.texts.text2": "Text 2: [to be added later]",
+                "PhiH.lessons.certitude.texts.text3": "Text 3: [to be added later]",
+                
+                // Quotes section translations
+                "PhiH.lessons.certitude.quotes.title": "Related Quotes and Texts",
+                "PhiH.lessons.certitude.quotes.quote1": "\"The child is innocence and forgetting, a new beginning, a game, a self-propelled wheel, a first movement, a sacred 'Yes'.\"",
+                "PhiH.lessons.certitude.quotes.quote2": "\"Truth is what we believe to be truth.\"",
+                "PhiH.lessons.certitude.quotes.quote3": "\"No one would wish to remain a child even if he were certain to enjoy to the utmost all the pleasures of childhood.\"",
+                "PhiH.lessons.certitude.quotes.author1": "Nietzsche",
+                "PhiH.lessons.certitude.quotes.source1": "Thus Spoke Zarathustra",
+                "PhiH.lessons.certitude.quotes.author2": "René Brangival",
+                "PhiH.lessons.certitude.quotes.source2": "Diary of a Simple Man",
+                "PhiH.lessons.certitude.quotes.author3": "Aristotle",
+                "PhiH.lessons.certitude.quotes.source3": "Nicomachean Ethics",
+                
+                "PhiH.lessons.certitude.conclusion.title": "Conclusion",
+                "PhiH.lessons.certitude.conclusion.text1": "Dogmatism emerges as an intellectual phenomenon that threatens to freeze the mind and stop the wheel of cognitive development. By clinging to absolute certainty and refusing all forms of doubt and criticism, dogmatism transforms thought from a field of creativity and innovation into a prison of rigid ideas.",
+                "PhiH.lessons.certitude.conclusion.text2": "Contemporary thought faces a real challenge in maintaining its vitality and flexibility in the face of this dominant dogmatic tendency. The ability to transcend dogmatism requires critical awareness and intellectual courage enabling the mind to free itself from the constraints of absolute certainty towards the space of creative doubt and evolving knowledge.",
+                "PhiH.lessons.certitude.conclusion.text3": "Ultimately, philosophy remains an essential tool for understanding the phenomenon of dogmatism and developing critical mechanisms that enable the mind to preserve its freedom and vitality in a world characterized by increasing pressures towards intellectual stagnation and doctrinal rigidity.",
+				// Add these to the existing en object:
+"PhiH.lessons.certitude.texts.text2": "Text 2: On Prejudices - Christian Thomasius",
+"PhiH.lessons.certitude.texts.text3": "Text 3: The Sovereignty of Opinion - John Stuart Mill", 
+"PhiH.lessons.certitude.texts.text4": "Text 4: The Power of Majority Opinion - Pierre Bayle",
+
+"PhiH.lessons.certitude.quotes.quote4": "Most people catch an opinion as they catch the measles, by contagion",
+"PhiH.lessons.certitude.quotes.author4": "Gilles Bachelot",
+"PhiH.lessons.certitude.quotes.source4": "The Bankruptcy of Education",
+
+"PhiH.lessons.certitude.quotes.quote5": "Prejudices occupy a part of the mind but they block all the rest",
+"PhiH.lessons.certitude.quotes.author5": "Malebranche", 
+"PhiH.lessons.certitude.quotes.source5": "The Search After Truth",
+
+"PhiH.lessons.certitude.quotes.quote6": "The excess of rationalizing feelings often leads to their corruption",
+"PhiH.lessons.certitude.quotes.author6": "Tahar Ben Jelloun",
+"PhiH.lessons.certitude.quotes.source6": "The Poor's Hotel",
+
+"PhiH.lessons.certitude.quotes.quote7": "The heart has its reasons which reason does not know",
+"PhiH.lessons.certitude.quotes.author7": "Pascal",
+"PhiH.lessons.certitude.quotes.source7": "Thoughts",
+
+"PhiH.lessons.certitude.quotes.quote8": "The sleep of reason produces monsters",
+"PhiH.lessons.certitude.quotes.author8": "Francisco Goya",
+"PhiH.lessons.certitude.quotes.source8": "",
+
+"PhiH.lessons.certitude.quotes.quote9": "The persistence of an opinion proves nothing about its value, there are still astrologers today",
+"PhiH.lessons.certitude.quotes.author9": "Jean Rostand", 
+"PhiH.lessons.certitude.quotes.source9": "Notebook of a Biologist",
+
+"PhiH.lessons.certitude.quotes.quote10": "Imitation has a general influence on our judgments: because there is a strong reason to consider as true what others have acknowledged as such",
+"PhiH.lessons.certitude.quotes.author10": "Kant",
+"PhiH.lessons.certitude.quotes.source10": "Logic",
+
+"PhiH.lessons.certitude.quotes.quote11": "The indicator of the worst is the unanimity of the crowd",
+"PhiH.lessons.certitude.quotes.author11": "Seneca",
+"PhiH.lessons.certitude.quotes.source11": ""
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                
+                // Certitude lesson specific translations
+    "PhiH.lessons.certitude.title": "الوثوقية",
+                "PhiH.lessons.certitude.level": "السنة الثالثة ثانوي - الفلسفة",
+                
+                "PhiH.lessons.certitude.introduction.title": "التمهيد",
+                "PhiH.lessons.certitude.introduction.text1": "ترتبط الوثوقية الفكرية بالثبات والجمود، وهو ما يجعلها في نظر البعض حالة من الأمان المعرفي، ويجعل منها البعض الآخر شرط الاستقرار الفكري من حيث هو قائم على يقين راسخ. غير أنّ كل ذلك لا ينبغي أن يحجب مدى السلبيّة التي تلازم الوثوقية كحالة موسومة بالانغلاق والتصلب بسبب عدم قدرة الوثوقيين على مراجعة أفكارهم والحكم على الأشياء بشكل نقدي مما يستدعي التفكير في العلاقة بين إعمال العقل والنزعة الوثوقية.",
+                "PhiH.lessons.certitude.introduction.text2": "ففي الوقت الذي يُنظَر فيه إلى اليقين على أنّه غاية المعرفة وضالة الفكر، يكشف الواقع عن صورة مغايرة لهذه الغاية التي قد تتحول إلى قيد يحد من تطور المعرفة ويقيد حرية الفكر. فالوثوقية بوصفها إيماناً مطلقاً بالمعتقدات والأفكار دون تمحيص أو نقد، تهدد بتحويل الفكر إلى عقيدة جامدة ترفض المراجعة والتطوير، مما يؤدي إلى جمود فكري يعيق التقدم المعرفي والاجتماعي.",
+                
+                "PhiH.lessons.certitude.definitions.title": "التعريفات",
+    
+    "PhiH.lessons.certitude.definitions.card1.title": "الوثوقية (الدغمائية) Dogmatisme",
+    "PhiH.lessons.certitude.definitions.card1.point1": "<strong>الوثوقية لغة:</strong> مشتقة من فعل وثق, يثق, ثقة ,وموثقا, ووثوقا, ووثاقة الرجل بغيره :ائتمنه فهو واثق به ,والمفعول موثوق به, وهي موثوق بها, وهم موثوق بهم. \" القاموس الجديد للطلاب \"",
+    "PhiH.lessons.certitude.definitions.card1.point2": "\"معجم المصطلحات و الشواهد الفلسفية\": هي مذهب من يثق بالعقل و بقدرته المطلقة على إدراك الحقيقة و الوصول إلى اليقين وهي بهذا المعنى مقابلة للريبية (scepticisme) و الدغمائية عموما هي صفة من يثق بعقله وبنظرياته ويعترف لها بسلطان عظيم دون التفكير في امكان اشتمالها على الخطأ و الظلال.",
+    "PhiH.lessons.certitude.definitions.card1.point3": "الدغمائية في نظر كانط Kant: هي الميل الى التسليم بالمبادئ التي يعتمدها العقل منذ قديم دون البحث في طبيعة هذه المبادئ وشرعيتها وقيمتها أي دون القيام بنقد مبادئ العقل المحض وهي بهذا المعنى مقابلة للنقدية (La criticisme) الكانطية.",
+    "PhiH.lessons.certitude.definitions.card1.point4": "باسكال: ان عجزنا عن الاستدلال لا تقدر على تجاوزه أية نزعة دغمائية وعلى العكس إن الفكرة التي نملكها عن الحقيقة لا تزعزعها أية نزعة شكية.",
+    "PhiH.lessons.certitude.definitions.card1.point5": "أرنست رينان E.Renan: إننا نرمي عرض الحائط بكل من النزعة الشكية الساذجة والنزعة الدغمائية المدرسية, فنحن إذن دغمائيون نقديون.",
+    
+    "PhiH.lessons.certitude.definitions.card2.title": "الوهم illusion",
+    "PhiH.lessons.certitude.definitions.card2.point1": "<strong>لغة:</strong> الوهم هو ما يقع في الذهن من الخاطر / الطريق الواسع (ج) أوهام, ووهوم, ووهم- يقال: لا وهم من ذلك أي لابد منه. (القاموس الجديد للطلاب)",
+    "PhiH.lessons.certitude.definitions.card2.point2": "فلسفيا: هو كل خطأ في الادراك أو الحكم أو التفكير و الاستدلال بشرط أن يكون خطأ طبيعيا, لأن الذي يقع فيه إنما تخدعه الظواهر. فالوهم هو أن يتمثل المرء في ذهنه صورا كاذبة أو ظواهر غير حقيقية يعتقد أنها موجودة حقا في الخارج مثلما يتمثلها في حين أنها غير موجودة على النحو الذي يتمثلها: مثال ذلك: رؤية العصا في الماء منكسرة في حين أنها مستقيمة,ورؤية البرج مستديرا في حين أنها بعيدة جدا وعظيمة. و ينبغي التمييز بين الوهم والهلوسة (hallucination). باعتبار أن الهلوسة تنشأ في غياب الموضوعات الخارجية.",
+    "PhiH.lessons.certitude.definitions.card2.point3": "فاليري (P.valéry): لا يعيش المجتمع إلا بالأوهام وكل مجتمع انما هو عبارة عن حلم جماعي. وتصبح هذه الأوهام أوهاما خطيرة عندما تكف عن الإيهام. و إما الكابوس فهو أن يستيقظ المرء من هذا النوع من الحلم.",
+    "PhiH.lessons.certitude.definitions.card2.point4": "جوبير (Joubert): يحصل الوهم في الحواس و يحصل الخطأ في الأحكام. و يمكننا في نفس الوقت أن نتمتع بالوهم وأن ندرك الحقيقة. (معجم المصطلحات و الشواهد الفلسفية)",
+    "PhiH.lessons.certitude.definitions.card2.point5": "فرويد: الوهم متغرع من رغبات إنسانية \"توهم كريستوف كولومبس اكتشافه طريق بحرية جديدة للهند, توهم عرق بشري حضريا على الآخر...\" فالوهم تصعيد لرغبات نفسية لا شعورية \"مجاله نفسي\". (كتاب الفلسفة للسنة ثالثة آداب).",
+    
+    "PhiH.lessons.certitude.definitions.card3.title": "الاستلاب (الاغتراب) acculturation",
+    "PhiH.lessons.certitude.definitions.card3.point1": "<strong>لغة:</strong> استلاب [س, ل,ب] (مصدر استلب): حاول استلاب أمواله: أي اختلاسها. يعيش حياة استلاب: حياة خضوع و استعباد بفعل ظروف اجتماعية, اقتصادية, أو فكرية, أو سياسية خارجة عن إرادته, استهواء, إغواء (قاموس المعاني. قاموس عربي عربي)",
+    "PhiH.lessons.certitude.definitions.card3.point2": "فلسفيا: هو عموما حالة من يكون ملكا لشيء آخر غيره. ويمكن تتبع مصادر فكرة الاستلاب أو الاغتراب إلى مفكري عصر التنوير بفرنسا (جون جاك روسو) وبألمانيا حيث كانت تعبر هذه الفكرة عن الاحتجاج ضد الصفة اللاإنسانية التي تتصف بها علاقات الملكية الخاصة. ولقد اتخذت هذه الفكرة بعدا مثاليا في القرن 19 مع هيجل (Hegel) اذ رأى أن العالم الموضعي يبدو \"كروح مستلبة\" وأن غرض التطور هو التغلب على هذا الاستلاب في عملية الادراك والوعي. وقد نظر فويرباخ (Feuerbach) الى الدين على أنه استلاب للماهية الانسانية, كما اعتبر المثالية استلابا للعقل. وخصص ماركس (Marx) جانبا من أعماله لتحليل فكرة الاستلاب لا سيما في \"المخطوطات الاقتصادية والفلسفية\" فانطلق من المبدأ القائل أن الاستلاب يميز التناقضات القائمة في كل مرحلة من مراحل تطور المجتمع وربط الاستلاب بالملكية الخاصة وبعلاقات الإنتاج القائمة على الاستغلال وعلى التقسيم المتطاحن للعمل. وعموما فالاستلاب عند ماركس هو أن يفقد الإنسان حريته واستقلاله الذاتي بتأثير الأسباب الاقتصادية أو الاجتماعية أو الدينية ويصبح ملكا لغيره أو عبدا للأشياء المادية وأن تتصرف السلطات الحاكمة فيه تصرقها في السلع التجارية.",
+    "PhiH.lessons.certitude.definitions.card3.point3": "روجي غارودي (R. Garaudy): الاغتراب هو ازدواج النسان الذي خلق رموزا ومؤسسات ولم يعد يتعرف عليها كنتاج نشاطه فأصبح يعتبرها مستقلة عن إنسانيته وصعبة المنال.",
+    "PhiH.lessons.certitude.definitions.card3.point4": "جورج غسدورف (G. Gusdorf): أن أخشى ما أخشاه هو الاستلاب الفكري الذي يترك سبيل العالم العيني ويجري وراء أوهام الخطاب.",
+    
+    "PhiH.lessons.certitude.definitions.card4.title": "الحقيقة La vérité",
+    "PhiH.lessons.certitude.definitions.card4.point1": "يمكن تعريف الحقيقة بمعنيين: معنى يدل على الموجود والشيء والموضوع والكائن بإطلاق ويدل على الثابت فيه والأساسي والضروري, في مقابل المتغير فيه وغير الحقيقي والباطل والمتوهم والظاهر والسراب. ومعنى يدل على توافق القول مع حقيقة الوجود, أو تطابق المعرفة مع موضوعها في مقابل الخطأ والإبهام. وفي لسان العرب تقال الحقيقة علة معان مختلفة فهي \"ما يسير إليه حق الأمر ووجوبه\" وما يتصل بذلك من قولهم: \"بلغ حقيقة الأمر أي يقين شأنه\". وهي أيضا \"خالص الأمر ومحضه وكنهه\" (الموسوعة الفلسفية العربية).",
+                
+                "PhiH.lessons.certitude.texts.title": "النصوص",
+                "PhiH.lessons.certitude.texts.text1": "النص 1: سلطان الفكرة الأولى - ديكارت",
+                "PhiH.lessons.certitude.texts.text2": "النص 2: [سيتم إضافته لاحقاً]",
+                "PhiH.lessons.certitude.texts.text3": "النص 3: [سيتم إضافته لاحقاً]",
+                
+                // Quotes section translations
+                "PhiH.lessons.certitude.quotes.title": "شواهد ونصوص ذات صلة",
+                "PhiH.lessons.certitude.quotes.quote1": "\"الطفل هو براءة ونسيان، بداية جديدة، ولعب، وعجلة ذاتية الدوران، وحركة أولى وإرادة إثبات مقدّسة\"",
+                "PhiH.lessons.certitude.quotes.quote2": "\"إنّ الحقيقة هي ما نعتقد أنّه الحقيقة\"",
+                "PhiH.lessons.certitude.quotes.quote3": "\"لا أحد يودّ أن يظلّ طفلا حتّى لو كان متيقّنا منِ التمتّع إلى الحدّ الأقصى بكلّ ملذّاتِ الطفولة\"",
+                "PhiH.lessons.certitude.quotes.author1": "نيتشه",
+                "PhiH.lessons.certitude.quotes.source1": "هكذا تكلّم زرادشت",
+                "PhiH.lessons.certitude.quotes.author2": "روني برجفال",
+                "PhiH.lessons.certitude.quotes.source2": "يوميّات رجل بسيط",
+                "PhiH.lessons.certitude.quotes.author3": "أرسطو",
+                "PhiH.lessons.certitude.quotes.source3": "أخلاق نيقوماخوس",
+                
+                "PhiH.lessons.certitude.conclusion.title": "الخاتمة",
+                "PhiH.lessons.certitude.conclusion.text1": "تبرز الوثوقية كظاهرة فكرية تهدد بتجميد العقل وإيقاف عجلة التطور المعرفي. فمن خلال تمسكها باليقين المطلق ورفضها لكل شكل من أشكال الشك والنقد، تحول الوثوقية الفكر من حقل للإبداع والتجديد إلى سجن للأفكار الجامدة.",
+                "PhiH.lessons.certitude.conclusion.text2": "يواجه الفكر المعاصر تحدياً حقيقياً في الحفاظ على حيويته ومرونته في مواجهة هذه النزعة الوثوقية المسيطرة. فالقدرة على تجاوز الوثوقية تتطلب وعياً نقدياً وشجاعة فكرية تمكن العقل من التحرر من قيود اليقين المطلق نحو فضاء الشك الخلاق والمعرفة المتطورة.",
+                "PhiH.lessons.certitude.conclusion.text3": "في النهاية، تبقى الفلسفة أداة أساسية لفهم ظاهرة الوثوقية وتطوير آليات نقدية تمكن العقل من الحفاظ على حريته وحيويته في عالم يتسم بتزايد الضغوط نحو الجمود الفكري والتصلب العقائدي.",
+"PhiH.lessons.certitude.texts.text2": "النص 2: في الأحكام المسبقة - كريستيان توماسيوس",
+"PhiH.lessons.certitude.texts.text3": "النص 3: سلطان الرأي - جون ستيوارت ميل", 
+"PhiH.lessons.certitude.texts.text4": "النص 4: سلطة رأي الأغلبية - بيار بابل",
+
+"PhiH.lessons.certitude.quotes.quote4": "يُصاب أغلب الناس برأي مثلما يُصابون بالحصبة وذلك بفعل العدوى",
+"PhiH.lessons.certitude.quotes.author4": "جيل بايو",
+"PhiH.lessons.certitude.quotes.source4": "إفلاس التعليم",
+
+"PhiH.lessons.certitude.quotes.quote5": "تحتلّ الأحكام المسبقة من الفكر قسما ولكنّها تَسُدُّ كلّ ما تبقّى منه",
+"PhiH.lessons.certitude.quotes.author5": "مالبرانش", 
+"PhiH.lessons.certitude.quotes.source5": "في البحث عن الحقيقة",
+
+"PhiH.lessons.certitude.quotes.quote6": "إنّ المغالاة في عقلنة الأحاسيس غالبا ما تفضي إلى فسادها",
+"PhiH.lessons.certitude.quotes.author6": "الطاهر بن جلون",
+"PhiH.lessons.certitude.quotes.source6": "فندق الفقراء",
+
+"PhiH.lessons.certitude.quotes.quote7": "للقلب دواع لا يدركها العقل",
+"PhiH.lessons.certitude.quotes.author7": "باسكال",
+"PhiH.lessons.certitude.quotes.source7": "خواطر",
+
+"PhiH.lessons.certitude.quotes.quote8": "سبات العقل يولّد مسوخا",
+"PhiH.lessons.certitude.quotes.author8": "فرنسيسكو غويا",
+"PhiH.lessons.certitude.quotes.source8": "",
+
+"PhiH.lessons.certitude.quotes.quote9": "إنّ استمرار رأي ما في البقاء لا يثبت شيئا في شأن قيمته، فما يزال يوجد إلى اليوم منجّمون",
+"PhiH.lessons.certitude.quotes.author9": "جان روستان", 
+"PhiH.lessons.certitude.quotes.source9": "مفكّرة عالم أحياء",
+
+"PhiH.lessons.certitude.quotes.quote10": "إنّ للمحاكاة تأثيرا عاما في أحكامنا: لأنّ هناك سببا قويّا لأنّ نعتبر حقيقيّا ما أقرّ آخرون أنّه كذلك",
+"PhiH.lessons.certitude.quotes.author10": "كانط",
+"PhiH.lessons.certitude.quotes.source10": "المنطق",
+
+"PhiH.lessons.certitude.quotes.quote11": "إنّ العلامة الدالة على الأسوأ هي إجماع الحشد",
+"PhiH.lessons.certitude.quotes.author11": "سيناك",
+"PhiH.lessons.certitude.quotes.source11": ""
+
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHcertitude;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+    
+    <script>
+        // Expand/Collapse functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all expandable headers
+            const expandableHeaders = document.querySelectorAll('.PhiH-expandable-header');
+            
+            // Add click event to each header
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.PhiH-expand-icon');
+                    
+                    // Toggle content visibility
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('expanded');
+                    } else {
+                        content.classList.add('hidden');
+                        icon.classList.remove('expanded');
+                    }
+                });
+            });
+            
+            // Initially hide all expandable content
+            document.querySelectorAll('.PhiH-expandable-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

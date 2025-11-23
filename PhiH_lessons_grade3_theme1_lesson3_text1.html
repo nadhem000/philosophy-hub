@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: سلطان الفكرة الأولى - ديكارت - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#0ea5e9">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Sky Blue + Cyan Color Palette */
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #38bdf8;
+            --primary-dark: #0284c7;
+            --secondary-color: #06b6d4;
+            --secondary-light: #22d3ee;
+            --secondary-dark: #0891b2;
+            --accent-color: #06b6d4;
+            --accent-light: #22d3ee;
+            --accent-dark: #0891b2;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #f0f9ff;
+            --card-bg: #ffffff;
+            --definition-bg: #ecfeff;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #cffafe;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.1), 0 2px 4px -1px rgba(14, 165, 233, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(14, 165, 233, 0.1), 0 4px 6px -2px rgba(14, 165, 233, 0.05);
+            --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+            --gradient-accent: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #38bdf8;
+            --primary-light: #7dd3fc;
+            --primary-dark: #0ea5e9;
+            --secondary-color: #22d3ee;
+            --secondary-light: #67e8f9;
+            --secondary-dark: #06b6d4;
+            --accent-color: #22d3ee;
+            --accent-light: #67e8f9;
+            --accent-dark: #06b6d4;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #164e63;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #155e75;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #38bdf8 0%, #22d3ee 100%);
+            --gradient-secondary: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
+            --gradient-accent: linear-gradient(135deg, #22d3ee 0%, #38bdf8 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(14, 165, 233, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(6, 182, 212, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(6, 182, 212, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(14, 165, 233, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="#" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.descartes.title">تحليل النص: سلطان الفكرة الأولى - ديكارت</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.descartes.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.descartes.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.descartes.introduction.content">
+                    تقترن مرحلة الطفولة بالبراءة والتلقائيّة، وهو ما جعلها تتحوّل في انطباع البعض إلى جنّة مفقودة، ويجعل منها البعض الآخر شرط الإبداع من حيث هو مطبوع ببراءة البداية. غير أنّ كل ذلك لا ينبغي أن يحجب مدى السلبيّة التي تلازم الطفولة كمرحلة موسومة بالقصور والتبعيّة بسبب عدم قدرة الأطفال على التفكير بأنفسهم والحكم على الأشياء بشكل مستقل مما يستدعي التفكير في العلاقة بين إعمال العقل والموروث الطفولي.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.descartes.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.descartes.text.content">
+                        وإذا بلغنا أخيرا مرحلة نستعمل فيها عقولنا<sup>1</sup> استعمالا تاما وحاولت نفوسنا، بعد أن زال عنها خضوعها للبدن<sup>2</sup>، أن تُجيد الحُكم وأن تعرف طبيعتها، فإنّنا على الرغم من ملاحظتنا أنّ الأحكام التي أطلقناها في طفولتنا ملأى بالأخطاء، فإنّنا مع ذلك نجد الكثير من المشقّة<sup>3</sup> في التخلّص منها تخلّصا تاما، ولكن مما لا ريب فيه أنّنا ما لم نتذكّر أنّها مشكوك فيها فإنّنا نكون على الدوام في خطر الوقوع مجدّدا في أحكام فاسدة. وهذا على قدر كبير من الصحّة بحيث أنّنا لا نستطيع مثلا التخلّص من تخيّلنا<sup>4</sup> النجوم صغيرة جدّاً، بسبب ما ألفناه من تخيّل لها إبّان طفولتنا، مع أنّنا نعرف بأدلّة علم الفلك أنّها كبيرة جدًا : ما أعظم سلطان الفكرة الأولى علينا.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.descartes.text.source">ديكارت، مبادئ الفلسفة ($ 72)، تعريب د.عثمان أمين، نشر دار الثقافة للنشر والتوزيع، ص 104</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.descartes.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/rene_descartes.jpg" alt="رينيه ديكارت" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.descartes.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.descartes.author.content">
+                            رينيه ديكارت (1596-1650) هو فيلسوف وعالم رياضي فرنسي، يُعتبر أحد أبرز رواد الفلسفة الحديثة. ولد في لاهاي بفرنسا، وتلقى تعليمه في كلية لافليش اليسوعية. اشتهر ديكارت بمقولة "أنا أفكر، إذن أنا موجود" التي أصبحت أساس فلسفته. تميزت فلسفته بالشك المنهجي والمنهج العقلاني الذي يهدف إلى تأسيس المعرفة على أساس يقيني. من أشهر مؤلفاته: "مقال في المنهج" (1637)، "تأملات في الفلسفة الأولى" (1641)، "مبادئ الفلسفة" (1644). عُرف ديكارت بثنائيته الفلسفية التي تفصل بين العقل والجسد، وبمساهماته الكبيرة في تطوير الرياضيات والهندسة التحليلية.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.descartes.lexical.title">المفاهيم والمصطلحات</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.descartes.lexical.item1"><strong>العقل:</strong> ملكة تهيئ الإنسان للتمييز بين ما هو يقينيّ وما هو خاطئ وما هو مشكوك فيه، إما بواسطة حدْس فكريّ مباشر أو بواسطة الاستدلال المتماسك. ويذهب ديكارت إلى أنّه "لا يكفي أن يكون الفكر حسنا بل الأهم هو أن يطبّق تطبيقا حسنا."</li>
+                    <li data-i18n="PhiH.textAnalysis.descartes.lexical.item2"><strong>الإنسان:</strong> في نظر ديكارت، ثنائيّة تتألف من جوهرين متمايزيْن ومتحدّيْن في آن وهما الفكر والامتداد بينهما تفاعل يقوم على ميزان قوى يميل لصالح الجسم خلال الطفولة نظرا لعدم اكتمال العقل وما ينجر عنه من عجز عن الحكم السديد، ولكن باكتمال العقل يميل ذلك الميزان لصالح النفس لتكتسب القدرة على المعرفة والاختيار في استقلال عن تدخل الحواس والانفعالات.</li>
+                    <li data-i18n="PhiH.textAnalysis.descartes.lexical.item3"><strong>الكثير من المشقّة:</strong> إشارة إلى ما يقترن بالتحرّر من الموروث الطفولي من مقاومة ومكابدة.</li>
+                    <li data-i18n="PhiH.textAnalysis.descartes.lexical.item4"><strong>التخيّل:</strong> هو عند ديكارت ملكة وسطى بين الإدراك الحسيّ والذهن تمكّن من تمثّل الواقع الحسيّ بإعادة إنتاج مظاهره بواسطة الصور في غياب الأشياء غير أنّه في ذلك يُؤدّي إلى خلط يعوقُ الفكر عن معرفة حقيقة الأشياء ... بإعادة تنظيمها استنادا إلى أفكار عقليّة واضحة ومتميّزة تتجاوز المظاهر الحسيّة الخادعة.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.descartes.questions.title">أسئلة الفهم والتحليل</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.descartes.questions.q1">ما الذي يجعل الطفولة بنية نفسيّة وذهنيّة يُمكن أن تتأبّد لتطبع كل مراحل الحياة بخصائصها ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.descartes.questions.q2">أبرز الأسباب التي تجعل الأحكام التي تُطلق خلال الطفولة مملوءةً بالخطأ.</li>
+                    <li data-i18n="PhiH.textAnalysis.descartes.questions.q3">هل يكفي للمرء أن يعي أخطاء أحكامه الطفوليّة بناءً على معرفة بأدلّة العقل حتّى يتحرّر منها ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.descartes.questions.q4">قدّم عيّنات ممّا تجده في ذاتك يوضّح طبيعة السلطة التي تُمارسها ترسّات الماضي الطفوليّ على الوعي.</li>
+                    <li data-i18n="PhiH.textAnalysis.descartes.questions.q5">هل كان بإمكان الإنسان أن يتفاعل مع محيطه لولا أفكار الطفولة ؟</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.descartes.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.descartes.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.descartes.answers.a1.content">
+                        تجعل عدة عوامل من الطفولة بنية نفسية وذهنية متأبدة بسبب:
+                        <br>- <strong>الطبيعة الثنائية للإنسان</strong> التي يطرحها ديكارت، حيث التفاعل بين النفس والجسد يكون لصالح الجسد خلال الطفولة.
+                        <br>- <strong>الاعتماد الكلي على الحواس</strong> في مرحلة الطفولة مما يخلق تصورات أولية راسخة.
+                        <br>- <strong>عدم اكتمال العقل</strong> وقدرته النقدية في هذه المرحلة.
+                        <br>- <strong>قوة الانطباعات الأولى</strong> التي تتشكل عندما يكون العقل صفحة بيضاء.
+                        <br>- <strong>الطبيعة التراكمية للمعارف</strong> حيث تبني المعارف اللاحقة على الأساسات الأولى.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.descartes.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.descartes.answers.a2.content">
+                        تكون أحكام الطفولة مملوءة بالخطأ بسبب:
+                        <br>- <strong>هيمنة الحواس الخادعة</strong> كمصدر وحيد للمعرفة.
+                        <br>- <strong>غياب الملكة النقدية</strong> والقدرة على الشك المنهجي.
+                        <br>- <strong>سيطرة الخيال والتخيل</strong> على عملية الإدراك.
+                        <br>- <strong>عدم التمييز بين الذات والموضوع</strong> وبين العالم الداخلي والخارجي.
+                        <br>- <strong>التبعية الكاملة للجسد</strong> وانفعالاته وفق تصور ديكارت الثنائي.
+                        <br>- <strong>قصور في أدوات التفكير</strong> المنطقي والاستدلالي.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.descartes.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.descartes.answers.a3.content">
+                        لا، لا يكفي الوعي العقلي المجرد للتحرر من الأحكام الطفولية، وذلك لأن:
+                        <br>- <strong>سلطة الانطباعات الأولى</strong> تبقى فاعلة حتى بعد اكتشاف خطئها.
+                        <br>- <strong>الخيال يظل مسيطراً</strong> كما في مثال النجوم الذي يبقى متخيلها صغيراً رغم العلم بحجمها الحقيقي.
+                        <br>- <strong>التحرر يتطلب جهداً إرادياً</strong> متواصلاً ومكابدة حقيقية.
+                        <br>- <strong>الذاكرة اللاواعية</strong> تحتفظ بالتصورات الأولى وتؤثر تلقائياً.
+                        <br>- <strong>يجب ممارسة الشك المنهجي</strong> باستمرار لتفكيك هذه التصورات.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.descartes.answers.a4.title">الإجابة عن السؤال الرابع:</h5>
+                    <p data-i18n="PhiH.textAnalysis.descartes.answers.a4.content">
+                        من الأمثلة التوضيحية:
+                        <br>- <strong>الخوف من الظلام</strong> الذي قد يبقى رغم العلم بعدم وجود ما يخيف فيه.
+                        <br>- <strong>التصورات الجمالية</strong> الأولى التي تظل مؤثرة في تذوق الأشكال والألوان.
+                        <br>- <strong>المفاهيم الدينية والأخلاقية</strong> المبكرة التي تبقى مرجعاً حتى بعد تطور الفكر.
+                        <br>- <strong>الصورة الذهنية عن الذات</strong> التي تتشكل في الطفولة وتظل مؤثرة في تقدير الذات.
+                        <br>- <strong>أنماط التعامل الاجتماعي</strong> التي نتعلمها مبكراً وتصبح جزءاً من الشخصية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.descartes.answers.a5.title">الإجابة عن السؤال الخامس:</h5>
+                    <p data-i18n="PhiH.textAnalysis.descartes.answers.a5.content">
+                        نعم، كان بإمكان الإنسان التفاعل مع محيطه لكن بشكل مختلف، لأن:
+                        <br>- <strong>أفكار الطفولة ضرورية كمرحلة تأسيسية</strong> ولكنها ليست نهائية.
+                        <br>- <strong>البدائل موجودة</strong> في التربية القائمة على التنوير المبكر.
+                        <br>- <strong>العقل يمتلك قدرة فطرية</strong> على التفاعل مع المحيط حتى بدون التصورات الطفولية.
+                        <br>- <strong>التحرر من أفكار الطفولة</strong> لا يعني العجز عن التفاعل بل التفاعل بشكل أكثر عقلانية.
+                        <br>- <strong>الدور الإيجابي لأفكار الطفولة</strong> يكمن في كونها نقطة انطلاق وليس نقطة نهاية.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.descartes.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.descartes.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.descartes.analysis.thesis.content">
+                        يطرح ديكارت فكرة أن الانطباعات والأحكام التي تتشكل في الطفولة تظل مسيطرة على العقل حتى بعد بلوغ المرحلة العقلية، مما يستدعي جهداً واعياً ومكابدة للتحرر منها، وأن الشك المنهجي هو الوسيلة الأساسية لهذا التحرر.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.descartes.analysis.mechanisms.title">آليات عمل "سلطان الفكرة الأولى":</h5>
+                    <p data-i18n="PhiH.textAnalysis.descartes.analysis.mechanisms.content">
+                        تعمل آليات "سلطان الفكرة الأولى" من خلال:
+                        <br>- <strong>الطبيعة الثنائية للإنسان</strong> التي تجعل الجسد مسيطراً في الطفولة.
+                        <br>- <strong>الاعتماد الكلي على الحواس</strong> كمصدر وحيد للمعرفة.
+                        <br>- <strong>غياب الملكة النقدية</strong> والقدرة على التمييز.
+                        <br>- <strong>قوة الانطباعات الأولى</strong> عندما يكون العقل صفحة بيضاء.
+                        <br>- <strong>استمرارية الخيال والتخيل</strong> حتى بعد اكتساب المعرفة العقلية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.descartes.analysis.consequences.title">نتائج سيطرة أفكار الطفولة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.descartes.analysis.consequences.content">
+                        تؤدي سيطرة أفكار الطفولة إلى:
+                        <br>- <strong>استمرار الأخطاء المعرفية</strong> رغم امتلاك الأدلة العقلية.
+                        <br>- <strong>صعوبة التحرر الكامل</strong> من التصورات الخاطئة.
+                        <br>- <strong>الخطر الدائم من العودة</strong> إلى الأحكام الفاسدة.
+                        <br>- <strong>الفجوة بين المعرفة العقلية والإدراك الحسي</strong>.
+                        <br>- <strong>الحاجة إلى جهد مستمر</strong> للمقاومة والتصحيح.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.descartes.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.descartes.analysis.significance.content">
+                        يمثل مفهوم "سلطان الفكرة الأولى" عند ديكارت مدخلاً لفهم إشكالية المعرفة والتحرر من الموروث الفكري. فهو يبرز الصراع بين العقل والتقليد، وبين المعرفة البرهانية والإدراك الحسي. كما يوضح ضرورة الشك المنهجي كأداة للتحرر ويدفع نحو تأسيس معرفة يقينية قائمة على البداهة العقلية والاستدلال المنطقي، بعيداً عن سلطة الانطباعات الأولى وأخطاء الطفولة المعرفية.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.descartes.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.descartes.title": "Analyse du texte: La Domination de la Première Idée - Descartes",
+                "PhiH.textAnalysis.descartes.introduction.title": "Introduction",
+                "PhiH.textAnalysis.descartes.introduction.content": "Le stade de l'enfance est associé à l'innocence et à la spontanéité, ce qui en a fait pour certains un paradis perdu, et pour d'autres une condition de la créativité en tant qu'elle est marquée par l'innocence du commencement. Cependant, tout cela ne doit pas masquer le degré de négativité qui accompagne l'enfance comme une étape marquée par la déficience et la dépendance en raison de l'incapacité des enfants à penser par eux-mêmes et à juger les choses de manière indépendante, ce qui nécessite de réfléchir à la relation entre l'exercice de la raison et l'héritage de l'enfance.",
+                "PhiH.textAnalysis.descartes.text.title": "Texte",
+                "PhiH.textAnalysis.descartes.text.content": "Et si nous atteignons enfin un stade où nous utilisons notre raison<sup>1</sup> pleinement et où nos âmes, après s'être libérées de leur soumission au corps<sup>2</sup>, tentent de bien juger et de connaître leur nature, alors bien que nous observions que les jugements que nous avons émis dans notre enfance sont pleins d'erreurs, nous trouvons néanmoins beaucoup de difficulté<sup>3</sup> à nous en débarrasser complètement, mais il est certain que si nous ne nous souvenons pas qu'ils sont douteux, nous sommes toujours en danger de retomber dans des jugements erronés. Et cela est si vrai que nous ne pouvons pas, par exemple, nous débarrasser de notre imagination<sup>4</sup> des étoiles comme étant très petites, à cause de ce que nous avons imaginé d'elles pendant notre enfance, alors que nous savons par les preuves de l'astronomie qu'elles sont très grandes : combien est grand la Domination de la première idée sur nous.",
+                "PhiH.textAnalysis.descartes.text.source": "Descartes, Principes de la Philosophie ($ 72), traduction Dr. Othman Amin, Éditions Dar Al Thaqafa, p. 104",
+                "PhiH.textAnalysis.descartes.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.descartes.author.alt": "René Descartes",
+                "PhiH.textAnalysis.descartes.author.content": "René Descartes (1596-1650) est un philosophe et mathématicien français, considéré comme l'un des pionniers les plus importants de la philosophie moderne. Né à La Haye en France, il a été éduqué au collège jésuite de La Flèche. Descartes est célèbre pour sa phrase \"Je pense, donc je suis\" qui est devenue le fondement de sa philosophie. Sa philosophie se caractérise par le doute méthodique et la méthode rationnelle visant à fonder la connaissance sur une base certaine. Parmi ses œuvres les plus célèbres : \"Discours de la méthode\" (1637), \"Méditations métaphysiques\" (1641), \"Principes de la philosophie\" (1644). Descartes est connu pour son dualisme philosophique qui sépare l'esprit et le corps, et pour ses contributions majeures au développement des mathématiques et de la géométrie analytique.",
+                "PhiH.textAnalysis.descartes.lexical.title": "Concepts et terminologie",
+                "PhiH.textAnalysis.descartes.lexical.item1": "<strong>La raison:</strong> Faculté qui prépare l'homme à distinguer entre ce qui est certain, ce qui est erroné et ce qui est douteux, soit par une intuition intellectuelle directe, soit par un raisonnement cohérent. Descartes affirme qu'\"il ne suffit pas d'avoir l'esprit bon, mais l'important est de l'appliquer bien.\"",
+                "PhiH.textAnalysis.descartes.lexical.item2": "<strong>L'homme:</strong> Selon Descartes, une dualité composée de deux substances distinctes et unies à la fois, à savoir la pensée et l'étendue, entre lesquelles il y a une interaction basée sur une balance des forces qui penche en faveur du corps pendant l'enfance en raison de l'incomplétude de la raison et de l'incapacité qui en résulte à juger correctement, mais avec l'achèvement de la raison, cette balance penche en faveur de l'âme pour acquérir la capacité de connaissance et de choix indépendamment de l'intervention des sens et des émotions.",
+                "PhiH.textAnalysis.descartes.lexical.item3": "<strong>Beaucoup de difficulté:</strong> Référence à la résistance et à la lutte qui accompagnent la libération de l'héritage de l'enfance.",
+                "PhiH.textAnalysis.descartes.lexical.item4": "<strong>L'imagination:</strong> Selon Descartes, une faculté intermédiaire entre la perception sensorielle et l'esprit qui permet de représenter la réalité sensorielle en reproduisant ses manifestations par des images en l'absence des choses, mais cela conduit à une confusion qui empêche la pensée de connaître la vérité des choses... en les réorganisant sur la base d'idées intellectuelles claires et distinctes qui dépassent les apparences sensorielles trompeuses.",
+                "PhiH.textAnalysis.descartes.questions.title": "Questions de compréhension et d'analyse",
+                "PhiH.textAnalysis.descartes.questions.q1": "Qu'est-ce qui fait de l'enfance une structure psychique et mentale qui peut se perpétuer pour marquer toutes les étapes de la vie de ses caractéristiques ?",
+                "PhiH.textAnalysis.descartes.questions.q2": "Soulignez les raisons pour lesquelles les jugements émis pendant l'enfance sont pleins d'erreurs.",
+                "PhiH.textAnalysis.descartes.questions.q3": "Suffit-il à une personne de prendre conscience des erreurs de ses jugements enfantins sur la base d'une connaissance par des preuves de la raison pour s'en libérer ?",
+                "PhiH.textAnalysis.descartes.questions.q4": "Fournissez des exemples de ce que vous trouvez en vous-même qui illustre la nature du pouvoir exercé par les sédiments du passé enfantin sur la conscience.",
+                "PhiH.textAnalysis.descartes.questions.q5": "L'homme aurait-il pu interagir avec son environnement sans les idées de l'enfance ?",
+                "PhiH.textAnalysis.descartes.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.descartes.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.descartes.answers.a1.content": "Plusieurs facteurs font de l'enfance une structure psychique et mentale persistante en raison de :<br>- <strong>La nature dualiste de l'homme</strong> proposée par Descartes, où l'interaction entre l'âme et le corps favorise le corps pendant l'enfance.<br>- <strong>La dépendance totale aux sens</strong> pendant l'enfance créant des conceptions initiales fermement ancrées.<br>- <strong>L'incomplétude de la raison</strong> et de sa capacité critique à ce stade.<br>- <strong>La force des premières impressions</strong> qui se forment lorsque l'esprit est une page blanche.<br>- <strong>La nature cumulative des connaissances</strong> où les connaissances ultérieures se construisent sur les fondations initiales.",
+                "PhiH.textAnalysis.descartes.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.descartes.answers.a2.content": "Les jugements de l'enfance sont pleins d'erreurs en raison de :<br>- <strong>La domination des sens trompeurs</strong> comme seule source de connaissance.<br>- <strong>L'absence de faculté critique</strong> et de capacité au doute méthodique.<br>- <strong>La domination de l'imagination et de la fantaisie</strong> sur le processus de perception.<br>- <strong>L'incapacité à distinguer entre le sujet et l'objet</strong> et entre le monde intérieur et extérieur.<br>- <strong>La dépendance totale au corps</strong> et à ses émotions selon la conception dualiste de Descartes.<br>- <strong>L'insuffisance des outils de pensée</strong> logique et déductive.",
+                "PhiH.textAnalysis.descartes.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.descartes.answers.a3.content": "Non, la simple conscience intellectuelle ne suffit pas pour se libérer des jugements enfantins, car :<br>- <strong>Le pouvoir des premières impressions</strong> reste actif même après la découverte de leur erreur.<br>- <strong>L'imagination reste dominante</strong> comme dans l'exemple des étoiles dont l'image reste petite malgré la connaissance de leur taille réelle.<br>- <strong>La libération nécessite un effort volontaire</strong> continu et une véritable lutte.<br>- <strong>La mémoire inconsciente</strong> conserve les premières conceptions et influence automatiquement.<br>- <strong>Il faut pratiquer le doute méthodique</strong> constamment pour déconstruire ces conceptions.",
+                "PhiH.textAnalysis.descartes.answers.a4.title": "Réponse à la quatrième question:",
+                "PhiH.textAnalysis.descartes.answers.a4.content": "Exemples illustratifs :<br>- <strong>La peur du noir</strong> qui peut persister malgré la connaissance qu'il n'y a rien à craindre.<br>- <strong>Les conceptions esthétiques</strong> initiales qui restent influentes dans l'appréciation des formes et des couleurs.<br>- <strong>Les concepts religieux et éthiques</strong> précoces qui restent des références même après l'évolution de la pensée.<br>- <strong>L'image mentale de soi</strong> qui se forme dans l'enfance et reste influente dans l'estime de soi.<br>- <strong>Les modes d'interaction sociale</strong> que nous apprenons tôt et deviennent partie de la personnalité.",
+                "PhiH.textAnalysis.descartes.answers.a5.title": "Réponse à la cinquième question:",
+                "PhiH.textAnalysis.descartes.answers.a5.content": "Oui, l'homme aurait pu interagir avec son environnement mais différemment, car :<br>- <strong>Les idées de l'enfance sont nécessaires comme étape fondatrice</strong> mais ne sont pas définitives.<br>- <strong>Des alternatives existent</strong> dans l'éducation basée sur l'éveil précoce.<br>- <strong>La raison possède une capacité innée</strong> d'interagir avec l'environnement même sans les conceptions enfantines.<br>- <strong>La libération des idées de l'enfance</strong> ne signifie pas l'incapacité d'interagir mais une interaction plus rationnelle.<br>- <strong>Le rôle positif des idées de l'enfance</strong> réside dans le fait qu'elles sont un point de départ et non un point d'arrivée.",
+                "PhiH.textAnalysis.descartes.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.descartes.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.descartes.analysis.thesis.content": "Descartes présente l'idée que les impressions et les jugements formés dans l'enfance continuent de dominer l'esprit même après avoir atteint le stade rationnel, ce qui nécessite un effort conscient et une lutte pour s'en libérer, et que le doute méthodique est le moyen essentiel de cette libération.",
+                "PhiH.textAnalysis.descartes.analysis.mechanisms.title": "Mécanismes du \"Domination de la première idée\":",
+                "PhiH.textAnalysis.descartes.analysis.mechanisms.content": "Les mécanismes du \"Domination de la première idée\" fonctionnent à travers :<br>- <strong>La nature dualiste de l'homme</strong> qui fait dominer le corps pendant l'enfance.<br>- <strong>La dépendance totale aux sens</strong> comme seule source de connaissance.<br>- <strong>L'absence de faculté critique</strong> et de capacité de distinction.<br>- <strong>La force des premières impressions</strong> lorsque l'esprit est une page blanche.<br>- <strong>La persistance de l'imagination et de la fantaisie</strong> même après l'acquisition de la connaissance rationnelle.",
+                "PhiH.textAnalysis.descartes.analysis.consequences.title": "Conséquences de la domination des idées de l'enfance:",
+                "PhiH.textAnalysis.descartes.analysis.consequences.content": "La domination des idées de l'enfance conduit à :<br>- <strong>La persistance des erreurs cognitives</strong> malgré la possession de preuves rationnelles.<br>- <strong>La difficulté de se libérer complètement</strong> des conceptions erronées.<br>- <strong>Le danger permanent de retomber</strong> dans des jugements erronés.<br>- <strong>L'écart entre la connaissance rationnelle et la perception sensorielle</strong>.<br>- <strong>La nécessité d'un effort continu</strong> de résistance et de correction.",
+                "PhiH.textAnalysis.descartes.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.descartes.analysis.significance.content": "Le concept du \"Domination de la première idée\" chez Descartes représente une entrée pour comprendre la problématique de la connaissance et de la libération de l'héritage intellectuel. Il met en lumière le conflit entre la raison et la tradition, et entre la connaissance démonstrative et la perception sensorielle. Il clarifie également la nécessité du doute méthodique comme outil de libération et pousse vers l'établissement d'une connaissance certaine basée sur l'évidence rationnelle et le raisonnement logique, loin du pouvoir des premières impressions et des erreurs cognitives de l'enfance."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.descartes.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.descartes.title": "Text Analysis: The Dominion of the First Idea - Descartes",
+                "PhiH.textAnalysis.descartes.introduction.title": "Introduction",
+                "PhiH.textAnalysis.descartes.introduction.content": "The stage of childhood is associated with innocence and spontaneity, which has made it for some a lost paradise, and for others a condition for creativity as it is marked by the innocence of the beginning. However, all this should not obscure the degree of negativity that accompanies childhood as a stage marked by deficiency and dependence due to the inability of children to think for themselves and judge things independently, which requires thinking about the relationship between the exercise of reason and the childhood heritage.",
+                "PhiH.textAnalysis.descartes.text.title": "Text",
+                "PhiH.textAnalysis.descartes.text.content": "And if we finally reach a stage where we use our reason<sup>1</sup> fully and our souls, after being freed from their submission to the body<sup>2</sup>, try to judge well and know their nature, then although we observe that the judgments we made in our childhood are full of errors, we nevertheless find much difficulty<sup>3</sup> in getting rid of them completely, but it is certain that if we do not remember that they are doubtful, we are always in danger of falling back into erroneous judgments. And this is so true that we cannot, for example, get rid of our imagination<sup>4</sup> of the stars as being very small, because of what we imagined of them during our childhood, although we know by the proofs of astronomy that they are very large: how great is the Dominion of the first idea over us.",
+                "PhiH.textAnalysis.descartes.text.source": "Descartes, Principles of Philosophy ($ 72), translation by Dr. Othman Amin, Dar Al Thaqafa Publishing, p. 104",
+                "PhiH.textAnalysis.descartes.author.title": "Author Presentation",
+                "PhiH.textAnalysis.descartes.author.alt": "René Descartes",
+                "PhiH.textAnalysis.descartes.author.content": "René Descartes (1596-1650) is a French philosopher and mathematician, considered one of the most important pioneers of modern philosophy. Born in La Haye, France, he was educated at the Jesuit college of La Flèche. Descartes is famous for his phrase \"I think, therefore I am\" which became the foundation of his philosophy. His philosophy is characterized by methodological doubt and the rational method aimed at founding knowledge on a certain basis. Among his most famous works: \"Discourse on the Method\" (1637), \"Meditations on First Philosophy\" (1641), \"Principles of Philosophy\" (1644). Descartes is known for his philosophical dualism that separates mind and body, and for his major contributions to the development of mathematics and analytic geometry.",
+                "PhiH.textAnalysis.descartes.lexical.title": "Concepts and Terminology",
+                "PhiH.textAnalysis.descartes.lexical.item1": "<strong>Reason:</strong> Faculty that prepares man to distinguish between what is certain, what is erroneous and what is doubtful, either by direct intellectual intuition or by coherent reasoning. Descartes states that \"it is not enough to have a good mind; the main thing is to apply it well.\"",
+                "PhiH.textAnalysis.descartes.lexical.item2": "<strong>Man:</strong> According to Descartes, a duality composed of two distinct and united substances at the same time, namely thought and extension, between which there is an interaction based on a balance of forces that favors the body during childhood due to the incompleteness of reason and the resulting inability to judge correctly, but with the completion of reason, this balance favors the soul to acquire the capacity for knowledge and choice independently of the intervention of the senses and emotions.",
+                "PhiH.textAnalysis.descartes.lexical.item3": "<strong>Much difficulty:</strong> Reference to the resistance and struggle that accompany liberation from the childhood heritage.",
+                "PhiH.textAnalysis.descartes.lexical.item4": "<strong>Imagination:</strong> According to Descartes, an intermediate faculty between sensory perception and the mind that enables the representation of sensory reality by reproducing its manifestations through images in the absence of things, but this leads to confusion that prevents thought from knowing the truth of things... by reorganizing them based on clear and distinct intellectual ideas that go beyond deceptive sensory appearances.",
+                "PhiH.textAnalysis.descartes.questions.title": "Comprehension and Analysis Questions",
+                "PhiH.textAnalysis.descartes.questions.q1": "What makes childhood a psychic and mental structure that can perpetuate itself to mark all stages of life with its characteristics?",
+                "PhiH.textAnalysis.descartes.questions.q2": "Highlight the reasons why judgments made during childhood are full of errors.",
+                "PhiH.textAnalysis.descartes.questions.q3": "Is it enough for a person to be aware of the errors of their childhood judgments based on knowledge through proofs of reason to be freed from them?",
+                "PhiH.textAnalysis.descartes.questions.q4": "Provide examples of what you find in yourself that illustrates the nature of the power exercised by the sediments of the childish past on consciousness.",
+                "PhiH.textAnalysis.descartes.questions.q5": "Could man have interacted with his environment without childhood ideas?",
+                "PhiH.textAnalysis.descartes.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.descartes.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.descartes.answers.a1.content": "Several factors make childhood a persistent psychic and mental structure due to:<br>- <strong>The dualistic nature of man</strong> proposed by Descartes, where the interaction between soul and body favors the body during childhood.<br>- <strong>Total dependence on the senses</strong> during childhood creating firmly anchored initial conceptions.<br>- <strong>The incompleteness of reason</strong> and its critical capacity at this stage.<br>- <strong>The strength of first impressions</strong> that form when the mind is a blank slate.<br>- <strong>The cumulative nature of knowledge</strong> where later knowledge builds on initial foundations.",
+                "PhiH.textAnalysis.descartes.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.descartes.answers.a2.content": "Childhood judgments are full of errors due to:<br>- <strong>The domination of deceptive senses</strong> as the only source of knowledge.<br>- <strong>The absence of critical faculty</strong> and capacity for methodological doubt.<br>- <strong>The domination of imagination and fancy</strong> over the perception process.<br>- <strong>The inability to distinguish between subject and object</strong> and between the inner and outer world.<br>- <strong>Total dependence on the body</strong> and its emotions according to Descartes' dualistic conception.<br>- <strong>Insufficiency of logical and deductive thinking tools</strong>.",
+                "PhiH.textAnalysis.descartes.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.descartes.answers.a3.content": "No, mere intellectual awareness is not enough to free oneself from childish judgments, because:<br>- <strong>The power of first impressions</strong> remains active even after discovering their error.<br>- <strong>Imagination remains dominant</strong> as in the example of stars whose image remains small despite knowledge of their actual size.<br>- <strong>Liberation requires continuous voluntary effort</strong> and genuine struggle.<br>- <strong>Unconscious memory</strong> retains the first conceptions and influences automatically.<br>- <strong>Methodological doubt must be practiced</strong> constantly to deconstruct these conceptions.",
+                "PhiH.textAnalysis.descartes.answers.a4.title": "Answer to the fourth question:",
+                "PhiH.textAnalysis.descartes.answers.a4.content": "Illustrative examples:<br>- <strong>Fear of the dark</strong> that may persist despite knowledge that there is nothing to fear.<br>- <strong>Initial aesthetic conceptions</strong> that remain influential in appreciating forms and colors.<br>- <strong>Early religious and ethical concepts</strong> that remain references even after the evolution of thought.<br>- <strong>Mental self-image</strong> that forms in childhood and remains influential in self-esteem.<br>- <strong>Social interaction patterns</strong> that we learn early and become part of personality.",
+                "PhiH.textAnalysis.descartes.answers.a5.title": "Answer to the fifth question:",
+                "PhiH.textAnalysis.descartes.answers.a5.content": "Yes, man could have interacted with his environment but differently, because:<br>- <strong>Childhood ideas are necessary as a foundational stage</strong> but are not final.<br>- <strong>Alternatives exist</strong> in education based on early enlightenment.<br>- <strong>Reason has an innate capacity</strong> to interact with the environment even without childish conceptions.<br>- <strong>Liberation from childhood ideas</strong> does not mean inability to interact but more rational interaction.<br>- <strong>The positive role of childhood ideas</strong> lies in the fact that they are a starting point and not an endpoint.",
+                "PhiH.textAnalysis.descartes.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.descartes.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.descartes.analysis.thesis.content": "Descartes presents the idea that the impressions and judgments formed in childhood continue to dominate the mind even after reaching the rational stage, which requires conscious effort and struggle to free oneself from them, and that methodological doubt is the essential means of this liberation.",
+                "PhiH.textAnalysis.descartes.analysis.mechanisms.title": "Mechanisms of the \"Dominion of the First Idea\":",
+                "PhiH.textAnalysis.descartes.analysis.mechanisms.content": "The mechanisms of the \"Dominion of the First Idea\" work through:<br>- <strong>The dualistic nature of man</strong> that makes the body dominant during childhood.<br>- <strong>Total dependence on the senses</strong> as the only source of knowledge.<br>- <strong>The absence of critical faculty</strong> and capacity for distinction.<br>- <strong>The strength of first impressions</strong> when the mind is a blank slate.<br>- <strong>The persistence of imagination and fancy</strong> even after acquiring rational knowledge.",
+                "PhiH.textAnalysis.descartes.analysis.consequences.title": "Consequences of the domination of childhood ideas:",
+                "PhiH.textAnalysis.descartes.analysis.consequences.content": "The domination of childhood ideas leads to:<br>- <strong>The persistence of cognitive errors</strong> despite possessing rational proofs.<br>- <strong>The difficulty of complete liberation</strong> from erroneous conceptions.<br>- <strong>The permanent danger of falling back</strong> into erroneous judgments.<br>- <strong>The gap between rational knowledge and sensory perception</strong>.<br>- <strong>The need for continuous effort</strong> of resistance and correction.",
+                "PhiH.textAnalysis.descartes.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.descartes.analysis.significance.content": "The concept of the \"Dominion of the First Idea\" in Descartes represents an entry point for understanding the problem of knowledge and liberation from intellectual heritage. It highlights the conflict between reason and tradition, and between demonstrative knowledge and sensory perception. It also clarifies the necessity of methodological doubt as a tool for liberation and pushes towards the establishment of certain knowledge based on rational evidence and logical reasoning, away from the power of first impressions and the cognitive errors of childhood."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.descartes.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.descartes.title": "تحليل النص: سلطان الفكرة الأولى - ديكارت",
+                "PhiH.textAnalysis.descartes.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.descartes.introduction.content": "تقترن مرحلة الطفولة بالبراءة والتلقائيّة، وهو ما جعلها تتحوّل في انطباع البعض إلى جنّة مفقودة، ويجعل منها البعض الآخر شرط الإبداع من حيث هو مطبوع ببراءة البداية. غير أنّ كل ذلك لا ينبغي أن يحجب مدى السلبيّة التي تلازم الطفولة كمرحلة موسومة بالقصور والتبعيّة بسبب عدم قدرة الأطفال على التفكير بأنفسهم والحكم على الأشياء بشكل مستقل مما يستدعي التفكير في العلاقة بين إعمال العقل والموروث الطفولي.",
+                "PhiH.textAnalysis.descartes.text.title": "النص",
+                "PhiH.textAnalysis.descartes.text.content": "وإذا بلغنا أخيرا مرحلة نستعمل فيها عقولنا<sup>1</sup> استعمالا تاما وحاولت نفوسنا، بعد أن زال عنها خضوعها للبدن<sup>2</sup>، أن تُجيد الحُكم وأن تعرف طبيعتها، فإنّنا على الرغم من ملاحظتنا أنّ الأحكام التي أطلقناها في طفولتنا ملأى بالأخطاء، فإنّنا مع ذلك نجد الكثير من المشقّة<sup>3</sup> في التخلّص منها تخلّصا تاما، ولكن مما لا ريب فيه أنّنا ما لم نتذكّر أنّها مشكوك فيها فإنّنا نكون على الدوام في خطر الوقوع مجدّدا في أحكام فاسدة. وهذا على قدر كبير من الصحّة بحيث أنّنا لا نستطيع مثلا التخلّص من تخيّلنا<sup>4</sup> النجوم صغيرة جدّاً، بسبب ما ألفناه من تخيّل لها إبّان طفولتنا، مع أنّنا نعرف بأدلّة علم الفلك أنّها كبيرة جدًا : ما أعظم سلطان الفكرة الأولى علينا.",
+                "PhiH.textAnalysis.descartes.text.source": "ديكارت، مبادئ الفلسفة ($ 72)، تعريب د.عثمان أمين، نشر دار الثقافة للنشر والتوزيع، ص 104",
+                "PhiH.textAnalysis.descartes.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.descartes.author.alt": "رينيه ديكارت",
+                "PhiH.textAnalysis.descartes.author.content": "رينيه ديكارت (1596-1650) هو فيلسوف وعالم رياضي فرنسي، يُعتبر أحد أبرز رواد الفلسفة الحديثة. ولد في لاهاي بفرنسا، وتلقى تعليمه في كلية لافليش اليسوعية. اشتهر ديكارت بمقولة \"أنا أفكر، إذن أنا موجود\" التي أصبحت أساس فلسفته. تميزت فلسفته بالشك المنهجي والمنهج العقلاني الذي يهدف إلى تأسيس المعرفة على أساس يقيني. من أشهر مؤلفاته: \"مقال في المنهج\" (1637)، \"تأملات في الفلسفة الأولى\" (1641)، \"مبادئ الفلسفة\" (1644). عُرف ديكارت بثنائيته الفلسفية التي تفصل بين العقل والجسد، وبمساهماته الكبيرة في تطوير الرياضيات والهندسة التحليلية.",
+                "PhiH.textAnalysis.descartes.lexical.title": "المفاهيم والمصطلحات",
+                "PhiH.textAnalysis.descartes.lexical.item1": "<strong>العقل:</strong> ملكة تهيئ الإنسان للتمييز بين ما هو يقينيّ وما هو خاطئ وما هو مشكوك فيه، إما بواسطة حدْس فكريّ مباشر أو بواسطة الاستدلال المتماسك. ويذهب ديكارت إلى أنّه \"لا يكفي أن يكون الفكر حسنا بل الأهم هو أن يطبّق تطبيقا حسنا.\"",
+                "PhiH.textAnalysis.descartes.lexical.item2": "<strong>الإنسان:</strong> في نظر ديكارت، ثنائيّة تتألف من جوهرين متمايزيْن ومتحدّيْن في آن وهما الفكر والامتداد بينهما تفاعل يقوم على ميزان قوى يميل لصالح الجسم خلال الطفولة نظرا لعدم اكتمال العقل وما ينجر عنه من عجز عن الحكم السديد، ولكن باكتمال العقل يميل ذلك الميزان لصالح النفس لتكتسب القدرة على المعرفة والاختيار في استقلال عن تدخل الحواس والانفعالات.",
+                "PhiH.textAnalysis.descartes.lexical.item3": "<strong>الكثير من المشقّة:</strong> إشارة إلى ما يقترن بالتحرّر من الموروث الطفولي من مقاومة ومكابدة.",
+                "PhiH.textAnalysis.descartes.lexical.item4": "<strong>التخيّل:</strong> هو عند ديكارت ملكة وسطى بين الإدراك الحسيّ والذهن تمكّن من تمثّل الواقع الحسيّ بإعادة إنتاج مظاهره بواسطة الصور في غياب الأشياء غير أنّه في ذلك يُؤدّي إلى خلط يعوقُ الفكر عن معرفة حقيقة الأشياء ... بإعادة تنظيمها استنادا إلى أفكار عقليّة واضحة ومتميّزة تتجاوز المظاهر الحسيّة الخادعة.",
+                "PhiH.textAnalysis.descartes.questions.title": "أسئلة الفهم والتحليل",
+                "PhiH.textAnalysis.descartes.questions.q1": "ما الذي يجعل الطفولة بنية نفسيّة وذهنيّة يُمكن أن تتأبّد لتطبع كل مراحل الحياة بخصائصها ؟",
+                "PhiH.textAnalysis.descartes.questions.q2": "أبرز الأسباب التي تجعل الأحكام التي تُطلق خلال الطفولة مملوءةً بالخطأ.",
+                "PhiH.textAnalysis.descartes.questions.q3": "هل يكفي للمرء أن يعي أخطاء أحكامه الطفوليّة بناءً على معرفة بأدلّة العقل حتّى يتحرّر منها ؟",
+                "PhiH.textAnalysis.descartes.questions.q4": "قدّم عيّنات ممّا تجده في ذاتك يوضّح طبيعة السلطة التي تُمارسها ترسّات الماضي الطفوليّ على الوعي.",
+                "PhiH.textAnalysis.descartes.questions.q5": "هل كان بإمكان الإنسان أن يتفاعل مع محيطه لولا أفكار الطفولة ؟",
+                "PhiH.textAnalysis.descartes.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.descartes.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.descartes.answers.a1.content": "تجعل عدة عوامل من الطفولة بنية نفسية وذهنية متأبدة بسبب:<br>- <strong>الطبيعة الثنائية للإنسان</strong> التي يطرحها ديكارت، حيث التفاعل بين النفس والجسد يكون لصالح الجسد خلال الطفولة.<br>- <strong>الاعتماد الكلي على الحواس</strong> في مرحلة الطفولة مما يخلق تصورات أولية راسخة.<br>- <strong>عدم اكتمال العقل</strong> وقدرته النقدية في هذه المرحلة.<br>- <strong>قوة الانطباعات الأولى</strong> التي تتشكل عندما يكون العقل صفحة بيضاء.<br>- <strong>الطبيعة التراكمية للمعارف</strong> حيث تبني المعارف اللاحقة على الأساسات الأولى.",
+                "PhiH.textAnalysis.descartes.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.descartes.answers.a2.content": "تكون أحكام الطفولة مملوءة بالخطأ بسبب:<br>- <strong>هيمنة الحواس الخادعة</strong> كمصدر وحيد للمعرفة.<br>- <strong>غياب الملكة النقدية</strong> والقدرة على الشك المنهجي.<br>- <strong>سيطرة الخيال والتخيل</strong> على عملية الإدراك.<br>- <strong>عدم التمييز بين الذات والموضوع</strong> وبين العالم الداخلي والخارجي.<br>- <strong>التبعية الكاملة للجسد</strong> وانفعالاته وفق تصور ديكارت الثنائي.<br>- <strong>قصور في أدوات التفكير</strong> المنطقي والاستدلالي.",
+                "PhiH.textAnalysis.descartes.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.descartes.answers.a3.content": "لا، لا يكفي الوعي العقلي المجرد للتحرر من الأحكام الطفولية، وذلك لأن:<br>- <strong>سلطة الانطباعات الأولى</strong> تبقى فاعلة حتى بعد اكتشاف خطئها.<br>- <strong>الخيال يظل مسيطراً</strong> كما في مثال النجوم الذي يبقى متخيلها صغيراً رغم العلم بحجمها الحقيقي.<br>- <strong>التحرر يتطلب جهداً إرادياً</strong> متواصلاً ومكابدة حقيقية.<br>- <strong>الذاكرة اللاواعية</strong> تحتفظ بالتصورات الأولى وتؤثر تلقائياً.<br>- <strong>يجب ممارسة الشك المنهجي</strong> باستمرار لتفكيك هذه التصورات.",
+                "PhiH.textAnalysis.descartes.answers.a4.title": "الإجابة عن السؤال الرابع:",
+                "PhiH.textAnalysis.descartes.answers.a4.content": "من الأمثلة التوضيحية:<br>- <strong>الخوف من الظلام</strong> الذي قد يبقى رغم العلم بعدم وجود ما يخيف فيه.<br>- <strong>التصورات الجمالية</strong> الأولى التي تظل مؤثرة في تذوق الأشكال والألوان.<br>- <strong>المفاهيم الدينية والأخلاقية</strong> المبكرة التي تبقى مرجعاً حتى بعد تطور الفكر.<br>- <strong>الصورة الذهنية عن الذات</strong> التي تتشكل في الطفولة وتظل مؤثرة في تقدير الذات.<br>- <strong>أنماط التعامل الاجتماعي</strong> التي نتعلمها مبكراً وتصبح جزءاً من الشخصية.",
+                "PhiH.textAnalysis.descartes.answers.a5.title": "الإجابة عن السؤال الخامس:",
+                "PhiH.textAnalysis.descartes.answers.a5.content": "نعم، كان بإمكان الإنسان التفاعل مع محيطه لكن بشكل مختلف، لأن:<br>- <strong>أفكار الطفولة ضرورية كمرحلة تأسيسية</strong> ولكنها ليست نهائية.<br>- <strong>البدائل موجودة</strong> في التربية القائمة على التنوير المبكر.<br>- <strong>العقل يمتلك قدرة فطرية</strong> على التفاعل مع المحيط حتى بدون التصورات الطفولية.<br>- <strong>التحرر من أفكار الطفولة</strong> لا يعني العجز عن التفاعل بل التفاعل بشكل أكثر عقلانية.<br>- <strong>الدور الإيجابي لأفكار الطفولة</strong> يكمن في كونها نقطة انطلاق وليس نقطة نهاية.",
+                "PhiH.textAnalysis.descartes.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.descartes.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.descartes.analysis.thesis.content": "يطرح ديكارت فكرة أن الانطباعات والأحكام التي تتشكل في الطفولة تظل مسيطرة على العقل حتى بعد بلوغ المرحلة العقلية، مما يستدعي جهداً واعياً ومكابدة للتحرر منها، وأن الشك المنهجي هو الوسيلة الأساسية لهذا التحرر.",
+                "PhiH.textAnalysis.descartes.analysis.mechanisms.title": "آليات عمل \"سلطان الفكرة الأولى\":",
+                "PhiH.textAnalysis.descartes.analysis.mechanisms.content": "تعمل آليات \"سلطان الفكرة الأولى\" من خلال:<br>- <strong>الطبيعة الثنائية للإنسان</strong> التي تجعل الجسد مسيطراً في الطفولة.<br>- <strong>الاعتماد الكلي على الحواس</strong> كمصدر وحيد للمعرفة.<br>- <strong>غياب الملكة النقدية</strong> والقدرة على التمييز.<br>- <strong>قوة الانطباعات الأولى</strong> عندما يكون العقل صفحة بيضاء.<br>- <strong>استمرارية الخيال والتخيل</strong> حتى بعد اكتساب المعرفة العقلية.",
+                "PhiH.textAnalysis.descartes.analysis.consequences.title": "نتائج سيطرة أفكار الطفولة:",
+                "PhiH.textAnalysis.descartes.analysis.consequences.content": "تؤدي سيطرة أفكار الطفولة إلى:<br>- <strong>استمرار الأخطاء المعرفية</strong> رغم امتلاك الأدلة العقلية.<br>- <strong>صعوبة التحرر الكامل</strong> من التصورات الخاطئة.<br>- <strong>الخطر الدائم من العودة</strong> إلى الأحكام الفاسدة.<br>- <strong>الفجوة بين المعرفة العقلية والإدراك الحسي</strong>.<br>- <strong>الحاجة إلى جهد مستمر</strong> للمقاومة والتصحيح.",
+                "PhiH.textAnalysis.descartes.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.descartes.analysis.significance.content": "يمثل مفهوم \"سلطان الفكرة الأولى\" عند ديكارت مدخلاً لفهم إشكالية المعرفة والتحرر من الموروث الفكري. فهو يبرز الصراع بين العقل والتقليد، وبين المعرفة البرهانية والإدراك الحسي. كما يوضح ضرورة الشك المنهجي كأداة للتحرر ويدفع نحو تأسيس معرفة يقينية قائمة على البداهة العقلية والاستدلال المنطقي، بعيداً عن سلطة الانطباعات الأولى وأخطاء الطفولة المعرفية."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

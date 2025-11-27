@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: حرية التفكير - فولتير - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#10b981">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Green + Emerald Color Palette */
+        :root {
+            --primary-color: #10b981;
+            --primary-light: #34d399;
+            --primary-dark: #059669;
+            --secondary-color: #059669;
+            --secondary-light: #10b981;
+            --secondary-dark: #047857;
+            --accent-color: #059669;
+            --accent-light: #10b981;
+            --accent-dark: #047857;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #ecfdf5;
+            --card-bg: #ffffff;
+            --definition-bg: #d1fae5;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #a7f3d0;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.1), 0 2px 4px -1px rgba(16, 185, 129, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(16, 185, 129, 0.1), 0 4px 6px -2px rgba(16, 185, 129, 0.05);
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --gradient-secondary: linear-gradient(135deg, #059669 0%, #047857 100%);
+            --gradient-accent: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #34d399;
+            --primary-light: #6ee7b7;
+            --primary-dark: #10b981;
+            --secondary-color: #10b981;
+            --secondary-light: #34d399;
+            --secondary-dark: #059669;
+            --accent-color: #10b981;
+            --accent-light: #34d399;
+            --accent-dark: #059669;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #064e3b;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #065f46;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+            --gradient-secondary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --gradient-accent: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(16, 185, 129, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(5, 150, 105, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(5, 150, 105, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(16, 185, 129, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.voltaire.title">تحليل النص: حرية التفكير - فولتير</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.voltaire.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.voltaire.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.voltaire.introduction.content">
+                    إن إدراج حرية التفكير والاعتقاد ضمن حقوق الإنسان مكسب حديث العهد بالنظر إلى تاريخ  
+                    معاناة الأفراد والشعوب من التعصّب وما ترتّب عليه من مظاهر القهر والاستبداد. ولعلّ محاكم التفتيش  
+                    أبرز الوقائع التاريخية دلالة على مصادرة هذا الحق. وإذا كان يحدث للإنسان أن يتنازل عن حريته في  
+                    التفكير والاعتقاد ويتوهّم أنّه سعيد، فكيف نفسّر تنازله هذا؟ وهل من أمل في تبصيره بواقع توهُمِهِ ؟
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.voltaire.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.voltaire.text.content">
+                        <strong>بولدمايند<sup>1</sup>:</strong> ثمّة على الأرض مائة ديانة تلعنك جميعها إن أنت  
+                        آمنت بعقائدك، فهي تعتبرها عبثيّة وملحدة، فلننظر  
+                        إذن في هذه العقائد.  
+                        <br><br>
+                        <strong>ميدروزوا<sup>2</sup>:</strong> وكيف لي أن أنظر فيها؟ أنا لست يعقوبيّا.<sup>3</sup>  
+                        <br><br>
+                        <strong>بولدمايند:</strong> إنّك إنسان، وهذا كاف.  
+                        <br><br>
+                        <strong>ميدروزو:</strong> واحسرتاه! أنت إنسان أكثر مني بكثير.  
+                        <br><br>
+                        <strong>بولدمايند:</strong> إن تعلّم التفكير أمر متوقّفٌ عليك وحدك، فأنت  
+                        وُلدت ذا عقل. إنّك طير في قفص الاتهام، ومحكمة  
+                        التفتيش<sup>4</sup> قصّبت جناحيك، ومع ذلك بإمكانهما أن  
+                        تَنْمُوَا من جديد، فمن لا يعرف الهندسة يمكنه تعلّمها،  
+                        وكل إنسان قادر على التعلّم، ومن المخجل أن تعهد  
+                        بعقلك إلى من لا تأتمنهم على مالك. فلتجرؤ إذن على  
+                        التفكير بنفسك.  
+                        <br><br>
+                        <strong>ميدروزو:</strong> يقال أنّه لو فكّر كلّ مِنّا بنفسه لحصلت فوضى غريبة.  
+                        <br><br>
+                        <strong>بولدمايند:</strong> بل على العكس تماما، فعندما نحضر عرضا ما، يعبّر  
+                        كلّ منّا عن رأيه بحرية دون أن يخلّ ذلك بالأمن.  
+                        ولكن إذا أراد بعض المدافعين الوقحين عن شاعر  
+                        فاشل إلزام جميع أصحاب الذوق السليم باستحسان  
+                        ما يبدو لهم قبيحا، يتعالى تصفير المستهجنين وقد  
+                        يتراشق الطرفان بالتّفّاح كما حدث ذات مرّة "بلندن".  
+                        إنّ طغاة الفكر هؤلاء هم الذين تسبّبوا في قدر من  
+                        مآسي العالم. ونحن لم نسعد في إنجلترا إلاّ منذ أن تمتّع  
+                        كلّ منّا بحقّهِ في التعبير عن رأيه بكلّ حرية.  
+                        <br><br>
+                        <strong>ميدروزو:</strong> إننا نضاهيكم في شدّة الأمن بلشبونة، حيث لا أحد  
+                        يقدر على التعبير عن رأيه.  
+                        <br><br>
+                        <strong>بولدمايند:</strong> أنت آمن ولكنك لست سعيدا، وإنّ أمنك هو أمن المحكوم عليهم بالأشغال الشاقة، يجذفون في صمت وبانتظام.  
+                        <br><br>
+                        <strong>ميدروزو:</strong> أَوَ تعتقد إذن أنّ روحي سجينة ؟  
+                        <br><br>
+                        <strong>بولدمايند:</strong> نعم، وإني لأريد تخليصها.  
+                        <br><br>
+                        <strong>ميدروزو:</strong> ولكن لم تخلّصني، إن كنت أستطيب<sup>5</sup> العيش داخل هذا السجن ؟  
+                        <br><br>
+                        <strong>بولدمايند:</strong> في هذه الحالة أنت تستحق ما أنت فيه.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.voltaire.text.source">فولتير، المعجم الفلسفي، حرية التفكير<br>Voltaire, Dictionnaire philosophique, Liberté de penser</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.voltaire.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/voltaire.jpg" alt="فولتير" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.voltaire.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.voltaire.author.content">
+                            فولتير (1694-1778) هو القائل: "سأنتهي إلى العدول عن البقاء في بلدي أو العدول عن  
+                            شغف التفكير بصوت مرتفع." هو من أبرز المفكرين المتمردين على  
+                            الاضطهاد والاستبداد سُجن من أجل أفكاره. كان يمثّل بمفرده سلطة  
+                            مضادة. قضى حياته مرتحلا من بلد لآخر، بين بريطانيا وبروسيا  
+                            وسيوسرا، مدافعا عن حق الاختلاف والتسامح. من أبرز مؤلفاته  
+                            الفلسفية: رسائل فلسفية (1734)، مقال في الإنسان (1738)، عناصر  
+                            من فلسفة نيوتن (1738)، مقال في الديانة الطبيعية (1756)، محاولات  
+                            في عادات الأمم وفكرها (1756)، مقال في التسامح (1763)، المعجم  
+                            الفلسفي (1764)...
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footnotes -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.voltaire.footnotes.title">الهوامش</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.voltaire.footnotes.item1"><strong>بولدمايند:</strong> اشتقاقا يعني الشخص الكثير الانتباه والحريص على التفكير. وهو قائد عسكري بريطاني التقى بميدروزو حوالي سنة 1707 ولم تتجاوز معرفته بمحاكم التفتيش ما انتهى إليه حواره مع البعض.</li>
+                    <li data-i18n="PhiH.textAnalysis.voltaire.footnotes.item2"><strong>ميدروزو:</strong> نبيل برتغالي خبر محاكم التفتيش وألفها، التقى ببولدمايند غير بعيد عن ساحة حرب في منطقة "باريج" من جبال البيريني.</li>
+                    <li data-i18n="PhiH.textAnalysis.voltaire.footnotes.item3"><strong>"اليعقوبي":</strong> إحالة على فرقة دينية مسيحية عرفت محنة الاضطهاد تُسمّى فِرقة دومينيك.</li>
+                    <li data-i18n="PhiH.textAnalysis.voltaire.footnotes.item4"><strong>محاكم التفتيش:</strong> مؤسّسة قضائية أنشأتها "البابوية" سنة 1231 عن طريق البابا غريغوار التاسع لملاحقة السحرة وأصحاب البدع الدينية في البداية وخاصة فرقة "أليبجوا" التي ظهرت في جنوب فرنسا ثم امتد تأثيرها للعديد من المدن الأوروبية وهي تقول بوجود صراع بين إله الخير والسفر الجديد وإلاه الشر والسفر القديم. امتد تعسّف محاكم التفتيش لاحقا ليشمل المفكرين ويضبط قائمة كتب ممنوعة في عهد بول الرابع سنة 1555 ولقد حاكمت غاليلاي سنة 1633.</li>
+                    <li data-i18n="PhiH.textAnalysis.voltaire.footnotes.item5"><strong>أستطيب العيش داخل السجن:</strong> موقف يكشف عن الطابع العنيد للوهم.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.voltaire.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.voltaire.questions.q1">حدّد العبارات الدالة على الموقفين من حرية التفكير الشّخصيّ والتعبير عن الرأي.</li>
+                    <li data-i18n="PhiH.textAnalysis.voltaire.questions.q2">هل في الوقوف على تعدّد المعتقدات والديانات واختلافها ما يفضي بالضرورة إلى التشكيك في معتقداتنا ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.voltaire.questions.q3">حاور الحجة التي يقدمها ميدروزو: ((لو فكّر كلّ منّا بنفسه لعمّت فوضى غريبة.)) باعتماد حجج أخرى من خارج النص.</li>
+                    <li data-i18n="PhiH.textAnalysis.voltaire.questions.q4">هل يمكن للإنسان أن يتنازل عن التفكير والتعبير عن الرأي دون أن يفوّت في إنسانيته ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.voltaire.questions.q5">هل يمكن أن نحرّر الآخرين من أوهامهم ؟</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.voltaire.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.voltaire.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.voltaire.answers.a1.content">
+                        العبارات الدالة على الموقفين من حرية التفكير:
+                        <br><br>
+                        <strong>موقف بولدمايند (المؤيد لحرية التفكير):</strong>
+                        <br>- "إن تعلّم التفكير أمر متوقّفٌ عليك وحدك، فأنت وُلدت ذا عقل"
+                        <br>- "فمن لا يعرف الهندسة يمكنه تعلّمها، وكل إنسان قادر على التعلّم"
+                        <br>- "من المخجل أن تعهد بعقلك إلى من لا تأتمنهم على مالك"
+                        <br>- "فلتجرؤ إذن على التفكير بنفسك"
+                        <br>- "نحن لم نسعد في إنجلترا إلاّ منذ أن تمتّع كلّ منّا بحقّهِ في التعبير عن رأيه بكلّ حرية"
+                        <br><br>
+                        <strong>موقف ميدروزو (المعارض لحرية التفكير):</strong>
+                        <br>- "يقال أنّه لو فكّر كلّ مِنّا بنفسه لحصلت فوضى غريبة"
+                        <br>- "إننا نضاهيكم في شدّة الأمن بلشبونة، حيث لا أحد يقدر على التعبير عن رأيه"
+                        <br>- "ولكن لم تخلّصني، إن كنت أستطيب العيش داخل هذا السجن ؟"
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.voltaire.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.voltaire.answers.a2.content">
+                        لا، ليس بالضرورة أن يؤدي تعدّد المعتقدات والديانات إلى التشكيك في معتقداتنا، وذلك للأسباب التالية:
+                        <br><br>
+                        أولاً، يمكن أن يؤدي الوعي بالتعددية إلى تعميق الفهم الذاتي بدلاً من التشكيك. فعندما نتعرف على معتقدات الآخرين، نضطر إلى التفكير بشكل أعمق في معتقداتنا الخاصة وفهم أسسها المنطقية والأخلاقية.
+                        <br><br>
+                        ثانياً، التعددية تثري الفكر الإنساني وتوسع الآفاق. فالحوار بين الثقافات والمعتقدات المختلفة يمكن أن يؤدي إلى تبادل الخبرات وتطوير الفكر الإنساني collectively.
+                        <br><br>
+                        ثالثاً، يمكن أن يكون الاختلاف مصدراً للإثراء بدلاً من الصراع. فكما يظهر في النص، الاختلاف في الرأي لا يعني بالضرورة الفوضى، بل يمكن أن يكون مصدراً للثراء الفكري والثقافي.
+                        <br><br>
+                        رابعاً، المعرفة بالتعددية تدفع نحو التسامح والتفاهم المتبادل، وهو ما يدعو إليه فولتير في نصه من خلال حوار بولدمايند الذي يدعو إلى التفكير النقدي وليس إلى التشكيك المطلق.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.voltaire.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.voltaire.answers.a3.content">
+                        حوار حجة ميدروزو "لو فكّر كلّ منّا بنفسه لعمّت فوضى غريبة":
+                        <br><br>
+                        هذه الحجة قابلة للنقاش من عدة جوانب. أولاً، يمكن الرد بأن الحرية الفكرية لا تعني الفوضى، بل تعني التنظيم العقلاني للاختلاف. فالمجتمعات الديمقراطية تثبت أن حرية التعبير يمكن أن تتعايش مع الاستقرار الاجتماعي عندما تكون مقترنة باحترام القانون والحوار العقلاني.
+                        <br><br>
+                        ثانياً، الفوضى الحقيقية تكمن في قمع حرية الفكر وليس في ممارستها. فالتاريخ يشهد بأن المجتمعات التي قمعت حرية التفكير شهدت ثورات عنيفة وانفجارات اجتماعية، بينما المجتمعات التي احترمت التعددية الفكرية تمتعت باستقرار دائم.
+                        <br><br>
+                        ثالثاً، التفكير الحر لا يعني التفكير الفوضوي، بل يعني التفكير المسؤول الذي يحترم قواعد الحوار والعقل. فكما يرد بولدمايند في النص، حرية التعبير في إنجلترا لم تؤد إلى الفوضى بل إلى السعادة والاستقرار.
+                        <br><br>
+                        رابعاً، الفوضى المزعومة هي في الحقيقة تنوع وغنى فكري، وهو ما يميز المجتمعات المتحضرة عن المجتمعات المتخلفة التي تفرض رأياً واحداً.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.voltaire.answers.a4.title">الإجابة عن السؤال الرابع:</h5>
+                    <p data-i18n="PhiH.textAnalysis.voltaire.answers.a4.content">
+                        لا، لا يمكن للإنسان أن يتنازل عن التفكير والتعبير عن الرأي دون أن يفوت في إنسانيته، وذلك للأسباب التالية:
+                        <br><br>
+                        أولاً، التفكير هو الخاصية الجوهرية التي تميز الإنسان عن سائر المخلوقات. فالتخلي عن التفكير هو تخلي عن الإنسانية ذاتها، كما يشير بولدمايند عندما يقول لميدروزو: "إنّك إنسان، وهذا كاف".
+                        <br><br>
+                        ثانياً، التفكير الحر هو أساس الكرامة الإنسانية. فالإنسان الذي يتخلى عن حريته في التفكير يصبح كالآلة أو الحيوان الذي ينفذ أوامر الآخرين دون مساءلة.
+                        <br><br>
+                        ثالثاً، التنازل عن حرية التعبير يعني التنازل عن المسؤولية الأخلاقية. فالإنسان الذي لا يعبر عن رأيه يكون شريكاً صامتاً في الظلم والاستبداد.
+                        <br><br>
+                        رابعاً، كما يوضح النص، الأمن الذي يتحقق بالتنازل عن الحرية هو أمن زائف، يشبه أمن المساجين الذين يعيشون في سجن مريح لكنهم محرومون من حريتهم وإنسانيتهم.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.voltaire.answers.a5.title">الإجابة عن السؤال الخامس:</h5>
+                    <p data-i18n="PhiH.textAnalysis.voltaire.answers.a5.content">
+                        نعم، يمكن أن نحرر الآخرين من أوهامهم، لكن بشروط:
+                        <br><br>
+                        أولاً، التحرير يجب أن يكون عبر الحوار والإقناع وليس بالإكراه. فكما يحاول بولدمايند إقناع ميدروزو بالحجج العقلانية، وليس بإجباره على تغيير رأيه.
+                        <br><br>
+                        ثانياً، التحرير الحقيقي يأتي من الداخل. فالدور الأساسي للمفكر أو المربي هو توفير الأدوات الفكرية والمناخ الملائم للتفكير الحر، لكن القرار النهائي يبقى للفرد نفسه.
+                        <br><br>
+                        ثالثاً، هناك حدود للتحرير. فكما يظهر في نهاية الحوار، عندما يرفض ميدروزو التحرر ويصر على البقاء في "سجنه"، يقرر بولدمايند أن ميدروزو "يستحق ما هو فيه". وهذا يعني أن التحرير ليس واجباً مطلقاً عندما يرفض الشخص نفسه التحرر.
+                        <br><br>
+                        رابعاً، التحرير عملية مستمرة وليست حدثاً واحدا. فهي تتطلب صبراً ومثابرة وحواراً متواصلاً، كما يظهر في محاولات بولدمايند المتكررة لإقناع ميدروزو.
+                    </p>
+                </div>
+            </div>
+			
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.voltaire.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.voltaire.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.voltaire.analysis.thesis.content">
+                        يطرح فولتير من خلال هذا الحوار فكرة أن حرية التفكير والتعبير حق طبيعي لكل إنسان، وأن أي محاولة لقمع هذا الحق تمثل اعتداءً على جوهر الإنسانية. يرى فولتير أن التفكير المستقل هو السبيل الوحيد للتحرر من الأوهام والوصول إلى الحقيقة، وأن الأمن الذي يتحقق بقمع حرية الفكر هو أمن زائف لا يؤدي إلى السعادة الحقيقية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.voltaire.analysis.dialogue.title">طبيعة الحوار ورمزيته:</h5>
+                    <p data-i18n="PhiH.textAnalysis.voltaire.analysis.dialogue.content">
+                        يمثل الحوار بين بولدمايند وميدروزو صراعاً بين العقل والجهل، بين الحرية والخضوع. فبولدمايند يمثل صوت العقل والتحرر، بينما يمثل ميدروزو صوت الخضوع والاستسلام للسلطة. هذا الحوار ليس مجرد نقاش بين شخصين، بل هو تجسيد للصراع الدائر في المجتمع بين دعاة الحرية الفكرية وأصحاب السلطة القمعية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.voltaire.analysis.arguments.title">الحجج والبراهين:</h5>
+                    <p data-i18n="PhiH.textAnalysis.voltaire.analysis.arguments.content">
+                        يستخدم فولتير حججاً متعددة لدعم موقفه، منها أن القدرة على التفكير هي خاصية إنسانية فطرية، وأن التعليم والتفكير هما وسيلتان للتحرر من القيود. كما يقدم مثال إنجلترا كنموذج للمجتمع الذي يحترم حرية التعبير ويحقق السعادة لأفراده، في مقابل لشبونة التي تمثل نموذجاً للمجتمع القمعي الذي يفرض الصمت على أفراده.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.voltaire.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.voltaire.analysis.significance.content">
+                        يمثل مفهوم حرية التفكير عند فولتير مدخلاً لفهم إشكالية العلاقة بين الفرد والسلطة، وبين الحرية والأمن. فهو يبرز الصراع بين الحق في التفكير المستقل وضرورات الانضباط الاجتماعي، وبين السعادة الفردية والاستقرار الجماعي. كما يوضح ضرورة التفكير النقدي والاستقلال الفكري كأدوات للتحرر من قيود التقاليد والسلطات، ويدفع نحو تأسيس مجتمع قائم على احترام الاختلاف والتعددية الفكرية.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.voltaire.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.voltaire.title": "Analyse du texte: Liberté de Penser - Voltaire",
+                "PhiH.textAnalysis.voltaire.introduction.title": "Introduction",
+                "PhiH.textAnalysis.voltaire.introduction.content": "L'inclusion de la liberté de pensée et de croyance parmi les droits de l'homme est un acquis récent compte tenu de l'histoire de la souffrance des individus et des peuples due au fanatisme et aux manifestations d'oppression et de despotisme qui en ont résulté. L'Inquisition est peut-être le fait historique le plus significatif de la confiscation de ce droit. Et si l'homme renonce à sa liberté de pensée et de croyance et s'imagine être heureux, comment expliquer cette renonciation ? Y a-t-il un espoir de l'éclairer sur la réalité de son illusion ?",
+                "PhiH.textAnalysis.voltaire.text.title": "Texte",
+                "PhiH.textAnalysis.voltaire.text.content": "<strong>Boldmind<sup>1</sup>:</strong> Il y a sur terre cent religions qui vous maudissent toutes si vous croyez à vos dogmes, car elles les considèrent comme absurdes et athées, examinons donc ces dogmes.<br><br><strong>Medroso<sup>2</sup>:</strong> Et comment puis-je les examiner ? Je ne suis pas jacobin.<sup>3</sup><br><br><strong>Boldmind:</strong> Vous êtes un homme, et cela suffit.<br><br><strong>Medroso:</strong> Hélas ! Vous êtes bien plus homme que moi.<br><br><strong>Boldmind:</strong> Apprendre à penser ne dépend que de vous seul, vous êtes né avec une raison. Vous êtes un oiseau dans la cage de l'accusation, et l'Inquisition<sup>4</sup> vous a coupé les ailes, mais elles peuvent repousser, celui qui ne connaît pas la géométrie peut l'apprendre, tout homme est capable d'apprendre, et il est honteux de confier votre esprit à ceux à qui vous ne confieriez pas votre argent. Osez donc penser par vous-même.<br><br><strong>Medroso:</strong> On dit que si chacun de nous pensait par lui-même, il y aurait une étrange confusion.<br><br><strong>Boldmind:</strong> Au contraire, quand nous assistons à un spectacle, chacun exprime librement son opinion sans que cela nuise à la sécurité. Mais si certains défenseurs insolents d'un poète raté veulent obliger tous les gens de bon goût à approuver ce qui leur paraît laid, les sifflets des contempteurs s'élèvent et les deux parties peuvent s'échanger des pommes comme cela s'est produit une fois à Londres. Ces tyrans de la pensée sont ceux qui ont causé une part des malheurs du monde. Et nous n'avons été heureux en Angleterre que depuis que chacun de nous a joui de son droit à exprimer son opinion en toute liberté.<br><br><strong>Medroso:</strong> Nous vous égalons en sécurité à Lisbonne, où personne ne peut exprimer son opinion.<br><br><strong>Boldmind:</strong> Vous êtes en sécurité mais vous n'êtes pas heureux, et votre sécurité est celle des condamnés aux travaux forcés, qui rament en silence et régulièrement.<br><br><strong>Medroso:</strong> Pensez-vous donc que mon âme est prisonnière ?<br><br><strong>Boldmind:</strong> Oui, et je veux la délivrer.<br><br><strong>Medroso:</strong> Mais pourquoi me délivrer, si je me plais<sup>5</sup> à vivre dans cette prison ?<br><br><strong>Boldmind:</strong> Dans ce cas, vous méritez ce qui vous arrive.",
+                "PhiH.textAnalysis.voltaire.text.source": "Voltaire, Dictionnaire philosophique, Liberté de penser",
+                "PhiH.textAnalysis.voltaire.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.voltaire.author.alt": "Voltaire",
+                "PhiH.textAnalysis.voltaire.author.content": "Voltaire (1694-1778) est celui qui a dit : \"Je finirai par renoncer à rester dans mon pays ou par renoncer à la passion de penser à haute voix.\" Il est l'un des penseurs les plus rebelles contre l'oppression et le despotisme, emprisonné pour ses idées. Il représentait à lui seul une contre-pouvoir. Il a passé sa vie à voyager d'un pays à l'autre, entre la Grande-Bretagne, la Prusse et la Suisse, défendant le droit à la différence et à la tolérance. Parmi ses œuvres philosophiques les plus importantes : Lettres philosophiques (1734), Essai sur l'homme (1738), Éléments de la philosophie de Newton (1738), Essai sur la religion naturelle (1756), Essai sur les mœurs et l'esprit des nations (1756), Traité sur la tolérance (1763), Dictionnaire philosophique (1764)...",
+                "PhiH.textAnalysis.voltaire.footnotes.title": "Notes de bas de page",
+                "PhiH.textAnalysis.voltaire.footnotes.item1": "<strong>Boldmind:</strong> Étymologiquement, signifie la personne très attentive et soucieuse de penser. C'est un officier militaire britannique qui a rencontré Medroso vers 1707 et sa connaissance de l'Inquisition n'a pas dépassé ce qui est arrivé à son dialogue avec certains.",
+                "PhiH.textAnalysis.voltaire.footnotes.item2": "<strong>Medroso:</strong> Noble portugais qui a connu l'Inquisition et s'y est habitué, il a rencontré Boldmind non loin d'un champ de bataille dans la région de \"Barège\" dans les Pyrénées.",
+                "PhiH.textAnalysis.voltaire.footnotes.item3": "<strong>\"Jacobin\":</strong> Référence à une faction religieuse chrétienne qui a connu l'épreuve de la persécution appelée faction dominicaine.",
+                "PhiH.textAnalysis.voltaire.footnotes.item4": "<strong>Inquisition:</strong> Institution judiciaire créée par la \"papauté\" en 1231 par le pape Grégoire IX pour poursuivre les sorciers et les hérétiques au début, en particulier la faction \"Albigeois\" qui est apparue dans le sud de la France puis a étendu son influence à de nombreuses villes européennes et affirme l'existence d'un conflit entre le dieu du bien et le Nouveau Testament et le dieu du mal et l'Ancien Testament. L'arbitraire de l'Inquisition s'est ensuite étendu pour inclure les penseurs et établir une liste de livres interdits sous le pontificat de Paul IV en 1555 et elle a jugé Galilée en 1633.",
+                "PhiH.textAnalysis.voltaire.footnotes.item5": "<strong>Je me plais à vivre en prison:</strong> Position qui révèle le caractère tenace de l'illusion.",
+                "PhiH.textAnalysis.voltaire.questions.title": "Tâches",
+                "PhiH.textAnalysis.voltaire.questions.q1": "Identifiez les expressions indicatives des deux positions concernant la liberté de pensée personnelle et d'expression d'opinion.",
+                "PhiH.textAnalysis.voltaire.questions.q2": "La prise de conscience de la diversité et de la différence des croyances et des religions conduit-elle nécessairement à douter de nos croyances ?",
+                "PhiH.textAnalysis.voltaire.questions.q3": "Dialoguez avec l'argument présenté par Medroso : ((Si chacun de nous pensait par lui-même, il y aurait une étrange confusion.)) en utilisant d'autres arguments extérieurs au texte.",
+                "PhiH.textAnalysis.voltaire.questions.q4": "L'homme peut-il renoncer à penser et à exprimer son opinion sans perdre son humanité ?",
+                "PhiH.textAnalysis.voltaire.questions.q5": "Pouvons-nous libérer les autres de leurs illusions ?",
+                "PhiH.textAnalysis.voltaire.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.voltaire.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.voltaire.answers.a1.content": "Les expressions indicatives des deux positions concernant la liberté de pensée:<br><br><strong>Position de Boldmind (en faveur de la liberté de pensée):</strong><br>- \"Apprendre à penser ne dépend que de vous seul, vous êtes né avec une raison\"<br>- \"Celui qui ne connaît pas la géométrie peut l'apprendre, tout homme est capable d'apprendre\"<br>- \"Il est honteux de confier votre esprit à ceux à qui vous ne confieriez pas votre argent\"<br>- \"Osez donc penser par vous-même\"<br>- \"Nous n'avons été heureux en Angleterre que depuis que chacun de nous a joui de son droit à exprimer son opinion en toute liberté\"<br><br><strong>Position de Medroso (opposé à la liberté de pensée):</strong><br>- \"On dit que si chacun de nous pensait par lui-même, il y aurait une étrange confusion\"<br>- \"Nous vous égalons en sécurité à Lisbonne, où personne ne peut exprimer son opinion\"<br>- \"Mais pourquoi me délivrer, si je me plais à vivre dans cette prison ?\"",
+                "PhiH.textAnalysis.voltaire.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.voltaire.answers.a2.content": "Non, la prise de conscience de la diversité des croyances et des religions ne conduit pas nécessairement à douter de nos croyances, pour les raisons suivantes:<br><br>Premièrement, la conscience de la pluralité peut conduire à un approfondissement de la compréhension de soi plutôt qu'au doute. Lorsque nous apprenons à connaître les croyances des autres, nous sommes obligés de réfléchir plus profondément à nos propres croyances et de comprendre leurs bases logiques et morales.<br><br>Deuxièmement, la pluralité enrichit la pensée humaine et élargit les horizons. Le dialogue entre les cultures et les croyances différentes peut conduire à un échange d'expériences et au développement de la pensée humaine collectivement.<br><br>Troisièmement, la différence peut être une source d'enrichissement plutôt que de conflit. Comme le montre le texte, la différence d'opinion ne signifie pas nécessairement le chaos, mais peut être une source de richesse intellectuelle et culturelle.<br><br>Quatrièmement, la connaissance de la pluralité pousse à la tolérance et à la compréhension mutuelle, ce que prône Voltaire dans son texte à travers le dialogue de Boldmind qui appelle à la pensée critique et non au doute absolu.",
+                "PhiH.textAnalysis.voltaire.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.voltaire.answers.a3.content": "Dialogue avec l'argument de Medroso \"Si chacun de nous pensait par lui-même, il y aurait une étrange confusion\":<br><br>Cet argument est discutable de plusieurs points de vue. Premièrement, on peut répondre que la liberté intellectuelle ne signifie pas le chaos, mais l'organisation rationnelle de la différence. Les sociétés démocratiques prouvent que la liberté d'expression peut coexister avec la stabilité sociale lorsqu'elle est associée au respect de la loi et au dialogue rationnel.<br><br>Deuxièmement, le vrai chaos réside dans la répression de la liberté de pensée et non dans sa pratique. L'histoire témoigne que les sociétés qui ont réprimé la liberté de pensée ont connu des révolutions violentes et des explosions sociales, tandis que les sociétés qui ont respecté la pluralité intellectuelle ont joui d'une stabilité durable.<br><br>Troisièmement, la pensée libre ne signifie pas la pensée chaotique, mais la pensée responsable qui respecte les règles du dialogue et de la raison. Comme le répond Boldmind dans le texte, la liberté d'expression en Angleterre n'a pas conduit au chaos mais au bonheur et à la stabilité.<br><br>Quatrièmement, le chaos prétendu est en réalité une diversité et une richesse intellectuelle, ce qui distingue les sociétés civilisées des sociétés arriérées qui imposent une seule opinion.",
+                "PhiH.textAnalysis.voltaire.answers.a4.title": "Réponse à la quatrième question:",
+                "PhiH.textAnalysis.voltaire.answers.a4.content": "Non, l'homme ne peut pas renoncer à penser et à exprimer son opinion sans perdre son humanité, pour les raisons suivantes:<br><br>Premièrement, la pensée est la propriété essentielle qui distingue l'homme des autres créatures. Abandonner la pensée, c'est abandonner l'humanité elle-même, comme l'indique Boldmind lorsqu'il dit à Medroso: \"Vous êtes un homme, et cela suffit\".<br><br>Deuxièmement, la liberté de pensée est le fondement de la dignité humaine. L'homme qui renonce à sa liberté de pensée devient comme une machine ou un animal qui exécute les ordres des autres sans remise en question.<br><br>Troisièmement, renoncer à la liberté d'expression signifie renoncer à la responsabilité morale. L'homme qui n'exprime pas son opinion est un complice silencieux de l'injustice et du despotisme.<br><br>Quatrièmement, comme le montre le texte, la sécurité obtenue en renonçant à la liberté est une sécurité illusoire, semblable à la sécurité des prisonniers qui vivent dans une prison confortable mais sont privés de leur liberté et de leur humanité.",
+                "PhiH.textAnalysis.voltaire.answers.a5.title": "Réponse à la cinquième question:",
+                "PhiH.textAnalysis.voltaire.answers.a5.content": "Oui, nous pouvons libérer les autres de leurs illusions, mais sous conditions:<br><br>Premièrement, la libération doit se faire par le dialogue et la persuasion et non par la contrainte. Comme Boldmind essaie de convaincre Medroso par des arguments rationnels, et non en le forçant à changer d'avis.<br><br>Deuxièmement, la véritable libération vient de l'intérieur. Le rôle principal du penseur ou de l'éducateur est de fournir les outils intellectuels et le climat propice à la pensée libre, mais la décision finale reste à l'individu lui-même.<br><br>Troisièmement, il y a des limites à la libération. Comme le montre la fin du dialogue, lorsque Medroso refuse la libération et insiste pour rester dans sa \"prison\", Boldmind décide que Medroso \"mérite ce qui lui arrive\". Cela signifie que la libération n'est pas un devoir absolu lorsque la personne elle-même refuse d'être libérée.<br><br>Quatrièmement, la libération est un processus continu et non un événement unique. Elle nécessite de la patience, de la persévérance et un dialogue continu, comme le montrent les tentatives répétées de Boldmind pour convaincre Medroso.",
+                "PhiH.textAnalysis.voltaire.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.voltaire.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.voltaire.answers.a1.content": "Expressions indicative of the two positions regarding freedom of thought:<br><br><strong>Boldmind's position (in favor of freedom of thought):</strong><br>- \"Learning to think depends only on you alone, you were born with reason\"<br>- \"He who does not know geometry can learn it, every man is capable of learning\"<br>- \"It is shameful to entrust your mind to those you would not trust with your money\"<br>- \"Dare then to think for yourself\"<br>- \"We have been happy in England only since each of us has enjoyed his right to express his opinion with complete freedom\"<br><br><strong>Medroso's position (opposed to freedom of thought):</strong><br>- \"It is said that if each of us thought for himself, there would be a strange confusion\"<br>- \"We match you in security in Lisbon, where no one can express his opinion\"<br>- \"But why free me, if I enjoy living in this prison?\"",
+                "PhiH.textAnalysis.voltaire.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.voltaire.answers.a2.content": "No, awareness of the diversity of beliefs and religions does not necessarily lead to doubting our beliefs, for the following reasons:<br><br>Firstly, awareness of plurality can lead to a deepening of self-understanding rather than doubt. When we learn about the beliefs of others, we are forced to think more deeply about our own beliefs and understand their logical and moral foundations.<br><br>Secondly, plurality enriches human thought and broadens horizons. Dialogue between different cultures and beliefs can lead to an exchange of experiences and the development of human thought collectively.<br><br>Thirdly, difference can be a source of enrichment rather than conflict. As the text shows, difference of opinion does not necessarily mean chaos, but can be a source of intellectual and cultural richness.<br><br>Fourthly, knowledge of plurality pushes towards tolerance and mutual understanding, which is what Voltaire advocates in his text through Boldmind's dialogue that calls for critical thinking and not absolute doubt.",
+                "PhiH.textAnalysis.voltaire.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.voltaire.answers.a3.content": "Dialogue with Medroso's argument \"If each of us thought for himself, there would be a strange confusion\":<br><br>This argument is debatable from several perspectives. Firstly, it can be responded that intellectual freedom does not mean chaos, but the rational organization of difference. Democratic societies prove that freedom of expression can coexist with social stability when combined with respect for the law and rational dialogue.<br><br>Secondly, the real chaos lies in the repression of freedom of thought and not in its practice. History testifies that societies that repressed freedom of thought experienced violent revolutions and social explosions, while societies that respected intellectual plurality enjoyed lasting stability.<br><br>Thirdly, free thinking does not mean chaotic thinking, but responsible thinking that respects the rules of dialogue and reason. As Boldmind responds in the text, freedom of expression in England did not lead to chaos but to happiness and stability.<br><br>Fourthly, the alleged chaos is actually diversity and intellectual richness, which distinguishes civilized societies from backward societies that impose a single opinion.",
+                "PhiH.textAnalysis.voltaire.answers.a4.title": "Answer to the fourth question:",
+                "PhiH.textAnalysis.voltaire.answers.a4.content": "No, man cannot give up thinking and expressing his opinion without losing his humanity, for the following reasons:<br><br>Firstly, thinking is the essential property that distinguishes man from other creatures. Abandoning thinking is abandoning humanity itself, as Boldmind indicates when he says to Medroso: \"You are a man, and that is enough\".<br><br>Secondly, freedom of thought is the foundation of human dignity. The man who gives up his freedom of thought becomes like a machine or an animal that carries out the orders of others without questioning.<br><br>Thirdly, giving up freedom of expression means giving up moral responsibility. The man who does not express his opinion is a silent accomplice to injustice and despotism.<br><br>Fourthly, as the text shows, the security achieved by giving up freedom is an illusory security, similar to the security of prisoners who live in a comfortable prison but are deprived of their freedom and humanity.",
+                "PhiH.textAnalysis.voltaire.answers.a5.title": "Answer to the fifth question:",
+                "PhiH.textAnalysis.voltaire.answers.a5.content": "Yes, we can free others from their illusions, but under conditions:<br><br>Firstly, liberation must be through dialogue and persuasion and not through coercion. As Boldmind tries to convince Medroso with rational arguments, and not by forcing him to change his mind.<br><br>Secondly, true liberation comes from within. The main role of the thinker or educator is to provide the intellectual tools and the conducive climate for free thinking, but the final decision remains with the individual himself.<br><br>Thirdly, there are limits to liberation. As shown at the end of the dialogue, when Medroso refuses liberation and insists on remaining in his \"prison\", Boldmind decides that Medroso \"deserves what he has\". This means that liberation is not an absolute duty when the person himself refuses to be liberated.<br><br>Fourthly, liberation is a continuous process and not a single event. It requires patience, perseverance and continuous dialogue, as shown by Boldmind's repeated attempts to convince Medroso.",
+                "PhiH.textAnalysis.voltaire.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.voltaire.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.voltaire.analysis.thesis.content": "À travers ce dialogue, Voltaire présente l'idée que la liberté de pensée et d'expression est un droit naturel pour tout être humain, et que toute tentative de réprimer ce droit représente une atteinte à l'essence de l'humanité. Voltaire considère que la pensée indépendante est le seul moyen de se libérer des illusions et d'atteindre la vérité, et que la sécurité obtenue par la répression de la liberté de pensée est une sécurité illusoire qui ne mène pas au bonheur véritable.",
+                "PhiH.textAnalysis.voltaire.analysis.dialogue.title": "Nature et symbolisme du dialogue:",
+                "PhiH.textAnalysis.voltaire.analysis.dialogue.content": "Le dialogue entre Boldmind et Medroso représente un conflit entre la raison et l'ignorance, entre la liberté et la soumission. Boldmind représente la voix de la raison et de la libération, tandis que Medroso représente la voix de la soumission et de la capitulation devant l'autorité. Ce dialogue n'est pas seulement une discussion entre deux personnes, mais une incarnation du conflit qui se déroule dans la société entre les défenseurs de la liberté intellectuelle et les détenteurs du pouvoir répressif.",
+                "PhiH.textAnalysis.voltaire.analysis.arguments.title": "Arguments et preuves:",
+                "PhiH.textAnalysis.voltaire.analysis.arguments.content": "Voltaire utilise plusieurs arguments pour soutenir sa position, notamment que la capacité de penser est une caractéristique humaine innée, et que l'éducation et la pensée sont deux moyens de se libérer des contraintes. Il présente également l'exemple de l'Angleterre comme modèle d'une société qui respecte la liberté d'expression et assure le bonheur de ses membres, par opposition à Lisbonne qui représente un modèle de société répressive qui impose le silence à ses membres.",
+                "PhiH.textAnalysis.voltaire.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.voltaire.analysis.significance.content": "Le concept de liberté de pensée chez Voltaire représente une entrée pour comprendre la problématique de la relation entre l'individu et le pouvoir, et entre la liberté et la sécurité. Il met en lumière le conflit entre le droit à la pensée indépendante et les nécessités de la discipline sociale, et entre le bonheur individuel et la stabilité collective. Il clarifie également la nécessité de la pensée critique et de l'indépendance intellectuelle comme outils de libération des contraintes des traditions et des autorités, et pousse vers l'établissement d'une société fondée sur le respect de la différence et de la pluralité intellectuelle."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.voltaire.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.voltaire.title": "Text Analysis: Freedom of Thought - Voltaire",
+                "PhiH.textAnalysis.voltaire.introduction.title": "Introduction",
+                "PhiH.textAnalysis.voltaire.introduction.content": "The inclusion of freedom of thought and belief among human rights is a recent achievement considering the history of suffering of individuals and peoples from fanaticism and the resulting manifestations of oppression and tyranny. The Inquisition is perhaps the most significant historical event indicating the confiscation of this right. And if a person happens to give up his freedom of thought and belief and imagines himself happy, how do we explain this concession? Is there any hope of enlightening him about the reality of his illusion?",
+                "PhiH.textAnalysis.voltaire.text.title": "Text",
+                "PhiH.textAnalysis.voltaire.text.content": "<strong>Boldmind<sup>1</sup>:</strong> There are a hundred religions on earth that all curse you if you believe in your creeds, for they consider them absurd and atheistic, so let us examine these creeds.<br><br><strong>Medroso<sup>2</sup>:</strong> And how can I examine them? I am not a Jacobin.<sup>3</sup><br><br><strong>Boldmind:</strong> You are a man, and that is enough.<br><br><strong>Medroso:</strong> Alas! You are much more of a man than I am.<br><br><strong>Boldmind:</strong> Learning to think depends only on you alone, you were born with reason. You are a bird in the cage of accusation, and the Inquisition<sup>4</sup> has clipped your wings, but they can grow back, he who does not know geometry can learn it, every man is capable of learning, and it is shameful to entrust your mind to those you would not trust with your money. Dare then to think for yourself.<br><br><strong>Medroso:</strong> It is said that if each of us thought for himself, there would be a strange confusion.<br><br><strong>Boldmind:</strong> On the contrary, when we attend a show, each expresses his opinion freely without disturbing security. But if some insolent defenders of a failed poet want to force all people of good taste to approve what seems ugly to them, the whistles of the scorners rise and the two parties may throw apples at each other as happened once in London. These tyrants of thought are those who have caused a share of the world's misfortunes. And we have been happy in England only since each of us has enjoyed his right to express his opinion with complete freedom.<br><br><strong>Medroso:</strong> We match you in security in Lisbon, where no one can express his opinion.<br><br><strong>Boldmind:</strong> You are safe but you are not happy, and your security is that of convicts sentenced to hard labor, rowing in silence and regularly.<br><br><strong>Medroso:</strong> Do you think then that my soul is imprisoned?<br><br><strong>Boldmind:</strong> Yes, and I want to free it.<br><br><strong>Medroso:</strong> But why free me, if I enjoy<sup>5</sup> living in this prison?<br><br><strong>Boldmind:</strong> In that case, you deserve what you have.",
+                "PhiH.textAnalysis.voltaire.text.source": "Voltaire, Dictionnaire philosophique, Liberté de penser",
+                "PhiH.textAnalysis.voltaire.author.title": "Author Presentation",
+                "PhiH.textAnalysis.voltaire.author.alt": "Voltaire",
+                "PhiH.textAnalysis.voltaire.author.content": "Voltaire (1694-1778) is the one who said: \"I will end up giving up staying in my country or giving up the passion of thinking out loud.\" He is one of the most rebellious thinkers against oppression and tyranny, imprisoned for his ideas. He represented a counter-power by himself. He spent his life traveling from one country to another, between Britain, Prussia and Switzerland, defending the right to difference and tolerance. Among his most important philosophical works: Philosophical Letters (1734), Essay on Man (1738), Elements of Newton's Philosophy (1738), Essay on Natural Religion (1756), Essay on the Customs and Spirit of Nations (1756), Treatise on Tolerance (1763), Philosophical Dictionary (1764)...",
+                "PhiH.textAnalysis.voltaire.footnotes.title": "Footnotes",
+                "PhiH.textAnalysis.voltaire.footnotes.item1": "<strong>Boldmind:</strong> Etymologically, means the person who is very attentive and careful to think. He is a British military officer who met Medroso around 1707 and his knowledge of the Inquisition did not exceed what happened in his dialogue with some.",
+                "PhiH.textAnalysis.voltaire.footnotes.item2": "<strong>Medroso:</strong> Portuguese nobleman who knew the Inquisition and became accustomed to it, he met Boldmind not far from a battlefield in the \"Barège\" region of the Pyrenees.",
+                "PhiH.textAnalysis.voltaire.footnotes.item3": "<strong>\"Jacobin\":</strong> Reference to a Christian religious faction that experienced the ordeal of persecution called the Dominican faction.",
+                "PhiH.textAnalysis.voltaire.footnotes.item4": "<strong>Inquisition:</strong> Judicial institution created by the \"papacy\" in 1231 by Pope Gregory IX to pursue witches and heretics at first, particularly the \"Albigensian\" faction that appeared in southern France and then extended its influence to many European cities and claims the existence of a conflict between the god of good and the New Testament and the god of evil and the Old Testament. The arbitrariness of the Inquisition later extended to include thinkers and establish a list of banned books under the pontificate of Paul IV in 1555 and it tried Galileo in 1633.",
+                "PhiH.textAnalysis.voltaire.footnotes.item5": "<strong>I enjoy living in prison:</strong> Position that reveals the tenacious nature of illusion.",
+                "PhiH.textAnalysis.voltaire.questions.title": "Tasks",
+                "PhiH.textAnalysis.voltaire.questions.q1": "Identify the expressions indicative of the two positions regarding personal freedom of thought and expression of opinion.",
+                "PhiH.textAnalysis.voltaire.questions.q2": "Does awareness of the diversity and difference of beliefs and religions necessarily lead to doubting our beliefs?",
+                "PhiH.textAnalysis.voltaire.questions.q3": "Dialogue with the argument presented by Medroso: ((If each of us thought for himself, there would be a strange confusion.)) using other arguments outside the text.",
+                "PhiH.textAnalysis.voltaire.questions.q4": "Can man give up thinking and expressing his opinion without losing his humanity?",
+                "PhiH.textAnalysis.voltaire.questions.q5": "Can we free others from their illusions?",
+                "PhiH.textAnalysis.voltaire.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.voltaire.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.voltaire.analysis.thesis.content": "Through this dialogue, Voltaire presents the idea that freedom of thought and expression is a natural right for every human being, and that any attempt to suppress this right represents an attack on the essence of humanity. Voltaire believes that independent thinking is the only way to free oneself from illusions and reach the truth, and that the security achieved by repressing freedom of thought is a false security that does not lead to true happiness.",
+                "PhiH.textAnalysis.voltaire.analysis.dialogue.title": "Nature and symbolism of the dialogue:",
+                "PhiH.textAnalysis.voltaire.analysis.dialogue.content": "The dialogue between Boldmind and Medroso represents a conflict between reason and ignorance, between freedom and submission. Boldmind represents the voice of reason and liberation, while Medroso represents the voice of submission and surrender to authority. This dialogue is not just a discussion between two people, but an embodiment of the conflict taking place in society between advocates of intellectual freedom and holders of repressive power.",
+                "PhiH.textAnalysis.voltaire.analysis.arguments.title": "Arguments and proofs:",
+                "PhiH.textAnalysis.voltaire.analysis.arguments.content": "Voltaire uses several arguments to support his position, including that the ability to think is an innate human characteristic, and that education and thinking are two means of freeing oneself from constraints. He also presents the example of England as a model of a society that respects freedom of expression and ensures the happiness of its members, as opposed to Lisbon which represents a model of a repressive society that imposes silence on its members.",
+                "PhiH.textAnalysis.voltaire.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.voltaire.analysis.significance.content": "The concept of freedom of thought in Voltaire represents an entry point for understanding the problematic of the relationship between the individual and power, and between freedom and security. It highlights the conflict between the right to independent thought and the necessities of social discipline, and between individual happiness and collective stability. It also clarifies the necessity of critical thinking and intellectual independence as tools for liberation from the constraints of traditions and authorities, and pushes towards the establishment of a society based on respect for difference and intellectual plurality."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.voltaire.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.voltaire.title": "تحليل النص: حرية التفكير - فولتير",
+                "PhiH.textAnalysis.voltaire.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.voltaire.introduction.content": "إن إدراج حرية التفكير والاعتقاد ضمن حقوق الإنسان مكسب حديث العهد بالنظر إلى تاريخ معاناة الأفراد والشعوب من التعصّب وما ترتّب عليه من مظاهر القهر والاستبداد. ولعلّ محاكم التفتيش أبرز الوقائع التاريخية دلالة على مصادرة هذا الحق. وإذا كان يحدث للإنسان أن يتنازل عن حريته في التفكير والاعتقاد ويتوهّم أنّه سعيد، فكيف نفسّر تنازله هذا؟ وهل من أمل في تبصيره بواقع توهُمِهِ ؟",
+                "PhiH.textAnalysis.voltaire.text.title": "النص",
+                "PhiH.textAnalysis.voltaire.text.content": "<strong>بولدمايند<sup>1</sup>:</strong> ثمّة على الأرض مائة ديانة تلعنك جميعها إن أنت آمنت بعقائدك، فهي تعتبرها عبثيّة وملحدة، فلننظر إذن في هذه العقائد.<br><br><strong>ميدروزوا<sup>2</sup>:</strong> وكيف لي أن أنظر فيها؟ أنا لست يعقوبيّا.<sup>3</sup><br><br><strong>بولدمايند:</strong> إنّك إنسان، وهذا كاف.<br><br><strong>ميدروزو:</strong> واحسرتاه! أنت إنسان أكثر مني بكثير.<br><br><strong>بولدمايند:</strong> إن تعلّم التفكير أمر متوقّفٌ عليك وحدك، فأنت وُلدت ذا عقل. إنّك طير في قفص الاتهام، ومحكمة التفتيش<sup>4</sup> قصّبت جناحيك، ومع ذلك بإمكانهما أن تَنْمُوَا من جديد، فمن لا يعرف الهندسة يمكنه تعلّمها، وكل إنسان قادر على التعلّم، ومن المخجل أن تعهد بعقلك إلى من لا تأتمنهم على مالك. فلتجرؤ إذن على التفكير بنفسك.<br><br><strong>ميدروزو:</strong> يقال أنّه لو فكّر كلّ مِنّا بنفسه لحصلت فوضى غريبة.<br><br><strong>بولدمايند:</strong> بل على العكس تماما، فعندما نحضر عرضا ما، يعبّر كلّ منّا عن رأيه بحرية دون أن يخلّ ذلك بالأمن. ولكن إذا أراد بعض المدافعين الوقحين عن شاعر فاشل إلزام جميع أصحاب الذوق السليم باستحسان ما يبدو لهم قبيحا، يتعالى تصفير المستهجنين وقد يتراشق الطرفان بالتّفّاح كما حدث ذات مرّة \"بلندن\". إنّ طغاة الفكر هؤلاء هم الذين تسبّبوا في قدر من مآسي العالم. ونحن لم نسعد في إنجلترا إلاّ منذ أن تمتّع كلّ منّا بحقّهِ في التعبير عن رأيه بكلّ حرية.<br><br><strong>ميدروزو:</strong> إننا نضاهيكم في شدّة الأمن بلشبونة، حيث لا أحد يقدر على التعبير عن رأيه.<br><br><strong>بولدمايند:</strong> أنت آمن ولكنك لست سعيدا، وإنّ أمنك هو أمن المحكوم عليهم بالأشغال الشاقة، يجذفون في صمت وبانتظام.<br><br><strong>ميدروزو:</strong> أَوَ تعتقد إذن أنّ روحي سجينة ؟<br><br><strong>بولدمايند:</strong> نعم، وإني لأريد تخليصها.<br><br><strong>ميدروزو:</strong> ولكن لم تخلّصني، إن كنت أستطيب<sup>5</sup> العيش داخل هذا السجن ؟<br><br><strong>بولدمايند:</strong> في هذه الحالة أنت تستحق ما أنت فيه.",
+                "PhiH.textAnalysis.voltaire.text.source": "فولتير، المعجم الفلسفي، حرية التفكير<br>Voltaire, Dictionnaire philosophique, Liberté de penser",
+                "PhiH.textAnalysis.voltaire.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.voltaire.author.alt": "فولتير",
+                "PhiH.textAnalysis.voltaire.author.content": "فولتير (1694-1778) هو القائل: \"سأنتهي إلى العدول عن البقاء في بلدي أو العدول عن شغف التفكير بصوت مرتفع.\" هو من أبرز المفكرين المتمردين على الاضطهاد والاستبداد سُجن من أجل أفكاره. كان يمثّل بمفرده سلطة مضادة. قضى حياته مرتحلا من بلد لآخر، بين بريطانيا وبروسيا وسيوسرا، مدافعا عن حق الاختلاف والتسامح. من أبرز مؤلفاته الفلسفية: رسائل فلسفية (1734)، مقال في الإنسان (1738)، عناصر من فلسفة نيوتن (1738)، مقال في الديانة الطبيعية (1756)، محاولات في عادات الأمم وفكرها (1756)، مقال في التسامح (1763)، المعجم الفلسفي (1764)...",
+                "PhiH.textAnalysis.voltaire.footnotes.title": "الهوامش",
+                "PhiH.textAnalysis.voltaire.footnotes.item1": "<strong>بولدمايند:</strong> اشتقاقا يعني الشخص الكثير الانتباه والحريص على التفكير. وهو قائد عسكري بريطاني التقى بميدروزو حوالي سنة 1707 ولم تتجاوز معرفته بمحاكم التفتيش ما انتهى إليه حواره مع البعض.",
+                "PhiH.textAnalysis.voltaire.footnotes.item2": "<strong>ميدروزو:</strong> نبيل برتغالي خبر محاكم التفتيش وألفها، التقى ببولدمايند غير بعيد عن ساحة حرب في منطقة \"باريج\" من جبال البيريني.",
+                "PhiH.textAnalysis.voltaire.footnotes.item3": "<strong>\"اليعقوبي\":</strong> إحالة على فرقة دينية مسيحية عرفت محنة الاضطهاد تُسمّى فِرقة دومينيك.",
+                "PhiH.textAnalysis.voltaire.footnotes.item4": "<strong>محاكم التفتيش:</strong> مؤسّسة قضائية أنشأتها \"البابوية\" سنة 1231 عن طريق البابا غريغوار التاسع لملاحقة السحرة وأصحاب البدع الدينية في البداية وخاصة فرقة \"أليبجوا\" التي ظهرت في جنوب فرنسا ثم امتد تأثيرها للعديد من المدن الأوروبية وهي تقول بوجود صراع بين إله الخير والسفر الجديد وإلاه الشر والسفر القديم. امتد تعسّف محاكم التفتيش لاحقا ليشمل المفكرين ويضبط قائمة كتب ممنوعة في عهد بول الرابع سنة 1555 ولقد حاكمت غاليلاي سنة 1633.",
+                "PhiH.textAnalysis.voltaire.footnotes.item5": "<strong>أستطيب العيش داخل السجن:</strong> موقف يكشف عن الطابع العنيد للوهم.",
+                "PhiH.textAnalysis.voltaire.questions.title": "المهام",
+                "PhiH.textAnalysis.voltaire.questions.q1": "حدّد العبارات الدالة على الموقفين من حرية التفكير الشّخصيّ والتعبير عن الرأي.",
+                "PhiH.textAnalysis.voltaire.questions.q2": "هل في الوقوف على تعدّد المعتقدات والديانات واختلافها ما يفضي بالضرورة إلى التشكيك في معتقداتنا ؟",
+                "PhiH.textAnalysis.voltaire.questions.q3": "حاور الحجة التي يقدمها ميدروزو: ((لو فكّر كلّ منّا بنفسه لعمّت فوضى غريبة.)) باعتماد حجج أخرى من خارج النص.",
+                "PhiH.textAnalysis.voltaire.questions.q4": "هل يمكن للإنسان أن يتنازل عن التفكير والتعبير عن الرأي دون أن يفوّت في إنسانيته ؟",
+                "PhiH.textAnalysis.voltaire.questions.q5": "هل يمكن أن نحرّر الآخرين من أوهامهم ؟",
+                "PhiH.textAnalysis.voltaire.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.voltaire.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.voltaire.answers.a1.content": "العبارات الدالة على الموقفين من حرية التفكير:<br><br><strong>موقف بولدمايند (المؤيد لحرية التفكير):</strong><br>- \"إن تعلّم التفكير أمر متوقّفٌ عليك وحدك، فأنت وُلدت ذا عقل\"<br>- \"فمن لا يعرف الهندسة يمكنه تعلّمها، وكل إنسان قادر على التعلّم\"<br>- \"من المخجل أن تعهد بعقلك إلى من لا تأتمنهم على مالك\"<br>- \"فلتجرؤ إذن على التفكير بنفسك\"<br>- \"نحن لم نسعد في إنجلترا إلاّ منذ أن تمتّع كلّ منّا بحقّهِ في التعبير عن رأيه بكلّ حرية\"<br><br><strong>موقف ميدروزو (المعارض لحرية التفكير):</strong><br>- \"يقال أنّه لو فكّر كلّ مِنّا بنفسه لحصلت فوضى غريبة\"<br>- \"إننا نضاهيكم في شدّة الأمن بلشبونة، حيث لا أحد يقدر على التعبير عن رأيه\"<br>- \"ولكن لم تخلّصني، إن كنت أستطيب العيش داخل هذا السجن ؟\"",
+                "PhiH.textAnalysis.voltaire.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.voltaire.answers.a2.content": "لا، ليس بالضرورة أن يؤدي تعدّد المعتقدات والديانات إلى التشكيك في معتقداتنا، وذلك للأسباب التالية:<br><br>أولاً، يمكن أن يؤدي الوعي بالتعددية إلى تعميق الفهم الذاتي بدلاً من التشكيك. فعندما نتعرف على معتقدات الآخرين، نضطر إلى التفكير بشكل أعمق في معتقداتنا الخاصة وفهم أسسها المنطقية والأخلاقية.<br><br>ثانياً، التعددية تثري الفكر الإنساني وتوسع الآفاق. فالحوار بين الثقافات والمعتقدات المختلفة يمكن أن يؤدي إلى تبادل الخبرات وتطوير الفكر الإنساني collectively.<br><br>ثالثاً، يمكن أن يكون الاختلاف مصدراً للإثراء بدلاً من الصراع. فكما يظهر في النص، الاختلاف في الرأي لا يعني بالضرورة الفوضى، بل يمكن أن يكون مصدراً للثراء الفكري والثقافي.<br><br>رابعاً، المعرفة بالتعددية تدفع نحو التسامح والتفاهم المتبادل، وهو ما يدعو إليه فولتير في نصه من خلال حوار بولدمايند الذي يدعو إلى التفكير النقدي وليس إلى التشكيك المطلق.",
+                "PhiH.textAnalysis.voltaire.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.voltaire.answers.a3.content": "حوار حجة ميدروزو \"لو فكّر كلّ منّا بنفسه لعمّت فوضى غريبة\":<br><br>هذه الحجة قابلة للنقاش من عدة جوانب. أولاً، يمكن الرد بأن الحرية الفكرية لا تعني الفوضى، بل تعني التنظيم العقلاني للاختلاف. فالمجتمعات الديمقراطية تثبت أن حرية التعبير يمكن أن تتعايش مع الاستقرار الاجتماعي عندما تكون مقترنة باحترام القانون والحوار العقلاني.<br><br>ثانياً، الفوضى الحقيقية تكمن في قمع حرية الفكر وليس في ممارستها. فالتاريخ يشهد بأن المجتمعات التي قمعت حرية التفكير شهدت ثورات عنيفة وانفجارات اجتماعية، بينما المجتمعات التي احترمت التعددية الفكرية تمتعت باستقرار دائم.<br><br>ثالثاً، التفكير الحر لا يعني التفكير الفوضوي، بل يعني التفكير المسؤول الذي يحترم قواعد الحوار والعقل. فكما يرد بولدمايند في النص، حرية التعبير في إنجلترا لم تؤد إلى الفوضى بل إلى السعادة والاستقرار.<br><br>رابعاً، الفوضى المزعومة هي في الحقيقة تنوع وغنى فكري، وهو ما يميز المجتمعات المتحضرة عن المجتمعات المتخلفة التي تفرض رأياً واحداً.",
+                "PhiH.textAnalysis.voltaire.answers.a4.title": "الإجابة عن السؤال الرابع:",
+                "PhiH.textAnalysis.voltaire.answers.a4.content": "لا، لا يمكن للإنسان أن يتنازل عن التفكير والتعبير عن الرأي دون أن يفوت في إنسانيته، وذلك للأسباب التالية:<br><br>أولاً، التفكير هو الخاصية الجوهرية التي تميز الإنسان عن سائر المخلوقات. فالتخلي عن التفكير هو تخلي عن الإنسانية ذاتها، كما يشير بولدمايند عندما يقول لميدروزو: \"إنّك إنسان، وهذا كاف\".<br><br>ثانياً، التفكير الحر هو أساس الكرامة الإنسانية. فالإنسان الذي يتخلى عن حريته في التفكير يصبح كالآلة أو الحيوان الذي ينفذ أوامر الآخرين دون مساءلة.<br><br>ثالثاً، التنازل عن حرية التعبير يعني التنازل عن المسؤولية الأخلاقية. فالإنسان الذي لا يعبر عن رأيه يكون شريكاً صامتاً في الظلم والاستبداد.<br><br>رابعاً، كما يوضح النص، الأمن الذي يتحقق بالتنازل عن الحرية هو أمن زائف، يشبه أمن المساجين الذين يعيشون في سجن مريح لكنهم محرومون من حريتهم وإنسانيتهم.",
+                "PhiH.textAnalysis.voltaire.answers.a5.title": "الإجابة عن السؤال الخامس:",
+                "PhiH.textAnalysis.voltaire.answers.a5.content": "نعم، يمكن أن نحرر الآخرين من أوهامهم، لكن بشروط:<br><br>أولاً، التحرير يجب أن يكون عبر الحوار والإقناع وليس بالإكراه. فكما يحاول بولدمايند إقناع ميدروزو بالحجج العقلانية، وليس بإجباره على تغيير رأيه.<br><br>ثانياً، التحرير الحقيقي يأتي من الداخل. فالدور الأساسي للمفكر أو المربي هو توفير الأدوات الفكرية والمناخ الملائم للتفكير الحر، لكن القرار النهائي يبقى للفرد نفسه.<br><br>ثالثاً، هناك حدود للتحرير. فكما يظهر في نهاية الحوار، عندما يرفض ميدروزو التحرر ويصر على البقاء في \"سجنه\"، يقرر بولدمايند أن ميدروزو \"يستحق ما هو فيه\". وهذا يعني أن التحرير ليس واجباً مطلقاً عندما يرفض الشخص نفسه التحرر.<br><br>رابعاً، التحرير عملية مستمرة وليست حدثاً واحدا. فهي تتطلب صبراً ومثابرة وحواراً متواصلاً، كما يظهر في محاولات بولدمايند المتكررة لإقناع ميدروزو.",
+                "PhiH.textAnalysis.voltaire.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.voltaire.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.voltaire.analysis.thesis.content": "يطرح فولتير من خلال هذا الحوار فكرة أن حرية التفكير والتعبير حق طبيعي لكل إنسان، وأن أي محاولة لقمع هذا الحق تمثل اعتداءً على جوهر الإنسانية. يرى فولتير أن التفكير المستقل هو السبيل الوحيد للتحرر من الأوهام والوصول إلى الحقيقة، وأن الأمن الذي يتحقق بقمع حرية الفكر هو أمن زائف لا يؤدي إلى السعادة الحقيقية.",
+                "PhiH.textAnalysis.voltaire.analysis.dialogue.title": "طبيعة الحوار ورمزيته:",
+                "PhiH.textAnalysis.voltaire.analysis.dialogue.content": "يمثل الحوار بين بولدمايند وميدروزو صراعاً بين العقل والجهل، بين الحرية والخضوع. فبولدمايند يمثل صوت العقل والتحرر، بينما يمثل ميدروزو صوت الخضوع والاستسلام للسلطة. هذا الحوار ليس مجرد نقاش بين شخصين، بل هو تجسيد للصراع الدائر في المجتمع بين دعاة الحرية الفكرية وأصحاب السلطة القمعية.",
+                "PhiH.textAnalysis.voltaire.analysis.arguments.title": "الحجج والبراهين:",
+                "PhiH.textAnalysis.voltaire.analysis.arguments.content": "يستخدم فولتير حججاً متعددة لدعم موقفه، منها أن القدرة على التفكير هي خاصية إنسانية فطرية، وأن التعليم والتفكير هما وسيلتان للتحرر من القيود. كما يقدم مثال إنجلترا كنموذج للمجتمع الذي يحترم حرية التعبير ويحقق السعادة لأفراده، في مقابل لشبونة التي تمثل نموذجاً للمجتمع القمعي الذي يفرض الصمت على أفراده.",
+                "PhiH.textAnalysis.voltaire.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.voltaire.analysis.significance.content": "يمثل مفهوم حرية التفكير عند فولتير مدخلاً لفهم إشكالية العلاقة بين الفرد والسلطة، وبين الحرية والأمن. فهو يبرز الصراع بين الحق في التفكير المستقل وضرورات الانضباط الاجتماعي، وبين السعادة الفردية والاستقرار الجماعي. كما يوضح ضرورة التفكير النقدي والاستقلال الفكري كأدوات للتحرر من قيود التقاليد والسلطات، ويدفع نحو تأسيس مجتمع قائم على احترام الاختلاف والتعددية الفكرية."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

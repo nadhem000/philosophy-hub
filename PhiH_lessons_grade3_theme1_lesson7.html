@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanaticism - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#696969">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Dim Gray Theme */
+        :root {
+            --primary-color: #696969;
+            --secondary-color: #808080;
+            --accent-color: #555555;
+            --light-color: #f5f5f5;
+            --dark-color: #2f2f2f;
+            --text-color: #2f2f2f;
+            --heading-color: #2f2f2f;
+            --background-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --definition-bg: #e8e8e8;
+            --border-color: #b8b8b8;
+            --table-even-bg: #f5f5f5;
+            --table-hover-bg: #e8e8e8;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(105, 105, 105, 0.15);
+            --gradient-primary: linear-gradient(135deg, #696969 0%, #555555 100%);
+            --gradient-secondary: linear-gradient(135deg, #808080 0%, #2f2f2f 100%);
+            --gradient-gray: linear-gradient(135deg, #696969 0%, #2f2f2f 100%);
+            --gradient-light: linear-gradient(135deg, #808080 0%, #2f2f2f 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #9e9e9e;
+            --secondary-color: #a0a0a0;
+            --accent-color: #696969;
+            --light-color: #3a3a3a;
+            --dark-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --heading-color: #f7f7f7;
+            --background-color: #2f2f2f;
+            --card-bg: #3a3a3a;
+            --definition-bg: #2d2d2d;
+            --border-color: #9e9e9e;
+            --table-even-bg: #2f2f2f;
+            --table-hover-bg: #2d2d2d;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #9e9e9e 0%, #696969 100%);
+            --gradient-secondary: linear-gradient(135deg, #a0a0a0 0%, #808080 100%);
+            --gradient-gray: linear-gradient(135deg, #9e9e9e 0%, #3a3a3a 100%);
+            --gradient-light: linear-gradient(135deg, #a0a0a0 0%, #808080 100%);
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Definition Cards Layout */
+        .PhiH-definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-definition-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(105, 105, 105, 0.2);
+        }
+        
+        .PhiH-definition-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-definition-card-content ul {
+            padding-left: 1.2rem;
+            margin: 0.8rem 0;
+        }
+        
+        .PhiH-definition-card-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        /* Expand/Collapse Functionality */
+        .PhiH-expandable-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .PhiH-expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .PhiH-expandable-header:hover {
+            background: var(--gradient-gray);
+        }
+        
+        .PhiH-expandable-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        .PhiH-expandable-content {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            border-top: none;
+        }
+        
+        .PhiH-expandable-content.hidden {
+            display: none;
+        }
+        
+        .PhiH-expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-expand-icon.expanded {
+            transform: rotate(180deg);
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Section Styling */
+        .PhiH-quotes-container {
+            margin-top: 1rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(105, 105, 105, 0.2);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        /* RTL support for definition cards */
+        body.rtl .PhiH-definition-card-content ul {
+            padding-left: 0;
+            padding-right: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .PhiH-definitions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-fanaticism" dir="ltr">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-lesson1-container">
+        <div class="PhiH-lesson1-header">
+            <h1 class="PhiH-lesson1-title" data-i18n="PhiH.lessons.fanaticism.title">التعصب</h1>
+            <div class="PhiH-lesson1-level" data-i18n="PhiH.lessons.fanaticism.level">السنة الثالثة ثانوي - الفلسفة</div>
+        </div>
+        
+        <!-- Introduction Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="introHeader">
+                <h3 data-i18n="PhiH.lessons.fanaticism.introduction.title">التمهيد</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="introContent">
+                <p data-i18n="PhiH.lessons.fanaticism.introduction.text1">
+                    إنّ إشكالية التعصّب تُعدّ من أبرز التحديات التي تواجه الوجود الإنساني في علاقته بالآخر المختلف. فالتعصّب يمثل ظاهرةً تاريخيةً ضاربةً في عمق التجربة البشرية، تتجلى في أشكال متعددة تتراوح بين التعصّب الديني والمذهبي والعرقي والطبقي.
+                </p>
+                <p data-i18n="PhiH.lessons.fanaticism.introduction.text2">
+                    غير أنّ استمرار هذه الظاهرة في العصر الحديث، رغم كلّ مكاسب العقلنة والتنوير، يثير تساؤلاتٍ عميقةً حول جذورها الحقيقية وآليات اشتغالها. ففي الوقت الذي يُفترض أن تكون فيه المجتمعات المعاصرة قد تجاوزت أشكال التعصّب التقليدية، نجدها تنتج صيغاً جديدةً من التعصّب أكثر تعقيداً وخطورة.
+                </p>
+                <p data-i18n="PhiH.lessons.fanaticism.introduction.text3">
+                    وهو ما يدفع إلى التساؤل: هل يمثل التعصّب مجرد انحرافٍ في المسار الإنساني أم أنّه يعكس أزمةً عميقةً في العلاقة مع الذات والآخر؟ وكيف يمكن فهم آليات اشتغاله في ظلّ تحوّلات المجتمعات المعاصرة وتأثير وسائل الإعلام والتواصل في تشكيل الرأي العام؟
+                </p>
+            </div>
+        </section>
+        
+        <!-- Texts Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="textsHeader">
+                <h3 data-i18n="PhiH.lessons.fanaticism.texts.title">النصوص</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="textsContent">
+                <div class="PhiH-texts-container">
+                    <ul class="PhiH-texts-list">
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme1_lesson7_text1.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.fanaticism.texts.text1">النص 1: آليات اشتغال الفكر المتعصب - آلان</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme1_lesson7_text2.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.fanaticism.texts.text2">النص 2: حرية التفكير - فولتير</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quotes Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="quotesHeader">
+                <h3 data-i18n="PhiH.lessons.fanaticism.quotes.title">شواهد ونصوص ذات صلة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="quotesContent">
+                <div class="PhiH-quotes-container">
+                    <div class="PhiH-quotes-grid">
+                        <!-- Quote 1 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.fanaticism.quotes.quote1">
+                                "إنّ الحكم المسبق هو سليل الجهل"
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.fanaticism.quotes.author1">وليام هزليت</div>
+                            <div class="PhiH-quote-source" data-i18n="PhiH.lessons.fanaticism.quotes.source1"></div>
+                        </div>
+                        
+                        <!-- Quote 2 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.fanaticism.quotes.quote2">
+                                "المتعصّب خطيب أطرش"
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.fanaticism.quotes.author2">جبران خليل جبران</div>
+                            <div class="PhiH-quote-source" data-i18n="PhiH.lessons.fanaticism.quotes.source2"></div>
+                        </div>
+                        
+                        <!-- Quote 3 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.fanaticism.quotes.quote3">
+                                "ما إن يُدرك أضعف الناس أنّه في مستطاعه الحفاظ على قدرته على الحكم، حتّى تسقط أمامه كلّ سلطة خارجية"
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.fanaticism.quotes.author3">آلان</div>
+                            <div class="PhiH-quote-source" data-i18n="PhiH.lessons.fanaticism.quotes.source3">أقوال 2، 1923</div>
+                        </div>
+                        
+                        <!-- Quote 4 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.fanaticism.quotes.quote4">
+                                "إنّ الفكر لا يتقدّم إلّ على جثث الأفكار"
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.fanaticism.quotes.author4">أندري جيد</div>
+                            <div class="PhiH-quote-source" data-i18n="PhiH.lessons.fanaticism.quotes.source4">استجوابات خياليّة</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Conclusion -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="conclusionHeader">
+                <h3 data-i18n="PhiH.lessons.fanaticism.conclusion.title">الخاتمة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="conclusionContent">
+                <p data-i18n="PhiH.lessons.fanaticism.conclusion.text1">
+                    تُجمل إشكالية التعصّب التحدي المركزي الذي يواجه الإنسان في سعيه نحو التعايش مع الآخر المختلف. فمن خلال التحليل النقدي لمختلف أشكال التعصّب وأسبابه، يتّضح أن هذه الظاهرة ليست مجرد انحرافٍ عارضٍ، بل هي تعبيرٌ عن أزمةٍ عميقةٍ في الوعي الإنساني والعلاقات الاجتماعية.
+                </p>
+                <p data-i18n="PhiH.lessons.fanaticism.conclusion.text2">
+                    لقد أبرزت المقاربات الفلسفية أنّ الخطر لا يكمن في التعصّب بحدّ ذاته، بل في تحوّله إلى آليةٍ طيّعةٍ لإعادة إنتاج الهيمنة والاستبعاد. فالقدرة على تجاوز التعصّب تتطلّب وعياً نقدياً قادراً على تفكيك الآليات الخفية التي تُفرض من خلالها أنماط التفكير والتمثّلات.
+                </p>
+                <p data-i18n="PhiH.lessons.fanaticism.conclusion.text3">
+                    في الختام، تظلّ الفلسفة أداةً أساسيةً لفهم ظاهرة التعصّب واستيعاب أبعادها المعقّدة، فبدون النقد والتفكير الحر، يظلّ الفرد والمجتمع أسيرَيْن لأوهام اليقين والتفوّق، أما بالوعي والمقاومة النقدية، فيمكن تحويل الاختلاف من مصدر تهديد إلى فرصة للإغناء والإبداع.
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Page-specific translations for fanaticism lesson
+        window.translations_PhiHfanaticism = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                
+                // Fanaticism lesson specific translations
+                "PhiH.lessons.fanaticism.title": "Fanatisme",
+                "PhiH.lessons.fanaticism.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                "PhiH.lessons.fanaticism.introduction.title": "Introduction",
+                "PhiH.lessons.fanaticism.introduction.text1": "La problématique du fanatisme est l'un des défis les plus importants auxquels est confrontée l'existence humaine dans sa relation à l'autre différent. Le fanatisme représente un phénomène historique profondément ancré dans l'expérience humaine, qui se manifeste sous diverses formes allant du fanatisme religieux et sectaire au fanatisme racial et de classe.",
+                "PhiH.lessons.fanaticism.introduction.text2": "Cependant, la persistance de ce phénomène à l'époque moderne, malgré tous les acquis de la rationalisation et des Lumières, soulève des questions profondes sur ses véritables racines et ses mécanismes de fonctionnement. Alors que les sociétés contemporaines sont censées avoir dépassé les formes traditionnelles de fanatisme, nous constatons qu'elles produisent de nouvelles formes de fanatisme plus complexes et plus dangereuses.",
+                "PhiH.lessons.fanaticism.introduction.text3": "Ce qui amène à se demander : le fanatisme représente-t-il simplement une déviation du chemin humain ou reflète-t-il une crise profonde dans la relation avec soi-même et avec l'autre ? Et comment comprendre ses mécanismes de fonctionnement face aux transformations des sociétés contemporaines et à l'influence des médias et de la communication dans la formation de l'opinion publique ?",
+                
+                "PhiH.lessons.fanaticism.texts.title": "Textes",
+                "PhiH.lessons.fanaticism.texts.text1": "Texte 1: Mécanismes du fonctionnement de la pensée fanatique - Alain",
+                "PhiH.lessons.fanaticism.texts.text2": "Texte 2: Liberté de pensée - Voltaire",
+                
+                // Quotes section translations
+                "PhiH.lessons.fanaticism.quotes.title": "Citations et textes connexes",
+                "PhiH.lessons.fanaticism.quotes.quote1": "\"Le préjugé est le fils de l'ignorance\"",
+                "PhiH.lessons.fanaticism.quotes.quote2": "\"Le fanatique est un orateur sourd\"",
+                "PhiH.lessons.fanaticism.quotes.quote3": "\"Dès que l'homme le plus faible comprend qu'il peut préserver sa capacité de jugement, toute autorité extérieure s'effondre devant lui\"",
+                "PhiH.lessons.fanaticism.quotes.quote4": "\"La pensée ne progresse que sur les cadavres des idées\"",
+                "PhiH.lessons.fanaticism.quotes.author1": "William Hazlitt",
+                "PhiH.lessons.fanaticism.quotes.source1": "",
+                "PhiH.lessons.fanaticism.quotes.author2": "Khalil Gibran",
+                "PhiH.lessons.fanaticism.quotes.source2": "",
+                "PhiH.lessons.fanaticism.quotes.author3": "Alain",
+                "PhiH.lessons.fanaticism.quotes.source3": "Propos 2, 1923",
+                "PhiH.lessons.fanaticism.quotes.author4": "André Gide",
+                "PhiH.lessons.fanaticism.quotes.source4": "Interviews imaginaires",
+                
+                "PhiH.lessons.fanaticism.conclusion.title": "Conclusion",
+                "PhiH.lessons.fanaticism.conclusion.text1": "La problématique du fanatisme résume le défi central auquel l'être humain est confronté dans sa quête de coexistence avec l'autre différent. À travers l'analyse critique des différentes formes de fanatisme et de leurs causes, il devient clair que ce phénomène n'est pas simplement une déviation passagère, mais une expression d'une crise profonde dans la conscience humaine et les relations sociales.",
+                "PhiH.lessons.fanaticism.conclusion.text2": "Les approches philosophiques ont mis en évidence que le danger ne réside pas dans le fanatisme en soi, mais dans sa transformation en un mécanisme docile pour reproduire la domination et l'exclusion. La capacité à dépasser le fanatisme nécessite une conscience critique capable de démanteler les mécanismes cachés à travers lesquels les modes de pensée et de représentation sont imposés.",
+                "PhiH.lessons.fanaticism.conclusion.text3": "En conclusion, la philosophie reste un outil essentiel pour comprendre le phénomène du fanatisme et appréhender ses dimensions complexes, car sans critique et pensée libre, l'individu et la société restent prisonniers des illusions de certitude et de supériorité, tandis qu'avec la conscience et la résistance critique, la différence peut être transformée d'une source de menace en une opportunité d'enrichissement et de créativité."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                
+                // Fanaticism lesson specific translations
+                "PhiH.lessons.fanaticism.title": "Fanaticism",
+                "PhiH.lessons.fanaticism.level": "3rd Secondary - Philosophy",
+                
+                "PhiH.lessons.fanaticism.introduction.title": "Introduction",
+                "PhiH.lessons.fanaticism.introduction.text1": "The issue of fanaticism is one of the most prominent challenges facing human existence in its relationship with the different other. Fanaticism represents a historical phenomenon deeply rooted in human experience, manifesting in multiple forms ranging from religious and sectarian fanaticism to racial and class fanaticism.",
+                "PhiH.lessons.fanaticism.introduction.text2": "However, the persistence of this phenomenon in the modern era, despite all the gains of rationalization and enlightenment, raises deep questions about its true roots and mechanisms of operation. At a time when contemporary societies are supposed to have overcome traditional forms of fanaticism, we find them producing new forms of fanaticism that are more complex and dangerous.",
+                "PhiH.lessons.fanaticism.introduction.text3": "This leads to the question: Does fanaticism represent merely a deviation in the human path or does it reflect a deep crisis in the relationship with the self and the other? And how can we understand its mechanisms of operation in light of the transformations of contemporary societies and the influence of media and communication in shaping public opinion?",
+                
+                "PhiH.lessons.fanaticism.texts.title": "Texts",
+                "PhiH.lessons.fanaticism.texts.text1": "Text 1: Mechanisms of Fanatical Thought - Alain",
+                "PhiH.lessons.fanaticism.texts.text2": "Text 2: Freedom of Thought - Voltaire",
+                
+                // Quotes section translations
+                "PhiH.lessons.fanaticism.quotes.title": "Related Quotes and Texts",
+                "PhiH.lessons.fanaticism.quotes.quote1": "\"Prejudice is the child of ignorance\"",
+                "PhiH.lessons.fanaticism.quotes.quote2": "\"The fanatic is a deaf orator\"",
+                "PhiH.lessons.fanaticism.quotes.quote3": "\"As soon as the weakest person realizes that he can preserve his ability to judge, every external authority collapses before him\"",
+                "PhiH.lessons.fanaticism.quotes.quote4": "\"Thought advances only on the corpses of ideas\"",
+                "PhiH.lessons.fanaticism.quotes.author1": "William Hazlitt",
+                "PhiH.lessons.fanaticism.quotes.source1": "",
+                "PhiH.lessons.fanaticism.quotes.author2": "Khalil Gibran",
+                "PhiH.lessons.fanaticism.quotes.source2": "",
+                "PhiH.lessons.fanaticism.quotes.author3": "Alain",
+                "PhiH.lessons.fanaticism.quotes.source3": "Propos 2, 1923",
+                "PhiH.lessons.fanaticism.quotes.author4": "André Gide",
+                "PhiH.lessons.fanaticism.quotes.source4": "Imaginary Interviews",
+                
+                "PhiH.lessons.fanaticism.conclusion.title": "Conclusion",
+                "PhiH.lessons.fanaticism.conclusion.text1": "The issue of fanaticism summarizes the central challenge facing human beings in their quest for coexistence with the different other. Through critical analysis of the various forms of fanaticism and their causes, it becomes clear that this phenomenon is not merely a passing deviation, but an expression of a deep crisis in human consciousness and social relations.",
+                "PhiH.lessons.fanaticism.conclusion.text2": "Philosophical approaches have highlighted that the danger does not lie in fanaticism itself, but in its transformation into a docile mechanism for reproducing domination and exclusion. The ability to overcome fanaticism requires critical awareness capable of dismantling the hidden mechanisms through which patterns of thinking and representation are imposed.",
+                "PhiH.lessons.fanaticism.conclusion.text3": "In conclusion, philosophy remains an essential tool for understanding the phenomenon of fanaticism and comprehending its complex dimensions, for without criticism and free thinking, the individual and society remain prisoners of the illusions of certainty and superiority, while with awareness and critical resistance, difference can be transformed from a source of threat into an opportunity for enrichment and creativity."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                
+                // Fanaticism lesson specific translations
+                "PhiH.lessons.fanaticism.title": "التعصب",
+                "PhiH.lessons.fanaticism.level": "السنة الثالثة ثانوي - الفلسفة",
+                
+                "PhiH.lessons.fanaticism.introduction.title": "التمهيد",
+                "PhiH.lessons.fanaticism.introduction.text1": "إنّ إشكالية التعصّب تُعدّ من أبرز التحديات التي تواجه الوجود الإنساني في علاقته بالآخر المختلف. فالتعصّب يمثل ظاهرةً تاريخيةً ضاربةً في عمق التجربة البشرية، تتجلى في أشكال متعددة تتراوح بين التعصّب الديني والمذهبي والعرقي والطبقي.",
+                "PhiH.lessons.fanaticism.introduction.text2": "غير أنّ استمرار هذه الظاهرة في العصر الحديث، رغم كلّ مكاسب العقلنة والتنوير، يثير تساؤلاتٍ عميقةً حول جذورها الحقيقية وآليات اشتغالها. ففي الوقت الذي يُفترض أن تكون فيه المجتمعات المعاصرة قد تجاوزت أشكال التعصّب التقليدية، نجدها تنتج صيغاً جديدةً من التعصّب أكثر تعقيداً وخطورة.",
+                "PhiH.lessons.fanaticism.introduction.text3": "وهو ما يدفع إلى التساؤل: هل يمثل التعصّب مجرد انحرافٍ في المسار الإنساني أم أنّه يعكس أزمةً عميقةً في العلاقة مع الذات والآخر؟ وكيف يمكن فهم آليات اشتغاله في ظلّ تحوّلات المجتمعات المعاصرة وتأثير وسائل الإعلام والتواصل في تشكيل الرأي العام؟",
+                
+                "PhiH.lessons.fanaticism.texts.title": "النصوص",
+                "PhiH.lessons.fanaticism.texts.text1": "النص 1: آليات اشتغال الفكر المتعصب - آلان",
+                "PhiH.lessons.fanaticism.texts.text2": "النص 2: حرية التفكير - فولتير",
+                
+                // Quotes section translations
+                "PhiH.lessons.fanaticism.quotes.title": "شواهد ونصوص ذات صلة",
+                "PhiH.lessons.fanaticism.quotes.quote1": "\"إنّ الحكم المسبق هو سليل الجهل\"",
+                "PhiH.lessons.fanaticism.quotes.quote2": "\"المتعصّب خطيب أطرش\"",
+                "PhiH.lessons.fanaticism.quotes.quote3": "\"ما إن يُدرك أضعف الناس أنّه في مستطاعه الحفاظ على قدرته على الحكم، حتّى تسقط أمامه كلّ سلطة خارجية\"",
+                "PhiH.lessons.fanaticism.quotes.quote4": "\"إنّ الفكر لا يتقدّم إلّ على جثث الأفكار\"",
+                "PhiH.lessons.fanaticism.quotes.author1": "وليام هزليت",
+                "PhiH.lessons.fanaticism.quotes.source1": "",
+                "PhiH.lessons.fanaticism.quotes.author2": "جبران خليل جبران",
+                "PhiH.lessons.fanaticism.quotes.source2": "",
+                "PhiH.lessons.fanaticism.quotes.author3": "آلان",
+                "PhiH.lessons.fanaticism.quotes.source3": "أقوال 2، 1923",
+                "PhiH.lessons.fanaticism.quotes.author4": "أندري جيد",
+                "PhiH.lessons.fanaticism.quotes.source4": "استجوابات خياليّة",
+                
+                "PhiH.lessons.fanaticism.conclusion.title": "الخاتمة",
+                "PhiH.lessons.fanaticism.conclusion.text1": "تُجمل إشكالية التعصّب التحدي المركزي الذي يواجه الإنسان في سعيه نحو التعايش مع الآخر المختلف. فمن خلال التحليل النقدي لمختلف أشكال التعصّب وأسبابه، يتّضح أن هذه الظاهرة ليست مجرد انحرافٍ عارضٍ، بل هي تعبيرٌ عن أزمةٍ عميقةٍ في الوعي الإنساني والعلاقات الاجتماعية.",
+                "PhiH.lessons.fanaticism.conclusion.text2": "لقد أبرزت المقاربات الفلسفية أنّ الخطر لا يكمن في التعصّب بحدّ ذاته، بل في تحوّله إلى آليةٍ طيّعةٍ لإعادة إنتاج الهيمنة والاستبعاد. فالقدرة على تجاوز التعصّب تتطلّب وعياً نقدياً قادراً على تفكيك الآليات الخفية التي تُفرض من خلالها أنماط التفكير والتمثّلات.",
+                "PhiH.lessons.fanaticism.conclusion.text3": "في الختام، تظلّ الفلسفة أداةً أساسيةً لفهم ظاهرة التعصّب واستيعاب أبعادها المعقّدة، فبدون النقد والتفكير الحر، يظلّ الفرد والمجتمع أسيرَيْن لأوهام اليقين والتفوّق، أما بالوعي والمقاومة النقدية، فيمكن تحويل الاختلاف من مصدر تهديد إلى فرصة للإغناء والإبداع."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHfanaticism;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+    
+    <script>
+        // Expand/Collapse functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all expandable headers
+            const expandableHeaders = document.querySelectorAll('.PhiH-expandable-header');
+            
+            // Add click event to each header
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.PhiH-expand-icon');
+                    
+                    // Toggle content visibility
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('expanded');
+                    } else {
+                        content.classList.add('hidden');
+                        icon.classList.remove('expanded');
+                    }
+                });
+            });
+            
+            // Initially hide all expandable content
+            document.querySelectorAll('.PhiH-expandable-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,253 +1,3 @@
-// Author Presentation Variable
-const PhiH_Authors = {
-    "martin_heidegger": {
-        "ar": {
-            "name": "مارتان هيدغير",
-            "image": "assets/images/martin_heidegger.jpg",
-            "alt": "مارتان هيدغير",
-            "content": "مارتان هيدغير (1889-1976) فيلسوف ألمانيّ معاصر. المسألة الأساسيّة بالنسبة إلى الفكر الفلسفي، في نظره، هي تلك التي استهلّها اليونانيون بسؤال: ما هو الوجود ؟ غير أنّ هذا السؤال تعرّض إلى مصير غريب جعله يُنسى لينساق الفلاسفة نحو البحث في موجود ما على أنّه هو الوجود. إنّ هذا النسيان هو ما ينبغي إنهاؤه لاستعادة السؤال من جديد في ضوء التمييز الصارم بين الوجود والموجود. وهو ما لا يُمكن أن يتحقّق إلا انطلاقا من تحليل للموجود الذي ينفرد بطرح هذا السؤال وهو الإنسان. يكشف ذلك التحليل أنّ الإنسان كائن الزمنيّة بما هي حركة تعال دائم بين بُعديْ الماضي والحاضر انطلاقا من المستقبل، حركة تجعله خارج ذاته باستمرار ليصوغ مشروع عالم ممكن. من مؤلّفاته الوجود والزمان (1927) ... ما هي الميتافيزيقا (...)، شعاب (1950) مسائل (I وII وIII وIV)، رسالة حول النزعة الإنسانيّة (...)",
-			"century": "20th",
-			"school": "الفينومينولوجيا",
-			"themes": ["الماهية", "الزمن", "الميتافيزيقا", "الوجود"],
-			"birthYear": "1889",
-			"deathYear": "1976"
-		},
-        "fr": {
-            "name": "Martin Heidegger",
-            "image": "assets/images/martin_heidegger.jpg",
-            "alt": "Martin Heidegger",
-            "content": "Martin Heidegger (1889-1976) philosophe allemand contemporain. La question fondamentale pour la pensée philosophique, selon lui, est celle que les Grecs ont inaugurée par la question : qu'est-ce que l'être ? Mais cette question a connu un destin étrange qui l'a fait oublier, conduisant les philosophes à rechercher un étant particulier comme étant l'être. Cet oubli est ce qui doit être mis fin pour retrouver la question à nouveau à la lumière de la distinction rigoureuse entre l'être et l'étant. Ce qui ne peut être réalisé qu'à partir d'une analyse de l'étant qui est seul à poser cette question, à savoir l'homme. Cette analyse révèle que l'homme est l'être de la temporalité en tant que mouvement constant de dépassement entre les deux dimensions du passé et du présent à partir du futur, un mouvement qui le met constamment hors de lui-même pour formuler un projet de monde possible. Parmi ses œuvres : Être et Temps (1927) ... Qu'est-ce que la métaphysique ? (...), Chemins (1950), Questions (I et II et III et IV), Lettre sur l'humanisme (...)",
-			"century": "20th",
-			"school": "phenomenologie",
-			"themes": ["etre", "temps", "metaphysique", "existence"],
-			"birthYear": "1889",
-			"deathYear": "1976"
-		},
-        "en": {
-            "name": "Martin Heidegger",
-            "image": "assets/images/martin_heidegger.jpg",
-            "alt": "Martin Heidegger",
-            "content": "Martin Heidegger (1889-1976) contemporary German philosopher. The fundamental question for philosophical thought, in his view, is the one that the Greeks initiated with the question: what is being? But this question underwent a strange fate that made it forgotten, leading philosophers to search for a particular being as being. This forgetting is what must be ended to recover the question again in the light of the rigorous distinction between being and being. This can only be achieved through an analysis of the being that alone poses this question, namely man. This analysis reveals that man is the being of temporality as a constant movement of transcendence between the two dimensions of the past and the present from the future, a movement that constantly puts him outside himself to formulate a project of a possible world. Among his works: Being and Time (1927) ... What is Metaphysics? (...), Paths (1950), Questions (I and II and III and IV), Letter on Humanism (...)",
-			"century": "20th",
-			"school": "phenomenology",
-			"themes": ["being", "time", "metaphysics", "existence"],
-			"birthYear": "1889",
-			"deathYear": "1976"
-		}
-	},
-    "mikhail_naimy": {
-        "ar": {
-            "name": "ميخائيل نعيمة",
-            "image": "assets/images/mikhail_naimy.jpg",
-            "alt": "ميخائيل نعيمة",
-            "content": "ميخائيل نعيمة (1889-1988) أديب ومفكر لبناني من أبرز روّاد النهضة الفكرية الحديثة، ومن مؤسّسي الرابطة القلمية مع جبران خليل جبران، نَظم الشعر وكتب في السيرة الذاتية والفلسفة والأدب الذهني، وانفتح من خلال هذه الأعمال على قضايا عديدة كالحرية والزمان وصلة الإنسان بالكون. من مؤلفاته: الغربال (1923)، مرداد (1952)، سبعون (1959)، نجوى الغروب (1985 ط 2)، اليوم الأخير (1963).",
-			"century": "20th",
-			"school": "الأدب والفلسفة",
-			"themes": ["الحرية", "الزمن", "الوجود", "الإنسان والكون"],
-			"birthYear": "1889",
-			"deathYear": "1988"
-		},
-        "fr": {
-            "name": "Mikhail Naimy",
-            "image": "assets/images/mikhail_naimy.jpg",
-            "alt": "Mikhail Naimy",
-            "content": "Mikhail Naimy (1889-1988) est un écrivain et penseur libanais, l'une des figures de proue de la renaissance intellectuelle moderne et l'un des fondateurs de la Ligue de la Plume avec Khalil Gibran. Il a composé de la poésie et écrit sur l'autobiographie, la philosophie et la littérature spirituelle, abordant à travers ces œuvres de nombreuses questions telles que la liberté, le temps et la relation de l'homme avec l'univers. Parmi ses œuvres : Le Crible (1923), Mirdad (1952), Soixante-dix (1959), Murmures du crépuscule (2e éd. 1985), Le Dernier Jour (1963).",
-			"century": "20th",
-			"school": "Littérature et Philosophie",
-			"themes": ["liberté", "temps", "existence", "homme et univers"],
-			"birthYear": "1889",
-			"deathYear": "1988"
-		},
-        "en": {
-            "name": "Mikhail Naimy",
-            "image": "assets/images/mikhail_naimy.jpg",
-            "alt": "Mikhail Naimy",
-            "content": "Mikhail Naimy (1889-1988) is a Lebanese writer and thinker, one of the prominent pioneers of the modern intellectual renaissance and one of the founders of the Pen League with Khalil Gibran. He composed poetry and wrote in autobiography, philosophy, and spiritual literature, addressing through these works many issues such as freedom, time, and the relationship of man with the universe. Among his works: The Sieve (1923), Mirdad (1952), Seventy (1959), Whispers of the Sunset (2nd ed. 1985), The Last Day (1963).",
-			"century": "20th",
-			"school": "Literature and Philosophy",
-			"themes": ["freedom", "time", "existence", "man and universe"],
-			"birthYear": "1889",
-			"deathYear": "1988"
-		}
-	},
-    "plato": {
-        "ar": {
-            "name": "أفلاطون",
-            "image": "assets/images/plato.jpg",
-            "alt": "أفلاطون",
-            "content": "أفلاطون (428 ق م / 348 ق م) فيلسوف يونانيّ، ولد بأثينا حيث تتلمذ في البداية على السوفسطائيين قبل أن يتعلّق بسقراط ويتلمذ عليه. تأثّر بالغ التأثّر بمحاكمة سقراط وبإعدامه حيث رأى في ذلك مؤشّرا على تأزم المدينة ورداءة السياسة فيها معتبرا أنّ الفلسفة - كردّة فعل على هذه الأوضاع - مطالبة بأن تنظر في أسس السياسة العادلة. يُعتبر أفلاطون مُؤسّسا للحوار كجنس في الكتابة الفلسفيّة اختار فيه سقراط كمعبّر عن أهمّ مواقفه الفلسفيّة. من أهمّ محاوراته: ايون، لاكاس، الجمهورية، بارمنيد، تييتات، السوفسطائي، السياسي، القوانين ... وخلالها توضحت تدريجيا نظريته الميتافيزيقيّة القائمة على التمييز بين عالمين: العالم الحسيّ وعالم المثل الّذي هو بمثابة نماذج أصليّة لا تُعَدّ الموضوعات الحسيّة إلا نسخا زائفة منها، ولا تُوجَد إلا بفعل محاكاة أو مشاركة.",
-			"century": "ancient",
-			"school": "المثالية",
-			"themes": ["الميتافيزيقا", "المعرفة", "السياسة", "الأخلاق"],
-			"birthYear": "428 ق.م",
-			"deathYear": "348 ق.م"
-		},
-        "fr": {
-            "name": "Platon",
-            "image": "assets/images/plato.jpg",
-            "alt": "Platon",
-            "content": "Platon (428 av. J.-C. / 348 av. J.-C.) philosophe grec, né à Athènes où il fut d'abord l'élève des sophistes avant de s'attacher à Socrate et de devenir son disciple. Il fut profondément marqué par le procès et l'exécution de Socrate, y voyant un signe de la crise de la cité et de la médiocrité de sa politique, considérant que la philosophie - en réaction à ces conditions - devait examiner les fondements d'une politique juste. Platon est considéré comme le fondateur du dialogue comme genre dans l'écriture philosophique, choisissant Socrate comme porte-parole de ses positions philosophiques les plus importantes. Parmi ses dialogues les plus importants : Ion, Lachès, La République, Parménide, Théétète, Le Sophiste, Le Politique, Les Lois ... À travers eux, sa théorie métaphysique s'est progressivement clarifiée, fondée sur la distinction entre deux mondes : le monde sensible et le monde des Idées qui sert de modèles originels dont les objets sensibles ne sont que des copies fausses, et n'existent que par imitation ou participation.",
-			"century": "ancient",
-			"school": "Idéalisme",
-			"themes": ["métaphysique", "connaissance", "politique", "éthique"],
-			"birthYear": "428 av. J.-C.",
-			"deathYear": "348 av. J.-C."
-		},
-        "en": {
-            "name": "Plato",
-            "image": "assets/images/plato.jpg",
-            "alt": "Plato",
-            "content": "Plato (428 BC / 348 BC) Greek philosopher, born in Athens where he first studied with the Sophists before becoming attached to Socrates and becoming his disciple. He was deeply affected by the trial and execution of Socrates, seeing it as an indicator of the city's crisis and the poor quality of its politics, considering that philosophy - as a reaction to these conditions - was required to examine the foundations of just politics. Plato is considered the founder of the dialogue as a genre in philosophical writing, choosing Socrates as the spokesperson for his most important philosophical positions. Among his most important dialogues: Ion, Laches, The Republic, Parmenides, Theaetetus, The Sophist, The Statesman, The Laws ... Through them, his metaphysical theory gradually became clear, based on the distinction between two worlds: the sensible world and the world of Forms which serves as original models of which sensible objects are only false copies, and exist only by imitation or participation.",
-			"century": "ancient",
-			"school": "Idealism",
-			"themes": ["metaphysics", "knowledge", "politics", "ethics"],
-			"birthYear": "428 BC",
-			"deathYear": "348 BC"
-		}
-	},
-    "rene_descartes": {
-        "ar": {
-            "name": "روني ديكارت",
-            "image": "assets/images/rene_descartes.jpg",
-            "alt": "روني ديكارت",
-            "content": "روني ديكارت (1596-1650) فيلسوف وعالم فرنسي يُعدّ مؤسّس العقلانيّة الحديثة، فالعقل لديه ((أعدل الأشياء توزعا بين البشر)) غير أنّ استعماله لا يكون سديدا في الحكم وقادرا على تحرير الإنسان من الأخطاء والأوهام وسلطة القدامى إلا بمنهج ينبغي استلهام قواعده من معقوليّة الرياضيات نظرا لما تتميّز به من يقين وبداهة. لذلك يتعيّنِ ممارسة شك منهجيّ في كل المعارف المكتسبة مما يهيئ لاكتشاف أنّ الأنا أفكر هو اليقين الذي يُمثّل شرط إمكان كل يقين. من مؤلفاته: قواعد في توجيه الذهن (1628)، حديث الطريقة (1637)، تأمّلات ميتافيزيقيّة (1641)، مبادئ الفلسفة (1644).",
-			"century": "17th",
-			"school": "العقلانية",
-			"themes": ["العقل", "المعرفة", "الميتافيزيقا", "المنهج"],
-			"birthYear": "1596",
-			"deathYear": "1650"
-		},
-        "fr": {
-            "name": "René Descartes",
-            "image": "assets/images/rene_descartes.jpg",
-            "alt": "René Descartes",
-            "content": "René Descartes (1596-1650) philosophe et scientifique français considéré comme le fondateur du rationalisme moderne. Pour lui, la raison est « la chose du monde la mieux partagée » mais son usage ne peut être judicieux dans le jugement et capable de libérer l'homme des erreurs, des illusions et de l'autorité des anciens que par une méthode dont les règles doivent s'inspirer de la rationalité des mathématiques en raison de leur certitude et évidence. Il faut donc pratiquer un doute méthodique dans toutes les connaissances acquises, ce qui prépare à découvrir que le « je pense » est la certitude qui représente la condition de possibilité de toute certitude. Parmi ses œuvres : Règles pour la direction de l'esprit (1628), Discours de la méthode (1637), Méditations métaphysiques (1641), Principes de la philosophie (1644).",
-			"century": "17th",
-			"school": "Rationalisme",
-			"themes": ["raison", "connaissance", "métaphysique", "méthode"],
-			"birthYear": "1596",
-			"deathYear": "1650"
-		},
-        "en": {
-            "name": "René Descartes",
-            "image": "assets/images/rene_descartes.jpg",
-            "alt": "René Descartes",
-            "content": "René Descartes (1596-1650) French philosopher and scientist considered the founder of modern rationalism. For him, reason is \"the most equally distributed thing in the world\" but its use cannot be sound in judgment and capable of freeing man from errors, illusions and the authority of the ancients except through a method whose rules should be inspired by the rationality of mathematics due to their certainty and self-evidence. Therefore, it is necessary to practice methodological doubt in all acquired knowledge, which prepares for the discovery that the \"I think\" is the certainty that represents the condition of possibility of all certainty. Among his works: Rules for the Direction of the Mind (1628), Discourse on the Method (1637), Meditations on First Philosophy (1641), Principles of Philosophy (1644).",
-			"century": "17th",
-			"school": "Rationalism",
-			"themes": ["reason", "knowledge", "metaphysics", "method"],
-			"birthYear": "1596",
-			"deathYear": "1650"
-		}
-	},
-    "christian_thomasius": {
-        "ar": {
-            "name": "كرستيان توماسيوس",
-            "image": "assets/images/christian_thomasius.jpg",
-            "alt": "كرستيان توماسيوس",
-            "content": "كرستيان توماسيوس (1655–1728) فيلسوف ولاهوتي وفقيه في القانون، ألماني الجنسية، يعتبر أبا للتّنوير الألماني، دعا إلى التّسامح الدّيني وإلى الحوار ومقاومة الأحكام المسبقة وإلغاء التّعذيب ومطاردة الشّعوذة وهي المبادئ الّتي عرض لها في مؤلّفاته التّالية: في فلسفة إنسان البلاط (1688)، في المنطق (1691)، في الأخلاق (1692). انبنى فكره على الإيمان الكامل بالنّور الطّبيعي (العقل). اهتمّ بالصّحافة في بلاده وكان صاحب شأن في ذلك.",
-			"century": "17th",
-			"school": "التنوير",
-			"themes": ["التسامح", "العقل", "الأخلاق", "القانون"],
-			"birthYear": "1655",
-			"deathYear": "1728"
-		},
-        "fr": {
-            "name": "Christian Thomasius",
-            "image": "assets/images/christian_thomasius.jpg",
-            "alt": "Christian Thomasius",
-            "content": "Christian Thomasius (1655–1728) philosophe, théologien et juriste allemand, considéré comme le père des Lumières allemandes. Il a plaidé pour la tolérance religieuse, le dialogue, la résistance aux préjugés, l'abolition de la torture et la chasse à la sorcellerie, principes qu'il a exposés dans ses œuvres suivantes : Sur la philosophie de l'homme de cour (1688), Sur la logique (1691), Sur l'éthique (1692). Sa pensée était fondée sur une foi complète dans la lumière naturelle (la raison). Il s'est intéressé au journalisme dans son pays et y a joué un rôle important.",
-			"century": "17th",
-			"school": "Lumières",
-			"themes": ["tolérance", "raison", "éthique", "droit"],
-			"birthYear": "1655",
-			"deathYear": "1728"
-		},
-        "en": {
-            "name": "Christian Thomasius",
-            "image": "assets/images/christian_thomasius.jpg",
-            "alt": "Christian Thomasius",
-            "content": "Christian Thomasius (1655–1728) German philosopher, theologian and legal scholar, considered the father of the German Enlightenment. He advocated for religious tolerance, dialogue, resistance to prejudices, abolition of torture and witch-hunting, principles he presented in his following works: On the Philosophy of the Courtier (1688), On Logic (1691), On Ethics (1692). His thought was based on complete faith in natural light (reason). He was interested in journalism in his country and played a significant role in it.",
-			"century": "17th",
-			"school": "Enlightenment",
-			"themes": ["tolerance", "reason", "ethics", "law"],
-			"birthYear": "1655",
-			"deathYear": "1728"
-		}
-	},
-    "john_stuart_mill": {
-        "ar": {
-            "name": "جون ستيوارت ميل",
-            "image": "assets/images/john_stuart_mill.jpg",
-            "alt": "جون ستيوارت ميل",
-            "content": "جون ستيوارت ميل (1806-1873) فيلسوف ورجل اقتصاد إنجليزي ليبرالي النزعة عصامي التكوين، حذق لغات عديدة وبرع في الرياضيات والمنطق منذ حداثة سنه، من منظري النزعة النّفعيّة انتخب نائبا بمجلس العموم البريطاني دافع عن حق المرأة في الانتخاب وكان ذلك من بين أسباب عدم إعادة انتخابه. من بين مؤلفاته: مبادئ الاقتصاد السياسي (1848)، الحرية (1859)، النزعة النفعية (1861)، في استعباد النساء (1869)، نسق المنطق الاستنتاجي والاستقرائي (1869 ط 6).",
-			"century": "19th",
-			"school": "النفعية",
-			"themes": ["الحرية", "الأخلاق", "الاقتصاد", "المنطق"],
-			"birthYear": "1806",
-			"deathYear": "1873"
-		},
-        "fr": {
-            "name": "John Stuart Mill",
-            "image": "assets/images/john_stuart_mill.jpg",
-            "alt": "John Stuart Mill",
-            "content": "John Stuart Mill (1806-1873) philosophe et économiste anglais de tendance libérale, autodidacte de formation, maîtrisa plusieurs langues et excellait en mathématiques et en logique dès son jeune âge. Théoricien de l'utilitarisme, il fut élu député à la Chambre des communes britannique, défendit le droit de vote des femmes, ce qui fut l'une des raisons de sa non-réélection. Parmi ses œuvres : Principes d'économie politique (1848), De la liberté (1859), L'utilitarisme (1861), De l'assujettissement des femmes (1869), Système de logique déductive et inductive (6e éd. 1869).",
-			"century": "19th",
-			"school": "Utilitarisme",
-			"themes": ["liberté", "éthique", "économie", "logique"],
-			"birthYear": "1806",
-			"deathYear": "1873"
-		},
-        "en": {
-            "name": "John Stuart Mill",
-            "image": "assets/images/john_stuart_mill.jpg",
-            "alt": "John Stuart Mill",
-            "content": "John Stuart Mill (1806-1873) English philosopher and economist of liberal tendency, self-taught in formation, mastered several languages and excelled in mathematics and logic from a young age. A theorist of utilitarianism, he was elected as a Member of Parliament to the British House of Commons, defended women's suffrage, which was one of the reasons for his non-reelection. Among his works: Principles of Political Economy (1848), On Liberty (1859), Utilitarianism (1861), The Subjection of Women (1869), A System of Logic, Ratiocinative and Inductive (6th ed. 1869).",
-			"century": "19th",
-			"school": "Utilitarianism",
-			"themes": ["liberty", "ethics", "economy", "logic"],
-			"birthYear": "1806",
-			"deathYear": "1873"
-		}
-	},
-    "pierre_bayle": {
-        "ar": {
-            "name": "بيار بابل",
-            "image": "assets/images/pierre_bayle.jpg",
-            "alt": "بيار بابل",
-            "content": "بيار بابل (1647-1706) فيلسوف وناقد فرنسي أصدر أوّل عمل له تحت عنوان: خواطر حول المذنّب وفيه هاجم بلا هوادة الأفكار المسبقة الّتي تعزو للمذنّبات بعض التأثير على مجرى أحداث الأرض. واكب الخصومات الّتي عاشتها المذاهب الدّينية وعَايَن ويلاتها واستفزّه ذلك للكتابة بحيث ألّف: المبادئ العامّة للتّسامح وهو كتاب في أربعة مجلّدات. كان من دعاة حرّية المعتقد فأورثه ذلك سخط البروتستانتيين. انكبّ على وضع القاموس التّاريخي والنّقدي (1695 - 1697) وهو العمل الّذي توّج به حياته الفكريّة والأدبية. يقول فولتير في شأنه: \"لقد كان كبيرا وحكيما بحيث لم يتشيّع لمذهب من المذاهب، بل عمل على تقويضها كلّها، وحارب حتّى نفسه\".",
-			"century": "17th",
-			"school": "النقد",
-			"themes": ["التسامح", "النقد", "حرية المعتقد", "التنوير"],
-			"birthYear": "1647",
-			"deathYear": "1706"
-		},
-        "fr": {
-            "name": "Pierre Bayle",
-            "image": "assets/images/pierre_bayle.jpg",
-            "alt": "Pierre Bayle",
-            "content": "Pierre Bayle (1647-1706) philosophe et critique français publia son premier ouvrage sous le titre : Pensées sur la comète dans lequel il attaqua sans relâche les idées préconçues qui attribuent aux comètes une certaine influence sur le cours des événements terrestres. Il accompagna les querelles que vécurent les doctrines religieuses et en constata les malheurs, ce qui le poussa à écrire et à composer : Les Principes généraux de la tolérance, un livre en quatre volumes. Il était un défenseur de la liberté de conscience, ce qui lui valut la colère des Protestants. Il se consacra à la rédaction du Dictionnaire historique et critique (1695 - 1697), œuvre qui couronna sa vie intellectuelle et littéraire. Voltaire dit de lui : \"Il fut si grand et si sage qu'il n'embrassa aucune secte, mais travailla à les miner toutes, et combattit jusqu'à lui-même\".",
-			"century": "17th",
-			"school": "Critique",
-			"themes": ["tolérance", "critique", "liberté de conscience", "Lumières"],
-			"birthYear": "1647",
-			"deathYear": "1706"
-		},
-        "en": {
-            "name": "Pierre Bayle",
-            "image": "assets/images/pierre_bayle.jpg",
-            "alt": "Pierre Bayle",
-            "content": "Pierre Bayle (1647-1706) French philosopher and critic published his first work under the title: Thoughts on the Comet in which he relentlessly attacked the preconceived ideas that attribute to comets some influence on the course of earthly events. He accompanied the quarrels experienced by religious doctrines and witnessed their misfortunes, which prompted him to write and compose: The General Principles of Tolerance, a book in four volumes. He was an advocate of freedom of conscience, which earned him the anger of Protestants. He devoted himself to writing the Historical and Critical Dictionary (1695 - 1697), the work that crowned his intellectual and literary life. Voltaire said of him: \"He was so great and so wise that he embraced no sect, but worked to undermine them all, and fought even himself\".",
-			"century": "17th",
-			"school": "Criticism",
-			"themes": ["tolerance", "criticism", "freedom of conscience", "Enlightenment"],
-			"birthYear": "1647",
-			"deathYear": "1706"
-		}
-	}
-};
-
-// Quotes Variable
 // Quotes Variable
 const PhiH_Quotes = {
     "quotes": [
@@ -347,271 +97,990 @@ const PhiH_Quotes = {
                 "text": "\"كلّ ما أعرفه أني لا أعرف شيئا\"",
                 "author": "سقراط",
                 "source": "قول سقراطي"
-            },
+			},
             "fr": {
                 "text": "\"Tout ce que je sais, c'est que je ne sais rien\"",
                 "author": "Socrate",
                 "source": "Dicton socratique"
-            },
+			},
             "en": {
                 "text": "\"All I know is that I know nothing\"",
                 "author": "Socrates",
                 "source": "Socratic saying"
-            }
-        },
+			}
+		},
         {
             "id": "quote7",
             "ar": {
                 "text": "\"كلّما نقصت أوهامنا زادت حقائقنا\"",
                 "author": "ألكسندر ديما الابن",
                 "source": "أعمال"
-            },
+			},
             "fr": {
                 "text": "\"Plus nos illusions diminuent, plus nos vérités augmentent\"",
                 "author": "Alexandre Dumas fils",
                 "source": "Œuvres"
-            },
+			},
             "en": {
                 "text": "\"The more our illusions diminish, the more our truths increase\"",
                 "author": "Alexandre Dumas fils",
                 "source": "Works"
-            }
-        },
+			}
+		},
         {
             "id": "quote8",
             "ar": {
                 "text": "\"الحقائق أوهام نسينا أنّها كذلك\"",
                 "author": "نيتشه",
                 "source": "نسابيّة الأخلاق"
-            },
+			},
             "fr": {
                 "text": "\"Les vérités sont des illusions dont on a oublié qu'elles le sont\"",
                 "author": "Nietzsche",
                 "source": "Généalogie de la morale"
-            },
+			},
             "en": {
                 "text": "\"Truths are illusions which we have forgotten are illusions\"",
                 "author": "Nietzsche",
                 "source": "On the Genealogy of Morality"
-            }
-        },
+			}
+		},
         {
             "id": "quote9",
             "ar": {
                 "text": "\"إنّ الحياة قُدّت من أوهام، ومن بين هذه الأوهام ما صمد، وتلك هي التي تصنع الواقع\"",
                 "author": "جاك أوديبرتي",
                 "source": "أعمال"
-            },
+			},
             "fr": {
                 "text": "\"La vie est tissée d'illusions, et parmi ces illusions, certaines ont résisté, ce sont elles qui font la réalité\"",
                 "author": "Jacques Audiberti",
                 "source": "Œuvres"
-            },
+			},
             "en": {
                 "text": "\"Life is woven from illusions, and among these illusions, some have endured, and those are what make reality\"",
                 "author": "Jacques Audiberti",
                 "source": "Works"
-            }
-        },
-        // New quotes start here
+			}
+		},
         {
             "id": "quote10",
             "ar": {
                 "text": "\"الطفل هو براءة ونسيان، بداية جديدة، ولعب، وعجلة ذاتية الدوران، وحركة أولى وإرادة إثبات مقدّسة\"",
                 "author": "نيتشه",
                 "source": "هكذا تكلّم زرادشت"
-            },
+			},
             "fr": {
                 "text": "\"L'enfant est innocence et oubli, un nouveau commencement, un jeu, une roue qui roule d'elle-même, un premier mouvement, une sainte affirmation.\"",
                 "author": "Nietzsche",
                 "source": "Ainsi parlait Zarathoustra"
-            },
+			},
             "en": {
                 "text": "\"The child is innocence and forgetting, a new beginning, a game, a self-propelled wheel, a first movement, a sacred 'Yes'.\"",
                 "author": "Nietzsche",
                 "source": "Thus Spoke Zarathustra"
-            }
-        },
+			}
+		},
         {
             "id": "quote11",
             "ar": {
                 "text": "\"إنّ الحقيقة هي ما نعتقد أنّه الحقيقة\"",
                 "author": "روني برجفال",
                 "source": "يوميّات رجل بسيط"
-            },
+			},
             "fr": {
                 "text": "\"La vérité est ce que nous croyons être la vérité\"",
                 "author": "René Berjaval",
                 "source": "Journal d'un homme simple"
-            },
+			},
             "en": {
                 "text": "\"Truth is what we believe to be the truth\"",
                 "author": "René Berjaval",
                 "source": "Diary of a Simple Man"
-            }
-        },
+			}
+		},
         {
             "id": "quote12",
             "ar": {
                 "text": "\"لا أحد يودّ أن يظلّ طفلا حتّى لو كان متيقّنا من التمتّع إلى الحدّ الأقصى بكلّ ملذّات الطفولة\"",
                 "author": "أرسطو",
                 "source": "أخلاق نيقوماخوس"
-            },
+			},
             "fr": {
                 "text": "\"Personne ne voudrait rester un enfant, même s'il était assuré de jouir au maximum de tous les plaisirs de l'enfance\"",
                 "author": "Aristote",
                 "source": "Éthique à Nicomaque"
-            },
+			},
             "en": {
                 "text": "\"No one would wish to remain a child, even if assured of enjoying to the maximum all the pleasures of childhood\"",
                 "author": "Aristotle",
                 "source": "Nicomachean Ethics"
-            }
-        },
+			}
+		},
         {
             "id": "quote13",
             "ar": {
                 "text": "\"يُصاب أغلب الناس برأي مثلما يُصابون بالحصبة وذلك بفعل العدوى\"",
                 "author": "جيل بايو",
                 "source": "إفلاس التعليم"
-            },
+			},
             "fr": {
                 "text": "\"La plupart des gens attrapent une opinion comme on attrape la rougeole, par contagion\"",
                 "author": "Gilles Bayon",
                 "source": "La Faillite de l'éducation"
-            },
+			},
             "en": {
                 "text": "\"Most people catch an opinion like they catch measles, through contagion\"",
                 "author": "Gilles Bayon",
                 "source": "The Bankruptcy of Education"
-            }
-        },
+			}
+		},
         {
             "id": "quote14",
             "ar": {
                 "text": "\"تحتلّ الأحكام المسبقة من الفكر قسما ولكنّها تَسُدُّ كلّ ما تبقّى منه\"",
                 "author": "مالبرانش",
                 "source": "في البحث عن الحقيقة"
-            },
+			},
             "fr": {
                 "text": "\"Les préjugés occupent une partie de l'esprit mais obstruent tout ce qui en reste\"",
                 "author": "Malebranche",
                 "source": "De la recherche de la vérité"
-            },
+			},
             "en": {
                 "text": "\"Prejudices occupy a part of the mind but obstruct all that remains of it\"",
                 "author": "Malebranche",
                 "source": "The Search After Truth"
-            }
-        },
+			}
+		},
         {
             "id": "quote15",
             "ar": {
                 "text": "\"إنّ المغالاة في عقلنة الأحاسيس غالبا ما تفضي إلى فسادها\"",
                 "author": "الطاهر بن جلون",
                 "source": "فندق الفقراء"
-            },
+			},
             "fr": {
                 "text": "\"L'excès de rationalisation des sentiments mène souvent à leur corruption\"",
                 "author": "Tahar Ben Jelloun",
                 "source": "L'Hôtel des pauvres"
-            },
+			},
             "en": {
                 "text": "\"Excessive rationalization of feelings often leads to their corruption\"",
                 "author": "Tahar Ben Jelloun",
                 "source": "Hotel of the Poor"
-            }
-        },
+			}
+		},
         {
             "id": "quote16",
             "ar": {
                 "text": "\"للقلب دواع لا يدركها العقل\"",
-                "author": "باسكال",
+                "author": "بليز باسكال",
                 "source": "خواطر"
-            },
+			},
             "fr": {
                 "text": "\"Le cœur a ses raisons que la raison ne connaît point\"",
                 "author": "Pascal",
                 "source": "Pensées"
-            },
+			},
             "en": {
                 "text": "\"The heart has its reasons which reason knows nothing of\"",
                 "author": "Pascal",
                 "source": "Thoughts"
-            }
-        },
+			}
+		},
         {
             "id": "quote17",
             "ar": {
                 "text": "\"سبات العقل يولّد مسوخا\"",
                 "author": "فرنسيسكو غويا",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"Le sommeil de la raison engendre des monstres\"",
                 "author": "Francisco Goya",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"The sleep of reason produces monsters\"",
                 "author": "Francisco Goya",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote18",
             "ar": {
                 "text": "\"إنّ استمرار رأي ما في البقاء لا يثبت شيئا في شأن قيمته، فما يزال يوجد إلى اليوم منجّمون\"",
                 "author": "جان روستان",
                 "source": "مفكّرة عالم أحياء"
-            },
+			},
             "fr": {
                 "text": "\"La persistance d'une opinion ne prouve rien quant à sa valeur, il existe encore aujourd'hui des astrologues\"",
                 "author": "Jean Rostand",
                 "source": "Carnets d'un biologiste"
-            },
+			},
             "en": {
                 "text": "\"The persistence of an opinion proves nothing about its value, astrologers still exist today\"",
                 "author": "Jean Rostand",
                 "source": "Notebooks of a Biologist"
-            }
-        },
+			}
+		},
         {
             "id": "quote19",
             "ar": {
                 "text": "\"إنّ للمحاكاة تأثيرا عاما في أحكامنا: لأنّ هناك سببا قويّا لأنّ نعتبر حقيقيّا ما أقرّ آخرون أنّه كذلك\"",
                 "author": "كانط",
                 "source": "المنطق"
-            },
+			},
             "fr": {
                 "text": "\"L'imitation a une influence générale sur nos jugements : car il y a une forte raison de considérer comme vrai ce que d'autres ont reconnu comme tel\"",
                 "author": "Kant",
                 "source": "Logique"
-            },
+			},
             "en": {
                 "text": "\"Imitation has a general influence on our judgments: for there is a strong reason to consider as true what others have acknowledged as such\"",
                 "author": "Kant",
                 "source": "Logic"
-            }
-        },
+			}
+		},
         {
             "id": "quote20",
             "ar": {
                 "text": "\"إنّ العلامة الدالة على الأسوأ هي إجماع الحشد\"",
                 "author": "سينيكا",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"Le signe indicateur du pire est l'unanimité de la foule\"",
                 "author": "Sénèque",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"The indicator of the worst is the unanimity of the crowd\"",
                 "author": "Seneca",
                 "source": ""
-            }
-        }
+			}
+		},
+        {
+            "id": "quote21",
+            "ar": {
+                "text": "\"إنّنا عندما نعتبر التقنية شيئا محايدا، نكون عندئذ قد استسلمنا لها بالشكل الأكثر سوءا\"",
+                "author": "مارتن هايدغير",
+                "source": "مسألة التقنية"
+			},
+            "fr": {
+                "text": "\"Lorsque nous considérons la technique comme quelque chose de neutre, nous nous sommes alors soumis à elle de la pire des manières\"",
+                "author": "Martin Heidegger",
+                "source": "La question de la technique"
+			},
+            "en": {
+                "text": "\"When we consider technology as something neutral, we have then submitted to it in the worst way\"",
+                "author": "Martin Heidegger",
+                "source": "The Question Concerning Technology"
+			}
+		},
+        {
+            "id": "quote22",
+            "ar": {
+                "text": "\"إنّ مفهوم الاختيار ينحطّ بسهولة كلّما نسينا أنّ الهدف هو أن نكون قد أحسنّا الاختيار، لا أن نبقى أبدا في حالة اختيار.\"",
+                "author": "جورج تروي",
+                "source": "سياق من دون سياق"
+			},
+            "fr": {
+                "text": "\"Le concept de choix se dégrade facilement chaque fois que nous oublions que le but est d'avoir bien choisi, et non de rester perpétuellement en état de choix.\"",
+                "author": "George Troy",
+                "source": "Contexte sans contexte"
+			},
+            "en": {
+                "text": "\"The concept of choice degrades easily whenever we forget that the goal is to have chosen well, not to remain forever in a state of choice.\"",
+                "author": "George Troy",
+                "source": "Context Without Context"
+			}
+		},
+        {
+            "id": "quote23",
+            "ar": {
+                "text": "\"لا يخدم الفرد النظام الصناعي بمنحه مدّخراته وبمدّه برأسماله، بل باستهلاك منتجاته\"",
+                "author": "غالبرايث",
+                "source": "الوضع الصناعي الجديد"
+			},
+            "fr": {
+                "text": "\"L'individu ne sert pas le système industriel en lui donnant ses économies et en lui fournissant son capital, mais en consommant ses produits\"",
+                "author": "Galbraith",
+                "source": "Le Nouvel État industriel"
+			},
+            "en": {
+                "text": "\"The individual does not serve the industrial system by giving it his savings and providing it with capital, but by consuming its products\"",
+                "author": "Galbraith",
+                "source": "The New Industrial State"
+			}
+		},
+        {
+            "id": "quote24",
+            "ar": {
+                "text": "\"إنّ الاستهلاك هو نسق انتظام العلامات واندماج الجماعة : فهو، إذن، في آن واحد أخلاق (نسق من القيم الإيديولوجية)، ونسق للتواصل وبنية للتبادل\"",
+                "author": "جون بودريار",
+                "source": "مجتمع الاستهلاك"
+			},
+            "fr": {
+                "text": "\"La consommation est un système d'ordonnancement des signes et d'intégration du groupe : elle est donc à la fois une morale (système de valeurs idéologiques), un système de communication et une structure d'échange\"",
+                "author": "Jean Baudrillard",
+                "source": "La Société de consommation"
+			},
+            "en": {
+                "text": "\"Consumption is a system of ordering signs and integrating the group: it is thus at once a morality (a system of ideological values), a system of communication, and a structure of exchange\"",
+                "author": "Jean Baudrillard",
+                "source": "The Consumer Society"
+			}
+		},
+        {
+            "id": "quote25",
+            "ar": {
+                "text": "\"إنّ التّرفيه ... يعيد بأمانة إنتاج كلّ أشكال الإكراه الذهنيّة والعمليّة لزمن الإنتاج ولحياة الخضوع اليوميّة\"",
+                "author": "جون بودريار",
+                "source": "مجتمع الاستهلاك"
+			},
+            "fr": {
+                "text": "\"Le divertissement ... reproduit fidèlement toutes les formes de contraintes mentales et pratiques du temps de production et de la vie de soumission quotidienne\"",
+                "author": "Jean Baudrillard",
+                "source": "La Société de consommation"
+			},
+            "en": {
+                "text": "\"Entertainment ... faithfully reproduces all the forms of mental and practical constraints of production time and daily life of submission\"",
+                "author": "Jean Baudrillard",
+                "source": "The Consumer Society"
+			}
+		},
+        {
+            "id": "quote26",
+            "ar": {
+                "text": "\"عندما يُشرَك الناس في تبادل لا وجود له، فإنّ خيالهم، فضلا عن حسّهم السليم، يصبح في خطر. وفي الحقيقة يتهدّد الخيال خطر أكبر، إذ في مثل هذه العمليّات، الحسّ السليم يُتجاهل فقط، بينما يُخدع الخيال ويُذلّ\"",
+                "author": "جورج تروي",
+                "source": "سياق من دون سياق"
+			},
+            "fr": {
+                "text": "\"Lorsque les gens sont engagés dans un échange qui n'existe pas, leur imagination, ainsi que leur bon sens, sont en danger. En réalité, l'imagination court un plus grand risque, car dans de telles opérations, le bon sens est simplement ignoré, tandis que l'imagination est trompée et humiliée\"",
+                "author": "George Troy",
+                "source": "Contexte sans contexte"
+			},
+            "en": {
+                "text": "\"When people are engaged in an exchange that does not exist, their imagination, as well as their common sense, becomes in danger. In fact, imagination is threatened by a greater risk, because in such operations, common sense is merely ignored, while imagination is deceived and humiliated\"",
+                "author": "George Troy",
+                "source": "Context Without Context"
+			}
+		},
+        {
+            "id": "quote27",
+            "ar": {
+                "text": "\"التسلية سعادة من لا يستطيعون التفكير\"",
+                "author": "ألكسندر بوب",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"Le divertissement est le bonheur de ceux qui ne peuvent pas penser\"",
+                "author": "Alexander Pope",
+                "source": ""
+			},
+            "en": {
+                "text": "\"Amusement is the happiness of those who cannot think\"",
+                "author": "Alexander Pope",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote28",
+            "ar": {
+				"text": "\"إن الشيء الوحيد الذي يواسينا في شقائنا هو التسلية و الحال أنها أكبر شقائنا لأنها تمنعنا أساسا من التفكير في أنفسنا , وما يجعلنا نتيه دونما إحساس بذلك. ولولا التسلية لاستولى علينا السأم, و هذا السأم عينه هو الذي يدفعنا إلى البحث عن وسيلة أقوى للخروج من الشقاء ولكن التسلية إذ تلهينا تنتهي بنا إلى الموت دون أن نشعر.\"",
+				"author": "بليز باسكال",
+				"source": "خواطر"
+			},
+			"fr": {
+				"text": "\"La seule chose qui nous console de nos misères est le divertissement, et cependant c'est la plus grande de nos misères, car c'est lui qui nous empêche principalement de penser à nous-mêmes, et qui nous fait perdre sans le sentir. Sans le divertissement, l'ennui s'emparerait de nous, et cet ennui même nous pousserait à chercher un moyen plus fort d'en sortir. Mais le divertissement, en nous amusant, nous fait arriver à la mort sans que nous le sentions.\"",
+				"author": "Blaise Pascal",
+				"source": "Pensées"
+			},
+			"en": {
+				"text": "\"The only thing that consoles us for our miseries is diversion, and yet it is the greatest of our miseries, for it is that which principally hinders us from thinking of ourselves, and which makes us lose ourselves without feeling it. Without diversion, boredom would take hold of us, and that very boredom would push us to seek a stronger means of escaping it. But diversion, by amusing us, leads us to death without our feeling it.\"",
+				"author": "Blaise Pascal",
+				"source": "Thoughts"
+			}
+		},
+        {
+            "id": "quote29",
+            "ar": {
+                "text": "\"اليومي هو هذا المجموع المختلط والمتلبد الذي نسميه الحياة اليومية. وتتبدى هذه الحياة في جوهرها متباينة. نجد فيها أحداث فكرية وأشياء و وضعيات و علاقات تواصل مع الآخرين و كلمات ومشاهد. فاليومي لا يمكن رؤيته, هو ما نراه دون أن نبصره وما يتعارض مع التفكير الذاتي.\"",
+                "author": "فرانيي",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"Le quotidien est cet ensemble hétéroclite et nuageux que nous appelons la vie quotidienne. Cette vie apparaît dans son essence comme disparate. On y trouve des événements intellectuels, des choses, des situations, des relations de communication avec les autres, des mots et des scènes. Le quotidien ne peut être vu, c'est ce que nous voyons sans le percevoir et ce qui s'oppose à la pensée subjective.\"",
+                "author": "Franiei",
+                "source": ""
+			},
+            "en": {
+                "text": "\"The everyday is this heterogeneous and cloudy aggregate that we call daily life. This life appears in its essence as disparate. We find in it intellectual events, things, situations, communication relationships with others, words and scenes. The everyday cannot be seen, it is what we see without perceiving it and what opposes subjective thought.\"",
+                "author": "Franiei",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote30",
+            "ar": {
+                "text": "\"العقلنة مسار معرفي أخلاقي في مقاربة مشكلات الواقع الاجتماعي بتشعباته و تعقيداته و اتجاهاته المختلفة, وهو المسار الآمن التي تعتمده الأمم الحية التي تسعى الى التقدم و التنمية و حل المشاكل بعيدا عن الانفعال و التعصب والانجراف وراء الغرائز والأهواء.\"",
+                "author": "زهير فياض",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"La rationalisation est une voie cognitive et éthique dans l'approche des problèmes de la réalité sociale avec ses ramifications, ses complexités et ses différentes orientations. C'est la voie sûre que les nations vivantes adoptent pour chercher le progrès, le développement et résoudre les problèmes loin de l'émotion, du fanatisme et de la dérive derrière les instincts et les passions.\"",
+                "author": "Zuhair Fayad",
+                "source": ""
+			},
+            "en": {
+                "text": "\"Rationalization is a cognitive and ethical path in approaching the problems of social reality with its ramifications, complexities, and different directions. It is the safe path adopted by living nations that seek progress, development, and solving problems away from emotion, fanaticism, and being carried away by instincts and passions.\"",
+                "author": "Zuhair Fayad",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote31",
+            "ar": {
+                "text": "\"ان عجزنا عن الاستدلال لا تقدر على تجاوزه أية نزعة دغمائية وعلى العكس إن الفكرة التي نملكها عن الحقيقة لا تزعزعها أية نزعة شكية.\"",
+                "author": "بليز باسكال",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"Notre impuissance à démontrer ne peut être surmontée par aucun dogmatisme, et au contraire, l'idée que nous avons de la vérité ne peut être ébranlée par aucun scepticisme.\"",
+                "author": "Pascal",
+                "source": ""
+			},
+            "en": {
+                "text": "\"Our inability to prove cannot be overcome by any dogmatism, and on the contrary, the idea we have of truth cannot be shaken by any skepticism.\"",
+                "author": "Pascal",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote32",
+            "ar": {
+                "text": "\"إننا نرمي عرض الحائط بكل من النزعة الشكية الساذجة والنزعة الدغمائية المدرسية, فنحن إذن دغمائيون نقديون.\"",
+                "author": "أرنست رينان",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"Nous jetons par-dessus bord à la fois le scepticisme naïf et le dogmatisme scolaire, nous sommes donc des dogmatiques critiques.\"",
+                "author": "Ernest Renan",
+                "source": ""
+			},
+            "en": {
+                "text": "\"We throw overboard both naive skepticism and scholastic dogmatism, so we are critical dogmatists.\"",
+                "author": "Ernest Renan",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote33",
+            "ar": {
+                "text": "\"لا يعيش المجتمع إلا بالأوهام وكل مجتمع انما هو عبارة عن حلم جماعي. وتصبح هذه الأوهام أوهاما خطيرة عندما تكف عن الإيهام. و إما الكابوس فهو أن يستيقظ المرء من هذا النوع من الحلم.\"",
+                "author": "بول فاليري",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"La société ne vit que d'illusions et toute société n'est qu'un rêve collectif. Ces illusions deviennent dangereuses lorsqu'elles cessent d'illusionner. Et le cauchemar, c'est de se réveiller de ce genre de rêve.\"",
+                "author": "Paul Valéry",
+                "source": ""
+			},
+            "en": {
+                "text": "\"Society lives only on illusions and every society is but a collective dream. These illusions become dangerous when they cease to illusion. And the nightmare is to wake up from this kind of dream.\"",
+                "author": "Paul Valéry",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote34",
+            "ar": {
+                "text": "\"يحصل الوهم في الحواس و يحصل الخطأ في الأحكام. و يمكننا في نفس الوقت أن نتمتع بالوهم وأن ندرك الحقيقة.\"",
+                "author": "جوزيف جوبير",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"L'illusion se produit dans les sens et l'erreur dans les jugements. Et nous pouvons en même temps jouir de l'illusion et percevoir la vérité.\"",
+                "author": "Joseph Joubert",
+                "source": ""
+			},
+            "en": {
+                "text": "\"Illusion occurs in the senses and error in judgments. And we can simultaneously enjoy the illusion and perceive the truth.\"",
+                "author": "Joseph Joubert",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote35",
+            "ar": {
+                "text": "\"الوهم متغرع من رغبات إنسانية 'توهم كريستوف كولومبس اكتشافه طريق بحرية جديدة للهند, توهم عرق بشري حضريا على الآخر...'\"",
+                "author": "سيغموند فرويد",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"L'illusion est issue de désirs humains : 'l'illusion de Christophe Colomb découvrant une nouvelle route maritime vers l'Inde, l'illusion d'une race humaine supérieure à une autre...'\"",
+                "author": "Sigmund Freud",
+                "source": ""
+			},
+            "en": {
+                "text": "\"Illusion springs from human desires: 'the illusion of Christopher Columbus discovering a new sea route to India, the illusion of one human race being superior to another...'\"",
+                "author": "Sigmund Freud",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote36",
+            "ar": {
+                "text": "\"الاغتراب هو ازدواج الإنسان الذي خلق رموزا ومؤسسات ولم يعد يتعرف عليها كنتاج نشاطه فأصبح يعتبرها مستقلة عن إنسانيته وصعبة المنال.\"",
+                "author": "روجي غارودي",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"L'aliénation est le dédoublement de l'homme qui a créé des symboles et des institutions et ne les reconnaît plus comme le produit de son activité, les considérant désormais comme indépendants de son humanité et difficiles à atteindre.\"",
+                "author": "Roger Garaudy",
+                "source": ""
+			},
+            "en": {
+                "text": "\"Alienation is the splitting of man who created symbols and institutions and no longer recognizes them as the product of his activity, considering them instead as independent of his humanity and difficult to attain.\"",
+                "author": "Roger Garaudy",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote37",
+            "ar": {
+                "text": "\"إن أخشى ما أخشاه هو الاستلاب الفكري الذي يترك سبيل العالم العيني ويجري وراء أوهام الخطاب.\"",
+                "author": "جورج غوسدورف",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"Ce que je crains le plus, c'est l'aliénation intellectuelle qui abandonne le monde concret et court après les illusions du discours.\"",
+                "author": "Georges Gusdorf",
+                "source": ""
+			},
+            "en": {
+                "text": "\"What I fear most is intellectual alienation that abandons the concrete world and chases after the illusions of discourse.\"",
+                "author": "Georges Gusdorf",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote38",
+            "ar": {
+                "text": "\"تصبح الأوهام أوهاماً خطرة عندما تتوقف عن الإيهام\"",
+                "author": "بول فاليري",
+                "source": "خواطر سيئة وأشياء أخرى"
+			},
+            "fr": {
+                "text": "\"Les illusions deviennent des illusions dangereuses lorsqu'elles cessent d'illusionner\"",
+                "author": "Paul Valéry",
+                "source": "Mauvaises pensées et autres"
+			},
+            "en": {
+                "text": "\"Illusions become dangerous illusions when they cease to illusion\"",
+                "author": "Paul Valéry",
+                "source": "Bad Thoughts and Others"
+			}
+		},
+        {
+            "id": "quote39",
+            "ar": {
+                "text": "\"إن الحياة بحاجة إلى أوهام أي إلى 'لا حقائق' تُحمل محمل الحقائق\"",
+                "author": "فريدريك نيتشه",
+                "source": "كتاب الفيلسوف"
+			},
+            "fr": {
+                "text": "\"La vie a besoin d'illusions, c'est-à-dire de 'non-vérités' que l'on prend pour des vérités\"",
+                "author": "Friedrich Nietzsche",
+                "source": "Le Livre du philosophe"
+			},
+            "en": {
+                "text": "\"Life needs illusions, that is, 'untruths' that are taken as truths\"",
+                "author": "Friedrich Nietzsche",
+                "source": "The Philosopher's Book"
+			}
+		},
+        {
+            "id": "quote40",
+            "ar": {
+                "text": "\"إنّ الوهم هو الانخداع الذي يبقى حتّى بعد معرفة أنّ الموضوع المتعلّق به ليس موجوداً\"",
+                "author": "إيمانويل كانط",
+                "source": "الأنثروبولوجيا من وجهة نظر براغماتية"
+			},
+            "fr": {
+                "text": "\"L'illusion est la tromperie qui persiste même après avoir su que l'objet concerné n'existe pas\"",
+                "author": "Emmanuel Kant",
+                "source": "Anthropologie d'un point de vue pragmatique"
+			},
+            "en": {
+                "text": "\"Illusion is the deception that persists even after knowing that the object concerned does not exist\"",
+                "author": "Immanuel Kant",
+                "source": "Anthropology from a Pragmatic Point of View"
+			}
+		},
+        {
+            "id": "quote41",
+            "ar": {
+                "text": "\"تتمثل مأساة الإنسان في كونه يبدأ حياته طفلاً.\"",
+                "author": "إيمانويل كانط",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"La tragédie de l'homme réside dans le fait qu'il commence sa vie comme un enfant.\"",
+                "author": "Emmanuel Kant",
+                "source": ""
+			},
+            "en": {
+                "text": "\"The tragedy of man lies in the fact that he begins his life as a child.\"",
+                "author": "Immanuel Kant",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote42",
+            "ar": {
+                "text": "\"عندما يستنجد الرأي السائد بالعاطفة التي هي مصدر إلهامه فهو يقطع مع كل الذين يخالفونه و يعلن أن ليس له ما يقوله لكل من لا يجد في نفسه تجاوباً معه إنه بعبارة أخرى يدوس برجليه جذور الإنسانية إذن من الطبيعة الإنسانية أن تدفع إلى التفاهم وأن لا تتحقق إلا ضمن مجموعة تتأسس على نحو إرادي بين ذوات واعية. ما هو لا إنساني ما هو حيواني , هو أن نقف عند حد الإحساس وأن لا نؤسس علاقة بالآخر إلا على أساسه.\"",
+                "author": "جورج فيلهلم فريدريش هيجل",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"Quand l'opinion dominante fait appel à l'émotion qui est sa source d'inspiration, elle rompt avec tous ceux qui la contredisent et déclare qu'elle n'a rien à dire à quiconque ne trouve pas en soi d'écho avec elle. En d'autres termes, elle piétine les racines de l'humanité. Il est donc de la nature humaine de pousser à la compréhension et de ne se réaliser qu'au sein d'un groupe qui se fonde volontairement entre des consciences. Ce qui est inhumain, ce qui est animal, c'est de s'arrêter au sentiment et de n'établir de relation avec l'autre que sur cette base.\"",
+                "author": "Georg Wilhelm Friedrich Hegel",
+                "source": ""
+			},
+            "en": {
+                "text": "\"When the dominant opinion appeals to the emotion that is its source of inspiration, it breaks with all those who contradict it and declares that it has nothing to say to anyone who does not find an echo within themselves. In other words, it tramples on the roots of humanity. It is therefore human nature to push towards understanding and to only realize itself within a group that is voluntarily established between conscious beings. What is inhuman, what is animal, is to stop at feeling and to establish a relationship with the other only on that basis.\"",
+                "author": "Georg Wilhelm Friedrich Hegel",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote43",
+            "ar": {
+                "text": "\"القوة هي سيدة العالم و ليس الرأي بيد أن الرأي هو الذي يستخدم القوة و القوة هي المؤسسة للرأي.\"",
+                "author": "بليز باسكال",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"La force est la maîtresse du monde et non l'opinion, mais c'est l'opinion qui utilise la force et la force qui institue l'opinion.\"",
+                "author": "Blaise Pascal",
+                "source": ""
+			},
+            "en": {
+                "text": "\"Force is the mistress of the world and not opinion, but it is opinion that uses force and force that institutes opinion.\"",
+                "author": "Blaise Pascal",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote44",
+            "ar": {
+                "text": "\"إن الشرور التي تحصل للناس غنما تتأتى جميعها من الخطأ أكثر مما تتأتى من الجهل.\"",
+                "author": "جان جاك روسو",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"Les maux qui arrivent aux hommes proviennent tous de l'erreur plus que de l'ignorance.\"",
+                "author": "Jean-Jacques Rousseau",
+                "source": ""
+			},
+            "en": {
+                "text": "\"The evils that befall men all come from error more than from ignorance.\"",
+                "author": "Jean-Jacques Rousseau",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote45",
+            "ar": {
+                "text": "\"يبقى السبب الرئيسي لجميع الأخطاء واحدا ولا ينبغي أن نبحث عنه في غير التأثير الخفي للإحساس في الذهن أو بعبارة أدق لا يتبغي أن نبحث عنه في غير الحكم.... إن ما يجعل الخطأ ممكنا هو إذن الظواهر التي تجعلنا ننظر الى 'الذاتي' على أنه 'موضوعي'.\"",
+                "author": "إيمانويل كانط",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"La cause principale de toutes les erreurs reste une et il ne faut pas la chercher ailleurs que dans l'influence cachée de la sensation sur l'esprit, ou plus précisément, il ne faut pas la chercher ailleurs que dans le jugement.... Ce qui rend l'erreur possible sont donc les phénomènes qui nous font considérer le 'subjectif' comme 'objectif'.\"",
+                "author": "Emmanuel Kant",
+                "source": ""
+			},
+            "en": {
+                "text": "\"The main cause of all errors remains one and should not be sought elsewhere than in the hidden influence of sensation on the mind, or more precisely, it should not be sought elsewhere than in judgment.... What makes error possible are therefore the phenomena that make us consider the 'subjective' as 'objective'.\"",
+                "author": "Immanuel Kant",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote46",
+            "ar": {
+                "text": "\"إنّ عصرنا يفضّل الصورة على الشيء والنسخة على الأصل والتمثيل على الواقع والمظهر على الوجود\"",
+                "author": "لودفيغ فويرباخ",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"Notre époque préfère l'image à la chose, la copie à l'original, la représentation à la réalité, l'apparence à l'être\"",
+                "author": "Ludwig Feuerbach",
+                "source": ""
+			},
+            "en": {
+                "text": "\"Our age prefers the image to the thing, the copy to the original, representation to reality, appearance to being\"",
+                "author": "Ludwig Feuerbach",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote47",
+            "ar": {
+                "text": "\"إنّ المشهد لا يقول سوى أنّ ما يتبدّى جيّد وأنّ ما هو جيّد يتبدّى. فالمهمّ في الكثير من السلع هو التغليف\"",
+                "author": "غي ديبور",
+                "source": "مجتمع المشهد"
+			},
+            "fr": {
+                "text": "\"Le spectacle ne dit que ce qui apparaît est bon et que ce qui est bon apparaît. L'important dans beaucoup de marchandises est l'emballage\"",
+                "author": "Guy Debord",
+                "source": "La Société du spectacle"
+			},
+            "en": {
+                "text": "\"The spectacle says only that what appears is good and that what is good appears. What matters in many commodities is the packaging\"",
+                "author": "Guy Debord",
+                "source": "The Society of the Spectacle"
+			}
+		},
+        {
+            "id": "quote48",
+            "ar": {
+                "text": "\"الإشهار هو الكذب المنظّم\"",
+                "author": "دانيل بولونجي",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"La publicité est le mensonge organisé\"",
+                "author": "Daniel Boulanger",
+                "source": ""
+			},
+            "en": {
+                "text": "\"Advertising is organized lying\"",
+                "author": "Daniel Boulanger",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote49",
+            "ar": {
+                "text": "\"الإشهار هو علم تعطيل ذكاء الإنسان قدرا كافيا من الزمن لابتزاز النقود منه\"",
+                "author": "ستيفان لوكوك",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"La publicité est la science de suspendre l'intelligence humaine assez longtemps pour en extorquer de l'argent\"",
+                "author": "Stéphane Lecocq",
+                "source": ""
+			},
+            "en": {
+                "text": "\"Advertising is the science of suspending human intelligence long enough to extract money from it\"",
+                "author": "Stéphane Lecocq",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote50",
+            "ar": {
+                "text": "\"إنّ أخشى ما أخشاه هو الاستلاب الفِكريّ الّذي يترك سبيل العلم العينيّ ويجري وراء أوهام الخطاب\"",
+                "author": "جورج غوسدورف",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"Ce que je crains le plus, c'est l'aliénation intellectuelle qui abandonne la science concrète et court après les illusions du discours\"",
+                "author": "Georges Gusdorf",
+                "source": ""
+			},
+            "en": {
+                "text": "\"What I fear most is intellectual alienation that abandons concrete science and chases after the illusions of discourse\"",
+                "author": "Georges Gusdorf",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote51",
+            "ar": {
+                "text": "\"ان غياب الآخر يعدّ لحظة تقهقر وانحطاط ذلك أنّ المنعزل أشبه ما يكون بالجريح الذي تسنده الجماعة الثائرة فتحفظ استقامته كلّما كان تحت ضغط المجموعة لكنّه يسقط أرضا حال انفكاكها عنه.\"",
+                "author": "ميشال تورني",
+                "source": "جمعة أو حدود المحيط الهادئ"
+			},
+            "fr": {
+                "text": "\"L'absence de l'autre est un moment de régression et de déchéance, car l'isolé ressemble à un blessé que soutient la communauté révoltée, préservant sa droiture tant qu'il est sous la pression du groupe, mais qui tombe à terre dès qu'elle se détache de lui.\"",
+                "author": "Michel Tournier",
+                "source": "Vendredi ou les Limbes du Pacifique"
+			},
+            "en": {
+                "text": "\"The absence of the other is a moment of regression and decay, for the isolated person resembles a wounded man supported by the revolting community, preserving his uprightness as long as he is under the pressure of the group, but who falls to the ground as soon as it detaches from him.\"",
+                "author": "Michel Tournier",
+                "source": "Friday or the Pacific Limbo"
+			}
+		},
+        {
+            "id": "quote52",
+            "ar": {
+                "text": "\"أُعبر النهر مع الحشد، لن يُؤذيك التمساح\"",
+                "author": "مثل شعبي",
+                "source": "مدغشقر"
+			},
+            "fr": {
+                "text": "\"Traverse la rivière avec la foule, le crocodile ne te fera pas de mal\"",
+                "author": "Proverbe",
+                "source": "Madagascar"
+			},
+            "en": {
+                "text": "\"Cross the river with the crowd, the crocodile won't harm you\"",
+                "author": "Proverb",
+                "source": "Madagascar"
+			}
+		},
+        {
+            "id": "quote53",
+            "ar": {
+                "text": "\"إنّ من يتنازل مرّة للحشد يمنحه وعيا بقوّته ويحكم من ثمّة على نفسه بالتنازل له دوما\"",
+                "author": "غوستاف لوبون",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"Celui qui cède une fois à la foule lui donne conscience de sa force et se condamne ainsi à lui céder toujours\"",
+                "author": "Gustave Le Bon",
+                "source": ""
+			},
+            "en": {
+                "text": "\"He who yields once to the crowd gives it awareness of its power and thus condemns himself to yield to it always\"",
+                "author": "Gustave Le Bon",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote54",
+            "ar": {
+                "text": "\"إنّ الحكم المسبق هو سليل الجهل\"",
+                "author": "وليام هزليت",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"Le préjugé est le fils de l'ignorance\"",
+                "author": "William Hazlitt",
+                "source": ""
+			},
+            "en": {
+                "text": "\"Prejudice is the child of ignorance\"",
+                "author": "William Hazlitt",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote55",
+            "ar": {
+                "text": "\"المتعصّب خطيب أطرش\"",
+                "author": "جبران خليل جبران",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"Le fanatique est un orateur sourd\"",
+                "author": "Khalil Gibran",
+                "source": ""
+			},
+            "en": {
+                "text": "\"The fanatic is a deaf orator\"",
+                "author": "Khalil Gibran",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote56",
+            "ar": {
+                "text": "\"ما إن يُدرك أضعف الناس أنّه في مستطاعه الحفاظ على قدرته على الحكم، حتّى تسقط أمامه كلّ سلطة خارجية\"",
+                "author": "آلان",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"Dès que le plus faible des hommes comprend qu'il peut préserver sa capacité de juger, toute autorité extérieure s'effondre devant lui\"",
+                "author": "Alain",
+                "source": ""
+			},
+            "en": {
+                "text": "\"As soon as the weakest of men understands that he can preserve his capacity to judge, all external authority collapses before him\"",
+                "author": "Alain",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote57",
+            "ar": {
+                "text": "\"إنّ الفكر لا يتقدّم إلّ على جثث الأفكار\"",
+                "author": "أندريه جيد",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"La pensée ne progresse que sur les cadavres des idées\"",
+                "author": "André Gide",
+                "source": ""
+			},
+            "en": {
+                "text": "\"Thought only progresses over the corpses of ideas\"",
+                "author": "André Gide",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote58",
+            "ar": {
+                "text": "\"إن التلفزيون لم يتغيّر. يرفع من شأن التافه لأقصى حدّ كي يمارس قوّته. ويخفّض من شأن القويّ ليجعله مساويا للتافه.\"",
+                "author": "جورج تروي",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"La télévision n'a pas changé. Elle élève le trivial à l'extrême pour exercer son pouvoir. Et elle rabaisse le fort pour le rendre égal au trivial.\"",
+                "author": "George Troy",
+                "source": ""
+			},
+            "en": {
+                "text": "\"Television hasn't changed. It elevates the trivial to the extreme to exercise its power. And it lowers the strong to make them equal to the trivial.\"",
+                "author": "George Troy",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote59",
+            "ar": {
+                "text": "\"المشهد بالمعنى الضيق هو وسائل الاتّصال الجماهيرية التي تجعل ما هو سطحيّ يبدو الأشدّ بريقا\"",
+                "author": "غي ديبور",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"Le spectacle au sens étroit est les moyens de communication de masse qui font paraître le superficiel comme le plus brillant\"",
+                "author": "Guy Debord",
+                "source": ""
+			},
+            "en": {
+                "text": "\"The spectacle in the narrow sense is the mass media that make the superficial appear as the most brilliant\"",
+                "author": "Guy Debord",
+                "source": ""
+			}
+		},
+        {
+            "id": "quote60",
+            "ar": {
+                "text": "\"لم يفعل الفلاسفة إلى حدّ الآن غير أن أوّلوا العالم بأشكال شتّى، والأهمّ هو تغييره.\"",
+                "author": "كارل ماركس",
+                "source": ""
+			},
+            "fr": {
+                "text": "\"Les philosophes n'ont fait jusqu'à présent qu'interpréter le monde de diverses manières, ce qui importe c'est de le transformer.\"",
+                "author": "Karl Marx",
+                "source": ""
+			},
+            "en": {
+                "text": "\"The philosophers have only interpreted the world in various ways; the point is to change it.\"",
+                "author": "Karl Marx",
+                "source": ""
+			}
+		}
 	],
     "section_title": {
         "ar": "شواهد ونصوص ذات صلة",

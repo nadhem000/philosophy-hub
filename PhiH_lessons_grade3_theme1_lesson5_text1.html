@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: الإشهار والتنويم - إريك فروم - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#dc2626">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Red + Orange Color Palette */
+        :root {
+            --primary-color: #dc2626;
+            --primary-light: #ef4444;
+            --primary-dark: #b91c1c;
+            --secondary-color: #ea580c;
+            --secondary-light: #f97316;
+            --secondary-dark: #c2410c;
+            --accent-color: #ea580c;
+            --accent-light: #f97316;
+            --accent-dark: #c2410c;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #fef2f2;
+            --card-bg: #ffffff;
+            --definition-bg: #fef2f2;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #fed7d7;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.1), 0 2px 4px -1px rgba(220, 38, 38, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(220, 38, 38, 0.1), 0 4px 6px -2px rgba(220, 38, 38, 0.05);
+            --gradient-primary: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+            --gradient-secondary: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+            --gradient-accent: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #ef4444;
+            --primary-light: #f87171;
+            --primary-dark: #dc2626;
+            --secondary-color: #f97316;
+            --secondary-light: #fb923c;
+            --secondary-dark: #ea580c;
+            --accent-color: #f97316;
+            --accent-light: #fb923c;
+            --accent-dark: #ea580c;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #7f1d1d;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #991b1b;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+            --gradient-secondary: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            --gradient-accent: linear-gradient(135deg, #f97316 0%, #ef4444 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(220, 38, 38, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(234, 88, 12, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(234, 88, 12, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(220, 38, 38, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.fromm.title">تحليل النص: الإشهار والتنويم - إريك فروم</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.fromm.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.fromm.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.fromm.introduction.content">
+                    يسود الاعتقاد لدى البعض أنّ الدعاية سواء في وجهها التجاري أو السياسي هي تعبير عن مدى تأصّل الحريّة في مجتمعات تقوم على التنافس الاقتصادي والديمقراطيّة السياسية بحيث لا تفعل الإعلانات سوى تقديم المعطيات الضروريّة للاختيار بين ما يُعرض من بضائع ومن برامج سياسيّة. فهل يعكس هذا الاعتقاد حقيقة الدعاية أم أنّ الأمر يقتضي نظرا وتمحيصا لمعرفة بنيتها والوقوف على آليّات اشتغالها ؟
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.fromm.text.title">النص: الإشهار والتنويم</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.fromm.text.content">
+                        يجب حظرُ كل أساليب غسل المخ (1) المستخدمة في الإعلانات السياسيّة والصناعية. فخطورة أساليب غسل المخّ تلك لا تقتصر على دفعنا إلى شراء أشياء لا نريدها، ولسنا بحاجة إليها، وإنما هي أيضا تقودنا لاختيار ممثّلين سياسيين لا يمكن أن نريدهم، أو نحتاج إليهم لو كنّا مالكين تماما لقدراتنا الذهنية. فالحقيقة أنّ أساليب الإعلان التي توجّهنا نجحت في جعلنا غير مالكين تماما لقدراتنا الذهنية بفضل التشابه بين تلك الأساليب وأساليب الإيحاء المتبعة في التنويم المغناطيسي [2]. ولدرء هذا الخطر يجب منع الأساليب الإيحائيّة المغيّبة للعقل في الدعاية للسلع وللسياسيين. إنّ الأساليب الإيحائيّة شبه التنويمّة المستخدمة في الإعلانات التجاريّة والدعاية السياسيّة تعدّ خطرا كبيرا على الصحة العقليّة، وخصوصا على الصفاء الذهني والتفكير النقدي واستقلاليّة الوجدان(3). ولا شك عندي أنّ دراسة استقصائية جادّة يُمكن أن تثبت أنّ الأضرار التي تلحقها المخدّرات بالعقل ليست إلا جزءا يسيرا بالقياس للأضرار التي تحدثها أساليب غسل المخّ تلك، بدءا من الإيحاءات التي تعمل من تحت الوعي إلى الأساليب المشابهة لأساليب التنويم، مثل التكرار المستمر وتحويل وجهة التفكير العقلانيّ بإثارة الغرائز وشهوة الجنس (5).
+                    </p>
+                    <p data-i18n="PhiH.textAnalysis.fromm.text.content2">
+                        على تعطيل العقل الإنساني من قذفه بهذا الوابل الذي لا يتوقف من الأساليب الإيحائية، وخصوصا في إعلانات التلفاز التجاريّة، وهذا الهجوم الضاري على الحقيقة وعلى الإحساس بالواقع يلاحق الأفراد في كل وقت وفي كل مكان أثناء الساعات العديدة التي يقضونها كل يوم في مشاهدة التلفاز، وأثناء قيادة السيارات وهم على طرق السفر، وأثناء المعارك الانتخابية السياسية، وغير ذلك كثير.
+                    </p>
+                    <p data-i18n="PhiH.textAnalysis.fromm.text.content3">
+                        المميّز لهذه الأساليب الإيحائية هو أنّها تخلق مُناخا عاما بين اليقظة والنوم، بين التصديق والتكذيب، وأنّها تُفقِد الإنسان الإحساس بالحقيقة.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.fromm.text.source">اريك فروم : الإنسان بين الجوهر والمظهر (ترجمة سعد زهران)، سلسلة عالم المعرفة 1989. عدد140 ص202-203</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.fromm.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/erich_fromm.jpg" alt="إريك فروم" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.fromm.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.fromm.author.content">
+                            إريك فروم (1900-1980) هو عالم نفس وفيلسوف اجتماعي ألماني-أمريكي، يُعتبر أحد أبرز ممثلي مدرسة فرانكفورت والنظرية النقدية. ولد في فرانكفورت بألمانيا، وهاجر إلى الولايات المتحدة عام 1934 هرباً من النازية. جمع فروم بين التحليل النفسي الفرويدي والتحليل الماركسي للظواهر الاجتماعية، وركز على دراسة العلاقة بين الفرد والمجتمع. من أشهر مؤلفاته: "الهروب من الحرية"، "الإنسان بين الجوهر والمظهر"، "فن الحب"، و"الإنسان من أجل ذاته". عُرف فروم بنقده اللاذع للمجتمع الاستهلاكي الحديث وتأثيره السلبي على الصحة النفسية للإنسان.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.fromm.lexical.title">المفاهيم والمصطلحات</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.fromm.lexical.item1"><strong>غسل المخ:</strong> مجاز للتعبير عن مدى عمق تأثير التقنيات المعتمدة في بناء الإعلانات التجارية والسياسية بسبب ما تتوفّر عليه من قدرة على إعادة تشكيل شخصية الأفراد وتحديد أنماط وعيهم وسلوكهم بحيث تحطّم كل ما يتشكّل خارجها وتمحوه.</li>
+                    <li data-i18n="PhiH.textAnalysis.fromm.lexical.item2"><strong>التنويم المغناطيسي:</strong> إشارة إلى مدى التشابه بين التقنيات المتبعة في بناء الرسائل الإعلانية والتقنيات المتّعة في الإيحاء أثناء التنويم المغناطيسي. ففي الحالتين ثمّة تغييب للوعي والإرادة واستقلالية القرار.</li>
+                    <li data-i18n="PhiH.textAnalysis.fromm.lexical.item3"><strong>استقلالية الوجدان:</strong> قدرة الفرد على تكوين آرائه وقيمه بشكل مستقل دون تأثر بالضغوط الخارجية أو التلاعب بالإدراك.</li>
+                    <li data-i18n="PhiH.textAnalysis.fromm.lexical.item4"><strong>التكرار المستمر (المطرَقة):</strong> أسلوب إعلاني يعتمد على تكرار الرسالة الإعلانية بشكل مكثف لتثبيتها في اللاوعي وتجاوز العقل النقدي.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.fromm.questions.title">أسئلة الفهم والتحليل</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.fromm.questions.q1">كيف تفهم المماثلة التي يقيمها الكاتب بين شراء بضائع لا نحتاجها واختيار سياسيين غير أَكْفَاء؟</li>
+                    <li data-i18n="PhiH.textAnalysis.fromm.questions.q2">ابحث عن معلّقات إشهارية وبيّن آليّات اشتغالها.</li>
+                    <li data-i18n="PhiH.textAnalysis.fromm.questions.q3">كيف يمكن أن يكون للتكرار المستمر وللربط بين موضوعات الإعلان والغرائز هذا المفعول القويّ القادر على تغييب العقل ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.fromm.questions.q4">هل ترى أنّ للإنسان القدرة على أن يحافظ على استقلاله وحسّه النقديّ في مواجهة الحصار الدعائيّ المضروب عليه ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.fromm.questions.q5">هل يشترط التحرّر من سلطة الدعاية تَصوّر عالم خال منها ؟ أم يشترط تصوّرا جديدا لها يُفرغها من طابعها التنويميّ التضليليّ لتتناغم مع الحريّة ؟</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.fromm.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.fromm.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.fromm.answers.a1.content">
+                        المماثلة التي يقيمها الكاتب بين شراء بضائع لا نحتاجها واختيار سياسيين غير أكفاء تنبع من حقيقة أن الآليات نفسها المستخدمة في الإعلانات التجارية تستخدم أيضاً في الدعاية السياسية. ففي الحالتين، تُستخدم تقنيات الإيحاء وتغييب العقل لإقناع الناس باتخاذ قرارات لا تتوافق مع مصالحهم الحقيقية. فكما أن الإعلانات التجارية تدفعنا لشراء منتجات لا نحتاجها، فإن الدعاية السياسية تدفعنا لاختيار ممثلين سياسيين لا يخدمون مصالحنا الحقيقية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.fromm.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.fromm.answers.a2.content">
+                        آليات اشتغال المعلقات الإشهارية تشمل:
+                        <br>- <strong>التكرار المستمر:</strong> لتثبيت الرسالة في اللاوعي
+                        <br>- <strong>الربط بالغرائز:</strong> كربط المنتج بالجنس أو القوة أو النجاح
+                        <br>- <strong>استخدام الرموز والإيحاءات:</strong> التي تعمل تحت مستوى الوعي
+                        <br>- <strong>خلق حالة من اليقظة المشوشة:</strong> بين النوم واليقظة
+                        <br>- <strong>استغلال العواطف:</strong> بدلاً من مخاطبة العقل
+                        <br><br>
+                        هذه الآليات تشبه تقنيات التنويم المغناطيسي في قدرتها على تخطي العقل الواعي والتأثير مباشرة على اللاوعي.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.fromm.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.fromm.answers.a3.content">
+                        التكرار المستمر والربط بين موضوعات الإعلان والغرائز لهما مفعول قوي في تغييب العقل لأن:
+                        <br>- <strong>التكرار:</strong> يخلق مسارات عصبية في الدماغ تجعل الرسالة تلقائية وغير خاضعة للنقد
+                        <br>- <strong>الربط بالغرائز:</strong> يتجاوز العقل الواعي ويخاطب دوافع أولية قوية
+                        <br>- <strong>الاثنان معاً:</strong> يخلقان حالة من الاستعداد النفسي لقبول الرسالة دون تمحيص
+                        <br><br>
+                        هذه التقنيات تشبه التنويم المغناطيسي في قدرتها على تخطي الحواجز النقدية للعقل الواعي.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.fromm.answers.a4.title">الإجابة عن السؤال الرابع:</h5>
+                    <p data-i18n="PhiH.textAnalysis.fromm.answers.a4.content">
+                        نعم، للإنسان القدرة على الحفاظ على استقلاله وحسه النقدي، لكن ذلك يتطلب:
+                        <br>- <strong>الوعي بآليات التأثير:</strong> معرفة كيف تعمل تقنيات الإعلان
+                        <br>- <strong>التفكير النقدي:</strong> تدريب العقل على التساؤل والشك
+                        <br>- <strong>الحد من التعرض:</strong> تقليل وقت التعرض للإعلانات
+                        <br>- <strong>التعليم الإعلامي:</strong> تعلم كيفية تحليل الرسائل الإعلامية
+                        <br>- <strong>تطوير الوعي الذاتي:</strong> معرفة احتياجاتنا الحقيقية
+                        <br><br>
+                        هذه المهارات تمكن الفرد من حماية نفسه من التأثير غير الواعي للإعلانات.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.fromm.answers.a5.title">الإجابة عن السؤال الخامس:</h5>
+                    <p data-i18n="PhiH.textAnalysis.fromm.answers.a5.content">
+                        التحرر من سلطة الدعاية لا يشترط بالضرورة تصور عالم خالٍ منها، بل يتطلب:
+                        <br>- <strong>تصوراً جديداً للدعاية:</strong> يفرغها من طابعها التنويمي التضليلي
+                        <br>- <strong>دعاية أخلاقية:</strong> تقدم معلومات صادقة وشفافة
+                        <br>- <strong>تناغم مع الحرية:</strong> احترام حرية المستهلك في الاختيار الواعي
+                        <br>- <strong>تشريعات تنظيمية:</strong> تحظر الأساليب المخادعة والمضللة
+                        <br>- <strong>توعية مجتمعية:</strong> لتعزيز المناعة النقدية لدى الأفراد
+                        <br><br>
+                        الهدف هو تحويل الدعاية من أداة للتلاعب بالوعي إلى وسيلة للمعلومات الشفافة.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.fromm.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.fromm.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.fromm.analysis.thesis.content">
+                        يطرح إريك فروم فكرة أن الإعلانات التجارية والدعاية السياسية تستخدم تقنيات تشبه التنويم المغناطيسي في قدرتها على تغييب العقل والتأثير على القرارات بشكل لا واعي. هذه التقنيات تشكل خطراً على الصحة العقلية والحرية الفردية، وتستدعي تدابير وقائية لحماية الأفراد من تأثيرها.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.fromm.analysis.mechanisms.title">آليات عمل الدعاية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.fromm.analysis.mechanisms.content">
+                        تعمل آليات الدعاية من خلال عدة تقنيات رئيسية:
+                        <br>- <strong>غسل المخ:</strong> إعادة تشكيل الوعي والسلوك
+                        <br>- <strong>الإيحاء تحت الوعي:</strong> التأثير على القرارات دون وعي الأفراد
+                        <br>- <strong>التكرار المستمر:</strong> تثبيت الرسائل في اللاوعي
+                        <br>- <strong>إثارة الغرائز:</strong> ربط المنتجات بالدوافع الأولية
+                        <br>- <strong>خلق حالة وسطية:</strong> بين اليقظة والنوم تضعف الحس النقدي
+                        <br><br>
+                        هذه الآليات تشبه تقنيات التنويم المغناطيسي في قدرتها على تخطي العقل الواعي.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.fromm.analysis.consequences.title">نتائج تأثير الدعاية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.fromm.analysis.consequences.content">
+                        يؤدي تأثير الدعاية إلى:
+                        <br>- <strong>فقدان السيطرة على القدرات الذهنية:</strong> يصبح الأفراد غير مالكين لقراراتهم
+                        <br>- <strong>تدهور الصحة العقلية:</strong> فقدان الصفاء الذهني والتفكير النقدي
+                        <br>- <strong>انتهاك استقلالية الوجدان:</strong> فقدان القدرة على تكوين آراء مستقلة
+                        <br>- <strong>اتخاذ قرارات غير عقلانية:</strong> شراء منتجات غير ضرورية واختيار سياسيين غير أكفاء
+                        <br>- <strong>فقدان الإحساس بالحقيقة:</strong> عدم التمييز بين الواقع والإيحاء
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.fromm.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.fromm.analysis.significance.content">
+                        يحمل تحليل فروم للدعاية دلالات عميقة تتجاوز النقد الإعلاني إلى أبعاد فلسفية وسياسية. فالدعاية تمثل شكلاً من أشكال الهيمنة الحديثة التي تهدد الحرية الفردية والديمقراطية. تحليل فروم يسلط الضوء على التناقض بين الظاهر (مجتمعات حرة تنافسية) والواقع (مجتمعات مسيرة بإعلانات مضللة). النص يدعو إلى يقظة نقدية وإلى إعادة تعريف العلاقة بين الفعل الإعلاني والقيم الديمقراطية الأساسية.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.fromm.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.fromm.title": "Analyse du texte: Publicité et Hypnose - Erich Fromm",
+                "PhiH.textAnalysis.fromm.introduction.title": "Introduction",
+                "PhiH.textAnalysis.fromm.introduction.content": "Certains croient que la publicité, qu'elle soit commerciale ou politique, exprime l'enracinement de la liberté dans des sociétés fondées sur la concurrence économique et la démocratie politique, de sorte que les publicités ne font que présenter les données nécessaires pour choisir entre les produits et les programmes politiques offerts. Cette croyance reflète-t-elle la réalité de la publicité ou faut-il l'examiner et l'analyser pour comprendre sa structure et ses mécanismes de fonctionnement ?",
+                "PhiH.textAnalysis.fromm.text.title": "Texte: Publicité et Hypnose",
+                "PhiH.textAnalysis.fromm.text.content": "Toutes les méthodes de lavage de cerveau (1) utilisées dans la publicité politique et industrielle doivent être interdites. Le danger de ces méthodes de lavage de cerveau ne se limite pas à nous pousser à acheter des choses que nous ne voulons pas et dont nous n'avons pas besoin, mais elles nous conduisent également à choisir des représentants politiques que nous ne pourrions pas vouloir, ou dont nous n'aurions pas besoin si nous étions pleinement en possession de nos capacités mentales. En réalité, les méthodes publicitaires qui nous dirigent ont réussi à nous rendre non pleinement possesseurs de nos capacités mentales grâce à la similitude entre ces méthodes et les méthodes de suggestion utilisées dans l'hypnose magnétique [2]. Pour parer à ce danger, il faut interdire les méthodes suggestives qui obnubilent l'esprit dans la publicité pour les produits et les politiciens. Les méthodes suggestives quasi hypnotiques utilisées dans la publicité commerciale et la propagande politique constituent un grand danger pour la santé mentale, en particulier pour la clarté mentale, la pensée critique et l'autonomie de la conscience (3). Je ne doute pas qu'une enquête sérieuse puisse prouver que les dommages causés à l'esprit par les drogues ne sont qu'une petite partie par rapport aux dommages causés par ces méthodes de lavage de cerveau, allant des suggestions qui opèrent sous la conscience aux méthodes similaires à l'hypnose, comme la répétition continue et la diversion de la pensée rationnelle en excitant les instincts et le désir sexuel (5).",
+                "PhiH.textAnalysis.fromm.text.content2": "Sur la désactivation de l'esprit humain par ce bombardement incessant de méthodes suggestives, en particulier dans les publicités télévisées commerciales, et cette attaque féroce contre la vérité et le sens de la réalité poursuit les individus à tout moment et en tout lieu pendant les nombreuses heures qu'ils passent chaque jour à regarder la télévision, pendant qu'ils conduisent sur les routes de voyage, pendant les batailles électorales politiques, et bien d'autres encore.",
+                "PhiH.textAnalysis.fromm.text.content3": "Ce qui distingue ces méthodes suggestives est qu'elles créent un climat général entre la veille et le sommeil, entre la croyance et l'incrédulité, et qu'elles font perdre à l'homme le sens de la vérité.",
+                "PhiH.textAnalysis.fromm.text.source": "Erich Fromm : L'homme entre l'être et l'avoir (traduction de Saad Zehran), Série Monde de la Connaissance 1989. Numéro 140 p.202-203",
+                "PhiH.textAnalysis.fromm.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.fromm.author.alt": "Erich Fromm",
+                "PhiH.textAnalysis.fromm.author.content": "Erich Fromm (1900-1980) est un psychologue et philosophe social germano-américain, considéré comme l'un des principaux représentants de l'École de Francfort et de la théorie critique. Né à Francfort en Allemagne, il a émigré aux États-Unis en 1934 pour fuir le nazisme. Fromm a combiné la psychanalyse freudienne et l'analyse marxiste des phénomènes sociaux, et s'est concentré sur l'étude de la relation entre l'individu et la société. Parmi ses œuvres les plus célèbres : \"La Peur de la liberté\", \"Avoir ou être\", \"L'Art d'aimer\" et \"L'Homme pour lui-même\". Fromm était connu pour sa critique acerbe de la société de consommation moderne et son impact négatif sur la santé mentale de l'homme.",
+                "PhiH.textAnalysis.fromm.lexical.title": "Concepts et terminologie",
+                "PhiH.textAnalysis.fromm.lexical.item1": "<strong>Lavage de cerveau:</strong> métaphore exprimant la profondeur de l'impact des techniques utilisées dans la construction des publicités commerciales et politiques en raison de leur capacité à remodeler la personnalité des individus et à déterminer leurs modes de conscience et de comportement de manière à détruire et effacer tout ce qui se forme en dehors d'elles.",
+                "PhiH.textAnalysis.fromm.lexical.item2": "<strong>Hypnose magnétique:</strong> référence à la similarité entre les techniques utilisées dans la construction des messages publicitaires et les techniques utilisées dans la suggestion pendant l'hypnose magnétique. Dans les deux cas, il y a une suspension de la conscience, de la volonté et de l'autonomie de décision.",
+                "PhiH.textAnalysis.fromm.lexical.item3": "<strong>Autonomie de la conscience:</strong> capacité de l'individu à former ses opinions et ses valeurs de manière indépendante sans être influencé par des pressions externes ou des manipulations de la perception.",
+                "PhiH.textAnalysis.fromm.lexical.item4": "<strong>Répétition continue (martèlement):</strong> méthode publicitaire basée sur la répétition intensive du message publicitaire pour le fixer dans l'inconscient et contourner l'esprit critique.",
+                "PhiH.textAnalysis.fromm.questions.title": "Questions de compréhension et d'analyse",
+                "PhiH.textAnalysis.fromm.questions.q1": "Comment comprenez-vous la comparaison que l'auteur établit entre l'achat de produits dont nous n'avons pas besoin et le choix de politiciens incompétents ?",
+                "PhiH.textAnalysis.fromm.questions.q2": "Recherchez des affiches publicitaires et expliquez leurs mécanismes de fonctionnement.",
+                "PhiH.textAnalysis.fromm.questions.q3": "Comment la répétition continue et le lien entre les sujets de publicité et les instincts peuvent-ils avoir cet effet puissant capable d'obnubiler l'esprit ?",
+                "PhiH.textAnalysis.fromm.questions.q4": "Pensez-vous que l'homme ait la capacité de préserver son indépendance et son sens critique face au siège publicitaire qui l'encercle ?",
+                "PhiH.textAnalysis.fromm.questions.q5": "La libération du pouvoir de la publicité nécessite-t-elle l'imagination d'un monde sans elle ? Ou nécessite-t-elle une nouvelle conception de celle-ci qui la vide de son caractère hypnotique et trompeur pour s'harmoniser avec la liberté ?",
+                "PhiH.textAnalysis.fromm.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.fromm.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.fromm.answers.a1.content": "La comparaison que l'auteur établit entre l'achat de produits dont nous n'avons pas besoin et le choix de politiciens incompétents découle du fait que les mêmes mécanismes utilisés dans la publicité commerciale sont également utilisés dans la propagande politique. Dans les deux cas, des techniques de suggestion et d'obnubilation de l'esprit sont utilisées pour persuader les gens de prendre des décisions qui ne correspondent pas à leurs intérêts réels. Tout comme les publicités commerciales nous poussent à acheter des produits dont nous n'avons pas besoin, la propagande politique nous pousse à choisir des représentants politiques qui ne servent pas nos intérêts réels.",
+                "PhiH.textAnalysis.fromm.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.fromm.answers.a2.content": "Les mécanismes de fonctionnement des affiches publicitaires incluent :<br>- <strong>Répétition continue:</strong> pour fixer le message dans l'inconscient<br>- <strong>Lien avec les instincts:</strong> comme associer le produit au sexe, au pouvoir ou au succès<br>- <strong>Utilisation de symboles et de suggestions:</strong> qui opèrent sous le niveau de conscience<br>- <strong>Création d'un état de vigilance confuse:</strong> entre le sommeil et la veille<br>- <strong>Exploitation des émotions:</strong> au lieu de s'adresser à la raison<br><br>Ces mécanismes ressemblent aux techniques d'hypnose magnétique dans leur capacité à contourner l'esprit conscient et à influencer directement l'inconscient.",
+                "PhiH.textAnalysis.fromm.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.fromm.answers.a3.content": "La répétition continue et le lien entre les sujets de publicité et les instincts ont un effet puissant pour obnubiler l'esprit car :<br>- <strong>La répétition:</strong> crée des voies neurales dans le cerveau qui rendent le message automatique et non soumis à la critique<br>- <strong>Le lien avec les instincts:</strong> contourne l'esprit conscient et s'adresse à des motivations primaires puissantes<br>- <strong>Les deux ensemble:</strong> créent un état de préparation psychologique à accepter le message sans examen<br><br>Ces techniques ressemblent à l'hypnose magnétique dans leur capacité à contourner les barrières critiques de l'esprit conscient.",
+                "PhiH.textAnalysis.fromm.answers.a4.title": "Réponse à la quatrième question:",
+                "PhiH.textAnalysis.fromm.answers.a4.content": "Oui, l'homme a la capacité de préserver son indépendance et son sens critique, mais cela nécessite :<br>- <strong>La conscience des mécanismes d'influence:</strong> savoir comment fonctionnent les techniques publicitaires<br>- <strong>La pensée critique:</strong> entraîner l'esprit à questionner et douter<br>- <strong>La limitation de l'exposition:</strong> réduire le temps d'exposition aux publicités<br>- <strong>L'éducation aux médias:</strong> apprendre à analyser les messages médiatiques<br>- <strong>Le développement de la conscience de soi:</strong> connaître nos besoins réels<br><br>Ces compétences permettent à l'individu de se protéger de l'influence inconsciente des publicités.",
+                "PhiH.textAnalysis.fromm.answers.a5.title": "Réponse à la cinquième question:",
+                "PhiH.textAnalysis.fromm.answers.a5.content": "La libération du pouvoir de la publicité ne nécessite pas nécessairement l'imagination d'un monde sans elle, mais requiert :<br>- <strong>Une nouvelle conception de la publicité:</strong> qui la vide de son caractère hypnotique et trompeur<br>- <strong>Une publicité éthique:</strong> qui fournit des informations honnêtes et transparentes<br>- <strong>Une harmonie avec la liberté:</strong> respecter la liberté du consommateur de choisir consciemment<br>- <strong>Des réglementations législatives:</strong> qui interdisent les méthodes trompeuses et fallacieuses<br>- <strong>Une sensibilisation communautaire:</strong> pour renforcer l'immunité critique des individus<br><br>L'objectif est de transformer la publicité d'un outil de manipulation de la conscience en un moyen d'information transparente.",
+                "PhiH.textAnalysis.fromm.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.fromm.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.fromm.analysis.thesis.content": "Erich Fromm présente l'idée que la publicité commerciale et la propagande politique utilisent des techniques similaires à l'hypnose magnétique dans leur capacité à obnubiler l'esprit et à influencer les décisions de manière inconsciente. Ces techniques constituent un danger pour la santé mentale et la liberté individuelle, et nécessitent des mesures préventives pour protéger les individus de leur influence.",
+                "PhiH.textAnalysis.fromm.analysis.mechanisms.title": "Mécanismes de fonctionnement de la publicité:",
+                "PhiH.textAnalysis.fromm.analysis.mechanisms.content": "Les mécanismes de la publicité fonctionnent à travers plusieurs techniques principales :<br>- <strong>Lavage de cerveau:</strong> remodelage de la conscience et du comportement<br>- <strong>Suggestion sous la conscience:</strong> influencer les décisions sans la conscience des individus<br>- <strong>Répétition continue:</strong> fixation des messages dans l'inconscient<br>- <strong>Excitation des instincts:</strong> association des produits aux motivations primaires<br>- <strong>Création d'un état intermédiaire:</strong> entre la veille et le sommeil qui affaiblit le sens critique<br><br>Ces mécanismes ressemblent aux techniques d'hypnose magnétique dans leur capacité à contourner l'esprit conscient.",
+                "PhiH.textAnalysis.fromm.analysis.consequences.title": "Conséquences de l'influence de la publicité:",
+                "PhiH.textAnalysis.fromm.analysis.consequences.content": "L'influence de la publicité conduit à :<br>- <strong>Perte de contrôle des capacités mentales:</strong> les individus ne sont plus maîtres de leurs décisions<br>- <strong>Détérioration de la santé mentale:</strong> perte de la clarté mentale et de la pensée critique<br>- <strong>Violation de l'autonomie de la conscience:</strong> perte de la capacité à former des opinions indépendantes<br>- <strong>Prise de décisions irrationnelles:</strong> achat de produits non nécessaires et choix de politiciens incompétents<br>- <strong>Perte du sens de la vérité:</strong> incapacité à distinguer entre la réalité et la suggestion",
+                "PhiH.textAnalysis.fromm.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.fromm.analysis.significance.content": "L'analyse de Fromm sur la publicité porte des significations profondes qui vont au-delà de la critique publicitaire vers des dimensions philosophiques et politiques. La publicité représente une forme de domination moderne qui menace la liberté individuelle et la démocratie. L'analyse de Fromm met en lumière la contradiction entre l'apparence (sociétés libres compétitives) et la réalité (sociétés dirigées par des publicités trompeuses). Le texte appelle à une vigilance critique et à une redéfinition de la relation entre l'action publicitaire et les valeurs démocratiques fondamentales."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.fromm.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.fromm.title": "Text Analysis: Advertising and Hypnosis - Erich Fromm",
+                "PhiH.textAnalysis.fromm.introduction.title": "Introduction",
+                "PhiH.textAnalysis.fromm.introduction.content": "Some believe that advertising, whether commercial or political, expresses the extent to which freedom is rooted in societies based on economic competition and political democracy, so that advertisements only provide the necessary data to choose between the goods and political programs offered. Does this belief reflect the reality of advertising or does the matter require examination and scrutiny to understand its structure and mechanisms of operation?",
+                "PhiH.textAnalysis.fromm.text.title": "Text: Advertising and Hypnosis",
+                "PhiH.textAnalysis.fromm.text.content": "All methods of brainwashing (1) used in political and industrial advertising must be banned. The danger of these brainwashing methods is not limited to pushing us to buy things we don't want and don't need, but they also lead us to choose political representatives we couldn't possibly want, or need if we were fully in possession of our mental capacities. In fact, the advertising methods that direct us have succeeded in making us not fully possessors of our mental capacities thanks to the similarity between these methods and the suggestion methods used in magnetic hypnosis [2]. To ward off this danger, suggestive methods that obscure the mind in advertising for goods and politicians must be prohibited. The quasi-hypnotic suggestive methods used in commercial advertising and political propaganda constitute a great danger to mental health, particularly to mental clarity, critical thinking and autonomy of conscience (3). I have no doubt that a serious investigation could prove that the damage caused to the mind by drugs is only a small part compared to the damage caused by these brainwashing methods, ranging from suggestions that operate below consciousness to methods similar to hypnosis, such as continuous repetition and diversion of rational thought by exciting instincts and sexual desire (5).",
+                "PhiH.textAnalysis.fromm.text.content2": "On the disabling of the human mind by this incessant bombardment of suggestive methods, especially in commercial television advertisements, and this fierce attack on truth and the sense of reality pursues individuals at all times and in all places during the many hours they spend each day watching television, while driving on travel roads, during political election battles, and many others.",
+                "PhiH.textAnalysis.fromm.text.content3": "What distinguishes these suggestive methods is that they create a general climate between wakefulness and sleep, between belief and disbelief, and that they make man lose the sense of truth.",
+                "PhiH.textAnalysis.fromm.text.source": "Erich Fromm: To Have or to Be (translation by Saad Zehran), World of Knowledge Series 1989. Number 140 p.202-203",
+                "PhiH.textAnalysis.fromm.author.title": "Author Presentation",
+                "PhiH.textAnalysis.fromm.author.alt": "Erich Fromm",
+                "PhiH.textAnalysis.fromm.author.content": "Erich Fromm (1900-1980) was a German-American psychologist and social philosopher, considered one of the main representatives of the Frankfurt School and critical theory. Born in Frankfurt, Germany, he emigrated to the United States in 1934 to escape Nazism. Fromm combined Freudian psychoanalysis and Marxist analysis of social phenomena, and focused on the study of the relationship between the individual and society. Among his most famous works: \"Escape from Freedom\", \"To Have or to Be\", \"The Art of Loving\" and \"Man for Himself\". Fromm was known for his scathing criticism of modern consumer society and its negative impact on human mental health.",
+                "PhiH.textAnalysis.fromm.lexical.title": "Concepts and Terminology",
+                "PhiH.textAnalysis.fromm.lexical.item1": "<strong>Brainwashing:</strong> metaphor expressing the depth of the impact of techniques used in the construction of commercial and political advertisements due to their ability to reshape individuals' personality and determine their modes of consciousness and behavior in a way that destroys and erases everything that forms outside of them.",
+                "PhiH.textAnalysis.fromm.lexical.item2": "<strong>Magnetic hypnosis:</strong> reference to the similarity between techniques used in constructing advertising messages and techniques used in suggestion during magnetic hypnosis. In both cases, there is a suspension of consciousness, will and decision-making autonomy.",
+                "PhiH.textAnalysis.fromm.lexical.item3": "<strong>Autonomy of conscience:</strong> individual's ability to form their opinions and values independently without being influenced by external pressures or manipulation of perception.",
+                "PhiH.textAnalysis.fromm.lexical.item4": "<strong>Continuous repetition (hammering):</strong> advertising method based on intensive repetition of the advertising message to fix it in the unconscious and bypass critical thinking.",
+                "PhiH.textAnalysis.fromm.questions.title": "Comprehension and Analysis Questions",
+                "PhiH.textAnalysis.fromm.questions.q1": "How do you understand the comparison the author makes between buying goods we don't need and choosing incompetent politicians?",
+                "PhiH.textAnalysis.fromm.questions.q2": "Search for advertising posters and explain their operating mechanisms.",
+                "PhiH.textAnalysis.fromm.questions.q3": "How can continuous repetition and the link between advertising topics and instincts have this powerful effect capable of obscuring the mind?",
+                "PhiH.textAnalysis.fromm.questions.q4": "Do you think that man has the ability to maintain his independence and critical sense in the face of the advertising siege surrounding him?",
+                "PhiH.textAnalysis.fromm.questions.q5": "Does liberation from the power of advertising require imagining a world without it? Or does it require a new conception of it that empties it of its hypnotic and misleading character to harmonize with freedom?",
+                "PhiH.textAnalysis.fromm.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.fromm.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.fromm.answers.a1.content": "The comparison the author makes between buying goods we don't need and choosing incompetent politicians stems from the fact that the same mechanisms used in commercial advertising are also used in political propaganda. In both cases, suggestion techniques and mind-obscuring are used to persuade people to make decisions that do not correspond to their real interests. Just as commercial advertisements push us to buy products we don't need, political propaganda pushes us to choose political representatives who do not serve our real interests.",
+                "PhiH.textAnalysis.fromm.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.fromm.answers.a2.content": "The operating mechanisms of advertising posters include:<br>- <strong>Continuous repetition:</strong> to fix the message in the unconscious<br>- <strong>Link with instincts:</strong> such as associating the product with sex, power or success<br>- <strong>Use of symbols and suggestions:</strong> that operate below the level of consciousness<br>- <strong>Creation of a confused wakefulness state:</strong> between sleep and wakefulness<br>- <strong>Exploitation of emotions:</strong> instead of addressing reason<br><br>These mechanisms resemble magnetic hypnosis techniques in their ability to bypass the conscious mind and directly influence the unconscious.",
+                "PhiH.textAnalysis.fromm.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.fromm.answers.a3.content": "Continuous repetition and the link between advertising topics and instincts have a powerful effect in obscuring the mind because:<br>- <strong>Repetition:</strong> creates neural pathways in the brain that make the message automatic and not subject to criticism<br>- <strong>Link with instincts:</strong> bypasses the conscious mind and addresses powerful primary motivations<br>- <strong>Both together:</strong> create a state of psychological readiness to accept the message without examination<br><br>These techniques resemble magnetic hypnosis in their ability to bypass the critical barriers of the conscious mind.",
+                "PhiH.textAnalysis.fromm.answers.a4.title": "Answer to the fourth question:",
+                "PhiH.textAnalysis.fromm.answers.a4.content": "Yes, man has the ability to maintain his independence and critical sense, but this requires:<br>- <strong>Awareness of influence mechanisms:</strong> knowing how advertising techniques work<br>- <strong>Critical thinking:</strong> training the mind to question and doubt<br>- <strong>Limitation of exposure:</strong> reducing time exposed to advertisements<br>- <strong>Media education:</strong> learning to analyze media messages<br>- <strong>Development of self-awareness:</strong> knowing our real needs<br><br>These skills enable the individual to protect themselves from the unconscious influence of advertisements.",
+                "PhiH.textAnalysis.fromm.answers.a5.title": "Answer to the fifth question:",
+                "PhiH.textAnalysis.fromm.answers.a5.content": "Liberation from the power of advertising does not necessarily require imagining a world without it, but requires:<br>- <strong>A new conception of advertising:</strong> that empties it of its hypnotic and misleading character<br>- <strong>Ethical advertising:</strong> that provides honest and transparent information<br>- <strong>Harmony with freedom:</strong> respecting the consumer's freedom to choose consciously<br>- <strong>Legislative regulations:</strong> that prohibit deceptive and misleading methods<br>- <strong>Community awareness:</strong> to strengthen individuals' critical immunity<br><br>The goal is to transform advertising from a tool of consciousness manipulation into a means of transparent information.",
+                "PhiH.textAnalysis.fromm.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.fromm.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.fromm.analysis.thesis.content": "Erich Fromm presents the idea that commercial advertising and political propaganda use techniques similar to magnetic hypnosis in their ability to obscure the mind and influence decisions unconsciously. These techniques constitute a danger to mental health and individual freedom, and require preventive measures to protect individuals from their influence.",
+                "PhiH.textAnalysis.fromm.analysis.mechanisms.title": "Advertising operation mechanisms:",
+                "PhiH.textAnalysis.fromm.analysis.mechanisms.content": "Advertising mechanisms work through several main techniques:<br>- <strong>Brainwashing:</strong> reshaping consciousness and behavior<br>- <strong>Suggestion below consciousness:</strong> influencing decisions without individuals' awareness<br>- <strong>Continuous repetition:</strong> fixing messages in the unconscious<br>- <strong>Excitation of instincts:</strong> associating products with primary motivations<br>- <strong>Creation of an intermediate state:</strong> between wakefulness and sleep that weakens critical sense<br><br>These mechanisms resemble magnetic hypnosis techniques in their ability to bypass the conscious mind.",
+                "PhiH.textAnalysis.fromm.analysis.consequences.title": "Consequences of advertising influence:",
+                "PhiH.textAnalysis.fromm.analysis.consequences.content": "Advertising influence leads to:<br>- <strong>Loss of control over mental capacities:</strong> individuals are no longer masters of their decisions<br>- <strong>Deterioration of mental health:</strong> loss of mental clarity and critical thinking<br>- <strong>Violation of autonomy of conscience:</strong> loss of ability to form independent opinions<br>- <strong>Making irrational decisions:</strong> buying unnecessary products and choosing incompetent politicians<br>- <strong>Loss of sense of truth:</strong> inability to distinguish between reality and suggestion",
+                "PhiH.textAnalysis.fromm.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.fromm.analysis.significance.content": "Fromm's analysis of advertising carries deep meanings that go beyond advertising criticism to philosophical and political dimensions. Advertising represents a form of modern domination that threatens individual freedom and democracy. Fromm's analysis highlights the contradiction between appearance (free competitive societies) and reality (societies directed by misleading advertisements). The text calls for critical vigilance and a redefinition of the relationship between advertising action and fundamental democratic values."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.fromm.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.fromm.title": "تحليل النص: الإشهار والتنويم - إريك فروم",
+                "PhiH.textAnalysis.fromm.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.fromm.introduction.content": "يسود الاعتقاد لدى البعض أنّ الدعاية سواء في وجهها التجاري أو السياسي هي تعبير عن مدى تأصّل الحريّة في مجتمعات تقوم على التنافس الاقتصادي والديمقراطيّة السياسية بحيث لا تفعل الإعلانات سوى تقديم المعطيات الضروريّة للاختيار بين ما يُعرض من بضائع ومن برامج سياسيّة. فهل يعكس هذا الاعتقاد حقيقة الدعاية أم أنّ الأمر يقتضي نظرا وتمحيصا لمعرفة بنيتها والوقوف على آليّات اشتغالها ؟",
+                "PhiH.textAnalysis.fromm.text.title": "النص: الإشهار والتنويم",
+                "PhiH.textAnalysis.fromm.text.content": "يجب حظرُ كل أساليب غسل المخ (1) المستخدمة في الإعلانات السياسيّة والصناعية. فخطورة أساليب غسل المخّ تلك لا تقتصر على دفعنا إلى شراء أشياء لا نريدها، ولسنا بحاجة إليها، وإنما هي أيضا تقودنا لاختيار ممثّلين سياسيين لا يمكن أن نريدهم، أو نحتاج إليهم لو كنّا مالكين تماما لقدراتنا الذهنية. فالحقيقة أنّ أساليب الإعلان التي توجّهنا نجحت في جعلنا غير مالكين تماما لقدراتنا الذهنية بفضل التشابه بين تلك الأساليب وأساليب الإيحاء المتبعة في التنويم المغناطيسي [2]. ولدرء هذا الخطر يجب منع الأساليب الإيحائيّة المغيّبة للعقل في الدعاية للسلع وللسياسيين. إنّ الأساليب الإيحائيّة شبه التنويمّة المستخدمة في الإعلانات التجاريّة والدعاية السياسيّة تعدّ خطرا كبيرا على الصحة العقليّة، وخصوصا على الصفاء الذهني والتفكير النقدي واستقلاليّة الوجدان(3). ولا شك عندي أنّ دراسة استقصائية جادّة يُمكن أن تثبت أنّ الأضرار التي تلحقها المخدّرات بالعقل ليست إلا جزءا يسيرا بالقياس للأضرار التي تحدثها أساليب غسل المخّ تلك، بدءا من الإيحاءات التي تعمل من تحت الوعي إلى الأساليب المشابهة لأساليب التنويم، مثل التكرار المستمر وتحويل وجهة التفكير العقلانيّ بإثارة الغرائز وشهوة الجنس (5).",
+                "PhiH.textAnalysis.fromm.text.content2": "على تعطيل العقل الإنساني من قذفه بهذا الوابل الذي لا يتوقف من الأساليب الإيحائية، وخصوصا في إعلانات التلفاز التجاريّة، وهذا الهجوم الضاري على الحقيقة وعلى الإحساس بالواقع يلاحق الأفراد في كل وقت وفي كل مكان أثناء الساعات العديدة التي يقضونها كل يوم في مشاهدة التلفاز، وأثناء قيادة السيارات وهم على طرق السفر، وأثناء المعارك الانتخابية السياسية، وغير ذلك كثير.",
+                "PhiH.textAnalysis.fromm.text.content3": "المميّز لهذه الأساليب الإيحائية هو أنّها تخلق مُناخا عاما بين اليقظة والنوم، بين التصديق والتكذيب، وأنّها تُفقِد الإنسان الإحساس بالحقيقة.",
+                "PhiH.textAnalysis.fromm.text.source": "اريك فروم : الإنسان بين الجوهر والمظهر (ترجمة سعد زهران)، سلسلة عالم المعرفة 1989. عدد140 ص202-203",
+                "PhiH.textAnalysis.fromm.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.fromm.author.alt": "إريك فروم",
+                "PhiH.textAnalysis.fromm.author.content": "إريك فروم (1900-1980) هو عالم نفس وفيلسوف اجتماعي ألماني-أمريكي، يُعتبر أحد أبرز ممثلي مدرسة فرانكفورت والنظرية النقدية. ولد في فرانكفورت بألمانيا، وهاجر إلى الولايات المتحدة عام 1934 هرباً من النازية. جمع فروم بين التحليل النفسي الفرويدي والتحليل الماركسي للظواهر الاجتماعية، وركز على دراسة العلاقة بين الفرد والمجتمع. من أشهر مؤلفاته: \"الهروب من الحرية\"، \"الإنسان بين الجوهر والمظهر\"، \"فن الحب\"، و\"الإنسان من أجل ذاته\". عُرف فروم بنقده اللاذع للمجتمع الاستهلاكي الحديث وتأثيره السلبي على الصحة النفسية للإنسان.",
+                "PhiH.textAnalysis.fromm.lexical.title": "المفاهيم والمصطلحات",
+                "PhiH.textAnalysis.fromm.lexical.item1": "<strong>غسل المخ:</strong> مجاز للتعبير عن مدى عمق تأثير التقنيات المعتمدة في بناء الإعلانات التجارية والسياسية بسبب ما تتوفّر عليه من قدرة على إعادة تشكيل شخصية الأفراد وتحديد أنماط وعيهم وسلوكهم بحيث تحطّم كل ما يتشكّل خارجها وتمحوه.",
+                "PhiH.textAnalysis.fromm.lexical.item2": "<strong>التنويم المغناطيسي:</strong> إشارة إلى مدى التشابه بين التقنيات المتبعة في بناء الرسائل الإعلانية والتقنيات المتّعة في الإيحاء أثناء التنويم المغناطيسي. ففي الحالتين ثمّة تغييب للوعي والإرادة واستقلالية القرار.",
+                "PhiH.textAnalysis.fromm.lexical.item3": "<strong>استقلالية الوجدان:</strong> قدرة الفرد على تكوين آرائه وقيمه بشكل مستقل دون تأثر بالضغوط الخارجية أو التلاعب بالإدراك.",
+                "PhiH.textAnalysis.fromm.lexical.item4": "<strong>التكرار المستمر (المطرَقة):</strong> أسلوب إعلاني يعتمد على تكرار الرسالة الإعلانية بشكل مكثف لتثبيتها في اللاوعي وتجاوز العقل النقدي.",
+                "PhiH.textAnalysis.fromm.questions.title": "أسئلة الفهم والتحليل",
+                "PhiH.textAnalysis.fromm.questions.q1": "كيف تفهم المماثلة التي يقيمها الكاتب بين شراء بضائع لا نحتاجها واختيار سياسيين غير أَكْفَاء؟",
+                "PhiH.textAnalysis.fromm.questions.q2": "ابحث عن معلّقات إشهارية وبيّن آليّات اشتغالها.",
+                "PhiH.textAnalysis.fromm.questions.q3": "كيف يمكن أن يكون للتكرار المستمر وللربط بين موضوعات الإعلان والغرائز هذا المفعول القويّ القادر على تغييب العقل ؟",
+                "PhiH.textAnalysis.fromm.questions.q4": "هل ترى أنّ للإنسان القدرة على أن يحافظ على استقلاله وحسّه النقديّ في مواجهة الحصار الدعائيّ المضروب عليه ؟",
+                "PhiH.textAnalysis.fromm.questions.q5": "هل يشترط التحرّر من سلطة الدعاية تَصوّر عالم خال منها ؟ أم يشترط تصوّرا جديدا لها يُفرغها من طابعها التنويميّ التضليليّ لتتناغم مع الحريّة ؟",
+                "PhiH.textAnalysis.fromm.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.fromm.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.fromm.answers.a1.content": "المماثلة التي يقيمها الكاتب بين شراء بضائع لا نحتاجها واختيار سياسيين غير أكفاء تنبع من حقيقة أن الآليات نفسها المستخدمة في الإعلانات التجارية تستخدم أيضاً في الدعاية السياسية. ففي الحالتين، تُستخدم تقنيات الإيحاء وتغييب العقل لإقناع الناس باتخاذ قرارات لا تتوافق مع مصالحهم الحقيقية. فكما أن الإعلانات التجارية تدفعنا لشراء منتجات لا نحتاجها، فإن الدعاية السياسية تدفعنا لاختيار ممثلين سياسيين لا يخدمون مصالحنا الحقيقية.",
+                "PhiH.textAnalysis.fromm.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.fromm.answers.a2.content": "آليات اشتغال المعلقات الإشهارية تشمل:<br>- <strong>التكرار المستمر:</strong> لتثبيت الرسالة في اللاوعي<br>- <strong>الربط بالغرائز:</strong> كربط المنتج بالجنس أو القوة أو النجاح<br>- <strong>استخدام الرموز والإيحاءات:</strong> التي تعمل تحت مستوى الوعي<br>- <strong>خلق حالة من اليقظة المشوشة:</strong> بين النوم واليقظة<br>- <strong>استغلال العواطف:</strong> بدلاً من مخاطبة العقل<br><br>هذه الآليات تشبه تقنيات التنويم المغناطيسي في قدرتها على تخطي العقل الواعي والتأثير مباشرة على اللاوعي.",
+                "PhiH.textAnalysis.fromm.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.fromm.answers.a3.content": "التكرار المستمر والربط بين موضوعات الإعلان والغرائز لهما مفعول قوي في تغييب العقل لأن:<br>- <strong>التكرار:</strong> يخلق مسارات عصبية في الدماغ تجعل الرسالة تلقائية وغير خاضعة للنقد<br>- <strong>الربط بالغرائز:</strong> يتجاوز العقل الواعي ويخاطب دوافع أولية قوية<br>- <strong>الاثنان معاً:</strong> يخلقان حالة من الاستعداد النفسي لقبول الرسالة دون تمحيص<br><br>هذه التقنيات تشبه التنويم المغناطيسي في قدرتها على تخطي الحواجز النقدية للعقل الواعي.",
+                "PhiH.textAnalysis.fromm.answers.a4.title": "الإجابة عن السؤال الرابع:",
+                "PhiH.textAnalysis.fromm.answers.a4.content": "نعم، للإنسان القدرة على الحفاظ على استقلاله وحسه النقدي، لكن ذلك يتطلب:<br>- <strong>الوعي بآليات التأثير:</strong> معرفة كيف تعمل تقنيات الإعلان<br>- <strong>التفكير النقدي:</strong> تدريب العقل على التساؤل والشك<br>- <strong>الحد من التعرض:</strong> تقليل وقت التعرض للإعلانات<br>- <strong>التعليم الإعلامي:</strong> تعلم كيفية تحليل الرسائل الإعلامية<br>- <strong>تطوير الوعي الذاتي:</strong> معرفة احتياجاتنا الحقيقية<br><br>هذه المهارات تمكن الفرد من حماية نفسه من التأثير غير الواعي للإعلانات.",
+                "PhiH.textAnalysis.fromm.answers.a5.title": "الإجابة عن السؤال الخامس:",
+                "PhiH.textAnalysis.fromm.answers.a5.content": "التحرر من سلطة الدعاية لا يشترط بالضرورة تصور عالم خالٍ منها، بل يتطلب:<br>- <strong>تصوراً جديداً للدعاية:</strong> يفرغها من طابعها التنويمي التضليلي<br>- <strong>دعاية أخلاقية:</strong> تقدم معلومات صادقة وشفافة<br>- <strong>تناغم مع الحرية:</strong> احترام حرية المستهلك في الاختيار الواعي<br>- <strong>تشريعات تنظيمية:</strong> تحظر الأساليب المخادعة والمضللة<br>- <strong>توعية مجتمعية:</strong> لتعزيز المناعة النقدية لدى الأفراد<br><br>الهدف هو تحويل الدعاية من أداة للتلاعب بالوعي إلى وسيلة للمعلومات الشفافة.",
+                "PhiH.textAnalysis.fromm.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.fromm.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.fromm.analysis.thesis.content": "يطرح إريك فروم فكرة أن الإعلانات التجارية والدعاية السياسية تستخدم تقنيات تشبه التنويم المغناطيسي في قدرتها على تغييب العقل والتأثير على القرارات بشكل لا واعي. هذه التقنيات تشكل خطراً على الصحة العقلية والحرية الفردية، وتستدعي تدابير وقائية لحماية الأفراد من تأثيرها.",
+                "PhiH.textAnalysis.fromm.analysis.mechanisms.title": "آليات عمل الدعاية:",
+                "PhiH.textAnalysis.fromm.analysis.mechanisms.content": "تعمل آليات الدعاية من خلال عدة تقنيات رئيسية:<br>- <strong>غسل المخ:</strong> إعادة تشكيل الوعي والسلوك<br>- <strong>الإيحاء تحت الوعي:</strong> التأثير على القرارات دون وعي الأفراد<br>- <strong>التكرار المستمر:</strong> تثبيت الرسائل في اللاوعي<br>- <strong>إثارة الغرائز:</strong> ربط المنتجات بالدوافع الأولية<br>- <strong>خلق حالة وسطية:</strong> بين اليقظة والنوم تضعف الحس النقدي<br><br>هذه الآليات تشبه تقنيات التنويم المغناطيسي في قدرتها على تخطي العقل الواعي.",
+                "PhiH.textAnalysis.fromm.analysis.consequences.title": "نتائج تأثير الدعاية:",
+                "PhiH.textAnalysis.fromm.analysis.consequences.content": "يؤدي تأثير الدعاية إلى:<br>- <strong>فقدان السيطرة على القدرات الذهنية:</strong> يصبح الأفراد غير مالكين لقراراتهم<br>- <strong>تدهور الصحة العقلية:</strong> فقدان الصفاء الذهني والتفكير النقدي<br>- <strong>انتهاك استقلالية الوجدان:</strong> فقدان القدرة على تكوين آراء مستقلة<br>- <strong>اتخاذ قرارات غير عقلانية:</strong> شراء منتجات غير ضرورية واختيار سياسيين غير أكفاء<br>- <strong>فقدان الإحساس بالحقيقة:</strong> عدم التمييز بين الواقع والإيحاء",
+                "PhiH.textAnalysis.fromm.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.fromm.analysis.significance.content": "يحمل تحليل فروم للدعاية دلالات عميقة تتجاوز النقد الإعلاني إلى أبعاد فلسفية وسياسية. فالدعاية تمثل شكلاً من أشكال الهيمنة الحديثة التي تهدد الحرية الفردية والديمقراطية. تحليل فروم يسلط الضوء على التناقض بين الظاهر (مجتمعات حرة تنافسية) والواقع (مجتمعات مسيرة بإعلانات مضللة). النص يدعو إلى يقظة نقدية وإلى إعادة تعريف العلاقة بين الفعل الإعلاني والقيم الديمقراطية الأساسية."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

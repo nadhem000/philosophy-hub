@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: وسائل الاتصال - جان بودريار - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#dc2626">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Indian Red Color Palette */
+        :root {
+            --primary-color: #dc2626;
+            --primary-light: #ef4444;
+            --primary-dark: #b91c1c;
+            --secondary-color: #e11d48;
+            --secondary-light: #f43f5e;
+            --secondary-dark: #be123c;
+            --accent-color: #e11d48;
+            --accent-light: #f43f5e;
+            --accent-dark: #be123c;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #fef2f2;
+            --card-bg: #ffffff;
+            --definition-bg: #fecaca;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #fca5a5;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.1), 0 2px 4px -1px rgba(220, 38, 38, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(220, 38, 38, 0.1), 0 4px 6px -2px rgba(220, 38, 38, 0.05);
+            --gradient-primary: linear-gradient(135deg, #dc2626 0%, #e11d48 100%);
+            --gradient-secondary: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+            --gradient-accent: linear-gradient(135deg, #e11d48 0%, #dc2626 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #ef4444;
+            --primary-light: #f87171;
+            --primary-dark: #dc2626;
+            --secondary-color: #f43f5e;
+            --secondary-light: #fb7185;
+            --secondary-dark: #e11d48;
+            --accent-color: #f43f5e;
+            --accent-light: #fb7185;
+            --accent-dark: #e11d48;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #7f1d1d;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #991b1b;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #ef4444 0%, #f43f5e 100%);
+            --gradient-secondary: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+            --gradient-accent: linear-gradient(135deg, #f43f5e 0%, #ef4444 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(220, 38, 38, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(225, 29, 72, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(225, 29, 72, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(220, 38, 38, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.baudrillard.title">تحليل النص: وسائل الاتصال - جان بودريار</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.baudrillard.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.baudrillard.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.baudrillard.introduction.content">
+                    لقد كانت وسائل الاتصال، منذ ابتكار الطباعة، منحصرة في بعض الأدوات التقليديّة مثل الكتاب والصحيفة مما جعلها محدودة الانتشار والتأثير تقتصر على أوساط اجتماعيّة ضيّقة. ولكن مع تطوّر تكنولوجيات الاتصال، وخاصة في مجال البثّ المرئيّ، اتسع نطاق انتشارها وتأثيرها لتصبح جماهيريّة mass-media، ولتُمثّل الإحداثيّة الأساسيّة لأشكال الوعي والسلوك من خلال الدعاية والإعلام، إلى درجة ساد فيها الاعتقاد بأنّنا نعيش ثورة وضعت حدّا لعزلة البشر وللمسافات وللامساواة الثقافيّة فيما بينهم. فهل مكّنتنا هذه الوسائل من التحرّر فعلا أم أنّ الأمر يقتضي تفكيرا نقديّا في بنيتها ونظامها وفي مدى قدرتها على ضمان تواصل يكون فضاء للحريّة وللإثراء النفسي والفكري ؟
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.baudrillard.text.title">وسائل الاتصال : بث أم تواصل ؟</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.baudrillard.text.content">
+                        إنّ ما يُميّز وسائل الاتصال الجماهيريّ هو أنّها لا توسّطيّة وأحاديّة الاتجاه وصانعة للاتواصل - إذا قبلنا تعريف التواصل على أنّه تبادل وفضاء يتفاعل فيه كلام مع كلام، وهو بذلك فضاء مسؤوليّة - ولا يتعلّق الأمر في هذا المقام بمسؤوليّة نفسيّة وأخلاقيّة وإنّما بعلاقة تبادل شخصيّة بين طرف وآخر في سياق التواصل، وبعبارة أخرى إذا عرّفنا التواصل بكونه مختلفا عن مجرّد علاقة بسيطة بين بثّ لإعلام وتقبّل له ( ... ) بيد أنّ كل البنية الراهنة لوسائل الاتصال تتأسّس على التعريف التالي: إنّها ما يمنع نهائيا الإجابة ويجعل كل عمليّة تبادل مستحيلة (إلا إذا اتخذ ذلك شكل افتراض إجابة تنخرط هي نفسها في عمليّة البثّ بحيث لا يغيّر ذلك شيئا من الطابع الأحاديّ للتواصل) وهنا يكمن طابعها التجريديّ[1] الحق. وفي هذا التجريد ذاته يقوم نظام المراقبة الاجتماعيّة والسلطة.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.baudrillard.text.source">جان بودريار، من أجل نقد الاقتصاد السياسيّ للعلامة، ترجمة لجنة التأليف، ص 185</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.baudrillard.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/jean_baudrillard.jpg" alt="جان بودريار" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.baudrillard.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.baudrillard.author.content">
+                            جان بودريار (1929-2007) عالم اجتماع وفيلسوف فرنسي معاصر. ولد في مدينة ريمس. من مؤلفاته: نظام الموضوعات، مجتمع الاستهلاك، من أجل نقد الاقتصاد السياسي للعلامة (1972)، الجريمة الكاملة (1995). اتجه من خلال مؤلفاته إلى مقاربة واقع المجتمع الاستهلاكي الراهن، مقاربة نقديّة تتجاوز التناول الاقتصاديّ الكميّ والتحليل الطبقيّ لترى في واقع الوفرة والرفاهيّة ووسائل الاتصال الجماهيريّ نظاما رمزيا منسجما من العلامات. يُعتبر بودريار من أهم منظري ما بعد الحداثة، وقد اشتهر بمفاهيم مثل المحاكاة والواقع الفائق واستهلاك العلامات.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.baudrillard.lexical.title">المفاهيم والمصطلحات</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.baudrillard.lexical.item1"><strong>وسائل الاتصال الجماهيري (Mass Media):</strong> هي وسائل الإعلام التي تصل إلى جمهور واسع ومتنوع، مثل التلفزيون، الراديو، الصحف، والإنترنت. تتميز بأنها لا وسيطة وأحادية الاتجاه.</li>
+                    <li data-i18n="PhiH.textAnalysis.baudrillard.lexical.item2"><strong>التواصل:</strong> يعرفه الكاتب على أنه تبادل وفضاء يتفاعل فيه كلام مع كلام، وهو فضاء مسؤولية وعلاقة تبادلية شخصية بين طرفين.</li>
+                    <li data-i18n="PhiH.textAnalysis.baudrillard.lexical.item3"><strong>الطابع التجريدي:</strong> التجريد هو عزل الخصائص الحسيّة في ظاهرة أو حدث أو فعل ما للتعامل معها كعلاقة غير ذات مضمون يُحيل على الواقع والأشخاص. وهو ما يحدث في وسائل الاتصال عندما تُفرِغ التواصل من مضمونه التبادليّ.</li>
+                </ul>
+            </div>
+            
+            <!-- Footnotes -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.baudrillard.footnotes.title">الهوامش</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.baudrillard.footnotes.content">
+                        <sup>1</sup> <strong>"الطابع التجريديّ"</strong>: التجريد هو عزل الخصائص الحسيّة في ظاهرة أو حدث أو فعل ما للتعامل معها كعلاقة غير ذات مضمونٍ يُحيل على الواقع والأشخاص. وهو ما يحدث في وسائل الاتصال عندما تُفرِغ التواصل من مضمونه التبادليّ.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.baudrillard.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.baudrillard.questions.q1">استخرج التعريف الذي يُقرّه الكاتب للتواصل في حكمه على طبيعة وسائل الاتصال.</li>
+                    <li data-i18n="PhiH.textAnalysis.baudrillard.questions.q2">أيّ تعريف للتواصل تفترضه وسائل الاتصال ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.baudrillard.questions.q3">قارن بين التصوريْن للتواصل.</li>
+                    <li data-i18n="PhiH.textAnalysis.baudrillard.questions.q4">حرّر فقرة لإبراز الاختلاف بين حكم عامة النّاس على وسائل الاتصال وما يكشفه بودريار عن نظامها وقيمة تأثيرها.</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.baudrillard.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.baudrillard.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.baudrillard.answers.a1.content">
+                        التعريف الذي يُقرّه الكاتب للتواصل هو: "تبادل وفضاء يتفاعل فيه كلام مع كلام، وهو بذلك فضاء مسؤوليّة". كما يضيف أن التواصل هو "علاقة تبادل شخصيّة بين طرف وآخر في سياق التواصل"، وليس مجرد علاقة بسيطة بين بثّ للإعلام وتقبّل له.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.baudrillard.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.baudrillard.answers.a2.content">
+                        تفترض وسائل الاتصال تعريفاً مختلفاً للتواصل، فهي تنظر إليه على أنه مجرد علاقة بسيطة بين بثّ للإعلام وتقبّل له. كما أن بنيتها الحالية تقوم على منع الإجابة وجعل كل عملية تبادل مستحيلة، مما يجعلها أحادية الاتجاه ولا وسيطة.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.baudrillard.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.baudrillard.answers.a3.content">
+                        المقارنة بين التصورين للتواصل:
+                        <br><br>
+                        <strong>تصور بودريار للتواصل:</strong>
+                        <br>- تبادل حقيقي بين طرفين
+                        <br>- فضاء للتفاعل والمسؤولية
+                        <br>- علاقة تبادلية شخصية
+                        <br>- تفاعل كلام مع كلام
+                        <br><br>
+                        <strong>تصور وسائل الاتصال للتواصل:</strong>
+                        <br>- علاقة بسيطة بين بث وتلقي
+                        <br>- عملية أحادية الاتجاه
+                        <br>- تمنع الإجابة والتبادل
+                        <br>- تفتقر إلى البعد الشخصي والتفاعلي
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.baudrillard.answers.a4.title">الإجابة عن السؤال الرابع:</h5>
+                    <p data-i18n="PhiH.textAnalysis.baudrillard.answers.a4.content">
+                        بينما يرى عامة الناس في وسائل الاتصال الجماهيري أداة للتحرر والتقدم، حيث وضعت حداً للعزلة والمسافات واللامساواة الثقافية، يكشف جان بودريار عن حقيقة مغايرة. فوسائل الاتصال، في نظره، ليست فضاءً للتواصل الحقيقي بل هي نظام للمراقبة الاجتماعية والسلطة. إنها تفرغ التواصل من مضمونه التبادلي وتجعله عملية أحادية الاتجاه تمنع الإجابة وتجعل التبادل مستحيلاً. بينما يعتقد الناس أنهم يشاركون في حوار جماعي، فإنهم في الواقع مجرد مستقبلين سلبيين لرسائل معدّة مسبقاً. هذا التناقض بين تصور العامة وحقيقة النظام الاتصالي يكشف عن الطابع التجريدي لوسائل الاتصال ودورها في تعزيز سلطة رقابية غير مرئية.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.baudrillard.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.baudrillard.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.baudrillard.analysis.thesis.content">
+                        يطرح جان بودريار فكرة أن وسائل الاتصال الجماهيري ليست أدوات للتواصل الحقيقي، بل هي أدوات للبث الأحادي الاتجاه الذي يمنع التبادل الحقيقي ويخلق شكلاً من أشكال المراقبة الاجتماعية والسلطة. فبدلاً من أن تكون فضاءً للحرية والإثراء الفكري، تصبح هذه الوسائل أداة للسيطرة والهيمنة.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.baudrillard.analysis.mechanisms.title">آليات عمل وسائل الاتصال:</h5>
+                    <p data-i18n="PhiH.textAnalysis.baudrillard.analysis.mechanisms.content">
+                        تعمل وسائل الاتصال من خلال عدة آليات تجعلها أداة للسيطرة بدلاً من التواصل:
+                        <br>- <strong>الطابع الأحادي:</strong> حيث تكون العملية اتصالية في اتجاه واحد من المرسل إلى المستقبل دون إمكانية حقيقية للرد.
+                        <br>- <strong>اللاوساطية:</strong> تفتقر إلى الوساطة الحقيقية التي تسمح بالتفاعل والتبادل.
+                        <br>- <strong>التجريد:</strong> تفرغ التواصل من مضمونه الإنساني والتبادلي وتحوله إلى علاقة مجردة.
+                        <br>- <strong>منع الإجابة:</strong> تجعل عملية التبادل مستحيلة أو شكلية فقط.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.baudrillard.analysis.consequences.title">نتائج نظام الاتصال الجماهيري:</h5>
+                    <p data-i18n="PhiH.textAnalysis.baudrillard.analysis.consequences.content">
+                        - <strong>فقدان التواصل الحقيقي:</strong> حيث يتحول التواصل من تبادل إلى بث أحادي.
+                        <br>- <strong>المراقبة الاجتماعية:</strong> تصبح وسائل الاتصال أداة للرقابة والهيمنة.
+                        <br>- <strong>الاستلاب:</strong> يفقد الأفراد قدرتهم على التعبير الحقيقي والمشاركة الفعالة.
+                        <br>- <strong>خلق الوهم:</strong> يتم خلق وهم التواصل والحرية بينما الواقع هو العكس.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.baudrillard.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.baudrillard.analysis.significance.content">
+                        يحمل تحليل بودريار لوسائل الاتصال دلالات عميقة تتجاوز النقد الإعلامي إلى أبعاد فلسفية وسوسيولوجية. فوسائل الاتصال ليست مجرد تقنيات محايدة، بل هي أنظمة رمزية تنتج واقعاً اجتماعياً معيناً. الطابع التجريدي لوسائل الاتصال يخلق فجوة بين الواقع والتمثيل، مما يؤدي إلى عالم من المحاكاة حيث تختفي الحدود بين الحقيقي والافتراضي. هذا التحليل يضعنا أمام سؤال جوهري حول إمكانية التواصل الحقيقي في عصر الوسائط الجماهيرية، ودور هذه الوسائط في تشكيل الوعي والسلوك البشري.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.baudrillard.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.baudrillard.title": "Analyse du texte: Les moyens de communication - Jean Baudrillard",
+                "PhiH.textAnalysis.baudrillard.introduction.title": "Introduction",
+                "PhiH.textAnalysis.baudrillard.introduction.content": "Depuis l'invention de l'imprimerie, les moyens de communication étaient limités à certains outils traditionnels comme le livre et le journal, ce qui les rendait limités en termes de diffusion et d'impact, se restreignant à des milieux sociaux étroits. Mais avec le développement des technologies de communication, en particulier dans le domaine de la diffusion visuelle, leur portée et leur influence se sont élargies pour devenir des mass-media, représentant l'événementiel fondamental des formes de conscience et de comportement à travers la publicité et les médias, au point où la croyance s'est répandue que nous vivons une révolution qui a mis fin à l'isolement des humains, aux distances et aux inégalités culturelles entre eux. Ces moyens nous ont-ils vraiment permis de nous libérer ou faut-il une réflexion critique sur leur structure, leur système et leur capacité à assurer une communication qui soit un espace de liberté et d'enrichissement psychique et intellectuel ?",
+                "PhiH.textAnalysis.baudrillard.text.title": "Moyens de communication : diffusion ou communication ?",
+                "PhiH.textAnalysis.baudrillard.text.content": "Ce qui distingue les moyens de communication de masse est qu'ils sont non médiatisés, unidirectionnels et créateurs de non-communication - si nous acceptons de définir la communication comme un échange et un espace où la parole interagit avec la parole, et qu'elle est ainsi un espace de responsabilité - et il ne s'agit pas ici de responsabilité psychique et éthique mais d'une relation d'échange personnelle entre une partie et une autre dans le contexte de la communication, en d'autres termes si nous définissons la communication comme étant différente d'une simple relation entre une diffusion d'information et sa réception ( ... ) cependant toute la structure actuelle des moyens de communication est fondée sur la définition suivante : c'est ce qui empêche définitivement la réponse et rend tout processus d'échange impossible (sauf si cela prend la forme d'une supposition de réponse qui s'engage elle-même dans le processus de diffusion de sorte que cela ne change rien au caractère unidirectionnel de la communication) et c'est là que réside son véritable caractère abstrait[1]. Et c'est dans cette abstraction même que repose le système de surveillance sociale et le pouvoir.",
+                "PhiH.textAnalysis.baudrillard.text.source": "Jean Baudrillard, Pour une critique de l'économie politique du signe, traduction du comité de rédaction, p 185",
+                "PhiH.textAnalysis.baudrillard.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.baudrillard.author.alt": "Jean Baudrillard",
+                "PhiH.textAnalysis.baudrillard.author.content": "Jean Baudrillard (1929-2007) sociologue et philosophe français contemporain. Né à Reims. Parmi ses œuvres : Le Système des objets, La Société de consommation, Pour une critique de l'économie politique du signe (1972), Le Crime parfait (1995). À travers ses œuvres, il s'est orienté vers une approche de la réalité de la société de consommation actuelle, une approche critique qui dépasse le traitement économique quantitatif et l'analyse de classe pour voir dans la réalité de l'abondance, du bien-être et des moyens de communication de masse un système symbolique cohérent de signes. Baudrillard est considéré comme l'un des principaux théoriciens du postmodernisme, et il est connu pour des concepts tels que la simulation, l'hyperréalité et la consommation de signes.",
+                "PhiH.textAnalysis.baudrillard.lexical.title": "Concepts et terminologie",
+                "PhiH.textAnalysis.baudrillard.lexical.item1": "<strong>Moyens de communication de masse (Mass Media):</strong> ce sont les médias qui atteignent un public large et diversifié, comme la télévision, la radio, les journaux et Internet. Ils se caractérisent par le fait qu'ils sont non médiatisés et unidirectionnels.",
+                "PhiH.textAnalysis.baudrillard.lexical.item2": "<strong>Communication:</strong> l'auteur la définit comme un échange et un espace où la parole interagit avec la parole, et c'est un espace de responsabilité et une relation d'échange personnelle entre deux parties.",
+                "PhiH.textAnalysis.baudrillard.lexical.item3": "<strong>Caractère abstrait:</strong> l'abstraction est l'isolement des caractéristiques sensibles dans un phénomène, un événement ou une action pour les traiter comme une relation sans contenu qui renvoie à la réalité et aux personnes. C'est ce qui se passe dans les moyens de communication lorsqu'ils vident la communication de son contenu d'échange.",
+                "PhiH.textAnalysis.baudrillard.footnotes.title": "Notes de bas de page",
+                "PhiH.textAnalysis.baudrillard.footnotes.content": "<sup>1</sup> <strong>\"Caractère abstrait\"</strong>: l'abstraction est l'isolement des caractéristiques sensibles dans un phénomène, un événement ou une action pour les traiter comme une relation sans contenu qui renvoie à la réalité et aux personnes. C'est ce qui se passe dans les moyens de communication lorsqu'ils vident la communication de son contenu d'échange.",
+                "PhiH.textAnalysis.baudrillard.questions.title": "Tâches",
+                "PhiH.textAnalysis.baudrillard.questions.q1": "Extrayez la définition que l'auteur approuve pour la communication dans son jugement sur la nature des moyens de communication.",
+                "PhiH.textAnalysis.baudrillard.questions.q2": "Quelle définition de la communication supposent les moyens de communication ?",
+                "PhiH.textAnalysis.baudrillard.questions.q3": "Comparez les deux conceptions de la communication.",
+                "PhiH.textAnalysis.baudrillard.questions.q4": "Rédigez un paragraphe pour mettre en évidence la différence entre le jugement du grand public sur les moyens de communication et ce que Baudrillard révèle sur leur système et la valeur de leur impact.",
+                "PhiH.textAnalysis.baudrillard.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.baudrillard.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.baudrillard.answers.a1.content": "La définition que l'auteur approuve pour la communication est : \"un échange et un espace où la parole interagit avec la parole, et c'est ainsi un espace de responsabilité\". Il ajoute que la communication est \"une relation d'échange personnelle entre une partie et une autre dans le contexte de la communication\", et pas seulement une simple relation entre une diffusion d'information et sa réception.",
+                "PhiH.textAnalysis.baudrillard.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.baudrillard.answers.a2.content": "Les moyens de communication supposent une définition différente de la communication, ils la considèrent comme une simple relation entre une diffusion d'information et sa réception. De plus, leur structure actuelle est basée sur l'empêchement de la réponse et rend tout processus d'échange impossible, ce qui les rend unidirectionnels et non médiatisés.",
+                "PhiH.textAnalysis.baudrillard.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.baudrillard.answers.a3.content": "Comparaison entre les deux conceptions de la communication :<br><br><strong>Conception de Baudrillard de la communication:</strong><br>- Échange réel entre deux parties<br>- Espace d'interaction et de responsabilité<br>- Relation d'échange personnelle<br>- Interaction de parole avec parole<br><br><strong>Conception des moyens de communication de la communication:</strong><br>- Relation simple entre diffusion et réception<br>- Processus unidirectionnel<br>- Empêche la réponse et l'échange<br>- Manque de dimension personnelle et interactive",
+                "PhiH.textAnalysis.baudrillard.answers.a4.title": "Réponse à la quatrième question:",
+                "PhiH.textAnalysis.baudrillard.answers.a4.content": "Alors que le grand public voit dans les moyens de communication de masse un outil de libération et de progrès, qui a mis fin à l'isolement, aux distances et aux inégalités culturelles, Jean Baudrillard révèle une réalité différente. Les moyens de communication, selon lui, ne sont pas un espace de communication réelle mais un système de surveillance sociale et de pouvoir. Ils vident la communication de son contenu d'échange et en font un processus unidirectionnel qui empêche la réponse et rend l'échange impossible. Alors que les gens croient participer à un dialogue collectif, ils ne sont en réalité que des récepteurs passifs de messages prédéterminés. Cette contradiction entre la perception du public et la réalité du système communicationnel révèle le caractère abstrait des moyens de communication et leur rôle dans le renforcement d'un pouvoir de surveillance invisible.",
+                "PhiH.textAnalysis.baudrillard.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.baudrillard.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.baudrillard.analysis.thesis.content": "Jean Baudrillard présente l'idée que les moyens de communication de masse ne sont pas des outils de communication réelle, mais des outils de diffusion unidirectionnelle qui empêchent l'échange réel et créent une forme de surveillance sociale et de pouvoir. Au lieu d'être un espace de liberté et d'enrichissement intellectuel, ces moyens deviennent un instrument de contrôle et de domination.",
+                "PhiH.textAnalysis.baudrillard.analysis.mechanisms.title": "Mécanismes de fonctionnement des moyens de communication:",
+                "PhiH.textAnalysis.baudrillard.analysis.mechanisms.content": "Les moyens de communication fonctionnent à travers plusieurs mécanismes qui en font un instrument de contrôle plutôt que de communication :<br>- <strong>Caractère unidirectionnel:</strong> où le processus communicationnel va dans un seul sens de l'émetteur vers le récepteur sans possibilité réelle de réponse.<br>- <strong>Non-médiation:</strong> manque de médiation réelle permettant l'interaction et l'échange.<br>- <strong>Abstraction:</strong> vident la communication de son contenu humain et d'échange et la transforment en relation abstraite.<br>- <strong>Empêchement de la réponse:</strong> rendent le processus d'échange impossible ou seulement formel.",
+                "PhiH.textAnalysis.baudrillard.analysis.consequences.title": "Conséquences du système de communication de masse:",
+                "PhiH.textAnalysis.baudrillard.analysis.consequences.content": "- <strong>Perte de la communication réelle:</strong> où la communication passe de l'échange à la diffusion unidirectionnelle.<br>- <strong>Surveillance sociale:</strong> les moyens de communication deviennent un outil de censure et de domination.<br>- <strong>Aliénation:</strong> les individus perdent leur capacité d'expression réelle et de participation effective.<br>- <strong>Création d'illusion:</strong> une illusion de communication et de liberté est créée alors que la réalité est l'inverse.",
+                "PhiH.textAnalysis.baudrillard.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.baudrillard.analysis.significance.content": "L'analyse de Baudrillard sur les moyens de communication porte des significations profondes qui vont au-delà de la critique médiatique vers des dimensions philosophiques et sociologiques. Les moyens de communication ne sont pas seulement des techniques neutres, mais des systèmes symboliques qui produisent une certaine réalité sociale. Le caractère abstrait des moyens de communication crée un écart entre la réalité et la représentation, conduisant à un monde de simulation où les frontières entre le réel et le virtuel disparaissent. Cette analyse nous place devant une question fondamentale sur la possibilité d'une communication réelle à l'ère des médias de masse, et le rôle de ces médias dans la formation de la conscience et du comportement humain."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.baudrillard.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.baudrillard.title": "Text Analysis: Means of Communication - Jean Baudrillard",
+                "PhiH.textAnalysis.baudrillard.introduction.title": "Introduction",
+                "PhiH.textAnalysis.baudrillard.introduction.content": "Since the invention of printing, means of communication were limited to some traditional tools like books and newspapers, which made them limited in spread and impact, restricted to narrow social circles. But with the development of communication technologies, especially in the field of visual broadcasting, their scope and influence expanded to become mass-media, representing the fundamental eventfulness of forms of consciousness and behavior through advertising and media, to the extent that the belief prevailed that we are living a revolution that put an end to human isolation, distances, and cultural inequalities among them. Have these means really enabled us to liberate ourselves or does the matter require critical thinking about their structure, system, and their ability to ensure communication that is a space for freedom and psychological and intellectual enrichment?",
+                "PhiH.textAnalysis.baudrillard.text.title": "Means of Communication: Broadcasting or Communication?",
+                "PhiH.textAnalysis.baudrillard.text.content": "What distinguishes mass communication means is that they are non-mediated, unidirectional and creators of non-communication - if we accept defining communication as an exchange and a space where speech interacts with speech, and it is thus a space of responsibility - and it is not a matter here of psychic and ethical responsibility but of a personal exchange relationship between one party and another in the context of communication, in other words if we define communication as being different from a simple relationship between broadcasting information and receiving it ( ... ) however the entire current structure of communication means is based on the following definition: it is what definitively prevents the answer and makes any exchange process impossible (unless it takes the form of assuming an answer that itself engages in the broadcasting process so that it changes nothing about the unidirectional character of communication) and here lies its true abstract character[1]. And in this very abstraction lies the system of social surveillance and power.",
+                "PhiH.textAnalysis.baudrillard.text.source": "Jean Baudrillard, For a Critique of the Political Economy of the Sign, translation by the editorial committee, p 185",
+                "PhiH.textAnalysis.baudrillard.author.title": "Author Presentation",
+                "PhiH.textAnalysis.baudrillard.author.alt": "Jean Baudrillard",
+                "PhiH.textAnalysis.baudrillard.author.content": "Jean Baudrillard (1929-2007) contemporary French sociologist and philosopher. Born in Reims. Among his works: The System of Objects, The Consumer Society, For a Critique of the Political Economy of the Sign (1972), The Perfect Crime (1995). Through his works, he approached the reality of contemporary consumer society with a critical approach that goes beyond quantitative economic treatment and class analysis to see in the reality of abundance, welfare and mass communication means a coherent symbolic system of signs. Baudrillard is considered one of the main theorists of postmodernism, and he is known for concepts such as simulation, hyperreality and consumption of signs.",
+                "PhiH.textAnalysis.baudrillard.lexical.title": "Concepts and Terminology",
+                "PhiH.textAnalysis.baudrillard.lexical.item1": "<strong>Mass Communication Means (Mass Media):</strong> these are media that reach a wide and diverse audience, such as television, radio, newspapers, and the Internet. They are characterized by being non-mediated and unidirectional.",
+                "PhiH.textAnalysis.baudrillard.lexical.item2": "<strong>Communication:</strong> the author defines it as an exchange and a space where speech interacts with speech, and it is a space of responsibility and a personal exchange relationship between two parties.",
+                "PhiH.textAnalysis.baudrillard.lexical.item3": "<strong>Abstract Character:</strong> abstraction is the isolation of sensory characteristics in a phenomenon, event or action to deal with them as a relation without content that refers to reality and persons. This is what happens in communication means when they empty communication of its exchange content.",
+                "PhiH.textAnalysis.baudrillard.footnotes.title": "Footnotes",
+                "PhiH.textAnalysis.baudrillard.footnotes.content": "<sup>1</sup> <strong>\"Abstract Character\"</strong>: abstraction is the isolation of sensory characteristics in a phenomenon, event or action to deal with them as a relation without content that refers to reality and persons. This is what happens in communication means when they empty communication of its exchange content.",
+                "PhiH.textAnalysis.baudrillard.questions.title": "Tasks",
+                "PhiH.textAnalysis.baudrillard.questions.q1": "Extract the definition that the author approves for communication in his judgment on the nature of communication means.",
+                "PhiH.textAnalysis.baudrillard.questions.q2": "What definition of communication do communication means assume?",
+                "PhiH.textAnalysis.baudrillard.questions.q3": "Compare the two conceptions of communication.",
+                "PhiH.textAnalysis.baudrillard.questions.q4": "Write a paragraph to highlight the difference between the general public's judgment on communication means and what Baudrillard reveals about their system and the value of their impact.",
+                "PhiH.textAnalysis.baudrillard.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.baudrillard.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.baudrillard.answers.a1.content": "The definition that the author approves for communication is: \"an exchange and a space where speech interacts with speech, and it is thus a space of responsibility\". He adds that communication is \"a personal exchange relationship between one party and another in the context of communication\", and not just a simple relationship between broadcasting information and receiving it.",
+                "PhiH.textAnalysis.baudrillard.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.baudrillard.answers.a2.content": "Communication means assume a different definition of communication, they view it as a simple relationship between broadcasting information and receiving it. Moreover, their current structure is based on preventing the answer and making any exchange process impossible, which makes them unidirectional and non-mediated.",
+                "PhiH.textAnalysis.baudrillard.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.baudrillard.answers.a3.content": "Comparison between the two conceptions of communication:<br><br><strong>Baudrillard's conception of communication:</strong><br>- Real exchange between two parties<br>- Space for interaction and responsibility<br>- Personal exchange relationship<br>- Interaction of speech with speech<br><br><strong>Communication means' conception of communication:</strong><br>- Simple relationship between broadcasting and reception<br>- Unidirectional process<br>- Prevents answer and exchange<br>- Lacks personal and interactive dimension",
+                "PhiH.textAnalysis.baudrillard.answers.a4.title": "Answer to the fourth question:",
+                "PhiH.textAnalysis.baudrillard.answers.a4.content": "While the general public sees in mass communication means a tool for liberation and progress, which put an end to isolation, distances and cultural inequalities, Jean Baudrillard reveals a different reality. Communication means, according to him, are not a space for real communication but a system of social surveillance and power. They empty communication of its exchange content and make it a unidirectional process that prevents the answer and makes exchange impossible. While people believe they are participating in a collective dialogue, they are in reality just passive receivers of predetermined messages. This contradiction between public perception and the reality of the communication system reveals the abstract character of communication means and their role in reinforcing an invisible surveillance power.",
+                "PhiH.textAnalysis.baudrillard.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.baudrillard.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.baudrillard.analysis.thesis.content": "Jean Baudrillard presents the idea that mass communication means are not tools for real communication, but tools for unidirectional broadcasting that prevent real exchange and create a form of social surveillance and power. Instead of being a space for freedom and intellectual enrichment, these means become an instrument of control and domination.",
+                "PhiH.textAnalysis.baudrillard.analysis.mechanisms.title": "Mechanisms of communication means functioning:",
+                "PhiH.textAnalysis.baudrillard.analysis.mechanisms.content": "Communication means work through several mechanisms that make them an instrument of control rather than communication:<br>- <strong>Unidirectional character:</strong> where the communication process goes in one direction from sender to receiver without real possibility of response.<br>- <strong>Non-mediation:</strong> lack of real mediation allowing interaction and exchange.<br>- <strong>Abstraction:</strong> empty communication of its human and exchange content and transform it into an abstract relation.<br>- <strong>Prevention of response:</strong> make the exchange process impossible or only formal.",
+                "PhiH.textAnalysis.baudrillard.analysis.consequences.title": "Consequences of the mass communication system:",
+                "PhiH.textAnalysis.baudrillard.analysis.consequences.content": "- <strong>Loss of real communication:</strong> where communication shifts from exchange to unidirectional broadcasting.<br>- <strong>Social surveillance:</strong> communication means become a tool for censorship and domination.<br>- <strong>Alienation:</strong> individuals lose their capacity for real expression and effective participation.<br>- <strong>Creation of illusion:</strong> an illusion of communication and freedom is created while reality is the opposite.",
+                "PhiH.textAnalysis.baudrillard.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.baudrillard.analysis.significance.content": "Baudrillard's analysis of communication means carries deep meanings that go beyond media criticism to philosophical and sociological dimensions. Communication means are not just neutral techniques, but symbolic systems that produce a certain social reality. The abstract character of communication means creates a gap between reality and representation, leading to a world of simulation where boundaries between the real and the virtual disappear. This analysis places us before a fundamental question about the possibility of real communication in the age of mass media, and the role of these media in shaping human consciousness and behavior."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.baudrillard.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.baudrillard.title": "تحليل النص: وسائل الاتصال - جان بودريار",
+                "PhiH.textAnalysis.baudrillard.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.baudrillard.introduction.content": "لقد كانت وسائل الاتصال، منذ ابتكار الطباعة، منحصرة في بعض الأدوات التقليديّة مثل الكتاب والصحيفة مما جعلها محدودة الانتشار والتأثير تقتصر على أوساط اجتماعيّة ضيّقة. ولكن مع تطوّر تكنولوجيات الاتصال، وخاصة في مجال البثّ المرئيّ، اتسع نطاق انتشارها وتأثيرها لتصبح جماهيريّة mass-media، ولتُمثّل الإحداثيّة الأساسيّة لأشكال الوعي والسلوك من خلال الدعاية والإعلام، إلى درجة ساد فيها الاعتقاد بأنّنا نعيش ثورة وضعت حدّا لعزلة البشر وللمسافات وللامساواة الثقافيّة فيما بينهم. فهل مكّنتنا هذه الوسائل من التحرّر فعلا أم أنّ الأمر يقتضي تفكيرا نقديّا في بنيتها ونظامها وفي مدى قدرتها على ضمان تواصل يكون فضاء للحريّة وللإثراء النفسي والفكري ؟",
+                "PhiH.textAnalysis.baudrillard.text.title": "وسائل الاتصال : بث أم تواصل ؟",
+                "PhiH.textAnalysis.baudrillard.text.content": "إنّ ما يُميّز وسائل الاتصال الجماهيريّ هو أنّها لا توسّطيّة وأحاديّة الاتجاه وصانعة للاتواصل - إذا قبلنا تعريف التواصل على أنّه تبادل وفضاء يتفاعل فيه كلام مع كلام، وهو بذلك فضاء مسؤوليّة - ولا يتعلّق الأمر في هذا المقام بمسؤوليّة نفسيّة وأخلاقيّة وإنّما بعلاقة تبادل شخصيّة بين طرف وآخر في سياق التواصل، وبعبارة أخرى إذا عرّفنا التواصل بكونه مختلفا عن مجرّد علاقة بسيطة بين بثّ لإعلام وتقبّل له ( ... ) بيد أنّ كل البنية الراهنة لوسائل الاتصال تتأسّس على التعريف التالي: إنّها ما يمنع نهائيا الإجابة ويجعل كل عمليّة تبادل مستحيلة (إلا إذا اتخذ ذلك شكل افتراض إجابة تنخرط هي نفسها في عمليّة البثّ بحيث لا يغيّر ذلك شيئا من الطابع الأحاديّ للتواصل) وهنا يكمن طابعها التجريديّ[1] الحق. وفي هذا التجريد ذاته يقوم نظام المراقبة الاجتماعيّة والسلطة.",
+                "PhiH.textAnalysis.baudrillard.text.source": "جان بودريار، من أجل نقد الاقتصاد السياسيّ للعلامة، ترجمة لجنة التأليف، ص 185",
+                "PhiH.textAnalysis.baudrillard.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.baudrillard.author.alt": "جان بودريار",
+                "PhiH.textAnalysis.baudrillard.author.content": "جان بودريار (1929-2007) عالم اجتماع وفيلسوف فرنسي معاصر. ولد في مدينة ريمس. من مؤلفاته: نظام الموضوعات، مجتمع الاستهلاك، من أجل نقد الاقتصاد السياسي للعلامة (1972)، الجريمة الكاملة (1995). اتجه من خلال مؤلفاته إلى مقاربة واقع المجتمع الاستهلاكي الراهن، مقاربة نقديّة تتجاوز التناول الاقتصاديّ الكميّ والتحليل الطبقيّ لترى في واقع الوفرة والرفاهيّة ووسائل الاتصال الجماهيريّ نظاما رمزيا منسجما من العلامات. يُعتبر بودريار من أهم منظري ما بعد الحداثة، وقد اشتهر بمفاهيم مثل المحاكاة والواقع الفائق واستهلاك العلامات.",
+                "PhiH.textAnalysis.baudrillard.lexical.title": "المفاهيم والمصطلحات",
+                "PhiH.textAnalysis.baudrillard.lexical.item1": "<strong>وسائل الاتصال الجماهيري (Mass Media):</strong> هي وسائل الإعلام التي تصل إلى جمهور واسع ومتنوع، مثل التلفزيون، الراديو، الصحف، والإنترنت. تتميز بأنها لا وسيطة وأحادية الاتجاه.",
+                "PhiH.textAnalysis.baudrillard.lexical.item2": "<strong>التواصل:</strong> يعرفه الكاتب على أنه تبادل وفضاء يتفاعل فيه كلام مع كلام، وهو فضاء مسؤولية وعلاقة تبادلية شخصية بين طرفين.",
+                "PhiH.textAnalysis.baudrillard.lexical.item3": "<strong>الطابع التجريدي:</strong> التجريد هو عزل الخصائص الحسيّة في ظاهرة أو حدث أو فعل ما للتعامل معها كعلاقة غير ذات مضمون يُحيل على الواقع والأشخاص. وهو ما يحدث في وسائل الاتصال عندما تُفرِغ التواصل من مضمونه التبادليّ.",
+                "PhiH.textAnalysis.baudrillard.footnotes.title": "الهوامش",
+                "PhiH.textAnalysis.baudrillard.footnotes.content": "<sup>1</sup> <strong>\"الطابع التجريديّ\"</strong>: التجريد هو عزل الخصائص الحسيّة في ظاهرة أو حدث أو فعل ما للتعامل معها كعلاقة غير ذات مضمونٍ يُحيل على الواقع والأشخاص. وهو ما يحدث في وسائل الاتصال عندما تُفرِغ التواصل من مضمونه التبادليّ.",
+                "PhiH.textAnalysis.baudrillard.questions.title": "المهام",
+                "PhiH.textAnalysis.baudrillard.questions.q1": "استخرج التعريف الذي يُقرّه الكاتب للتواصل في حكمه على طبيعة وسائل الاتصال.",
+                "PhiH.textAnalysis.baudrillard.questions.q2": "أيّ تعريف للتواصل تفترضه وسائل الاتصال ؟",
+                "PhiH.textAnalysis.baudrillard.questions.q3": "قارن بين التصوريْن للتواصل.",
+                "PhiH.textAnalysis.baudrillard.questions.q4": "حرّر فقرة لإبراز الاختلاف بين حكم عامة النّاس على وسائل الاتصال وما يكشفه بودريار عن نظامها وقيمة تأثيرها.",
+                "PhiH.textAnalysis.baudrillard.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.baudrillard.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.baudrillard.answers.a1.content": "التعريف الذي يُقرّه الكاتب للتواصل هو: \"تبادل وفضاء يتفاعل فيه كلام مع كلام، وهو بذلك فضاء مسؤوليّة\". كما يضيف أن التواصل هو \"علاقة تبادل شخصيّة بين طرف وآخر في سياق التواصل\"، وليس مجرد علاقة بسيطة بين بثّ للإعلام وتقبّل له.",
+                "PhiH.textAnalysis.baudrillard.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.baudrillard.answers.a2.content": "تفترض وسائل الاتصال تعريفاً مختلفاً للتواصل، فهي تنظر إليه على أنه مجرد علاقة بسيطة بين بثّ للإعلام وتقبّل له. كما أن بنيتها الحالية تقوم على منع الإجابة وجعل كل عملية تبادل مستحيلة، مما يجعلها أحادية الاتجاه ولا وسيطة.",
+                "PhiH.textAnalysis.baudrillard.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.baudrillard.answers.a3.content": "المقارنة بين التصورين للتواصل:<br><br><strong>تصور بودريار للتواصل:</strong><br>- تبادل حقيقي بين طرفين<br>- فضاء للتفاعل والمسؤولية<br>- علاقة تبادلية شخصية<br>- تفاعل كلام مع كلام<br><br><strong>تصور وسائل الاتصال للتواصل:</strong><br>- علاقة بسيطة بين بث وتلقي<br>- عملية أحادية الاتجاه<br>- تمنع الإجابة والتبادل<br>- تفتقر إلى البعد الشخصي والتفاعلي",
+                "PhiH.textAnalysis.baudrillard.answers.a4.title": "الإجابة عن السؤال الرابع:",
+                "PhiH.textAnalysis.baudrillard.answers.a4.content": "بينما يرى عامة الناس في وسائل الاتصال الجماهيري أداة للتحرر والتقدم، حيث وضعت حداً للعزلة والمسافات واللامساواة الثقافية، يكشف جان بودريار عن حقيقة مغايرة. فوسائل الاتصال، في نظره، ليست فضاءً للتواصل الحقيقي بل هي نظام للمراقبة الاجتماعية والسلطة. إنها تفرغ التواصل من مضمونه التبادلي وتجعله عملية أحادية الاتجاه تمنع الإجابة وتجعل التبادل مستحيلاً. بينما يعتقد الناس أنهم يشاركون في حوار جماعي، فإنهم في الواقع مجرد مستقبلين سلبيين لرسائل معدّة مسبقاً. هذا التناقض بين تصور العامة وحقيقة النظام الاتصالي يكشف عن الطابع التجريدي لوسائل الاتصال ودورها في تعزيز سلطة رقابية غير مرئية.",
+                "PhiH.textAnalysis.baudrillard.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.baudrillard.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.baudrillard.analysis.thesis.content": "يطرح جان بودريار فكرة أن وسائل الاتصال الجماهيري ليست أدوات للتواصل الحقيقي، بل هي أدوات للبث الأحادي الاتجاه الذي يمنع التبادل الحقيقي ويخلق شكلاً من أشكال المراقبة الاجتماعية والسلطة. فبدلاً من أن تكون فضاءً للحرية والإثراء الفكري، تصبح هذه الوسائل أداة للسيطرة والهيمنة.",
+                "PhiH.textAnalysis.baudrillard.analysis.mechanisms.title": "آليات عمل وسائل الاتصال:",
+                "PhiH.textAnalysis.baudrillard.analysis.mechanisms.content": "تعمل وسائل الاتصال من خلال عدة آليات تجعلها أداة للسيطرة بدلاً من التواصل:<br>- <strong>الطابع الأحادي:</strong> حيث تكون العملية اتصالية في اتجاه واحد من المرسل إلى المستقبل دون إمكانية حقيقية للرد.<br>- <strong>اللاوساطية:</strong> تفتقر إلى الوساطة الحقيقية التي تسمح بالتفاعل والتبادل.<br>- <strong>التجريد:</strong> تفرغ التواصل من مضمونه الإنساني والتبادلي وتحوله إلى علاقة مجردة.<br>- <strong>منع الإجابة:</strong> تجعل عملية التبادل مستحيلة أو شكلية فقط.",
+                "PhiH.textAnalysis.baudrillard.analysis.consequences.title": "نتائج نظام الاتصال الجماهيري:",
+                "PhiH.textAnalysis.baudrillard.analysis.consequences.content": "- <strong>فقدان التواصل الحقيقي:</strong> حيث يتحول التواصل من تبادل إلى بث أحادي.<br>- <strong>المراقبة الاجتماعية:</strong> تصبح وسائل الاتصال أداة للرقابة والهيمنة.<br>- <strong>الاستلاب:</strong> يفقد الأفراد قدرتهم على التعبير الحقيقي والمشاركة الفعالة.<br>- <strong>خلق الوهم:</strong> يتم خلق وهم التواصل والحرية بينما الواقع هو العكس.",
+                "PhiH.textAnalysis.baudrillard.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.baudrillard.analysis.significance.content": "يحمل تحليل بودريار لوسائل الاتصال دلالات عميقة تتجاوز النقد الإعلامي إلى أبعاد فلسفية وسوسيولوجية. فوسائل الاتصال ليست مجرد تقنيات محايدة، بل هي أنظمة رمزية تنتج واقعاً اجتماعياً معيناً. الطابع التجريدي لوسائل الاتصال يخلق فجوة بين الواقع والتمثيل، مما يؤدي إلى عالم من المحاكاة حيث تختفي الحدود بين الحقيقي والافتراضي. هذا التحليل يضعنا أمام سؤال جوهري حول إمكانية التواصل الحقيقي في عصر الوسائط الجماهيرية، ودور هذه الوسائط في تشكيل الوعي والسلوك البشري."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

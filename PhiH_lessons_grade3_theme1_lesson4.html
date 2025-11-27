@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illusion - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#9b59b6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Purple/Magenta Theme for Illusion */
+        :root {
+            --primary-color: #9b59b6;
+            --secondary-color: #e84393;
+            --accent-color: #8e44ad;
+            --light-color: #f9f4ff;
+            --dark-color: #2c1a3a;
+            --text-color: #2c1a3a;
+            --heading-color: #2c1a3a;
+            --background-color: #fdfaff;
+            --card-bg: #ffffff;
+            --definition-bg: #f4e9ff;
+            --border-color: #d7bde2;
+            --table-even-bg: #f8f2ff;
+            --table-hover-bg: #f4e9ff;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(155, 89, 182, 0.15);
+            --gradient-primary: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            --gradient-secondary: linear-gradient(135deg, #e84393 0%, #c0392b 100%);
+            --gradient-purple: linear-gradient(135deg, #9b59b6 0%, #2c1a3a 100%);
+            --gradient-pink: linear-gradient(135deg, #e84393 0%, #c0392b 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #bb86fc;
+            --secondary-color: #ff79c6;
+            --accent-color: #9b59b6;
+            --light-color: #3a2a4a;
+            --dark-color: #1a1125;
+            --text-color: #e8dfff;
+            --heading-color: #f7fafc;
+            --background-color: #2c1a3a;
+            --card-bg: #3a2a4a;
+            --definition-bg: #3a2a4a;
+            --border-color: #bb86fc;
+            --table-even-bg: #2c1a3a;
+            --table-hover-bg: #3a2a4a;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #bb86fc 0%, #9b59b6 100%);
+            --gradient-secondary: linear-gradient(135deg, #ff79c6 0%, #e84393 100%);
+            --gradient-purple: linear-gradient(135deg, #bb86fc 0%, #3a2a4a 100%);
+            --gradient-pink: linear-gradient(135deg, #ff79c6 0%, #e84393 100%);
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Definition Cards Layout */
+        .PhiH-definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-definition-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(155, 89, 182, 0.2);
+        }
+        
+        .PhiH-definition-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-definition-card-content ul {
+            padding-left: 1.2rem;
+            margin: 0.8rem 0;
+        }
+        
+        .PhiH-definition-card-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        /* Expand/Collapse Functionality */
+        .PhiH-expandable-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .PhiH-expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .PhiH-expandable-header:hover {
+            background: var(--gradient-purple);
+        }
+        
+        .PhiH-expandable-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        .PhiH-expandable-content {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            border-top: none;
+        }
+        
+        .PhiH-expandable-content.hidden {
+            display: none;
+        }
+        
+        .PhiH-expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-expand-icon.expanded {
+            transform: rotate(180deg);
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Section Styling */
+        .PhiH-quotes-container {
+            margin-top: 1rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(155, 89, 182, 0.2);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        /* RTL support for definition cards */
+        body.rtl .PhiH-definition-card-content ul {
+            padding-left: 0;
+            padding-right: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .PhiH-definitions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-illusion" dir="ltr">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-lesson1-container">
+        <div class="PhiH-lesson1-header">
+            <h1 class="PhiH-lesson1-title" data-i18n="PhiH.lessons.illusion.title">الوهم</h1>
+            <div class="PhiH-lesson1-level" data-i18n="PhiH.lessons.illusion.level">السنة الثالثة ثانوي - الفلسفة</div>
+        </div>
+        
+        <!-- Introduction Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="introHeader">
+                <h3 data-i18n="PhiH.lessons.illusion.introduction.title">التمهيد</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="introContent">
+                <p data-i18n="PhiH.lessons.illusion.introduction.text1">
+                    يمثل الوهم ظاهرة إنسانية معقدة تتجاوز مجرد الخطأ البسيط في الإدراك أو الحكم. فهو ليس مجرد وهم بصرى عابر، بل يتغلغل في أعماق الفكر والاعتقاد، مُشكِّلاً رؤيتنا للعالم وعلاقتنا بالواقع. يتميز الوهم بقدرته على البقاء والاستمرار حتى بعد اكتشاف زيفه، مما يجعله قوة مؤثرة في حياة الأفراد والمجتمعات.
+                </p>
+                <p data-i18n="PhiH.lessons.illusion.introduction.text2">
+                    تنبع قوة الوهم من ارتباطه بالرغبات الإنسانية العميقة واحتياجاتنا النفسية، حيث يقدم لنا صورة للواقع نتمنى أن تكون حقيقية، حتى ولو كانت مخالفة للحقائق الموضوعية. من خلال هذا المحور، نستكشف هذه الآلية المعقدة التي تتحكم في وعينا وتؤثر في قراراتنا وسلوكياتنا.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Texts Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="textsHeader">
+                <h3 data-i18n="PhiH.lessons.illusion.texts.title">النصوص</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="textsContent">
+                <div class="PhiH-texts-container">
+                    <ul class="PhiH-texts-list">
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme1_lesson4_text1.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.illusion.texts.text1">النص 1: فرويد – الوهم والخطأ</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme1_lesson4_text2.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.illusion.texts.text2">النص 2: الغزالي – عناد الوهم</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quotes Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="quotesHeader">
+                <h3 data-i18n="PhiH.lessons.illusion.quotes.title">شواهد ونصوص ذات صلة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="quotesContent">
+                <div class="PhiH-quotes-container">
+                    <div class="PhiH-quotes-grid">
+                        <!-- Quote 1 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.illusion.quotes.quote1">
+                                "تصبح الأوهام أوهاماً خطرة عندما تتوقف عن الإيهام"
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.illusion.quotes.author1">بول فاليري</div>
+                            <div class="PhiH-quote-source" data-i18n="PhiH.lessons.illusion.quotes.source1">خواطر سيئة وأشياء أخرى</div>
+                        </div>
+                        
+                        <!-- Quote 2 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.illusion.quotes.quote2">
+                                "إن الحياة بحاجة إلى أوهام أي إلى 'لا حقائق' تُحمل محمل الحقائق"
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.illusion.quotes.author2">نيتشه</div>
+                            <div class="PhiH-quote-source" data-i18n="PhiH.lessons.illusion.quotes.source2">كتاب الفيلسوف</div>
+                        </div>
+                        
+                        <!-- Quote 3 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.illusion.quotes.quote3">
+                                "إنّ الوهم هو الانخداع الذي يبقى حتّى بعد معرفة أنّ الموضوع المتعلّق به ليس موجوداً"
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.illusion.quotes.author3">كانط</div>
+                            <div class="PhiH-quote-source" data-i18n="PhiH.lessons.illusion.quotes.source3">الانتروبولجيا من وجهة نظر براغماتية</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Conclusion -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="conclusionHeader">
+                <h3 data-i18n="PhiH.lessons.illusion.conclusion.title">الخاتمة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="conclusionContent">
+                <p data-i18n="PhiH.lessons.illusion.conclusion.text1">
+                    يتجلى من خلال دراسة الوهم أنه تحديٌ دائم للمعرفة الإنسانية والوعي الفردي. فقدرة الوهم على مقاومة الحقائق العقلية والتجريبية، واستمراره في التأثير حتى بعد كشف زيفه، تجعله ظاهرة فريدة تستحق التأمل.
+                </p>
+                <p data-i18n="PhiH.lessons.illusion.conclusion.text2">
+                    وتكمن خطورته في كونه لا يقدم نفسه كمجرد خطأ يمكن تصحيحه ببساطة، بل كحقيقة مزيفة تلبس ثياب اليقين، مما يجعل التحرر منه عملية مستمرة تتطلب وعياً نقدياً متجدداً. ورغم تقدم المعرفة العقلية والعلمية، يبقى الوهم جزءاً من التجربة الإنسانية، يتشكل بأشكال جديدة ويتكيف مع كل عصر، مما يجعل المواجهة معه حواراً دائماً بين العقل والرغبة، بين الحقيقة والاعتقاد، وبين الواقع وما نتمنى أن يكون.
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Page-specific translations for illusion lesson
+        window.translations_PhiHillusion = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                
+                // Illusion lesson specific translations
+                "PhiH.lessons.illusion.title": "L'Illusion",
+                "PhiH.lessons.illusion.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                "PhiH.lessons.illusion.introduction.title": "Introduction",
+                "PhiH.lessons.illusion.introduction.text1": "L'illusion représente un phénomène humain complexe qui dépasse la simple erreur de perception ou de jugement. Ce n'est pas seulement une illusion visuelle transitoire, mais elle pénètre profondément la pensée et la croyance, façonnant notre vision du monde et notre relation avec la réalité. L'illusion se caractérise par sa capacité à persister et à continuer même après que sa fausseté ait été découverte, ce qui en fait une force influente dans la vie des individus et des sociétés.",
+                "PhiH.lessons.illusion.introduction.text2": "La force de l'illusion découle de son lien avec les désirs humains profonds et nos besoins psychologiques, où elle nous présente une image de la réalité que nous souhaitons être vraie, même si elle contredit les faits objectifs. À travers ce thème, nous explorons ce mécanisme complexe qui contrôle notre conscience et influence nos décisions et comportements.",
+                
+                "PhiH.lessons.illusion.definitions.title": "Définitions",
+                "PhiH.lessons.illusion.definitions.card1.title": "Le Préjugé Préjuger",
+                "PhiH.lessons.illusion.definitions.card1.point1": "Le préjugé est un mécanisme du fonctionnement quotidien.",
+                "PhiH.lessons.illusion.definitions.card1.point2": "Le préjugé est un jugement prématuré. Un jugement avant la réflexion et la vérification résultant de la précipitation, de l'habitude, de la paresse ou de la lâcheté. Il n'est pas formé par le sujet mais trouvé tout prêt et s'appuie généralement sur l'opinion dominante. L'être humain ne pense pas réellement de manière personnelle que s'il prend conscience de la vérité de ses opinions et jugements, car souvent ces opinions ne sont pas personnelles mais résultent de l'adoption de l'opinion dominante et nos jugements ne sont souvent que des préjugés provenant d'autrui que nous prenons tout faits sans réflexion.",
+                "PhiH.lessons.illusion.definitions.card1.point3": "Lorsque nous nous contentons de préjugés, nous ressemblons aux prisonniers de la 'caverne' de Platon qui traitent avec des ombres et pensent voir des vérités (Allégorie de la caverne).",
+                "PhiH.lessons.illusion.definitions.card1.point4": "Les préjugés remontent essentiellement à la période de l'enfance où nous n'avions pas un degré suffisant de conscience nous permettant de distinguer entre les choses: 'La tragédie de l'homme réside dans le fait qu'il commence sa vie comme un enfant.' (Kant)",
+                "PhiH.lessons.illusion.definitions.card1.point5": "Le préjugé est une opinion, un sentiment ou une attitude qui se forme et s'exprime à travers la connaissance directe d'un groupe ou d'un individu mais c'est une connaissance basée sur la superficialité, la banalité et sur des modèles rigides partagés dans un certain cadre. L'une des caractéristiques du préjugé est donc sa résistance opiniâtre au test empirique et cognitif et au traitement direct avec son objet.",
+                
+                "PhiH.lessons.illusion.definitions.card2.title": "L'Opinion Opinion",
+                "PhiH.lessons.illusion.definitions.card2.point1": "<strong>Linguistiquement:</strong> L'opinion est la croyance - la raison - la gestion (pluriel) opinions. Il est dit dans les proverbes: L'opinion n'est pas la conjecture, cela se dit pour encourager à considérer les conséquences des choses. (Le Nouveau Dictionnaire des Étudiants).",
+                "PhiH.lessons.illusion.definitions.card2.point2": "Philosophiquement: L'opinion ou la présomption est la croyance en la vérité d'une proposition avec le sentiment que les raisons objectives et subjectives de cette croyance sont insuffisantes et non convaincantes.",
+                "PhiH.lessons.illusion.definitions.card2.point3": "Quant à l'opinion publique, c'est la croyance collective partagée par le public et il n'est pas nécessaire que ses détenteurs soient conscients de l'erreur et de la faiblesse qu'elle contient.",
+                "PhiH.lessons.illusion.definitions.card2.point4": "\"Hegel\": Lorsque l'opinion dominante fait appel à l'émotion qui est sa source d'inspiration, elle rompt avec tous ceux qui la contredisent et annonce qu'elle n'a rien à dire à quiconque ne trouve pas en lui-même d'écho avec elle. En d'autres termes, elle piétine avec ses pieds les racines de l'humanité. Il est donc de la nature humaine de pousser à la compréhension et de ne se réaliser qu'au sein d'un groupe fondé volontairement entre des consciences conscientes. Ce qui est inhumain, ce qui est animal, c'est de s'arrêter à la sensation et de ne fonder une relation avec autrui que sur cette base.",
+                "PhiH.lessons.illusion.definitions.card2.point5": "Pascal: La force est la maîtresse du monde et non l'opinion, mais c'est l'opinion qui utilise la force et la force qui fonde l'opinion.",
+                
+                "PhiH.lessons.illusion.definitions.card3.title": "L'Erreur Erreur",
+                "PhiH.lessons.illusion.definitions.card3.point1": "<strong>Linguistiquement:</strong> Se tromper, l'erreur de l'homme: a commis le péché et s'est écarté de la vérité. \"Le Nouveau Dictionnaire des Étudiants\".",
+                "PhiH.lessons.illusion.definitions.card3.point2": "L'erreur est de juger que quelque chose est faux alors qu'il est vrai ou qu'il est vrai alors qu'il est faux. L'erreur est appliquée au péché et à la faute (péché; faute), et elle est également appliquée au contraire du correct et au contraire de l'intentionnel lorsque nous nous trompons dans l'accomplissement de ce que nous voulions.",
+                "PhiH.lessons.illusion.definitions.card3.point3": "L'erreur chez Freud dans le texte \"Illusion et Erreur\": L'erreur concerne des sujets perceptibles par les sens ← L'erreur est liée à des sujets réels.",
+                "PhiH.lessons.illusion.definitions.card3.point4": "L'erreur concerne le domaine de la connaissance (science). Et elle peut aussi être dans la méthode (voies réalistes). L'erreur a des origines connues et peut être corrigée et modifiée (l'erreur est fondée).",
+                "PhiH.lessons.illusion.definitions.card3.point5": "L'erreur selon Jean-Jacques Rousseau: \"Les maux qui arrivent aux hommes ne proviennent tous de l'erreur plus que de l'ignorance.\"",
+                "PhiH.lessons.illusion.definitions.card3.point6": "L'erreur selon Kant: \"La cause principale de toutes les erreurs reste une et ne doit pas être recherchée ailleurs que dans l'influence cachée de la sensation sur l'esprit ou, plus précisément, elle ne doit pas être recherchée ailleurs que dans le jugement.... Ce qui rend l'erreur possible est donc les phénomènes qui nous font regarder le 'subjectif' comme 'objectif'.\"",
+                
+                "PhiH.lessons.illusion.texts.title": "Textes",
+                "PhiH.lessons.illusion.texts.text1": "Texte 1: Freud – Illusion et Erreur",
+                "PhiH.lessons.illusion.texts.text2": "Texte 2: Al-Ghazali – L'Obstination de l'Illusion",
+                
+                // Quotes section translations
+                "PhiH.lessons.illusion.quotes.title": "Citations et textes connexes",
+                "PhiH.lessons.illusion.quotes.quote1": "\"Les illusions deviennent des illusions dangereuses lorsqu'elles cessent d'être illusoires\"",
+                "PhiH.lessons.illusion.quotes.quote2": "\"La vie a besoin d'illusions c'est-à-dire de 'non-vérités' prises pour des vérités\"",
+                "PhiH.lessons.illusion.quotes.quote3": "\"L'illusion est la tromperie qui persiste même après avoir su que l'objet concerné n'existe pas\"",
+                "PhiH.lessons.illusion.quotes.author1": "Paul Valéry",
+                "PhiH.lessons.illusion.quotes.source1": "Mauvaises pensées et autres",
+                "PhiH.lessons.illusion.quotes.author2": "Nietzsche",
+                "PhiH.lessons.illusion.quotes.source2": "Le Livre du Philosophe",
+                "PhiH.lessons.illusion.quotes.author3": "Kant",
+                "PhiH.lessons.illusion.quotes.source3": "Anthropologie du point de vue pragmatique",
+                
+                "PhiH.lessons.illusion.conclusion.title": "Conclusion",
+                "PhiH.lessons.illusion.conclusion.text1": "Il ressort de l'étude de l'illusion qu'elle représente un défi permanent pour la connaissance humaine et la conscience individuelle. La capacité de l'illusion à résister aux vérités rationnelles et empiriques, et sa persistance à influencer même après que sa fausseté ait été révélée, en font un phénomène unique qui mérite réflexion.",
+                "PhiH.lessons.illusion.conclusion.text2": "Son danger réside dans le fait qu'elle ne se présente pas comme une simple erreur qui peut être facilement corrigée, mais comme une fausse vérité revêtue des habits de la certitude, ce qui fait de la libération de celle-ci un processus continu nécessitant une conscience critique renouvelée. Malgré les progrès de la connaissance rationnelle et scientifique, l'illusion reste une partie de l'expérience humaine, prenant de nouvelles formes et s'adaptant à chaque époque, ce qui fait de la confrontation avec elle un dialogue permanent entre la raison et le désir, entre la vérité et la croyance, et entre la réalité et ce que nous souhaitons qu'elle soit."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                
+                // Illusion lesson specific translations
+                "PhiH.lessons.illusion.title": "Illusion",
+                "PhiH.lessons.illusion.level": "3rd Secondary - Philosophy",
+                
+                "PhiH.lessons.illusion.introduction.title": "Introduction",
+                "PhiH.lessons.illusion.introduction.text1": "Illusion represents a complex human phenomenon that goes beyond mere error in perception or judgment. It is not just a transient visual illusion, but penetrates deep into thought and belief, shaping our vision of the world and our relationship with reality. Illusion is characterized by its ability to persist and continue even after its falsehood has been discovered, making it an influential force in the lives of individuals and societies.",
+                "PhiH.lessons.illusion.introduction.text2": "The power of illusion stems from its connection to deep human desires and our psychological needs, where it presents us with an image of reality that we wish to be true, even if it contradicts objective facts. Through this theme, we explore this complex mechanism that controls our consciousness and influences our decisions and behaviors.",
+                
+                "PhiH.lessons.illusion.definitions.title": "Definitions",
+                "PhiH.lessons.illusion.definitions.card1.title": "Prejudice Préjuger",
+                "PhiH.lessons.illusion.definitions.card1.point1": "Prejudice is a mechanism of daily functioning.",
+                "PhiH.lessons.illusion.definitions.card1.point2": "Prejudice is a premature judgment. A judgment before thinking and verification resulting from haste, habit, laziness or cowardice. It is not formed by the self but found ready-made and is mostly based on the prevailing opinion. A human being does not think truly personal thinking unless they become aware of the truth of their opinions and judgments, as often these opinions are not personal but result from adopting the prevailing opinion and our judgments are often nothing but prejudices coming from others that we take ready-made without deliberation.",
+                "PhiH.lessons.illusion.definitions.card1.point3": "When we settle for prejudices, we resemble the prisoners of Plato's 'cave' who deal with shadows and think they see truths (Allegory of the Cave).",
+                "PhiH.lessons.illusion.definitions.card1.point4": "Prejudices essentially go back to the period of childhood when we did not have a sufficient degree of awareness allowing us to distinguish between things: 'The tragedy of man is that he begins his life as a child.' (Kant)",
+                "PhiH.lessons.illusion.definitions.card1.point5": "Prejudice is an opinion, feeling or attitude that is formed and expressed through the direct knowledge of a group or individual but it is knowledge based on superficiality, banality and on rigid templates that are shared within a certain scope. Therefore, one of the characteristics of prejudice is its stubborn resistance to empirical and cognitive testing and direct dealing with its subject.",
+                
+                "PhiH.lessons.illusion.definitions.card2.title": "Opinion Opinion",
+                "PhiH.lessons.illusion.definitions.card2.point1": "<strong>Linguistically:</strong> Opinion is belief - reason - management (plural) opinions. It is said in proverbs: Opinion is not conjecture, this is said to encourage considering the consequences of things. (The New Student Dictionary).",
+                "PhiH.lessons.illusion.definitions.card2.point2": "Philosophically: Opinion or presumption is the belief in the truth of a proposition with the feeling that the objective and subjective reasons for this belief are insufficient and unconvincing.",
+                "PhiH.lessons.illusion.definitions.card2.point3": "As for public opinion, it is the collective belief shared by the public and it is not necessary for its holders to be aware of the error and weakness it contains.",
+                "PhiH.lessons.illusion.definitions.card2.point4": "\"Hegel\": When the prevailing opinion resorts to emotion which is its source of inspiration, it breaks with all those who contradict it and declares that it has nothing to say to anyone who does not find in themselves a response to it. In other words, it tramples with its feet the roots of humanity. It is therefore of human nature to push towards understanding and to only be realized within a group founded voluntarily between conscious selves. What is inhuman, what is animal, is to stop at sensation and to establish a relationship with others only on this basis.",
+                "PhiH.lessons.illusion.definitions.card2.point5": "Pascal: Force is the mistress of the world and not opinion, but it is opinion that uses force and force that establishes opinion.",
+                
+                "PhiH.lessons.illusion.definitions.card3.title": "Error Erreur",
+                "PhiH.lessons.illusion.definitions.card3.point1": "<strong>Linguistically:</strong> To err, a man's error: committed sin and deviated from the truth. \"The New Student Dictionary\".",
+                "PhiH.lessons.illusion.definitions.card3.point2": "Error is to judge that something is false when it is true or that it is true when it is false. Error is applied to sin and fault (péché; faute), and it is also applied to the opposite of correct and the opposite of intentional when we err in doing what we intended.",
+                "PhiH.lessons.illusion.definitions.card3.point3": "Error in Freud in the text \"Illusion and Error\": Error relates to subjects perceptible by the senses ← Error is related to real subjects.",
+                "PhiH.lessons.illusion.definitions.card3.point4": "Error relates to the field of knowledge (science). And it can also be in the method (realistic ways). Error has known origins and can be corrected and modified (error is founded).",
+                "PhiH.lessons.illusion.definitions.card3.point5": "Error according to Jean-Jacques Rousseau: \"The evils that happen to men all come from error more than from ignorance.\"",
+                "PhiH.lessons.illusion.definitions.card3.point6": "Error according to Kant: \"The main cause of all errors remains one and should not be sought elsewhere than in the hidden influence of sensation on the mind or, more precisely, it should not be sought elsewhere than in judgment.... What makes error possible is therefore the phenomena that make us look at the 'subjective' as 'objective'.\"",
+                
+                "PhiH.lessons.illusion.texts.title": "Texts",
+                "PhiH.lessons.illusion.texts.text1": "Text 1: Freud – Illusion and Error",
+                "PhiH.lessons.illusion.texts.text2": "Text 2: Al-Ghazali – The Obstinacy of Illusion",
+                
+                // Quotes section translations
+                "PhiH.lessons.illusion.quotes.title": "Related Quotes and Texts",
+                "PhiH.lessons.illusion.quotes.quote1": "\"Illusions become dangerous illusions when they cease to be illusory\"",
+                "PhiH.lessons.illusion.quotes.quote2": "\"Life needs illusions i.e. 'non-truths' taken as truths\"",
+                "PhiH.lessons.illusion.quotes.quote3": "\"Illusion is the deception that remains even after knowing that the related object does not exist\"",
+                "PhiH.lessons.illusion.quotes.author1": "Paul Valéry",
+                "PhiH.lessons.illusion.quotes.source1": "Bad Thoughts and Other Things",
+                "PhiH.lessons.illusion.quotes.author2": "Nietzsche",
+                "PhiH.lessons.illusion.quotes.source2": "The Philosopher's Book",
+                "PhiH.lessons.illusion.quotes.author3": "Kant",
+                "PhiH.lessons.illusion.quotes.source3": "Anthropology from a Pragmatic Point of View",
+                
+                "PhiH.lessons.illusion.conclusion.title": "Conclusion",
+                "PhiH.lessons.illusion.conclusion.text1": "It emerges from the study of illusion that it represents a permanent challenge to human knowledge and individual consciousness. The ability of illusion to resist rational and empirical truths, and its persistence in influencing even after its falsehood has been revealed, make it a unique phenomenon worthy of contemplation.",
+                "PhiH.lessons.illusion.conclusion.text2": "Its danger lies in the fact that it does not present itself as a mere error that can be simply corrected, but as a false truth dressed in the clothes of certainty, which makes liberation from it a continuous process requiring renewed critical awareness. Despite the progress of rational and scientific knowledge, illusion remains part of the human experience, taking new forms and adapting to every age, making confrontation with it a permanent dialogue between reason and desire, between truth and belief, and between reality and what we wish it to be."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                
+                // Illusion lesson specific translations
+                "PhiH.lessons.illusion.title": "الوهم",
+                "PhiH.lessons.illusion.level": "السنة الثالثة ثانوي - الفلسفة",
+                
+                "PhiH.lessons.illusion.introduction.title": "التمهيد",
+                "PhiH.lessons.illusion.introduction.text1": "يمثل الوهم ظاهرة إنسانية معقدة تتجاوز مجرد الخطأ البسيط في الإدراك أو الحكم. فهو ليس مجرد وهم بصرى عابر، بل يتغلغل في أعماق الفكر والاعتقاد، مُشكِّلاً رؤيتنا للعالم وعلاقتنا بالواقع. يتميز الوهم بقدرته على البقاء والاستمرار حتى بعد اكتشاف زيفه، مما يجعله قوة مؤثرة في حياة الأفراد والمجتمعات.",
+                "PhiH.lessons.illusion.introduction.text2": "تنبع قوة الوهم من ارتباطه بالرغبات الإنسانية العميقة واحتياجاتنا النفسية، حيث يقدم لنا صورة للواقع نتمنى أن تكون حقيقية، حتى ولو كانت مخالفة للحقائق الموضوعية. من خلال هذا المحور، نستكشف هذه الآلية المعقدة التي تتحكم في وعينا وتؤثر في قراراتنا وسلوكياتنا.",
+                
+                "PhiH.lessons.illusion.definitions.title": "التعريفات",
+                "PhiH.lessons.illusion.definitions.card1.title": "الحكم المسبق Préjuger",
+                "PhiH.lessons.illusion.definitions.card1.point1": "الحكم المسبق هو آلية من آليات اشتغال اليومي.",
+                "PhiH.lessons.illusion.definitions.card1.point2": "الحكم المسبق هو حكم سابق لأوانه . حكم قبل التفكير و التثبيت ينتج عن التسرع أو العادة أو الكسل أو الجبن . لا تكونه الذات بل تجده جاهزاً وهو يستند في الغالب إلى الرأي السائد . فالإنسان لا يفكر تفكيرا شخصياً حقيقياً إلا إذا ما وعى بحقيقة آرائه وأحكامه ففي الغالب هذه الآراء ليست شخصية وإنما هي ناتجة عن تبني الرأي السائد وأحكامنا في الغالب ليست سوى أحكام مسبقة متأتية من الغير أي نأخذ بها جاهزة دون ترو.",
+                "PhiH.lessons.illusion.definitions.card1.point3": "عندما نكتفي بالأحكام المسبقة نشبه سجناء 'الكهف' عند أفلاطون الذين يتعاملون مع ظلال ويظنون أنهم يرون حقائق (أمثولة الكهف).",
+                "PhiH.lessons.illusion.definitions.card1.point4": "تعود الأحكام المسبقة أساساً إلى فترة الطفولة حيث كنا لا نملك درجة كافية من الوعي تسمح لنا بالتمييز بين الأشياء: 'تتمثل مأساة الإنسان في كونه يبدأ حياته طفلاً.' (كانط)",
+                "PhiH.lessons.illusion.definitions.card1.point5": "الحكم المسبق هو رأي أو شعور أو موقف يتشكل ويتم التعبير عنه من خلال المعرفة المباشرة للجماعة أو لفرد ولكنها معرفة قائمة على السطحية والابتذال وعلى قوالب جامدة يتم مشاطرتها ضمن نطاق معين. و لذلك فإن أحد سمات الحكم المسبق هو مقاومته العنيدة للاختبار التجريبي والمعرفي والتعامل المباشر مع موضوعه.",
+                
+                "PhiH.lessons.illusion.definitions.card2.title": "الرأي Opinion",
+                "PhiH.lessons.illusion.definitions.card2.point1": "<strong>لغة:</strong> الرأي هو الاعتقاد – العقل- التدبير(ج) آراء . جاء في الأمثال: إن الرأي ليس بالتظني يضرب في الحث على النظر في عاقبة الأمور.( القاموس الجديد للطلاب).",
+                "PhiH.lessons.illusion.definitions.card2.point2": "فلسفياً: الرأي أو الظن هو الاعتقاد بصد قضية ما مع الشعور بأن الأسباب الموضوعية والذاتية لهذا الاعتقاد غير كافية وليست مقنعة.",
+                "PhiH.lessons.illusion.definitions.card2.point3": "أما الرأي العام هو الاعتقاد الجماعي الذي تشترك فيه العامة وهو لا يوجد أن يكون أصحابه شاعرين بما فيه من خطأ وضعف.",
+                "PhiH.lessons.illusion.definitions.card2.point4": "\"هيجل\": عندما يستنجد الرأي السائد بالعاطفة التي هي مصدر إلهامه فهو يقطع مع كل الذين يخالفونه و يعلن أن ليس له ما يقوله لكل من لا يجد في نفسه تجاوباً معه إنه بعبارة أخرى يدوس برجليه جذور الإنسانية إذن من الطبيعة الإنسانية أن تدفع إلى التفاهم وأن لا تتحقق إلا ضمن مجموعة تتأسس على نحو إرادي بين ذوات واعية. ما هو لا إنساني ما هو حيواني , هو أن نقف عند حد الإحساس وأن لا نؤسس علاقة بالآخر إلا على أساسه.",
+                "PhiH.lessons.illusion.definitions.card2.point5": "باسكال: القوة هي سيدة العالم و ليس الرأي بيد أن الرأي هو الذي يستخدم القوة و القوة هي المؤسسة للرأي.",
+                
+                "PhiH.lessons.illusion.definitions.card3.title": "الخطأ Erreur",
+                "PhiH.lessons.illusion.definitions.card3.point1": "<strong>لغة:</strong> يخطأ, خطأ الرجل : ارتكب الذنب و حاد عن الصواب. \" القاموس الجديد للطلاب\".",
+                "PhiH.lessons.illusion.definitions.card3.point2": "الخطأ هو أن نحكم على شيء ما بأنه باطل في حين أنه حق أو بأنه حق في حين أنه باطل . ويطلق الخطأ على الإثم والذنب (péché ;faute) , كما يطلق على ضد الصواب وضد العمد عندما نخطئ في القيام بما أردناه.",
+                "PhiH.lessons.illusion.definitions.card3.point3": "الخطأ لدى فرويد في نص \"الوهم والخطأ\": الخطأ يتعلق بمواضيع قابلة للإدراك الحسي ←الخطأ يرتبط بمواضيع واقعية.",
+                "PhiH.lessons.illusion.definitions.card3.point4": "الخطأ يتعلق بمجال المعرفة (العلم) . ويمكن أن يكون أيضاً في المنهج (طرق واقعية). الخطأ مواطنه معلومة يمكن تصحيحه وتعديله (الخطأ مؤسس).",
+                "PhiH.lessons.illusion.definitions.card3.point5": "الخطأ عند جون جاك روسو : \"إن الشرور التي تحصل للناس غنما تتأتى جميعها من الخطأ أكثر مما تتأتى من الجهل.\"",
+                "PhiH.lessons.illusion.definitions.card3.point6": "الخطأ عند كانط : \"يبقى السبب الرئيسي لجميع الأخطاء واحدا ولا ينبغي أن نبحث عنه في غير التأثير الخفي للإحساس في الذهن أو بعبارة أدق لا يتبغي أن نبحث عنه في غير الحكم.... إن ما يجعل الخطأ ممكنا هو إذن الظواهر التي تجعلنا ننظر الى \"الذاتي\" على أنه \"موضوعي\".",
+                
+                "PhiH.lessons.illusion.texts.title": "النصوص",
+                "PhiH.lessons.illusion.texts.text1": "النص 1: فرويد – الوهم والخطأ",
+                "PhiH.lessons.illusion.texts.text2": "النص 2: الغزالي – عناد الوهم",
+                
+                // Quotes section translations
+                "PhiH.lessons.illusion.quotes.title": "شواهد ونصوص ذات صلة",
+                "PhiH.lessons.illusion.quotes.quote1": "\"تصبح الأوهام أوهاماً خطرة عندما تتوقف عن الإيهام\"",
+                "PhiH.lessons.illusion.quotes.quote2": "\"إن الحياة بحاجة إلى أوهام أي إلى 'لا حقائق' تُحمل محمل الحقائق\"",
+                "PhiH.lessons.illusion.quotes.quote3": "\"إنّ الوهم هو الانخداع الذي يبقى حتّى بعد معرفة أنّ الموضوع المتعلّق به ليس موجوداً\"",
+                "PhiH.lessons.illusion.quotes.author1": "بول فاليري",
+                "PhiH.lessons.illusion.quotes.source1": "خواطر سيئة وأشياء أخرى",
+                "PhiH.lessons.illusion.quotes.author2": "نيتشه",
+                "PhiH.lessons.illusion.quotes.source2": "كتاب الفيلسوف",
+                "PhiH.lessons.illusion.quotes.author3": "كانط",
+                "PhiH.lessons.illusion.quotes.source3": "الانتروبولجيا من وجهة نظر براغماتية",
+                
+                "PhiH.lessons.illusion.conclusion.title": "الخاتمة",
+                "PhiH.lessons.illusion.conclusion.text1": "يتجلى من خلال دراسة الوهم أنه تحديٌ دائم للمعرفة الإنسانية والوعي الفردي. فقدرة الوهم على مقاومة الحقائق العقلية والتجريبية، واستمراره في التأثير حتى بعد كشف زيفه، تجعله ظاهرة فريدة تستحق التأمل.",
+                "PhiH.lessons.illusion.conclusion.text2": "وتكمن خطورته في كونه لا يقدم نفسه كمجرد خطأ يمكن تصحيحه ببساطة، بل كحقيقة مزيفة تلبس ثياب اليقين، مما يجعل التحرر منه عملية مستمرة تتطلب وعياً نقدياً متجدداً. ورغم تقدم المعرفة العقلية والعلمية، يبقى الوهم جزءاً من التجربة الإنسانية، يتشكل بأشكال جديدة ويتكيف مع كل عصر، مما يجعل المواجهة معه حواراً دائماً بين العقل والرغبة، بين الحقيقة والاعتقاد، وبين الواقع وما نتمنى أن يكون."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHillusion;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+    
+    <script>
+        // Expand/Collapse functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all expandable headers
+            const expandableHeaders = document.querySelectorAll('.PhiH-expandable-header');
+            
+            // Add click event to each header
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.PhiH-expand-icon');
+                    
+                    // Toggle content visibility
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('expanded');
+                    } else {
+                        content.classList.add('hidden');
+                        icon.classList.remove('expanded');
+                    }
+                });
+            });
+            
+            // Initially hide all expandable content
+            document.querySelectorAll('.PhiH-expandable-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encyclopedia - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#2c7873">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Forest Green + Teal Theme for Encyclopedia */
+        :root {
+            --primary-color: #2c7873;
+            --secondary-color: #6fb3b8;
+            --accent-color: #004445;
+            --light-color: #f8f5f1;
+            --dark-color: #021c1e;
+            --text-color: #333333;
+            --heading-color: #004445;
+            --background-color: #f8f5f1;
+            --card-bg: #ffffff;
+            --definition-bg: #e8f4f3;
+            --border-color: #b8d5d3;
+            --table-even-bg: #f0f9f8;
+            --table-hover-bg: #e8f4f3;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(44, 120, 115, 0.15);
+            --gradient-primary: linear-gradient(135deg, #2c7873 0%, #004445 100%);
+            --gradient-secondary: linear-gradient(135deg, #6fb3b8 0%, #2c7873 100%);
+            --gradient-green: linear-gradient(135deg, #2c7873 0%, #021c1e 100%);
+            --gradient-gray: linear-gradient(135deg, #6fb3b8 0%, #2c7873 100%);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #3da09b;
+            --secondary-color: #7fc9ce;
+            --accent-color: #004445;
+            --light-color: #1a2e2c;
+            --dark-color: #021c1e;
+            --text-color: #e0f0ef;
+            --heading-color: #7fc9ce;
+            --background-color: #1a2e2c;
+            --card-bg: #2a403e;
+            --definition-bg: #21403e;
+            --border-color: #3da09b;
+            --table-even-bg: #1a2e2c;
+            --table-hover-bg: #21403e;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #3da09b 0%, #004445 100%);
+            --gradient-secondary: linear-gradient(135deg, #7fc9ce 0%, #3da09b 100%);
+            --gradient-green: linear-gradient(135deg, #3da09b 0%, #1a2e2c 100%);
+            --gradient-gray: linear-gradient(135deg, #7fc9ce 0%, #3da09b 100%);
+        }
+        
+        /* Encyclopedia Page Specific Styles */
+        .PhiH-encyclopedia-page {
+            min-height: 100vh;
+            background: var(--background-color);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .PhiH-encyclopedia-main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .PhiH-encyclopedia-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .PhiH-encyclopedia-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--heading-color);
+        }
+        
+        .PhiH-encyclopedia-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Alphabet Navigation */
+        .PhiH-alphabet-nav {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-alphabet-nav-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-alphabet-nav-title::before {
+            content: "🔤";
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .PhiH-alphabet-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        
+        .PhiH-letter-btn {
+            background: var(--gradient-secondary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            min-width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .PhiH-letter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(111, 179, 184, 0.3);
+        }
+        
+        .PhiH-letter-btn.active {
+            background: var(--gradient-primary);
+            box-shadow: 0 4px 10px rgba(44, 120, 115, 0.3);
+        }
+        
+        /* Concepts Grid */
+        .PhiH-concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-concept-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-concept-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(44, 120, 115, 0.2);
+        }
+        
+        .PhiH-concept-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .PhiH-concept-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .PhiH-concept-letter {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+        
+        .PhiH-concept-info {
+            flex: 1;
+        }
+        
+        .PhiH-concept-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+        
+        .PhiH-concept-language {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.25rem;
+        }
+        
+        .PhiH-concept-content {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            flex: 1;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+        
+        .PhiH-see-more-btn {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: auto;
+        }
+        
+        .PhiH-see-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(44, 120, 115, 0.3);
+        }
+        
+        /* Concept Modal Styles */
+        .PhiH-concept-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        
+        .PhiH-concept-modal-content {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .PhiH-concept-modal-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+        
+        .PhiH-concept-modal-letter {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-right: 1.5rem;
+        }
+        
+        .PhiH-concept-modal-info {
+            flex: 1;
+        }
+        
+        .PhiH-concept-modal-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-concept-modal-language {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-concept-modal-content-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .PhiH-concept-modal-section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-concept-modal-section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+            margin-left: 10px;
+        }
+        
+        .PhiH-concept-modal-section-text {
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+        
+        .PhiH-concept-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-concept-modal-close:hover {
+            background-color: var(--definition-bg);
+        }
+        
+        /* No Concepts Message */
+        .PhiH-no-concepts {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-color);
+            grid-column: 1 / -1;
+        }
+        
+        .PhiH-no-concepts-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .PhiH-encyclopedia-title {
+                font-size: 2rem;
+            }
+            
+            .PhiH-encyclopedia-subtitle {
+                font-size: 1rem;
+            }
+            
+            .PhiH-concepts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-alphabet-list {
+                justify-content: flex-start;
+            }
+            
+            .PhiH-letter-btn {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+                min-width: 35px;
+                height: 35px;
+            }
+            
+            .PhiH-concept-modal-content {
+                padding: 1.5rem;
+                margin: 1rem auto;
+            }
+            
+            .PhiH-concept-modal-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .PhiH-concept-modal-letter {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* RTL/LTR Support */
+        [dir="rtl"] .PhiH-alphabet-nav-title::before {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+        
+        [dir="rtl"] .PhiH-concept-letter {
+            margin-right: 0;
+            margin-left: 1rem;
+        }
+        
+        [dir="rtl"] .PhiH-concept-modal-letter {
+            margin-right: 0;
+            margin-left: 1.5rem;
+        }
+        
+        [dir="rtl"] .PhiH-concept-modal-close {
+            right: auto;
+            left: 1rem;
+        }
+        
+        [dir="rtl"] .PhiH-concept-modal-section-title::after {
+            margin-left: 0;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body class="PhiH-encyclopedia-page">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- Manual Install Button (Fallback) -->
+        <button id="manual-install-btn" class="PhiH-pwa-install-btn" style="display: none;">
+            <span class="PhiH-pwa-install-icon">📱</span>
+            <span data-i18n="PhiH.pwa.install">Install App</span>
+        </button>
+    </header>
+    
+    
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-encyclopedia-main">
+        <div class="PhiH-encyclopedia-header">
+            <h1 class="PhiH-encyclopedia-title" data-i18n="PhiH.encyclopedia.title">Philosophical Encyclopedia</h1>
+            <p class="PhiH-encyclopedia-subtitle" data-i18n="PhiH.encyclopedia.subtitle">Explore key philosophical concepts and their meanings</p>
+        </div>
+        
+        <!-- Alphabet Navigation -->
+        <section class="PhiH-alphabet-nav">
+            <h2 class="PhiH-alphabet-nav-title" data-i18n="PhiH.encyclopedia.alphabetNav">Browse by First Letter</h2>
+            <div class="PhiH-alphabet-list" id="alphabetList">
+                <!-- Letters will be dynamically loaded here -->
+            </div>
+        </section>
+        
+        <!-- Concepts Grid -->
+        <div class="PhiH-concepts-grid" id="conceptsGrid">
+            <!-- Concepts will be dynamically loaded here -->
+        </div>
+        
+        <!-- No Concepts Message -->
+        <div class="PhiH-no-concepts" id="noConcepts" style="display: none;">
+            <div class="PhiH-no-concepts-icon">📚</div>
+            <h3 data-i18n="PhiH.encyclopedia.noConcepts.title">No concepts found</h3>
+            <p data-i18n="PhiH.encyclopedia.noConcepts.message">Select a different letter or check back later</p>
+        </div>
+    </main>
+    
+    <!-- Concept Modal -->
+    <div class="PhiH-concept-modal" id="conceptModal">
+        <div class="PhiH-concept-modal-content">
+            <button class="PhiH-concept-modal-close" id="modalClose">&times;</button>
+            <div class="PhiH-concept-modal-header">
+                <div id="modalLetter" class="PhiH-concept-modal-letter"></div>
+                <div class="PhiH-concept-modal-info">
+                    <h2 id="modalName" class="PhiH-concept-modal-name"></h2>
+                    <p id="modalLanguage" class="PhiH-concept-modal-language"></p>
+                </div>
+            </div>
+            
+            <div class="PhiH-concept-modal-content-section">
+                <h3 class="PhiH-concept-modal-section-title" data-i18n="PhiH.encyclopedia.linguistically">Linguistically</h3>
+                <div id="modalLinguistically" class="PhiH-concept-modal-section-text"></div>
+            </div>
+            
+            <div class="PhiH-concept-modal-content-section">
+                <h3 class="PhiH-concept-modal-section-title" data-i18n="PhiH.encyclopedia.terminologically">Terminologically</h3>
+                <div id="modalTerminologically" class="PhiH-concept-modal-section-text"></div>
+            </div>
+            
+            <div class="PhiH-concept-modal-content-section">
+                <h3 class="PhiH-concept-modal-section-title" data-i18n="PhiH.encyclopedia.conceptually">Conceptually</h3>
+                <div id="modalConceptually" class="PhiH-concept-modal-section-text"></div>
+            </div>
+            
+            <div class="PhiH-concept-modal-content-section">
+                <h3 class="PhiH-concept-modal-section-title" data-i18n="PhiH.encyclopedia.other">Other Perspectives</h3>
+                <div id="modalOther" class="PhiH-concept-modal-section-text"></div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Include data_concepts.js -->
+    <script src="scripts/data_concepts.js"></script>
+    
+    <script>
+        // Page-specific translations for encyclopedia page
+        window.translations_PhiHencyclopedia = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+            "PhiH.general.absent": "Non disponible",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                    
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.encyclopedia": "Encyclopédie",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Encyclopedia page translations
+                "PhiH.encyclopedia.title": "Encyclopédie Philosophique",
+                "PhiH.encyclopedia.subtitle": "Explorez les concepts philosophiques clés et leurs significations",
+                "PhiH.encyclopedia.alphabetNav": "Parcourir par première lettre",
+                "PhiH.encyclopedia.allLetters": "Toutes les lettres",
+                "PhiH.encyclopedia.noConcepts.title": "Aucun concept trouvé",
+                "PhiH.encyclopedia.noConcepts.message": "Sélectionnez une autre lettre ou revenez plus tard",
+                "PhiH.encyclopedia.seeMore": "Voir plus",
+                "PhiH.encyclopedia.linguistically": "Linguistiquement",
+                "PhiH.encyclopedia.terminologically": "Terminologiquement",
+                "PhiH.encyclopedia.conceptually": "Conceptuellement",
+                "PhiH.encyclopedia.other": "Autres perspectives"
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+            "PhiH.general.absent": "Not available",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                    
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.encyclopedia": "Encyclopedia",
+                "PhiH.windows.resources": "Resources",
+                
+                // Encyclopedia page translations
+                "PhiH.encyclopedia.title": "Philosophical Encyclopedia",
+                "PhiH.encyclopedia.subtitle": "Explore key philosophical concepts and their meanings",
+                "PhiH.encyclopedia.alphabetNav": "Browse by First Letter",
+                "PhiH.encyclopedia.allLetters": "All Letters",
+                "PhiH.encyclopedia.noConcepts.title": "No concepts found",
+                "PhiH.encyclopedia.noConcepts.message": "Select a different letter or check back later",
+                "PhiH.encyclopedia.seeMore": "See More",
+                "PhiH.encyclopedia.linguistically": "Linguistically",
+                "PhiH.encyclopedia.terminologically": "Terminologically",
+                "PhiH.encyclopedia.conceptually": "Conceptually",
+                "PhiH.encyclopedia.other": "Other Perspectives"
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+            "PhiH.general.absent": "غير متوفر",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                    
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.encyclopedia": "الموسوعة",
+                "PhiH.windows.resources": "الموارد",
+                
+                // Encyclopedia page translations
+                "PhiH.encyclopedia.title": "الموسوعة الفلسفية",
+                "PhiH.encyclopedia.subtitle": "استكشف المفاهيم الفلسفية الرئيسية ومعانيها",
+                "PhiH.encyclopedia.alphabetNav": "تصفح حسب الحرف الأول",
+                "PhiH.encyclopedia.allLetters": "جميع الحروف",
+                "PhiH.encyclopedia.noConcepts.title": "لم يتم العثور على مفاهيم",
+                "PhiH.encyclopedia.noConcepts.message": "اختر حرفاً مختلفاً أو عد لاحقاً",
+                "PhiH.encyclopedia.seeMore": "رؤية المزيد",
+                "PhiH.encyclopedia.linguistically": "لغوياً",
+                "PhiH.encyclopedia.terminologically": "اصطلاحياً",
+                "PhiH.encyclopedia.conceptually": "مفهومياً",
+                "PhiH.encyclopedia.other": "وجهات نظر أخرى"
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHencyclopedia;
+    </script>
+
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+
+    <script>
+        // Encyclopedia page functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const alphabetList = document.getElementById('alphabetList');
+            const conceptsGrid = document.getElementById('conceptsGrid');
+            const noConcepts = document.getElementById('noConcepts');
+            
+            // Modal elements
+            const conceptModal = document.getElementById('conceptModal');
+            const modalClose = document.getElementById('modalClose');
+            const modalLetter = document.getElementById('modalLetter');
+            const modalName = document.getElementById('modalName');
+            const modalLanguage = document.getElementById('modalLanguage');
+            const modalLinguistically = document.getElementById('modalLinguistically');
+            const modalTerminologically = document.getElementById('modalTerminologically');
+            const modalConceptually = document.getElementById('modalConceptually');
+            const modalOther = document.getElementById('modalOther');
+            
+            // Get current language from translation system
+            let currentLanguage = localStorage.getItem('preferredLanguage') || 'en';
+            let currentLetterFilter = 'all';
+            let isInitializing = true;
+            
+            // Function to get unique first letters from concepts
+            function getUniqueLetters() {
+                const letters = new Set();
+                
+                if (PhiH_Concepts && PhiH_Concepts.concepts) {
+                    PhiH_Concepts.concepts.forEach(concept => {
+                        if (concept[currentLanguage]) {
+                            letters.add(concept[currentLanguage].first_letter);
+                        } else if (concept.en) {
+                            letters.add(concept.en.first_letter);
+                        }
+                    });
+                }
+                
+                return Array.from(letters).sort();
+            }
+            
+            // Function to render alphabet navigation
+            function renderAlphabetNav() {
+                alphabetList.innerHTML = '';
+                
+                // Add "All Letters" button
+                const allLettersBtn = document.createElement('button');
+                allLettersBtn.className = `PhiH-letter-btn ${currentLetterFilter === 'all' ? 'active' : ''}`;
+                allLettersBtn.textContent = getTranslation('PhiH.encyclopedia.allLetters');
+                allLettersBtn.setAttribute('data-letter', 'all');
+                allLettersBtn.addEventListener('click', function() {
+                    setActiveLetterFilter('all');
+                });
+                alphabetList.appendChild(allLettersBtn);
+                
+                // Add individual letter buttons
+                const letters = getUniqueLetters();
+                letters.forEach(letter => {
+                    const letterBtn = document.createElement('button');
+                    letterBtn.className = `PhiH-letter-btn ${currentLetterFilter === letter ? 'active' : ''}`;
+                    letterBtn.textContent = letter;
+                    letterBtn.setAttribute('data-letter', letter);
+                    letterBtn.addEventListener('click', function() {
+                        setActiveLetterFilter(letter);
+                    });
+                    alphabetList.appendChild(letterBtn);
+                });
+            }
+            
+            // Function to render concepts
+            function renderConcepts() {
+                try {
+                    conceptsGrid.innerHTML = '';
+                    noConcepts.style.display = 'none';
+                    
+                    let filteredConcepts = [];
+                    
+                    if (PhiH_Concepts && PhiH_Concepts.concepts) {
+                        if (currentLetterFilter === 'all') {
+                            filteredConcepts = PhiH_Concepts.concepts;
+                        } else {
+                            filteredConcepts = PhiH_Concepts.concepts.filter(concept => {
+                                const conceptData = getConceptData(concept, currentLanguage);
+                                return conceptData.first_letter === currentLetterFilter;
+                            });
+                        }
+                    }
+                    
+                    if (filteredConcepts.length === 0) {
+                        noConcepts.style.display = 'block';
+                        return;
+                    }
+                    
+                    filteredConcepts.forEach(concept => {
+                        const conceptData = getConceptData(concept, currentLanguage);
+                        
+                        const conceptCard = document.createElement('div');
+                        conceptCard.className = 'PhiH-concept-card';
+                        
+                        conceptCard.innerHTML = `
+                            <div class="PhiH-concept-card-header">
+                                <div class="PhiH-concept-letter">${conceptData.first_letter}</div>
+                                <div class="PhiH-concept-info">
+                                    <div class="PhiH-concept-name">${conceptData.name}</div>
+                                    <div class="PhiH-concept-language">${getLanguageName(currentLanguage)}</div>
+                                </div>
+                            </div>
+                            <div class="PhiH-concept-content">${conceptData.linguistically}</div>
+                            <button class="PhiH-see-more-btn" data-concept-id="${concept.id}">${getTranslation('PhiH.encyclopedia.seeMore')}</button>
+                        `;
+                        
+                        conceptsGrid.appendChild(conceptCard);
+                    });
+                    
+                    // Add event listeners to "See More" buttons
+                    const seeMoreButtons = document.querySelectorAll('.PhiH-see-more-btn');
+                    seeMoreButtons.forEach(button => {
+                        button.addEventListener('click', function() {
+                            const conceptId = this.getAttribute('data-concept-id');
+                            openConceptModal(conceptId);
+                        });
+                    });
+                } catch (error) {
+                    console.error('Error rendering concepts:', error);
+                    noConcepts.style.display = 'block';
+                }
+            }
+            
+            // Helper function to get concept data for current language
+            function getConceptData(concept, lang) {
+                const conceptLangData = concept[lang] || concept.en || concept.fr || concept.ar;
+                return {
+                    name: conceptLangData.name,
+                    first_letter: conceptLangData.first_letter,
+                    linguistically: conceptLangData.linguistically,
+                    terminologically: conceptLangData.terminologically,
+                    conceptually: conceptLangData.conceptually,
+                    other: conceptLangData.other
+                };
+            }
+            
+            // Helper function to get language name
+            function getLanguageName(langCode) {
+                const languageNames = {
+                    'en': 'English',
+                    'fr': 'Français',
+                    'ar': 'العربية'
+                };
+                return languageNames[langCode] || langCode;
+            }
+            
+            // Helper function to get translations
+            function getTranslation(key) {
+                return window.currentTranslations && window.currentTranslations[currentLanguage] && window.currentTranslations[currentLanguage][key] || key;
+            }
+            
+            // Function to set active letter filter and update display
+            function setActiveLetterFilter(letter) {
+                currentLetterFilter = letter;
+                renderAlphabetNav();
+                renderConcepts();
+            }
+            
+            // Function to open concept modal
+            function openConceptModal(conceptId) {
+                const concept = PhiH_Concepts.concepts.find(c => c.id === conceptId);
+                if (!concept) return;
+                
+                const conceptData = getConceptData(concept, currentLanguage);
+                
+                // Populate modal with concept data
+                modalLetter.textContent = conceptData.first_letter;
+                modalName.textContent = conceptData.name;
+                modalLanguage.textContent = getLanguageName(currentLanguage);
+                
+                // Set content for each section, handling "N/A" values
+                modalLinguistically.innerHTML = conceptData.linguistically === "N/A" ? 
+                    `<em>${getTranslation('PhiH.general.absent')}</em>` : 
+                    `<p>${conceptData.linguistically}</p>`;
+                
+                modalTerminologically.innerHTML = conceptData.terminologically === "N/A" ? 
+                    `<em>${getTranslation('PhiH.general.absent')}</em>` : 
+                    `<p>${conceptData.terminologically}</p>`;
+                
+                modalConceptually.innerHTML = conceptData.conceptually === "N/A" ? 
+                    `<em>${getTranslation('PhiH.general.absent')}</em>` : 
+                    `<p>${conceptData.conceptually}</p>`;
+                
+                modalOther.innerHTML = conceptData.other === "N/A" ? 
+                    `<em>${getTranslation('PhiH.general.absent')}</em>` : 
+                    `<p>${conceptData.other}</p>`;
+                
+                // Show modal
+                conceptModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+            
+            // Function to close concept modal
+            function closeConceptModal() {
+                conceptModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+            
+            // Add event listeners for modal
+            modalClose.addEventListener('click', closeConceptModal);
+            
+            // Close modal when clicking outside the content
+            conceptModal.addEventListener('click', function(event) {
+                if (event.target === conceptModal) {
+                    closeConceptModal();
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && conceptModal.style.display === 'block') {
+                    closeConceptModal();
+                }
+            });
+            
+            // Function to update page language and refresh content
+            function updatePageLanguage(lang) {
+                if (!isInitializing) {
+                    currentLanguage = lang;
+                    renderAlphabetNav();
+                    renderConcepts();
+                }
+            }
+            
+            // Override the applyLanguage function to handle dynamic content
+            const originalApplyLanguage = window.applyLanguage;
+            window.applyLanguage = function(lang) {
+                originalApplyLanguage(lang);
+                updatePageLanguage(lang);
+            };
+            
+            // Initialize
+            function initializePage() {
+                renderAlphabetNav();
+                renderConcepts();
+                isInitializing = false;
+            }
+            
+            initializePage();
+        });
+    </script>
+</body>
+</html>

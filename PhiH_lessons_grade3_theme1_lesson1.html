@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>The Everyday - Philosophy Learning Hub</title>
+		
+		<!-- PWA Meta Tags -->
+		<meta name="theme-color" content="#9370db">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="default">
+		<meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+		<link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+		
+		<!-- Link to external CSS -->
+		<link rel="stylesheet" href="styles/main.css">
+		
+		<!-- Web App Manifest -->
+		<link rel="manifest" href="manifest.json">
+		
+		<style>
+			/* Dark Turquoise Theme */
+			:root {
+			--primary-color: #008080;
+			--secondary-color: #006666;
+			--accent-color: #00a3a3;
+			--light-color: #e6f7f7;
+			--dark-color: #004d4d;
+			--text-color: #2f3542;
+			--heading-color: #2f3542;
+			--background-color: #f0fafa;
+			--card-bg: #ffffff;
+			--definition-bg: #e0f2f2;
+			--border-color: #b2d8d8;
+			--table-even-bg: #e6f7f7;
+			--table-hover-bg: #d0f0f0;
+			--border-radius: 16px;
+			--box-shadow: 0 8px 20px rgba(0, 128, 128, 0.15);
+			--gradient-primary: linear-gradient(135deg, #008080 0%, #00a3a3 100%);
+			--gradient-secondary: linear-gradient(135deg, #006666 0%, #004d4d 100%);
+			--gradient-turquoise: linear-gradient(135deg, #008080 0%, #004d4d 100%);
+			--gradient-gray: linear-gradient(135deg, #006666 0%, #2f3542 100%);
+			}
+			
+			[data-theme="dark"] {
+			--primary-color: #00b3b3;
+			--secondary-color: #008080;
+			--accent-color: #00cccc;
+			--light-color: #2a3a3a;
+			--dark-color: #002b2b;
+			--text-color: #e0f7f7;
+			--heading-color: #f0fafa;
+			--background-color: #1f2e2e;
+			--card-bg: #2a3a3a;
+			--definition-bg: #1f2e2e;
+			--border-color: #008080;
+			--table-even-bg: #1f2e2e;
+			--table-hover-bg: #2a3a3a;
+			--box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+			--gradient-primary: linear-gradient(135deg, #00b3b3 0%, #008080 100%);
+			--gradient-secondary: linear-gradient(135deg, #008080 0%, #006666 100%);
+			--gradient-turquoise: linear-gradient(135deg, #00b3b3 0%, #2a3a3a 100%);
+			--gradient-gray: linear-gradient(135deg, #008080 0%, #006666 100%);
+			}
+			
+			/* Text Analysis Level Styling */
+			.text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+			}
+			
+			.text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+			}
+			
+			.text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+			}
+			
+			.text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+			}
+			
+			.text-analysis-indent {
+            margin-left: 1.5rem;
+			}
+			
+			.text-analysis-indent-2 {
+            margin-left: 3rem;
+			}
+			
+			.text-analysis-indent-3 {
+            margin-left: 4.5rem;
+			}
+			
+			/* Definition Cards Layout */
+			.PhiH-definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+			}
+			
+			.PhiH-definition-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+			}
+			
+			.PhiH-definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(147, 112, 219, 0.2);
+			}
+			
+			.PhiH-definition-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+			}
+			
+			.PhiH-definition-card-content ul {
+            padding-left: 1.2rem;
+            margin: 0.8rem 0;
+			}
+			
+			.PhiH-definition-card-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+			}
+			
+			/* Expand/Collapse Functionality */
+			.PhiH-expandable-section {
+            margin-bottom: 1.5rem;
+			}
+			
+			.PhiH-expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+			}
+			
+			.PhiH-expandable-header:hover {
+            background: var(--gradient-purple);
+			}
+			
+			.PhiH-expandable-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+			}
+			
+			.PhiH-expandable-content {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            border-top: none;
+			}
+			
+			.PhiH-expandable-content.hidden {
+            display: none;
+			}
+			
+			.PhiH-expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+			}
+			
+			.PhiH-expand-icon.expanded {
+            transform: rotate(180deg);
+			}
+			
+			/* Text Card Styling */
+			.PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+			}
+			
+			.PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+			}
+			
+			/* Author Presentation Styling */
+			.PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+			}
+			
+			.PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+			}
+			
+			.PhiH-author-info {
+            flex: 1;
+			}
+			
+			/* Quotes Section Styling */
+			.PhiH-quotes-container {
+            margin-top: 1rem;
+			}
+			
+			.PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+			}
+			
+			.PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+			}
+			
+			.PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+			}
+			
+			.PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(147, 112, 219, 0.2);
+			}
+			
+			.PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+			}
+			
+			.PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+			}
+			
+			.PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+			}
+			
+			/* RTL support for indentation */
+			body.rtl .text-analysis-level-1,
+			body.rtl .text-analysis-level-2,
+			body.rtl .text-analysis-level-3,
+			body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+			}
+			
+			body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+			}
+			
+			body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+			}
+			
+			body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+			}
+			
+			body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+			}
+			
+			body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+			}
+			
+			body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+			}
+			
+			/* RTL support for definition cards */
+			body.rtl .PhiH-definition-card-content ul {
+            padding-left: 0;
+            padding-right: 1.2rem;
+			}
+			
+			@media (max-width: 768px) {
+            .PhiH-definitions-grid {
+			grid-template-columns: 1fr;
+            }
+            
+            .PhiH-author-card {
+			flex-direction: column;
+			text-align: center;
+            }
+            
+            .PhiH-author-image {
+			align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+			grid-template-columns: 1fr;
+            }
+			}
+		</style>
+	</head>
+	<body class="PhiH-lesson-everyday" dir="ltr">
+		<header class="PhiH-general-header">
+			<div class="PhiH-general-header-content">
+				<!-- Column 1: Icon - Now clickable -->
+				<div class="PhiH-general-logo-container">
+					<a href="index.html">
+						<img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+					</a>
+				</div>
+				
+				<!-- Column 2: Title -->
+				<div class="PhiH-general-title-container">
+					<h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+				</div>
+				
+				<!-- Column 3: Options -->
+				<div class="PhiH-general-header-controls">
+					<!-- Removed Authors Button from here -->
+					
+					<div class="PhiH-general-theme-toggle">
+						<label class="PhiH-theme-toggle-label">
+							<span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+							<div class="PhiH-theme-toggle-switch">
+								<input type="checkbox" id="themeToggle">
+								<span class="PhiH-theme-toggle-slider"></span>
+							</div>
+						</label>
+					</div>
+					<div class="PhiH-general-language-selector">
+						<select class="PhiH-general-language-dropdown" id="languageSelect">
+							<option value="en">English</option>
+							<option value="fr">Français</option>
+							<option value="ar">العربية</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		<!-- Windows Bar -->
+		<nav class="PhiH-windows-bar">
+			<a href="index.html" class="PhiH-window-item active">
+				<span class="PhiH-window-icon">🏠</span>
+				<span data-i18n="PhiH.windows.home">Home</span>
+			</a>
+			<a href="authors.html" class="PhiH-window-item">
+				<span class="PhiH-window-icon">👥</span>
+				<span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+			</a>
+			<a href="quotes.html" class="PhiH-window-item">
+				<span class="PhiH-window-icon">📚</span>
+				<span data-i18n="PhiH.windows.quotes">Quotes</span>
+			</a>
+			<a href="resources.html" class="PhiH-window-item">
+				<span class="PhiH-window-icon">🔍</span>
+				<span data-i18n="PhiH.windows.resources">Resources</span>
+			</a>
+		</nav>
+		
+		<main class="PhiH-lesson1-container">
+			<div class="PhiH-lesson1-header">
+				<h1 class="PhiH-lesson1-title" data-i18n="PhiH.lessons.everyday.title">اليومي</h1>
+				<div class="PhiH-lesson1-level" data-i18n="PhiH.lessons.everyday.level">السنة الثالثة ثانوي - الفلسفة</div>
+			</div>
+			
+			<!-- Introduction Section -->
+			<section class="PhiH-expandable-section">
+				<div class="PhiH-expandable-header" id="introHeader">
+					<h3 data-i18n="PhiH.lessons.everyday.introduction.title">التمهيد</h3>
+					<span class="PhiH-expand-icon">▼</span>
+				</div>
+				<div class="PhiH-expandable-content" id="introContent">
+					<p data-i18n="PhiH.lessons.everyday.introduction.text1">
+						تشكّل الحياة اليوميّة الإطار الزماني والمكاني الذي تتجلى فيه مختلف أنشطة الإنسان وتفاعلاته الاجتماعية. فهي تمثل النسيج الحيّ الذي تُحاك فيه علاقة الفرد بالعالم من حوله، سواء من خلال العمل أو الاستهلاك أو التواصل أو الترفيه. غير أن هذه الحياة اليومية، على ما تبدو عليه من طابع اعتيادي ومألوف، لا تخلو من مفارقات عميقة.
+					</p>
+					<p data-i18n="PhiH.lessons.everyday.introduction.text2">
+						ففي الوقت الذي يُفترض أن تكون فيه اليوميّة فضاءً للتعبير عن الذات وتحقيق الإنسانية، تكشف الممارسة الفعلية عن تحوّلها إلى مجالٍ تُفرض فيه أنماط سلوكية وقيمية جاهزة، تُفقد الفرد استقلاليته وتُغيّب وعيه النقدي. فمن خلال الروتين والعادات والضغوط الاجتماعية، تتحول الحياة اليومية إلى آلية للاستلاب والاغتراب، حيث يكرّس الفرد وجوده في إعادة إنتاج شروط هيمنة لم يخترها.
+					</p>
+					<p data-i18n="PhiH.lessons.everyday.introduction.text3">
+						وهو ما يدفع إلى التساؤل: هل تمثل الحياة اليومية فضاءً للتحقق الإنساني أم أنها مجرد حلقة في سلسلة من الممارسات المُعاد إنتاجها؟ وإلى أي مدى يمكن للفرد أن يحافظ على حريته وأصالة وجوده داخل هذا النسيج المعقّد من العلاقات والأنماط اليومية؟
+					</p>
+				</div>
+			</section>
+			
+			<!-- Texts Section -->
+			<section class="PhiH-expandable-section">
+				<div class="PhiH-expandable-header" id="textsHeader">
+					<h3 data-i18n="PhiH.lessons.everyday.texts.title">النصوص</h3>
+					<span class="PhiH-expand-icon">▼</span>
+				</div>
+				<div class="PhiH-expandable-content" id="textsContent">
+					<div class="PhiH-texts-container">
+						<ul class="PhiH-texts-list">
+							<li class="PhiH-text-item">
+								<a href="PhiH_lessons_grade3_theme1_lesson1_text1.html" class="PhiH-text-link">
+									<span data-i18n="PhiH.lessons.everyday.texts.text1">النص 1: الرتابة - كارل ياسبرز</span>
+								</a>
+							</li>
+							<li class="PhiH-text-item">
+								<a href="PhiH_lessons_grade3_theme1_lesson1_text2.html" class="PhiH-text-link">
+									<span data-i18n="PhiH.lessons.everyday.texts.text2">النص 2: جنون الاستهلاك - تيودور آدرنو</span>
+								</a>
+							</li>
+							<li class="PhiH-text-item">
+								<a href="PhiH_lessons_grade3_theme1_lesson1_text3.html" class="PhiH-text-link">
+									<span data-i18n="PhiH.lessons.everyday.texts.text3">النص 3: التسلية ومقتضى التفكير - بليز باسكال</span>
+								</a>
+							</li>
+							<li class="PhiH-text-item">
+								<a href="PhiH_lessons_grade3_theme1_lesson1_text4.html" class="PhiH-text-link">
+									<span data-i18n="PhiH.lessons.everyday.texts.text4">النص 4: وسائل الاتصال - جان بودريار</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			
+			<!-- Quotes Section -->
+			<section class="PhiH-expandable-section">
+				<div class="PhiH-expandable-header" id="quotesHeader">
+					<h3 data-i18n="PhiH.lessons.everyday.quotes.title">شواهد ونصوص ذات صلة</h3>
+					<span class="PhiH-expand-icon">▼</span>
+				</div>
+				<div class="PhiH-expandable-content" id="quotesContent">
+					<div class="PhiH-quotes-container">
+						<div class="PhiH-quotes-grid">
+							<!-- Quote 1 -->
+							<div class="PhiH-quote-card">
+								<div class="PhiH-quote-text" data-i18n="PhiH.lessons.everyday.quotes.quote1">
+									"إنّنا عندما نعتبر التقنية شيئا محايدا، نكون  
+									عندئذ قد استسلمنا لها بالشكل الأكثر  
+									سوءا"
+								</div>
+								<div class="PhiH-quote-author" data-i18n="PhiH.lessons.everyday.quotes.author1">مارتن هايدغير</div>
+								<div class="PhiH-quote-source" data-i18n="PhiH.lessons.everyday.quotes.source1">مسألة التقنية</div>
+							</div>
+							
+							<!-- Quote 2 -->
+							<div class="PhiH-quote-card">
+								<div class="PhiH-quote-text" data-i18n="PhiH.lessons.everyday.quotes.quote2">
+									"إنّ مفهوم الاختيار ينحطّ بسهولة كلّما  
+									نسينا أنّ الهدف هو أن نكون قد أحسنّا  
+									الاختيار، لا أن نبقى أبدا في حالة اختيار."
+								</div>
+								<div class="PhiH-quote-author" data-i18n="PhiH.lessons.everyday.quotes.author2">جورج تروي</div>
+								<div class="PhiH-quote-source" data-i18n="PhiH.lessons.everyday.quotes.source2">سياق من دون سياق</div>
+							</div>
+							
+							<!-- Quote 3 -->
+							<div class="PhiH-quote-card">
+								<div class="PhiH-quote-text" data-i18n="PhiH.lessons.everyday.quotes.quote3">
+									"لا يخدم الفرد النظام الصناعي بمنحه  
+									مدّخراته وبمدّه برأسماله، بل باستهلاك  
+									منتجاته"
+								</div>
+								<div class="PhiH-quote-author" data-i18n="PhiH.lessons.everyday.quotes.author3">غالبرايث</div>
+								<div class="PhiH-quote-source" data-i18n="PhiH.lessons.everyday.quotes.source3">الوضع الصناعي الجديد</div>
+							</div>
+							
+							<!-- Quote 4 -->
+							<div class="PhiH-quote-card">
+								<div class="PhiH-quote-text" data-i18n="PhiH.lessons.everyday.quotes.quote4">
+									"إنّ الاستهلاك هو نسق انتظام العلامات  
+									واندماج الجماعة : فهو، إذن، في آن واحد  
+									أخلاق (نسق من القيم الإيديولوجية)،  
+									ونسق للتواصل وبنية للتبادل"
+								</div>
+								<div class="PhiH-quote-author" data-i18n="PhiH.lessons.everyday.quotes.author4">جون بودريار</div>
+								<div class="PhiH-quote-source" data-i18n="PhiH.lessons.everyday.quotes.source4">مجتمع الاستهلاك</div>
+							</div>
+							
+							<!-- Quote 5 -->
+							<div class="PhiH-quote-card">
+								<div class="PhiH-quote-text" data-i18n="PhiH.lessons.everyday.quotes.quote5">
+									"إنّ التّرفيه ... يعيد بأمانة إنتاج كلّ أشكال الإكراه الذهنيّة والعمليّة لزمن الإنتاج ولحياة الخضوع اليوميّة"
+								</div>
+								<div class="PhiH-quote-author" data-i18n="PhiH.lessons.everyday.quotes.author5">جون بوديار</div>
+								<div class="PhiH-quote-source" data-i18n="PhiH.lessons.everyday.quotes.source5">مجتمع الاستهلاك</div>
+							</div>
+							
+							<!-- Quote 6 -->
+							<div class="PhiH-quote-card">
+								<div class="PhiH-quote-text" data-i18n="PhiH.lessons.everyday.quotes.quote6">
+									"عندما يُشرَك الناس في تبادل  
+									لا وجود له، فإنّ خيالهم، فضلا  
+									عن حسّهم السليم، يصبح في  
+									خطر. وفي الحقيقة يتهدّد الخيال  
+									خطر أكبر، إذ في مثل هذه  
+									العمليّات، الحسّ السليم يُتجاهل  
+									فقط، بينما يُخدع الخيال ويُذلّ"
+								</div>
+								<div class="PhiH-quote-author" data-i18n="PhiH.lessons.everyday.quotes.author6">جورج تروي</div>
+								<div class="PhiH-quote-source" data-i18n="PhiH.lessons.everyday.quotes.source6">سياق من دون سياق</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<!-- Conclusion -->
+			<section class="PhiH-expandable-section">
+				<div class="PhiH-expandable-header" id="conclusionHeader">
+					<h3 data-i18n="PhiH.lessons.everyday.conclusion.title">الخاتمة</h3>
+					<span class="PhiH-expand-icon">▼</span>
+				</div>
+				<div class="PhiH-expandable-content" id="conclusionContent">
+					<p data-i18n="PhiH.lessons.everyday.conclusion.text1">
+						تُجمل إشكالية اليومي التحدي المركزي الذي يواجه الإنسان المعاصر: كيف يحقق وجوده الأصيل في عالم يفرض عليه أنماطاً جاهزة للحياة والتفكير؟ فمن خلال التحليل النقدي لمختلف أبعاد الحياة اليومية – الإنتاج، الاستهلاك، التواصل، الترفيه – يتضح أن اليومي ليس مجرد روتين بسيط، بل هو مجال صراع بين الذات والآخر، بين الحرية والاستلاب.
+					</p>
+					<p data-i18n="PhiH.lessons.everyday.conclusion.text2">
+						لقد أبرزت المقاربات الفلسفية أن الخطر لا يكمن في اليومي بحد ذاته، بل في تحوله إلى آلية طيّعة لإعادة إنتاج الهيمنة والتبعية. فالقدرة على تجاوز الاستلاب اليومي تتطلب وعياً نقدياً قادراً على تفكيك الآليات الخفية التي تُفرض من خلالها أنماط العيش والتفكير.
+					</p>
+					<p data-i18n="PhiH.lessons.everyday.conclusion.text3">
+						في الختام، تظل الفلسفة أداة أساسية لفك شفرة اليومي واستعادة بعده الإنساني، فبدون النقد والتفكير الحر، يظل الفرد أسير روتين لا معنى له، أما بالوعي والمقاومة النقدية، فيمكن تحويل اليومي إلى فضاء للتحقق الإنساني والإبداع.
+					</p>
+				</div>
+			</section>
+		</main>
+		
+		<footer class="PhiH-general-footer">
+			<div class="PhiH-general-footer-content">
+				<div class="PhiH-general-footer-column">
+					<h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+					<p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+				</div>
+				<div class="PhiH-general-footer-column">
+					<h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+					<p data-i18n="PhiH.general.version">v1.0.0</p>
+				</div>
+				<div class="PhiH-general-footer-column">
+					<h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+					<div class="PhiH-general-footer-links">
+						<a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+						<a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<script>
+			// Page-specific translations for everyday lesson
+			window.translations_PhiHeveryday = {
+				fr: {
+					// General translations
+					"PhiH.general.siteName": "Philosophy Learning Hub",
+					"PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+					"PhiH.general.present": "X",
+					"PhiH.general.absent": "",
+					"PhiH.general.developerTitle": "Développeur",
+					"PhiH.general.developer": "Mejri Ziad",
+					"PhiH.general.versionTitle": "Version",
+					"PhiH.general.version": "v1.0.0",
+					"PhiH.general.linksTitle": "Liens",
+					"PhiH.general.termsOfUse": "Conditions d'utilisation",
+					"PhiH.general.privacyPolicy": "Politique de confidentialité",
+					"PhiH.general.themeToggle": "Mode sombre",
+					"PhiH.general.authors": "Philosophes",
+					
+					// Everyday lesson specific translations
+					"PhiH.lessons.everyday.title": "Le Quotidien",
+					"PhiH.lessons.everyday.level": "3ème Secondaire - Philosophie",
+					
+					// Windows bar translations
+					"PhiH.windows.home": "Accueil",
+					"PhiH.windows.philosophers": "Philosophes",
+					"PhiH.windows.quotes": "Quotes",
+					"PhiH.windows.resources": "Ressources",
+					
+					"PhiH.lessons.everyday.introduction.title": "Introduction",
+					"PhiH.lessons.everyday.introduction.text1": "La vie quotidienne constitue le cadre temporel et spatial dans lequel se manifestent les différentes activités humaines et leurs interactions sociales. Elle représente le tissu vivant dans lequel se tisse la relation de l'individu avec le monde qui l'entoure, que ce soit à travers le travail, la consommation, la communication ou les loisirs. Cependant, cette vie quotidienne, malgré son apparence ordinaire et familière, n'est pas exempte de paradoxes profonds.",
+					"PhiH.lessons.everyday.introduction.text2": "Alors qu'elle est supposée être un espace d'expression de soi et de réalisation de l'humanité, la pratique réelle révèle sa transformation en un domaine où des modèles comportementaux et des valeurs toutes faites sont imposés, privant l'individu de son autonomie et occultant sa conscience critique. À travers la routine, les habitudes et les pressions sociales, la vie quotidienne se transforme en un mécanisme d'aliénation et de dépossession, où l'individu consacre son existence à reproduire des conditions de domination qu'il n'a pas choisies.",
+					"PhiH.lessons.everyday.introduction.text3": "Ce qui nous amène à nous interroger : la vie quotidienne représente-t-elle un espace de réalisation humaine ou n'est-elle qu'un maillon dans une chaîne de pratiques reproduites ? Et dans quelle mesure l'individu peut-il préserver sa liberté et l'authenticité de son existence au sein de ce tissu complexe de relations et de modèles quotidiens ?",
+					
+					"PhiH.lessons.everyday.texts.title": "Textes",
+					"PhiH.lessons.everyday.texts.text1": "Texte 1: La monotonie - Karl Jaspers",
+					"PhiH.lessons.everyday.texts.text2": "Texte 2: La folie de la consommation - Theodor Adorno",
+					"PhiH.lessons.everyday.texts.text3": "Texte 3: Le divertissement et l'exigence de pensée - Blaise Pascal",
+					"PhiH.lessons.everyday.texts.text4": "Texte 4: Les moyens de communication - Jean Baudrillard",
+					
+					// Quotes section translations
+					"PhiH.lessons.everyday.quotes.title": "Citations et textes connexes",
+					"PhiH.lessons.everyday.quotes.quote1": "\"Lorsque nous considérons la technique comme quelque chose de neutre, nous nous sommes alors soumis à elle de la pire manière.\"",
+					"PhiH.lessons.everyday.quotes.quote2": "\"Le concept de choix se dégrade facilement chaque fois que nous oublions que le but est d'avoir bien choisi, non de rester toujours en état de choix.\"",
+					"PhiH.lessons.everyday.quotes.quote3": "\"L'individu ne sert pas le système industriel en lui donnant ses économies et en lui fournissant son capital, mais en consommant ses produits.\"",
+					"PhiH.lessons.everyday.quotes.quote4": "\"La consommation est un système de régulation des signes et d'intégration de la communauté : c'est donc, à la fois, une morale (système de valeurs idéologiques), un système de communication et une structure d'échange.\"",
+					"PhiH.lessons.everyday.quotes.quote5": "\"Le divertissement ... reproduit fidèlement toutes les formes de contraintes mentales et pratiques du temps de production et de la vie de soumission quotidienne.\"",
+					"PhiH.lessons.everyday.quotes.quote6": "\"Lorsque les gens sont impliqués dans un échange qui n'existe pas, leur imagination, ainsi que leur bon sens, sont en danger. Et en fait, l'imagination est menacée d'un plus grand danger, car dans de telles opérations, le bon sens est simplement ignoré, tandis que l'imagination est trompée et humiliée.\"",
+					"PhiH.lessons.everyday.quotes.author1": "Martin Heidegger",
+					"PhiH.lessons.everyday.quotes.source1": "La question de la technique",
+					"PhiH.lessons.everyday.quotes.author2": "George Troy",
+					"PhiH.lessons.everyday.quotes.source2": "Contexte sans contexte",
+					"PhiH.lessons.everyday.quotes.author3": "Galbraith",
+					"PhiH.lessons.everyday.quotes.source3": "Le nouvel état industriel",
+					"PhiH.lessons.everyday.quotes.author4": "Jean Baudrillard",
+					"PhiH.lessons.everyday.quotes.source4": "La société de consommation",
+					"PhiH.lessons.everyday.quotes.author5": "Jean Baudrillard",
+					"PhiH.lessons.everyday.quotes.source5": "La société de consommation",
+					"PhiH.lessons.everyday.quotes.author6": "George Troy",
+					"PhiH.lessons.everyday.quotes.source6": "Contexte sans contexte",
+					
+					"PhiH.lessons.everyday.conclusion.title": "Conclusion",
+					"PhiH.lessons.everyday.conclusion.text1": "La problématique du quotidien résume le défi central auquel est confronté l'homme contemporain : comment réaliser son existence authentique dans un monde qui lui impose des modèles de vie et de pensée tout faits ? À travers l'analyse critique des différentes dimensions de la vie quotidienne – production, consommation, communication, loisirs – il apparaît que le quotidien n'est pas seulement une simple routine, mais un champ de lutte entre le soi et l'autre, entre la liberté et l'aliénation.",
+					"PhiH.lessons.everyday.conclusion.text2": "Les approches philosophiques ont mis en évidence que le danger ne réside pas dans le quotidien en soi, mais dans sa transformation en un mécanisme docile de reproduction de la domination et de la dépendance. La capacité à dépasser l'aliénation quotidienne nécessite une conscience critique capable de déconstruire les mécanismes cachés à travers lesquels les modes de vie et de pensée sont imposés.",
+					"PhiH.lessons.everyday.conclusion.text3": "En conclusion, la philosophie reste un outil essentiel pour décoder le quotidien et restaurer sa dimension humaine, car sans critique et pensée libre, l'individu reste prisonnier d'une routine sans signification, tandis qu'avec la conscience et la résistance critique, il est possible de transformer le quotidien en un espace de réalisation humaine et de créativité."
+				},
+				en: {
+					// General translations
+					"PhiH.general.siteName": "Philosophy Learning Hub",
+					"PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+					"PhiH.general.present": "X",
+					"PhiH.general.absent": "",
+					"PhiH.general.developerTitle": "Developer",
+					"PhiH.general.developer": "Mejri Ziad",
+					"PhiH.general.versionTitle": "Version",
+					"PhiH.general.version": "v1.0.0",
+					"PhiH.general.linksTitle": "Links",
+					"PhiH.general.termsOfUse": "Terms of Use",
+					"PhiH.general.privacyPolicy": "Privacy Policy",
+					"PhiH.general.themeToggle": "Dark mode",
+					"PhiH.general.authors": "Philosophers",
+					
+					// Windows bar translations
+					"PhiH.windows.home": "Home",
+					"PhiH.windows.philosophers": "Philosophers",
+					"PhiH.windows.quotes": "Quotes",
+					"PhiH.windows.resources": "Resources",
+					
+					// Everyday lesson specific translations
+					"PhiH.lessons.everyday.title": "The Everyday",
+					"PhiH.lessons.everyday.level": "3rd Secondary - Philosophy",
+					
+					"PhiH.lessons.everyday.introduction.title": "Introduction",
+					"PhiH.lessons.everyday.introduction.text1": "Daily life constitutes the temporal and spatial framework in which various human activities and social interactions manifest. It represents the living fabric in which the individual's relationship with the world around them is woven, whether through work, consumption, communication, or entertainment. However, this daily life, despite its ordinary and familiar appearance, is not without deep paradoxes.",
+					"PhiH.lessons.everyday.introduction.text2": "While it is supposed to be a space for self-expression and the realization of humanity, actual practice reveals its transformation into a domain where ready-made behavioral patterns and values are imposed, depriving the individual of their autonomy and obscuring their critical consciousness. Through routine, habits, and social pressures, daily life becomes a mechanism of alienation and dispossession, where the individual dedicates their existence to reproducing conditions of domination that they did not choose.",
+					"PhiH.lessons.everyday.introduction.text3": "This leads us to question: Does daily life represent a space for human fulfillment or is it merely a link in a chain of reproduced practices? And to what extent can the individual preserve their freedom and the authenticity of their existence within this complex web of relationships and daily patterns?",
+					
+					"PhiH.lessons.everyday.texts.title": "Texts",
+					"PhiH.lessons.everyday.texts.text1": "Text 1: Monotony - Karl Jaspers",
+					"PhiH.lessons.everyday.texts.text2": "Text 2: The Madness of Consumption - Theodor Adorno",
+					"PhiH.lessons.everyday.texts.text3": "Text 3: Entertainment and the Requirement of Thought - Blaise Pascal",
+					"PhiH.lessons.everyday.texts.text4": "Text 4: Means of Communication - Jean Baudrillard",
+					
+					// Quotes section translations
+					"PhiH.lessons.everyday.quotes.title": "Related Quotes and Texts",
+					"PhiH.lessons.everyday.quotes.quote1": "\"When we consider technology as something neutral, we have then submitted to it in the worst way.\"",
+					"PhiH.lessons.everyday.quotes.quote2": "\"The concept of choice degrades easily whenever we forget that the goal is to have chosen well, not to remain always in a state of choice.\"",
+					"PhiH.lessons.everyday.quotes.quote3": "\"The individual does not serve the industrial system by giving it their savings and providing it with their capital, but by consuming its products.\"",
+					"PhiH.lessons.everyday.quotes.quote4": "\"Consumption is a system of regulation of signs and integration of the community: it is therefore, at the same time, a morality (system of ideological values), a system of communication and a structure of exchange.\"",
+					"PhiH.lessons.everyday.quotes.quote5": "\"Entertainment ... faithfully reproduces all forms of mental and practical constraints of production time and daily submission life.\"",
+					"PhiH.lessons.everyday.quotes.quote6": "\"When people are involved in an exchange that does not exist, their imagination, as well as their common sense, are in danger. And in fact, imagination is threatened with greater danger, because in such operations, common sense is simply ignored, while imagination is deceived and humiliated.\"",
+					"PhiH.lessons.everyday.quotes.author1": "Martin Heidegger",
+					"PhiH.lessons.everyday.quotes.source1": "The Question Concerning Technology",
+					"PhiH.lessons.everyday.quotes.author2": "George Troy",
+					"PhiH.lessons.everyday.quotes.source2": "Context Without Context",
+					"PhiH.lessons.everyday.quotes.author3": "Galbraith",
+					"PhiH.lessons.everyday.quotes.source3": "The New Industrial State",
+					"PhiH.lessons.everyday.quotes.author4": "Jean Baudrillard",
+					"PhiH.lessons.everyday.quotes.source4": "The Consumer Society",
+					"PhiH.lessons.everyday.quotes.author5": "Jean Baudrillard",
+					"PhiH.lessons.everyday.quotes.source5": "The Consumer Society",
+					"PhiH.lessons.everyday.quotes.author6": "George Troy",
+					"PhiH.lessons.everyday.quotes.source6": "Context Without Context",
+					
+					"PhiH.lessons.everyday.conclusion.title": "Conclusion",
+					"PhiH.lessons.everyday.conclusion.text1": "The problem of the everyday summarizes the central challenge facing contemporary man: how to realize his authentic existence in a world that imposes ready-made patterns of life and thought? Through the critical analysis of the different dimensions of daily life – production, consumption, communication, entertainment – it becomes clear that the everyday is not just a simple routine, but a field of struggle between the self and the other, between freedom and alienation.",
+					"PhiH.lessons.everyday.conclusion.text2": "Philosophical approaches have highlighted that the danger does not lie in the everyday itself, but in its transformation into a docile mechanism for reproducing domination and dependence. The ability to overcome daily alienation requires critical awareness capable of deconstructing the hidden mechanisms through which lifestyles and thinking are imposed.",
+					"PhiH.lessons.everyday.conclusion.text3": "In conclusion, philosophy remains an essential tool for decoding the everyday and restoring its human dimension, for without criticism and free thought, the individual remains a prisoner of a meaningless routine, while with awareness and critical resistance, it is possible to transform the everyday into a space for human fulfillment and creativity."
+				},
+				ar: {
+					// General translations
+					"PhiH.general.siteName": "مركز تعلم الفلسفة",
+					"PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+					"PhiH.general.present": "X",
+					"PhiH.general.absent": "",
+					"PhiH.general.developerTitle": "المطور",
+					"PhiH.general.developer": "مجرى زياد",
+					"PhiH.general.versionTitle": "الإصدار",
+					"PhiH.general.version": "v1.0.0",
+					"PhiH.general.linksTitle": "الروابط",
+					"PhiH.general.termsOfUse": "شروط الاستخدام",
+					"PhiH.general.privacyPolicy": "سياسة الخصوصية",
+					"PhiH.general.themeToggle": "الوضع الداكن",
+					"PhiH.general.authors": "الفلاسفة",
+					
+					// Windows bar translations
+					"PhiH.windows.home": "الرئيسية",
+					"PhiH.windows.philosophers": "الفلاسفة",
+					"PhiH.windows.quotes": "شواهد",
+					"PhiH.windows.resources": "الموارد",
+					
+					// Everyday lesson specific translations
+					"PhiH.lessons.everyday.title": "اليومي",
+					"PhiH.lessons.everyday.level": "السنة الثالثة ثانوي - الفلسفة",
+					
+					"PhiH.lessons.everyday.introduction.title": "التمهيد",
+					"PhiH.lessons.everyday.introduction.text1": "تشكّل الحياة اليوميّة الإطار الزماني والمكاني الذي تتجلى فيه مختلف أنشطة الإنسان وتفاعلاته الاجتماعية. فهي تمثل النسيج الحيّ الذي تُحاك فيه علاقة الفرد بالعالم من حوله، سواء من خلال العمل أو الاستهلاك أو التواصل أو الترفيه. غير أن هذه الحياة اليومية، على ما تبدو عليه من طابع اعتيادي ومألوف، لا تخلو من مفارقات عميقة.",
+					"PhiH.lessons.everyday.introduction.text2": "ففي الوقت الذي يُفترض أن تكون فيه اليوميّة فضاءً للتعبير عن الذات وتحقيق الإنسانية، تكشف الممارسة الفعلية عن تحوّلها إلى مجالٍ تُفرض فيه أنماط سلوكية وقيمية جاهزة، تُفقد الفرد استقلاليته وتُغيّب وعيه النقدي. فمن خلال الروتين والعادات والضغوط الاجتماعية، تتحول الحياة اليومية إلى آلية للاستلاب والاغتراب، حيث يكرّس الفرد وجوده في إعادة إنتاج شروط هيمنة لم يخترها.",
+					"PhiH.lessons.everyday.introduction.text3": "وهو ما يدفع إلى التساؤل: هل تمثل الحياة اليومية فضاءً للتحقق الإنساني أم أنها مجرد حلقة في سلسلة من الممارسات المُعاد إنتاجها؟ وإلى أي مدى يمكن للفرد أن يحافظ على حريته وأصالة وجوده داخل هذا النسيج المعقّد من العلاقات والأنماط اليومية؟",
+					
+					"PhiH.lessons.everyday.texts.title": "النصوص",
+					"PhiH.lessons.everyday.texts.text1": "النص 1: الرتابة - كارل ياسبرز",
+					"PhiH.lessons.everyday.texts.text2": "النص 2: جنون الاستهلاك - تيودور آدرنو",
+					"PhiH.lessons.everyday.texts.text3": "النص 3: التسلية ومقتضى التفكير - بليز باسكال",
+					"PhiH.lessons.everyday.texts.text4": "النص 4: وسائل الاتصال - جان بودريار",
+					
+					// Quotes section translations
+					"PhiH.lessons.everyday.quotes.title": "شواهد ونصوص ذات صلة",
+					"PhiH.lessons.everyday.quotes.quote1": "إنّنا عندما نعتبر التقنية شيئا محايدا، نكون عندئذ قد استسلمنا لها بالشكل الأكثر سوءا",
+					"PhiH.lessons.everyday.quotes.quote2": "إنّ مفهوم الاختيار ينحطّ بسهولة كلّما نسينا أنّ الهدف هو أن نكون قد أحسنّا الاختيار، لا أن نبقى أبدا في حالة اختيار",
+					"PhiH.lessons.everyday.quotes.quote3": "لا يخدم الفرد النظام الصناعي بمنحه مدّخراته وبمدّه برأسماله، بل باستهلاك منتجاته",
+					"PhiH.lessons.everyday.quotes.quote4": "إنّ الاستهلاك هو نسق انتظام العلامات واندماج الجماعة : فهو، إذن، في آن واحد أخلاق (نسق من القيم الإيديولوجية)، ونسق للتواصل وبنية للتبادل",
+					"PhiH.lessons.everyday.quotes.quote5": "إنّ التّرفيه ... يعيد بأمانة إنتاج كلّ أشكال الإكراه الذهنيّة والعمليّة لزمن الإنتاج ولحياة الخضوع اليوميّة",
+					"PhiH.lessons.everyday.quotes.quote6": "عندما يُشرَك الناس في تبادل لا وجود له، فإنّ خيالهم، فضلا عن حسّهم السليم، يصبح في خطر. وفي الحقيقة يتهدّد الخيال خطر أكبر، إذ في مثل هذه العمليّات، الحسّ السليم يُتجاهل فقط، بينما يُخدع الخيال ويُذلّ",
+					"PhiH.lessons.everyday.quotes.author1": "مارتن هايدغير",
+					"PhiH.lessons.everyday.quotes.source1": "مسألة التقنية",
+					"PhiH.lessons.everyday.quotes.author2": "جورج تروي",
+					"PhiH.lessons.everyday.quotes.source2": "سياق من دون سياق",
+					"PhiH.lessons.everyday.quotes.author3": "غالبرايث",
+					"PhiH.lessons.everyday.quotes.source3": "الوضع الصناعي الجديد",
+					"PhiH.lessons.everyday.quotes.author4": "جون بودريار",
+					"PhiH.lessons.everyday.quotes.source4": "مجتمع الاستهلاك",
+					"PhiH.lessons.everyday.quotes.author5": "جون بوديار",
+					"PhiH.lessons.everyday.quotes.source5": "مجتمع الاستهلاك",
+					"PhiH.lessons.everyday.quotes.author6": "جورج تروي",
+					"PhiH.lessons.everyday.quotes.source6": "سياق من دون سياق",
+					
+					"PhiH.lessons.everyday.conclusion.title": "الخاتمة",
+					"PhiH.lessons.everyday.conclusion.text1": "تُجمل إشكالية اليومي التحدي المركزي الذي يواجه الإنسان المعاصر: كيف يحقق وجوده الأصيل في عالم يفرض عليه أنماطاً جاهزة للحياة والتفكير؟ فمن خلال التحليل النقدي لمختلف أبعاد الحياة اليومية – الإنتاج، الاستهلاك، التواصل، الترفيه – يتضح أن اليومي ليس مجرد روتين بسيط، بل هو مجال صراع بين الذات والآخر، بين الحرية والاستلاب.",
+					"PhiH.lessons.everyday.conclusion.text2": "لقد أبرزت المقاربات الفلسفية أن الخطر لا يكمن في اليومي بحد ذاته، بل في تحوله إلى آلية طيّعة لإعادة إنتاج الهيمنة والتبعية. فالقدرة على تجاوز الاستلاب اليومي تتطلب وعياً نقدياً قادراً على تفكيك الآليات الخفية التي تُفرض من خلالها أنماط العيش والتفكير.",
+					"PhiH.lessons.everyday.conclusion.text3": "في الختام، تظل الفلسفة أداة أساسية لفك شفرة اليومي واستعادة بعده الإنساني، فبدون النقد والتفكير الحر، يظل الفرد أسير روتين لا معنى له، أما بالوعي والمقاومة النقدية، فيمكن تحويل اليومي إلى فضاء للتحقق الإنساني والإبداع."
+				}
+			};
+			
+			// Set the current translations for the translation.js file to use
+			window.currentTranslations = window.translations_PhiHeveryday;
+		</script>
+		
+		<!-- Include the external translation file -->
+		<script src="scripts/translation.js"></script>
+		
+		<!-- Include PWA Handler -->
+		<script src="scripts/pwa-handler.js"></script>
+		
+		<script>
+			// Expand/Collapse functionality
+			document.addEventListener('DOMContentLoaded', function() {
+				// Get all expandable headers
+				const expandableHeaders = document.querySelectorAll('.PhiH-expandable-header');
+				
+				// Add click event to each header
+				expandableHeaders.forEach(header => {
+					header.addEventListener('click', function() {
+						const content = this.nextElementSibling;
+						const icon = this.querySelector('.PhiH-expand-icon');
+						
+						// Toggle content visibility
+						if (content.classList.contains('hidden')) {
+							content.classList.remove('hidden');
+							icon.classList.add('expanded');
+							} else {
+							content.classList.add('hidden');
+							icon.classList.remove('expanded');
+						}
+					});
+				});
+				
+				// Initially hide all expandable content
+				document.querySelectorAll('.PhiH-expandable-content').forEach(content => {
+					content.classList.add('hidden');
+				});
+			});
+		</script>
+	</body>
+</html>

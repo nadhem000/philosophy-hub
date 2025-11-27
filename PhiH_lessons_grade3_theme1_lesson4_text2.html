@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: عناد الوهم - أبو حامد الغزالي - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#7c3aed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Purple + Violet Color Palette */
+        :root {
+            --primary-color: #7c3aed;
+            --primary-light: #8b5cf6;
+            --primary-dark: #6d28d9;
+            --secondary-color: #7e22ce;
+            --secondary-light: #9333ea;
+            --secondary-dark: #6b21a8;
+            --accent-color: #7e22ce;
+            --accent-light: #9333ea;
+            --accent-dark: #6b21a8;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #faf5ff;
+            --card-bg: #ffffff;
+            --definition-bg: #f3e8ff;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #e9d5ff;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.1), 0 2px 4px -1px rgba(124, 58, 237, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(124, 58, 237, 0.1), 0 4px 6px -2px rgba(124, 58, 237, 0.05);
+            --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #7e22ce 100%);
+            --gradient-secondary: linear-gradient(135deg, #7e22ce 0%, #6b21a8 100%);
+            --gradient-accent: linear-gradient(135deg, #7e22ce 0%, #7c3aed 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #8b5cf6;
+            --primary-light: #a78bfa;
+            --primary-dark: #7c3aed;
+            --secondary-color: #9333ea;
+            --secondary-light: #a855f7;
+            --secondary-dark: #7e22ce;
+            --accent-color: #9333ea;
+            --accent-light: #a855f7;
+            --accent-dark: #7e22ce;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #581c87;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #701a75;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #9333ea 100%);
+            --gradient-secondary: linear-gradient(135deg, #9333ea 0%, #7e22ce 100%);
+            --gradient-accent: linear-gradient(135deg, #9333ea 0%, #8b5cf6 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(124, 58, 237, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(126, 34, 206, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(126, 34, 206, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(124, 58, 237, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.ghazali.title">تحليل النص: عناد الوهم - أبو حامد الغزالي</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.ghazali.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazali.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.ghazali.introduction.content">
+                    لا شكّ أنّ الإنسانية كسبت معارك عديدة ضدّ الوهم لكن يبدو أنّها لم تكسب الحرب. وقد يعزى هذا الفشل لأسباب عديدة، أهمّها أنّنا صنّفناه ضمن خانة الخطأ والتخيّلات قبل أن نقف على حقيقته فأخطأنا التصويب، وهاجمناه قبل أن نقف على آليات اشتغاله فتوارى وأعاد تشكيل ذاته وفرض علينا إعادة النظر في مسلّماتنا وخططنا.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazali.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.ghazali.text.content">
+                        إنّ إثبات شيء مع القطع بأن الجهات الست<sup>1</sup> خالية عنه محال، وهو عمل قوة في التجويف الآخر من الدماغ تسمّى وهمية<sup>2</sup> ... وهذه القضايا<sup>3</sup> الوهمية مع أنها كاذبة فهي في النفس لا تتميّز عن الأوليات<sup>4</sup> القطعية، مثل قولك لا يكون شخص في مكانين، بل تشهد به أول الفطرة<sup>5</sup> كما تشهد به الأوليات القطعية. وليس كل ما تشهد به الفطرة قطعاً هو صادق بل الصادق ما تشهد به قوة العقل فقط ومداركه الخمسة<sup>6</sup> ... وهذه الوهميات لا يظهر كذبها للنفس إلا بدليل العقل ثم بعد معرفته الدليل أيضاً لا تنقطع منازعة الوهم بل تبقى على نزاعها ... إن جميع قضايا الوهم ليست كاذبة فإنها توافق العقل في استحالة وجود شخص في مكانين، بل لا تنازع في جميع العلوم الهندسية والحسابية وما يدرك بالحس، لأنها تنازع فيما وراء المحسوسات لأنها تُمثّل غير المحسوس بالمحسوس<sup>7</sup>، إذ لا تقبله إلا على نحو المحسوسات.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.ghazali.text.source">أبو حامد الغزالي، محكّ النظر، ص 13–14</em></p>
+                </div>
+            </div>
+            
+            <!-- Footnotes -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazali.footnotes.title">الهوامش</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.footnotes.item1"><strong>الجهات الست:</strong> أبعاد المكان (فوق، تحت، يمين، شمال، أمام، خلف).</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.footnotes.item2"><strong>الوهميّة:</strong> عند الغزالي ملكة إدراك محدّدة موضعيًا في نهاية التجويف الأوسط للدماغ إلى جانب المفكّرة والذاكرة والحافظة والحس المشترك، وهي تدرك معاني غير محسوسة انطلاقا من المحسوسات الجزئية.</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.footnotes.item3"><strong>القضايا:</strong> مصطلح منطقي يعني الجمل المعبّرة عن أحكام والمتألّفة من حامل ومحمول كقولنا "العالم قديم".</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.footnotes.item4"><strong>الأوّليّات:</strong> قضايا عقلانية خالصة وبسيطة وبديهية، مثل "الكل أكبر من الجزء".</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.footnotes.item5"><strong>الفطرة:</strong> نزوع طبيعي أو غريزة أقرب للحس السليم.</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.footnotes.item6"><strong>مداركه الخمسة:</strong> الروح الحسّاس، الروح الخيالي، الروح العقلي، الروح الفكري، الروح القدسي النبوي.</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.footnotes.item7"><strong>غير المحسوس بالمحسوس:</strong> أي أنّ الوهمية تحكم على القضايا الغيبية مثل وجود الله وصفاته بالاعتماد على ما يصدق على المحسوس.</li>
+                </ul>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazali.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/al_ghazali.jpg" alt="أبو حامد الغزالي" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.ghazali.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.ghazali.author.content">
+                            أبو حامد الغزالي (1058-1111م) هو فيلسوف وعالم دين إسلامي، يُعتبر أحد أبرز مفكري الإسلام وأكثرهم تأثيراً. ولد في طوس بخراسان، وتلقى تعليمه في نيسابور وبغداد. اشتهر الغزالي بأعماله الفلسفية والكلامية والصوفية، وبتأليفه لكتاب "إحياء علوم الدين" الذي يُعتبر من أهم كتب التصوف الإسلامي. تميزت فلسفته بالجمع بين العقل والنقل، وبمحاولة التوفيق بين الفلسفة والدين. من أشهر مؤلفاته: "إحياء علوم الدين"، "تهافت الفلاسفة"، "المنقذ من الضلال"، "مقاصد الفلاسفة". عُرف الغزالي بنقده للفلسفة اليونانية وبمساهماته الكبيرة في تطوير الفكر الإسلامي والفلسفة الإسلامية.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazali.lexical.title">المفاهيم والمصطلحات</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.lexical.item1"><strong>الوهم:</strong> قوة إدراكية في النفس البشرية تدرك المعاني الجزئية المرتبطة بالمحسوسات، وتتميز بقوة حضورها ووضوحها رغم أنها قد تكون خاطئة.</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.lexical.item2"><strong>العقل:</strong> القوة المدركة للحقائق الكلية والمجردة، والتي تميز بين الصادق والكاذب من خلال البراهين والأدلة.</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.lexical.item3"><strong>الفطرة:</strong> الميل الطبيعي للإنسان نحو تصديق بعض القضايا دون حاجة إلى برهان، وهي قد تكون صادقة أو كاذبة.</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.lexical.item4"><strong>المنازعة:</strong> الصراع الدائم بين الوهم والعقل، حيث يبقى الوهم مقاوماً حتى بعد ظهور الأدلة العقلية على خطئه.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazali.questions.title">أسئلة الفهم والتحليل</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.questions.q1">قارن تصوّر الغزالي للوهم مع ما ورد في نص فرويد.</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.questions.q2">هل من مفارقة في القول أن القضايا الوهمية رغم كذبها فهي لا تتميّز عن القضايا القطعية ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.questions.q3">كيف تفسّر مقاومة الوهم للعقل رغم كذبه البيّن ؟</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazali.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazali.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazali.answers.a1.content">
+                        <strong>أوجه المقارنة بين تصور الغزالي وفرويد للوهم:</strong>
+                        <br>- <strong>من حيث التعريف:</strong> يرى الغزالي أن الوهم قوة إدراكية في الدماغ تدرك المعاني الجزئية، بينما يرى فرويد أن الوهم حيلة نفسية للهروب من الواقع.
+                        <br>- <strong>من حيث الوظيفة:</strong> عند الغزالي، الوهم وسيلة لإدراك العالم المحسوس، أما عند فرويد فهو آلية دفاعية لحماية النفس من الصراعات.
+                        <br>- <strong>من حيث المصدر:</strong> يربط الغزالي الوهم بقوى الإدراك في الدماغ، بينما يربطه فرويد باللاوعي والرغبات المكبوتة.
+                        <br>- <strong>من حيث العلاج:</strong> يدعو الغزالي إلى مقاومة الوهم بالعقل والأدلة، بينما يدعو فرويد إلى التحليل النفسي لكشف الآليات اللاواعية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazali.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazali.answers.a2.content">
+                        نعم، هناك مفارقة في القول بأن القضايا الوهمية رغم كذبها لا تتميز عن القضايا القطعية، وذلك لأن:
+                        <br>- <strong>من حيث القوة والوضوح:</strong> كلاهما يظهران بنفس القوة والوضوح في النفس.
+                        <br>- <strong>من حيث البداهة:</strong> كلاهما يبدوان بديهيين ولا يحتاجان إلى تفكير.
+                        <br>- <strong>من حيث المصدر:</strong> كلاهما ينبعان من الفطرة والطبيعة البشرية.
+                        <br>- <strong>المفارقة تكمن في:</strong> أن الوهم يبدو كالحقيقة رغم كذبه، والحقيقة تحتاج إلى دليل رغم صدقها.
+                        <br>- <strong>هذه المفارقة تبرز:</strong> صعوبة التمييز بين الوهم والحقيقة في التجربة الذاتية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazali.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazali.answers.a3.content">
+                        يمكن تفسير مقاومة الوهم للعقل رغم كذبه البيّن بعدة أسباب:
+                        <br>- <strong>قوة الحضور:</strong> الوهم يمتاز بقوة حضوره ووضوحه في النفس.
+                        <br>- <strong>الارتباط بالمحسوس:</strong> الوهم يعتمد على المحسوسات المألوفة مما يجعله مقنعاً.
+                        <br>- <strong>الطبيعة البشرية:</strong> الإنسان ميال بشكل طبيعي لتصديق ما يبدو واضحاً ومألوفاً.
+                        <br>- <strong>المنازعة المستمرة:</strong> الوهم لا ينقطع عن المنازعة حتى بعد ظهور الأدلة.
+                        <br>- <strong>تمثيل غير المحسوس بالمحسوس:</strong> الوهم يقدم المفاهيم المجردة في صورة محسوسة مألوفة.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazali.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazali.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazali.analysis.thesis.content">
+                        يطرح الغزالي فكرة أن الوهم قوة إدراكية مستقلة في النفس البشرية، تدرك المعاني الجزئية المرتبطة بالمحسوسات، وتتميز بقوة حضورها ووضوحها الذي يجعلها لا تختلف عن القضايا القطعية رغم كونها كاذبة في كثير من الأحيان، وأن هذه القوة تقاوم العقل ولا تنقطع عن منازعته حتى بعد ظهور الأدلة على خطئها.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazali.analysis.mechanisms.title">آليات عمل الوهم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazali.analysis.mechanisms.content">
+                        تعمل آليات الوهم من خلال:
+                        <br>- <strong>التمثيل بالمحسوس:</strong> حيث يمثل الوهم غير المحسوس بالمحسوس.
+                        <br>- <strong>الوضوح والبداهة:</strong> حيث تظهر القضايا الوهمية بوضوح وبداهة لا يقلان عن القضايا القطعية.
+                        <br>- <strong>الاعتماد على الفطرة:</strong> حيث تشهد الفطرة بالوهم كما تشهد بالحقائق القطعية.
+                        <br>- <strong>المنازعة المستمرة:</strong> حيث يبقى الوهم مقاوماً للعقل حتى بعد ظهور الأدلة.
+                        <br>- <strong>التخصص في غير المحسوسات:</strong> حيث ينازع الوهم خاصة في القضايا الغيبية والمجردة.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazali.analysis.consequences.title">نتائج سيطرة الوهم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazali.analysis.consequences.content">
+                        تؤدي سيطرة الوهم إلى:
+                        <br>- <strong>الوقوع في الخطأ:</strong> حيث يصدق الإنسان بأمور كاذبة ظناً أنها حقائق.
+                        <br>- <strong>صعوبة التمييز:</strong> بين الحقائق القطعية والأوهام الواضحة.
+                        <br>- <strong>مقاومة المعرفة:</strong> حيث يقاوم الوهم الأدلة العقلية والبراهين.
+                        <br>- <strong>الجمود الفكري:</strong> حيث يظل الإنسان أسيراً لأوهامه رغم ظهور الأدلة.
+                        <br>- <strong>التأثير في المعرفة الدينية:</strong> حيث يؤثر الوهم في فهم القضايا الغيبية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazali.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazali.analysis.significance.content">
+                        يمثل مفهوم "عناد الوهم" عند الغزالي مدخلاً لفهم إشكالية المعرفة والتمييز بين الحقائق والأوهام. فهو يبرز الصراع بين العقل والوهم، وبين المعرفة البرهانية والإدراك الحسي. كما يوضح ضرورة التمييز بين ما تشهد به الفطرة وما تثبته الأدلة العقلية، ويدفع نحو تأسيس معرفة يقينية قائمة على البراهين والأدلة، بعيداً عن سلطة الوهم وأوهام البداهة.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.ghazali.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.ghazali.title": "Analyse du texte: L'Obstination de l'Illusion - Al-Ghazali",
+                "PhiH.textAnalysis.ghazali.introduction.title": "Introduction",
+                "PhiH.textAnalysis.ghazali.introduction.content": "Il ne fait aucun doute que l'humanité a remporté de nombreuses batailles contre l'illusion, mais il semble qu'elle n'ait pas gagné la guerre. Cet échec peut être attribué à de nombreuses raisons, la plus importante étant que nous l'avons classée dans la catégorie de l'erreur et des imaginations avant d'en comprendre la vérité, nous avons donc manqué la cible, et nous l'avons attaquée avant de comprendre ses mécanismes de fonctionnement, elle s'est donc cachée, a remodelé elle-même et nous a forcés à reconsidérer nos postulats et nos plans.",
+                "PhiH.textAnalysis.ghazali.text.title": "Texte",
+                "PhiH.textAnalysis.ghazali.text.content": "Prouver quelque chose tout en étant certain que les six directions<sup>1</sup> en sont vides est impossible, et c'est l'œuvre d'une force dans l'autre cavité du cerveau appelée imaginative<sup>2</sup> ... Ces propositions<sup>3</sup> illusoires, bien que fausses, ne se distinguent pas dans l'âme des primordiales<sup>4</sup> certaines, comme dire qu'une personne ne peut pas être en deux endroits, mais la nature première<sup>5</sup> en témoigne comme témoignent les primordiales certaines. Et tout ce dont témoigne la nature première avec certitude n'est pas vrai, mais seul est vrai ce dont témoigne la force de la raison et ses cinq facultés<sup>6</sup> ... Et le mensonge de ces illusions n'apparaît à l'âme que par la preuve de la raison, puis après la connaissance de la preuve aussi, la dispute de l'illusion ne cesse pas mais reste en dispute ... Toutes les propositions de l'illusion ne sont pas fausses car elles s'accordent avec la raison sur l'impossibilité de l'existence d'une personne en deux endroits, mais elles ne disputent pas dans toutes les sciences géométriques et arithmétiques et ce qui est perçu par les sens, car elles disputent dans ce qui est au-delà des sensibles car elles représentent le non-sensible par le sensible<sup>7</sup>, puisqu'elles ne l'acceptent que de la manière des sensibles.",
+                "PhiH.textAnalysis.ghazali.text.source": "Abu Hamid Al-Ghazali, Miḥakk al-Naẓar, p. 13-14",
+                "PhiH.textAnalysis.ghazali.footnotes.title": "Notes de bas de page",
+                "PhiH.textAnalysis.ghazali.footnotes.item1": "<strong>Les six directions:</strong> Les dimensions de l'espace (haut, bas, droite, gauche, avant, arrière).",
+                "PhiH.textAnalysis.ghazali.footnotes.item2": "<strong>L'imaginative:</strong> Chez Al-Ghazali, une faculté de perception localisée à la fin de la cavité médiane du cerveau à côté de la pensée, de la mémoire, de la conservation et du sens commun, et elle perçoit des significations non sensibles à partir des sensibles particuliers.",
+                "PhiH.textAnalysis.ghazali.footnotes.item3": "<strong>Les propositions:</strong> Terme logique signifiant les phrases exprimant des jugements et composées d'un sujet et d'un prédicat comme lorsque nous disons \"le monde est éternel\".",
+                "PhiH.textAnalysis.ghazali.footnotes.item4": "<strong>Les primordiales:</strong> Propositions purement rationnelles, simples et évidentes, comme \"le tout est plus grand que la partie\".",
+                "PhiH.textAnalysis.ghazali.footnotes.item5": "<strong>La nature première:</strong> Tendance naturelle ou instinct plus proche du bon sens.",
+                "PhiH.textAnalysis.ghazali.footnotes.item6": "<strong>Ses cinq facultés:</strong> L'âme sensitive, l'âme imaginative, l'âme rationnelle, l'âme intellectuelle, l'âme sacrée prophétique.",
+                "PhiH.textAnalysis.ghazali.footnotes.item7": "<strong>Le non-sensible par le sensible:</strong> C'est-à-dire que l'imaginative juge des questions métaphysiques comme l'existence de Dieu et Ses attributs en s'appuyant sur ce qui est vrai pour le sensible.",
+                "PhiH.textAnalysis.ghazali.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.ghazali.author.alt": "Abu Hamid Al-Ghazali",
+                "PhiH.textAnalysis.ghazali.author.content": "Abu Hamid Al-Ghazali (1058-1111) est un philosophe et savant religieux islamique, considéré comme l'un des penseurs les plus importants et les plus influents de l'Islam. Né à Tus dans le Khorasan, il a été éduqué à Nishapur et Bagdad. Al-Ghazali est célèbre pour ses œuvres philosophiques, théologiques et soufies, et pour avoir écrit \"Iḥyāʾ ʿUlūm al-Dīn\" qui est considéré comme l'un des livres les plus importants du soufisme islamique. Sa philosophie se caractérise par la combinaison de la raison et de la révélation, et par la tentative de concilier philosophie et religion. Parmi ses œuvres les plus célèbres : \"Iḥyāʾ ʿUlūm al-Dīn\", \"Tahāfut al-Falāsifa\", \"Al-Munqidh min al-Ḍalāl\", \"Maqāṣid al-Falāsifa\". Al-Ghazali est connu pour sa critique de la philosophie grecque et pour ses contributions majeures au développement de la pensée islamique et de la philosophie islamique.",
+                "PhiH.textAnalysis.ghazali.lexical.title": "Concepts et terminologie",
+                "PhiH.textAnalysis.ghazali.lexical.item1": "<strong>L'illusion:</strong> Force cognitive dans l'âme humaine qui perçoit les significations particulières liées aux sensibles, et se distingue par la force de sa présence et sa clarté même si elle peut être erronée.",
+                "PhiH.textAnalysis.ghazali.lexical.item2": "<strong>La raison:</strong> La force qui perçoit les vérités universelles et abstraites, et qui distingue entre le vrai et le faux à travers les preuves et les arguments.",
+                "PhiH.textAnalysis.ghazali.lexical.item3": "<strong>La nature première:</strong> La tendance naturelle de l'homme à croire certaines propositions sans besoin de preuve, qui peut être vraie ou fausse.",
+                "PhiH.textAnalysis.ghazali.lexical.item4": "<strong>La dispute:</strong> Le conflit permanent entre l'illusion et la raison, où l'illusion reste résistante même après l'apparition des preuves rationnelles de son erreur.",
+                "PhiH.textAnalysis.ghazali.questions.title": "Questions de compréhension et d'analyse",
+                "PhiH.textAnalysis.ghazali.questions.q1": "Comparez la conception de l'illusion chez Al-Ghazali avec ce qui est mentionné dans le texte de Freud.",
+                "PhiH.textAnalysis.ghazali.questions.q2": "Y a-t-il un paradoxe à dire que les propositions illusoires, bien que fausses, ne se distinguent pas des propositions certaines ?",
+                "PhiH.textAnalysis.ghazali.questions.q3": "Comment expliquez-vous la résistance de l'illusion à la raison malgré son mensonge évident ?",
+                "PhiH.textAnalysis.ghazali.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.ghazali.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.ghazali.answers.a1.content": "<strong>Points de comparaison entre les conceptions de l'illusion chez Al-Ghazali et Freud:</strong><br>- <strong>En termes de définition:</strong> Al-Ghazali considère l'illusion comme une force cognitive dans le cerveau qui perçoit les significations particulières, tandis que Freud la considère comme une ruse psychologique pour échapper à la réalité.<br>- <strong>En termes de fonction:</strong> Chez Al-Ghazali, l'illusion est un moyen de percevoir le monde sensible, tandis que chez Freud, c'est un mécanisme de défense pour protéger l'âme des conflits.<br>- <strong>En termes de source:</strong> Al-Ghazali relie l'illusion aux forces de perception dans le cerveau, tandis que Freud la relie à l'inconscient et aux désirs refoulés.<br>- <strong>En termes de traitement:</strong> Al-Ghazali appelle à résister à l'illusion par la raison et les preuves, tandis que Freud appelle à la psychanalyse pour révéler les mécanismes inconscients.",
+                "PhiH.textAnalysis.ghazali.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.ghazali.answers.a2.content": "Oui, il y a un paradoxe à dire que les propositions illusoires, bien que fausses, ne se distinguent pas des propositions certaines, car:<br>- <strong>En termes de force et de clarté:</strong> Les deux apparaissent avec la même force et clarté dans l'âme.<br>- <strong>En termes d'évidence:</strong> Les deux semblent évidents et ne nécessitent pas de réflexion.<br>- <strong>En termes de source:</strong> Les deux découlent de la nature première et de la nature humaine.<br>- <strong>Le paradoxe réside dans:</strong> Le fait que l'illusion apparaît comme la vérité malgré son mensonge, et la vérité nécessite une preuve malgré sa véracité.<br>- <strong>Ce paradoxe met en lumière:</strong> La difficulté de distinguer entre l'illusion et la vérité dans l'expérience subjective.",
+                "PhiH.textAnalysis.ghazali.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.ghazali.answers.a3.content": "La résistance de l'illusion à la raison malgré son mensonge évident peut s'expliquer par plusieurs raisons:<br>- <strong>Force de présence:</strong> L'illusion se caractérise par la force de sa présence et sa clarté dans l'âme.<br>- <strong>Lien avec le sensible:</strong> L'illusion s'appuie sur les sensibles familiers, ce qui la rend convaincante.<br>- <strong>Nature humaine:</strong> L'homme est naturellement enclin à croire ce qui semble clair et familier.<br>- <strong>Dispute continue:</strong> L'illusion ne cesse de disputer même après l'apparition des preuves.<br>- <strong>Représentation du non-sensible par le sensible:</strong> L'illusion présente des concepts abstraits sous une forme sensible familière.",
+                "PhiH.textAnalysis.ghazali.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.ghazali.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.ghazali.analysis.thesis.content": "Al-Ghazali présente l'idée que l'illusion est une force cognitive indépendante dans l'âme humaine, qui perçoit les significations particulières liées aux sensibles, et se distingue par la force de sa présence et sa clarté qui la font ne pas différer des propositions certaines bien qu'elles soient souvent fausses, et que cette force résiste à la raison et ne cesse de lui disputer même après l'apparition des preuves de son erreur.",
+                "PhiH.textAnalysis.ghazali.analysis.mechanisms.title": "Mécanismes de fonctionnement de l'illusion:",
+                "PhiH.textAnalysis.ghazali.analysis.mechanisms.content": "Les mécanismes de l'illusion fonctionnent à travers:<br>- <strong>Représentation par le sensible:</strong> Où l'illusion représente le non-sensible par le sensible.<br>- <strong>Clarté et évidence:</strong> Où les propositions illusoires apparaissent avec une clarté et une évidence non inférieures aux propositions certaines.<br>- <strong>Dépendance à la nature première:</strong> Où la nature première témoigne de l'illusion comme elle témoigne des vérités certaines.<br>- <strong>Dispute continue:</strong> Où l'illusion reste résistante à la raison même après l'apparition des preuves.<br>- <strong>Spécialisation dans le non-sensible:</strong> Où l'illusion dispute particulièrement dans les questions métaphysiques et abstraites.",
+                "PhiH.textAnalysis.ghazali.analysis.consequences.title": "Conséquences de la domination de l'illusion:",
+                "PhiH.textAnalysis.ghazali.analysis.consequences.content": "La domination de l'illusion conduit à:<br>- <strong>Tomber dans l'erreur:</strong> Où l'homme croit à des choses fausses en pensant que ce sont des vérités.<br>- <strong>Difficulté de distinction:</strong> Entre les vérités certaines et les illusions claires.<br>- <strong>Résistance à la connaissance:</strong> Où l'illusion résiste aux preuves rationnelles et aux arguments.<br>- <strong>Stagnation intellectuelle:</strong> Où l'homme reste prisonnier de ses illusions malgré l'apparition des preuves.<br>- <strong>Influence sur la connaissance religieuse:</strong> Où l'illusion influence la compréhension des questions métaphysiques.",
+                "PhiH.textAnalysis.ghazali.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.ghazali.analysis.significance.content": "Le concept d'\"obstination de l'illusion\" chez Al-Ghazali représente une entrée pour comprendre la problématique de la connaissance et la distinction entre les vérités et les illusions. Il met en lumière le conflit entre la raison et l'illusion, et entre la connaissance démonstrative et la perception sensible. Il clarifie également la nécessité de distinguer entre ce dont témoigne la nature première et ce que prouvent les preuves rationnelles, et pousse vers l'établissement d'une connaissance certaine basée sur les arguments et les preuves, loin du pouvoir de l'illusion et des illusions de l'évidence."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.ghazali.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.ghazali.title": "Text Analysis: The Obstinacy of Illusion - Al-Ghazali",
+                "PhiH.textAnalysis.ghazali.introduction.title": "Introduction",
+                "PhiH.textAnalysis.ghazali.introduction.content": "There is no doubt that humanity has won many battles against illusion, but it seems that it has not won the war. This failure can be attributed to many reasons, the most important of which is that we classified it in the category of error and imaginations before understanding its truth, so we missed the target, and we attacked it before understanding its mechanisms of operation, so it hid, reshaped itself and forced us to reconsider our assumptions and plans.",
+                "PhiH.textAnalysis.ghazali.text.title": "Text",
+                "PhiH.textAnalysis.ghazali.text.content": "Proving something while being certain that the six directions<sup>1</sup> are empty of it is impossible, and it is the work of a force in the other cavity of the brain called imaginative<sup>2</sup> ... These illusory propositions<sup>3</sup>, although false, are not distinguished in the soul from the certain primordials<sup>4</sup>, like saying that a person cannot be in two places, but the primary nature<sup>5</sup> testifies to it as the certain primordials testify. And not everything that the primary nature testifies to with certainty is true, but only what the power of reason and its five faculties<sup>6</sup> testify to is true ... And the falsehood of these illusions does not appear to the soul except by the proof of reason, then after knowing the proof also, the dispute of illusion does not cease but remains in dispute ... All propositions of illusion are not false because they agree with reason on the impossibility of a person's existence in two places, but they do not dispute in all geometrical and arithmetical sciences and what is perceived by the senses, because they dispute in what is beyond the sensibles because they represent the non-sensible by the sensible<sup>7</sup>, since they only accept it in the manner of sensibles.",
+                "PhiH.textAnalysis.ghazali.text.source": "Abu Hamid Al-Ghazali, Miḥakk al-Naẓar, p. 13-14",
+                "PhiH.textAnalysis.ghazali.footnotes.title": "Footnotes",
+                "PhiH.textAnalysis.ghazali.footnotes.item1": "<strong>The six directions:</strong> The dimensions of space (up, down, right, left, front, back).",
+                "PhiH.textAnalysis.ghazali.footnotes.item2": "<strong>The imaginative:</strong> In Al-Ghazali, a perception faculty localized at the end of the middle cavity of the brain alongside thought, memory, retention and common sense, and it perceives non-sensible meanings from particular sensibles.",
+                "PhiH.textAnalysis.ghazali.footnotes.item3": "<strong>Propositions:</strong> Logical term meaning sentences expressing judgments and composed of a subject and a predicate as when we say \"the world is eternal\".",
+                "PhiH.textAnalysis.ghazali.footnotes.item4": "<strong>Primordials:</strong> Purely rational, simple and self-evident propositions, like \"the whole is greater than the part\".",
+                "PhiH.textAnalysis.ghazali.footnotes.item5": "<strong>Primary nature:</strong> Natural tendency or instinct closer to common sense.",
+                "PhiH.textAnalysis.ghazali.footnotes.item6": "<strong>Its five faculties:</strong> The sensitive soul, the imaginative soul, the rational soul, the intellectual soul, the sacred prophetic soul.",
+                "PhiH.textAnalysis.ghazali.footnotes.item7": "<strong>The non-sensible by the sensible:</strong> That is, the imaginative judges metaphysical questions like the existence of God and His attributes by relying on what is true for the sensible.",
+                "PhiH.textAnalysis.ghazali.author.title": "Author Presentation",
+                "PhiH.textAnalysis.ghazali.author.alt": "Abu Hamid Al-Ghazali",
+                "PhiH.textAnalysis.ghazali.author.content": "Abu Hamid Al-Ghazali (1058-1111) is an Islamic philosopher and religious scholar, considered one of the most important and influential thinkers of Islam. Born in Tus in Khorasan, he was educated in Nishapur and Baghdad. Al-Ghazali is famous for his philosophical, theological and Sufi works, and for writing \"Iḥyāʾ ʿUlūm al-Dīn\" which is considered one of the most important books of Islamic Sufism. His philosophy is characterized by the combination of reason and revelation, and the attempt to reconcile philosophy and religion. Among his most famous works: \"Iḥyāʾ ʿUlūm al-Dīn\", \"Tahāfut al-Falāsifa\", \"Al-Munqidh min al-Ḍalāl\", \"Maqāṣid al-Falāsifa\". Al-Ghazali is known for his critique of Greek philosophy and for his major contributions to the development of Islamic thought and Islamic philosophy.",
+                "PhiH.textAnalysis.ghazali.lexical.title": "Concepts and Terminology",
+                "PhiH.textAnalysis.ghazali.lexical.item1": "<strong>Illusion:</strong> Cognitive force in the human soul that perceives particular meanings related to sensibles, and is distinguished by the strength of its presence and clarity even though it may be erroneous.",
+                "PhiH.textAnalysis.ghazali.lexical.item2": "<strong>Reason:</strong> The force that perceives universal and abstract truths, and distinguishes between true and false through proofs and arguments.",
+                "PhiH.textAnalysis.ghazali.lexical.item3": "<strong>Primary nature:</strong> The natural tendency of man to believe certain propositions without need for proof, which may be true or false.",
+                "PhiH.textAnalysis.ghazali.lexical.item4": "<strong>Dispute:</strong> The permanent conflict between illusion and reason, where illusion remains resistant even after the appearance of rational proofs of its error.",
+                "PhiH.textAnalysis.ghazali.questions.title": "Comprehension and Analysis Questions",
+                "PhiH.textAnalysis.ghazali.questions.q1": "Compare Al-Ghazali's conception of illusion with what is mentioned in Freud's text.",
+                "PhiH.textAnalysis.ghazali.questions.q2": "Is there a paradox in saying that illusory propositions, although false, are not distinguished from certain propositions?",
+                "PhiH.textAnalysis.ghazali.questions.q3": "How do you explain the resistance of illusion to reason despite its evident falsehood?",
+                "PhiH.textAnalysis.ghazali.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.ghazali.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.ghazali.answers.a1.content": "<strong>Comparison points between Al-Ghazali's and Freud's conceptions of illusion:</strong><br>- <strong>In terms of definition:</strong> Al-Ghazali considers illusion as a cognitive force in the brain that perceives particular meanings, while Freud considers it a psychological trick to escape reality.<br>- <strong>In terms of function:</strong> In Al-Ghazali, illusion is a means of perceiving the sensible world, while in Freud, it is a defense mechanism to protect the soul from conflicts.<br>- <strong>In terms of source:</strong> Al-Ghazali links illusion to perception forces in the brain, while Freud links it to the unconscious and repressed desires.<br>- <strong>In terms of treatment:</strong> Al-Ghazali calls for resisting illusion through reason and proofs, while Freud calls for psychoanalysis to reveal unconscious mechanisms.",
+                "PhiH.textAnalysis.ghazali.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.ghazali.answers.a2.content": "Yes, there is a paradox in saying that illusory propositions, although false, are not distinguished from certain propositions, because:<br>- <strong>In terms of strength and clarity:</strong> Both appear with the same strength and clarity in the soul.<br>- <strong>In terms of self-evidence:</strong> Both seem self-evident and do not require thinking.<br>- <strong>In terms of source:</strong> Both stem from primary nature and human nature.<br>- <strong>The paradox lies in:</strong> The fact that illusion appears as truth despite its falsehood, and truth needs proof despite its truthfulness.<br>- <strong>This paradox highlights:</strong> The difficulty of distinguishing between illusion and truth in subjective experience.",
+                "PhiH.textAnalysis.ghazali.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.ghazali.answers.a3.content": "The resistance of illusion to reason despite its evident falsehood can be explained by several reasons:<br>- <strong>Strength of presence:</strong> Illusion is characterized by the strength of its presence and clarity in the soul.<br>- <strong>Connection with the sensible:</strong> Illusion relies on familiar sensibles, making it convincing.<br>- <strong>Human nature:</strong> Man is naturally inclined to believe what seems clear and familiar.<br>- <strong>Continuous dispute:</strong> Illusion does not cease disputing even after the appearance of proofs.<br>- <strong>Representation of the non-sensible by the sensible:</strong> Illusion presents abstract concepts in a familiar sensible form.",
+                "PhiH.textAnalysis.ghazali.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.ghazali.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.ghazali.analysis.thesis.content": "Al-Ghazali presents the idea that illusion is an independent cognitive force in the human soul, which perceives particular meanings related to sensibles, and is distinguished by the strength of its presence and clarity which make it not differ from certain propositions although they are often false, and that this force resists reason and does not cease disputing it even after the appearance of proofs of its error.",
+                "PhiH.textAnalysis.ghazali.analysis.mechanisms.title": "Mechanisms of illusion functioning:",
+                "PhiH.textAnalysis.ghazali.analysis.mechanisms.content": "The mechanisms of illusion work through:<br>- <strong>Representation by the sensible:</strong> Where illusion represents the non-sensible by the sensible.<br>- <strong>Clarity and self-evidence:</strong> Where illusory propositions appear with clarity and self-evidence not less than certain propositions.<br>- <strong>Dependence on primary nature:</strong> Where primary nature testifies to illusion as it testifies to certain truths.<br>- <strong>Continuous dispute:</strong> Where illusion remains resistant to reason even after the appearance of proofs.<br>- <strong>Specialization in the non-sensible:</strong> Where illusion disputes particularly in metaphysical and abstract questions.",
+                "PhiH.textAnalysis.ghazali.analysis.consequences.title": "Consequences of the domination of illusion:",
+                "PhiH.textAnalysis.ghazali.analysis.consequences.content": "The domination of illusion leads to:<br>- <strong>Falling into error:</strong> Where man believes false things thinking they are truths.<br>- <strong>Difficulty of distinction:</strong> Between certain truths and clear illusions.<br>- <strong>Resistance to knowledge:</strong> Where illusion resists rational proofs and arguments.<br>- <strong>Intellectual stagnation:</strong> Where man remains prisoner of his illusions despite the appearance of proofs.<br>- <strong>Influence on religious knowledge:</strong> Where illusion influences the understanding of metaphysical questions.",
+                "PhiH.textAnalysis.ghazali.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.ghazali.analysis.significance.content": "The concept of \"obstinacy of illusion\" in Al-Ghazali represents an entry point for understanding the problem of knowledge and the distinction between truths and illusions. It highlights the conflict between reason and illusion, and between demonstrative knowledge and sensory perception. It also clarifies the necessity of distinguishing between what primary nature testifies to and what rational proofs establish, and pushes towards establishing certain knowledge based on arguments and proofs, away from the power of illusion and the illusions of self-evidence."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.ghazali.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.ghazali.title": "تحليل النص: عناد الوهم - أبو حامد الغزالي",
+                "PhiH.textAnalysis.ghazali.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.ghazali.introduction.content": "لا شكّ أنّ الإنسانية كسبت معارك عديدة ضدّ الوهم لكن يبدو أنّها لم تكسب الحرب. وقد يعزى هذا الفشل لأسباب عديدة، أهمّها أنّنا صنّفناه ضمن خانة الخطأ والتخيّلات قبل أن نقف على حقيقته فأخطأنا التصويب، وهاجمناه قبل أن نقف على آليات اشتغاله فتوارى وأعاد تشكيل ذاته وفرض علينا إعادة النظر في مسلّماتنا وخططنا.",
+                "PhiH.textAnalysis.ghazali.text.title": "النص",
+                "PhiH.textAnalysis.ghazali.text.content": "إنّ إثبات شيء مع القطع بأن الجهات الست<sup>1</sup> خالية عنه محال، وهو عمل قوة في التجويف الآخر من الدماغ تسمّى وهمية<sup>2</sup> ... وهذه القضايا<sup>3</sup> الوهمية مع أنها كاذبة فهي في النفس لا تتميّز عن الأوليات<sup>4</sup> القطعية، مثل قولك لا يكون شخص في مكانين، بل تشهد به أول الفطرة<sup>5</sup> كما تشهد به الأوليات القطعية. وليس كل ما تشهد به الفطرة قطعاً هو صادق بل الصادق ما تشهد به قوة العقل فقط ومداركه الخمسة<sup>6</sup> ... وهذه الوهميات لا يظهر كذبها للنفس إلا بدليل العقل ثم بعد معرفته الدليل أيضاً لا تنقطع منازعة الوهم بل تبقى على نزاعها ... إن جميع قضايا الوهم ليست كاذبة فإنها توافق العقل في استحالة وجود شخص في مكانين، بل لا تنازع في جميع العلوم الهندسية والحسابية وما يدرك بالحس، لأنها تنازع فيما وراء المحسوسات لأنها تُمثّل غير المحسوس بالمحسوس<sup>7</sup>، إذ لا تقبله إلا على نحو المحسوسات.",
+                "PhiH.textAnalysis.ghazali.text.source": "أبو حامد الغزالي، محكّ النظر، ص 13–14",
+                "PhiH.textAnalysis.ghazali.footnotes.title": "الهوامش",
+                "PhiH.textAnalysis.ghazali.footnotes.item1": "<strong>الجهات الست:</strong> أبعاد المكان (فوق، تحت، يمين، شمال، أمام، خلف).",
+                "PhiH.textAnalysis.ghazali.footnotes.item2": "<strong>الوهميّة:</strong> عند الغزالي ملكة إدراك محدّدة موضعيًا في نهاية التجويف الأوسط للدماغ إلى جانب المفكّرة والذاكرة والحافظة والحس المشترك، وهي تدرك معاني غير محسوسة انطلاقا من المحسوسات الجزئية.",
+                "PhiH.textAnalysis.ghazali.footnotes.item3": "<strong>القضايا:</strong> مصطلح منطقي يعني الجمل المعبّرة عن أحكام والمتألّفة من حامل ومحمول كقولنا \"العالم قديم\".",
+                "PhiH.textAnalysis.ghazali.footnotes.item4": "<strong>الأوّليّات:</strong> قضايا عقلانية خالصة وبسيطة وبديهية، مثل \"الكل أكبر من الجزء\".",
+                "PhiH.textAnalysis.ghazali.footnotes.item5": "<strong>الفطرة:</strong> نزوع طبيعي أو غريزة أقرب للحس السليم.",
+                "PhiH.textAnalysis.ghazali.footnotes.item6": "<strong>مداركه الخمسة:</strong> الروح الحسّاس، الروح الخيالي، الروح العقلي، الروح الفكري، الروح القدسي النبوي.",
+                "PhiH.textAnalysis.ghazali.footnotes.item7": "<strong>غير المحسوس بالمحسوس:</strong> أي أنّ الوهمية تحكم على القضايا الغيبية مثل وجود الله وصفاته بالاعتماد على ما يصدق على المحسوس.",
+                "PhiH.textAnalysis.ghazali.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.ghazali.author.alt": "أبو حامد الغزالي",
+                "PhiH.textAnalysis.ghazali.author.content": "أبو حامد الغزالي (1058-1111م) هو فيلسوف وعالم دين إسلامي، يُعتبر أحد أبرز مفكري الإسلام وأكثرهم تأثيراً. ولد في طوس بخراسان، وتلقى تعليمه في نيسابور وبغداد. اشتهر الغزالي بأعماله الفلسفية والكلامية والصوفية، وبتأليفه لكتاب \"إحياء علوم الدين\" الذي يُعتبر من أهم كتب التصوف الإسلامي. تميزت فلسفته بالجمع بين العقل والنقل، وبمحاولة التوفيق بين الفلسفة والدين. من أشهر مؤلفاته: \"إحياء علوم الدين\"، \"تهافت الفلاسفة\"، \"المنقذ من الضلال\"، \"مقاصد الفلاسفة\". عُرف الغزالي بنقده للفلسفة اليونانية وبمساهماته الكبيرة في تطوير الفكر الإسلامي والفلسفة الإسلامية.",
+                "PhiH.textAnalysis.ghazali.lexical.title": "المفاهيم والمصطلحات",
+                "PhiH.textAnalysis.ghazali.lexical.item1": "<strong>الوهم:</strong> قوة إدراكية في النفس البشرية تدرك المعاني الجزئية المرتبطة بالمحسوسات، وتتميز بقوة حضورها ووضوحها رغم أنها قد تكون خاطئة.",
+                "PhiH.textAnalysis.ghazali.lexical.item2": "<strong>العقل:</strong> القوة المدركة للحقائق الكلية والمجردة، والتي تميز بين الصادق والكاذب من خلال البراهين والأدلة.",
+                "PhiH.textAnalysis.ghazali.lexical.item3": "<strong>الفطرة:</strong> الميل الطبيعي للإنسان نحو تصديق بعض القضايا دون حاجة إلى برهان، وهي قد تكون صادقة أو كاذبة.",
+                "PhiH.textAnalysis.ghazali.lexical.item4": "<strong>المنازعة:</strong> الصراع الدائم بين الوهم والعقل، حيث يبقى الوهم مقاوماً حتى بعد ظهور الأدلة العقلية على خطئه.",
+                "PhiH.textAnalysis.ghazali.questions.title": "أسئلة الفهم والتحليل",
+                "PhiH.textAnalysis.ghazali.questions.q1": "قارن تصوّر الغزالي للوهم مع ما ورد في نص فرويد.",
+                "PhiH.textAnalysis.ghazali.questions.q2": "هل من مفارقة في القول أن القضايا الوهمية رغم كذبها فهي لا تتميّز عن القضايا القطعية ؟",
+                "PhiH.textAnalysis.ghazali.questions.q3": "كيف تفسّر مقاومة الوهم للعقل رغم كذبه البيّن ؟",
+                "PhiH.textAnalysis.ghazali.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.ghazali.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.ghazali.answers.a1.content": "<strong>أوجه المقارنة بين تصور الغزالي وفرويد للوهم:</strong><br>- <strong>من حيث التعريف:</strong> يرى الغزالي أن الوهم قوة إدراكية في الدماغ تدرك المعاني الجزئية، بينما يرى فرويد أن الوهم حيلة نفسية للهروب من الواقع.<br>- <strong>من حيث الوظيفة:</strong> عند الغزالي، الوهم وسيلة لإدراك العالم المحسوس، أما عند فرويد فهو آلية دفاعية لحماية النفس من الصراعات.<br>- <strong>من حيث المصدر:</strong> يربط الغزالي الوهم بقوى الإدراك في الدماغ، بينما يربطه فرويد باللاوعي والرغبات المكبوتة.<br>- <strong>من حيث العلاج:</strong> يدعو الغزالي إلى مقاومة الوهم بالعقل والأدلة، بينما يدعو فرويد إلى التحليل النفسي لكشف الآليات اللاواعية.",
+                "PhiH.textAnalysis.ghazali.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.ghazali.answers.a2.content": "نعم، هناك مفارقة في القول بأن القضايا الوهمية رغم كذبها لا تتميز عن القضايا القطعية، وذلك لأن:<br>- <strong>من حيث القوة والوضوح:</strong> كلاهما يظهران بنفس القوة والوضوح في النفس.<br>- <strong>من حيث البداهة:</strong> كلاهما يبدوان بديهيين ولا يحتاجان إلى تفكير.<br>- <strong>من حيث المصدر:</strong> كلاهما ينبعان من الفطرة والطبيعة البشرية.<br>- <strong>المفارقة تكمن في:</strong> أن الوهم يبدو كالحقيقة رغم كذبه، والحقيقة تحتاج إلى دليل رغم صدقها.<br>- <strong>هذه المفارقة تبرز:</strong> صعوبة التمييز بين الوهم والحقيقة في التجربة الذاتية.",
+                "PhiH.textAnalysis.ghazali.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.ghazali.answers.a3.content": "يمكن تفسير مقاومة الوهم للعقل رغم كذبه البيّن بعدة أسباب:<br>- <strong>قوة الحضور:</strong> الوهم يمتاز بقوة حضوره ووضوحه في النفس.<br>- <strong>الارتباط بالمحسوس:</strong> الوهم يعتمد على المحسوسات المألوفة مما يجعله مقنعاً.<br>- <strong>الطبيعة البشرية:</strong> الإنسان ميال بشكل طبيعي لتصديق ما يبدو واضحاً ومألوفاً.<br>- <strong>المنازعة المستمرة:</strong> الوهم لا ينقطع عن المنازعة حتى بعد ظهور الأدلة.<br>- <strong>تمثيل غير المحسوس بالمحسوس:</strong> الوهم يقدم المفاهيم المجردة في صورة محسوسة مألوفة.",
+                "PhiH.textAnalysis.ghazali.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.ghazali.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.ghazali.analysis.thesis.content": "يطرح الغزالي فكرة أن الوهم قوة إدراكية مستقلة في النفس البشرية، تدرك المعاني الجزئية المرتبطة بالمحسوسات، وتتميز بقوة حضورها ووضوحها الذي يجعلها لا تختلف عن القضايا القطعية رغم كونها كاذبة في كثير من الأحيان، وأن هذه القوة تقاوم العقل ولا تنقطع عن منازعته حتى بعد ظهور الأدلة على خطئها.",
+                "PhiH.textAnalysis.ghazali.analysis.mechanisms.title": "آليات عمل الوهم:",
+                "PhiH.textAnalysis.ghazali.analysis.mechanisms.content": "تعمل آليات الوهم من خلال:<br>- <strong>التمثيل بالمحسوس:</strong> حيث يمثل الوهم غير المحسوس بالمحسوس.<br>- <strong>الوضوح والبداهة:</strong> حيث تظهر القضايا الوهمية بوضوح وبداهة لا يقلان عن القضايا القطعية.<br>- <strong>الاعتماد على الفطرة:</strong> حيث تشهد الفطرة بالوهم كما تشهد بالحقائق القطعية.<br>- <strong>المنازعة المستمرة:</strong> حيث يبقى الوهم مقاوماً للعقل حتى بعد ظهور الأدلة.<br>- <strong>التخصص في غير المحسوسات:</strong> حيث ينازع الوهم خاصة في القضايا الغيبية والمجردة.",
+                "PhiH.textAnalysis.ghazali.analysis.consequences.title": "نتائج سيطرة الوهم:",
+                "PhiH.textAnalysis.ghazali.analysis.consequences.content": "تؤدي سيطرة الوهم إلى:<br>- <strong>الوقوع في الخطأ:</strong> حيث يصدق الإنسان بأمور كاذبة ظناً أنها حقائق.<br>- <strong>صعوبة التمييز:</strong> بين الحقائق القطعية والأوهام الواضحة.<br>- <strong>مقاومة المعرفة:</strong> حيث يقاوم الوهم الأدلة العقلية والبراهين.<br>- <strong>الجمود الفكري:</strong> حيث يظل الإنسان أسيراً لأوهامه رغم ظهور الأدلة.<br>- <strong>التأثير في المعرفة الدينية:</strong> حيث يؤثر الوهم في فهم القضايا الغيبية.",
+                "PhiH.textAnalysis.ghazali.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.ghazali.analysis.significance.content": "يمثل مفهوم \"عناد الوهم\" عند الغزالي مدخلاً لفهم إشكالية المعرفة والتمييز بين الحقائق والأوهام. فهو يبرز الصراع بين العقل والوهم، وبين المعرفة البرهانية والإدراك الحسي. كما يوضح ضرورة التمييز بين ما تشهد به الفطرة وما تثبته الأدلة العقلية، ويدفع نحو تأسيس معرفة يقينية قائمة على البراهين والأدلة، بعيداً عن سلطة الوهم وأوهام البداهة."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

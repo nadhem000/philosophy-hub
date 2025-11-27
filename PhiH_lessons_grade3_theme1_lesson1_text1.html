@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: الرتابة - كارل ياسبرز - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#1e40af">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Blue + Slate Color Palette */
+        :root {
+            --primary-color: #1e40af;
+            --primary-light: #3b82f6;
+            --primary-dark: #1e3a8a;
+            --secondary-color: #475569;
+            --secondary-light: #64748b;
+            --secondary-dark: #334155;
+            --accent-color: #2563eb;
+            --accent-light: #3b82f6;
+            --accent-dark: #1d4ed8;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #f0f9ff;
+            --card-bg: #ffffff;
+            --definition-bg: #dbeafe;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #dbeafe;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(30, 64, 175, 0.1), 0 2px 4px -1px rgba(30, 64, 175, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(30, 64, 175, 0.1), 0 4px 6px -2px rgba(30, 64, 175, 0.05);
+            --gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            --gradient-secondary: linear-gradient(135deg, #475569 0%, #64748b 100%);
+            --gradient-accent: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #3b82f6;
+            --primary-light: #60a5fa;
+            --primary-dark: #2563eb;
+            --secondary-color: #64748b;
+            --secondary-light: #94a3b8;
+            --secondary-dark: #475569;
+            --accent-color: #3b82f6;
+            --accent-light: #60a5fa;
+            --accent-dark: #2563eb;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #1e3a8a;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #1e3a8a;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            --gradient-secondary: linear-gradient(135deg, #64748b 0%, #94a3b8 100%);
+            --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(30, 64, 175, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(71, 85, 105, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(37, 99, 235, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(30, 64, 175, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.jaspers.title">تحليل النص: الرتابة - كارل ياسبرز</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.jaspers.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.jaspers.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.jaspers.introduction.content">
+                    تشكّل الممارسة الإنتاجيّة بُعدا أساسيًا من أبعاد الحياة اليوميّة وضربا من النشاط به يتميّز الإنسان عن  
+                    سائر الأنواع الحيوانيّة. ولكنّ المجتمعات الصناعيّة المعاصرة عقلنت هذا النشاط وفق منطق النجاعة  
+                    والمردوديّة على نحو يفرض التساؤل عمّا إذا كانت الممارسة الإنتاجيّة اليوميّة فضاء يحقّق فيه الفرد  
+                    إنسانيّته وطموحاته الأساسيّة.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.jaspers.text.title">الرتابة</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.jaspers.text.content">
+                        يستمدّ المرء إرادة توجيه حياته فلسفيًا من الظلمة التي تحيط به،  
+                        ظلمة تتأتى عن الضياع الذي هو فيه، وقد حُرم من الحب فراح  
+                        يحدّق في الفراغ، وعن حالة استقالة وإغفال يضيع فيها وقد  
+                        التهمته دواليب الحياة اليوميّة ( ... ) ويتعاظم هذا الإغفال مع هيمنة  
+                        التقنية. في عالم معدّل بساعات ومفتّت بأعمال شاغلة أو خاوية  
+                        تتناقص فيها الاستجابة إلى طموحات إنسانيّة حقيقيّة. ينتهي الفرد  
+                        إلى الإحساس بأنّه لم يعد هو نفسه إلاّ دولابا يُرِكّب في الآلة هنا  
+                        وهناك، فلو تُرك وشأنه لأحسّ بأنّه لا شيء، وبأنّه لم يعد يدري ما  
+                        يفعله. وفي اللحظة التي يبدأ فيها استعادة ذاته، يقبض عليه  
+                        جبروت[1] هذا العالم، مع ذلك، ويُدمجه من جديد في الآلية  
+                        المفترسة فيُعيده إلى شغله الخاوي وإلى ملذّاته التافهة.
+
+                        وولکن میل الفرد إلى التنازل عن کبریائه يو جد فيه من حیث هو  
+                        إنسان[2]. وحتّى لا يتيه بفعل الاستسلام استسلاما تامًا للعالم  
+                        والعادات والشعارات والسكك المتصلّبة، عليه أن ينتزع نفسه من  
+                        العالم بعنف.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.jaspers.text.source">كارل ياسبرز، مدخل إلى الفلسفة، ص 130-131</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.jaspers.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/karl_jaspers.jpg" alt="كارل ياسبرز" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.jaspers.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.jaspers.author.content">
+                            كارل ياسبرز (1883-1969) طبيب وفيلسوف وجودي ألماني، تدرّج في تكوينه من الطبّ النفسي إلى  
+                            الفلسفة. سُحبَ منه كرسيّه الجامعي سنة 1937 بسبب معاداته للنازيّة. من أهمّ  
+                            مؤلفاته: *الفلسفة* (1932)، *في الحقيقة* (1947)، *العقل والوجود* (1935)، *كبار  
+                            الفلاسفة* (في ثلاثة أجزاء)، *الذنب الألماني* (1946)، *مدخل إلى الفلسفة*  
+                            (1950). وفيها اجتهد، كفيلسوف وجوديّ، في ترجمة محنة الوجود الأساسيّة  
+                            التي تتجلّ في تجربة الفشل والشرّ والعذاب ... باعتبارها وضعيّات قصوى  
+                            تشهد على نقص في الوجود يشكّل منطلقا للفلسفة.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.jaspers.lexical.title">المفاهيم والمصطلحات</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.jaspers.lexical.item1"><strong>جبروت:</strong> استعارة يُشبّه فيها الكاتب الحضارة الصناعية بجبّار يُحكم بواسطة آلياته المؤسسيّة وإجراءاته العقلانيّة سيطرته الكاملة على الأفراد فيُخضعُهُم إلى نوع من القدريّة المُهلكة.</li>
+                    <li data-i18n="PhiH.textAnalysis.jaspers.lexical.item2"><strong>السكك المتصلبة:</strong> ترمز إلى الأنماط الثابتة والجامدة للحياة اليومية التي تفرضها المجتمعات الصناعية، والتي تقيد حرية الفرد وإبداعه.</li>
+                    <li data-i18n="PhiH.textAnalysis.jaspers.lexical.item3"><strong>الاستسلام:</strong> حالة انقياد الفرد للعالم الخارجي وقبوله السلبي للعادات والتقاليد والشعارات السائدة دون مساءلة أو نقد.</li>
+                    <li data-i18n="PhiH.textAnalysis.jaspers.lexical.item4"><strong>الآلية المفترسة:</strong> تشبيه للنظام الصناعي الحديث الذي يبتلع الفرد ويحوله إلى مجرد ترس في آلة كبيرة، مما يفقد الإنسان إنسانيته وأصالته.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.jaspers.questions.title">أسئلة الفهم والتحليل</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.jaspers.questions.q1">أشرَحُ دلالة مجاز الساعات في حديث الكاتب عن ((عالَم تنظّمه السّاعات)).</li>
+                    <li data-i18n="PhiH.textAnalysis.jaspers.questions.q2">أبحَثُ في النصّ عن مفرداتٍ تتقاطع مع هذا المجاز.</li>
+                    <li data-i18n="PhiH.textAnalysis.jaspers.questions.q3">أَشرَحُ مجاز ((السّكك المُتّصلّبة)) في النصّ.</li>
+                    <li data-i18n="PhiH.textAnalysis.jaspers.questions.q4">أُحَرِّرُ فقرة أكشِفُ فيها من خلال أمثلة عن ((استسلام الفرد للعالم وللعادات والشعارات والسّكك المُتصلّبة)).</li>
+                    <li data-i18n="PhiH.textAnalysis.jaspers.questions.q5">عن أيّ عنف يتحدث الكاتب في قوله ((أن ينتزعَ نفسَه منه بعنفٍ.)): هل يتعلّق الأمر بعنف تجاه الآخرين وتجاه المؤسّسات الاجتماعيّة أم بعنف تجاه الذات ؟ علّل إجابتك.</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.jaspers.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.jaspers.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.jaspers.answers.a1.content">
+                        مجاز الساعات يرمز إلى التنظيم الصارم والآلي للحياة في المجتمعات الصناعية، حيث يتم تقسيم الوقت بدقة وتنظيم الحياة وفقًا لجدول زمني صارم. هذا التنظيم يفرض رتابة وروتينًا على حياة الأفراد، ويحولهم إلى مجرد أجزاء في آلة كبيرة، مما يفقد الحياة spontaneity والإبداع.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.jaspers.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.jaspers.answers.a2.content">
+                        مفردات تتقاطع مع مجاز الساعات في النص: "دواليب الحياة اليومية"، "الآلية المفترسة"، "دولابا يُركّب في الآلة". هذه المفردات تشترك في تصوير الإنسان كجزء من آلة كبيرة، تفقده فرديته وحريته.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.jaspers.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.jaspers.answers.a3.content">
+                        مجاز "السكك المتصلبة" يرمز إلى المسارات الثابتة والجامدة التي تفرضها المجتمعات الصناعية على الأفراد. هذه المسارات تشمل العادات والتقاليد والشعارات السائدة التي تقيد حرية الفرد وتحول دون إبداعه وتفرده.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.jaspers.answers.a4.title">الإجابة عن السؤال الرابع:</h5>
+                    <p data-i18n="PhiH.textAnalysis.jaspers.answers.a4.content">
+                        يمكن أن تتضمن الفقرة أمثلة مثل: انصياع الأفراد لروتين العمل اليومي دون مساءلة، تقليد العادات الاجتماعية دون تفكير نقدي، قبول الشعارات الإعلامية والسياسية دون تمحيص، والسير في مسارات الحياة المحددة مسبقًا (الدراسة، العمل، الزواج) دون محاولة الخروج عنها أو إعادة النظر فيها.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.jaspers.answers.a5.title">الإجابة عن السؤال الخامس:</h5>
+                    <p data-i18n="PhiH.textAnalysis.jaspers.answers.a5.content">
+                        العنف الذي يتحدث عنه ياسبرز هو عنف تجاه الذات وليس تجاه الآخرين أو المؤسسات. فهو يدعو الفرد إلى انتزاع نفسه من سيطرة العالم الخارجي بقوة إرادة وعزيمة، مما يتطلب جهدًا كبيرًا ومقاومة للراحة والاستسلام. هذا العنف هو عملية تحرير ذاتي تتطلب كسر قيود العادات والتقاليد والشعارات السائدة.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.jaspers.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.jaspers.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.jaspers.analysis.thesis.content">
+                        يطرح ياسبرز فكرة أن الحياة في المجتمعات الصناعية المعاصرة تفرض على الفرد رتابة واستلابًا، حيث يتحول إلى مجرد ترس في آلة كبيرة، مما يفقد حياته معناها وأصالته. يدعو ياسبرز إلى مقاومة هذا الاستلاب من خلال عنف ذاتي ينتزع به الفرد نفسه من سيطرة العالم الخارجي.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.jaspers.analysis.mechanisms.title">آليات الاستلاب:</h5>
+                    <p data-i18n="PhiH.textAnalysis.jaspers.analysis.mechanisms.content">
+                        تعمل آليات الاستلاب في المجتمعات الصناعية من خلال:
+                        <br>- <strong>التنظيم الزمني الصارم:</strong> حيث يتم تقسيم الوقت بدقة وفقًا لجدول زمني يفرض رتابة على الحياة.
+                        <br>- <strong>تفتيت العمل:</strong> حيث يصبح العمل مجرد مهام روتينية تفتقر إلى الإبداع والمعنى.
+                        <br>- <strong>العادات والشعارات:</strong> التي تفرض أنماطًا ثابتة للحياة تقيد حرية الفرد.
+                        <br>- <strong>الآلية الصناعية:</strong> التي تحول الفرد إلى مجرد جزء من آلة كبيرة، تفقده فرديته.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.jaspers.analysis.consequences.title">نتائج الاستلاب:</h5>
+                    <p data-i18n="PhiH.textAnalysis.jaspers.analysis.consequences.content">
+                        - <strong>فقدان المعنى:</strong> حيث تشعر الحياة بالفراغ والعدم.
+                        <br>- <strong>الاستسلام:</strong> حيث ينقاد الفرد للعالم الخارجي دون مقاومة.
+                        <br>- <strong>فقدان الأصالة:</strong> حيث يتحول الفرد إلى نسخة مكررة من الآخرين.
+                        <br>- <strong>الرتابة:</strong> حيث تصبح الحياة مجرد روتين متكرر يفتقر إلى الإبداع والتجديد.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.jaspers.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.jaspers.analysis.significance.content">
+                        يحمل مفهوم الرتابة عند ياسبرز دلالات وجودية عميقة، حيث يمثل الاستلاب تهديدًا للوجود الأصيل. يدعو ياسبرز إلى مقاومة هذا الاستلاب من خلال عنف ذاتي، ليس كعنف مادي، بل كقوة إرادة وعزيمة تمكن الفرد من انتزاع نفسه من سيطرة العالم الخارجي. هذا العنف هو عملية تحرير ذاتي تتطلب كسر قيود العادات والتقاليد والشعارات السائدة، والسعي نحو وجود أصيل ومليء بالمعنى.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.jaspers.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.jaspers.title": "Analyse du texte: La Routine - Karl Jaspers",
+                "PhiH.textAnalysis.jaspers.introduction.title": "Introduction",
+                "PhiH.textAnalysis.jaspers.introduction.content": "La pratique productive constitue une dimension essentielle de la vie quotidienne et une forme d'activité par laquelle l'être humain se distingue des autres espèces animales. Mais les sociétés industrielles contemporaines ont rationalisé cette activité selon une logique d'efficacité et de rentabilité, ce qui nous amène à nous demander si la pratique productive quotidienne est un espace où l'individu réalise son humanité et ses aspirations fondamentales.",
+                "PhiH.textAnalysis.jaspers.text.title": "La Routine",
+                "PhiH.textAnalysis.jaspers.text.content": "L'individu tire la volonté d'orienter sa vie philosophiquement des ténèbres qui l'entourent, des ténèbres qui proviennent de la perdition dans laquelle il se trouve, privé d'amour, il se met à fixer le vide, et d'un état de démission et d'oubli dans lequel il se perd, dévoré par les rouages de la vie quotidienne ( ... ) et cet oubli s'accroît avec la domination de la technique. Dans un monde réglé par les horaires et fragmenté par des occupations absorbantes ou vides où diminue la réponse aux aspirations humaines authentiques. L'individu finit par avoir le sentiment qu'il n'est plus lui-même qu'un rouage monté dans la machine ici et là, que s'il était laissé à lui-même, il se sentirait n'être rien, et qu'il ne saurait plus ce qu'il fait. Et au moment où il commence à se ressaisir, la toute-puissance de ce monde s'empare de lui, pourtant, et le réintègre dans le mécanisme dévorant, le ramenant à son travail vide et à ses plaisirs futiles. Mais la tendance de l'individu à renoncer à sa fierté se trouve en lui en tant qu'être humain. Et pour ne pas se perdre en se livrant totalement au monde, aux habitudes, aux slogans et aux rails rigides, il doit s'arracher au monde avec violence.",
+                "PhiH.textAnalysis.jaspers.text.source": "Karl Jaspers, Introduction à la philosophie, pp.130-131",
+                "PhiH.textAnalysis.jaspers.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.jaspers.author.alt": "Karl Jaspers",
+                "PhiH.textAnalysis.jaspers.author.content": "Karl Jaspers (1883-1969) médecin et philosophe existentialiste allemand, il est passé progressivement de la psychiatrie à la philosophie. Sa chaire universitaire lui a été retirée en 1937 en raison de son opposition au nazisme. Parmi ses œuvres les plus importantes : *La Philosophie* (1932), *De la Vérité* (1947), *Raison et Existence* (1935), *Les Grands Philosophes* (en trois volumes), *La Culpabilité allemande* (1946), *Introduction à la philosophie* (1950). Dans ces œuvres, en tant que philosophe existentialiste, il s'est efforcé de traduire la détresse fondamentale de l'existence qui se manifeste dans l'expérience de l'échec, du mal et de la souffrance... en tant que situations limites qui témoignent d'un manque dans l'être constituant le point de départ de la philosophie.",
+                "PhiH.textAnalysis.jaspers.lexical.title": "Concepts et terminologie",
+                "PhiH.textAnalysis.jaspers.lexical.item1": "<strong>Toute-puissance:</strong> Métaphore dans laquelle l'auteur compare la civilisation industrielle à un tyran qui, par ses mécanismes institutionnels et ses procédures rationnelles, impose sa domination totale sur les individus, les soumettant à une sorte de fatalité destructrice.",
+                "PhiH.textAnalysis.jaspers.lexical.item2": "<strong>Rails rigides:</strong> Symbolisent les modèles fixes et rigides de la vie quotidienne imposés par les sociétés industrielles, qui entravent la liberté et la créativité de l'individu.",
+                "PhiH.textAnalysis.jaspers.lexical.item3": "<strong>Soumission:</strong> État dans lequel l'individu se soumet au monde extérieur et accepte passivement les habitudes, traditions et slogans dominants sans interrogation ni critique.",
+                "PhiH.textAnalysis.jaspers.lexical.item4": "<strong>Mécanisme dévorant:</strong> Comparaison du système industriel moderne qui absorbe l'individu et le transforme en simple rouage d'une grande machine, privant l'être humain de son humanité et de son authenticité.",
+                "PhiH.textAnalysis.jaspers.questions.title": "Questions de compréhension et d'analyse",
+                "PhiH.textAnalysis.jaspers.questions.q1": "Expliquez la signification de la métaphore des horaires dans le discours de l'auteur sur un ((monde réglé par les horaires)).",
+                "PhiH.textAnalysis.jaspers.questions.q2": "Recherchez dans le texte des termes qui recoupent cette métaphore.",
+                "PhiH.textAnalysis.jaspers.questions.q3": "Expliquez la métaphore des ((rails rigides)) dans le texte.",
+                "PhiH.textAnalysis.jaspers.questions.q4": "Rédigez un paragraphe dans lequel vous révélez, à travers des exemples, la ((soumission de l'individu au monde, aux habitudes, aux slogans et aux rails rigides)).",
+                "PhiH.textAnalysis.jaspers.questions.q5": "De quelle violence parle l'auteur lorsqu'il dit ((s'arracher au monde avec violence)) : s'agit-il de violence envers les autres et envers les institutions sociales ou de violence envers soi-même ? Justifiez votre réponse.",
+                "PhiH.textAnalysis.jaspers.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.jaspers.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.jaspers.answers.a1.content": "La métaphore des horaires symbolise l'organisation stricte et mécanique de la vie dans les sociétés industrielles, où le temps est divisé avec précision et la vie organisée selon un emploi du temps rigide. Cette organisation impose une routine et une monotonie à la vie des individus, les transformant en simples parties d'une grande machine, privant la vie de spontanéité et de créativité.",
+                "PhiH.textAnalysis.jaspers.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.jaspers.answers.a2.content": "Termes qui recoupent la métaphore des horaires dans le texte : \"rouages de la vie quotidienne\", \"mécanisme dévorant\", \"rouage monté dans la machine\". Ces termes partagent l'image de l'être humain comme partie d'une grande machine, lui faisant perdre son individualité et sa liberté.",
+                "PhiH.textAnalysis.jaspers.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.jaspers.answers.a3.content": "La métaphore des \"rails rigides\" symbolise les trajectoires fixes et rigides imposées aux individus par les sociétés industrielles. Ces trajectoires incluent les habitudes, traditions et slogans dominants qui entravent la liberté de l'individu et empêchent sa créativité et son unicité.",
+                "PhiH.textAnalysis.jaspers.answers.a4.title": "Réponse à la quatrième question:",
+                "PhiH.textAnalysis.jaspers.answers.a4.content": "Le paragraphe peut inclure des exemples tels que : la soumission des individus à la routine du travail quotidien sans remise en question, l'imitation des habitudes sociales sans pensée critique, l'acceptation des slogans médiatiques et politiques sans examen, et le suivi des trajectoires de vie prédéfinies (études, travail, mariage) sans tentative de s'en échapper ou de les reconsidérer.",
+                "PhiH.textAnalysis.jaspers.answers.a5.title": "Réponse à la cinquième question:",
+                "PhiH.textAnalysis.jaspers.answers.a5.content": "La violence dont parle Jaspers est une violence envers soi-même et non envers les autres ou les institutions. Il appelle l'individu à s'arracher à la domination du monde extérieur par la force de la volonté et de la détermination, ce qui nécessite un effort considérable et une résistance au confort et à la soumission. Cette violence est un processus de libération de soi qui nécessite de briser les chaînes des habitudes, traditions et slogans dominants.",
+                "PhiH.textAnalysis.jaspers.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.jaspers.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.jaspers.analysis.thesis.content": "Jaspers présente l'idée que la vie dans les sociétés industrielles contemporaines impose à l'individu une routine et une aliénation, le transformant en simple rouage d'une grande machine, privant sa vie de sens et d'authenticité. Jaspers appelle à résister à cette aliénation par une violence envers soi-même qui permet à l'individu de s'arracher à la domination du monde extérieur.",
+                "PhiH.textAnalysis.jaspers.analysis.mechanisms.title": "Mécanismes de l'aliénation:",
+                "PhiH.textAnalysis.jaspers.analysis.mechanisms.content": "Les mécanismes de l'aliénation dans les sociétés industrielles fonctionnent à travers :<br>- <strong>L'organisation temporelle stricte:</strong> où le temps est divisé avec précision selon un emploi du temps qui impose une routine à la vie.<br>- <strong>La fragmentation du travail:</strong> où le travail devient de simples tâches routinières manquant de créativité et de sens.<br>- <strong>Les habitudes et slogans:</strong> qui imposent des modèles de vie fixes entravent la liberté de l'individu.<br>- <strong>Le mécanisme industriel:</strong> qui transforme l'individu en simple partie d'une grande machine, lui faisant perdre son individualité.",
+                "PhiH.textAnalysis.jaspers.analysis.consequences.title": "Conséquences de l'aliénation:",
+                "PhiH.textAnalysis.jaspers.analysis.consequences.content": "- <strong>Perte de sens:</strong> où la vie est ressentie comme vide et néant.<br>- <strong>Soumission:</strong> où l'individu se soumet au monde extérieur sans résistance.<br>- <strong>Perte d'authenticité:</strong> où l'individu devient une copie répétée des autres.<br>- <strong>Routine:</strong> où la vie devient un simple rituel répétitif manquant de créativité et de renouveau.",
+                "PhiH.textAnalysis.jaspers.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.jaspers.analysis.significance.content": "Le concept de routine chez Jaspers porte des significations existentielles profondes, où l'aliénation représente une menace pour l'existence authentique. Jaspers appelle à résister à cette aliénation par une violence envers soi-même, non pas comme une violence physique, mais comme une force de volonté et de détermination permettant à l'individu de s'arracher à la domination du monde extérieur. Cette violence est un processus de libération de soi qui nécessite de briser les chaînes des habitudes, traditions et slogans dominants, et de tendre vers une existence authentique et pleine de sens."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.jaspers.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.jaspers.title": "Text Analysis: Routine - Karl Jaspers",
+                "PhiH.textAnalysis.jaspers.introduction.title": "Introduction",
+                "PhiH.textAnalysis.jaspers.introduction.content": "Productive practice constitutes an essential dimension of daily life and a form of activity through which human beings distinguish themselves from other animal species. But contemporary industrial societies have rationalized this activity according to a logic of efficiency and productivity, which raises the question of whether daily productive practice is a space where the individual realizes their humanity and fundamental aspirations.",
+                "PhiH.textAnalysis.jaspers.text.title": "Routine",
+                "PhiH.textAnalysis.jaspers.text.content": "The individual derives the will to direct their life philosophically from the darkness that surrounds them, darkness that comes from the loss in which they find themselves, deprived of love, they begin to stare into the void, and from a state of resignation and neglect in which they are lost, devoured by the wheels of daily life ( ... ) and this neglect grows with the domination of technology. In a world regulated by clocks and fragmented by absorbing or empty occupations in which the response to authentic human aspirations diminishes. The individual ends up feeling that they are no longer themselves but a cog mounted in the machine here and there, that if left to themselves, they would feel like nothing, and that they no longer know what they are doing. And at the moment when they begin to regain themselves, the omnipotence of this world seizes them, however, and reintegrates them into the devouring mechanism, bringing them back to their empty work and their futile pleasures. But the individual's tendency to renounce their pride is found in them as a human being. And so as not to get lost by surrendering completely to the world, habits, slogans and rigid tracks, they must tear themselves away from the world with violence.",
+                "PhiH.textAnalysis.jaspers.text.source": "Karl Jaspers, Introduction to Philosophy, pp.130-131",
+                "PhiH.textAnalysis.jaspers.author.title": "Author Presentation",
+                "PhiH.textAnalysis.jaspers.author.alt": "Karl Jaspers",
+                "PhiH.textAnalysis.jaspers.author.content": "Karl Jaspers (1883-1969) German physician and existentialist philosopher, he progressed from psychiatry to philosophy. His university chair was withdrawn in 1937 due to his opposition to Nazism. Among his most important works: *Philosophy* (1932), *On Truth* (1947), *Reason and Existence* (1935), *The Great Philosophers* (in three volumes), *The German Guilt* (1946), *Introduction to Philosophy* (1950). In these works, as an existentialist philosopher, he endeavored to translate the fundamental distress of existence that manifests in the experience of failure, evil and suffering... as limit situations that testify to a lack in being constituting the starting point of philosophy.",
+                "PhiH.textAnalysis.jaspers.lexical.title": "Concepts and Terminology",
+                "PhiH.textAnalysis.jaspers.lexical.item1": "<strong>Omnipotence:</strong> Metaphor in which the author compares industrial civilization to a tyrant who, through institutional mechanisms and rational procedures, imposes total domination over individuals, subjecting them to a kind of destructive fate.",
+                "PhiH.textAnalysis.jaspers.lexical.item2": "<strong>Rigid tracks:</strong> Symbolize the fixed and rigid patterns of daily life imposed by industrial societies, which hinder individual freedom and creativity.",
+                "PhiH.textAnalysis.jaspers.lexical.item3": "<strong>Submission:</strong> State in which the individual submits to the external world and passively accepts dominant habits, traditions and slogans without questioning or criticism.",
+                "PhiH.textAnalysis.jaspers.lexical.item4": "<strong>Devouring mechanism:</strong> Comparison of the modern industrial system that absorbs the individual and transforms them into a mere cog in a large machine, depriving the human being of their humanity and authenticity.",
+                "PhiH.textAnalysis.jaspers.questions.title": "Comprehension and Analysis Questions",
+                "PhiH.textAnalysis.jaspers.questions.q1": "Explain the meaning of the clock metaphor in the author's discourse about a ((world regulated by clocks)).",
+                "PhiH.textAnalysis.jaspers.questions.q2": "Search the text for terms that intersect with this metaphor.",
+                "PhiH.textAnalysis.jaspers.questions.q3": "Explain the metaphor of ((rigid tracks)) in the text.",
+                "PhiH.textAnalysis.jaspers.questions.q4": "Write a paragraph in which you reveal, through examples, the ((submission of the individual to the world, habits, slogans and rigid tracks)).",
+                "PhiH.textAnalysis.jaspers.questions.q5": "What violence is the author talking about when he says ((tear oneself away from it with violence)): is it violence towards others and towards social institutions or violence towards oneself? Justify your answer.",
+                "PhiH.textAnalysis.jaspers.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.jaspers.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.jaspers.answers.a1.content": "The clock metaphor symbolizes the strict and mechanical organization of life in industrial societies, where time is precisely divided and life is organized according to a rigid schedule. This organization imposes routine and monotony on individuals' lives, transforming them into mere parts of a large machine, depriving life of spontaneity and creativity.",
+                "PhiH.textAnalysis.jaspers.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.jaspers.answers.a2.content": "Terms that intersect with the clock metaphor in the text: \"wheels of daily life\", \"devouring mechanism\", \"cog mounted in the machine\". These terms share the image of the human being as part of a large machine, causing them to lose their individuality and freedom.",
+                "PhiH.textAnalysis.jaspers.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.jaspers.answers.a3.content": "The metaphor of \"rigid tracks\" symbolizes the fixed and rigid trajectories imposed on individuals by industrial societies. These trajectories include dominant habits, traditions and slogans that hinder individual freedom and prevent their creativity and uniqueness.",
+                "PhiH.textAnalysis.jaspers.answers.a4.title": "Answer to the fourth question:",
+                "PhiH.textAnalysis.jaspers.answers.a4.content": "The paragraph can include examples such as: individuals' submission to daily work routine without questioning, imitation of social habits without critical thinking, acceptance of media and political slogans without scrutiny, and following predefined life trajectories (studies, work, marriage) without attempting to escape them or reconsider them.",
+                "PhiH.textAnalysis.jaspers.answers.a5.title": "Answer to the fifth question:",
+                "PhiH.textAnalysis.jaspers.answers.a5.content": "The violence Jaspers is talking about is violence towards oneself and not towards others or institutions. He calls on the individual to tear themselves away from the domination of the external world through willpower and determination, which requires considerable effort and resistance to comfort and submission. This violence is a process of self-liberation that requires breaking the chains of dominant habits, traditions and slogans.",
+                "PhiH.textAnalysis.jaspers.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.jaspers.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.jaspers.analysis.thesis.content": "Jaspers presents the idea that life in contemporary industrial societies imposes routine and alienation on the individual, transforming them into a mere cog in a large machine, depriving their life of meaning and authenticity. Jaspers calls for resisting this alienation through self-violence that allows the individual to tear themselves away from the domination of the external world.",
+                "PhiH.textAnalysis.jaspers.analysis.mechanisms.title": "Mechanisms of alienation:",
+                "PhiH.textAnalysis.jaspers.analysis.mechanisms.content": "The mechanisms of alienation in industrial societies work through:<br>- <strong>Strict temporal organization:</strong> where time is precisely divided according to a schedule that imposes routine on life.<br>- <strong>Work fragmentation:</strong> where work becomes mere routine tasks lacking creativity and meaning.<br>- <strong>Habits and slogans:</strong> that impose fixed life models hinder individual freedom.<br>- <strong>Industrial mechanism:</strong> that transforms the individual into a mere part of a large machine, causing them to lose their individuality.",
+                "PhiH.textAnalysis.jaspers.analysis.consequences.title": "Consequences of alienation:",
+                "PhiH.textAnalysis.jaspers.analysis.consequences.content": "- <strong>Loss of meaning:</strong> where life is felt as empty and nothingness.<br>- <strong>Submission:</strong> where the individual submits to the external world without resistance.<br>- <strong>Loss of authenticity:</strong> where the individual becomes a repeated copy of others.<br>- <strong>Routine:</strong> where life becomes a mere repetitive ritual lacking creativity and renewal.",
+                "PhiH.textAnalysis.jaspers.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.jaspers.analysis.significance.content": "The concept of routine in Jaspers carries deep existential meanings, where alienation represents a threat to authentic existence. Jaspers calls for resisting this alienation through self-violence, not as physical violence, but as willpower and determination that allows the individual to tear themselves away from the domination of the external world. This violence is a process of self-liberation that requires breaking the chains of dominant habits, traditions and slogans, and striving towards an authentic existence full of meaning."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.jaspers.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.jaspers.title": "تحليل النص: الرتابة - كارل ياسبرز",
+                "PhiH.textAnalysis.jaspers.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.jaspers.introduction.content": "تشكّل الممارسة الإنتاجيّة بُعدا أساسيًا من أبعاد الحياة اليوميّة وضربا من النشاط به يتميّز الإنسان عن سائر الأنواع الحيوانيّة. ولكنّ المجتمعات الصناعيّة المعاصرة عقلنت هذا النشاط وفق منطق النجاعة والمردوديّة على نحو يفرض التساؤل عمّا إذا كانت الممارسة الإنتاجيّة اليوميّة فضاء يحقّق فيه الفرد إنسانيّته وطموحاته الأساسيّة.",
+                "PhiH.textAnalysis.jaspers.text.title": "الرتابة",
+                "PhiH.textAnalysis.jaspers.text.content": "يستمدّ المرء إرادة توجيه حياته فلسفيًا من الظلمة التي تحيط به، ظلمة تتأتى عن الضياع الذي هو فيه، وقد حُرم من الحب فراح يحدّق في الفراغ، وعن حالة استقالة وإغفال يضيع فيها وقد التهمته دواليب الحياة اليوميّة ( ... ) ويتعاظم هذا الإغفال مع هيمنة التقنية. في عالم معدّل بساعات ومفتّت بأعمال شاغلة أو خاوية تتناقص فيها الاستجابة إلى طموحات إنسانيّة حقيقيّة. ينتهي الفرد إلى الإحساس بأنّه لم يعد هو نفسه إلاّ دولابا يُرِكّب في الآلة هنا وهناك، فلو تُرك وشأنه لأحسّ بأنّه لا شيء، وبأنّه لم يعد يدري ما يفعله. وفي اللحظة التي يبدأ فيها استعادة ذاته، يقبض عليه جبروت[1] هذا العالم، مع ذلك، ويُدمجه من جديد في الآلية المفترسة فيُعيده إلى شغله الخاوي وإلى ملذّاته التافهة. وولكن ميل الفرد إلى التنازل عن كبريائه يوجد فيه من حيث هو إنسان[2]. وحتّى لا يتيه بفعل الاستسلام استسلاما تامًا للعالم والعادات والشعارات والسكك المتصلّبة، عليه أن ينتزع نفسه من العالم بعنف.",
+                "PhiH.textAnalysis.jaspers.text.source": "كارل ياسبرز، مدخل إلى الفلسفة، ص 130-131",
+                "PhiH.textAnalysis.jaspers.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.jaspers.author.alt": "كارل ياسبرز",
+                "PhiH.textAnalysis.jaspers.author.content": "كارل ياسبرز (1883-1969) طبيب وفيلسوف وجودي ألماني، تدرّج في تكوينه من الطبّ النفسي إلى الفلسفة. سُحبَ منه كرسيّه الجامعي سنة 1937 بسبب معاداته للنازيّة. من أهمّ مؤلفاته: *الفلسفة* (1932)، *في الحقيقة* (1947)، *العقل والوجود* (1935)، *كبار الفلاسفة* (في ثلاثة أجزاء)، *الذنب الألماني* (1946)، *مدخل إلى الفلسفة* (1950). وفيها اجتهد، كفيلسوف وجوديّ، في ترجمة محنة الوجود الأساسيّة التي تتجلّ في تجربة الفشل والشرّ والعذاب ... باعتبارها وضعيّات قصوى تشهد على نقص في الوجود يشكّل منطلقا للفلسفة.",
+                "PhiH.textAnalysis.jaspers.lexical.title": "المفاهيم والمصطلحات",
+                "PhiH.textAnalysis.jaspers.lexical.item1": "<strong>جبروت:</strong> استعارة يُشبّه فيها الكاتب الحضارة الصناعية بجبّار يُحكم بواسطة آلياته المؤسسيّة وإجراءاته العقلانيّة سيطرته الكاملة على الأفراد فيُخضعُهُم إلى نوع من القدريّة المُهلكة.",
+                "PhiH.textAnalysis.jaspers.lexical.item2": "<strong>السكك المتصلبة:</strong> ترمز إلى الأنماط الثابتة والجامدة للحياة اليومية التي تفرضها المجتمعات الصناعية، والتي تقيد حرية الفرد وإبداعه.",
+                "PhiH.textAnalysis.jaspers.lexical.item3": "<strong>الاستسلام:</strong> حالة انقياد الفرد للعالم الخارجي وقبوله السلبي للعادات والتقاليد والشعارات السائدة دون مساءلة أو نقد.",
+                "PhiH.textAnalysis.jaspers.lexical.item4": "<strong>الآلية المفترسة:</strong> تشبيه للنظام الصناعي الحديث الذي يبتلع الفرد ويحوله إلى مجرد ترس في آلة كبيرة، مما يفقد الإنسان إنسانيته وأصالته.",
+                "PhiH.textAnalysis.jaspers.questions.title": "أسئلة الفهم والتحليل",
+                "PhiH.textAnalysis.jaspers.questions.q1": "أشرَحُ دلالة مجاز الساعات في حديث الكاتب عن ((عالَم تنظّمه السّاعات)).",
+                "PhiH.textAnalysis.jaspers.questions.q2": "أبحَثُ في النصّ عن مفرداتٍ تتقاطع مع هذا المجاز.",
+                "PhiH.textAnalysis.jaspers.questions.q3": "أَشرَحُ مجاز ((السّكك المُتّصلّبة)) في النصّ.",
+                "PhiH.textAnalysis.jaspers.questions.q4": "أُحَرِّرُ فقرة أكشِفُ فيها من خلال أمثلة عن ((استسلام الفرد للعالم وللعادات والشعارات والسّكك المُتصلّبة)).",
+                "PhiH.textAnalysis.jaspers.questions.q5": "عن أيّ عنف يتحدث الكاتب في قوله ((أن ينتزعَ نفسَه منه بعنفٍ.)): هل يتعلّق الأمر بعنف تجاه الآخرين وتجاه المؤسّسات الاجتماعيّة أم بعنف تجاه الذات ؟ علّل إجابتك.",
+                "PhiH.textAnalysis.jaspers.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.jaspers.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.jaspers.answers.a1.content": "مجاز الساعات يرمز إلى التنظيم الصارم والآلي للحياة في المجتمعات الصناعية، حيث يتم تقسيم الوقت بدقة وتنظيم الحياة وفقًا لجدول زمني صارم. هذا التنظيم يفرض رتابة وروتينًا على حياة الأفراد، ويحولهم إلى مجرد أجزاء في آلة كبيرة، مما يفقد الحياة spontaneity والإبداع.",
+                "PhiH.textAnalysis.jaspers.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.jaspers.answers.a2.content": "مفردات تتقاطع مع مجاز الساعات في النص: \"دواليب الحياة اليومية\"، \"الآلية المفترسة\"، \"دولابا يُركّب في الآلة\". هذه المفردات تشترك في تصوير الإنسان كجزء من آلة كبيرة، تفقده فرديته وحريته.",
+                "PhiH.textAnalysis.jaspers.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.jaspers.answers.a3.content": "مجاز \"السكك المتصلبة\" يرمز إلى المسارات الثابتة والجامدة التي تفرضها المجتمعات الصناعية على الأفراد. هذه المسارات تشمل العادات والتقاليد والشعارات السائدة التي تقيد حرية الفرد وتحول دون إبداعه وتفرده.",
+                "PhiH.textAnalysis.jaspers.answers.a4.title": "الإجابة عن السؤال الرابع:",
+                "PhiH.textAnalysis.jaspers.answers.a4.content": "يمكن أن تتضمن الفقرة أمثلة مثل: انصياع الأفراد لروتين العمل اليومي دون مساءلة، تقليد العادات الاجتماعية دون تفكير نقدي، قبول الشعارات الإعلامية والسياسية دون تمحيص، والسير في مسارات الحياة المحددة مسبقًا (الدراسة، العمل، الزواج) دون محاولة الخروج عنها أو إعادة النظر فيها.",
+                "PhiH.textAnalysis.jaspers.answers.a5.title": "الإجابة عن السؤال الخامس:",
+                "PhiH.textAnalysis.jaspers.answers.a5.content": "العنف الذي يتحدث عنه ياسبرز هو عنف تجاه الذات وليس تجاه الآخرين أو المؤسسات. فهو يدعو الفرد إلى انتزاع نفسه من سيطرة العالم الخارجي بقوة إرادة وعزيمة، مما يتطلب جهدًا كبيرًا ومقاومة للراحة والاستسلام. هذا العنف هو عملية تحرير ذاتي تتطلب كسر قيود العادات والتقاليد والشعارات السائدة.",
+                "PhiH.textAnalysis.jaspers.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.jaspers.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.jaspers.analysis.thesis.content": "يطرح ياسبرز فكرة أن الحياة في المجتمعات الصناعية المعاصرة تفرض على الفرد رتابة واستلابًا، حيث يتحول إلى مجرد ترس في آلة كبيرة، مما يفقد حياته معناها وأصالته. يدعو ياسبرز إلى مقاومة هذا الاستلاب من خلال عنف ذاتي ينتزع به الفرد نفسه من سيطرة العالم الخارجي.",
+                "PhiH.textAnalysis.jaspers.analysis.mechanisms.title": "آليات الاستلاب:",
+                "PhiH.textAnalysis.jaspers.analysis.mechanisms.content": "تعمل آليات الاستلاب في المجتمعات الصناعية من خلال:<br>- <strong>التنظيم الزمني الصارم:</strong> حيث يتم تقسيم الوقت بدقة وفقًا لجدول زمني يفرض رتابة على الحياة.<br>- <strong>تفتيت العمل:</strong> حيث يصبح العمل مجرد مهام روتينية تفتقر إلى الإبداع والمعنى.<br>- <strong>العادات والشعارات:</strong> التي تفرض أنماطًا ثابتة للحياة تقيد حرية الفرد.<br>- <strong>الآلية الصناعية:</strong> التي تحول الفرد إلى مجرد جزء من آلة كبيرة، تفقده فرديته.",
+                "PhiH.textAnalysis.jaspers.analysis.consequences.title": "نتائج الاستلاب:",
+                "PhiH.textAnalysis.jaspers.analysis.consequences.content": "- <strong>فقدان المعنى:</strong> حيث تشعر الحياة بالفراغ والعدم.<br>- <strong>الاستسلام:</strong> حيث ينقاد الفرد للعالم الخارجي دون مقاومة.<br>- <strong>فقدان الأصالة:</strong> حيث يتحول الفرد إلى نسخة مكررة من الآخرين.<br>- <strong>الرتابة:</strong> حيث تصبح الحياة مجرد روتين متكرر يفتقر إلى الإبداع والتجديد.",
+                "PhiH.textAnalysis.jaspers.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.jaspers.analysis.significance.content": "يحمل مفهوم الرتابة عند ياسبرز دلالات وجودية عميقة، حيث يمثل الاستلاب تهديدًا للوجود الأصيل. يدعو ياسبرز إلى مقاومة هذا الاستلاب من خلال عنف ذاتي، ليس كعنف مادي، بل كقوة إرادة وعزيمة تمكن الفرد من انتزاع نفسه من سيطرة العالم الخارجي. هذا العنف هو عملية تحرير ذاتي تتطلب كسر قيود العادات والتقاليد والشعارات السائدة، والسعي نحو وجود أصيل ومليء بالمعنى."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

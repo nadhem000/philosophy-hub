@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aliénation - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#87ceeb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Sky Blue Theme */
+        :root {
+            --primary-color: #87ceeb;
+            --secondary-color: #6ca6cd;
+            --accent-color: #5f9ea0;
+            --light-color: #f0f8ff;
+            --dark-color: #4682b4;
+            --text-color: #2f4f4f;
+            --heading-color: #2f4f4f;
+            --background-color: #f9fdff;
+            --card-bg: #ffffff;
+            --definition-bg: #e8f4ff;
+            --border-color: #a8d8ff;
+            --table-even-bg: #f5f9ff;
+            --table-hover-bg: #e8f4ff;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(135, 206, 235, 0.15);
+            --gradient-primary: linear-gradient(135deg, #87ceeb 0%, #6ca6cd 100%);
+            --gradient-secondary: linear-gradient(135deg, #6ca6cd 0%, #4682b4 100%);
+            --gradient-blue: linear-gradient(135deg, #87ceeb 0%, #4682b4 100%);
+            --gradient-gray: linear-gradient(135deg, #6ca6cd 0%, #4682b4 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #98d8f0;
+            --secondary-color: #7cb3d9;
+            --accent-color: #87ceeb;
+            --light-color: #3a4a4f;
+            --dark-color: #1a2f3f;
+            --text-color: #e0f0ff;
+            --heading-color: #f7fafc;
+            --background-color: #2f4f4f;
+            --card-bg: #3a4a4f;
+            --definition-bg: #2d4a5a;
+            --border-color: #98d8f0;
+            --table-even-bg: #2f4f4f;
+            --table-hover-bg: #2d4a5a;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #98d8f0 0%, #87ceeb 100%);
+            --gradient-secondary: linear-gradient(135deg, #7cb3d9 0%, #6ca6cd 100%);
+            --gradient-blue: linear-gradient(135deg, #98d8f0 0%, #3a4a4f 100%);
+            --gradient-gray: linear-gradient(135deg, #7cb3d9 0%, #6ca6cd 100%);
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Definition Cards Layout */
+        .PhiH-definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-definition-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(135, 206, 235, 0.2);
+        }
+        
+        .PhiH-definition-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-definition-card-content ul {
+            padding-left: 1.2rem;
+            margin: 0.8rem 0;
+        }
+        
+        .PhiH-definition-card-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        /* Expand/Collapse Functionality */
+        .PhiH-expandable-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .PhiH-expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .PhiH-expandable-header:hover {
+            background: var(--gradient-blue);
+        }
+        
+        .PhiH-expandable-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        .PhiH-expandable-content {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            border-top: none;
+        }
+        
+        .PhiH-expandable-content.hidden {
+            display: none;
+        }
+        
+        .PhiH-expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-expand-icon.expanded {
+            transform: rotate(180deg);
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Section Styling */
+        .PhiH-quotes-container {
+            margin-top: 1rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(135, 206, 235, 0.2);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        /* RTL support for definition cards */
+        body.rtl .PhiH-definition-card-content ul {
+            padding-left: 0;
+            padding-right: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .PhiH-definitions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-alienation" dir="ltr">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-lesson1-container">
+        <div class="PhiH-lesson1-header">
+            <h1 class="PhiH-lesson1-title" data-i18n="PhiH.lessons.alienation.title">الاستلاب</h1>
+            <div class="PhiH-lesson1-level" data-i18n="PhiH.lessons.alienation.level">السنة الثالثة ثانوي - الفلسفة</div>
+        </div>
+        
+        <!-- Introduction Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="introHeader">
+                <h3 data-i18n="PhiH.lessons.alienation.introduction.title">التمهيد</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="introContent">
+                <p data-i18n="PhiH.lessons.alienation.introduction.text1">
+                    إنّ إنسانية الإنسان لا تتحقّق إلاّ في كنف المجتمع، غير أنّ هذه المعيّة تحمل في طيّاتها مُفارقة وجودية عميقة؛ فبقدر ما يمنح المجتمعُ الفردَ مقوّماتِ إنسانيّته ويُثري وجودَه، بقدر ما يهدّد كينونته ويصادر استقلاليّته. وقد تجلّى هذا الازدواج جليًّا في العصر الحديث، حيث أضحت آليات الاستلاب أكثر تعقيدًا وخفاءً، تُمارس من خلال أنماط الاستهلاك ووسائل الاتّصال وضغوط الحياة المعاصرة، فبات الفرد – في كثير من الأحيان – أسيرَ منتَجِه، وعبدًا لصورةٍ صنعها لنفسه دون أن يدري.
+                </p>
+                <p data-i18n="PhiH.lessons.alienation.introduction.text2">
+                    فإذا كان الاستلاب في الماضي ملموسًا مرتبطًا بالاستغلال الماديّ والاضطهاد المباشر، فإنّه اليوم يأخذ أشكالًا رمزية ونفسية، تُفرّغ الذات من مضمونها وتجعلها تابعَةً لمعاييرَ وقِيَمٍ لم تشارك في صياغتها. وهذا ما يدفعنا إلى التساؤل: كيف يمكن للفرد أن يحافظ على حريّته وأصالتِه في عالمٍ يزداد تعقيدًا وتشابكًا؟ وأيّ وعيٍ نقديّ يمكن أن يُحرّرنا من استلابنا المعاصر؟
+                </p>
+            </div>
+        </section>
+        
+        <!-- Texts Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="textsHeader">
+                <h3 data-i18n="PhiH.lessons.alienation.texts.title">النصوص</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="textsContent">
+                <div class="PhiH-texts-container">
+                    <ul class="PhiH-texts-list">
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme1_lesson6_text1.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.alienation.texts.text1">النص 1: العقلنة والاستلاب - ماركوز</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme1_lesson6_text2.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.alienation.texts.text2">النص 2: الجماهير والحشود - قابريال تارد</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme1_lesson6_text3.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.alienation.texts.text3">النص 3: تحليل اللوحة: \"مَثَل العميان\" لبيتار بريقال</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quotes Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="quotesHeader">
+                <h3 data-i18n="PhiH.lessons.alienation.quotes.title">شواهد ونصوص ذات صلة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="quotesContent">
+                <div class="PhiH-quotes-container">
+                    <div class="PhiH-quotes-grid">
+                        <!-- Quote 1 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.alienation.quotes.quote1">
+                                "إنّ أخشى ما أخشاه هو الاستلاب الفِكريّ الّذي يترك سبيل العلم العينيّ ويجري وراء أوهام الخطاب"
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.alienation.quotes.author1">جورج غوسدورف</div>
+                        </div>
+                        
+                        <!-- Quote 2 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.alienation.quotes.quote2">
+                                "ان غياب الآخر يعدّ لحظة تقهقر وانحطاط ذلك أنّ المنعزل أشبه ما يكون بالجريح الذي تسنده الجماعة الثائرة فتحفظ استقامته كلّما كان تحت ضغط المجموعة لكنّه يسقط أرضا حال انفكاكها عنه."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.alienation.quotes.author2">ميشال تورني</div>
+                            <div class="PhiH-quote-source" data-i18n="PhiH.lessons.alienation.quotes.source2">جمعة أو حدود المحيط الهادئ</div>
+                        </div>
+                        
+                        <!-- Quote 3 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.alienation.quotes.quote3">
+                                "أُعبر النهر مع الحشد، لن يُؤذيك التمساح"
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.alienation.quotes.author3">قول مأثور</div>
+                            <div class="PhiH-quote-source" data-i18n="PhiH.lessons.alienation.quotes.source3">من مدغشقر</div>
+                        </div>
+                        
+                        <!-- Quote 4 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.alienation.quotes.quote4">
+                                "إنّ من يتنازل مرّة للحشد يمنحه وعيا بقوّته ويحكم من ثمّة على نفسه بالتنازل له دوما"
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.alienation.quotes.author4">قيستاف لوبون</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Conclusion -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="conclusionHeader">
+                <h3 data-i18n="PhiH.lessons.alienation.conclusion.title">الخاتمة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="conclusionContent">
+                <p data-i18n="PhiH.lessons.alienation.conclusion.text1">
+                    يُظهر التحليل الفلسفي للاستلاب أنّ هذه الظاهرة ليست قدرًا محتومًا، بل هي نتيجة لبنى اجتماعية واقتصادية ونفسية يمكن تفكيكها ونقدها. فإذا كان الاستلاب يعني انفصال الإنسان عن ذاته وعن عالمه، فإنّ التحرّر منه يمرّ بالضرورة عبر وعي الإنسان بآليات الهيمنة الخفية، واستعادته لقدرته على الفعل والتأثير.
+                </p>
+                <p data-i18n="PhiH.lessons.alienation.conclusion.text2">
+                    ولا يعني ذلك رفضًا للمجتمع أو انكفاءً على الذات، بل على العكس، إنّها دعوة إلى علاقة جديدة مع الآخر والعالم، علاقة تقوم على المشاركة النقدية والفاعلية الإبداعية، لا على التبعية والانسياق. وهنا تبرز الفلسفة كخريطة طريق نحو وعيٍ يحوّل الإنسان من كائن مُستَلَب إلى فاعلٍ حرّ، ومن منتَج للظروف إلى صانعٍ للتاريخ.
+                </p>
+                <p data-i18n="PhiH.lessons.alienation.conclusion.text3">
+                    ففي زمنِ الاستلاب، تكون الفلسفةُ ضمانةَ الإنسان الأخيرة لكي لا يُباع ويُشترى، ولكي يبقى – دائمًا – سيدَ نفسِه.
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Page-specific translations for alienation lesson
+        window.translations_PhiHalienation = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                
+                // Alienation lesson specific translations
+                "PhiH.lessons.alienation.title": "Aliénation",
+                "PhiH.lessons.alienation.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                "PhiH.lessons.alienation.introduction.title": "Introduction",
+                "PhiH.lessons.alienation.introduction.text1": "L'humanité de l'être humain ne se réalise qu'au sein de la société, mais cette coexistence porte en elle une profonde paradoxe existentiel ; autant la société offre à l'individu les composantes de son humanité et enrichit son existence, autant elle menace son être et confisque son autonomie. Cette dualité s'est manifestée clairement à l'époque moderne, où les mécanismes d'aliénation sont devenus plus complexes et cachés, exercés à travers les modes de consommation, les moyens de communication et les pressions de la vie contemporaine, de sorte que l'individu – souvent – est devenu prisonnier de son produit, et esclave d'une image qu'il s'est créée sans le savoir.",
+                "PhiH.lessons.alienation.introduction.text2": "Si l'aliénation dans le passé était tangible, liée à l'exploitation matérielle et à l'oppression directe, elle prend aujourd'hui des formes symboliques et psychologiques, vidant le soi de son contenu et le rendant dépendant de normes et de valeurs qu'il n'a pas participé à formuler. Cela nous amène à nous interroger : comment l'individu peut-il préserver sa liberté et son authenticity dans un monde de plus en plus complexe et interconnecté ? Et quelle conscience critique peut nous libérer de notre aliénation contemporaine ?",
+                
+                "PhiH.lessons.alienation.texts.title": "Textes",
+                "PhiH.lessons.alienation.texts.text1": "Texte 1 : Rationalisation et aliénation - Marcuse",
+                "PhiH.lessons.alienation.texts.text2": "Texte 2 : Masses et foules - Gabriel Tarde",
+                "PhiH.lessons.alienation.texts.text3": "Texte 3 : Analyse de la peinture : \"La Parabole des aveugles\" de Pieter Bruegel",
+                
+                // Quotes section translations
+                "PhiH.lessons.alienation.quotes.title": "Citations et textes connexes",
+                "PhiH.lessons.alienation.quotes.quote1": "\"Ce que je crains le plus est l'aliénation intellectuelle qui abandonne la science sensible et court après les illusions du discours.\"",
+                "PhiH.lessons.alienation.quotes.quote2": "\"L'absence de l'autre est un moment de régression et de décadence, car l'isolé ressemble à un blessé que soutient la communauté en révolte, préservant sa droiture tant qu'il est sous la pression du groupe, mais qui tombe à terre dès que celui-ci se désengage de lui.\"",
+                "PhiH.lessons.alienation.quotes.quote3": "\"Je traverse la rivière avec la foule, le crocodile ne te fera pas de mal.\"",
+                "PhiH.lessons.alienation.quotes.quote4": "\"Celui qui cède une fois à la foule lui donne conscience de sa force et se condamne ainsi à toujours lui céder.\"",
+                "PhiH.lessons.alienation.quotes.author1": "Georges Gusdorf",
+                "PhiH.lessons.alienation.quotes.author2": "Michel Tournier",
+                "PhiH.lessons.alienation.quotes.source2": "Vendredi ou les limbes du Pacifique",
+                "PhiH.lessons.alienation.quotes.author3": "Proverbe",
+                "PhiH.lessons.alienation.quotes.source3": "de Madagascar",
+                "PhiH.lessons.alienation.quotes.author4": "Gustave Le Bon",
+                
+                "PhiH.lessons.alienation.conclusion.title": "Conclusion",
+                "PhiH.lessons.alienation.conclusion.text1": "L'analyse philosophique de l'aliénation montre que ce phénomène n'est pas une fatalité, mais le résultat de structures sociales, économiques et psychologiques qui peuvent être déconstruites et critiquées. Si l'aliénation signifie la séparation de l'homme de lui-même et de son monde, la libération passe nécessairement par la prise de conscience par l'homme des mécanismes cachés de domination, et la reconquête de sa capacité d'agir et d'influencer.",
+                "PhiH.lessons.alienation.conclusion.text2": "Cela ne signifie pas un rejet de la société ou un repli sur soi, mais au contraire, c'est un appel à une nouvelle relation avec l'autre et le monde, une relation basée sur la participation critique et l'activité créatrice, et non sur la dépendance et la soumission. C'est ici que la philosophie émerge comme une feuille de route vers une conscience qui transforme l'homme d'un être aliéné en un acteur libre, et d'un produit des circonstances en un faiseur d'histoire.",
+                "PhiH.lessons.alienation.conclusion.text3": "À l'ère de l'aliénation, la philosophie est la dernière garantie de l'homme pour ne pas être vendu et acheté, et pour rester – toujours – maître de lui-même."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                
+                // Alienation lesson specific translations
+                "PhiH.lessons.alienation.title": "Alienation",
+                "PhiH.lessons.alienation.level": "3rd Secondary - Philosophy",
+                
+                "PhiH.lessons.alienation.introduction.title": "Introduction",
+                "PhiH.lessons.alienation.introduction.text1": "Humanity of the human being is only realized within society, but this coexistence carries within it a deep existential paradox; as much as society provides the individual with the components of his humanity and enriches his existence, as much as it threatens his being and confiscates his autonomy. This duality has manifested itself clearly in the modern era, where the mechanisms of alienation have become more complex and hidden, exercised through consumption patterns, means of communication and the pressures of contemporary life, so that the individual - often - has become a prisoner of his product, and a slave to an image he created for himself without knowing it.",
+                "PhiH.lessons.alienation.introduction.text2": "If alienation in the past was tangible, linked to material exploitation and direct oppression, today it takes symbolic and psychological forms, emptying the self of its content and making it dependent on standards and values that it did not participate in formulating. This leads us to ask: how can the individual preserve his freedom and authenticity in an increasingly complex and interconnected world? And what critical awareness can free us from our contemporary alienation?",
+                
+                "PhiH.lessons.alienation.texts.title": "Texts",
+                "PhiH.lessons.alienation.texts.text1": "Text 1 : Rationalization and Alienation - Marcuse",
+                "PhiH.lessons.alienation.texts.text2": "Text 2 : Masses and Crowds - Gabriel Tarde",
+                "PhiH.lessons.alienation.texts.text3": "Text 3 : Analysis of the Painting: \"The Parable of the Blind\" by Pieter Bruegel",
+                
+                // Quotes section translations
+                "PhiH.lessons.alienation.quotes.title": "Related Quotes and Texts",
+                "PhiH.lessons.alienation.quotes.quote1": "\"What I fear most is intellectual alienation that abandons sensible science and runs after the illusions of discourse.\"",
+                "PhiH.lessons.alienation.quotes.quote2": "\"The absence of the other is a moment of regression and decadence, for the isolated person resembles a wounded person supported by the revolting community, preserving his uprightness as long as he is under the pressure of the group, but who falls to the ground as soon as it disengages from him.\"",
+                "PhiH.lessons.alienation.quotes.quote3": "\"I cross the river with the crowd, the crocodile won't harm you.\"",
+                "PhiH.lessons.alienation.quotes.quote4": "\"He who yields once to the crowd gives it awareness of its power and thus condemns himself to always yield to it.\"",
+                "PhiH.lessons.alienation.quotes.author1": "Georges Gusdorf",
+                "PhiH.lessons.alienation.quotes.author2": "Michel Tournier",
+                "PhiH.lessons.alienation.quotes.source2": "Friday or the Other Island",
+                "PhiH.lessons.alienation.quotes.author3": "Proverb",
+                "PhiH.lessons.alienation.quotes.source3": "from Madagascar",
+                "PhiH.lessons.alienation.quotes.author4": "Gustave Le Bon",
+                
+                "PhiH.lessons.alienation.conclusion.title": "Conclusion",
+                "PhiH.lessons.alienation.conclusion.text1": "The philosophical analysis of alienation shows that this phenomenon is not an inevitability, but the result of social, economic and psychological structures that can be deconstructed and criticized. If alienation means the separation of man from himself and his world, liberation necessarily passes through man's awareness of the hidden mechanisms of domination, and the recovery of his ability to act and influence.",
+                "PhiH.lessons.alienation.conclusion.text2": "This does not mean a rejection of society or a withdrawal into oneself, but on the contrary, it is a call for a new relationship with the other and the world, a relationship based on critical participation and creative activity, not on dependence and submission. Here philosophy emerges as a roadmap towards a consciousness that transforms man from an alienated being into a free actor, and from a product of circumstances into a maker of history.",
+                "PhiH.lessons.alienation.conclusion.text3": "In the age of alienation, philosophy is man's last guarantee not to be bought and sold, and to remain – always – master of himself."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                
+                // Alienation lesson specific translations
+                "PhiH.lessons.alienation.title": "الاستلاب",
+                "PhiH.lessons.alienation.level": "السنة الثالثة ثانوي - الفلسفة",
+                
+                "PhiH.lessons.alienation.introduction.title": "التمهيد",
+                "PhiH.lessons.alienation.introduction.text1": "إنّ إنسانية الإنسان لا تتحقّق إلاّ في كنف المجتمع، غير أنّ هذه المعيّة تحمل في طيّاتها مُفارقة وجودية عميقة؛ فبقدر ما يمنح المجتمعُ الفردَ مقوّماتِ إنسانيّته ويُثري وجودَه، بقدر ما يهدّد كينونته ويصادر استقلاليّته. وقد تجلّى هذا الازدواج جليًّا في العصر الحديث، حيث أضحت آليات الاستلاب أكثر تعقيدًا وخفاءً، تُمارس من خلال أنماط الاستهلاك ووسائل الاتّصال وضغوط الحياة المعاصرة، فبات الفرد – في كثير من الأحيان – أسيرَ منتَجِه، وعبدًا لصورةٍ صنعها لنفسه دون أن يدري.",
+                "PhiH.lessons.alienation.introduction.text2": "فإذا كان الاستلاب في الماضي ملموسًا مرتبطًا بالاستغلال الماديّ والاضطهاد المباشر، فإنّه اليوم يأخذ أشكالًا رمزية ونفسية، تُفرّغ الذات من مضمونها وتجعلها تابعَةً لمعاييرَ وقِيَمٍ لم تشارك في صياغتها. وهذا ما يدفعنا إلى التساؤل: كيف يمكن للفرد أن يحافظ على حريّته وأصالتِه في عالمٍ يزداد تعقيدًا وتشابكًا؟ وأيّ وعيٍ نقديّ يمكن أن يُحرّرنا من استلابنا المعاصر؟",
+                
+                "PhiH.lessons.alienation.texts.title": "النصوص",
+                "PhiH.lessons.alienation.texts.text1": "النص 1: العقلنة والاستلاب - ماركوز",
+                "PhiH.lessons.alienation.texts.text2": "النص 2: الجماهير والحشود - قابريال تارد",
+                "PhiH.lessons.alienation.texts.text3": "النص 3: تحليل اللوحة: \"مَثَل العميان\" لبيتار بريقال",
+                
+                // Quotes section translations
+                "PhiH.lessons.alienation.quotes.title": "شواهد ونصوص ذات صلة",
+                "PhiH.lessons.alienation.quotes.quote1": "\"إنّ أخشى ما أخشاه هو الاستلاب الفِكريّ الّذي يترك سبيل العلم العينيّ ويجري وراء أوهام الخطاب\"",
+                "PhiH.lessons.alienation.quotes.quote2": "\"ان غياب الآخر يعدّ لحظة تقهقر وانحطاط ذلك أنّ المنعزل أشبه ما يكون بالجريح الذي تسنده الجماعة الثائرة فتحفظ استقامته كلّما كان تحت ضغط المجموعة لكنّه يسقط أرضا حال انفكاكها عنه.\"",
+                "PhiH.lessons.alienation.quotes.quote3": "\"أُعبر النهر مع الحشد، لن يُؤذيك التمساح\"",
+                "PhiH.lessons.alienation.quotes.quote4": "\"إنّ من يتنازل مرّة للحشد يمنحه وعيا بقوّته ويحكم من ثمّة على نفسه بالتنازل له دوما\"",
+                "PhiH.lessons.alienation.quotes.author1": "جورج غوسدورف",
+                "PhiH.lessons.alienation.quotes.author2": "ميشال تورني",
+                "PhiH.lessons.alienation.quotes.source2": "جمعة أو حدود المحيط الهادئ",
+                "PhiH.lessons.alienation.quotes.author3": "قول مأثور",
+                "PhiH.lessons.alienation.quotes.source3": "من مدغشقر",
+                "PhiH.lessons.alienation.quotes.author4": "قيستاف لوبون",
+                
+                "PhiH.lessons.alienation.conclusion.title": "الخاتمة",
+                "PhiH.lessons.alienation.conclusion.text1": "يُظهر التحليل الفلسفي للاستلاب أنّ هذه الظاهرة ليست قدرًا محتومًا، بل هي نتيجة لبنى اجتماعية واقتصادية ونفسية يمكن تفكيكها ونقدها. فإذا كان الاستلاب يعني انفصال الإنسان عن ذاته وعن عالمه، فإنّ التحرّر منه يمرّ بالضرورة عبر وعي الإنسان بآليات الهيمنة الخفية، واستعادته لقدرته على الفعل والتأثير.",
+                "PhiH.lessons.alienation.conclusion.text2": "ولا يعني ذلك رفضًا للمجتمع أو انكفاءً على الذات، بل على العكس، إنّها دعوة إلى علاقة جديدة مع الآخر والعالم، علاقة تقوم على المشاركة النقدية والفاعلية الإبداعية، لا على التبعية والانسياق. وهنا تبرز الفلسفة كخريطة طريق نحو وعيٍ يحوّل الإنسان من كائن مُستَلَب إلى فاعلٍ حرّ، ومن منتَج للظروف إلى صانعٍ للتاريخ.",
+                "PhiH.lessons.alienation.conclusion.text3": "ففي زمنِ الاستلاب، تكون الفلسفةُ ضمانةَ الإنسان الأخيرة لكي لا يُباع ويُشترى، ولكي يبقى – دائمًا – سيدَ نفسِه."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHalienation;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+    
+    <script>
+        // Expand/Collapse functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all expandable headers
+            const expandableHeaders = document.querySelectorAll('.PhiH-expandable-header');
+            
+            // Add click event to each header
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.PhiH-expand-icon');
+                    
+                    // Toggle content visibility
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('expanded');
+                    } else {
+                        content.classList.add('hidden');
+                        icon.classList.remove('expanded');
+                    }
+                });
+            });
+            
+            // Initially hide all expandable content
+            document.querySelectorAll('.PhiH-expandable-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

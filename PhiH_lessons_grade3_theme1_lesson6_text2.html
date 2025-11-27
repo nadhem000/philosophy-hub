@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: الجماهير والحشود - قابريال تارد - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#16a34a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Green Color Palette */
+        :root {
+            --primary-color: #16a34a;
+            --primary-light: #22c55e;
+            --primary-dark: #15803d;
+            --secondary-color: #15803d;
+            --secondary-light: #16a34a;
+            --secondary-dark: #166534;
+            --accent-color: #15803d;
+            --accent-light: #16a34a;
+            --accent-dark: #166534;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #f0fdf4;
+            --card-bg: #ffffff;
+            --definition-bg: #dcfce7;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #bbf7d0;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(22, 163, 74, 0.1), 0 2px 4px -1px rgba(22, 163, 74, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(22, 163, 74, 0.1), 0 4px 6px -2px rgba(22, 163, 74, 0.05);
+            --gradient-primary: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+            --gradient-secondary: linear-gradient(135deg, #15803d 0%, #166534 100%);
+            --gradient-accent: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #22c55e;
+            --primary-light: #4ade80;
+            --primary-dark: #16a34a;
+            --secondary-color: #16a34a;
+            --secondary-light: #22c55e;
+            --secondary-dark: #15803d;
+            --accent-color: #16a34a;
+            --accent-light: #22c55e;
+            --accent-dark: #15803d;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #14532d;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #166534;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            --gradient-secondary: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+            --gradient-accent: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(22, 163, 74, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(21, 128, 61, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(21, 128, 61, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(22, 163, 74, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.tarde.title">تحليل النص: الجماهير والحشود - قابريال تارد</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.tarde.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.tarde.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.tarde.introduction.content">
+                    لما كانت اجتماعية الإنسان شرط إمكان رقيّه الفكري والوجداني والخلقي، فإنّها تبدو سمة نوعية إيجابية في تاريخ الفرد، لكن الوجود مع الآخرين بقدر ما يؤمّن ثراء الأفراد يهدّد بتفقيرهم، ولعلّ ذلك ما تفطّن إليه قابريال تارد من خلال تشخيص آليات حركة الجماهير والحشود. فما هي انعكاسات هذا الوجود مع الآخرين على استقلالية الأفراد وعلى نضج السلوك الجماعي؟
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.tarde.text.title">النص: الجماهير والحشود</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.tarde.text.content">
+                        إنّ الجماهير شأنها شأن الحشود<sup>1</sup> متعصّبة ومتكبّرة ومتبجّحة ومدّعية، فهي تروم، باسم الرأي العام، جعل الكلّ يتنازل لها حتّى الحقيقة نفسها عندما تزعجها. أليس من البيّن أنّه كلّما تعاظمت روح المجموعة وروح الجمهور، إن لم نقل، روح الحشد في مجتمعاتنا المعاصرة بفعل تسارع تيّارات التبادل الفكري<sup>2</sup>، فُقد لديها الإحساس بالاعتدال<sup>3</sup> أكثر فأكثر. فيُغالى في تقدير الأشخاص والأعمال كما يتمّ إحباطها بنفس التسرّع. إنّ النقّاد الأدبيّين أنفسهم، وقد تحوّلوا إلى صدى مجامل لميولات قرّائهم، ما عادوا عارفين كيف يقدّرون أحكامهم ولا كيف يميّزون بينها بدقّة. فهم كغيرهم يهّلون أو يستهزؤون( ... ) وفي ذلك تذكّرنا الجماهير كما الحشود، شيئا ما بالمدمنين على الخمرة. وفي الواقع، إنّ الحياة الجماعية القويّة لهي، بالنسبة إلى الدماغ، خمرة مريعة.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.tarde.text.source">قابريال تارد، الرأي والحشد، ترجمة لجنة التأليف، G.Tarde, L'opinion et la foule, edt: PUF, Paris 1989, 1re édition p 25</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.tarde.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/gabriel_tarde.jpg" alt="قابريال تارد" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.tarde.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.tarde.author.content">
+                            قابريال تارد (1843 - 1904) فيلسوف وعالم اجتماع فرنسي. أشهر مؤلفاته قانون المحاكاة 1890. والمحاكاة أو التقليد عنده هي أساس تشكّل الجموع والجماهير وهي آلية تماه مع الآخر تفسّر تشكّل الظواهر الاجتماعية إلى جانب التأثير والتسلّط والمقاومة و((المحاكاة المضادّة)). عُرف بمناهضته للتصور العضوي الذي يماهي بين المجتمع والجسم، نظرا إلى أنّ المجتمع في تقديره فاقد في حركيّته للغائية وللانتظام الداخلي ولا يخلو من عشوائية كما عُرف بمناهضته للتصوّر التطوري للمجتمع لأن تطوّر المجتمع لا يتمّ دوما وفق حركة خطية وإنما وفق حركة قابلة للارتداد والانحراف. من مؤلّفاته: علم الإجرام المقارن (1896)، القوانين الاجتماعية (1898)، الرأي والحشد (1901).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.tarde.lexical.title">الهوامش</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.tarde.lexical.item1"><strong>«الحشود»:</strong> يميّز المؤلّف في ما تقدّم من كتابه بين الجماهير والحشود وهو يعتبر الرابطة الجماهيرية أرقى من وحدة الحشود التي تعبّر في تقديره عن نمط تجمّع حيواني يتحدّد سلوك أفراده عبر عدوى نفسية مترتبة عن الالتحام، في حين تتّسم الرابطة المكوّنة للجماهير بصبغة معنوية وروحية لا تستوجب تجاورا أو التحاما في المكان. لمزيد من التفاصيل أنظر الصفحة 9 والهامش رقم 1 من كتاب المؤلّف: الرأي والحشد. حيث يبيّن أنّ المجاز الأمثل للتعبير عن الحشود في حركتها ليس الجسم وإنما النهر الذي ليس له مجرى محدّد.</li>
+                    <li data-i18n="PhiH.textAnalysis.tarde.lexical.item2"><strong>«التبادل الفكري»:</strong> ليس ثمّة لدى الكاتب ما يشير في هذه العبارة إلى التواصل الفعلي والمتكافئ بين الشعوب وإنما فقط إلى حركة الأفكار.</li>
+                    <li data-i18n="PhiH.textAnalysis.tarde.lexical.item3"><strong>«الاعتدال»:</strong> منزلة وسطى بين الإفراط والتفريط وهي دالة على القوة إن كان الإفراط عنفا والتفريط ضعفا، وهي دالة على النقد البناء إن كان الإفراط انتقادا والتفريط تسليما آليا.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.tarde.questions.title">المهامّ</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.tarde.questions.q1">اِستحضر وقائع دالة على ما ذهب إليه الكاتب بشأن تعصّب الجماهير؟</li>
+                    <li data-i18n="PhiH.textAnalysis.tarde.questions.q2">ما هي في تقدير الكاتب الأسباب التي تقف وراء هذا التعصّب؟</li>
+                    <li data-i18n="PhiH.textAnalysis.tarde.questions.q3">ابحث عن عيّنات من مجاملة النقّاد للجماهير والحشود. وبيّن كيف يمكن تفسير ذلك.</li>
+                    <li data-i18n="PhiH.textAnalysis.tarde.questions.q4">ما مدى مشروعية المماثلة التي أقامها الكاتب بين الحياة الجماعية القوية والخمرة في علاقتهما بالدماغ؟</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.tarde.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.tarde.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.tarde.answers.a1.content">
+                        يمكن استحضار عدة وقائع تدل على تعصب الجماهير كما ذهب إليه تارد، منها ظاهرة الهتاف الجماعي في الملاعب الرياضية حيث تتحول الجماهير المتحمسة إلى كتلة واحدة تفتقد التمييز النقدي، وتتعصب لفرقها بشكل أعمى. كما نلاحظ في المظاهرات السياسية كيف تتحول الحشود إلى كيان واحد يفقد الأفراد فيه استقلاليتهم الفكرية وينصهرون في الرأي الجماعي. ومن الأمثلة الأخرى انتشار الشائعات والأفكار المتطرفة عبر وسائل التواصل الاجتماعي، حيث تتبناها الجماهير دون تمحيص أو نقد، مما يعكس فقدان الإحساس بالاعتدال الذي أشار إليه تارد.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.tarde.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.tarde.answers.a2.content">
+                        يرى تارد أن أسباب تعصب الجماهير تعود إلى عدة عوامل، أهمها ظاهرة "المحاكاة" التي تعتبر الأساس في تشكل الحشود والجماهير. فالأفراد في الحشود يقلدون بعضهم البعض، مما يؤدي إلى فقدان الاستقلالية الفردية وذوبان الشخصية في الكل الجماعي. كما أن تسارع تيارات التبادل الفكري في المجتمعات المعاصرة يساهم في تعاظم روح الجماعة على حساب الفردية. بالإضافة إلى ذلك، فإن النقاد والمفكرين أنفسهم يتحولون إلى مجرد أصداء لميولات القراء والجماهير، مما يعزز من ظاهرة التعصب ويفقدهم القدرة على التمييز الدقيق بين الأحكام.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.tarde.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.tarde.answers.a3.content">
+                        يمكن ملاحظة عينات من مجاملة النقاد للجماهير في مجال النقد الأدبي والفني، حيث نجد أن بعض النقاد يبالغون في مدح أعمال فنية رديئة لمجرد أنها تحظى بشعبية بين الجماهير. كما نلاحظ في المجال السياسي كيف يتحول بعض المحللين إلى مجرد مكبرات صوت للرأي العام السائد، بدلاً من تقديم تحليلات موضوعية. ويمكن تفسير هذه الظاهرة من خلال حاجة النقاد إلى كسب رضا الجماهير والحفاظ على شعبيتهم، مما يدفعهم إلى مجاراتها في ميولاتها وأهوائها، بدلاً من قيادتها نحو الأفكار الأكثر نضجاً وعقلانية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.tarde.answers.a4.title">الإجابة عن السؤال الرابع:</h5>
+                    <p data-i18n="PhiH.textAnalysis.tarde.answers.a4.content">
+                        المماثلة التي أقامها تارد بين الحياة الجماعية القوية والخمرة في علاقتهما بالدماغ تتمتع بدرجة عالية من المشروعية من الناحية السوسيولوجية والنفسية. فكما أن الخمرة تؤثر على العقل فتفقده توازنه وقدرته على التمييز، فإن الحياة الجماعية القوية تؤدي إلى تغييب العقل الفردي وطمس الشخصية المستقلة. فالحشد يشبه السكران في فقدانه للوعي النقدي واتخاذه قرارات متهورة وغير عقلانية. هذه المماثلة تبرز بشكل دقيق تأثير الجماعة على الفرد وكيف يمكن أن تفقده توازنه الفكري والنفسي، مما يجعل المقارنة ذات دلالة عميقة في فهم ظاهرة الحشود والجماهير.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.tarde.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.tarde.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.tarde.analysis.thesis.content">
+                        يطرح تارد فكرة أن الحياة الجماعية القوية، سواء في شكل جماهير أو حشود، تؤدي إلى فقدان الاعتدال والاستقلالية الفردية، حيث تتحول الأفراد إلى كتلة واحدة متعصبة ومتبجحة تفقد القدرة على التمييز النقدي. فالحشد يشبه السكران في تأثيره على العقل، مما يجعله يفقد توازنه ويصبح عرضة للتأثيرات الجماعية العمياء.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.tarde.analysis.mechanisms.title">آليات تشكل سلوك الجماهير:</h5>
+                    <p data-i18n="PhiH.textAnalysis.tarde.analysis.mechanisms.content">
+                        يعتمد تارد في تحليله لسلوك الجماهير على مفهوم "المحاكاة" كآلية أساسية تفسر تشكل الظواهر الاجتماعية. فالأفراد في الحشود يقلدون بعضهم البعض، مما يؤدي إلى ذوبان الشخصية الفردية في الكل الجماعي. كما أن تسارع تيارات التبادل الفكري في المجتمعات المعاصرة يساهم في تعاظم روح الجماعة على حساب الفردية. ويضيف تارد أن النقاد والمفكرين أنفسهم يتحولون إلى مجرد أصداء لميولات القراء والجماهير، مما يعزز من ظاهرة التعصب ويفقدهم القدرة على التمييز الدقيق بين الأحكام.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.tarde.analysis.consequences.title">نتائج سيطرة الروح الجماعية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.tarde.analysis.consequences.content">
+                        تؤدي سيطرة الروح الجماعية إلى عدة نتائج سلبية، منها فقدان الاعتدال في تقدير الأشخاص والأعمال، حيث يبالغ الحشد في الإعجاب أو الرفض بنفس التسرع. كما تفقد الجماهير الإحساس بالتمييز النقدي، وتتحول إلى كتلة واحدة متعصبة تفرض رأيها حتى على الحقيقة نفسها. ويشير تارد إلى أن الحياة الجماعية القوية تشبه الخمرة في تأثيرها على الدماغ، حيث تفقد العقل توازنه وتجعله عرضة للتأثيرات الجماعية العمياء.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.tarde.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.tarde.analysis.significance.content">
+                        يمثل مفهوم "الجماهير والحشود" عند تارد مدخلاً لفهم إشكالية العلاقة بين الفرد والجماعة في المجتمعات المعاصرة. فهو يبرز الصراع بين الاستقلالية الفردية والذوبان في الكل الجماعي، وبين العقل النقدي والتأثير الجماعي الأعمى. كما يوضح ضرورة الحفاظ على الاعتدال والتمييز النقدي في مواجهة ضغوط الجماعة، ويدفع نحو تأسيس علاقة أكثر توازناً بين الفرد والمجتمع، قائمة على الاحترام المتبادل والحوار العقلاني، بعيداً عن التعصب والتبعية العمياء للرأي العام.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.tarde.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.tarde.title": "Analyse du texte: Foules et Masses - Gabriel Tarde",
+                "PhiH.textAnalysis.tarde.introduction.title": "Introduction",
+                "PhiH.textAnalysis.tarde.introduction.content": "Puisque la socialité de l'homme est une condition de son élévation intellectuelle, affective et morale, elle apparaît comme une caractéristique qualitative positive dans l'histoire de l'individu. Cependant, l'existence avec les autres, tout en assurant l'enrichissement des individus, menace de les appauvrir. C'est peut-être ce que Gabriel Tarde a perçu à travers le diagnostic des mécanismes du mouvement des masses et des foules. Quelles sont les répercussions de cette existence avec les autres sur l'autonomie des individus et sur la maturité du comportement collectif?",
+                "PhiH.textAnalysis.tarde.text.title": "Texte: Foules et Masses",
+                "PhiH.textAnalysis.tarde.text.content": "Les masses, tout comme les foules<sup>1</sup>, sont fanatiques, arrogantes, vantardes et prétentieuses; elles visent, au nom de l'opinion publique, à faire que tout leur cède, même la vérité elle-même quand elle les dérange. N'est-il pas évident que plus l'esprit de groupe et l'esprit du public, sinon l'esprit de la foule, s'accroissent dans nos sociétés contemporaines en raison de l'accélération des courants d'échange intellectuel<sup>2</sup>, plus elles perdent le sens de la modération<sup>3</sup>. On exagère dans l'estimation des personnes et des œuvres tout comme on les déprécie avec la même précipitation. Les critiques littéraires eux-mêmes, transformés en écho complaisant des tendances de leurs lecteurs, ne savent plus comment apprécier leurs jugements ni comment les distinguer avec précision. Comme les autres, ils acclament ou se moquent (...) En cela, les masses comme les foules nous rappellent un peu les alcooliques. En fait, la vie collective intense est, pour le cerveau, une terrible boisson alcoolisée.",
+                "PhiH.textAnalysis.tarde.text.source": "Gabriel Tarde, L'opinion et la foule, traduction par le comité de rédaction, G.Tarde, L'opinion et la foule, edt: PUF, Paris 1989, 1re édition p 25",
+                "PhiH.textAnalysis.tarde.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.tarde.author.alt": "Gabriel Tarde",
+                "PhiH.textAnalysis.tarde.author.content": "Gabriel Tarde (1843 - 1904) est un philosophe et sociologue français. Son ouvrage le plus célèbre est Les lois de l'imitation (1890). L'imitation ou la mimésis est pour lui la base de la formation des foules et des masses; c'est un mécanisme d'identification avec l'autre qui explique la formation des phénomènes sociaux, aux côtés de l'influence, de la domination, de la résistance et de la «contre-imitation». Il est connu pour son opposition à la conception organique qui assimile la société au corps, car la société selon lui manque dans sa dynamique de finalité et d'ordre interne et n'est pas exempte de hasard. Il est également connu pour son opposition à la conception évolutionniste de la société car l'évolution de la société ne se fait pas toujours selon un mouvement linéaire mais selon un mouvement susceptible de régression et de déviation. Parmi ses œuvres: La criminalité comparée (1896), Les lois sociales (1898), L'opinion et la foule (1901).",
+                "PhiH.textAnalysis.tarde.lexical.title": "Notes de bas de page",
+                "PhiH.textAnalysis.tarde.lexical.item1": "<strong>«Foules»:</strong> L'auteur distingue dans son ouvrage entre les masses et les foules, considérant que le lien massif est supérieur à l'unité des foules qui exprime selon lui un mode de rassemblement animal dont le comportement des individus est déterminé par une contagion psychique résultant de la fusion, tandis que le lien constituant les masses se caractérise par une dimension morale et spirituelle qui ne nécessite pas de proximité ou de fusion dans l'espace. Pour plus de détails, voir la page 9 et la note n°1 de l'ouvrage de l'auteur: L'opinion et la foule, où il montre que la métaphore optimale pour exprimer les foules dans leur mouvement n'est pas le corps mais la rivière qui n'a pas de cours défini.",
+                "PhiH.textAnalysis.tarde.lexical.item2": "<strong>«Échange intellectuel»:</strong> Il n'y a rien chez l'auteur qui indique dans cette expression une communication réelle et équitable entre les peuples, mais seulement le mouvement des idées.",
+                "PhiH.textAnalysis.tarde.lexical.item3": "<strong>«Modération»:</strong> Position médiane entre l'excès et le défaut, elle indique la force si l'excès est violence et le défaut faiblesse, et elle indique la critique constructive si l'excès est critique et le défaut soumission automatique.",
+                "PhiH.textAnalysis.tarde.questions.title": "Tâches",
+                "PhiH.textAnalysis.tarde.questions.q1": "Évoquez des faits significatifs concernant le fanatisme des masses tel que l'auteur l'a décrit?",
+                "PhiH.textAnalysis.tarde.questions.q2": "Quelles sont, selon l'auteur, les causes de ce fanatisme?",
+                "PhiH.textAnalysis.tarde.questions.q3": "Recherchez des exemples de complaisance des critiques envers les masses et les foules. Et expliquez comment cela peut être interprété.",
+                "PhiH.textAnalysis.tarde.questions.q4": "Dans quelle mesure la comparaison établie par l'auteur entre la vie collective intense et l'alcool dans leur relation avec le cerveau est-elle légitime?",
+                "PhiH.textAnalysis.tarde.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.tarde.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.tarde.answers.a1.content": "On peut évoquer plusieurs faits qui indiquent le fanatisme des masses tel que décrit par Tarde, comme le phénomène des acclamations collectives dans les stades sportifs où les foules enthousiastes se transforment en une masse unique dépourvue de discernement critique, et soutiennent aveuglément leurs équipes. On observe également dans les manifestations politiques comment les foules se transforment en une entité unique où les individus perdent leur autonomie intellectuelle et se fondent dans l'opinion collective. Parmi les autres exemples, on peut citer la propagation de rumeurs et d'idées extrémistes via les réseaux sociaux, où les masses les adoptent sans examen ni critique, reflétant la perte du sens de la modération mentionnée par Tarde.",
+                "PhiH.textAnalysis.tarde.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.tarde.answers.a2.content": "Tarde estime que les causes du fanatisme des masses sont dues à plusieurs facteurs, principalement le phénomène de «l'imitation» qui est à la base de la formation des foules et des masses. Les individus dans les foules s'imitent les uns les autres, ce qui entraîne une perte d'autonomie individuelle et une dissolution de la personnalité dans le tout collectif. De plus, l'accélération des courants d'échange intellectuel dans les sociétés contemporaines contribue à renforcer l'esprit de groupe au détriment de l'individualité. En outre, les critiques et les penseurs eux-mêmes se transforment en simples échos des tendances des lecteurs et des masses, ce qui renforce le phénomène du fanatisme et leur fait perdre la capacité de distinguer avec précision entre les jugements.",
+                "PhiH.textAnalysis.tarde.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.tarde.answers.a3.content": "On peut observer des exemples de complaisance des critiques envers les masses dans le domaine de la critique littéraire et artistique, où certains critiques exagèrent dans l'éloge d'œuvres artistiques médiocres simplement parce qu'elles sont populaires auprès des masses. On observe également dans le domaine politique comment certains analystes se transforment en simples porte-voix de l'opinion publique dominante, au lieu de fournir des analyses objectives. Ce phénomène peut s'expliquer par le besoin des critiques de gagner la faveur des masses et de maintenir leur popularité, ce qui les pousse à épouser leurs tendances et leurs caprices, plutôt que de les guider vers des idées plus matures et rationnelles.",
+                "PhiH.textAnalysis.tarde.answers.a4.title": "Réponse à la quatrième question:",
+                "PhiH.textAnalysis.tarde.answers.a4.content": "La comparaison établie par Tarde entre la vie collective intense et l'alcool dans leur relation avec le cerveau est hautement légitime d'un point de vue sociologique et psychologique. Tout comme l'alcool affecte l'esprit en lui faisant perdre son équilibre et sa capacité de discernement, la vie collective intense conduit à l'occultation de l'esprit individuel et à l'effacement de la personnalité indépendante. La foule ressemble à l'ivrogne dans sa perte de conscience critique et ses décisions impulsives et irrationnelles. Cette comparaison met en lumière de manière précise l'influence du groupe sur l'individu et comment il peut lui faire perdre son équilibre intellectuel et psychologique, ce qui rend la comparaison profondément significative pour comprendre le phénomène des foules et des masses.",
+                "PhiH.textAnalysis.tarde.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.tarde.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.tarde.analysis.thesis.content": "Tarde propose l'idée que la vie collective intense, qu'elle prenne la forme de masses ou de foules, conduit à une perte de modération et d'autonomie individuelle, où les individus se transforment en une masse unique, fanatique et vantarde, perdant la capacité de discernement critique. La foule ressemble à l'ivrogne dans son effet sur l'esprit, le faisant perdre son équilibre et le rendant vulnérable aux influences collectives aveugles.",
+                "PhiH.textAnalysis.tarde.analysis.mechanisms.title": "Mécanismes de formation du comportement des masses:",
+                "PhiH.textAnalysis.tarde.analysis.mechanisms.content": "Tarde base son analyse du comportement des masses sur le concept d'«imitation» comme mécanisme fondamental expliquant la formation des phénomènes sociaux. Les individus dans les foules s'imitent les uns les autres, ce qui conduit à la dissolution de la personnalité individuelle dans le tout collectif. De plus, l'accélération des courants d'échange intellectuel dans les sociétés contemporaines contribue à renforcer l'esprit de groupe au détriment de l'individualité. Tarde ajoute que les critiques et les penseurs eux-mêmes se transforment en simples échos des tendances des lecteurs et des masses, renforçant ainsi le phénomène du fanatisme et leur faisant perdre la capacité de distinguer avec précision entre les jugements.",
+                "PhiH.textAnalysis.tarde.analysis.consequences.title": "Conséquences de la domination de l'esprit collectif:",
+                "PhiH.textAnalysis.tarde.analysis.consequences.content": "La domination de l'esprit collectif entraîne plusieurs conséquences négatives, notamment une perte de modération dans l'estimation des personnes et des œuvres, où la foule exagère dans l'admiration ou le rejet avec la même précipitation. Les masses perdent également le sens du discernement critique et se transforment en une masse unique et fanatique qui impose son opinion même à la vérité elle-même. Tarde indique que la vie collective intense ressemble à l'alcool dans son effet sur le cerveau, faisant perdre à l'esprit son équilibre et le rendant vulnérable aux influences collectives aveugles.",
+                "PhiH.textAnalysis.tarde.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.tarde.analysis.significance.content": "Le concept de «masses et foules» chez Tarde représente une entrée pour comprendre la problématique de la relation entre l'individu et le groupe dans les sociétés contemporaines. Il met en lumière le conflit entre l'autonomie individuelle et la dissolution dans le tout collectif, et entre la raison critique et l'influence collective aveugle. Il clarifie également la nécessité de préserver la modération et le discernement critique face aux pressions du groupe, et pousse vers l'établissement d'une relation plus équilibrée entre l'individu et la société, basée sur le respect mutuel et le dialogue rationnel, loin du fanatisme et de la soumission aveugle à l'opinion publique."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.tarde.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.tarde.title": "Text Analysis: Masses and Crowds - Gabriel Tarde",
+                "PhiH.textAnalysis.tarde.introduction.title": "Introduction",
+                "PhiH.textAnalysis.tarde.introduction.content": "Since human sociality is a condition for his intellectual, emotional, and moral elevation, it appears as a positive qualitative characteristic in the history of the individual. However, existence with others, while ensuring the enrichment of individuals, threatens to impoverish them. This is perhaps what Gabriel Tarde perceived through diagnosing the mechanisms of the movement of masses and crowds. What are the repercussions of this existence with others on the autonomy of individuals and on the maturity of collective behavior?",
+                "PhiH.textAnalysis.tarde.text.title": "Text: Masses and Crowds",
+                "PhiH.textAnalysis.tarde.text.content": "Masses, like crowds<sup>1</sup>, are fanatical, arrogant, boastful, and pretentious; they aim, in the name of public opinion, to make everything yield to them, even truth itself when it disturbs them. Is it not evident that the more the group spirit and the public spirit, if not the crowd spirit, increase in our contemporary societies due to the acceleration of intellectual exchange currents<sup>2</sup>, the more they lose the sense of moderation<sup>3</sup>. People exaggerate in estimating persons and works just as they are depreciated with the same haste. Literary critics themselves, transformed into a complacent echo of their readers' tendencies, no longer know how to appreciate their judgments nor how to distinguish between them accurately. Like others, they acclaim or mock (...) In this, masses as well as crowds remind us somewhat of alcoholics. In fact, intense collective life is, for the brain, a terrible alcoholic beverage.",
+                "PhiH.textAnalysis.tarde.text.source": "Gabriel Tarde, Opinion and Crowd, translation by the editorial committee, G.Tarde, L'opinion et la foule, edt: PUF, Paris 1989, 1st edition p 25",
+                "PhiH.textAnalysis.tarde.author.title": "Author Presentation",
+                "PhiH.textAnalysis.tarde.author.alt": "Gabriel Tarde",
+                "PhiH.textAnalysis.tarde.author.content": "Gabriel Tarde (1843 - 1904) was a French philosopher and sociologist. His most famous work is The Laws of Imitation (1890). Imitation or mimesis is for him the basis of the formation of crowds and masses; it is a mechanism of identification with the other that explains the formation of social phenomena, alongside influence, domination, resistance, and 'counter-imitation'. He is known for his opposition to the organic conception that equates society with the body, as society in his view lacks purpose and internal order in its dynamics and is not free from randomness. He is also known for his opposition to the evolutionary conception of society because the evolution of society does not always follow a linear movement but rather a movement susceptible to regression and deviation. Among his works: Comparative Criminology (1896), Social Laws (1898), Opinion and Crowd (1901).",
+                "PhiH.textAnalysis.tarde.lexical.title": "Footnotes",
+                "PhiH.textAnalysis.tarde.lexical.item1": "<strong>«Crowds»:</strong> The author distinguishes in his work between masses and crowds, considering that the mass bond is superior to the unity of crowds which in his view expresses a mode of animal gathering whose individuals' behavior is determined by psychological contagion resulting from fusion, while the bond constituting masses is characterized by a moral and spiritual dimension that does not require proximity or fusion in space. For more details, see page 9 and footnote No. 1 of the author's work: Opinion and Crowd, where he shows that the optimal metaphor to express crowds in their movement is not the body but the river that has no defined course.",
+                "PhiH.textAnalysis.tarde.lexical.item2": "<strong>«Intellectual exchange»:</strong> There is nothing in the author's work that indicates in this expression a real and equitable communication between peoples, but only the movement of ideas.",
+                "PhiH.textAnalysis.tarde.lexical.item3": "<strong>«Moderation»:</strong> A middle position between excess and deficiency, it indicates strength if excess is violence and deficiency is weakness, and it indicates constructive criticism if excess is criticism and deficiency is automatic submission.",
+                "PhiH.textAnalysis.tarde.questions.title": "Tasks",
+                "PhiH.textAnalysis.tarde.questions.q1": "Recall significant facts regarding the fanaticism of masses as described by the author?",
+                "PhiH.textAnalysis.tarde.questions.q2": "What are, according to the author, the causes of this fanaticism?",
+                "PhiH.textAnalysis.tarde.questions.q3": "Search for examples of critics' complacency towards masses and crowds. And explain how this can be interpreted.",
+                "PhiH.textAnalysis.tarde.questions.q4": "To what extent is the comparison established by the author between intense collective life and alcohol in their relationship with the brain legitimate?",
+                "PhiH.textAnalysis.tarde.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.tarde.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.tarde.answers.a1.content": "Several facts can be recalled that indicate the fanaticism of masses as described by Tarde, such as the phenomenon of collective cheering in sports stadiums where enthusiastic crowds transform into a single mass lacking critical discernment, and blindly support their teams. We also observe in political demonstrations how crowds transform into a single entity where individuals lose their intellectual autonomy and merge into the collective opinion. Other examples include the spread of rumors and extremist ideas through social media, where masses adopt them without scrutiny or criticism, reflecting the loss of the sense of moderation mentioned by Tarde.",
+                "PhiH.textAnalysis.tarde.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.tarde.answers.a2.content": "Tarde believes that the causes of mass fanaticism are due to several factors, mainly the phenomenon of 'imitation' which is the basis of the formation of crowds and masses. Individuals in crowds imitate each other, leading to a loss of individual autonomy and dissolution of personality in the collective whole. Moreover, the acceleration of intellectual exchange currents in contemporary societies contributes to the strengthening of group spirit at the expense of individuality. In addition, critics and thinkers themselves transform into mere echoes of readers' and masses' tendencies, which reinforces the phenomenon of fanaticism and causes them to lose the ability to accurately distinguish between judgments.",
+                "PhiH.textAnalysis.tarde.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.tarde.answers.a3.content": "Examples of critics' complacency towards masses can be observed in the field of literary and artistic criticism, where some critics exaggerate in praising mediocre artistic works simply because they are popular with the masses. We also observe in the political field how some analysts become mere mouthpieces for the dominant public opinion, instead of providing objective analyses. This phenomenon can be explained by critics' need to gain the favor of the masses and maintain their popularity, which pushes them to embrace their tendencies and whims, rather than guiding them towards more mature and rational ideas.",
+                "PhiH.textAnalysis.tarde.answers.a4.title": "Answer to the fourth question:",
+                "PhiH.textAnalysis.tarde.answers.a4.content": "The comparison established by Tarde between intense collective life and alcohol in their relationship with the brain is highly legitimate from a sociological and psychological perspective. Just as alcohol affects the mind by causing it to lose its balance and ability to discern, intense collective life leads to the obscuration of the individual mind and the erasure of independent personality. The crowd resembles the drunkard in its loss of critical consciousness and its impulsive and irrational decisions. This comparison accurately highlights the influence of the group on the individual and how it can cause him to lose his intellectual and psychological balance, making the comparison deeply meaningful in understanding the phenomenon of crowds and masses.",
+                "PhiH.textAnalysis.tarde.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.tarde.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.tarde.analysis.thesis.content": "Tarde proposes the idea that intense collective life, whether in the form of masses or crowds, leads to a loss of moderation and individual autonomy, where individuals transform into a single, fanatical, and boastful mass losing the capacity for critical discernment. The crowd resembles the drunkard in its effect on the mind, causing it to lose its balance and making it vulnerable to blind collective influences.",
+                "PhiH.textAnalysis.tarde.analysis.mechanisms.title": "Mechanisms of mass behavior formation:",
+                "PhiH.textAnalysis.tarde.analysis.mechanisms.content": "Tarde bases his analysis of mass behavior on the concept of 'imitation' as a fundamental mechanism explaining the formation of social phenomena. Individuals in crowds imitate each other, leading to the dissolution of individual personality in the collective whole. Moreover, the acceleration of intellectual exchange currents in contemporary societies contributes to the strengthening of group spirit at the expense of individuality. Tarde adds that critics and thinkers themselves transform into mere echoes of readers' and masses' tendencies, thus reinforcing the phenomenon of fanaticism and causing them to lose the ability to accurately distinguish between judgments.",
+                "PhiH.textAnalysis.tarde.analysis.consequences.title": "Consequences of the domination of the collective spirit:",
+                "PhiH.textAnalysis.tarde.analysis.consequences.content": "The domination of the collective spirit leads to several negative consequences, including a loss of moderation in estimating persons and works, where the crowd exaggerates in admiration or rejection with the same haste. Masses also lose the sense of critical discernment and transform into a single fanatical mass that imposes its opinion even on truth itself. Tarde indicates that intense collective life resembles alcohol in its effect on the brain, causing the mind to lose its balance and making it vulnerable to blind collective influences.",
+                "PhiH.textAnalysis.tarde.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.tarde.analysis.significance.content": "The concept of 'masses and crowds' in Tarde represents an entry point for understanding the problematic of the relationship between the individual and the group in contemporary societies. It highlights the conflict between individual autonomy and dissolution in the collective whole, and between critical reason and blind collective influence. It also clarifies the necessity of preserving moderation and critical discernment in the face of group pressures, and pushes towards establishing a more balanced relationship between the individual and society, based on mutual respect and rational dialogue, away from fanaticism and blind submission to public opinion."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.tarde.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.tarde.title": "تحليل النص: الجماهير والحشود - قابريال تارد",
+                "PhiH.textAnalysis.tarde.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.tarde.introduction.content": "لما كانت اجتماعية الإنسان شرط إمكان رقيّه الفكري والوجداني والخلقي، فإنّها تبدو سمة نوعية إيجابية في تاريخ الفرد، لكن الوجود مع الآخرين بقدر ما يؤمّن ثراء الأفراد يهدّد بتفقيرهم، ولعلّ ذلك ما تفطّن إليه قابريال تارد من خلال تشخيص آليات حركة الجماهير والحشود. فما هي انعكاسات هذا الوجود مع الآخرين على استقلالية الأفراد وعلى نضج السلوك الجماعي؟",
+                "PhiH.textAnalysis.tarde.text.title": "النص: الجماهير والحشود",
+                "PhiH.textAnalysis.tarde.text.content": "إنّ الجماهير شأنها شأن الحشود<sup>1</sup> متعصّبة ومتكبّرة ومتبجّحة ومدّعية، فهي تروم، باسم الرأي العام، جعل الكلّ يتنازل لها حتّى الحقيقة نفسها عندما تزعجها. أليس من البيّن أنّه كلّما تعاظمت روح المجموعة وروح الجمهور، إن لم نقل، روح الحشد في مجتمعاتنا المعاصرة بفعل تسارع تيّارات التبادل الفكري<sup>2</sup>، فُقد لديها الإحساس بالاعتدال<sup>3</sup> أكثر فأكثر. فيُغالى في تقدير الأشخاص والأعمال كما يتمّ إحباطها بنفس التسرّع. إنّ النقّاد الأدبيّين أنفسهم، وقد تحوّلوا إلى صدى مجامل لميولات قرّائهم، ما عادوا عارفين كيف يقدّرون أحكامهم ولا كيف يميّزون بينها بدقّة. فهم كغيرهم يهّلون أو يستهزؤون( ... ) وفي ذلك تذكّرنا الجماهير كما الحشود، شيئا ما بالمدمنين على الخمرة. وفي الواقع، إنّ الحياة الجماعية القويّة لهي، بالنسبة إلى الدماغ، خمرة مريعة.",
+                "PhiH.textAnalysis.tarde.text.source": "قابريال تارد، الرأي والحشد، ترجمة لجنة التأليف، G.Tarde, L'opinion et la foule, edt: PUF, Paris 1989, 1re édition p 25",
+                "PhiH.textAnalysis.tarde.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.tarde.author.alt": "قابريال تارد",
+                "PhiH.textAnalysis.tarde.author.content": "قابريال تارد (1843 - 1904) فيلسوف وعالم اجتماع فرنسي. أشهر مؤلفاته قانون المحاكاة 1890. والمحاكاة أو التقليد عنده هي أساس تشكّل الجموع والجماهير وهي آلية تماه مع الآخر تفسّر تشكّل الظواهر الاجتماعية إلى جانب التأثير والتسلّط والمقاومة و((المحاكاة المضادّة)). عُرف بمناهضته للتصور العضوي الذي يماهي بين المجتمع والجسم، نظرا إلى أنّ المجتمع في تقديره فاقد في حركيّته للغائية وللانتظام الداخلي ولا يخلو من عشوائية كما عُرف بمناهضته للتصوّر التطوري للمجتمع لأن تطوّر المجتمع لا يتمّ دوما وفق حركة خطية وإنما وفق حركة قابلة للارتداد والانحراف. من مؤلّفاته: علم الإجرام المقارن (1896)، القوانين الاجتماعية (1898)، الرأي والحشد (1901).",
+                "PhiH.textAnalysis.tarde.lexical.title": "الهوامش",
+                "PhiH.textAnalysis.tarde.lexical.item1": "<strong>«الحشود»:</strong> يميّز المؤلّف في ما تقدّم من كتابه بين الجماهير والحشود وهو يعتبر الرابطة الجماهيرية أرقى من وحدة الحشود التي تعبّر في تقديره عن نمط تجمّع حيواني يتحدّد سلوك أفراده عبر عدوى نفسية مترتبة عن الالتحام، في حين تتّسم الرابطة المكوّنة للجماهير بصبغة معنوية وروحية لا تستوجب تجاورا أو التحاما في المكان. لمزيد من التفاصيل أنظر الصفحة 9 والهامش رقم 1 من كتاب المؤلّف: الرأي والحشد. حيث يبيّن أنّ المجاز الأمثل للتعبير عن الحشود في حركتها ليس الجسم وإنما النهر الذي ليس له مجرى محدّد.",
+                "PhiH.textAnalysis.tarde.lexical.item2": "<strong>«التبادل الفكري»:</strong> ليس ثمّة لدى الكاتب ما يشير في هذه العبارة إلى التواصل الفعلي والمتكافئ بين الشعوب وإنما فقط إلى حركة الأفكار.",
+                "PhiH.textAnalysis.tarde.lexical.item3": "<strong>«الاعتدال»:</strong> منزلة وسطى بين الإفراط والتفريط وهي دالة على القوة إن كان الإفراط عنفا والتفريط ضعفا، وهي دالة على النقد البناء إن كان الإفراط انتقادا والتفريط تسليما آليا.",
+                "PhiH.textAnalysis.tarde.questions.title": "المهامّ",
+                "PhiH.textAnalysis.tarde.questions.q1": "اِستحضر وقائع دالة على ما ذهب إليه الكاتب بشأن تعصّب الجماهير؟",
+                "PhiH.textAnalysis.tarde.questions.q2": "ما هي في تقدير الكاتب الأسباب التي تقف وراء هذا التعصّب؟",
+                "PhiH.textAnalysis.tarde.questions.q3": "ابحث عن عيّنات من مجاملة النقّاد للجماهير والحشود. وبيّن كيف يمكن تفسير ذلك.",
+                "PhiH.textAnalysis.tarde.questions.q4": "ما مدى مشروعية المماثلة التي أقامها الكاتب بين الحياة الجماعية القوية والخمرة في علاقتهما بالدماغ؟",
+                "PhiH.textAnalysis.tarde.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.tarde.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.tarde.answers.a1.content": "يمكن استحضار عدة وقائع تدل على تعصب الجماهير كما ذهب إليه تارد، منها ظاهرة الهتاف الجماعي في الملاعب الرياضية حيث تتحول الجماهير المتحمسة إلى كتلة واحدة تفتقد التمييز النقدي، وتتعصب لفرقها بشكل أعمى. كما نلاحظ في المظاهرات السياسية كيف تتحول الحشود إلى كيان واحد يفقد الأفراد فيه استقلاليتهم الفكرية وينصهرون في الرأي الجماعي. ومن الأمثلة الأخرى انتشار الشائعات والأفكار المتطرفة عبر وسائل التواصل الاجتماعي، حيث تتبناها الجماهير دون تمحيص أو نقد، مما يعكس فقدان الإحساس بالاعتدال الذي أشار إليه تارد.",
+                "PhiH.textAnalysis.tarde.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.tarde.answers.a2.content": "يرى تارد أن أسباب تعصب الجماهير تعود إلى عدة عوامل، أهمها ظاهرة \"المحاكاة\" التي تعتبر الأساس في تشكل الحشود والجماهير. فالأفراد في الحشود يقلدون بعضهم البعض، مما يؤدي إلى فقدان الاستقلالية الفردية وذوبان الشخصية في الكل الجماعي. كما أن تسارع تيارات التبادل الفكري في المجتمعات المعاصرة يساهم في تعاظم روح الجماعة على حساب الفردية. بالإضافة إلى ذلك، فإن النقاد والمفكرين أنفسهم يتحولون إلى مجرد أصداء لميولات القراء والجماهير، مما يعزز من ظاهرة التعصب ويفقدهم القدرة على التمييز الدقيق بين الأحكام.",
+                "PhiH.textAnalysis.tarde.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.tarde.answers.a3.content": "يمكن ملاحظة عينات من مجاملة النقاد للجماهير في مجال النقد الأدبي والفني، حيث نجد أن بعض النقاد يبالغون في مدح أعمال فنية رديئة لمجرد أنها تحظى بشعبية بين الجماهير. كما نلاحظ في المجال السياسي كيف يتحول بعض المحللين إلى مجرد مكبرات صوت للرأي العام السائد، بدلاً من تقديم تحليلات موضوعية. ويمكن تفسير هذه الظاهرة من خلال حاجة النقاد إلى كسب رضا الجماهير والحفاظ على شعبيتهم، مما يدفعهم إلى مجاراتها في ميولاتها وأهوائها، بدلاً من قيادتها نحو الأفكار الأكثر نضجاً وعقلانية.",
+                "PhiH.textAnalysis.tarde.answers.a4.title": "الإجابة عن السؤال الرابع:",
+                "PhiH.textAnalysis.tarde.answers.a4.content": "المماثلة التي أقامها تارد بين الحياة الجماعية القوية والخمرة في علاقتهما بالدماغ تتمتع بدرجة عالية من المشروعية من الناحية السوسيولوجية والنفسية. فكما أن الخمرة تؤثر على العقل فتفقده توازنه وقدرته على التمييز، فإن الحياة الجماعية القوية تؤدي إلى تغييب العقل الفردي وطمس الشخصية المستقلة. فالحشد يشبه السكران في فقدانه للوعي النقدي واتخاذه قرارات متهورة وغير عقلانية. هذه المماثلة تبرز بشكل دقيق تأثير الجماعة على الفرد وكيف يمكن أن تفقده توازنه الفكري والنفسي، مما يجعل المقارنة ذات دلالة عميقة في فهم ظاهرة الحشود والجماهير.",
+                "PhiH.textAnalysis.tarde.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.tarde.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.tarde.analysis.thesis.content": "يطرح تارد فكرة أن الحياة الجماعية القوية، سواء في شكل جماهير أو حشود، تؤدي إلى فقدان الاعتدال والاستقلالية الفردية، حيث تتحول الأفراد إلى كتلة واحدة متعصبة ومتبجحة تفقد القدرة على التمييز النقدي. فالحشد يشبه السكران في تأثيره على العقل، مما يجعله يفقد توازنه ويصبح عرضة للتأثيرات الجماعية العمياء.",
+                "PhiH.textAnalysis.tarde.analysis.mechanisms.title": "آليات تشكل سلوك الجماهير:",
+                "PhiH.textAnalysis.tarde.analysis.mechanisms.content": "يعتمد تارد في تحليله لسلوك الجماهير على مفهوم \"المحاكاة\" كآلية أساسية تفسر تشكل الظواهر الاجتماعية. فالأفراد في الحشود يقلدون بعضهم البعض، مما يؤدي إلى ذوبان الشخصية الفردية في الكل الجماعي. كما أن تسارع تيارات التبادل الفكري في المجتمعات المعاصرة يساهم في تعاظم روح الجماعة على حساب الفردية. ويضيف تارد أن النقاد والمفكرين أنفسهم يتحولون إلى مجرد أصداء لميولات القراء والجماهير، مما يعزز من ظاهرة التعصب ويفقدهم القدرة على التمييز الدقيق بين الأحكام.",
+                "PhiH.textAnalysis.tarde.analysis.consequences.title": "نتائج سيطرة الروح الجماعية:",
+                "PhiH.textAnalysis.tarde.analysis.consequences.content": "تؤدي سيطرة الروح الجماعية إلى عدة نتائج سلبية، منها فقدان الاعتدال في تقدير الأشخاص والأعمال، حيث يبالغ الحشد في الإعجاب أو الرفض بنفس التسرع. كما تفقد الجماهير الإحساس بالتمييز النقدي، وتتحول إلى كتلة واحدة متعصبة تفرض رأيها حتى على الحقيقة نفسها. ويشير تارد إلى أن الحياة الجماعية القوية تشبه الخمرة في تأثيرها على الدماغ، حيث تفقد العقل توازنه وتجعله عرضة للتأثيرات الجماعية العمياء.",
+                "PhiH.textAnalysis.tarde.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.tarde.analysis.significance.content": "يمثل مفهوم \"الجماهير والحشود\" عند تارد مدخلاً لفهم إشكالية العلاقة بين الفرد والجماعة في المجتمعات المعاصرة. فهو يبرز الصراع بين الاستقلالية الفردية والذوبان في الكل الجماعي، وبين العقل النقدي والتأثير الجماعي الأعمى. كما يوضح ضرورة الحفاظ على الاعتدال والتمييز النقدي في مواجهة ضغوط الجماعة، ويدفع نحو تأسيس علاقة أكثر توازناً بين الفرد والمجتمع، قائمة على الاحترام المتبادل والحوار العقلاني، بعيداً عن التعصب والتبعية العمياء للرأي العام."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

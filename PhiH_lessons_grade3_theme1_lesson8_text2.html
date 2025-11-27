@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: الفلسفة والواقع اليومي - هنري لوفيفر - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#1e40af">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Blue Color Palette */
+        :root {
+            --primary-color: #1e40af;
+            --primary-light: #3b82f6;
+            --primary-dark: #1e3a8a;
+            --secondary-color: #2563eb;
+            --secondary-light: #60a5fa;
+            --secondary-dark: #1d4ed8;
+            --accent-color: #2563eb;
+            --accent-light: #60a5fa;
+            --accent-dark: #1d4ed8;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #f0f9ff;
+            --card-bg: #ffffff;
+            --definition-bg: #dbeafe;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #dbeafe;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(30, 64, 175, 0.1), 0 2px 4px -1px rgba(30, 64, 175, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(30, 64, 175, 0.1), 0 4px 6px -2px rgba(30, 64, 175, 0.05);
+            --gradient-primary: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+            --gradient-secondary: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            --gradient-accent: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #3b82f6;
+            --primary-light: #60a5fa;
+            --primary-dark: #1e40af;
+            --secondary-color: #60a5fa;
+            --secondary-light: #93c5fd;
+            --secondary-dark: #2563eb;
+            --accent-color: #60a5fa;
+            --accent-light: #93c5fd;
+            --accent-dark: #2563eb;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #1e3a8a;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #1e40af;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            --gradient-secondary: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
+            --gradient-accent: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(30, 64, 175, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(37, 99, 235, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(37, 99, 235, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(30, 64, 175, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.lefebvre.title">تحليل النص: الفلسفة والواقع اليومي - هنري لوفيفر</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.lefebvre.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.lefebvre.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.lefebvre.introduction.content">
+                    لئن كان اقتران اليوميّ بدلالات سلبيّةٍ وبصنوف من الخلط والوهم والأحكام المسبقة يفسّر ما اتّخذته الفلسفة من مواقف نقديّة تجاهه، فإنّ ما يتّسمُ به اليوميّ من طابع ملحّ وما يضطلع به من وظائف نفسية واجتماعية، قد يضطرّ الفلسفة إلى مراجعة طبيعة رهاناتها.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.lefebvre.text.title">الفلسفة والواقع اليومي</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.text.content">
+                        تبدو الحياة اليومية مقارنة بالفلسفة كما لو أنها غير فلسفية، فهي تبدو كعالم واقعي بالنسبة إلى المثالي (والفكري). ثم إن الحياة الفلسفية (1) تريد لنفسها أن تكون الأرفع في مواجهتها للحياة اليومية، وهي تكتشف نفسها حياة مجرّدة وغائبة، مُتجاوَزَة من قبل الحياة اليومية ومنفصلة عنها. إن الفلسفة تسعى إلى تفكيك لغز الواقع وسرعان ما تقف على ما ينقصها من واقعية (2). وهذا التقدير ملازم لها. تريد الفلسفة أن تتحقق وهذا التحقق يفلت منها، وعليها أن تتجاوز نفسها كحياة فلسفية. فهل نترك المتفلسف والإنسان المستغرق في اليومي جنبا إلى جنب أو وجها لوجه ؟ ذلك مستحيل من وجهة نظر فلسفية لأن الفلسفة تريد أن تفكر في ((كلّ شيء))، في العالم والإنسان، ثم تتحقق بعد ذلك. وإن الأمر لمستحيل من وجهة نظر الإنسان المستغرق في اليومي، وذلك لأن الفلسفة تقدم له وعيا وشهادة حاسمين، ولأنها في الآن نفسه النّقد اللامجدي والجذري لليومي. وحين يريد الفيلسوف أن يكون عقلا تاما، يدخل في حياة خيالية، وعندما يريد تحقيق الممكنات الإنسانية بوسائله الخاصة، يكتشف أنه لا يملك الوسائل لذلك. وحين تعلن الفلسفة أنها كل محدّد ومكتمل وذلك بإقصائها للاّفلسفي فإنّها تُحقّق تناقضها الذاتي وتُحطّم نفسها بنفسها.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.lefebvre.text.source">هنري لوفيفر: الحياة اليومية في العالم الحديث، ص: 28-29</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.lefebvre.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/henri_lefebvre.jpg" alt="هنري لوفيفر" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.lefebvre.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.lefebvre.author.content">
+                            هنري لوفيفر (1905-1991): فيلسوف وعالم اجتماع فرنسي، ارتبطت تحاليله بالمدينة والفضاء والحياة اليومية وبنية المجتمع البيروقراطي المتقدّم. ساهم في تطوير نقد جذري للحداثة، واهتم بالعلاقة بين اللغة والمجتمع. من مؤلفاته: شذرات من فلسفة الوعي (1924-1926)، الوعي الزائف (1946)، نقد الحياة اليومية (1947)، مدخل إلى الحداثة (1962)، الحياة اليومية في العالم الحديث (1967)، نهاية التاريخ (1970)، الفكر الماركسي والمدينة (1972)، الحضور والغياب (1980)، ما هو التفكير؟ (1985).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.lefebvre.lexical.title">المفاهيم والمصطلحات</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.lefebvre.lexical.item1"><strong>الحياة الفلسفية:</strong> إشارة إلى الحياة الفكرية للفيلسوف بما هي: حياة نظريّة قوامها التأمّل والتجريد والمساءلة واتّخاذ مسافة نقديّة تجاه الواقع السائد.</li>
+                    <li data-i18n="PhiH.textAnalysis.lefebvre.lexical.item2"><strong>الواقعية:</strong> تأخذ في النص معنى انتقاصيا يعكس آلية الانخراط في اليومي. وهو أمر لا يمكن للفيلسوف أن يُذعِن له دون أن يتخلى عن دوره الفكري المتمثل في نقد الواقع وأخذ مسافة منه، ولأن هذا الفعل ملازم للفلسفة، قدَّر الكاتب أن نقص الواقعية سيظل ملازما للفلسفة وذلك إذا ما أخذنا الواقعية في معناها الحصري المتمثل في الانخراط الآلي في اليومي.</li>
+                    <li data-i18n="PhiH.textAnalysis.lefebvre.lexical.item3"><strong>المتفلسف:</strong> الشخص الذي يمارس التفلسف دون أن يكون فيلسوفًا محترفًا، أو الذي يتخذ موقفًا فلسفيًا في الحياة دون أن يكون متخصصًا في الفلسفة.</li>
+                    <li data-i18n="PhiH.textAnalysis.lefebvre.lexical.item4"><strong>النقد اللامجدي والجذري:</strong> إشارة إلى التناقض الذي تعيشه الفلسفة بين كونها نقدًا جذريًا للواقع اليومي، ولكن في نفس الوقت يبدو هذا النقد غير مجدٍ لأنه لا يحقق تغييرًا فعليًا في الواقع.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.lefebvre.questions.title">أسئلة الفهم والتحليل</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.lefebvre.questions.q1">كيف تفهم الإقرار الوارد في النص: \"تريد الفلسفة أن تكون الأرفع في مواجهتها للحياة اليومية\"؟</li>
+                    <li data-i18n="PhiH.textAnalysis.lefebvre.questions.q2">إلى أيّ منظور فكريّ يُحيل حديث الكاتب عن إقرار الإنسان العامي بأنّ الفلسفة هي \"النقد اللامجدي للواقع\"؟</li>
+                    <li data-i18n="PhiH.textAnalysis.lefebvre.questions.q3">هل ترى في إثارة معظلة انعدام التواصل بين الفيلسوف والإنسان العامي، إدانة للفيلسوف أم إدانة للإنسان العامي؟</li>
+                    <li data-i18n="PhiH.textAnalysis.lefebvre.questions.q4">ما دلالة قول الكاتب \"الفلسفة مُتَجاوَزَةٌ من قبل الحياة اليومية\" ؟</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.lefebvre.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.lefebvre.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.answers.a1.content">
+                        يقصد لوفيفر بهذا الإقرار أن الفلسفة تضع نفسها في موقع أسمى وأرفع من الحياة اليومية. فهي تريد أن تكون النموذج الأرقى للحياة، حيث تتبنى مسافة نقدية تجاه الواقع اليومي وتتجاوزه نحو عالم الأفكار والمثل العليا. لكن هذا الطموح يخلق تناقضًا داخليًا في الفلسفة، حيث تريد أن تكون متفوقة على الواقع اليومي ولكنها في نفس الوقت تفتقر إلى "الواقعية" بمعنى القدرة على التأثير الفعلي في هذا الواقع.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.lefebvre.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.answers.a2.content">
+                        يحيل هذا التصور إلى منظور نقدي للفلسفة من وجهة نظر الإنسان العادي المنغمس في الحياة اليومية. فمن منظور هذا الإنسان، تبدو الفلسفة كنقد "لامجدي" لأنه لا يؤدي إلى تغيير ملموس في واقعه المعيش، ورغم أنه نقد "جذري" يمس أسس الواقع، إلا أنه يبقى حبيس العالم النظري. هذا يعكس الفجوة بين النظرية والتطبيق، وبين التفكير المجرد والممارسة اليومية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.lefebvre.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.answers.a3.content">
+                        لا يمكن اختزال المشكلة في إدانة طرف دون الآخر. فالمعضلة تكمن في طبيعة العلاقة بين الفلسفة والواقع اليومي ذاتها. الفلسفة تريد أن تفكر في "كل شيء" ولكنها تفشل في التحقق في الواقع، والإنسان اليومي منغمس في واقعه لدرجة أنه لا يرى جدوى من التفكير الفلسفي. المسألة ليست إدانة بل تشخيص لتناقض بنيوي في العلاقة بين التفكير النظري والممارسة اليومية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.lefebvre.answers.a4.title">الإجابة عن السؤال الرابع:</h5>
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.answers.a4.content">
+                        تعني هذه العبارة أن الحياة اليومية تتجاوز الفلسفة وتتركها وراءها. فبينما تظل الفلسفة حبيسة التأمل والنقد النظري، تستمر الحياة اليومية في تدفقها وتطورها دون أن تتأثر بشكل جذري بهذا النقد. الفلسفة تريد أن تكون مؤثرة وفاعلة، لكنها تكتشف أنها "متجاوزة" من قبل الواقع الذي تريد تغييره، مما يخلق أزمة وجودية للفلسفة نفسها.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.lefebvre.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.lefebvre.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.analysis.thesis.content">
+                        يطرح هنري لوفيفر في هذا النص إشكالية العلاقة المعقدة بين الفلسفة والحياة اليومية. فمن ناحية، تريد الفلسفة أن تكون متفوقة على الحياة اليومية وناقدة لها، لكنها تكتشف أنها تفتقر إلى "الواقعية" وتظل منفصلة عن الواقع الذي تريد تغييره. ومن ناحية أخرى، تقدم الفلسفة وعيًا نقديًا جذريًا، لكن هذا الوعي يبدو "لامجديًا" من منظور الإنسان المنغمس في اليومي. هذه العلاقة التناقضية تؤدي إلى أزمة وجودية للفلسفة نفسها.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.lefebvre.analysis.mechanisms.title">آليات العلاقة بين الفلسفة واليومي:</h5>
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.analysis.mechanisms.content">
+                        تعمل العلاقة بين الفلسفة واليومي من خلال آليات متعددة. الفلسفة تضع نفسها في موقع أسمى، متخذة مسافة نقدية من الواقع اليومي. لكن هذه المسافة تتحول إلى انفصال وعجز عن التأثير الفعلي. في المقابل، يرى الإنسان اليومي الفلسفة كنقد "لامجدي" رغم جذريته، لأنه لا يترجم إلى تغيير ملموس في واقعه. هذا يخلق حلقة مفرغة حيث تريد الفلسفة أن تتحقق في الواقع لكنها تفشل، ويريد الواقع أن يتجاوز الفلسفة لكنه يفتقر إلى الوعي النقدي الذي توفره.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.lefebvre.analysis.consequences.title">نتائج هذه العلاقة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.analysis.consequences.content">
+                        تؤدي هذه العلاقة التناقضية إلى نتائج عميقة على مصير الفلسفة ودورها. فالفلسفة تكتشف أنها "متجاوزة" من قبل الحياة اليومية، مما يهدد وجودها وشرعيتها. كما أنها تواجه تناقضًا ذاتيًا بين طموحها الشمولي في التفكير في "كل شيء" وعجزها عن التحقق في الواقع. هذا التناقض يدفع الفلسفة إلى أزمة وجودية حيث تريد أن تكون كاملة وشاملة، لكن هذا الطموح نفسه يؤدي إلى تدميرها الذاتي.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.lefebvre.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.analysis.significance.content">
+                        يحمل تحليل لوفيفر دلالات عميقة تتجاوز النقد الفلسفي التقليدي. فهو لا يكتفي بتشخيص انفصال الفلسفة عن الواقع، بل يكشف عن التناقضات البنيوية التي تعيشها الفلسفة في علاقتها مع الحياة اليومية. هذا التحليل يفتح الباب أمام إعادة نظر جذرية في دور الفلسفة وعلاقتها بالمجتمع. كما أنه يطرح سؤالًا أساسيًا عن إمكانية تجاوز هذه التناقضات وإقامة علاقة جديدة بين التفكير النظري والممارسة اليومية، علاقة تكون فيها الفلسفة أكثر اتصالًا بالواقع وأكثر قدرة على التأثير فيه.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.lefebvre.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.lefebvre.title": "Analyse du texte: Philosophie et réalité quotidienne - Henri Lefebvre",
+                "PhiH.textAnalysis.lefebvre.introduction.title": "Introduction",
+                "PhiH.textAnalysis.lefebvre.introduction.content": "Si l'association du quotidien à des connotations négatives et à des formes de confusion, d'illusion et de préjugés explique les positions critiques que la philosophie a adoptées à son égard, le caractère pressant du quotidien et les fonctions psychologiques et sociales qu'il assume pourraient obliger la philosophie à revoir la nature de ses enjeux.",
+                "PhiH.textAnalysis.lefebvre.text.title": "Philosophie et réalité quotidienne",
+                "PhiH.textAnalysis.lefebvre.text.content": "La vie quotidienne comparée à la philosophie semble comme si elle n'était pas philosophique, elle apparaît comme un monde réel par rapport à l'idéaliste (et l'intellectuel). Puis la vie philosophique (1) veut être la plus élevée face à la vie quotidienne, et elle se découvre elle-même comme une vie abstraite et absente, dépassée par la vie quotidienne et séparée d'elle. La philosophie cherche à décomposer l'énigme de la réalité et se rend rapidement compte de ce qui lui manque de réalisme (2). Et cette estimation lui est inhérente. La philosophie veut se réaliser et cette réalisation lui échappe, et elle doit se dépasser elle-même en tant que vie philosophique. Alors, laissons-nous le philosophe et l'homme absorbé dans le quotidien côte à côte ou face à face ? C'est impossible du point de vue philosophique parce que la philosophie veut penser à ((tout)), au monde et à l'homme, puis se réaliser après. Et la chose est impossible du point de vue de l'homme absorbé dans le quotidien, parce que la philosophie lui offre une conscience et un témoignage décisifs, et parce qu'elle est en même temps la critique inutile et radicale du quotidien. Et quand le philosophe veut être une raison parfaite, il entre dans une vie imaginaire, et quand il veut réaliser les possibilités humaines par ses propres moyens, il découvre qu'il n'en a pas les moyens. Et quand la philosophie déclare qu'elle est toute déterminée et complète et cela en excluant le non-philosophique, elle réalise sa contradiction interne et se détruit elle-même.",
+                "PhiH.textAnalysis.lefebvre.text.source": "Henri Lefebvre: La vie quotidienne dans le monde moderne, p. 28-29",
+                "PhiH.textAnalysis.lefebvre.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.lefebvre.author.alt": "Henri Lefebvre",
+                "PhiH.textAnalysis.lefebvre.author.content": "Henri Lefebvre (1905-1991): philosophe et sociologue français, ses analyses sont liées à la ville, à l'espace, à la vie quotidienne et à la structure de la société bureaucratique avancée. Il a contribué au développement d'une critique radicale de la modernité et s'est intéressé à la relation entre le langage et la société. Parmi ses œuvres: Fragments d'une philosophie de la conscience (1924-1926), La conscience mystifiée (1946), Critique de la vie quotidienne (1947), Introduction à la modernité (1962), La vie quotidienne dans le monde moderne (1967), La fin de l'histoire (1970), La pensée marxiste et la ville (1972), La présence et l'absence (1980), Qu'est-ce que penser? (1985).",
+                "PhiH.textAnalysis.lefebvre.lexical.title": "Concepts et terminologie",
+                "PhiH.textAnalysis.lefebvre.lexical.item1": "<strong>La vie philosophique:</strong> Référence à la vie intellectuelle du philosophe en tant que: vie théorique basée sur la contemplation, l'abstraction, l'interrogation et l'adoption d'une distance critique envers la réalité dominante.",
+                "PhiH.textAnalysis.lefebvre.lexical.item2": "<strong>Le réalisme:</strong> Prend dans le texte un sens péjoratif reflétant le mécanisme d'engagement dans le quotidien. C'est une chose à laquelle le philosophe ne peut se soumettre sans renoncer à son rôle intellectuel consistant à critiquer la réalité et à prendre de la distance par rapport à elle, et parce que cette action est inhérente à la philosophie, l'auteur a estimé que le manque de réalisme resterait inhérent à la philosophie si nous prenons le réalisme dans son sens exclusif représenté par l'engagement mécanique dans le quotidien.",
+                "PhiH.textAnalysis.lefebvre.lexical.item3": "<strong>Le philosophe:</strong> Personne qui pratique la philosophie sans être un philosophe professionnel, ou qui adopte une position philosophique dans la vie sans être spécialisé en philosophie.",
+                "PhiH.textAnalysis.lefebvre.lexical.item4": "<strong>La critique inutile et radicale:</strong> Référence à la contradiction que vit la philosophie entre être une critique radicale de la réalité quotidienne, mais en même temps cette critique semble inutile car elle ne réalise pas de changement réel dans la réalité.",
+                "PhiH.textAnalysis.lefebvre.questions.title": "Questions de compréhension et d'analyse",
+                "PhiH.textAnalysis.lefebvre.questions.q1": "Comment comprenez-vous la déclaration dans le texte: \"La philosophie veut être la plus élevée face à la vie quotidienne\"?",
+                "PhiH.textAnalysis.lefebvre.questions.q2": "À quelle perspective intellectuelle renvoie la discussion de l'auteur sur la déclaration de l'homme ordinaire que la philosophie est \"la critique inutile de la réalité\"?",
+                "PhiH.textAnalysis.lefebvre.questions.q3": "Voyez-vous dans la mise en lumière du problème de l'absence de communication entre le philosophe et l'homme ordinaire, une condamnation du philosophe ou une condamnation de l'homme ordinaire?",
+                "PhiH.textAnalysis.lefebvre.questions.q4": "Quelle est la signification de la déclaration de l'auteur \"La philosophie est dépassée par la vie quotidienne\"?",
+                "PhiH.textAnalysis.lefebvre.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.lefebvre.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.lefebvre.answers.a1.content": "Par cette déclaration, Lefebvre signifie que la philosophie se place dans une position supérieure et plus élevée que la vie quotidienne. Elle veut être le modèle le plus noble de la vie, où elle adopte une distance critique envers la réalité quotidienne et la dépasse vers le monde des idées et des idéaux. Mais cette ambition crée une contradiction interne dans la philosophie, où elle veut être supérieure à la réalité quotidienne mais en même temps manque de \"réalisme\" dans le sens de la capacité à influencer réellement cette réalité.",
+                "PhiH.textAnalysis.lefebvre.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.lefebvre.answers.a2.content": "Cette perception renvoie à une perspective critique de la philosophie du point de vue de l'homme ordinaire immergé dans la vie quotidienne. Du point de vue de cet homme, la philosophie apparaît comme une critique \"inutile\" car elle ne conduit pas à un changement tangible dans sa réalité vécue, et bien qu'elle soit une critique \"radicale\" qui touche aux fondements de la réalité, elle reste prisonnière du monde théorique. Cela reflète l'écart entre la théorie et la pratique, et entre la pensée abstraite et la pratique quotidienne.",
+                "PhiH.textAnalysis.lefebvre.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.lefebvre.answers.a3.content": "Le problème ne peut être réduit à condamner une partie sans l'autre. Le dilemme réside dans la nature de la relation entre la philosophie et la réalité quotidienne elle-même. La philosophie veut penser à \"tout\" mais elle échoue à se réaliser dans la réalité, et l'homme quotidien est immergé dans sa réalité au point qu'il ne voit pas l'utilité de la pensée philosophique. La question n'est pas une condamnation mais un diagnostic d'une contradiction structurelle dans la relation entre la pensée théorique et la pratique quotidienne.",
+                "PhiH.textAnalysis.lefebvre.answers.a4.title": "Réponse à la quatrième question:",
+                "PhiH.textAnalysis.lefebvre.answers.a4.content": "Cette phrase signifie que la vie quotidienne dépasse la philosophie et la laisse derrière. Alors que la philosophie reste prisonnière de la contemplation et de la critique théorique, la vie quotidienne continue dans son flux et son développement sans être radicalement affectée par cette critique. La philosophie veut être influente et active, mais elle découvre qu'elle est \"dépassée\" par la réalité qu'elle veut changer, créant une crise existentielle pour la philosophie elle-même.",
+                "PhiH.textAnalysis.lefebvre.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.lefebvre.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.lefebvre.analysis.thesis.content": "Henri Lefebvre dans ce texte pose le problème de la relation complexe entre la philosophie et la vie quotidienne. D'une part, la philosophie veut être supérieure à la vie quotidienne et la critiquer, mais elle découvre qu'elle manque de \"réalisme\" et reste séparée de la réalité qu'elle veut changer. D'autre part, la philosophie offre une conscience critique radicale, mais cette conscience semble \"inutile\" du point de vue de l'homme immergé dans le quotidien. Cette relation contradictoire conduit à une crise existentielle pour la philosophie elle-même.",
+                "PhiH.textAnalysis.lefebvre.analysis.mechanisms.title": "Mécanismes de la relation entre philosophie et quotidien:",
+                "PhiH.textAnalysis.lefebvre.analysis.mechanisms.content": "La relation entre la philosophie et le quotidien fonctionne à travers plusieurs mécanismes. La philosophie se place dans une position supérieure, adoptant une distance critique de la réalité quotidienne. Mais cette distance se transforme en séparation et en incapacité à influencer réellement. En revanche, l'homme quotidien voit la philosophie comme une critique \"inutile\" malgré sa radicalité, car elle ne se traduit pas en changement tangible dans sa réalité. Cela crée un cercle vicieux où la philosophie veut se réaliser dans la réalité mais échoue, et la réalité veut dépasser la philosophie mais manque de la conscience critique qu'elle fournit.",
+                "PhiH.textAnalysis.lefebvre.analysis.consequences.title": "Conséquences de cette relation:",
+                "PhiH.textAnalysis.lefebvre.analysis.consequences.content": "Cette relation contradictoire conduit à des résultats profonds sur le destin de la philosophie et son rôle. La philosophie découvre qu'elle est \"dépassée\" par la vie quotidienne, menaçant son existence et sa légitimité. Elle fait également face à une contradiction interne entre son ambition holistique de penser à \"tout\" et son incapacité à se réaliser dans la réalité. Cette contradiction pousse la philosophie vers une crise existentielle où elle veut être complète et inclusive, mais cette ambition elle-même conduit à son autodestruction.",
+                "PhiH.textAnalysis.lefebvre.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.lefebvre.analysis.significance.content": "L'analyse de Lefebvre porte des significations profondes qui vont au-delà de la critique philosophique traditionnelle. Il ne se contente pas de diagnostiquer la séparation de la philosophie de la réalité, mais révèle les contradictions structurelles que vit la philosophie dans sa relation avec la vie quotidienne. Cette analyse ouvre la porte à une révision radicale du rôle de la philosophie et de sa relation avec la société. Elle pose également une question fondamentale sur la possibilité de dépasser ces contradictions et d'établir une nouvelle relation entre la pensée théorique et la pratique quotidienne, une relation où la philosophie serait plus connectée à la réalité et plus capable de l'influencer."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.lefebvre.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.lefebvre.title": "Text Analysis: Philosophy and Daily Reality - Henri Lefebvre",
+                "PhiH.textAnalysis.lefebvre.introduction.title": "Introduction",
+                "PhiH.textAnalysis.lefebvre.introduction.content": "If the association of the daily with negative connotations and with forms of confusion, illusion and prejudices explains the critical positions that philosophy has adopted towards it, the pressing nature of the daily and the psychological and social functions it performs may force philosophy to review the nature of its stakes.",
+                "PhiH.textAnalysis.lefebvre.text.title": "Philosophy and Daily Reality",
+                "PhiH.textAnalysis.lefebvre.text.content": "Daily life compared to philosophy seems as if it is not philosophical, it appears as a real world relative to the idealist (and the intellectual). Then the philosophical life (1) wants to be the highest in its confrontation with daily life, and it discovers itself as an abstract and absent life, surpassed by daily life and separated from it. Philosophy seeks to unravel the mystery of reality and quickly realizes what it lacks in realism (2). And this assessment is inherent to it. Philosophy wants to be realized and this realization escapes it, and it must transcend itself as a philosophical life. So do we leave the philosopher and the man absorbed in the daily side by side or face to face? This is impossible from a philosophical point of view because philosophy wants to think about ((everything)), about the world and man, then realize itself afterwards. And the matter is impossible from the point of view of the man absorbed in the daily, because philosophy offers him decisive consciousness and testimony, and because it is at the same time the useless and radical criticism of the daily. And when the philosopher wants to be a perfect reason, he enters an imaginary life, and when he wants to realize human possibilities by his own means, he discovers that he does not have the means for it. And when philosophy declares that it is all determined and complete and that by excluding the non-philosophical, it realizes its internal contradiction and destroys itself.",
+                "PhiH.textAnalysis.lefebvre.text.source": "Henri Lefebvre: Daily Life in the Modern World, p. 28-29",
+                "PhiH.textAnalysis.lefebvre.author.title": "Author Presentation",
+                "PhiH.textAnalysis.lefebvre.author.alt": "Henri Lefebvre",
+                "PhiH.textAnalysis.lefebvre.author.content": "Henri Lefebvre (1905-1991): French philosopher and sociologist, his analyses are linked to the city, space, daily life and the structure of advanced bureaucratic society. He contributed to the development of a radical critique of modernity and was interested in the relationship between language and society. Among his works: Fragments of a Philosophy of Consciousness (1924-1926), Mystified Consciousness (1946), Critique of Everyday Life (1947), Introduction to Modernity (1962), Everyday Life in the Modern World (1967), The End of History (1970), Marxist Thought and the City (1972), Presence and Absence (1980), What is Thinking? (1985).",
+                "PhiH.textAnalysis.lefebvre.lexical.title": "Concepts and Terminology",
+                "PhiH.textAnalysis.lefebvre.lexical.item1": "<strong>Philosophical life:</strong> Reference to the intellectual life of the philosopher as: a theoretical life based on contemplation, abstraction, questioning and adopting a critical distance towards the dominant reality.",
+                "PhiH.textAnalysis.lefebvre.lexical.item2": "<strong>Realism:</strong> Takes in the text a pejorative meaning reflecting the mechanism of engagement in the daily. It is something that the philosopher cannot submit to without abandoning his intellectual role consisting of criticizing reality and taking distance from it, and because this action is inherent to philosophy, the author estimated that the lack of realism would remain inherent to philosophy if we take realism in its exclusive meaning represented by mechanical engagement in the daily.",
+                "PhiH.textAnalysis.lefebvre.lexical.item3": "<strong>The philosopher:</strong> Person who practices philosophy without being a professional philosopher, or who adopts a philosophical position in life without being specialized in philosophy.",
+                "PhiH.textAnalysis.lefebvre.lexical.item4": "<strong>Useless and radical criticism:</strong> Reference to the contradiction that philosophy lives between being a radical criticism of daily reality, but at the same time this criticism seems useless because it does not achieve real change in reality.",
+                "PhiH.textAnalysis.lefebvre.questions.title": "Comprehension and Analysis Questions",
+                "PhiH.textAnalysis.lefebvre.questions.q1": "How do you understand the statement in the text: \"Philosophy wants to be the highest in its confrontation with daily life\"?",
+                "PhiH.textAnalysis.lefebvre.questions.q2": "To what intellectual perspective does the author's discussion refer about the ordinary man's statement that philosophy is \"the useless criticism of reality\"?",
+                "PhiH.textAnalysis.lefebvre.questions.q3": "Do you see in highlighting the problem of the absence of communication between the philosopher and the ordinary man, a condemnation of the philosopher or a condemnation of the ordinary man?",
+                "PhiH.textAnalysis.lefebvre.questions.q4": "What is the meaning of the author's statement \"Philosophy is surpassed by daily life\"?",
+                "PhiH.textAnalysis.lefebvre.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.lefebvre.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.lefebvre.answers.a1.content": "By this statement, Lefebvre means that philosophy places itself in a superior and higher position than daily life. It wants to be the noblest model of life, where it adopts a critical distance towards daily reality and transcends it towards the world of ideas and ideals. But this ambition creates an internal contradiction in philosophy, where it wants to be superior to daily reality but at the same time lacks \"realism\" in the sense of the ability to actually influence this reality.",
+                "PhiH.textAnalysis.lefebvre.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.lefebvre.answers.a2.content": "This perception refers to a critical perspective of philosophy from the point of view of the ordinary man immersed in daily life. From this man's point of view, philosophy appears as a \"useless\" criticism because it does not lead to tangible change in his lived reality, and although it is a \"radical\" criticism that touches the foundations of reality, it remains prisoner of the theoretical world. This reflects the gap between theory and practice, and between abstract thought and daily practice.",
+                "PhiH.textAnalysis.lefebvre.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.lefebvre.answers.a3.content": "The problem cannot be reduced to condemning one party without the other. The dilemma lies in the nature of the relationship between philosophy and daily reality itself. Philosophy wants to think about \"everything\" but it fails to realize itself in reality, and the daily man is immersed in his reality to the point that he does not see the usefulness of philosophical thought. The question is not a condemnation but a diagnosis of a structural contradiction in the relationship between theoretical thought and daily practice.",
+                "PhiH.textAnalysis.lefebvre.answers.a4.title": "Answer to the fourth question:",
+                "PhiH.textAnalysis.lefebvre.answers.a4.content": "This phrase means that daily life surpasses philosophy and leaves it behind. While philosophy remains prisoner of contemplation and theoretical criticism, daily life continues in its flow and development without being radically affected by this criticism. Philosophy wants to be influential and active, but it discovers that it is \"surpassed\" by the reality it wants to change, creating an existential crisis for philosophy itself.",
+                "PhiH.textAnalysis.lefebvre.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.lefebvre.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.lefebvre.analysis.thesis.content": "Henri Lefebvre in this text poses the problem of the complex relationship between philosophy and daily life. On the one hand, philosophy wants to be superior to daily life and criticize it, but it discovers that it lacks \"realism\" and remains separated from the reality it wants to change. On the other hand, philosophy offers a radical critical consciousness, but this consciousness seems \"useless\" from the point of view of the man immersed in the daily. This contradictory relationship leads to an existential crisis for philosophy itself.",
+                "PhiH.textAnalysis.lefebvre.analysis.mechanisms.title": "Mechanisms of the relationship between philosophy and daily:",
+                "PhiH.textAnalysis.lefebvre.analysis.mechanisms.content": "The relationship between philosophy and the daily works through several mechanisms. Philosophy places itself in a superior position, adopting a critical distance from daily reality. But this distance turns into separation and inability to actually influence. In contrast, the daily man sees philosophy as a \"useless\" criticism despite its radicality, because it does not translate into tangible change in his reality. This creates a vicious circle where philosophy wants to realize itself in reality but fails, and reality wants to surpass philosophy but lacks the critical consciousness that it provides.",
+                "PhiH.textAnalysis.lefebvre.analysis.consequences.title": "Consequences of this relationship:",
+                "PhiH.textAnalysis.lefebvre.analysis.consequences.content": "This contradictory relationship leads to profound consequences on the destiny of philosophy and its role. Philosophy discovers that it is \"surpassed\" by daily life, threatening its existence and legitimacy. It also faces an internal contradiction between its holistic ambition to think about \"everything\" and its inability to realize itself in reality. This contradiction pushes philosophy towards an existential crisis where it wants to be complete and inclusive, but this ambition itself leads to its self-destruction.",
+                "PhiH.textAnalysis.lefebvre.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.lefebvre.analysis.significance.content": "Lefebvre's analysis carries deep meanings that go beyond traditional philosophical criticism. He does not just diagnose the separation of philosophy from reality, but reveals the structural contradictions that philosophy lives in its relationship with daily life. This analysis opens the door to a radical revision of the role of philosophy and its relationship with society. It also raises a fundamental question about the possibility of overcoming these contradictions and establishing a new relationship between theoretical thought and daily practice, a relationship where philosophy would be more connected to reality and more capable of influencing it."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.lefebvre.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.lefebvre.title": "تحليل النص: الفلسفة والواقع اليومي - هنري لوفيفر",
+                "PhiH.textAnalysis.lefebvre.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.lefebvre.introduction.content": "لئن كان اقتران اليوميّ بدلالات سلبيّةٍ وبصنوف من الخلط والوهم والأحكام المسبقة يفسّر ما اتّخذته الفلسفة من مواقف نقديّة تجاهه، فإنّ ما يتّسمُ به اليوميّ من طابع ملحّ وما يضطلع به من وظائف نفسية واجتماعية، قد يضطرّ الفلسفة إلى مراجعة طبيعة رهاناتها.",
+                "PhiH.textAnalysis.lefebvre.text.title": "الفلسفة والواقع اليومي",
+                "PhiH.textAnalysis.lefebvre.text.content": "تبدو الحياة اليومية مقارنة بالفلسفة كما لو أنها غير فلسفية، فهي تبدو كعالم واقعي بالنسبة إلى المثالي (والفكري). ثم إن الحياة الفلسفية (1) تريد لنفسها أن تكون الأرفع في مواجهتها للحياة اليومية، وهي تكتشف نفسها حياة مجرّدة وغائبة، مُتجاوَزَة من قبل الحياة اليومية ومنفصلة عنها. إن الفلسفة تسعى إلى تفكيك لغز الواقع وسرعان ما تقف على ما ينقصها من واقعية (2). وهذا التقدير ملازم لها. تريد الفلسفة أن تتحقق وهذا التحقق يفلت منها، وعليها أن تتجاوز نفسها كحياة فلسفية. فهل نترك المتفلسف والإنسان المستغرق في اليومي جنبا إلى جنب أو وجها لوجه ؟ ذلك مستحيل من وجهة نظر فلسفية لأن الفلسفة تريد أن تفكر في ((كلّ شيء))، في العالم والإنسان، ثم تتحقق بعد ذلك. وإن الأمر لمستحيل من وجهة نظر الإنسان المستغرق في اليومي، وذلك لأن الفلسفة تقدم له وعيا وشهادة حاسمين، ولأنها في الآن نفسه النّقد اللامجدي والجذري لليومي. وحين يريد الفيلسوف أن يكون عقلا تاما، يدخل في حياة خيالية، وعندما يريد تحقيق الممكنات الإنسانية بوسائله الخاصة، يكتشف أنه لا يملك الوسائل لذلك. وحين تعلن الفلسفة أنها كل محدّد ومكتمل وذلك بإقصائها للاّفلسفي فإنّها تُحقّق تناقضها الذاتي وتُحطّم نفسها بنفسها.",
+                "PhiH.textAnalysis.lefebvre.text.source": "هنري لوفيفر: الحياة اليومية في العالم الحديث، ص: 28-29",
+                "PhiH.textAnalysis.lefebvre.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.lefebvre.author.alt": "هنري لوفيفر",
+                "PhiH.textAnalysis.lefebvre.author.content": "هنري لوفيفر (1905-1991): فيلسوف وعالم اجتماع فرنسي، ارتبطت تحاليله بالمدينة والفضاء والحياة اليومية وبنية المجتمع البيروقراطي المتقدّم. ساهم في تطوير نقد جذري للحداثة، واهتم بالعلاقة بين اللغة والمجتمع. من مؤلفاته: شذرات من فلسفة الوعي (1924-1926)، الوعي الزائف (1946)، نقد الحياة اليومية (1947)، مدخل إلى الحداثة (1962)، الحياة اليومية في العالم الحديث (1967)، نهاية التاريخ (1970)، الفكر الماركسي والمدينة (1972)، الحضور والغياب (1980)، ما هو التفكير؟ (1985).",
+                "PhiH.textAnalysis.lefebvre.lexical.title": "المفاهيم والمصطلحات",
+                "PhiH.textAnalysis.lefebvre.lexical.item1": "<strong>الحياة الفلسفية:</strong> إشارة إلى الحياة الفكرية للفيلسوف بما هي: حياة نظريّة قوامها التأمّل والتجريد والمساءلة واتّخاذ مسافة نقديّة تجاه الواقع السائد.",
+                "PhiH.textAnalysis.lefebvre.lexical.item2": "<strong>الواقعية:</strong> تأخذ في النص معنى انتقاصيا يعكس آلية الانخراط في اليومي. وهو أمر لا يمكن للفيلسوف أن يُذعِن له دون أن يتخلى عن دوره الفكري المتمثل في نقد الواقع وأخذ مسافة منه، ولأن هذا الفعل ملازم للفلسفة، قدَّر الكاتب أن نقص الواقعية سيظل ملازما للفلسفة وذلك إذا ما أخذنا الواقعية في معناها الحصري المتمثل في الانخراط الآلي في اليومي.",
+                "PhiH.textAnalysis.lefebvre.lexical.item3": "<strong>المتفلسف:</strong> الشخص الذي يمارس التفلسف دون أن يكون فيلسوفًا محترفًا، أو الذي يتخذ موقفًا فلسفيًا في الحياة دون أن يكون متخصصًا في الفلسفة.",
+                "PhiH.textAnalysis.lefebvre.lexical.item4": "<strong>النقد اللامجدي والجذري:</strong> إشارة إلى التناقض الذي تعيشه الفلسفة بين كونها نقدًا جذريًا للواقع اليومي، ولكن في نفس الوقت يبدو هذا النقد غير مجدٍ لأنه لا يحقق تغييرًا فعليًا في الواقع.",
+                "PhiH.textAnalysis.lefebvre.questions.title": "أسئلة الفهم والتحليل",
+                "PhiH.textAnalysis.lefebvre.questions.q1": "كيف تفهم الإقرار الوارد في النص: \"تريد الفلسفة أن تكون الأرفع في مواجهتها للحياة اليومية\"؟",
+                "PhiH.textAnalysis.lefebvre.questions.q2": "إلى أيّ منظور فكريّ يُحيل حديث الكاتب عن إقرار الإنسان العامي بأنّ الفلسفة هي \"النقد اللامجدي للواقع\"؟",
+                "PhiH.textAnalysis.lefebvre.questions.q3": "هل ترى في إثارة معظلة انعدام التواصل بين الفيلسوف والإنسان العامي، إدانة للفيلسوف أم إدانة للإنسان العامي؟",
+                "PhiH.textAnalysis.lefebvre.questions.q4": "ما دلالة قول الكاتب \"الفلسفة مُتَجاوَزَةٌ من قبل الحياة اليومية\" ؟",
+                "PhiH.textAnalysis.lefebvre.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.lefebvre.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.lefebvre.answers.a1.content": "يقصد لوفيفر بهذا الإقرار أن الفلسفة تضع نفسها في موقع أسمى وأرفع من الحياة اليومية. فهي تريد أن تكون النموذج الأرقى للحياة، حيث تتبنى مسافة نقدية تجاه الواقع اليومي وتتجاوزه نحو عالم الأفكار والمثل العليا. لكن هذا الطموح يخلق تناقضًا داخليًا في الفلسفة، حيث تريد أن تكون متفوقة على الواقع اليومي ولكنها في نفس الوقت تفتقر إلى \"الواقعية\" بمعنى القدرة على التأثير الفعلي في هذا الواقع.",
+                "PhiH.textAnalysis.lefebvre.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.lefebvre.answers.a2.content": "يحيل هذا التصور إلى منظور نقدي للفلسفة من وجهة نظر الإنسان العادي المنغمس في الحياة اليومية. فمن منظور هذا الإنسان، تبدو الفلسفة كنقد \"لامجدي\" لأنه لا يؤدي إلى تغيير ملموس في واقعه المعيش، ورغم أنه نقد \"جذري\" يمس أسس الواقع، إلا أنه يبقى حبيس العالم النظري. هذا يعكس الفجوة بين النظرية والتطبيق، وبين التفكير المجرد والممارسة اليومية.",
+                "PhiH.textAnalysis.lefebvre.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.lefebvre.answers.a3.content": "لا يمكن اختزال المشكلة في إدانة طرف دون الآخر. فالمعضلة تكمن في طبيعة العلاقة بين الفلسفة والواقع اليومي ذاتها. الفلسفة تريد أن تفكر في \"كل شيء\" ولكنها تفشل في التحقق في الواقع، والإنسان اليومي منغمس في واقعه لدرجة أنه لا يرى جدوى من التفكير الفلسفي. المسألة ليست إدانة بل تشخيص لتناقض بنيوي في العلاقة بين التفكير النظري والممارسة اليومية.",
+                "PhiH.textAnalysis.lefebvre.answers.a4.title": "الإجابة عن السؤال الرابع:",
+                "PhiH.textAnalysis.lefebvre.answers.a4.content": "تعني هذه العبارة أن الحياة اليومية تتجاوز الفلسفة وتتركها وراءها. فبينما تظل الفلسفة حبيسة التأمل والنقد النظري، تستمر الحياة اليومية في تدفقها وتطورها دون أن تتأثر بشكل جذري بهذا النقد. الفلسفة تريد أن تكون مؤثرة وفاعلة، لكنها تكتشف أنها \"متجاوزة\" من قبل الواقع الذي تريد تغييره، مما يخلق أزمة وجودية للفلسفة نفسها.",
+                "PhiH.textAnalysis.lefebvre.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.lefebvre.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.lefebvre.analysis.thesis.content": "يطرح هنري لوفيفر في هذا النص إشكالية العلاقة المعقدة بين الفلسفة والحياة اليومية. فمن ناحية، تريد الفلسفة أن تكون متفوقة على الحياة اليومية وناقدة لها، لكنها تكتشف أنها تفتقر إلى \"الواقعية\" وتظل منفصلة عن الواقع الذي تريد تغييره. ومن ناحية أخرى، تقدم الفلسفة وعيًا نقديًا جذريًا، لكن هذا الوعي يبدو \"لامجديًا\" من منظور الإنسان المنغمس في اليومي. هذه العلاقة التناقضية تؤدي إلى أزمة وجودية للفلسفة نفسها.",
+                "PhiH.textAnalysis.lefebvre.analysis.mechanisms.title": "آليات العلاقة بين الفلسفة واليومي:",
+                "PhiH.textAnalysis.lefebvre.analysis.mechanisms.content": "تعمل العلاقة بين الفلسفة واليومي من خلال آليات متعددة. الفلسفة تضع نفسها في موقع أسمى، متخذة مسافة نقدية من الواقع اليومي. لكن هذه المسافة تتحول إلى انفصال وعجز عن التأثير الفعلي. في المقابل، يرى الإنسان اليومي الفلسفة كنقد \"لامجدي\" رغم جذريته، لأنه لا يترجم إلى تغيير ملموس في واقعه. هذا يخلق حلقة مفرغة حيث تريد الفلسفة أن تتحقق في الواقع لكنها تفشل، ويريد الواقع أن يتجاوز الفلسفة لكنه يفتقر إلى الوعي النقدي الذي توفره.",
+                "PhiH.textAnalysis.lefebvre.analysis.consequences.title": "نتائج هذه العلاقة:",
+                "PhiH.textAnalysis.lefebvre.analysis.consequences.content": "تؤدي هذه العلاقة التناقضية إلى نتائج عميقة على مصير الفلسفة ودورها. فالفلسفة تكتشف أنها \"متجاوزة\" من قبل الحياة اليومية، مما يهدد وجودها وشرعيتها. كما أنها تواجه تناقضًا ذاتيًا بين طموحها الشمولي في التفكير في \"كل شيء\" وعجزها عن التحقق في الواقع. هذا التناقض يدفع الفلسفة إلى أزمة وجودية حيث تريد أن تكون كاملة وشاملة، لكن هذا الطموح نفسه يؤدي إلى تدميرها الذاتي.",
+                "PhiH.textAnalysis.lefebvre.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.lefebvre.analysis.significance.content": "يحمل تحليل لوفيفر دلالات عميقة تتجاوز النقد الفلسفي التقليدي. فهو لا يكتفي بتشخيص انفصال الفلسفة عن الواقع، بل يكشف عن التناقضات البنيوية التي تعيشها الفلسفة في علاقتها مع الحياة اليومية. هذا التحليل يفتح الباب أمام إعادة نظر جذرية في دور الفلسفة وعلاقتها بالمجتمع. كما أنه يطرح سؤالًا أساسيًا عن إمكانية تجاوز هذه التناقضات وإقامة علاقة جديدة بين التفكير النظري والممارسة اليومية، علاقة تكون فيها الفلسفة أكثر اتصالًا بالواقع وأكثر قدرة على التأثير فيه."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

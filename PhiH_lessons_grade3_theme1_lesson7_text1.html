@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: آليات اشتغال الفكر المتعصب - آلان - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#0ea5e9">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Blue + Teal Color Palette */
+        :root {
+            --primary-color: #0ea5e9;
+            --primary-light: #38bdf8;
+            --primary-dark: #0284c7;
+            --secondary-color: #0d9488;
+            --secondary-light: #14b8a6;
+            --secondary-dark: #0f766e;
+            --accent-color: #0d9488;
+            --accent-light: #14b8a6;
+            --accent-dark: #0f766e;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #f0f9ff;
+            --card-bg: #ffffff;
+            --definition-bg: #ecfeff;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #cffafe;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.1), 0 2px 4px -1px rgba(14, 165, 233, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(14, 165, 233, 0.1), 0 4px 6px -2px rgba(14, 165, 233, 0.05);
+            --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #0d9488 100%);
+            --gradient-secondary: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+            --gradient-accent: linear-gradient(135deg, #0d9488 0%, #0ea5e9 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #38bdf8;
+            --primary-light: #7dd3fc;
+            --primary-dark: #0ea5e9;
+            --secondary-color: #14b8a6;
+            --secondary-light: #2dd4bf;
+            --secondary-dark: #0d9488;
+            --accent-color: #14b8a6;
+            --accent-light: #2dd4bf;
+            --accent-dark: #0d9488;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #164e63;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #155e75;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #38bdf8 0%, #14b8a6 100%);
+            --gradient-secondary: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            --gradient-accent: linear-gradient(135deg, #14b8a6 0%, #38bdf8 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(14, 165, 233, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(13, 148, 136, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(13, 148, 136, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(14, 165, 233, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.alain.title">تحليل النص: آليات اشتغال الفكر المتعصب - آلان</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.alain.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.alain.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.alain.introduction.content">
+                    جذور التّعصب ضاربة في عمق التاريخ. غير أنّ الإنسانية لم تتمكّن من مجاوزة مَفاعيله مجاوزة نهائية. ولعل استمرار هذه الظاهرة في التاريخ المعاصر وما اتخذته من صيغ وتلوينات مُهدِّدة للحياة صار يدعونا أكثر من أيّ وقت مضى إلى فهمه كظاهرة وذلك بردّه إلى أسبابه الحقيقية بدلا من أن نبقى في حدود إدانة نتائجه.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.alain.text.title">آليات اشتغال الفكر المتعصّب</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.alain.text.content">
+                        شهدت كل الأزمنة متعصبين<sup>1</sup> يرون أنفسهم شُرفاء، دونما شك. والجرائم التي اقترفوها إنما هي امتداد لفكرة أو دين أو تصوّر عن العدالة أو عن الحرية. ثمّة شئ من التقدير وأحيانا إعجاب خفيّ<sup>2</sup> بأناس يخاطرون بحياتهم ودون رجاء أيّ امتياز من ذلك، إذ أنّنا لا نفخر البتة بادّخار الجهد والعزوف عن المخاطرة في سبيل ما نعتقد أنّه عادل أو حقّ. إنني أكتشف حقًا هاهنا فضائل نادرة تبعث على الاحترام، كما أكتشف على الأقلّ قدرا ما من الإرادة، غير أن ما ينبغي النظر إليه إنما هو الفكر.  
+
+                        وهذا الفكر المُتحجّر والمنغلق، الذي لا ينظر إلاّ إلى جهة واحدة ولا يفهم البتّة فكر الآخرين، ليس هذا هو الفكر على الإطلاق ( ... ) ثمّة شيء من الآلية في الفكر المتعصّب لأنه يعود دوما من نفس الدروب، فهو لم يعد يبحث ولم يعد يُبدع، إن الدغمائية لهي بمثابة هذيان منشدا<sup>3</sup>. إنها تفتقر إلى الشك بما هو ذلك الثاقب الماسي<sup>4</sup> الذي يَحفر على الدوام. إن هذه الأفكار المتعصّبة تتحكّم أيّما تحكّم في المخاوف والرغبات بيد أنها لا تتحكّم في نفسها. إنها لا تبحث عن هذه الرؤى الأرحب ولا عن هذه المنظورات عن الخصم، ولا تبحث في آخر الأمر عن هذا التفكير الحرّ الذي يفتح طرق الإقناع ويَثني في الآن نفسه عن الإكراه. وباختصار هناك اندفاع فكر<sup>5</sup> وانفعال تفكير يشبه باقي الانفعالات.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.alain.text.source">آلان، مينرفا أو في الحكمة 1927 خواطر 21، ص 68-69، ترجمة لجنة التأليف</em></p>
+                </div>
+            </div>
+            
+            <!-- Footnotes -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.alain.footnotes.title">الهوامش</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.alain.footnotes.item1"><strong>المتعصّب:</strong> هو شخص غير متسامح، يسكنه هاجس نصرة عقيدته التي يراها يقينا لا يقبل المراجعة، وهو مستعد لاستعمال العنف حتى يحمل الناس على الإذعان لها واعتناقها، وقد يصل به الأمر إلى تصفيتهم جسديا في حال رفضهم لذلك. يُقَالُ على المتعصب الديني وتتسع دلالة اللفظ لتشمل كل أصناف التعصب.</li>
+                    <li data-i18n="PhiH.textAnalysis.alain.footnotes.item2"><strong>إعجاب خفي:</strong> شعور ينتاب الإنسان ولأوّل وهلة بعظمة ما يقوم به المقبل على التضحية بالنفس من أجل نصرة فكرة ما أو عقيدة. ويرى الكاتب أن الانبهار بفعل التضحية هذا يجعلنا نقر بفضائل نادرة لهذا الفعل. غير أن الإعجاب يبقى خفيا لان التصريح به يقتضي من ذوى العقل تقديم الحجة على معقولية أفعال المتعصبين وهو ما لا يستقيم لطالبه فيعدل عنه ويبقى الإعجاب في سريرته.</li>
+                    <li data-i18n="PhiH.textAnalysis.alain.footnotes.item3"><strong>هذيان مُنشِد:</strong> الهذيان حالة نفسية مرضيّة تتّسم بغلبة التصوّرات الخاطئة والوهمية وظّفها الكاتب الوصف الدغمائية بما هي تعبير عن حالة انغلاق فكريّ يردّد أثناءها الدغمائي قناعاته الراسخة، مكرّرا نفسه في غير اكتراث بتغيّرات الواقع.</li>
+                    <li data-i18n="PhiH.textAnalysis.alain.footnotes.item4"><strong>الثاقب الماسّي:</strong> أداة أو آلة تستعمل للحفر في الرخام وفي الأجسام الصلبة، وفي النص يشبّه الكاتب الشك بهذه الآلة من جهة كونه أداة فعّالة في كسر طوق التعصّب والدغمائية وتحجّر الفكر عموما.</li>
+                    <li data-i18n="PhiH.textAnalysis.alain.footnotes.item5"><strong>اندفاع فكر:</strong> إشارة إلى أفعال المتعصّبين الذين يندفعون نحو العنف بفعل عقيدة أو فكرة فيتحول "فكرهم" إلى انفعالات عمياء لا تحكمها حدود أو ضوابط.</li>
+                </ul>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.alain.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/alain.jpg" alt="آلان" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.alain.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.alain.author.content">
+                            آلان هو الاسم المستعار لأميل أو غيست شارتيه (1868-1951). مارس مهنة التدريس، نشر سلسلة من المقالات الصغيرة بعنوان "أقوال" كشفت عن قدراته كفيلسوف أخلاق، اعتبر الوعي الميزة الأساسية للإنسان بحيث ناهض الفرويدية في اكتشافها للاوعي معلّلا ذلك بطبيعة الإنسان ككائن حر ومسؤول. حارب التعصب ودعا إلى حرية التفكير.
+
+                            من مؤلفاته:  
+                            - المواطن ضد السلط (1926)  
+                            - أقوال في السعادة (1928)  
+                            - أفكار (1939)  
+                            - هزيمة القوة (1939)  
+                            - عناصر فلسفية (1941)  
+                            - حرّاس الفكر (1942)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.alain.lexical.title">المفاهيم والمصطلحات</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.alain.lexical.item1"><strong>التعصب:</strong> حالة نفسية وفكرية تتسم بالانغلاق وعدم التسامح مع الآراء المخالفة، والتمسك الأعمى بفكرة أو عقيدة معينة دون قبول النقد أو المراجعة.</li>
+                    <li data-i18n="PhiH.textAnalysis.alain.lexical.item2"><strong>الدغمائية:</strong> نمط تفكير مغلق وغير نقدي، يرفض مراجعة المسلمات ويرى الحقيقة مطلقة ونهائية، ويتميز بالجمود الفكري ورفض الحوار مع الآخر.</li>
+                    <li data-i18n="PhiH.textAnalysis.alain.lexical.item3"><strong>الشك:</strong> أداة منهجية في التفكير الفلسفي تساعد على فحص الأفكار واختبار صحتها، وتمثل نقيضاً للتعصب والدغمائية.</li>
+                    <li data-i18n="PhiH.textAnalysis.alain.lexical.item4"><strong>التفكير الحر:</strong> نمط تفكير منفتح وقادر على النظر في مختلف الآراء والاحتمالات، ويتميز بالمرونة والاستعداد لمراجعة المواقف في ضوء الأدلة الجديدة.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.alain.questions.title">أسئلة الفهم والتحليل</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.alain.questions.q1">كيف يشتغل الفكر المتعصّب ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.alain.questions.q2">هل في الإعجاب الأوّلي بأفعال المتعصّبين وبمخاطرتهم بحياتهم تحديدا ما يَثنينا عن محاورة \"الفكر\" الذي يحملهم على ذلك ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.alain.questions.q3">هل أن تقييم الممارسة يكون بالنظر إلى نتائجها سلبية كانت أو إيجابية، أم بالنظر إلى الفكر الذي تصدر عنه ؟ علّل إجابتك.</li>
+                    <li data-i18n="PhiH.textAnalysis.alain.questions.q4">هل تقدّر أنّ التعصّب قد تفاقم اليوم أم تضاءل ؟</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.alain.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.alain.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.alain.answers.a1.content">
+                        يشتغل الفكر المتعصب وفق آلية محددة تتميز بالجمود والانغلاق. فهو فكر متحجر لا ينظر إلا إلى جهة واحدة ولا يفهم فكر الآخرين. يتميز هذا الفكر بطابعه الآلي، حيث يعود دوماً من نفس الدروب دون بحث أو إبداع. كما يفتقر إلى الشك الذي يمثل الأداة الأساسية للتفكير النقدي. الفكر المتعصب يتحكم في المخاوف والرغبات لكنه لا يتحكم في نفسه، فهو لا يبحث عن الرؤى الأرحب ولا عن منظورات الخصم، ولا يسعى إلى التفكير الحر الذي يفتح طرق الإقناع ويجنب الإكراه. باختصار، الفكر المتعصب هو اندفاع فكري وانفعال تفكير يشبه باقي الانفعالات.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.alain.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.alain.answers.a2.content">
+                        نعم، الإعجاب الأولي بأفعال المتعصبين وبمخاطرتهم بحياتهم قد يثنينا عن محاورة الفكر الذي يحملهم على ذلك. فالتضحية بالنفس من أجل فكرة ما تثير فينا إعجاباً خفياً واعترافاً بفضائل نادرة كالشجاعة والإرادة. هذا الإعجاب قد يمنعنا من النظر النقدي إلى الفكر الذي يقف وراء هذه التضحيات، ويجعلنا نركز على البعد الأخلاقي للفعل بدلاً من البعد الفكري للأفكار. لكن الحكمة تقتضي أن نميز بين تقدير الشجاعة في التضحية وبين تقييم صحة الفكرة التي تُضحَّى من أجلها.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.alain.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.alain.answers.a3.content">
+                        تقييم الممارسة يجب أن يكون بالنظر إلى الفكر الذي تصدر عنه وليس فقط إلى نتائجها. فالنيات والأفكار التي تقف وراء الأفعال هي التي تعطيها قيمتها الأخلاقية والمعرفية. الفعل نفسه قد يكون متشابهاً من حيث المظهر، لكن قيمته تختلف باختلاف الفكر الذي يوجهه. الفعل النابع من تعصب ودغمائية يختلف جوهرياً عن الفعل النابع من تفكير حر ونقدي، حتى لو كانت النتائج متشابهة ظاهرياً. لذلك، من المهم الحكم على الأفعال من خلال المنطلقات الفكرية التي أنتجتها وليس فقط من خلال عواقبها.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.alain.answers.a4.title">الإجابة عن السؤال الرابع:</h5>
+                    <p data-i18n="PhiH.textAnalysis.alain.answers.a4.content">
+                        التعصب لم يتضاءل في عصرنا الحالي بل اتخذ أشكالاً جديدة وتلوينات متنوعة. فمع تطور وسائل الاتصال وانتشار المعلومات، ظهرت أشكال جديدة من التعصب ترتدي أحياناً ثوب التقدم والحداثة. التعصب الديني والمذهبي لا يزال قائماً، كما برزت أشكال جديدة من التعصب الفكري والسياسي والثقافي. صحيح أن الوعي بحقوق الإنسان وثقافة التسامح قد تطور، لكن هذا لم يقض على التعصب بل جعله يتكيف مع المستجدات. لذلك يمكن القول إن التعصب لم يتضاءل بل تحول وتكيف مع متغيرات العصر.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.alain.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.alain.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.alain.analysis.thesis.content">
+                        يطرح آلان فكرة أن الفكر المتعصب ليس فكراً حقيقياً، بل هو نمط من التفكير المتحجر والمنغلق الذي يفتقر إلى المرونة والنقد. هذا النمط من التفكير يتسم بالآلية والتكرار، ويفتقد إلى الشك كأداة منهجية للبحث عن الحقيقة. الفكر المتعصب يتحول إلى انفعالات عمياء تتحكم في المخاوف والرغبات لكنها لا تتحكم في نفسها، مما يجعله عاجزاً عن الانفتاح على الرؤى الأخرى والتفكير الحر.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.alain.analysis.mechanisms.title">آليات اشتغال الفكر المتعصب:</h5>
+                    <p data-i18n="PhiH.textAnalysis.alain.analysis.mechanisms.content">
+                        يتميز الفكر المتعصب بعدة آليات تشغيل تجعله مغلقاً وغير نقدي. أولاً، هو فكر أحادي الرؤية لا ينظر إلا إلى جهة واحدة ويرفض فهم وجهات النظر المخالفة. ثانياً، يتسم بالطابع الآلي حيث يعود دوماً من نفس الدروب دون تجديد أو إبداع. ثالثاً، يفتقر إلى الشك المنهجي الذي يمثل الأداة الأساسية للحفر في الأفكار وفحصها. رابعاً، يتحول الفكر إلى انفعالات عمياء تتحكم في المخاوف والرغبات لكنها عاجزة عن التحكم في نفسها. أخيراً، يعجز هذا النمط من التفكير عن البحث عن الرؤى الأرحب والمنظورات المختلفة.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.alain.analysis.consequences.title">نتائج سيطرة الفكر المتعصب:</h5>
+                    <p data-i18n="PhiH.textAnalysis.alain.analysis.consequences.content">
+                        تؤدي سيطرة الفكر المتعصب إلى عدة نتائج سلبية على المستوى الفردي والجماعي. على المستوى الفردي، يفقد الإنسان قدرته على التفكير النقدي والتحرر من الأفكار المسبقة. على المستوى الاجتماعي، يؤدي التعصب إلى إغلاق قنوات الحوار والتفاهم بين الأفراد والجماعات، ويعيق تطور المجتمعات وتقدمها. كما أن الفكر المتعصب يدفع إلى اللجوء إلى الإكراه بدلاً من الإقناع، مما يهدد السلم الاجتماعي والاستقرار. أخيراً، يحول التعصب دون اكتشاف الحقائق الجديدة وتطوير المعرفة، لأنه يرفض مراجعة المسلمات والانفتاح على الأفكار المخالفة.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.alain.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.alain.analysis.significance.content">
+                        يمثل مفهوم "آليات اشتغال الفكر المتعصب" عند آلان مدخلاً لفهم إشكالية التعصب كظاهرة فكرية ونفسية. فهو يبرز الصراع بين التفكير المغلق والتفكير المنفتح، وبين الدغمائية والنقد. كما يوضح ضرورة التمييز بين الشجاعة في الدفاع عن الأفكار وبين صحة هذه الأفكار ذاتها. هذا المفهوم يدفع نحو تأسيس ثقافة التسامح والانفتاح الفكري، ويؤكد على أهمية الشك كأداة منهجية في مواجهة التعصب والدغمائية. كما يقدم إطاراً لفهم استمرار ظاهرة التعصب رغم تطور المعرفة وانتشار قيم التسامح في المجتمعات الحديثة.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.alain.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.alain.title": "Analyse du texte: Mécanismes de fonctionnement de la pensée fanatique - Alain",
+                "PhiH.textAnalysis.alain.introduction.title": "Introduction",
+                "PhiH.textAnalysis.alain.introduction.content": "Les racines du fanatisme plongent profondément dans l'histoire. Cependant, l'humanité n'a pas réussi à dépasser définitivement ses effets. Peut-être que la persistance de ce phénomène dans l'histoire contemporaine et les formes et nuances qu'il a prises, menaçant la vie, nous appellent plus que jamais à le comprendre comme un phénomène en le ramenant à ses véritables causes au lieu de rester dans les limites de la condamnation de ses résultats.",
+                "PhiH.textAnalysis.alain.text.title": "Mécanismes de fonctionnement de la pensée fanatique",
+                "PhiH.textAnalysis.alain.text.content": "Toutes les époques ont connu des fanatiques<sup>1</sup> qui se considèrent comme des honnêtes gens, sans aucun doute. Et les crimes qu'ils ont commis ne sont que le prolongement d'une idée ou d'une religion ou d'une conception de la justice ou de la liberté. Il y a quelque chose d'estime et parfois d'admiration cachée<sup>2</sup> pour des gens qui risquent leur vie sans espoir d'aucun privilège de cela, car nous ne sommes pas du tout fiers d'épargner l'effort et de nous abstenir de prendre des risques pour ce que nous croyons être juste ou vrai. Je découvre vraiment ici des vertus rares qui inspirent le respect, tout comme je découvre au moins une certaine volonté, mais ce qu'il faut regarder, c'est la pensée.  Et cette pensée figée et fermée, qui ne regarde que dans une seule direction et ne comprend pas du tout la pensée des autres, ce n'est pas du tout la pensée ( ... ) Il y a quelque chose de mécanique dans la pensée fanatique parce qu'elle revient toujours des mêmes chemins, elle ne cherche plus et n'innove plus, le dogmatisme est comme un délire chanté<sup>3</sup>. Il manque de doute en tant que cet outil diamantaire pénétrant<sup>4</sup> qui creuse toujours. Ces idées fanatiques contrôlent énormément les peurs et les désirs mais elles ne se contrôlent pas elles-mêmes. Elles ne cherchent pas ces visions plus larges ni ces perspectives sur l'adversaire, et ne cherchent pas en fin de compte cette pensée libre qui ouvre les voies de la persuasion et dissuade en même temps de la contrainte. Et en bref, il y a un élan de pensée<sup>5</sup> et une émotion de pensée qui ressemble aux autres émotions.",
+                "PhiH.textAnalysis.alain.text.source": "Alain, Minerve ou de la sagesse 1927 propos 21, p. 68-69, traduction par le comité de rédaction",
+                "PhiH.textAnalysis.alain.footnotes.title": "Notes de bas de page",
+                "PhiH.textAnalysis.alain.footnotes.item1": "<strong>Fanatique:</strong> C'est une personne intolérante, habitée par l'obsession de défendre sa croyance qu'elle considère comme une certitude qui ne peut être révisée, et elle est prête à utiliser la violence pour amener les gens à s'y soumettre et à l'adopter, et elle peut même aller jusqu'à les éliminer physiquement en cas de refus. On parle de fanatique religieux et la signification du terme s'élargit pour inclure toutes les sortes de fanatisme.",
+                "PhiH.textAnalysis.alain.footnotes.item2": "<strong>Admiration cachée:</strong> Sentiment qui envahit l'homme à première vue de la grandeur de ce que fait celui qui se précipite pour se sacrifier pour défendre une idée ou une croyance. L'auteur estime que l'émerveillement devant cet acte de sacrifice nous fait reconnaître des vertus rares à cet acte. Cependant, l'admiration reste cachée car la déclarer exigerait des personnes raisonnables de fournir un argument sur la rationalité des actions des fanatiques, ce qui n'est pas logique pour celui qui le demande, donc il y renonce et l'admiration reste dans son for intérieur.",
+                "PhiH.textAnalysis.alain.footnotes.item3": "<strong>Délire chanté:</strong> Le délire est un état psychologique pathologique caractérisé par la prédominance de conceptions erronées et illusoires. L'auteur l'a utilisé pour décrire le dogmatisme comme une expression d'un état de fermeture mentale pendant lequel le dogmatique répète ses convictions ancrées, se répétant sans se soucier des changements de la réalité.",
+                "PhiH.textAnalysis.alain.footnotes.item4": "<strong>Outil diamantaire pénétrant:</strong> Outil ou machine utilisée pour percer le marbre et les corps solides. Dans le texte, l'auteur compare le doute à cet outil en ce qu'il est un outil efficace pour briser l'emprise du fanatisme, du dogmatisme et de la rigidité de la pensée en général.",
+                "PhiH.textAnalysis.alain.footnotes.item5": "<strong>Élan de pensée:</strong> Référence aux actions des fanatiques qui se précipitent vers la violence sous l'effet d'une croyance ou d'une idée, transformant ainsi leur \"pensée\" en émotions aveugles non régies par des limites ou des contrôles.",
+                "PhiH.textAnalysis.alain.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.alain.author.alt": "Alain",
+                "PhiH.textAnalysis.alain.author.content": "Alain est le pseudonyme d'Émile-Auguste Chartier (1868-1951). Il a exercé la profession d'enseignant, a publié une série de petits articles intitulés \"Propos\" qui ont révélé ses capacités de philosophe moral. Il considérait la conscience comme la caractéristique fondamentale de l'homme, au point de s'opposer à la psychanalyse freudienne dans sa découverte de l'inconscient, justifiant cela par la nature de l'homme en tant qu'être libre et responsable. Il a combattu le fanatisme et a appelé à la liberté de pensée. Parmi ses œuvres : - Le citoyen contre les pouvoirs (1926) - Propos sur le bonheur (1928) - Les idées (1939) - La défaite de la force (1939) - Éléments de philosophie (1941) - Les gardiens de la pensée (1942)",
+                "PhiH.textAnalysis.alain.lexical.title": "Concepts et terminologie",
+                "PhiH.textAnalysis.alain.lexical.item1": "<strong>Fanatisme:</strong> État psychologique et intellectuel caractérisé par la fermeture et l'intolérance envers les opinions contraires, et l'attachement aveugle à une idée ou une croyance particulière sans accepter la critique ou la révision.",
+                "PhiH.textAnalysis.alain.lexical.item2": "<strong>Dogmatisme:</strong> Mode de pensée fermé et non critique, qui refuse de réviser les postulats et considère la vérité comme absolue et définitive, et se caractérise par la rigidité intellectuelle et le refus du dialogue avec l'autre.",
+                "PhiH.textAnalysis.alain.lexical.item3": "<strong>Doute:</strong> Outil méthodologique dans la pensée philosophique qui aide à examiner les idées et à tester leur validité, et représente l'opposé du fanatisme et du dogmatisme.",
+                "PhiH.textAnalysis.alain.lexical.item4": "<strong>Pensée libre:</strong> Mode de pensée ouvert et capable d'examiner différentes opinions et possibilités, caractérisé par la flexibilité et la volonté de réviser les positions à la lumière de nouvelles preuves.",
+                "PhiH.textAnalysis.alain.questions.title": "Questions de compréhension et d'analyse",
+                "PhiH.textAnalysis.alain.questions.q1": "Comment fonctionne la pensée fanatique ?",
+                "PhiH.textAnalysis.alain.questions.q2": "L'admiration initiale pour les actions des fanatiques et leur prise de risque de leur vie en particulier nous dissuade-t-elle d'interroger la \"pensée\" qui les pousse à cela ?",
+                "PhiH.textAnalysis.alain.questions.q3": "L'évaluation d'une pratique se fait-elle en regardant ses résultats, qu'ils soient négatifs ou positifs, ou en regardant la pensée dont elle émane ? Justifiez votre réponse.",
+                "PhiH.textAnalysis.alain.questions.q4": "Estimez-vous que le fanatisme a augmenté aujourd'hui ou diminué ?",
+                "PhiH.textAnalysis.alain.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.alain.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.alain.answers.a1.content": "La pensée fanatique fonctionne selon un mécanisme spécifique caractérisé par la rigidité et la fermeture. C'est une pensée figée qui ne regarde que dans une seule direction et ne comprend pas la pensée des autres. Cette pensée se caractérise par son caractère mécanique, où elle revient toujours des mêmes chemins sans recherche ni innovation. Elle manque également de doute qui représente l'outil fondamental de la pensée critique. La pensée fanatique contrôle les peurs et les désirs mais ne se contrôle pas elle-même, elle ne cherche pas les visions plus larges ni les perspectives de l'adversaire, et ne cherche pas la pensée libre qui ouvre les voies de la persuasion et évite la contrainte. En bref, la pensée fanatique est un élan intellectuel et une émotion de pensée qui ressemble aux autres émotions.",
+                "PhiH.textAnalysis.alain.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.alain.answers.a2.content": "Oui, l'admiration initiale pour les actions des fanatiques et leur prise de risque de leur vie peut nous dissuader d'interroger la pensée qui les pousse à cela. Le sacrifice de soi pour une idée suscite en nous une admiration cachée et une reconnaissance de vertus rares comme le courage et la volonté. Cette admiration peut nous empêcher de porter un regard critique sur la pensée qui se cache derrière ces sacrifices, et nous faire nous concentrer sur la dimension morale de l'action plutôt que sur la dimension intellectuelle des idées. Mais la sagesse exige que nous distinguions entre l'appréciation du courage dans le sacrifice et l'évaluation de la validité de l'idée pour laquelle on se sacrifie.",
+                "PhiH.textAnalysis.alain.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.alain.answers.a3.content": "L'évaluation d'une pratique doit se faire en regardant la pensée dont elle émane et pas seulement ses résultats. Car les intentions et les idées qui se cachent derrière les actions sont ce qui leur donne leur valeur morale et cognitive. L'action elle-même peut être similaire en apparence, mais sa valeur diffère selon la pensée qui la guide. L'action issue du fanatisme et du dogmatisme diffère fondamentalement de l'action issue d'une pensée libre et critique, même si les résultats sont similaires en apparence. Par conséquent, il est important de juger les actions à travers les prémisses intellectuelles qui les ont produites et pas seulement à travers leurs conséquences.",
+                "PhiH.textAnalysis.alain.answers.a4.title": "Réponse à la quatrième question:",
+                "PhiH.textAnalysis.alain.answers.a4.content": "Le fanatisme n'a pas diminué à notre époque mais a pris de nouvelles formes et des nuances variées. Avec le développement des moyens de communication et la diffusion de l'information, de nouvelles formes de fanatisme sont apparues, revêtant parfois l'apparence du progrès et de la modernité. Le fanatisme religieux et sectaire persiste, tandis que de nouvelles formes de fanatisme intellectuel, politique et culturel ont émergé. Il est vrai que la conscience des droits de l'homme et la culture de la tolérance ont évolué, mais cela n'a pas éliminé le fanatisme, il s'est plutôt adapté aux nouveautés. On peut donc dire que le fanatisme n'a pas diminué mais s'est transformé et adapté aux changements de l'époque.",
+                "PhiH.textAnalysis.alain.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.alain.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.alain.analysis.thesis.content": "Alain présente l'idée que la pensée fanatique n'est pas une vraie pensée, mais plutôt un mode de pensée figé et fermé qui manque de flexibilité et de critique. Ce mode de pensée se caractérise par la mécanique et la répétition, et manque de doute en tant qu'outil méthodologique pour rechercher la vérité. La pensée fanatique se transforme en émotions aveugles qui contrôlent les peurs et les désirs mais ne se contrôlent pas elles-mêmes, ce qui la rend incapable de s'ouvrir aux autres visions et à la pensée libre.",
+                "PhiH.textAnalysis.alain.analysis.mechanisms.title": "Mécanismes de fonctionnement de la pensée fanatique:",
+                "PhiH.textAnalysis.alain.analysis.mechanisms.content": "La pensée fanatique se caractérise par plusieurs mécanismes de fonctionnement qui la rendent fermée et non critique. Premièrement, c'est une pensée à vision unique qui ne regarde que dans une seule direction et refuse de comprendre les points de vue opposés. Deuxièmement, elle se caractérise par un caractère mécanique où elle revient toujours des mêmes chemins sans renouvellement ni innovation. Troisièmement, elle manque de doute méthodologique qui représente l'outil fondamental pour creuser dans les idées et les examiner. Quatrièmement, la pensée se transforme en émotions aveugles qui contrôlent les peurs et les désirs mais sont incapables de se contrôler elles-mêmes. Enfin, ce mode de pensée est incapable de rechercher des visions plus larges et des perspectives différentes.",
+                "PhiH.textAnalysis.alain.analysis.consequences.title": "Conséquences de la domination de la pensée fanatique:",
+                "PhiH.textAnalysis.alain.analysis.consequences.content": "La domination de la pensée fanatique conduit à plusieurs conséquences négatives au niveau individuel et collectif. Au niveau individuel, l'homme perd sa capacité de pensée critique et de libération des idées préconçues. Au niveau social, le fanatisme ferme les canaux de dialogue et de compréhension entre les individus et les groupes, et entrave le développement et le progrès des sociétés. De plus, la pensée fanatique pousse à recourir à la contrainte plutôt qu'à la persuasion, menaçant ainsi la paix sociale et la stabilité. Enfin, le fanatisme empêche la découverte de nouvelles vérités et le développement de la connaissance, car il refuse de réviser les postulats et de s'ouvrir aux idées opposées.",
+                "PhiH.textAnalysis.alain.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.alain.analysis.significance.content": "Le concept de \"mécanismes de fonctionnement de la pensée fanatique\" chez Alain représente une entrée pour comprendre la problématique du fanatisme comme phénomène intellectuel et psychologique. Il met en lumière le conflit entre la pensée fermée et la pensée ouverte, et entre le dogmatisme et la critique. Il clarifie également la nécessité de distinguer entre le courage de défendre des idées et la validité de ces idées elles-mêmes. Ce concept pousse vers l'établissement d'une culture de tolérance et d'ouverture intellectuelle, et souligne l'importance du doute comme outil méthodologique face au fanatisme et au dogmatisme. Il fournit également un cadre pour comprendre la persistance du phénomène du fanatisme malgré le développement des connaissances et la diffusion des valeurs de tolérance dans les sociétés modernes."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.alain.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.alain.title": "Text Analysis: Mechanisms of Fanatical Thought - Alain",
+                "PhiH.textAnalysis.alain.introduction.title": "Introduction",
+                "PhiH.textAnalysis.alain.introduction.content": "The roots of fanaticism run deep in history. However, humanity has not been able to definitively overcome its effects. Perhaps the persistence of this phenomenon in contemporary history and the forms and shades it has taken, threatening life, call us more than ever to understand it as a phenomenon by returning it to its real causes instead of remaining within the limits of condemning its results.",
+                "PhiH.textAnalysis.alain.text.title": "Mechanisms of Fanatical Thought",
+                "PhiH.textAnalysis.alain.text.content": "All times have witnessed fanatics<sup>1</sup> who see themselves as honest people, without a doubt. And the crimes they committed are merely an extension of an idea or a religion or a conception of justice or freedom. There is something of esteem and sometimes hidden admiration<sup>2</sup> for people who risk their lives without hope of any privilege from that, since we are not at all proud of saving effort and refraining from taking risks for what we believe is just or right. I truly discover here rare virtues that inspire respect, just as I discover at least some measure of will, but what should be looked at is thought.  And this rigid and closed thought, which looks only in one direction and does not understand others' thought at all, this is not thought at all ( ... ) There is something mechanical in fanatical thought because it always returns from the same paths, it no longer searches and no longer innovates, dogmatism is like a sung delirium<sup>3</sup>. It lacks doubt as that diamond penetrating tool<sup>4</sup> that always digs. These fanatical ideas control fears and desires enormously but they do not control themselves. They do not seek these broader visions nor these perspectives about the opponent, and do not seek ultimately this free thought that opens ways of persuasion and discourages coercion at the same time. And in short, there is a thought impulse<sup>5</sup> and an emotion of thinking that resembles other emotions.",
+                "PhiH.textAnalysis.alain.text.source": "Alain, Minerva or On Wisdom 1927 propos 21, p. 68-69, translation by the editorial committee",
+                "PhiH.textAnalysis.alain.footnotes.title": "Footnotes",
+                "PhiH.textAnalysis.alain.footnotes.item1": "<strong>Fanatic:</strong> This is an intolerant person, obsessed with defending their belief which they see as a certainty that cannot be revised, and they are ready to use violence to make people submit to it and adopt it, and they may even go as far as physically eliminating them in case of refusal. It is said of religious fanatics and the meaning of the term expands to include all kinds of fanaticism.",
+                "PhiH.textAnalysis.alain.footnotes.item2": "<strong>Hidden admiration:</strong> Feeling that overcomes a person at first sight of the greatness of what is done by someone who rushes to sacrifice themselves to defend an idea or belief. The author believes that the fascination with this act of sacrifice makes us acknowledge rare virtues in this act. However, the admiration remains hidden because declaring it would require reasonable people to provide an argument about the rationality of fanatics' actions, which is not logical for the one requesting it, so they abandon it and the admiration remains in their heart.",
+                "PhiH.textAnalysis.alain.footnotes.item3": "<strong>Sung delirium:</strong> Delirium is a pathological psychological state characterized by the predominance of erroneous and illusory conceptions. The author used it to describe dogmatism as an expression of a state of mental closure during which the dogmatist repeats their entrenched convictions, repeating themselves regardless of changes in reality.",
+                "PhiH.textAnalysis.alain.footnotes.item4": "<strong>Diamond penetrating tool:</strong> Tool or machine used to drill into marble and hard bodies. In the text, the author compares doubt to this tool in that it is an effective tool for breaking the grip of fanaticism, dogmatism, and rigidity of thought in general.",
+                "PhiH.textAnalysis.alain.footnotes.item5": "<strong>Thought impulse:</strong> Reference to the actions of fanatics who rush toward violence under the effect of a belief or idea, thus transforming their \"thought\" into blind emotions not governed by limits or controls.",
+                "PhiH.textAnalysis.alain.author.title": "Author Presentation",
+                "PhiH.textAnalysis.alain.author.alt": "Alain",
+                "PhiH.textAnalysis.alain.author.content": "Alain is the pseudonym of Émile-Auguste Chartier (1868-1951). He practiced the teaching profession, published a series of small articles titled \"Propos\" that revealed his abilities as a moral philosopher. He considered consciousness as the fundamental characteristic of man, to the point of opposing Freudian psychoanalysis in its discovery of the unconscious, justifying this by the nature of man as a free and responsible being. He fought fanaticism and called for freedom of thought. Among his works: - The Citizen Against the Powers (1926) - Propos on Happiness (1928) - Ideas (1939) - The Defeat of Force (1939) - Elements of Philosophy (1941) - The Guardians of Thought (1942)",
+                "PhiH.textAnalysis.alain.lexical.title": "Concepts and Terminology",
+                "PhiH.textAnalysis.alain.lexical.item1": "<strong>Fanaticism:</strong> A psychological and intellectual state characterized by closure and intolerance towards opposing opinions, and blind attachment to a particular idea or belief without accepting criticism or revision.",
+                "PhiH.textAnalysis.alain.lexical.item2": "<strong>Dogmatism:</strong> A closed and non-critical mode of thinking that refuses to revise postulates and considers truth as absolute and definitive, characterized by intellectual rigidity and refusal of dialogue with the other.",
+                "PhiH.textAnalysis.alain.lexical.item3": "<strong>Doubt:</strong> A methodological tool in philosophical thinking that helps examine ideas and test their validity, representing the opposite of fanaticism and dogmatism.",
+                "PhiH.textAnalysis.alain.lexical.item4": "<strong>Free thought:</strong> An open mode of thinking capable of examining different opinions and possibilities, characterized by flexibility and willingness to revise positions in light of new evidence.",
+                "PhiH.textAnalysis.alain.questions.title": "Comprehension and Analysis Questions",
+                "PhiH.textAnalysis.alain.questions.q1": "How does fanatical thought work?",
+                "PhiH.textAnalysis.alain.questions.q2": "Does the initial admiration for the actions of fanatics and their risking of their lives in particular discourage us from questioning the \"thought\" that drives them to that?",
+                "PhiH.textAnalysis.alain.questions.q3": "Is the evaluation of a practice done by looking at its results, whether negative or positive, or by looking at the thought from which it emanates? Justify your answer.",
+                "PhiH.textAnalysis.alain.questions.q4": "Do you estimate that fanaticism has increased today or decreased?",
+                "PhiH.textAnalysis.alain.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.alain.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.alain.answers.a1.content": "Fanatical thought works according to a specific mechanism characterized by rigidity and closure. It is a rigid thought that looks only in one direction and does not understand others' thought. This thought is characterized by its mechanical nature, where it always returns from the same paths without search or innovation. It also lacks doubt which represents the fundamental tool of critical thinking. Fanatical thought controls fears and desires but does not control itself, it does not seek broader visions nor perspectives of the opponent, and does not seek free thought that opens ways of persuasion and avoids coercion. In short, fanatical thought is an intellectual impulse and an emotion of thinking that resembles other emotions.",
+                "PhiH.textAnalysis.alain.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.alain.answers.a2.content": "Yes, the initial admiration for the actions of fanatics and their risking of their lives may discourage us from questioning the thought that drives them to that. Self-sacrifice for an idea arouses in us a hidden admiration and recognition of rare virtues like courage and will. This admiration may prevent us from taking a critical look at the thought behind these sacrifices, and make us focus on the moral dimension of the action rather than the intellectual dimension of the ideas. But wisdom requires that we distinguish between appreciating courage in sacrifice and evaluating the validity of the idea for which one sacrifices.",
+                "PhiH.textAnalysis.alain.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.alain.answers.a3.content": "The evaluation of a practice should be done by looking at the thought from which it emanates and not only at its results. Because the intentions and ideas behind actions are what give them their moral and cognitive value. The action itself may be similar in appearance, but its value differs according to the thought that guides it. The action stemming from fanaticism and dogmatism differs fundamentally from the action stemming from free and critical thought, even if the results are similar in appearance. Therefore, it is important to judge actions through the intellectual premises that produced them and not only through their consequences.",
+                "PhiH.textAnalysis.alain.answers.a4.title": "Answer to the fourth question:",
+                "PhiH.textAnalysis.alain.answers.a4.content": "Fanaticism has not decreased in our current era but has taken new forms and varied shades. With the development of communication means and the spread of information, new forms of fanaticism have appeared, sometimes wearing the guise of progress and modernity. Religious and sectarian fanaticism persists, while new forms of intellectual, political and cultural fanaticism have emerged. It is true that awareness of human rights and the culture of tolerance have evolved, but this has not eliminated fanaticism, it has rather adapted to new developments. Therefore, it can be said that fanaticism has not decreased but has transformed and adapted to the changes of the era.",
+                "PhiH.textAnalysis.alain.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.alain.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.alain.analysis.thesis.content": "Alain presents the idea that fanatical thought is not true thought, but rather a mode of rigid and closed thinking that lacks flexibility and criticism. This mode of thinking is characterized by mechanics and repetition, and lacks doubt as a methodological tool for seeking truth. Fanatical thought transforms into blind emotions that control fears and desires but do not control themselves, making it incapable of opening up to other visions and free thought.",
+                "PhiH.textAnalysis.alain.analysis.mechanisms.title": "Mechanisms of fanatical thought functioning:",
+                "PhiH.textAnalysis.alain.analysis.mechanisms.content": "Fanatical thought is characterized by several operating mechanisms that make it closed and non-critical. First, it is single-vision thought that looks only in one direction and refuses to understand opposing viewpoints. Second, it is characterized by a mechanical nature where it always returns from the same paths without renewal or innovation. Third, it lacks methodological doubt which represents the fundamental tool for digging into ideas and examining them. Fourth, thought transforms into blind emotions that control fears and desires but are incapable of controlling themselves. Finally, this mode of thinking is unable to seek broader visions and different perspectives.",
+                "PhiH.textAnalysis.alain.analysis.consequences.title": "Consequences of the domination of fanatical thought:",
+                "PhiH.textAnalysis.alain.analysis.consequences.content": "The domination of fanatical thought leads to several negative consequences at the individual and collective levels. At the individual level, man loses his ability for critical thinking and liberation from preconceived ideas. At the social level, fanaticism closes channels of dialogue and understanding between individuals and groups, and hinders the development and progress of societies. Moreover, fanatical thought pushes towards resorting to coercion rather than persuasion, thus threatening social peace and stability. Finally, fanaticism prevents the discovery of new truths and the development of knowledge, because it refuses to revise postulates and open up to opposing ideas.",
+                "PhiH.textAnalysis.alain.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.alain.analysis.significance.content": "The concept of \"mechanisms of fanatical thought functioning\" in Alain represents an entry point for understanding the problem of fanaticism as an intellectual and psychological phenomenon. It highlights the conflict between closed thinking and open thinking, and between dogmatism and criticism. It also clarifies the necessity of distinguishing between the courage to defend ideas and the validity of these ideas themselves. This concept pushes towards establishing a culture of tolerance and intellectual openness, and emphasizes the importance of doubt as a methodological tool in the face of fanaticism and dogmatism. It also provides a framework for understanding the persistence of the phenomenon of fanaticism despite the development of knowledge and the spread of tolerance values in modern societies."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.alain.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.alain.title": "تحليل النص: آليات اشتغال الفكر المتعصب - آلان",
+                "PhiH.textAnalysis.alain.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.alain.introduction.content": "جذور التّعصب ضاربة في عمق التاريخ. غير أنّ الإنسانية لم تتمكّن من مجاوزة مَفاعيله مجاوزة نهائية. ولعل استمرار هذه الظاهرة في التاريخ المعاصر وما اتخذته من صيغ وتلوينات مُهدِّدة للحياة صار يدعونا أكثر من أيّ وقت مضى إلى فهمه كظاهرة وذلك بردّه إلى أسبابه الحقيقية بدلا من أن نبقى في حدود إدانة نتائجه.",
+                "PhiH.textAnalysis.alain.text.title": "آليات اشتغال الفكر المتعصّب",
+                "PhiH.textAnalysis.alain.text.content": "شهدت كل الأزمنة متعصبين<sup>1</sup> يرون أنفسهم شُرفاء، دونما شك. والجرائم التي اقترفوها إنما هي امتداد لفكرة أو دين أو تصوّر عن العدالة أو عن الحرية. ثمّة شئ من التقدير وأحيانا إعجاب خفيّ<sup>2</sup> بأناس يخاطرون بحياتهم ودون رجاء أيّ امتياز من ذلك، إذ أنّنا لا نفخر البتة بادّخار الجهد والعزوف عن المخاطرة في سبيل ما نعتقد أنّه عادل أو حقّ. إنني أكتشف حقًا هاهنا فضائل نادرة تبعث على الاحترام، كما أكتشف على الأقلّ قدرا ما من الإرادة، غير أن ما ينبغي النظر إليه إنما هو الفكر.  وهذا الفكر المُتحجّر والمنغلق، الذي لا ينظر إلاّ إلى جهة واحدة ولا يفهم البتّة فكر الآخرين، ليس هذا هو الفكر على الإطلاق ( ... ) ثمّة شيء من الآلية في الفكر المتعصّب لأنه يعود دوما من نفس الدروب، فهو لم يعد يبحث ولم يعد يُبدع، إن الدغمائية لهي بمثابة هذيان منشدا<sup>3</sup>. إنها تفتقر إلى الشك بما هو ذلك الثاقب الماسي<sup>4</sup> الذي يَحفر على الدوام. إن هذه الأفكار المتعصّبة تتحكّم أيّما تحكّم في المخاوف والرغبات بيد أنها لا تتحكّم في نفسها. إنها لا تبحث عن هذه الرؤى الأرحب ولا عن هذه المنظورات عن الخصم، ولا تبحث في آخر الأمر عن هذا التفكير الحرّ الذي يفتح طرق الإقناع ويَثني في الآن نفسه عن الإكراه. وباختصار هناك اندفاع فكر<sup>5</sup> وانفعال تفكير يشبه باقي الانفعالات.",
+                "PhiH.textAnalysis.alain.text.source": "آلان، مينرفا أو في الحكمة 1927 خواطر 21، ص 68-69، ترجمة لجنة التأليف",
+                "PhiH.textAnalysis.alain.footnotes.title": "الهوامش",
+                "PhiH.textAnalysis.alain.footnotes.item1": "<strong>المتعصّب:</strong> هو شخص غير متسامح، يسكنه هاجس نصرة عقيدته التي يراها يقينا لا يقبل المراجعة، وهو مستعد لاستعمال العنف حتى يحمل الناس على الإذعان لها واعتناقها، وقد يصل به الأمر إلى تصفيتهم جسديا في حال رفضهم لذلك. يُقَالُ على المتعصب الديني وتتسع دلالة اللفظ لتشمل كل أصناف التعصب.",
+                "PhiH.textAnalysis.alain.footnotes.item2": "<strong>إعجاب خفي:</strong> شعور ينتاب الإنسان ولأوّل وهلة بعظمة ما يقوم به المقبل على التضحية بالنفس من أجل نصرة فكرة ما أو عقيدة. ويرى الكاتب أن الانبهار بفعل التضحية هذا يجعلنا نقر بفضائل نادرة لهذا الفعل. غير أن الإعجاب يبقى خفيا لان التصريح به يقتضي من ذوى العقل تقديم الحجة على معقولية أفعال المتعصبين وهو ما لا يستقيم لطالبه فيعدل عنه ويبقى الإعجاب في سريرته.",
+                "PhiH.textAnalysis.alain.footnotes.item3": "<strong>هذيان مُنشِد:</strong> الهذيان حالة نفسية مرضيّة تتّسم بغلبة التصوّرات الخاطئة والوهمية وظّفها الكاتب الوصف الدغمائية بما هي تعبير عن حالة انغلاق فكريّ يردّد أثناءها الدغمائي قناعاته الراسخة، مكرّرا نفسه في غير اكتراث بتغيّرات الواقع.",
+                "PhiH.textAnalysis.alain.footnotes.item4": "<strong>الثاقب الماسّي:</strong> أداة أو آلة تستعمل للحفر في الرخام وفي الأجسام الصلبة، وفي النص يشبّه الكاتب الشك بهذه الآلة من جهة كونه أداة فعّالة في كسر طوق التعصّب والدغمائية وتحجّر الفكر عموما.",
+                "PhiH.textAnalysis.alain.footnotes.item5": "<strong>اندفاع فكر:</strong> إشارة إلى أفعال المتعصّبين الذين يندفعون نحو العنف بفعل عقيدة أو فكرة فيتحول \"فكرهم\" إلى انفعالات عمياء لا تحكمها حدود أو ضوابط.",
+                "PhiH.textAnalysis.alain.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.alain.author.alt": "آلان",
+                "PhiH.textAnalysis.alain.author.content": "آلان هو الاسم المستعار لأميل أو غيست شارتيه (1868-1951). مارس مهنة التدريس، نشر سلسلة من المقالات الصغيرة بعنوان \"أقوال\" كشفت عن قدراته كفيلسوف أخلاق، اعتبر الوعي الميزة الأساسية للإنسان بحيث ناهض الفرويدية في اكتشافها للاوعي معلّلا ذلك بطبيعة الإنسان ككائن حر ومسؤول. حارب التعصب ودعا إلى حرية التفكير. من مؤلفاته: - المواطن ضد السلط (1926) - أقوال في السعادة (1928) - أفكار (1939) - هزيمة القوة (1939) - عناصر فلسفية (1941) - حرّاس الفكر (1942)",
+                "PhiH.textAnalysis.alain.lexical.title": "المفاهيم والمصطلحات",
+                "PhiH.textAnalysis.alain.lexical.item1": "<strong>التعصب:</strong> حالة نفسية وفكرية تتسم بالانغلاق وعدم التسامح مع الآراء المخالفة، والتمسك الأعمى بفكرة أو عقيدة معينة دون قبول النقد أو المراجعة.",
+                "PhiH.textAnalysis.alain.lexical.item2": "<strong>الدغمائية:</strong> نمط تفكير مغلق وغير نقدي، يرفض مراجعة المسلمات ويرى الحقيقة مطلقة ونهائية، ويتميز بالجمود الفكري ورفض الحوار مع الآخر.",
+                "PhiH.textAnalysis.alain.lexical.item3": "<strong>الشك:</strong> أداة منهجية في التفكير الفلسفي تساعد على فحص الأفكار واختبار صحتها، وتمثل نقيضاً للتعصب والدغمائية.",
+                "PhiH.textAnalysis.alain.lexical.item4": "<strong>التفكير الحر:</strong> نمط تفكير منفتح وقادر على النظر في مختلف الآراء والاحتمالات، ويتميز بالمرونة والاستعداد لمراجعة المواقف في ضوء الأدلة الجديدة.",
+                "PhiH.textAnalysis.alain.questions.title": "أسئلة الفهم والتحليل",
+                "PhiH.textAnalysis.alain.questions.q1": "كيف يشتغل الفكر المتعصّب ؟",
+                "PhiH.textAnalysis.alain.questions.q2": "هل في الإعجاب الأوّلي بأفعال المتعصّبين وبمخاطرتهم بحياتهم تحديدا ما يَثنينا عن محاورة \"الفكر\" الذي يحملهم على ذلك ؟",
+                "PhiH.textAnalysis.alain.questions.q3": "هل أن تقييم الممارسة يكون بالنظر إلى نتائجها سلبية كانت أو إيجابية، أم بالنظر إلى الفكر الذي تصدر عنه ؟ علّل إجابتك.",
+                "PhiH.textAnalysis.alain.questions.q4": "هل تقدّر أنّ التعصّب قد تفاقم اليوم أم تضاءل ؟",
+                "PhiH.textAnalysis.alain.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.alain.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.alain.answers.a1.content": "يشتغل الفكر المتعصب وفق آلية محددة تتميز بالجمود والانغلاق. فهو فكر متحجر لا ينظر إلا إلى جهة واحدة ولا يفهم فكر الآخرين. يتميز هذا الفكر بطابعه الآلي، حيث يعود دوماً من نفس الدروب دون بحث أو إبداع. كما يفتقر إلى الشك الذي يمثل الأداة الأساسية للتفكير النقدي. الفكر المتعصب يتحكم في المخاوف والرغبات لكنه لا يتحكم في نفسه، فهو لا يبحث عن الرؤى الأرحب ولا عن منظورات الخصم، ولا يسعى إلى التفكير الحر الذي يفتح طرق الإقناع ويجنب الإكراه. باختصار، الفكر المتعصب هو اندفاع فكري وانفعال تفكير يشبه باقي الانفعالات.",
+                "PhiH.textAnalysis.alain.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.alain.answers.a2.content": "نعم، الإعجاب الأولي بأفعال المتعصبين وبمخاطرتهم بحياتهم قد يثنينا عن محاورة الفكر الذي يحملهم على ذلك. فالتضحية بالنفس من أجل فكرة ما تثير فينا إعجاباً خفياً واعترافاً بفضائل نادرة كالشجاعة والإرادة. هذا الإعجاب قد يمنعنا من النظر النقدي إلى الفكر الذي يقف وراء هذه التضحيات، ويجعلنا نركز على البعد الأخلاقي للفعل بدلاً من البعد الفكري للأفكار. لكن الحكمة تقتضي أن نميز بين تقدير الشجاعة في التضحية وبين تقييم صحة الفكرة التي تُضحَّى من أجلها.",
+                "PhiH.textAnalysis.alain.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.alain.answers.a3.content": "تقييم الممارسة يجب أن يكون بالنظر إلى الفكر الذي تصدر عنه وليس فقط إلى نتائجها. فالنيات والأفكار التي تقف وراء الأفعال هي التي تعطيها قيمتها الأخلاقية والمعرفية. الفعل نفسه قد يكون متشابهاً من حيث المظهر، لكن قيمته تختلف باختلاف الفكر الذي يوجهه. الفعل النابع من تعصب ودغمائية يختلف جوهرياً عن الفعل النابع من تفكير حر ونقدي، حتى لو كانت النتائج متشابهة ظاهرياً. لذلك، من المهم الحكم على الأفعال من خلال المنطلقات الفكرية التي أنتجتها وليس فقط من خلال عواقبها.",
+                "PhiH.textAnalysis.alain.answers.a4.title": "الإجابة عن السؤال الرابع:",
+                "PhiH.textAnalysis.alain.answers.a4.content": "التعصب لم يتضاءل في عصرنا الحالي بل اتخذ أشكالاً جديدة وتلوينات متنوعة. فمع تطور وسائل الاتصال وانتشار المعلومات، ظهرت أشكال جديدة من التعصب ترتدي أحياناً ثوب التقدم والحداثة. التعصب الديني والمذهبي لا يزال قائماً، كما برزت أشكال جديدة من التعصب الفكري والسياسي والثقافي. صحيح أن الوعي بحقوق الإنسان وثقافة التسامح قد تطور، لكن هذا لم يقض على التعصب بل جعله يتكيف مع المستجدات. لذلك يمكن القول إن التعصب لم يتضاءل بل تحول وتكيف مع متغيرات العصر.",
+                "PhiH.textAnalysis.alain.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.alain.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.alain.analysis.thesis.content": "يطرح آلان فكرة أن الفكر المتعصب ليس فكراً حقيقياً، بل هو نمط من التفكير المتحجر والمنغلق الذي يفتقر إلى المرونة والنقد. هذا النمط من التفكير يتسم بالآلية والتكرار، ويفتقد إلى الشك كأداة منهجية للبحث عن الحقيقة. الفكر المتعصب يتحول إلى انفعالات عمياء تتحكم في المخاوف والرغبات لكنها لا تتحكم في نفسها، مما يجعله عاجزاً عن الانفتاح على الرؤى الأخرى والتفكير الحر.",
+                "PhiH.textAnalysis.alain.analysis.mechanisms.title": "آليات اشتغال الفكر المتعصب:",
+                "PhiH.textAnalysis.alain.analysis.mechanisms.content": "يتميز الفكر المتعصب بعدة آليات تشغيل تجعله مغلقاً وغير نقدي. أولاً، هو فكر أحادي الرؤية لا ينظر إلا إلى جهة واحدة ويرفض فهم وجهات النظر المخالفة. ثانياً، يتسم بالطابع الآلي حيث يعود دوماً من نفس الدروب دون تجديد أو إبداع. ثالثاً، يفتقر إلى الشك المنهجي الذي يمثل الأداة الأساسية للحفر في الأفكار وفحصها. رابعاً، يتحول الفكر إلى انفعالات عمياء تتحكم في المخاوف والرغبات لكنها عاجزة عن التحكم في نفسها. أخيراً، يعجز هذا النمط من التفكير عن البحث عن الرؤى الأرحب والمنظورات المختلفة.",
+                "PhiH.textAnalysis.alain.analysis.consequences.title": "نتائج سيطرة الفكر المتعصب:",
+                "PhiH.textAnalysis.alain.analysis.consequences.content": "تؤدي سيطرة الفكر المتعصب إلى عدة نتائج سلبية على المستوى الفردي والجماعي. على المستوى الفردي، يفقد الإنسان قدرته على التفكير النقدي والتحرر من الأفكار المسبقة. على المستوى الاجتماعي، يؤدي التعصب إلى إغلاق قنوات الحوار والتفاهم بين الأفراد والجماعات، ويعيق تطور المجتمعات وتقدمها. كما أن الفكر المتعصب يدفع إلى اللجوء إلى الإكراه بدلاً من الإقناع، مما يهدد السلم الاجتماعي والاستقرار. أخيراً، يحول التعصب دون اكتشاف الحقائق الجديدة وتطوير المعرفة، لأنه يرفع مراجعة المسلمات والانفتاح على الأفكار المخالفة.",
+                "PhiH.textAnalysis.alain.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.alain.analysis.significance.content": "يمثل مفهوم \"آليات اشتغال الفكر المتعصب\" عند آلان مدخلاً لفهم إشكالية التعصب كظاهرة فكرية ونفسية. فهو يبرز الصراع بين التفكير المغلق والتفكير المنفتح، وبين الدغمائية والنقد. كما يوضح ضرورة التمييز بين الشجاعة في الدفاع عن الأفكار وبين صحة هذه الأفكار ذاتها. هذا المفهوم يدفع نحو تأسيس ثقافة التسامح والانفتاح الفكري، ويؤكد على أهمية الشك كأداة منهجية في مواجهة التعصب والدغمائية. كما يقدم إطاراً لفهم استمرار ظاهرة التعصب رغم تطور المعرفة وانتشار قيم التسامح في المجتمعات الحديثة."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

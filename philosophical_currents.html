@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophical Currents - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#8B4513">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Earthy Brown + Gold Theme for Philosophical Currents */
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2691E;
+            --accent-color: #654321;
+            --light-color: #F5F5DC;
+            --dark-color: #2F1B0C;
+            --text-color: #333333;
+            --heading-color: #654321;
+            --background-color: #F5F5DC;
+            --card-bg: #FFFFFF;
+            --definition-bg: #F0EAD6;
+            --border-color: #D2B48C;
+            --table-even-bg: #F8F4E5;
+            --table-hover-bg: #F0EAD6;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(139, 69, 19, 0.15);
+            --gradient-primary: linear-gradient(135deg, #8B4513 0%, #654321 100%);
+            --gradient-secondary: linear-gradient(135deg, #D2691E 0%, #8B4513 100%);
+            --gradient-green: linear-gradient(135deg, #8B4513 0%, #2F1B0C 100%);
+            --gradient-gray: linear-gradient(135deg, #D2691E 0%, #8B4513 100%);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #A0522D;
+            --secondary-color: #CD853F;
+            --accent-color: #654321;
+            --light-color: #2F1B0C;
+            --dark-color: #1A1006;
+            --text-color: #F5F5DC;
+            --heading-color: #CD853F;
+            --background-color: #2F1B0C;
+            --card-bg: #3D2914;
+            --definition-bg: #4A341E;
+            --border-color: #A0522D;
+            --table-even-bg: #2F1B0C;
+            --table-hover-bg: #4A341E;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #A0522D 0%, #654321 100%);
+            --gradient-secondary: linear-gradient(135deg, #CD853F 0%, #A0522D 100%);
+            --gradient-green: linear-gradient(135deg, #A0522D 0%, #2F1B0C 100%);
+            --gradient-gray: linear-gradient(135deg, #CD853F 0%, #A0522D 100%);
+        }
+        
+        /* Philosophical Currents Page Specific Styles */
+        .PhiH-currents-page {
+            min-height: 100vh;
+            background: var(--background-color);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .PhiH-currents-main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .PhiH-currents-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .PhiH-currents-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--heading-color);
+        }
+        
+        .PhiH-currents-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Alphabet Navigation */
+        .PhiH-alphabet-nav {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-alphabet-nav-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-alphabet-nav-title::before {
+            content: "🔤";
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .PhiH-alphabet-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        
+        .PhiH-letter-btn {
+            background: var(--gradient-secondary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            min-width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .PhiH-letter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(210, 105, 30, 0.3);
+        }
+        
+        .PhiH-letter-btn.active {
+            background: var(--gradient-primary);
+            box-shadow: 0 4px 10px rgba(139, 69, 19, 0.3);
+        }
+        
+        /* Currents Grid */
+        .PhiH-currents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-current-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-current-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(139, 69, 19, 0.2);
+        }
+        
+        .PhiH-current-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .PhiH-current-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .PhiH-current-letter {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+        
+        .PhiH-current-info {
+            flex: 1;
+        }
+        
+        .PhiH-current-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+        
+        .PhiH-current-language {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.25rem;
+        }
+        
+        .PhiH-current-content {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            flex: 1;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+        
+        .PhiH-see-more-btn {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: auto;
+        }
+        
+        .PhiH-see-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+        }
+        
+        /* Current Modal Styles */
+        .PhiH-current-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        
+        .PhiH-current-modal-content {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .PhiH-current-modal-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+        
+        .PhiH-current-modal-letter {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-right: 1.5rem;
+        }
+        
+        .PhiH-current-modal-info {
+            flex: 1;
+        }
+        
+        .PhiH-current-modal-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-current-modal-language {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-current-modal-content-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .PhiH-current-modal-section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-current-modal-section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+            margin-left: 10px;
+        }
+        
+        .PhiH-current-modal-section-text {
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+        
+        .PhiH-current-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-current-modal-close:hover {
+            background-color: var(--definition-bg);
+        }
+        
+        /* No Currents Message */
+        .PhiH-no-currents {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-color);
+            grid-column: 1 / -1;
+        }
+        
+        .PhiH-no-currents-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .PhiH-currents-title {
+                font-size: 2rem;
+            }
+            
+            .PhiH-currents-subtitle {
+                font-size: 1rem;
+            }
+            
+            .PhiH-currents-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-alphabet-list {
+                justify-content: flex-start;
+            }
+            
+            .PhiH-letter-btn {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+                min-width: 35px;
+                height: 35px;
+            }
+            
+            .PhiH-current-modal-content {
+                padding: 1.5rem;
+                margin: 1rem auto;
+            }
+            
+            .PhiH-current-modal-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .PhiH-current-modal-letter {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* RTL/LTR Support */
+        [dir="rtl"] .PhiH-alphabet-nav-title::before {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+        
+        [dir="rtl"] .PhiH-current-letter {
+            margin-right: 0;
+            margin-left: 1rem;
+        }
+        
+        [dir="rtl"] .PhiH-current-modal-letter {
+            margin-right: 0;
+            margin-left: 1.5rem;
+        }
+        
+        [dir="rtl"] .PhiH-current-modal-close {
+            right: auto;
+            left: 1rem;
+        }
+        
+        [dir="rtl"] .PhiH-current-modal-section-title::after {
+            margin-left: 0;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body class="PhiH-currents-page">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- Manual Install Button (Fallback) -->
+        <button id="manual-install-btn" class="PhiH-pwa-install-btn" style="display: none;">
+            <span class="PhiH-pwa-install-icon">📱</span>
+            <span data-i18n="PhiH.pwa.install">Install App</span>
+        </button>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-currents-main">
+        <div class="PhiH-currents-header">
+            <h1 class="PhiH-currents-title" data-i18n="PhiH.currents.title">Philosophical Currents</h1>
+            <p class="PhiH-currents-subtitle" data-i18n="PhiH.currents.subtitle">Explore major philosophical movements and schools of thought</p>
+        </div>
+        
+        <!-- Alphabet Navigation -->
+        <section class="PhiH-alphabet-nav">
+            <h2 class="PhiH-alphabet-nav-title" data-i18n="PhiH.currents.alphabetNav">Browse by First Letter</h2>
+            <div class="PhiH-alphabet-list" id="alphabetList">
+                <!-- Letters will be dynamically loaded here -->
+            </div>
+        </section>
+        
+        <!-- Currents Grid -->
+        <div class="PhiH-currents-grid" id="currentsGrid">
+            <!-- Currents will be dynamically loaded here -->
+        </div>
+        
+        <!-- No Currents Message -->
+        <div class="PhiH-no-currents" id="noCurrents" style="display: none;">
+            <div class="PhiH-no-currents-icon">🌊</div>
+            <h3 data-i18n="PhiH.currents.noCurrents.title">No currents found</h3>
+            <p data-i18n="PhiH.currents.noCurrents.message">Select a different letter or check back later</p>
+        </div>
+    </main>
+    
+    <!-- Current Modal -->
+    <div class="PhiH-current-modal" id="currentModal">
+        <div class="PhiH-current-modal-content">
+            <button class="PhiH-current-modal-close" id="modalClose">&times;</button>
+            <div class="PhiH-current-modal-header">
+                <div id="modalLetter" class="PhiH-current-modal-letter"></div>
+                <div class="PhiH-current-modal-info">
+                    <h2 id="modalName" class="PhiH-current-modal-name"></h2>
+                    <p id="modalLanguage" class="PhiH-current-modal-language"></p>
+                </div>
+            </div>
+            
+            <div class="PhiH-current-modal-content-section">
+                <h3 class="PhiH-current-modal-section-title" data-i18n="PhiH.currents.nameAndOrigin">Name and Origin</h3>
+                <div id="modalNameAndOrigin" class="PhiH-current-modal-section-text"></div>
+            </div>
+            
+            <div class="PhiH-current-modal-content-section">
+                <h3 class="PhiH-current-modal-section-title" data-i18n="PhiH.currents.pioneersAndTexts">Pioneers and Reference Texts</h3>
+                <div id="modalPioneersAndTexts" class="PhiH-current-modal-section-text"></div>
+            </div>
+            
+            <div class="PhiH-current-modal-content-section">
+                <h3 class="PhiH-current-modal-section-title" data-i18n="PhiH.currents.centralThesis">Central Thesis and Key Concepts</h3>
+                <div id="modalCentralThesis" class="PhiH-current-modal-section-text"></div>
+            </div>
+            
+            <div class="PhiH-current-modal-content-section">
+                <h3 class="PhiH-current-modal-section-title" data-i18n="PhiH.currents.methodAndDomain">Method and Domain</h3>
+                <div id="modalMethodAndDomain" class="PhiH-current-modal-section-text"></div>
+            </div>
+            
+            <div class="PhiH-current-modal-content-section">
+                <h3 class="PhiH-current-modal-section-title" data-i18n="PhiH.currents.relationsAndCritique">Relations and Critique</h3>
+                <div id="modalRelationsAndCritique" class="PhiH-current-modal-section-text"></div>
+            </div>
+            
+            <div class="PhiH-current-modal-content-section">
+                <h3 class="PhiH-current-modal-section-title" data-i18n="PhiH.currents.impactAndApplications">Impact and Applications</h3>
+                <div id="modalImpactAndApplications" class="PhiH-current-modal-section-text"></div>
+            </div>
+            
+            <div class="PhiH-current-modal-content-section">
+                <h3 class="PhiH-current-modal-section-title" data-i18n="PhiH.currents.equivalentTerms">Equivalent Terms</h3>
+                <div id="modalEquivalentTerms" class="PhiH-current-modal-section-text"></div>
+            </div>
+            
+            <div class="PhiH-current-modal-content-section">
+                <h3 class="PhiH-current-modal-section-title" data-i18n="PhiH.currents.other">Other Information</h3>
+                <div id="modalOther" class="PhiH-current-modal-section-text"></div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Include data_schools.js -->
+    <script src="scripts/data_schools.js"></script>
+    
+    <script>
+        // Page-specific translations for currents page
+        window.translations_PhiHcurrents = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "Non disponible",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                    
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.currents": "Courants",
+                "PhiH.windows.encyclopedia": "Encyclopédie",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Currents page translations
+                "PhiH.currents.title": "Courants Philosophiques",
+                "PhiH.currents.subtitle": "Explorez les principaux mouvements philosophiques et écoles de pensée",
+                "PhiH.currents.alphabetNav": "Parcourir par première lettre",
+                "PhiH.currents.allLetters": "Toutes les lettres",
+                "PhiH.currents.noCurrents.title": "Aucun courant trouvé",
+                "PhiH.currents.noCurrents.message": "Sélectionnez une autre lettre ou revenez plus tard",
+                "PhiH.currents.seeMore": "Voir plus",
+                "PhiH.currents.nameAndOrigin": "Nom et Origine",
+                "PhiH.currents.pioneersAndTexts": "Pionniers et Textes de Référence",
+                "PhiH.currents.centralThesis": "Thèse Centrale et Concepts Clés",
+                "PhiH.currents.methodAndDomain": "Méthode et Domaine",
+                "PhiH.currents.relationsAndCritique": "Relations et Critique",
+                "PhiH.currents.impactAndApplications": "Impact et Applications",
+                "PhiH.currents.equivalentTerms": "Termes Équivalents",
+                "PhiH.currents.other": "Autres Informations"
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "Not available",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                    
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.currents": "Currents",
+                "PhiH.windows.encyclopedia": "Encyclopedia",
+                "PhiH.windows.resources": "Resources",
+                
+                // Currents page translations
+                "PhiH.currents.title": "Philosophical Currents",
+                "PhiH.currents.subtitle": "Explore major philosophical movements and schools of thought",
+                "PhiH.currents.alphabetNav": "Browse by First Letter",
+                "PhiH.currents.allLetters": "All Letters",
+                "PhiH.currents.noCurrents.title": "No currents found",
+                "PhiH.currents.noCurrents.message": "Select a different letter or check back later",
+                "PhiH.currents.seeMore": "See More",
+                "PhiH.currents.nameAndOrigin": "Name and Origin",
+                "PhiH.currents.pioneersAndTexts": "Pioneers and Reference Texts",
+                "PhiH.currents.centralThesis": "Central Thesis and Key Concepts",
+                "PhiH.currents.methodAndDomain": "Method and Domain",
+                "PhiH.currents.relationsAndCritique": "Relations and Critique",
+                "PhiH.currents.impactAndApplications": "Impact and Applications",
+                "PhiH.currents.equivalentTerms": "Equivalent Terms",
+                "PhiH.currents.other": "Other Information"
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "غير متوفر",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                    
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.currents": "تيارات",
+                "PhiH.windows.encyclopedia": "الموسوعة",
+                "PhiH.windows.resources": "الموارد",
+                
+                // Currents page translations
+                "PhiH.currents.title": "التيارات الفلسفية",
+                "PhiH.currents.subtitle": "استكشف الحركات الفلسفية الرئيسية ومدارس الفكر",
+                "PhiH.currents.alphabetNav": "تصفح حسب الحرف الأول",
+                "PhiH.currents.allLetters": "جميع الحروف",
+                "PhiH.currents.noCurrents.title": "لم يتم العثور على تيارات",
+                "PhiH.currents.noCurrents.message": "اختر حرفاً مختلفاً أو عد لاحقاً",
+                "PhiH.currents.seeMore": "رؤية المزيد",
+                "PhiH.currents.nameAndOrigin": "الاسم والأصل",
+                "PhiH.currents.pioneersAndTexts": "الرواد والنصوص المرجعية",
+                "PhiH.currents.centralThesis": "الأطروحة المركزية والمفاهيم الأساسية",
+                "PhiH.currents.methodAndDomain": "المنهج والمجال",
+                "PhiH.currents.relationsAndCritique": "العلاقات والنقد",
+                "PhiH.currents.impactAndApplications": "التأثير والتطبيقات",
+                "PhiH.currents.equivalentTerms": "المصطلحات المكافئة",
+                "PhiH.currents.other": "معلومات أخرى"
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHcurrents;
+    </script>
+
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+
+    <script>
+        // Philosophical currents page functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const alphabetList = document.getElementById('alphabetList');
+            const currentsGrid = document.getElementById('currentsGrid');
+            const noCurrents = document.getElementById('noCurrents');
+            
+            // Modal elements
+            const currentModal = document.getElementById('currentModal');
+            const modalClose = document.getElementById('modalClose');
+            const modalLetter = document.getElementById('modalLetter');
+            const modalName = document.getElementById('modalName');
+            const modalLanguage = document.getElementById('modalLanguage');
+            const modalNameAndOrigin = document.getElementById('modalNameAndOrigin');
+            const modalPioneersAndTexts = document.getElementById('modalPioneersAndTexts');
+            const modalCentralThesis = document.getElementById('modalCentralThesis');
+            const modalMethodAndDomain = document.getElementById('modalMethodAndDomain');
+            const modalRelationsAndCritique = document.getElementById('modalRelationsAndCritique');
+            const modalImpactAndApplications = document.getElementById('modalImpactAndApplications');
+            const modalEquivalentTerms = document.getElementById('modalEquivalentTerms');
+            const modalOther = document.getElementById('modalOther');
+            
+            // Get current language from translation system
+            let currentLanguage = localStorage.getItem('preferredLanguage') || 'en';
+            let currentLetterFilter = 'all';
+            let isInitializing = true;
+            
+            // Function to get unique first letters from currents
+            function getUniqueLetters() {
+                const letters = new Set();
+                
+                if (PhiH_Schools && PhiH_Schools.schools) {
+                    PhiH_Schools.schools.forEach(current => {
+                        if (current[currentLanguage]) {
+                            letters.add(current[currentLanguage].first_letter);
+                        } else if (current.en) {
+                            letters.add(current.en.first_letter);
+                        }
+                    });
+                }
+                
+                return Array.from(letters).sort();
+            }
+            
+            // Function to render alphabet navigation
+            function renderAlphabetNav() {
+                alphabetList.innerHTML = '';
+                
+                // Add "All Letters" button
+                const allLettersBtn = document.createElement('button');
+                allLettersBtn.className = `PhiH-letter-btn ${currentLetterFilter === 'all' ? 'active' : ''}`;
+                allLettersBtn.textContent = getTranslation('PhiH.currents.allLetters');
+                allLettersBtn.setAttribute('data-letter', 'all');
+                allLettersBtn.addEventListener('click', function() {
+                    setActiveLetterFilter('all');
+                });
+                alphabetList.appendChild(allLettersBtn);
+                
+                // Add individual letter buttons
+                const letters = getUniqueLetters();
+                letters.forEach(letter => {
+                    const letterBtn = document.createElement('button');
+                    letterBtn.className = `PhiH-letter-btn ${currentLetterFilter === letter ? 'active' : ''}`;
+                    letterBtn.textContent = letter;
+                    letterBtn.setAttribute('data-letter', letter);
+                    letterBtn.addEventListener('click', function() {
+                        setActiveLetterFilter(letter);
+                    });
+                    alphabetList.appendChild(letterBtn);
+                });
+            }
+            
+            // Function to render currents
+            function renderCurrents() {
+                try {
+                    currentsGrid.innerHTML = '';
+                    noCurrents.style.display = 'none';
+                    
+                    let filteredCurrents = [];
+                    
+                    if (PhiH_Schools && PhiH_Schools.schools) {
+                        if (currentLetterFilter === 'all') {
+                            filteredCurrents = PhiH_Schools.schools;
+                        } else {
+                            filteredCurrents = PhiH_Schools.schools.filter(current => {
+                                const currentData = getCurrentData(current, currentLanguage);
+                                return currentData.first_letter === currentLetterFilter;
+                            });
+                        }
+                    }
+                    
+                    if (filteredCurrents.length === 0) {
+                        noCurrents.style.display = 'block';
+                        return;
+                    }
+                    
+                    filteredCurrents.forEach(current => {
+                        const currentData = getCurrentData(current, currentLanguage);
+                        
+                        const currentCard = document.createElement('div');
+                        currentCard.className = 'PhiH-current-card';
+                        
+                        currentCard.innerHTML = `
+                            <div class="PhiH-current-card-header">
+                                <div class="PhiH-current-letter">${currentData.first_letter}</div>
+                                <div class="PhiH-current-info">
+                                    <div class="PhiH-current-name">${currentData.name}</div>
+                                    <div class="PhiH-current-language">${getLanguageName(currentLanguage)}</div>
+                                </div>
+                            </div>
+                            <div class="PhiH-current-content">${currentData.name_and_origin}</div>
+                            <button class="PhiH-see-more-btn" data-current-id="${current.id}">${getTranslation('PhiH.currents.seeMore')}</button>
+                        `;
+                        
+                        currentsGrid.appendChild(currentCard);
+                    });
+                    
+                    // Add event listeners to "See More" buttons
+                    const seeMoreButtons = document.querySelectorAll('.PhiH-see-more-btn');
+                    seeMoreButtons.forEach(button => {
+                        button.addEventListener('click', function() {
+                            const currentId = this.getAttribute('data-current-id');
+                            openCurrentModal(currentId);
+                        });
+                    });
+                } catch (error) {
+                    console.error('Error rendering currents:', error);
+                    noCurrents.style.display = 'block';
+                }
+            }
+            
+            // Helper function to get current data for current language
+            function getCurrentData(current, lang) {
+                const currentLangData = current[lang] || current.en || current.fr || current.ar;
+                return {
+                    name: currentLangData.name,
+                    first_letter: currentLangData.first_letter,
+                    name_and_origin: currentLangData.name_and_origin,
+                    pioneers_and_reference_texts: currentLangData.pioneers_and_reference_texts,
+                    central_thesis_and_key_concepts: currentLangData.central_thesis_and_key_concepts,
+                    method_and_domain: currentLangData.method_and_domain,
+                    relations_and_critique: currentLangData.relations_and_critique,
+                    impact_and_applications: currentLangData.impact_and_applications,
+                    equivalent_terms: currentLangData.equivalent_terms,
+                    other: currentLangData.other
+                };
+            }
+            
+            // Helper function to get language name
+            function getLanguageName(langCode) {
+                const languageNames = {
+                    'en': 'English',
+                    'fr': 'Français',
+                    'ar': 'العربية'
+                };
+                return languageNames[langCode] || langCode;
+            }
+            
+            // Helper function to get translations
+            function getTranslation(key) {
+                return window.currentTranslations && window.currentTranslations[currentLanguage] && window.currentTranslations[currentLanguage][key] || key;
+            }
+            
+            // Function to set active letter filter and update display
+            function setActiveLetterFilter(letter) {
+                currentLetterFilter = letter;
+                renderAlphabetNav();
+                renderCurrents();
+            }
+            
+            // Function to open current modal
+            function openCurrentModal(currentId) {
+                const current = PhiH_Schools.schools.find(c => c.id === currentId);
+                if (!current) return;
+                
+                const currentData = getCurrentData(current, currentLanguage);
+                
+                // Populate modal with current data
+                modalLetter.textContent = currentData.first_letter;
+                modalName.textContent = currentData.name;
+                modalLanguage.textContent = getLanguageName(currentLanguage);
+                
+                // Set content for each section, handling "N/A" values
+                modalNameAndOrigin.innerHTML = currentData.name_and_origin === "N/A" ? 
+                    `<em>${getTranslation('PhiH.general.absent')}</em>` : 
+                    `<p>${currentData.name_and_origin}</p>`;
+                
+                modalPioneersAndTexts.innerHTML = currentData.pioneers_and_reference_texts === "N/A" ? 
+                    `<em>${getTranslation('PhiH.general.absent')}</em>` : 
+                    `<p>${currentData.pioneers_and_reference_texts}</p>`;
+                
+                modalCentralThesis.innerHTML = currentData.central_thesis_and_key_concepts === "N/A" ? 
+                    `<em>${getTranslation('PhiH.general.absent')}</em>` : 
+                    `<p>${currentData.central_thesis_and_key_concepts}</p>`;
+                
+                modalMethodAndDomain.innerHTML = currentData.method_and_domain === "N/A" ? 
+                    `<em>${getTranslation('PhiH.general.absent')}</em>` : 
+                    `<p>${currentData.method_and_domain}</p>`;
+                
+                modalRelationsAndCritique.innerHTML = currentData.relations_and_critique === "N/A" ? 
+                    `<em>${getTranslation('PhiH.general.absent')}</em>` : 
+                    `<p>${currentData.relations_and_critique}</p>`;
+                
+                modalImpactAndApplications.innerHTML = currentData.impact_and_applications === "N/A" ? 
+                    `<em>${getTranslation('PhiH.general.absent')}</em>` : 
+                    `<p>${currentData.impact_and_applications}</p>`;
+                
+                modalEquivalentTerms.innerHTML = currentData.equivalent_terms === "N/A" ? 
+                    `<em>${getTranslation('PhiH.general.absent')}</em>` : 
+                    `<p>${currentData.equivalent_terms}</p>`;
+                
+                modalOther.innerHTML = currentData.other === "N/A" ? 
+                    `<em>${getTranslation('PhiH.general.absent')}</em>` : 
+                    `<p>${currentData.other}</p>`;
+                
+                // Show modal
+                currentModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+            
+            // Function to close current modal
+            function closeCurrentModal() {
+                currentModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+            
+            // Add event listeners for modal
+            modalClose.addEventListener('click', closeCurrentModal);
+            
+            // Close modal when clicking outside the content
+            currentModal.addEventListener('click', function(event) {
+                if (event.target === currentModal) {
+                    closeCurrentModal();
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && currentModal.style.display === 'block') {
+                    closeCurrentModal();
+                }
+            });
+            
+            // Function to update page language and refresh content
+            function updatePageLanguage(lang) {
+                if (!isInitializing) {
+                    currentLanguage = lang;
+                    renderAlphabetNav();
+                    renderCurrents();
+                }
+            }
+            
+            // Override the applyLanguage function to handle dynamic content
+            const originalApplyLanguage = window.applyLanguage;
+            window.applyLanguage = function(lang) {
+                originalApplyLanguage(lang);
+                updatePageLanguage(lang);
+            };
+            
+            // Initialize
+            function initializePage() {
+                renderAlphabetNav();
+                renderCurrents();
+                isInitializing = false;
+            }
+            
+            initializePage();
+        });
+    </script>
+</body>
+</html>

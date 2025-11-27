@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: بليز باسكال "التسلية ومقتضى التفكير" - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#cd5c5c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Indian Red Color Palette */
+        :root {
+            --primary-color: #cd5c5c;
+            --primary-light: #dc7f7f;
+            --primary-dark: #b84a4a;
+            --secondary-color: #db8f8f;
+            --secondary-light: #e8b0b0;
+            --secondary-dark: #c57373;
+            --accent-color: #db8f8f;
+            --accent-light: #e8b0b0;
+            --accent-dark: #c57373;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #fef2f2;
+            --card-bg: #ffffff;
+            --definition-bg: #fde8e8;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #fecaca;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(205, 92, 92, 0.1), 0 2px 4px -1px rgba(205, 92, 92, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(205, 92, 92, 0.1), 0 4px 6px -2px rgba(205, 92, 92, 0.05);
+            --gradient-primary: linear-gradient(135deg, #cd5c5c 0%, #db8f8f 100%);
+            --gradient-secondary: linear-gradient(135deg, #db8f8f 0%, #dc7f7f 100%);
+            --gradient-accent: linear-gradient(135deg, #db8f8f 0%, #cd5c5c 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #dc7f7f;
+            --primary-light: #e8b0b0;
+            --primary-dark: #cd5c5c;
+            --secondary-color: #e8b0b0;
+            --secondary-light: #f0c9c9;
+            --secondary-dark: #db8f8f;
+            --accent-color: #e8b0b0;
+            --accent-light: #f0c9c9;
+            --accent-dark: #db8f8f;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #450a0a;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #7f1d1d;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #dc7f7f 0%, #e8b0b0 100%);
+            --gradient-secondary: linear-gradient(135deg, #e8b0b0 0%, #db8f8f 100%);
+            --gradient-accent: linear-gradient(135deg, #e8b0b0 0%, #dc7f7f 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(205, 92, 92, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(219, 143, 143, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(219, 143, 143, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(205, 92, 92, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.pascal.title">تحليل النص: التسلية ومقتضى التفكير - بليز باسكال</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.pascal.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.pascal.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.pascal.introduction.content">
+                    يمثّل إقبال الإنسان على أشكال التسلّة والترفيه المتنوّعة بُعدا من أبعاد حياته اليوميّة. ولكنّ هذه الظاهرة تنامت وتفاقمت في المجتمعات المعاصرة في علاقة بمنطق الإشهار وبمقتضيات المجتمع الاستهلاكيّ بقدر أصبح يبعث على الحيرة. وهذا ما سعى باسكال إلى تشخيصه منذ القرن السّابع عشر في علاقة بمقتضى التفكير المطروح على الإنسان.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.pascal.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.pascal.text.content">
+                        من الواضح أنّ الإنسان جُعِل ليفكّر(1)، وفي هذا كل كرامته (2) وكل قيمته، وأن يُحسن التفكير فذاك تمام واجبه، على أنّ نظام التفكير يقضي بأن يبدأ الإنسان بذاته وبخالقه وبمصيره.  
+
+                        <br><br>لكن إلى أيّ شيء ينصرف فكر النّاس ؟ ليس إلى ذلك أبدا، بل إلى الرقص، والعزف على آلة العود، والغناء، ونظم الشعر، والتباري الرياضي ... وإلى التقاتل، والتشبّه بالملك، دونما تفكير في ماهية الملك وفي ماهية الإنسان ...  
+
+                        <br><br>إنّ الشيء الوحيد الذي يواسينا في شقائنا(3) هو التسلية، والحال أنّها أكبر أشكال شقائنا لأنّها تمنعنا أساسا من التفكير في أنفسنا، وما تجعلنا نتيه دونما إحساس بذلك. ولولا التسلية لاستولى علينا السأَم، وهذا السأَم عينه هو الذي يدفعنا إلى البحث عن وسيلة أقوى(4) للخروج من الشقاء. ولكن التسلية إذ تُلهينا تنتهي بنا إلى الموت دون أن نشعر.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.pascal.text.source">بليز باسكال، خواطر، الفقرتان 146 و171</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.pascal.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/blaise_pascal.jpg" alt="بليز باسكال" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.pascal.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.pascal.author.content">
+                            بليز باسكال (1623-1662) فيلسوف وعالِم فرنسيّ، من أهمّ مؤلفاته: مقدّمة لرسالة في الخلاء، وخواطر (1670). وقد اشتهر باسكال في مؤلفه ((خواطر)) بتحليله للمنزلة الإنسانيّة بين اللامتناهيين : اللامتناهي في الكبر واللامتناهي في الصغر، تحليلا لا يخلو من نفحة وجوديّة كشف فيه عن ازدواجيّة الإنسان بين الوجود والعدم، بين الشقاء والعظمة مقدّرا أنّ الإنسان وإن كان هشّا بجسده (عدم)، فإنّه يظل عظيما (كلاً) بفكره. كما عُرِف باسكال بتمييزه بين دواعي العقل ودواعي القلب "للقلب دواع لا يفقهها العقل".
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footnotes -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.pascal.footnotes.title">الهوامش</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.pascal.footnotes.item1"><strong>(1) "جُعِل ليفكّر":</strong> في ذلك إحالة على تعريف الإنسان لدى باسكال بكونه "قصبة مفكّرة".</li>
+                    <li data-i18n="PhiH.textAnalysis.pascal.footnotes.item2"><strong>(2) "كرامته":</strong> إشارة إلى ازدواجيّة الوضع الإنسانيّ المتمثّلة في أنّه بائس وعظيم في آن، وتكمن عظمة الإنسان وشرفه في قدرته على الوعي ببؤسه. لكنّ "معرفة الإنسان لبؤسه إذا ما كانت قرينة جهل بالإله تُفضي إلى اليأس." (خواطر، الفقرة 192)</li>
+                    <li data-i18n="PhiH.textAnalysis.pascal.footnotes.item3"><strong>(3) "الشقاء":</strong> إشارة إلى أنّ الإنسان لا يُريد أن يرى ما هو، فلو عرف الإنسان منزلته بما هو كائن الخطيئة والموت لأسقطه ذلك في الضجر والقلق والهمّ. وفي مقابل ذلك يتمثّل دور التسلية في أنّه يُلهي الإنسان وينسيه منزلته البائسة. يقول باسكال "إنّ البشر، وقد عجزوا عن مغالبة الموت والبؤس والجهل، ارتأوا في سعيهم لأن يكونوا سعداء أن يَعدِلوا عن التفكير إطلاقا." (خواطر، الفقرة 134)</li>
+                    <li data-i18n="PhiH.textAnalysis.pascal.footnotes.item4"><strong>(4) "وسيلة أقوى":</strong> يعتبر باسكال أنّ السأَم وضع بائس ولكنّه يظل بؤسا أخفّ من ذلك المتمثّل في حالة الاضطراب والهيجان التي تطبع حركيّة الإنسان اليوميّة والتي تخدعه بينما يدفعنا السأم إلى البحث عن وسيلة أسلم تتمثّل في أن يعرف الإنسان ذاته وأن يعي تناهيه ويضطلع به بدل الهروب منه.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.pascal.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.pascal.questions.q1">أذكر عيّنات معاصرة عمّا يسميه الكاتب بالتسلية.</li>
+                    <li data-i18n="PhiH.textAnalysis.pascal.questions.q2">هل من تمييز مفهوميّ، في نظرك، بين ما يسمّيه الكاتب بالتسلية وما أصبحت المجتمعات المعاصرة تسمّيه بالترفيه ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.pascal.questions.q3">كيف تفهم الأولويّات التي يحدّدها الكاتب في حديثه عن نظام التفكير ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.pascal.questions.q4">هل أنّ سعي الإنسان لتحقيق السعادة قابل لأنّ ينزّل تحت خانة التسلية بالمعنى الذي يُعطيه الكاتب لهذه العبارة ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.pascal.questions.q5">حرّر فقرة تبيّن فيها انعكاسات نقد الكاتب للتسلية على تصوّرك للسعادة.</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.pascal.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.pascal.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.pascal.answers.a1.content">
+                        عينات معاصرة للتسلية التي يشير إليها باسكال:
+                        <br>- الإدمان على وسائل التواصل الاجتماعي وتصفح الإنترنت دون هدف
+                        <br>- مشاهدة التلفاز لساعات طويلة دون انتقائية
+                        <br>- ألعاب الفيديو المفرطة التي تشغل العقل عن التفكير الجاد
+                        <br>- التسوق الاستهلاكي غير الضروري
+                        <br>- متابعة البرامج الترفيهية السطحية
+                        <br>- الانشغال بالمظاهر والمقارنات الاجتماعية
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.pascal.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.pascal.answers.a2.content">
+                        نعم، هناك تمييز مفهومي بين التسلية كما يراها باسكال والترفيه المعاصر:
+                        <br><br>
+                        <strong>التسلية عند باسكال:</strong>
+                        <br>- وسيلة هروب من التفكير في الذات والمصير
+                        <br>- تشتيت للانتباه عن الأسئلة الوجودية الأساسية
+                        <br>- شكل من أشكال الشقاء والضياع
+                        <br>- تمنع الإنسان من مواجهة حقيقته
+                        <br><br>
+                        <strong>الترفيه المعاصر:</strong>
+                        <br>- قد يكون وسيلة للراحة والاسترخاء المشروعة
+                        <br>- يمكن أن يكون مصدر إبداع وتنمية للقدرات
+                        <br>- وسيلة للتواصل الاجتماعي البناء
+                        <br>- قد يساهم في تنمية الشخصية إذا كان منتقى ومتوازناً
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.pascal.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.pascal.answers.a3.content">
+                        الأولويات التي يحددها باسكال في نظام التفكير هي:
+                        <br><br>
+                        1. <strong>التفكير في الذات:</strong> معرفة النفس وماهية الإنسان وحقيقته
+                        <br>2. <strong>التفكير في الخالق:</strong> البحث عن الله والعلاقة مع المطلق
+                        <br>3. <strong>التفكير في المصير:</strong> التأمل في الموت والمصير النهائي للإنسان
+                        <br><br>
+                        هذه الأولويات تعكس رؤية باسكال للتفكير كواجب وجودي وأخلاقي، وليس مجرد نشاط عقلي. التفكير الحقيقي يجب أن يبدأ من الأسئلة الأساسية عن الوجود والمعنى، وليس من الانشغالات السطحية اليومية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.pascal.answers.a4.title">الإجابة عن السؤال الرابع:</h5>
+                    <p data-i18n="PhiH.textAnalysis.pascal.answers.a4.content">
+                        نعم، يمكن اعتبار سعي الإنسان لتحقيق السعادة في كثير من الأحيان شكلاً من أشكال التسلية بمعنى باسكال، وذلك عندما:
+                        <br><br>
+                        - يكون السعي نحو السعادة مجرد هروب من مواجهة الحقائق الوجودية
+                        <br>- تتحول السعادة إلى مجرد متع حسية ولذات آنية
+                        <br>- يتم اختزال السعادة في الامتلاك المادي والاستهلاك
+                        <br>- يتحول البحث عن السعادة إلى وسيلة للتغطية على القلق الوجودي
+                        <br><br>
+                        لكن هذا لا يعني رفض فكرة السعادة تماماً، بل الدعوة إلى سعادة أكثر عمقاً وأصالة، قائمة على المعرفة والوعي والعلاقة الحقيقية مع الذات والآخر والعالم.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.pascal.answers.a5.title">الإجابة عن السؤال الخامس:</h5>
+                    <p data-i18n="PhiH.textAnalysis.pascal.answers.a5.content">
+                        انعكاسات نقد باسكال للتسلية على تصوري للسعادة:
+                        <br><br>
+                        نقد باسكال للتسلية يدفعني إلى إعادة النظر في مفهوم السعادة الذي أتبناه. فبدلاً من البحث عن السعادة في الترفيه السطحي والهروب من الذات، أصبحت أدرك أن السعادة الحقيقية تكمن في:
+                        <br><br>
+                        - المواجهة الشجاعة للذات والحقيقة الوجودية
+                        <br>- التفكير العميق في معنى الحياة والموت
+                        <br>- بناء علاقات إنسانية حقيقية ومتعمقة
+                        <br>- البحث عن المعرفة والفهم بدلاً من التسلية واللهو
+                        <br>- تقبل الشقاء كجزء من الوجود الإنساني وليس الهروب منه
+                        <br><br>
+                        هذا التصور للسعادة لا يعني رفض المتعة والترفيه تماماً، بل جعلهما في إطار متوازن وواعٍ، بحيث لا يصبحا وسيلة للهروب من الأسئلة الأساسية للحياة.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.pascal.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.pascal.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.pascal.analysis.thesis.content">
+                        يرى باسكال أن التسلية ليست مجرد وسيلة للترفيه، بل هي آلية دفاعية يلجأ إليها الإنسان للهروب من التفكير في ذاته ومصيره. فبدلاً من مواجهة الأسئلة الوجودية الأساسية، يفضل الإنسان الانغماس في أنشطة تلهيه عن التفكير في حقيقة وضعه البائس ككائن متناهٍ يواجه الموت.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.pascal.analysis.mechanisms.title">آليات عمل التسلية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.pascal.analysis.mechanisms.content">
+                        تعمل التسلية وفق باسكال من خلال:
+                        <br>- تشتيت الانتباه عن الأسئلة الوجودية الأساسية
+                        <br>- خلق وهم بالسعادة والرضا المؤقت
+                        <br>- منع الإنسان من التفكير في ذاته ومصيره
+                        <br>- إبقاء الإنسان في حالة من التيه والضياع دون أن يشعر
+                        <br>- تأجيل مواجهة الحقيقة الوجودية إلى ما لا نهاية
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.pascal.analysis.consequences.title">نتائج التسلية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.pascal.analysis.consequences.content">
+                        - <strong>الضياع الوجودي:</strong> عيش الإنسان دون وعي بحقيقته ومصيره
+                        <br>- <strong>الهروب من الذات:</strong> تجنب المواجهة مع الأسئلة الأساسية للحياة
+                        <br>- <strong>السعادة الوهمية:</strong> البحث عن متع آنية بدلاً من سعادة حقيقية
+                        <br>- <strong>الموت دون وعي:</strong> انقضاء العمر دون تحقيق المعنى الحقيقي للوجود
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.pascal.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.pascal.analysis.significance.content">
+                        يمثل نقد باسكال للتسلية رؤية عميقة للوجود الإنساني. فالإنسان عند باسكال كائن متناقض: عظيم بفكره، بائس بوجوده المحدود. والتسلية هي محاولة يائسة للهروب من هذا التناقض. لكن باسكال لا يدعو إلى التخلي عن كل أشكال المتعة، بل إلى وعي الإنسان بحقيقته ومواجهة شقائه بدلاً من الهروب منه. فالسعادة الحقيقية لا تكمن في نسيان الذات، بل في وعيها وتقبلها بكل تناقضاتها.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.pascal.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.pascal.title": "Analyse du texte: Divertissement et exigence de pensée - Blaise Pascal",
+                "PhiH.textAnalysis.pascal.introduction.title": "Introduction",
+                "PhiH.textAnalysis.pascal.introduction.content": "L'engagement de l'homme dans diverses formes de divertissement et de loisirs représente une dimension de sa vie quotidienne. Mais ce phénomène a grandi et s'est aggravé dans les sociétés contemporaines en relation avec la logique publicitaire et les exigences de la société de consommation, au point de devenir déroutant. C'est ce que Pascal a cherché à diagnostiquer dès le XVIIe siècle en relation avec l'exigence de pensée imposée à l'homme.",
+                "PhiH.textAnalysis.pascal.text.title": "Texte",
+                "PhiH.textAnalysis.pascal.text.content": "Il est clair que l'homme est fait pour penser (1), et en cela réside toute sa dignité (2) et toute sa valeur, et bien penser est son devoir absolu, mais l'ordre de la pensée exige que l'homme commence par lui-même, par son créateur et par son destin. Mais à quoi se tournent les pensées des gens ? Jamais vers cela, mais vers la danse, jouer du luth, chanter, composer de la poésie, rivaliser sportivement... et vers les combats, imiter le roi, sans réfléchir à l'essence de la royauté et à l'essence de l'homme... La seule chose qui nous console dans notre misère (3) est le divertissement, alors qu'il est la plus grande forme de notre misère car il nous empêche fondamentalement de penser à nous-mêmes, et nous fait errer sans en avoir conscience. Sans le divertissement, l'ennui s'emparerait de nous, et cet ennui même nous pousse à chercher un moyen plus fort (4) de sortir de la misère. Mais le divertissement, en nous divertissant, nous mène à la mort sans que nous nous en rendions compte.",
+                "PhiH.textAnalysis.pascal.text.source": "Blaise Pascal, Pensées, § 146 et 171",
+                "PhiH.textAnalysis.pascal.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.pascal.author.alt": "Blaise Pascal",
+                "PhiH.textAnalysis.pascal.author.content": "Blaise Pascal (1623-1662) philosophe et scientifique français, parmi ses œuvres les plus importantes : Introduction à un traité sur le vide, et Pensées (1670). Pascal est devenu célèbre dans son œuvre ((Pensées)) pour son analyse de la condition humaine entre les deux infinis : l'infini en grandeur et l'infini en petitesse, une analyse non dénuée d'une touche existentielle dans laquelle il a révélé la dualité de l'homme entre l'être et le néant, entre la misère et la grandeur, estimant que l'homme, bien que fragile par son corps (néant), reste grand (un tout) par sa pensée. Pascal est également connu pour sa distinction entre les raisons du cœur et les raisons de la raison \"Le cœur a ses raisons que la raison ne connaît point\".",
+                "PhiH.textAnalysis.pascal.footnotes.title": "Notes",
+                "PhiH.textAnalysis.pascal.footnotes.item1": "<strong>(1) \"fait pour penser\":</strong> référence à la définition de l'homme chez Pascal comme étant un \"roseau pensant\".",
+                "PhiH.textAnalysis.pascal.footnotes.item2": "<strong>(2) \"dignité\":</strong> référence à la dualité de la condition humaine qui est à la fois misérable et grande, et la grandeur de l'homme et son honneur résident dans sa capacité à prendre conscience de sa misère. Mais \"la connaissance de l'homme de sa misère, si elle est accompagnée d'ignorance de Dieu, mène au désespoir.\" (Pensées, § 192)",
+                "PhiH.textAnalysis.pascal.footnotes.item3": "<strong>(3) \"misère\":</strong> référence au fait que l'homme ne veut pas voir ce qu'il est, car si l'homme connaissait sa condition en tant qu'être du péché et de la mort, cela le plongerait dans l'ennui, l'anxiété et le souci. En contrepartie, le rôle du divertissement est de divertir l'homme et de lui faire oublier sa condition misérable. Pascal dit \"Les hommes, n'ayant pu guérir la mort, la misère, l'ignorance, ils se sont avisés, pour se rendre heureux, de n'y point penser.\" (Pensées, § 134)",
+                "PhiH.textAnalysis.pascal.footnotes.item4": "<strong>(4) \"moyen plus fort\":</strong> Pascal considère que l'ennui est une situation misérable mais reste un malheur plus léger que celui représenté par l'état d'agitation et d'effervescence qui caractérise la dynamique quotidienne de l'homme et qui le trompe, tandis que l'ennui nous pousse à chercher un moyen plus sûr qui consiste à ce que l'homme se connaisse lui-même, prenne conscience de sa finitude et l'assume au lieu de la fuir.",
+                "PhiH.textAnalysis.pascal.questions.title": "Tâches",
+                "PhiH.textAnalysis.pascal.questions.q1": "Citez des exemples contemporains de ce que l'auteur appelle divertissement.",
+                "PhiH.textAnalysis.pascal.questions.q2": "Y a-t-il une distinction conceptuelle, selon vous, entre ce que l'auteur appelle divertissement et ce que les sociétés contemporaines appellent loisir ?",
+                "PhiH.textAnalysis.pascal.questions.q3": "Comment comprenez-vous les priorités que l'auteur définit dans son discours sur l'ordre de la pensée ?",
+                "PhiH.textAnalysis.pascal.questions.q4": "La quête du bonheur par l'homme peut-elle être classée sous la catégorie du divertissement au sens que l'auteur donne à cette expression ?",
+                "PhiH.textAnalysis.pascal.questions.q5": "Rédigez un paragraphe montrant les implications de la critique du divertissement par l'auteur sur votre conception du bonheur.",
+                "PhiH.textAnalysis.pascal.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.pascal.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.pascal.answers.a1.content": "Exemples contemporains de divertissement mentionnés par Pascal :<br>- Addiction aux réseaux sociaux et navigation internet sans but<br>- Regarder la télévision pendant de longues heures sans sélectivité<br>- Jeux vidéo excessifs qui occupent l'esprit au détriment de la réflexion sérieuse<br>- Shopping consumériste non nécessaire<br>- Suivre des programmes de divertissement superficiels<br>- Préoccupation par les apparences et les comparaisons sociales",
+                "PhiH.textAnalysis.pascal.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.pascal.answers.a2.content": "Oui, il y a une distinction conceptuelle entre le divertissement tel que le voit Pascal et le loisir contemporain :<br><br><strong>Divertissement selon Pascal :</strong><br>- Moyen de fuite face à la réflexion sur soi-même et le destin<br>- Distraction de l'attention des questions existentielles fondamentales<br>- Forme de misère et d'égarement<br>- Empêche l'homme de faire face à sa vérité<br><br><strong>Loisir contemporain :</strong><br>- Peut être un moyen légitime de repos et de détente<br>- Peut être une source de créativité et de développement des capacités<br>- Moyen de communication sociale constructive<br>- Peut contribuer au développement personnel s'il est sélectif et équilibré",
+                "PhiH.textAnalysis.pascal.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.pascal.answers.a3.content": "Les priorités que Pascal définit dans l'ordre de la pensée sont :<br><br>1. <strong>Réflexion sur soi-même :</strong> connaissance de soi, essence de l'homme et sa vérité<br>2. <strong>Réflexion sur le Créateur :</strong> recherche de Dieu et relation avec l'Absolu<br>3. <strong>Réflexion sur le destin :</strong> méditation sur la mort et le destin ultime de l'homme<br><br>Ces priorités reflètent la vision de Pascal de la pensée comme devoir existentiel et éthique, et non pas seulement comme activité intellectuelle. La vraie pensée doit commencer par les questions fondamentales sur l'existence et le sens, et non par les préoccupations superficielles quotidiennes.",
+                "PhiH.textAnalysis.pascal.answers.a4.title": "Réponse à la quatrième question:",
+                "PhiH.textAnalysis.pascal.answers.a4.content": "Oui, on peut considérer que la quête du bonheur par l'homme est souvent une forme de divertissement au sens pascalien, notamment lorsque :<br><br>- La recherche du bonheur n'est qu'une fuite face aux vérités existentielles<br>- Le bonheur se réduit à des plaisirs sensoriels et des jouissances immédiates<br>- Le bonheur est réduit à la possession matérielle et à la consommation<br>- La recherche du bonheur devient un moyen de couvrir l'angoisse existentielle<br><br>Mais cela ne signifie pas rejeter complètement l'idée de bonheur, mais plutôt appeler à un bonheur plus profond et authentique, fondé sur la connaissance, la conscience et la relation véritable avec soi-même, les autres et le monde.",
+                "PhiH.textAnalysis.pascal.answers.a5.title": "Réponse à la cinquième question:",
+                "PhiH.textAnalysis.pascal.answers.a5.content": "Implications de la critique du divertissement par Pascal sur ma conception du bonheur :<br><br>La critique pascalienne du divertissement m'amène à reconsidérer le concept de bonheur que j'adopte. Au lieu de chercher le bonheur dans le divertissement superficiel et la fuite de soi, je réalise que le vrai bonheur réside dans :<br><br>- L'affrontement courageux de soi-même et de la vérité existentielle<br>- La réflexion profonde sur le sens de la vie et de la mort<br>- La construction de relations humaines authentiques et profondes<br>- La recherche de la connaissance et de la compréhension au lieu du divertissement et de l'amusement<br>- L'acceptation de la misère comme partie de l'existence humaine et non la fuir<br><br>Cette conception du bonheur ne signifie pas rejeter complètement le plaisir et le divertissement, mais les placer dans un cadre équilibré et conscient, de sorte qu'ils ne deviennent pas un moyen de fuir les questions fondamentales de la vie.",
+                "PhiH.textAnalysis.pascal.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.pascal.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.pascal.analysis.thesis.content": "Pascal considère que le divertissement n'est pas seulement un moyen de loisir, mais un mécanisme de défense auquel l'homme recourt pour fuir la réflexion sur lui-même et son destin. Au lieu d'affronter les questions existentielles fondamentales, l'homme préfère se plonger dans des activités qui le distraient de réfléchir à la vérité de sa condition misérable en tant qu'être fini confronté à la mort.",
+                "PhiH.textAnalysis.pascal.analysis.mechanisms.title": "Mécanismes du divertissement:",
+                "PhiH.textAnalysis.pascal.analysis.mechanisms.content": "Le divertissement fonctionne selon Pascal à travers :<br>- La distraction de l'attention des questions existentielles fondamentales<br>- La création d'une illusion de bonheur et de satisfaction temporaire<br>- L'empêchement de l'homme de réfléchir à lui-même et à son destin<br>- Le maintien de l'homme dans un état d'égarement et de perdition sans qu'il s'en rende compte<br>- Le report à l'infini de l'affrontement de la vérité existentielle",
+                "PhiH.textAnalysis.pascal.analysis.consequences.title": "Conséquences du divertissement:",
+                "PhiH.textAnalysis.pascal.analysis.consequences.content": "- <strong>Égarement existentiel:</strong> vivre sans conscience de sa vérité et de son destin<br>- <strong>Fuite de soi:</strong> éviter la confrontation avec les questions fondamentales de la vie<br>- <strong>Bonheur illusoire:</strong> recherche de plaisirs immédiats au lieu d'un vrai bonheur<br>- <strong>Mort sans conscience:</strong> passage de la vie sans réalisation du sens véritable de l'existence",
+                "PhiH.textAnalysis.pascal.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.pascal.analysis.significance.content": "La critique pascalienne du divertissement représente une vision profonde de l'existence humaine. L'homme chez Pascal est un être contradictoire : grand par sa pensée, misérable par son existence limitée. Le divertissement est une tentative désespérée de fuir cette contradiction. Mais Pascal n'appelle pas à abandonner toutes les formes de plaisir, mais à la conscience de l'homme de sa vérité et à l'affrontement de sa misère au lieu de la fuir. Le vrai bonheur ne réside pas dans l'oubli de soi, mais dans la conscience de soi et son acceptation avec toutes ses contradictions."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.pascal.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.pascal.title": "Text Analysis: Entertainment and the Requirement of Thought - Blaise Pascal",
+                "PhiH.textAnalysis.pascal.introduction.title": "Introduction",
+                "PhiH.textAnalysis.pascal.introduction.content": "Man's engagement in various forms of entertainment and leisure represents a dimension of his daily life. But this phenomenon has grown and intensified in contemporary societies in relation to advertising logic and the demands of consumer society, to the point of becoming bewildering. This is what Pascal sought to diagnose since the 17th century in relation to the requirement of thought imposed on man.",
+                "PhiH.textAnalysis.pascal.text.title": "Text",
+                "PhiH.textAnalysis.pascal.text.content": "It is clear that man is made to think (1), and in this lies all his dignity (2) and all his value, and to think well is his complete duty, but the order of thought requires that man begin with himself, with his creator, and with his destiny. But to what do people's thoughts turn? Never to that, but to dancing, playing the lute, singing, composing poetry, sports competition... and to fighting, imitating the king, without thinking about the essence of kingship and the essence of man... The only thing that consoles us in our misery (3) is entertainment, yet it is the greatest form of our misery because it fundamentally prevents us from thinking about ourselves, and makes us wander without feeling it. Without entertainment, boredom would take hold of us, and this same boredom pushes us to seek a stronger means (4) to escape misery. But entertainment, by entertaining us, leads us to death without us realizing it.",
+                "PhiH.textAnalysis.pascal.text.source": "Blaise Pascal, Pensées, § 146 and 171",
+                "PhiH.textAnalysis.pascal.author.title": "Author Presentation",
+                "PhiH.textAnalysis.pascal.author.alt": "Blaise Pascal",
+                "PhiH.textAnalysis.pascal.author.content": "Blaise Pascal (1623-1662) French philosopher and scientist, among his most important works: Introduction to a Treatise on Vacuum, and Pensées (1670). Pascal became famous in his work ((Pensées)) for his analysis of the human condition between the two infinites: the infinite in greatness and the infinite in smallness, an analysis not without an existential touch in which he revealed the duality of man between being and nothingness, between misery and greatness, estimating that man, although fragile in his body (nothingness), remains great (a whole) by his thought. Pascal is also known for his distinction between the reasons of the heart and the reasons of reason \"The heart has its reasons which reason does not know\".",
+                "PhiH.textAnalysis.pascal.footnotes.title": "Footnotes",
+                "PhiH.textAnalysis.pascal.footnotes.item1": "<strong>(1) \"made to think\":</strong> reference to Pascal's definition of man as a \"thinking reed\".",
+                "PhiH.textAnalysis.pascal.footnotes.item2": "<strong>(2) \"dignity\":</strong> reference to the duality of the human condition which is both miserable and great, and the greatness of man and his honor lie in his ability to become aware of his misery. But \"man's knowledge of his misery, if accompanied by ignorance of God, leads to despair.\" (Pensées, § 192)",
+                "PhiH.textAnalysis.pascal.footnotes.item3": "<strong>(3) \"misery\":</strong> reference to the fact that man does not want to see what he is, for if man knew his condition as a being of sin and death, it would plunge him into boredom, anxiety, and worry. In contrast, the role of entertainment is to entertain man and make him forget his miserable condition. Pascal says \"Men, having been unable to cure death, misery, ignorance, have decided, in order to be happy, not to think about them at all.\" (Pensées, § 134)",
+                "PhiH.textAnalysis.pascal.footnotes.item4": "<strong>(4) \"stronger means\":</strong> Pascal considers that boredom is a miserable situation but remains a lesser misery than that represented by the state of agitation and effervescence that characterizes man's daily dynamics and which deceives him, while boredom pushes us to seek a safer means which consists in man knowing himself, becoming aware of his finitude and assuming it instead of fleeing from it.",
+                "PhiH.textAnalysis.pascal.questions.title": "Tasks",
+                "PhiH.textAnalysis.pascal.questions.q1": "Give contemporary examples of what the author calls entertainment.",
+                "PhiH.textAnalysis.pascal.questions.q2": "Is there a conceptual distinction, in your opinion, between what the author calls entertainment and what contemporary societies call leisure?",
+                "PhiH.textAnalysis.pascal.questions.q3": "How do you understand the priorities that the author defines in his discussion of the order of thought?",
+                "PhiH.textAnalysis.pascal.questions.q4": "Can man's pursuit of happiness be classified under the category of entertainment in the sense that the author gives to this expression?",
+                "PhiH.textAnalysis.pascal.questions.q5": "Write a paragraph showing the implications of the author's critique of entertainment on your conception of happiness.",
+                "PhiH.textAnalysis.pascal.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.pascal.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.pascal.answers.a1.content": "Contemporary examples of entertainment mentioned by Pascal:<br>- Addiction to social media and aimless internet browsing<br>- Watching television for long hours without selectivity<br>- Excessive video games that occupy the mind at the expense of serious thinking<br>- Unnecessary consumerist shopping<br>- Following superficial entertainment programs<br>- Preoccupation with appearances and social comparisons",
+                "PhiH.textAnalysis.pascal.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.pascal.answers.a2.content": "Yes, there is a conceptual distinction between entertainment as Pascal sees it and contemporary leisure:<br><br><strong>Entertainment according to Pascal:</strong><br>- Means of escape from thinking about oneself and destiny<br>- Distraction from fundamental existential questions<br>- Form of misery and loss<br>- Prevents man from facing his truth<br><br><strong>Contemporary leisure:</strong><br>- Can be a legitimate means of rest and relaxation<br>- Can be a source of creativity and development of abilities<br>- Means of constructive social communication<br>- Can contribute to personal development if selective and balanced",
+                "PhiH.textAnalysis.pascal.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.pascal.answers.a3.content": "The priorities that Pascal defines in the order of thought are:<br><br>1. <strong>Thinking about oneself:</strong> self-knowledge, essence of man and his truth<br>2. <strong>Thinking about the Creator:</strong> search for God and relationship with the Absolute<br>3. <strong>Thinking about destiny:</strong> meditation on death and the ultimate destiny of man<br><br>These priorities reflect Pascal's vision of thought as an existential and ethical duty, not just an intellectual activity. True thinking must begin with fundamental questions about existence and meaning, not with superficial daily concerns.",
+                "PhiH.textAnalysis.pascal.answers.a4.title": "Answer to the fourth question:",
+                "PhiH.textAnalysis.pascal.answers.a4.content": "Yes, man's pursuit of happiness can often be considered a form of entertainment in the Pascalian sense, especially when:<br><br>- The pursuit of happiness is merely an escape from facing existential truths<br>- Happiness is reduced to sensory pleasures and immediate gratifications<br>- Happiness is reduced to material possession and consumption<br>- The search for happiness becomes a means to cover existential anxiety<br><br>But this does not mean completely rejecting the idea of happiness, but rather calling for a deeper and more authentic happiness, based on knowledge, awareness and the true relationship with oneself, others and the world.",
+                "PhiH.textAnalysis.pascal.answers.a5.title": "Answer to the fifth question:",
+                "PhiH.textAnalysis.pascal.answers.a5.content": "Implications of Pascal's critique of entertainment on my conception of happiness:<br><br>Pascal's critique of entertainment leads me to reconsider the concept of happiness that I adopt. Instead of seeking happiness in superficial entertainment and escape from self, I realize that true happiness lies in:<br><br>- Courageous confrontation with oneself and existential truth<br>- Deep reflection on the meaning of life and death<br>- Building authentic and deep human relationships<br>- Seeking knowledge and understanding instead of entertainment and amusement<br>- Accepting misery as part of human existence rather than fleeing from it<br><br>This conception of happiness does not mean completely rejecting pleasure and entertainment, but placing them in a balanced and conscious framework, so that they do not become a means of escaping the fundamental questions of life.",
+                "PhiH.textAnalysis.pascal.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.pascal.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.pascal.analysis.thesis.content": "Pascal sees entertainment not just as a means of leisure, but as a defense mechanism that man resorts to in order to escape thinking about himself and his destiny. Instead of confronting fundamental existential questions, man prefers to immerse himself in activities that distract him from thinking about the truth of his miserable condition as a finite being facing death.",
+                "PhiH.textAnalysis.pascal.analysis.mechanisms.title": "Mechanisms of entertainment:",
+                "PhiH.textAnalysis.pascal.analysis.mechanisms.content": "Entertainment works according to Pascal through:<br>- Distracting attention from fundamental existential questions<br>- Creating an illusion of temporary happiness and satisfaction<br>- Preventing man from thinking about himself and his destiny<br>- Keeping man in a state of wandering and loss without him realizing it<br>- Postponing the confrontation with existential truth indefinitely",
+                "PhiH.textAnalysis.pascal.analysis.consequences.title": "Consequences of entertainment:",
+                "PhiH.textAnalysis.pascal.analysis.consequences.content": "- <strong>Existential loss:</strong> living without awareness of one's truth and destiny<br>- <strong>Escape from self:</strong> avoiding confrontation with life's fundamental questions<br>- <strong>Illusory happiness:</strong> seeking immediate pleasures instead of true happiness<br>- <strong>Death without awareness:</strong> passing through life without realizing the true meaning of existence",
+                "PhiH.textAnalysis.pascal.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.pascal.analysis.significance.content": "Pascal's critique of entertainment represents a profound vision of human existence. Man for Pascal is a contradictory being: great by his thought, miserable by his limited existence. Entertainment is a desperate attempt to escape this contradiction. But Pascal does not call for abandoning all forms of pleasure, but for man's awareness of his truth and confronting his misery instead of fleeing from it. True happiness does not lie in forgetting oneself, but in self-awareness and acceptance with all its contradictions."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.pascal.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.pascal.title": "تحليل النص: التسلية ومقتضى التفكير - بليز باسكال",
+                "PhiH.textAnalysis.pascal.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.pascal.introduction.content": "يمثّل إقبال الإنسان على أشكال التسلّة والترفيه المتنوّعة بُعدا من أبعاد حياته اليوميّة. ولكنّ هذه الظاهرة تنامت وتفاقمت في المجتمعات المعاصرة في علاقة بمنطق الإشهار وبمقتضيات المجتمع الاستهلاكيّ بقدر أصبح يبعث على الحيرة. وهذا ما سعى باسكال إلى تشخيصه منذ القرن السّابع عشر في علاقة بمقتضى التفكير المطروح على الإنسان.",
+                "PhiH.textAnalysis.pascal.text.title": "النص",
+                "PhiH.textAnalysis.pascal.text.content": "من الواضح أنّ الإنسان جُعِل ليفكّر(1)، وفي هذا كل كرامته (2) وكل قيمته، وأن يُحسن التفكير فذاك تمام واجبه، على أنّ نظام التفكير يقضي بأن يبدأ الإنسان بذاته وبخالقه وبمصيره.  لكن إلى أيّ شيء ينصرف فكر النّاس ؟ ليس إلى ذلك أبدا، بل إلى الرقص، والعزف على آلة العود، والغناء، ونظم الشعر، والتباري الرياضي ... وإلى التقاتل، والتشبّه بالملك، دونما تفكير في ماهية الملك وفي ماهية الإنسان ...  إنّ الشيء الوحيد الذي يواسينا في شقائنا(3) هو التسلية، والحال أنّها أكبر أشكال شقائنا لأنّها تمنعنا أساسا من التفكير في أنفسنا، وما تجعلنا نتيه دونما إحساس بذلك. ولولا التسلية لاستولى علينا السأَم، وهذا السأَم عينه هو الذي يدفعنا إلى البحث عن وسيلة أقوى(4) للخروج من الشقاء. ولكن التسلية إذ تُلهينا تنتهي بنا إلى الموت دون أن نشعر.",
+                "PhiH.textAnalysis.pascal.text.source": "بليز باسكال، خواطر، الفقرتان 146 و171",
+                "PhiH.textAnalysis.pascal.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.pascal.author.alt": "بليز باسكال",
+                "PhiH.textAnalysis.pascal.author.content": "بليز باسكال (1623-1662) فيلسوف وعالِم فرنسيّ، من أهمّ مؤلفاته: مقدّمة لرسالة في الخلاء، وخواطر (1670). وقد اشتهر باسكال في مؤلفه ((خواطر)) بتحليله للمنزلة الإنسانيّة بين اللامتناهيين : اللامتناهي في الكبر واللامتناهي في الصغر، تحليلا لا يخلو من نفحة وجوديّة كشف فيه عن ازدواجيّة الإنسان بين الوجود والعدم، بين الشقاء والعظمة مقدّرا أنّ الإنسان وإن كان هشّا بجسده (عدم)، فإنّه يظل عظيما (كلاً) بفكره. كما عُرِف باسكال بتمييزه بين دواعي العقل ودواعي القلب \"للقلب دواع لا يفقهها العقل\".",
+                "PhiH.textAnalysis.pascal.footnotes.title": "الهوامش",
+                "PhiH.textAnalysis.pascal.footnotes.item1": "<strong>(1) \"جُعِل ليفكّر\":</strong> في ذلك إحالة على تعريف الإنسان لدى باسكال بكونه \"قصبة مفكّرة\".",
+                "PhiH.textAnalysis.pascal.footnotes.item2": "<strong>(2) \"كرامته\":</strong> إشارة إلى ازدواجيّة الوضع الإنسانيّ المتمثّلة في أنّه بائس وعظيم في آن، وتكمن عظمة الإنسان وشرفه في قدرته على الوعي ببؤسه. لكنّ \"معرفة الإنسان لبؤسه إذا ما كانت قرينة جهل بالإله تُفضي إلى اليأس.\" (خواطر، الفقرة 192)",
+                "PhiH.textAnalysis.pascal.footnotes.item3": "<strong>(3) \"الشقاء\":</strong> إشارة إلى أنّ الإنسان لا يُريد أن يرى ما هو، فلو عرف الإنسان منزلته بما هو كائن الخطيئة والموت لأسقطه ذلك في الضجر والقلق والهمّ. وفي مقابل ذلك يتمثّل دور التسلية في أنّه يُلهي الإنسان وينسيه منزلته البائسة. يقول باسكال \"إنّ البشر، وقد عجزوا عن مغالبة الموت والبؤس والجهل، ارتأوا في سعيهم لأن يكونوا سعداء أن يَعدِلوا عن التفكير إطلاقا.\" (خواطر، الفقرة 134)",
+                "PhiH.textAnalysis.pascal.footnotes.item4": "<strong>(4) \"وسيلة أقوى\":</strong> يعتبر باسكال أنّ السأَم وضع بائس ولكنّه يظل بؤسا أخفّ من ذلك المتمثّل في حالة الاضطراب والهيجان التي تطبع حركيّة الإنسان اليوميّة والتي تخدعه بينما يدفعنا السأم إلى البحث عن وسيلة أسلم تتمثّل في أن يعرف الإنسان ذاته وأن يعي تناهيه ويضطلع به بدل الهروب منه.",
+                "PhiH.textAnalysis.pascal.questions.title": "المهام",
+                "PhiH.textAnalysis.pascal.questions.q1": "أذكر عيّنات معاصرة عمّا يسميه الكاتب بالتسلية.",
+                "PhiH.textAnalysis.pascal.questions.q2": "هل من تمييز مفهوميّ، في نظرك، بين ما يسمّيه الكاتب بالتسلية وما أصبحت المجتمعات المعاصرة تسمّيه بالترفيه ؟",
+                "PhiH.textAnalysis.pascal.questions.q3": "كيف تفهم الأولويّات التي يحدّدها الكاتب في حديثه عن نظام التفكير ؟",
+                "PhiH.textAnalysis.pascal.questions.q4": "هل أنّ سعي الإنسان لتحقيق السعادة قابل لأنّ ينزّل تحت خانة التسلية بالمعنى الذي يُعطيه الكاتب لهذه العبارة ؟",
+                "PhiH.textAnalysis.pascal.questions.q5": "حرّر فقرة تبيّن فيها انعكاسات نقد الكاتب للتسلية على تصوّرك للسعادة.",
+                "PhiH.textAnalysis.pascal.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.pascal.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.pascal.answers.a1.content": "عينات معاصرة للتسلية التي يشير إليها باسكال:<br>- الإدمان على وسائل التواصل الاجتماعي وتصفح الإنترنت دون هدف<br>- مشاهدة التلفاز لساعات طويلة دون انتقائية<br>- ألعاب الفيديو المفرطة التي تشغل العقل عن التفكير الجاد<br>- التسوق الاستهلاكي غير الضروري<br>- متابعة البرامج الترفيهية السطحية<br>- الانشغال بالمظاهر والمقارنات الاجتماعية",
+                "PhiH.textAnalysis.pascal.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.pascal.answers.a2.content": "نعم، هناك تمييز مفهومي بين التسلية كما يراها باسكال والترفيه المعاصر:<br><br><strong>التسلية عند باسكال:</strong><br>- وسيلة هروب من التفكير في الذات والمصير<br>- تشتيت للانتباه عن الأسئلة الوجودية الأساسية<br>- شكل من أشكال الشقاء والضياع<br>- تمنع الإنسان من مواجهة حقيقته<br><br><strong>الترفيه المعاصر:</strong><br>- قد يكون وسيلة للراحة والاسترخاء المشروعة<br>- يمكن أن يكون مصدر إبداع وتنمية للقدرات<br>- وسيلة للتواصل الاجتماعي البناء<br>- قد يساهم في تنمية الشخصية إذا كان منتقى ومتوازناً",
+                "PhiH.textAnalysis.pascal.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.pascal.answers.a3.content": "الأولويات التي يحددها باسكال في نظام التفكير هي:<br><br>1. <strong>التفكير في الذات:</strong> معرفة النفس وماهية الإنسان وحقيقته<br>2. <strong>التفكير في الخالق:</strong> البحث عن الله والعلاقة مع المطلق<br>3. <strong>التفكير في المصير:</strong> التأمل في الموت والمصير النهائي للإنسان<br><br>هذه الأولويات تعكس رؤية باسكال للتفكير كواجب وجودي وأخلاقي، وليس مجرد نشاط عقلي. التفكير الحقيقي يجب أن يبدأ من الأسئلة الأساسية عن الوجود والمعنى، وليس من الانشغالات السطحية اليومية.",
+                "PhiH.textAnalysis.pascal.answers.a4.title": "الإجابة عن السؤال الرابع:",
+                "PhiH.textAnalysis.pascal.answers.a4.content": "نعم، يمكن اعتبار سعي الإنسان لتحقيق السعادة في كثير من الأحيان شكلاً من أشكال التسلية بمعنى باسكال، وذلك عندما:<br><br>- يكون السعي نحو السعادة مجرد هروب من مواجهة الحقائق الوجودية<br>- تتحول السعادة إلى مجرد متع حسية ولذات آنية<br>- يتم اختزال السعادة في الامتلاك المادي والاستهلاك<br>- يتحول البحث عن السعادة إلى وسيلة للتغطية على القلق الوجودي<br><br>لكن هذا لا يعني رفض فكرة السعادة تماماً، بل الدعوة إلى سعادة أكثر عمقاً وأصالة، قائمة على المعرفة والوعي والعلاقة الحقيقية مع الذات والآخر والعالم.",
+                "PhiH.textAnalysis.pascal.answers.a5.title": "الإجابة عن السؤال الخامس:",
+                "PhiH.textAnalysis.pascal.answers.a5.content": "انعكاسات نقد باسكال للتسلية على تصوري للسعادة:<br><br>نقد باسكال للتسلية يدفعني إلى إعادة النظر في مفهوم السعادة الذي أتبناه. فبدلاً من البحث عن السعادة في الترفيه السطحي والهروب من الذات، أصبحت أدرك أن السعادة الحقيقية تكمن في:<br><br>- المواجهة الشجاعة للذات والحقيقة الوجودية<br>- التفكير العميق في معنى الحياة والموت<br>- بناء علاقات إنسانية حقيقية ومتعمقة<br>- البحث عن المعرفة والفهم بدلاً من التسلية واللهو<br>- تقبل الشقاء كجزء من الوجود الإنساني وليس الهروب منه<br><br>هذا التصور للسعادة لا يعني رفض المتعة والترفيه تماماً، بل جعلهما في إطار متوازن وواعٍ، بحيث لا يصبحا وسيلة للهروب من الأسئلة الأساسية للحياة.",
+                "PhiH.textAnalysis.pascal.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.pascal.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.pascal.analysis.thesis.content": "يرى باسكال أن التسلية ليست مجرد وسيلة للترفيه، بل هي آلية دفاعية يلجأ إليها الإنسان للهروب من التفكير في ذاته ومصيره. فبدلاً من مواجهة الأسئلة الوجودية الأساسية، يفضل الإنسان الانغماس في أنشطة تلهيه عن التفكير في حقيقة وضعه البائس ككائن متناهٍ يواجه الموت.",
+                "PhiH.textAnalysis.pascal.analysis.mechanisms.title": "آليات عمل التسلية:",
+                "PhiH.textAnalysis.pascal.analysis.mechanisms.content": "تعمل التسلية وفق باسكال من خلال:<br>- تشتيت الانتباه عن الأسئلة الوجودية الأساسية<br>- خلق وهم بالسعادة والرضا المؤقت<br>- منع الإنسان من التفكير في ذاته ومصيره<br>- إبقاء الإنسان في حالة من التيه والضياع دون أن يشعر<br>- تأجيل مواجهة الحقيقة الوجودية إلى ما لا نهاية",
+                "PhiH.textAnalysis.pascal.analysis.consequences.title": "نتائج التسلية:",
+                "PhiH.textAnalysis.pascal.analysis.consequences.content": "- <strong>الضياع الوجودي:</strong> عيش الإنسان دون وعي بحقيقته ومصيره<br>- <strong>الهروب من الذات:</strong> تجنب المواجهة مع الأسئلة الأساسية للحياة<br>- <strong>السعادة الوهمية:</strong> البحث عن متع آنية بدلاً من سعادة حقيقية<br>- <strong>الموت دون وعي:</strong> انقضاء العمر دون تحقيق المعنى الحقيقي للوجود",
+                "PhiH.textAnalysis.pascal.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.pascal.analysis.significance.content": "يمثل نقد باسكال للتسلية رؤية عميقة للوجود الإنساني. فالإنسان عند باسكال كائن متناقض: عظيم بفكره، بائس بوجوده المحدود. والتسلية هي محاولة يائسة للهروب من هذا التناقض. لكن باسكال لا يدعو إلى التخلي عن كل أشكال المتعة، بل إلى وعي الإنسان بحقيقته ومواجهة شقائه بدلاً من الهروب منه. فالسعادة الحقيقية لا تكمن في نسيان الذات، بل في وعيها وتقبلها بكل تناقضاتها."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

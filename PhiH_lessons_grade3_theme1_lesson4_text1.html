@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: الوهم والخطأ - سيغموند فرويد - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#e11d48">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Rose + Pink Color Palette */
+        :root {
+            --primary-color: #e11d48;
+            --primary-light: #f43f5e;
+            --primary-dark: #be123c;
+            --secondary-color: #db2777;
+            --secondary-light: #ec4899;
+            --secondary-dark: #be185d;
+            --accent-color: #db2777;
+            --accent-light: #ec4899;
+            --accent-dark: #be185d;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #fdf2f8;
+            --card-bg: #ffffff;
+            --definition-bg: #fce7f3;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #fbcfe8;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(225, 29, 72, 0.1), 0 2px 4px -1px rgba(225, 29, 72, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(225, 29, 72, 0.1), 0 4px 6px -2px rgba(225, 29, 72, 0.05);
+            --gradient-primary: linear-gradient(135deg, #e11d48 0%, #db2777 100%);
+            --gradient-secondary: linear-gradient(135deg, #db2777 0%, #be185d 100%);
+            --gradient-accent: linear-gradient(135deg, #db2777 0%, #e11d48 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #f43f5e;
+            --primary-light: #fb7185;
+            --primary-dark: #e11d48;
+            --secondary-color: #ec4899;
+            --secondary-light: #f472b6;
+            --secondary-dark: #db2777;
+            --accent-color: #ec4899;
+            --accent-light: #f472b6;
+            --accent-dark: #db2777;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #831843;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #9d174d;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);
+            --gradient-secondary: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+            --gradient-accent: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(225, 29, 72, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(219, 39, 119, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(219, 39, 119, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(225, 29, 72, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.freud.title">تحليل النص: الوهم والخطأ - سيغموند فرويد</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.freud.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.freud.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.freud.introduction.content">
+                    يهتمّ التحليل النفسي من حيث هو علم إنساني بالكشف عن الآليات النفسية للحياة اليومية من خلال تحليل إنتاجات الحضارة عموما والمعتقدات على وجه الخصوص، وبكيفيّة التعرّف إلى خصائصها وأصولها وسلطتها.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.freud.text.title">الوهم والخطأ</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.freud.text.content">
+                        ليس الوهم والخطأ شيئا واحدا، وليس الوهم كذلك خطأ بالضرورة. إن ما كان يعتقده أرسطو من أن "الدّود وليد القذارة" – وهو رأي لا يزال يعتقده الجهلة من الناس – كان خطأ. وإنه لمن الخطأ كذلك ما كان يقول به جيل سابق من الأطبّاء، من كون السهام<sup>1</sup> نتيجة للشطط الجنسي. وليس من الملائم في شيء أن نسمّي هذه الأخطاء أوهاما. في حين أنَ كريستوف كولومبوس كان بالفعل واهما عندما حسب أنّه اكتشف طريقا بحرية جديدة إلى الهند. وقدْر الرغبة في هذا الخطأ جليّ ظاهر. وبوسعنا أن نطلق صفة الوهم على زعم بعض ذوي النزعة القومية<sup>2</sup> ممن يؤكّدون أن العروق الهندية-الجرمانية هي العروق البشرية الوحيدة القادرة على إنتاج الثقافة ... إنَ ما يميّز الوهم هو أنّه متولّد عن رغبات إنسانية.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.freud.text.source">سيغموند فرويد، مستقبل وهم، ص:42، الطبعة الثالثة 1981، ترجمة جورج طرابيشي (مع بعض التعديل)</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.freud.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/sigmund_freud.jpg" alt="سيغموند فرويد" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.freud.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.freud.author.content">
+                            سيغموند فرويد (1856-1939) هو طبيب نفسي نمساوي، مؤسس علم النفس التحليلي وأحد أهم المفكرين في القرن العشرين. ولد في فريبورغ بمورافيا (التشيك حالياً) وانتقل إلى فيينا حيث درس الطب وتخصص في الأعصاب. طور فرويد نظرية التحليل النفسي التي تركز على دور اللاوعي والدوافع اللاشعورية في تشكيل السلوك الإنساني. من أهم مفاهيمه: العقل الباطن، الكبت، عقدة أوديب، والهو والأنا والأنا الأعلى. من أشهر مؤلفاته: "تفسير الأحلام"، "علم نفس الجماهير وتحليل الأنا"، "الطوطم والتابو"، و"مستقبل وهم". أثرت أفكار فرويد بعمق على علم النفس والفلسفة والأدب والفن في القرن العشرين.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.freud.lexical.title">المفاهيم والمصطلحات</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.freud.lexical.item1"><strong>الوهم:</strong> اعتقاد خاطئ ناتج عن رغبات إنسانية عميقة، وليس عن نقص في المعرفة أو المعلومات. الوهم يتولد من حاجة نفسية لتصديق شيء معين بغض النظر عن مدى صحته الموضوعية.</li>
+                    <li data-i18n="PhiH.textAnalysis.freud.lexical.item2"><strong>الخطأ:</strong> اعتقاد خاطئ ناتج عن نقص في المعرفة أو المعلومات أو عن استدلال غير صحيح. يمكن تصحيح الخطأ بتوفير المعلومات الصحيحة أو بالتفكير المنطقي السليم.</li>
+                    <li data-i18n="PhiH.textAnalysis.freud.lexical.item3"><strong>الرغبة:</strong> في التحليل النفسي، تمثل القوة الدافعة الأساسية للسلوك الإنساني. الرغبات قد تكون واعية أو لا واعية، وهي التي تولد الأوهام عندما لا تتماشى مع الواقع.</li>
+                    <li data-i18n="PhiH.textAnalysis.freud.lexical.item4"><strong>السهام:</strong> مرض عصبي مزمن كان يعتقد خطأً أنه ناتج عن الشطط الجنسي، بينما هو في الواقع ناتج عن إصابة للمراكز العصبية.</li>
+                    <li data-i18n="PhiH.textAnalysis.freud.lexical.item5"><strong>النزعة القومية:</strong> يقصد بها هنا المعتقدات العنصرية التي كانت سائدة في أوروبا، وخاصة الاعتقاد بتفوق العرق الآري الذي تبناه النازيون.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.freud.questions.title">أسئلة الفهم والتحليل</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.freud.questions.q1">استخرج من الأمثلة التي وظّفها فرويد خصائص كلّ من الخطأ والوهم.</li>
+                    <li data-i18n="PhiH.textAnalysis.freud.questions.q2">ما الذي يجعل الوهم مختلفا اختلافا جذريا عن الخطأ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.freud.questions.q3">أسْتَحْضِرُ أمثلة عن الوهم والخطأ من معيشك اليومي في ضوء ما انتهيت إليه من تمييزات مفهومية.</li>
+                    <li data-i18n="PhiH.textAnalysis.freud.questions.q4">كيف تفسّر في ضوء النص الطابع العنيد للوهم؟</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.freud.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.freud.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.freud.answers.a1.content">
+                        من الأمثلة التي ذكرها فرويد:
+                        <br><br>
+                        <strong>خصائص الخطأ:</strong>
+                        <br>- اعتقاد أرسطو أن "الدود وليد القذارة" → خطأ ناتج عن نقص المعرفة العلمية.
+                        <br>- اعتقاد الأطباء القدامى أن "السهام" ناتج عن الشطط الجنسي → خطأ ناتج عن نقص المعرفة الطبية.
+                        <br><br>
+                        <strong>خصائص الوهم:</strong>
+                        <br>- اعتقاد كولومبوس أنه اكتشف طريقاً بحرياً جديداً إلى الهند → وهم ناتج عن رغبة في الاكتشاف والمجد.
+                        <br>- اعتقاد النازيين بتفوق العرق الآري → وهم ناتج عن رغبات قومية وعنصرية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.freud.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.freud.answers.a2.content">
+                        الوهم يختلف جذرياً عن الخطأ في مصدره وطبيعته:
+                        <br><br>
+                        - <strong>الخطأ</strong> ناتج عن نقص في المعرفة أو استدلال خاطئ، ويمكن تصحيحه بتوفير المعلومات الصحيحة.
+                        <br>- <strong>الوهم</strong> ناتج عن رغبات إنسانية عميقة، وهو مقاوم للتغيير حتى مع توفر الأدلة المضادة.
+                        <br><br>
+                        الفرق الجوهري هو أن الوهم مرتبط بالرغبات والاحتياجات النفسية، بينما الخطأ مرتبط بالمعرفة والاستدلال.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.freud.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.freud.answers.a3.content">
+                        <strong>أمثلة على الخطأ من الحياة اليومية:</strong>
+                        <br>- الاعتقاد أن الأرض مسطحة (قبل الاكتشافات العلمية).
+                        <br>- الاعتقاد أن البرق يحدث قبل الرعد (خطأ في الإدراك الحسي).
+                        <br>- الاعتقاد أن جميع الثعابين سامة (تعميم خاطئ).
+                        <br><br>
+                        <strong>أمثلة على الوهم من الحياة اليومية:</strong>
+                        <br>- الاعتقاد أن الحظ سيدير الأمور لصالحنا دون جهد (وهم ناتج عن رغبة في التهرب من المسؤولية).
+                        <br>- الاعتقاد أننا أفضل من الآخرين في مجال معين (وهم ناتج عن حاجة نفسية للتفوق).
+                        <br>- الاعتقاد بأن الحب سيحل جميع المشاكل (وهم رومانسي).
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.freud.answers.a4.title">الإجابة عن السؤال الرابع:</h5>
+                    <p data-i18n="PhiH.textAnalysis.freud.answers.a4.content">
+                        الطابع العنيد للوهم يمكن تفسيره في ضوء النص من خلال:
+                        <br><br>
+                        - <strong>ارتباط الوهم بالرغبات:</strong> بما أن الوهم ناتج عن رغبات إنسانية عميقة، فإن التخلي عنه يعني التخلي عن إشباع هذه الرغبات.
+                        <br>- <strong>الدور الوظيفي للوهم:</strong> الأوهام تلبي حاجات نفسية مهمة، مثل الشعور بالأمان أو التفوق أو الأمل.
+                        <br>- <strong>مقاومة التغيير:</strong> الوهم يقاوم التغيير لأنه أصبح جزءاً من الهوية الشخصية أو الجماعية.
+                        <br>- <strong>الطابع اللاواعي:</strong> كثير من الأوهام تنبع من اللاوعي، مما يجعل مقاومتها أصعب لأن الفرد لا يدرك مصدرها الحقيقي.
+                        <br><br>
+                        هذا يفسر لماذا تبقى الأوهام راسخة حتى في مواجهة الأدلة العقلانية المضادة.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.freud.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.freud.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.freud.analysis.thesis.content">
+                        يطرح فرويد فكرة أن الوهم يختلف جذرياً عن الخطأ، فبينما ينشأ الخطأ من نقص في المعرفة أو استدلال خاطئ، ينشأ الوهم من رغبات إنسانية عميقة. الوهم ليس مجرد خطأ يمكن تصحيحه بالمعلومات، بل هو اعتقاد ناتج عن حاجات نفسية لا واعية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.freud.analysis.mechanisms.title">آليات عمل الوهم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.freud.analysis.mechanisms.content">
+                        تعمل آليات الوهم من خلال:
+                        <br>- <strong>الرغبات اللاواعية:</strong> حيث تدفع الرغبات المكبوتة الفرد إلى تبني معتقدات تلبي هذه الرغبات.
+                        <br>- <strong>التبرير النفسي:</strong> حيث يبحث الفرد عن مبررات لمعتقداته الوهمية ليحافظ على سلامته النفسية.
+                        <br>- <strong>الإسقاط:</strong> حيث يسقط الفرد رغباته ومخاوفه على الواقع الخارجي.
+                        <br>- <strong>المقاومة:</strong> حيث يقاوم الفعل التغيير حتى في مواجهة الأدلة المضادة، لأن التغيير يهدد إشباع رغباته.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.freud.analysis.consequences.title">نتائج الوهم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.freud.analysis.consequences.content">
+                        - <strong>تشويه إدراك الواقع:</strong> حيث يرى الفرد العالم من خلال عدسة رغباته.
+                        <br>- <strong>صعوبة التغيير:</strong> حيث يصبح التخلي عن الوهم صعباً لأنه مرتبط بالهوية النفسية.
+                        <br>- <strong>تأثير سلبي على القرارات:</strong> حيث قد تتخذ قرارات خاطئة بناءً على أوهام.
+                        <br>- <strong>صراعات نفسية:</strong> عندما يتعارض الوهم مع الواقع، قد ينشأ صراع نفسي داخلي.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.freud.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.freud.analysis.significance.content">
+                        يحمل مفهوم الوهم عند فرويد دلالات عميقة تتجاوز التحليل النفسي الفردي إلى فهم الظواهر الاجتماعية والثقافية. فالكثير من المعتقدات الدينية والسياسية والاجتماعية يمكن فهمها كأوهام جماعية تلبي حاجات نفسية مشتركة. هذا المفهيم يساعد في تفسير استمرار المعتقدات غير العقلانية في المجتمعات الحديثة، ويقدم إطاراً لفهم مقاومة التغيير في الأفراد والجماعات. الوهم ليس مجرد خطأ يمكن تصحيحه، بل هو بنية نفسية معقدة تتطلب فهماً عميقاً للدوافع اللاواعية التي تدفع الإنسان إلى التمسك بمعتقدات معينة.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.freud.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.freud.title": "Analyse du texte: Illusion et Erreur - Sigmund Freud",
+                "PhiH.textAnalysis.freud.introduction.title": "Introduction",
+                "PhiH.textAnalysis.freud.introduction.content": "La psychanalyse en tant que science humaine s'intéresse à révéler les mécanismes psychologiques de la vie quotidienne à travers l'analyse des productions de la civilisation en général et des croyances en particulier, et à la manière de reconnaître leurs caractéristiques, leurs origines et leur pouvoir.",
+                "PhiH.textAnalysis.freud.text.title": "Illusion et Erreur",
+                "PhiH.textAnalysis.freud.text.content": "L'illusion et l'erreur ne sont pas une seule et même chose, et l'illusion n'est pas nécessairement une erreur. Ce qu'Aristote croyait, que \"les vers naissent de la saleté\" - une opinion que les ignorants croient encore - était une erreur. Et c'est également une erreur ce que disaient une génération précédente de médecins, que le tabès<sup>1</sup> résulte de l'excès sexuel. Il n'est pas du tout approprié d'appeler ces erreurs des illusions. Alors que Christophe Colomb était vraiment dans l'illusion quand il pensait avoir découvert une nouvelle route maritime vers l'Inde. La mesure du désir dans cette erreur est claire et évidente. Et nous pouvons qualifier d'illusion la prétention de certains nationalistes<sup>2</sup> qui affirment que les races indo-germaniques sont les seules races humaines capables de produire la culture... Ce qui distingue l'illusion est qu'elle est générée par des désirs humains.",
+                "PhiH.textAnalysis.freud.text.source": "Sigmund Freud, L'avenir d'une illusion, p.42, 3ème édition 1981, traduction Georges Tarabichi (avec quelques modifications)",
+                "PhiH.textAnalysis.freud.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.freud.author.alt": "Sigmund Freud",
+                "PhiH.textAnalysis.freud.author.content": "Sigmund Freud (1856-1939) est un psychiatre autrichien, fondateur de la psychanalyse et l'un des penseurs les plus importants du XXe siècle. Né à Freiberg en Moravie (actuelle République tchèque), il s'installa à Vienne où il étudia la médecine et se spécialisa en neurologie. Freud a développé la théorie de la psychanalyse qui se concentre sur le rôle de l'inconscient et des motivations inconscientes dans la formation du comportement humain. Parmi ses concepts les plus importants: l'inconscient, le refoulement, le complexe d'Œdipe, et le Ça, le Moi et le Surmoi. Parmi ses œuvres les plus célèbres: \"L'Interprétation des rêves\", \"Psychologie des masses et analyse du moi\", \"Totem et Tabou\", et \"L'Avenir d'une illusion\". Les idées de Freud ont profondément influencé la psychologie, la philosophie, la littérature et l'art au XXe siècle.",
+                "PhiH.textAnalysis.freud.lexical.title": "Concepts et terminologie",
+                "PhiH.textAnalysis.freud.lexical.item1": "<strong>Illusion:</strong> Croyance erronée résultant de désirs humains profonds, et non d'un manque de connaissance ou d'information. L'illusion est générée par un besoin psychologique de croire en quelque chose indépendamment de son exactitude objective.",
+                "PhiH.textAnalysis.freud.lexical.item2": "<strong>Erreur:</strong> Croyance erronée résultant d'un manque de connaissance ou d'information ou d'un raisonnement incorrect. L'erreur peut être corrigée en fournissant les bonnes informations ou par un raisonnement logique approprié.",
+                "PhiH.textAnalysis.freud.lexical.item3": "<strong>Désir:</strong> En psychanalyse, représente la force motrice fondamentale du comportement humain. Les désirs peuvent être conscients ou inconscients, et ce sont eux qui génèrent les illusions lorsqu'ils ne correspondent pas à la réalité.",
+                "PhiH.textAnalysis.freud.lexical.item4": "<strong>Tabès:</strong> Maladie nerveuse chronique qu'on croyait à tort résulter de l'excès sexuel, alors qu'elle est en réalité causée par une lésion des centres nerveux.",
+                "PhiH.textAnalysis.freud.lexical.item5": "<strong>Tendance nationaliste:</strong> Se réfère ici aux croyances racistes qui prévalaient en Europe, en particulier la croyance en la supériorité de la race aryenne adoptée par les nazis.",
+                "PhiH.textAnalysis.freud.questions.title": "Questions de compréhension et d'analyse",
+                "PhiH.textAnalysis.freud.questions.q1": "Extrayez des exemples utilisés par Freud les caractéristiques de l'erreur et de l'illusion.",
+                "PhiH.textAnalysis.freud.questions.q2": "Qu'est-ce qui rend l'illusion radicalement différente de l'erreur?",
+                "PhiH.textAnalysis.freud.questions.q3": "Apportez des exemples d'illusion et d'erreur de votre vie quotidienne à la lumière des distinctions conceptuelles que vous avez établies.",
+                "PhiH.textAnalysis.freud.questions.q4": "Comment expliquez-vous à la lumière du texte le caractère tenace de l'illusion?",
+                "PhiH.textAnalysis.freud.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.freud.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.freud.answers.a1.content": "Des exemples mentionnés par Freud:<br><br><strong>Caractéristiques de l'erreur:</strong><br>- La croyance d'Aristote que \"les vers naissent de la saleté\" → erreur due au manque de connaissances scientifiques.<br>- La croyance des anciens médecins que le \"tabès\" résulte de l'excès sexuel → erreur due au manque de connaissances médicales.<br><br><strong>Caractéristiques de l'illusion:</strong><br>- La croyance de Christophe Colomb qu'il avait découvert une nouvelle route maritime vers l'Inde → illusion née du désir de découverte et de gloire.<br>- La croyance des nazis en la supériorité de la race aryenne → illusion née de désirs nationalistes et racistes.",
+                "PhiH.textAnalysis.freud.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.freud.answers.a2.content": "L'illusion diffère radicalement de l'erreur par sa source et sa nature:<br><br>- <strong>L'erreur</strong> résulte d'un manque de connaissance ou d'un raisonnement incorrect, et peut être corrigée en fournissant les bonnes informations.<br>- <strong>L'illusion</strong> résulte de désirs humains profonds, et résiste au changement même face à des preuves contraires.<br><br>La différence essentielle est que l'illusion est liée aux désirs et aux besoins psychologiques, tandis que l'erreur est liée à la connaissance et au raisonnement.",
+                "PhiH.textAnalysis.freud.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.freud.answers.a3.content": "<strong>Exemples d'erreur de la vie quotidienne:</strong><br>- Croire que la Terre est plate (avant les découvertes scientifiques).<br>- Croire que l'éclair précède le tonnerre (erreur de perception sensorielle).<br>- Croire que tous les serpents sont venimeux (généralisation erronée).<br><br><strong>Exemples d'illusion de la vie quotidienne:</strong><br>- Croire que la chance arrangera les choses en notre faveur sans effort (illusion née du désir d'éviter la responsabilité).<br>- Croire que nous sommes meilleurs que les autres dans un domaine spécifique (illusion née d'un besoin psychologique de supériorité).<br>- Croire que l'amour résoudra tous les problèmes (illusion romantique).",
+                "PhiH.textAnalysis.freud.answers.a4.title": "Réponse à la quatrième question:",
+                "PhiH.textAnalysis.freud.answers.a4.content": "Le caractère tenace de l'illusion peut s'expliquer à la lumière du texte par:<br><br>- <strong>Le lien de l'illusion avec les désirs:</strong> Puisque l'illusion résulte de désirs humains profonds, y renoncer signifie renoncer à satisfaire ces désirs.<br>- <strong>Le rôle fonctionnel de l'illusion:</strong> Les illusions répondent à des besoins psychologiques importants, comme le sentiment de sécurité, de supériorité ou d'espoir.<br>- <strong>La résistance au changement:</strong> L'illusion résiste au changement car elle est devenue partie intégrante de l'identité personnelle ou collective.<br>- <strong>Le caractère inconscient:</strong> Beaucoup d'illusions émergent de l'inconscient, ce qui les rend plus difficiles à combattre car l'individu ne reconnaît pas leur véritable source.<br><br>Cela explique pourquoi les illusions persistent même face à des preuves rationnelles contraires.",
+                "PhiH.textAnalysis.freud.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.freud.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.freud.analysis.thesis.content": "Freud présente l'idée que l'illusion diffère radicalement de l'erreur : alors que l'erreur naît d'un manque de connaissance ou d'un raisonnement incorrect, l'illusion naît de désirs humains profonds. L'illusion n'est pas simplement une erreur qui peut être corrigée par l'information, mais une croyance résultant de besoins psychologiques inconscients.",
+                "PhiH.textAnalysis.freud.analysis.mechanisms.title": "Mécanismes de fonctionnement de l'illusion:",
+                "PhiH.textAnalysis.freud.analysis.mechanisms.content": "Les mécanismes de l'illusion fonctionnent à travers:<br>- <strong>Les désirs inconscients:</strong> où les désirs refoulés poussent l'individu à adopter des croyances qui satisfont ces désirs.<br>- <strong>La justification psychologique:</strong> où l'individu cherche des justifications à ses croyances illusoires pour préserver son équilibre psychique.<br>- <strong>La projection:</strong> où l'individu projette ses désirs et ses peurs sur la réalité extérieure.<br>- <strong>La résistance:</strong> où l'individu résiste au changement même face à des preuves contraires, car le changement menace la satisfaction de ses désirs.",
+                "PhiH.textAnalysis.freud.analysis.consequences.title": "Conséquences de l'illusion:",
+                "PhiH.textAnalysis.freud.analysis.consequences.content": "- <strong>Déformation de la perception de la réalité:</strong> où l'individu voit le monde à travers le prisme de ses désirs.<br>- <strong>Difficulté de changement:</strong> où renoncer à l'illusion devient difficile car elle est liée à l'identité psychologique.<br>- <strong>Impact négatif sur les décisions:</strong> où des décisions erronées peuvent être prises sur la base d'illusions.<br>- <strong>Conflits psychiques:</strong> lorsque l'illusion entre en conflit avec la réalité, un conflit psychique interne peut surgir.",
+                "PhiH.textAnalysis.freud.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.freud.analysis.significance.content": "Le concept d'illusion chez Freud porte des significations profondes qui dépassent l'analyse psychologique individuelle pour comprendre les phénomènes sociaux et culturels. Beaucoup de croyances religieuses, politiques et sociales peuvent être comprises comme des illusions collectives répondant à des besoins psychiques partagés. Ce concept aide à expliquer la persistance de croyances non rationnelles dans les sociétés modernes, et offre un cadre pour comprendre la résistance au changement chez les individus et les groupes. L'illusion n'est pas simplement une erreur qui peut être corrigée, mais une structure psychique complexe qui nécessite une compréhension profonde des motivations inconscientes qui poussent l'humain à s'accrocher à certaines croyances."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.freud.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.freud.title": "Text Analysis: Illusion and Error - Sigmund Freud",
+                "PhiH.textAnalysis.freud.introduction.title": "Introduction",
+                "PhiH.textAnalysis.freud.introduction.content": "Psychoanalysis as a human science is concerned with revealing the psychological mechanisms of daily life through the analysis of the productions of civilization in general and beliefs in particular, and with how to recognize their characteristics, origins and power.",
+                "PhiH.textAnalysis.freud.text.title": "Illusion and Error",
+                "PhiH.textAnalysis.freud.text.content": "Illusion and error are not the same thing, and illusion is not necessarily an error. What Aristotle believed, that \"worms are born of filth\" - an opinion still held by ignorant people - was an error. And it is also an error what a previous generation of doctors said, that tabes<sup>1</sup> results from sexual excess. It is not at all appropriate to call these errors illusions. Whereas Christopher Columbus was indeed deluded when he thought he had discovered a new sea route to India. The measure of desire in this error is clear and evident. And we can qualify as illusion the claim of some nationalists<sup>2</sup> who affirm that the Indo-Germanic races are the only human races capable of producing culture... What distinguishes illusion is that it is generated by human desires.",
+                "PhiH.textAnalysis.freud.text.source": "Sigmund Freud, The Future of an Illusion, p.42, 3rd edition 1981, translation by George Tarabichi (with some modifications)",
+                "PhiH.textAnalysis.freud.author.title": "Author Presentation",
+                "PhiH.textAnalysis.freud.author.alt": "Sigmund Freud",
+                "PhiH.textAnalysis.freud.author.content": "Sigmund Freud (1856-1939) was an Austrian psychiatrist, founder of psychoanalysis and one of the most important thinkers of the 20th century. Born in Freiberg, Moravia (now Czech Republic), he moved to Vienna where he studied medicine and specialized in neurology. Freud developed the theory of psychoanalysis which focuses on the role of the unconscious and unconscious motivations in shaping human behavior. Among his most important concepts: the unconscious, repression, the Oedipus complex, and the Id, Ego and Superego. Among his most famous works: \"The Interpretation of Dreams\", \"Group Psychology and the Analysis of the Ego\", \"Totem and Taboo\", and \"The Future of an Illusion\". Freud's ideas deeply influenced psychology, philosophy, literature and art in the 20th century.",
+                "PhiH.textAnalysis.freud.lexical.title": "Concepts and Terminology",
+                "PhiH.textAnalysis.freud.lexical.item1": "<strong>Illusion:</strong> Erroneous belief resulting from deep human desires, not from a lack of knowledge or information. Illusion is generated by a psychological need to believe in something regardless of its objective accuracy.",
+                "PhiH.textAnalysis.freud.lexical.item2": "<strong>Error:</strong> Erroneous belief resulting from a lack of knowledge or information or from incorrect reasoning. Error can be corrected by providing correct information or by proper logical reasoning.",
+                "PhiH.textAnalysis.freud.lexical.item3": "<strong>Desire:</strong> In psychoanalysis, represents the fundamental driving force of human behavior. Desires can be conscious or unconscious, and they are what generate illusions when they don't align with reality.",
+                "PhiH.textAnalysis.freud.lexical.item4": "<strong>Tabes:</strong> Chronic nervous disease mistakenly believed to result from sexual excess, while it is actually caused by a lesion of the nerve centers.",
+                "PhiH.textAnalysis.freud.lexical.item5": "<strong>Nationalist tendency:</strong> Refers here to the racist beliefs that prevailed in Europe, particularly the belief in the superiority of the Aryan race adopted by the Nazis.",
+                "PhiH.textAnalysis.freud.questions.title": "Comprehension and Analysis Questions",
+                "PhiH.textAnalysis.freud.questions.q1": "Extract from the examples used by Freud the characteristics of error and illusion.",
+                "PhiH.textAnalysis.freud.questions.q2": "What makes illusion radically different from error?",
+                "PhiH.textAnalysis.freud.questions.q3": "Provide examples of illusion and error from your daily life in light of the conceptual distinctions you have established.",
+                "PhiH.textAnalysis.freud.questions.q4": "How do you explain in light of the text the tenacious nature of illusion?",
+                "PhiH.textAnalysis.freud.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.freud.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.freud.answers.a1.content": "From examples mentioned by Freud:<br><br><strong>Characteristics of error:</strong><br>- Aristotle's belief that \"worms are born of filth\" → error due to lack of scientific knowledge.<br>- Ancient doctors' belief that \"tabes\" results from sexual excess → error due to lack of medical knowledge.<br><br><strong>Characteristics of illusion:</strong><br>- Christopher Columbus' belief that he had discovered a new sea route to India → illusion born from desire for discovery and glory.<br>- Nazis' belief in the superiority of the Aryan race → illusion born from nationalist and racist desires.",
+                "PhiH.textAnalysis.freud.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.freud.answers.a2.content": "Illusion differs radically from error in its source and nature:<br><br>- <strong>Error</strong> results from a lack of knowledge or incorrect reasoning, and can be corrected by providing correct information.<br>- <strong>Illusion</strong> results from deep human desires, and resists change even in the face of contrary evidence.<br><br>The essential difference is that illusion is linked to desires and psychological needs, while error is linked to knowledge and reasoning.",
+                "PhiH.textAnalysis.freud.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.freud.answers.a3.content": "<strong>Examples of error from daily life:</strong><br>- Believing the Earth is flat (before scientific discoveries).<br>- Believing lightning occurs before thunder (error in sensory perception).<br>- Believing all snakes are venomous (erroneous generalization).<br><br><strong>Examples of illusion from daily life:</strong><br>- Believing luck will turn things in our favor without effort (illusion born from desire to avoid responsibility).<br>- Believing we are better than others in a specific field (illusion born from psychological need for superiority).<br>- Believing love will solve all problems (romantic illusion).",
+                "PhiH.textAnalysis.freud.answers.a4.title": "Answer to the fourth question:",
+                "PhiH.textAnalysis.freud.answers.a4.content": "The tenacious nature of illusion can be explained in light of the text through:<br><br>- <strong>Illusion's connection to desires:</strong> Since illusion results from deep human desires, giving it up means giving up satisfying these desires.<br>- <strong>The functional role of illusion:</strong> Illusions fulfill important psychological needs, such as feelings of security, superiority or hope.<br>- <strong>Resistance to change:</strong> Illusion resists change because it has become part of personal or collective identity.<br>- <strong>The unconscious nature:</strong> Many illusions emerge from the unconscious, making them harder to combat because the individual doesn't recognize their true source.<br><br>This explains why illusions persist even in the face of contrary rational evidence.",
+                "PhiH.textAnalysis.freud.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.freud.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.freud.analysis.thesis.content": "Freud presents the idea that illusion differs radically from error: while error arises from a lack of knowledge or incorrect reasoning, illusion arises from deep human desires. Illusion is not simply an error that can be corrected by information, but a belief resulting from unconscious psychological needs.",
+                "PhiH.textAnalysis.freud.analysis.mechanisms.title": "Mechanisms of illusion functioning:",
+                "PhiH.textAnalysis.freud.analysis.mechanisms.content": "The mechanisms of illusion work through:<br>- <strong>Unconscious desires:</strong> where repressed desires push the individual to adopt beliefs that satisfy these desires.<br>- <strong>Psychological justification:</strong> where the individual seeks justifications for their illusory beliefs to preserve their psychic balance.<br>- <strong>Projection:</strong> where the individual projects their desires and fears onto external reality.<br>- <strong>Resistance:</strong> where the individual resists change even in the face of contrary evidence, because change threatens the satisfaction of their desires.",
+                "PhiH.textAnalysis.freud.analysis.consequences.title": "Consequences of illusion:",
+                "PhiH.textAnalysis.freud.analysis.consequences.content": "- <strong>Distortion of reality perception:</strong> where the individual sees the world through the lens of their desires.<br>- <strong>Difficulty of change:</strong> where giving up illusion becomes difficult because it is linked to psychological identity.<br>- <strong>Negative impact on decisions:</strong> where wrong decisions may be made based on illusions.<br>- <strong>Psychic conflicts:</strong> when illusion conflicts with reality, internal psychic conflict may arise.",
+                "PhiH.textAnalysis.freud.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.freud.analysis.significance.content": "Freud's concept of illusion carries deep meanings that go beyond individual psychological analysis to understand social and cultural phenomena. Many religious, political and social beliefs can be understood as collective illusions fulfilling shared psychic needs. This concept helps explain the persistence of non-rational beliefs in modern societies, and provides a framework for understanding resistance to change in individuals and groups. Illusion is not simply an error that can be corrected, but a complex psychic structure that requires deep understanding of the unconscious motivations that drive humans to cling to certain beliefs."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.freud.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.freud.title": "تحليل النص: الوهم والخطأ - سيغموند فرويد",
+                "PhiH.textAnalysis.freud.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.freud.introduction.content": "يهتمّ التحليل النفسي من حيث هو علم إنساني بالكشف عن الآليات النفسية للحياة اليومية من خلال تحليل إنتاجات الحضارة عموما والمعتقدات على وجه الخصوص، وبكيفيّة التعرّف إلى خصائصها وأصولها وسلطتها.",
+                "PhiH.textAnalysis.freud.text.title": "الوهم والخطأ",
+                "PhiH.textAnalysis.freud.text.content": "ليس الوهم والخطأ شيئا واحدا، وليس الوهم كذلك خطأ بالضرورة. إن ما كان يعتقده أرسطو من أن \"الدّود وليد القذارة\" – وهو رأي لا يزال يعتقده الجهلة من الناس – كان خطأ. وإنه لمن الخطأ كذلك ما كان يقول به جيل سابق من الأطبّاء، من كون السهام<sup>1</sup> نتيجة للشطط الجنسي. وليس من الملائم في شيء أن نسمّي هذه الأخطاء أوهاما. في حين أنَ كريستوف كولومبوس كان بالفعل واهما عندما حسب أنّه اكتشف طريقا بحرية جديدة إلى الهند. وقدْر الرغبة في هذا الخطأ جليّ ظاهر. وبوسعنا أن نطلق صفة الوهم على زعم بعض ذوي النزعة القومية<sup>2</sup> ممن يؤكّدون أن العروق الهندية-الجرمانية هي العروق البشرية الوحيدة القادرة على إنتاج الثقافة ... إنَ ما يميّز الوهم هو أنّه متولّد عن رغبات إنسانية.",
+                "PhiH.textAnalysis.freud.text.source": "سيغموند فرويد، مستقبل وهم، ص:42، الطبعة الثالثة 1981، ترجمة جورج طرابيشي (مع بعض التعديل)",
+                "PhiH.textAnalysis.freud.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.freud.author.alt": "سيغموند فرويد",
+                "PhiH.textAnalysis.freud.author.content": "سيغموند فرويد (1856-1939) هو طبيب نفسي نمساوي، مؤسس علم النفس التحليلي وأحد أهم المفكرين في القرن العشرين. ولد في فريبورغ بمورافيا (التشيك حالياً) وانتقل إلى فيينا حيث درس الطب وتخصص في الأعصاب. طور فرويد نظرية التحليل النفسي التي تركز على دور اللاوعي والدوافع اللاشعورية في تشكيل السلوك الإنساني. من أهم مفاهيمه: العقل الباطن، الكبت، عقدة أوديب، والهو والأنا والأنا الأعلى. من أشهر مؤلفاته: \"تفسير الأحلام\"، \"علم نفس الجماهير وتحليل الأنا\"، \"الطوطم والتابو\"، و\"مستقبل وهم\". أثرت أفكار فرويد بعمق على علم النفس والفلسفة والأدب والفن في القرن العشرين.",
+                "PhiH.textAnalysis.freud.lexical.title": "المفاهيم والمصطلحات",
+                "PhiH.textAnalysis.freud.lexical.item1": "<strong>الوهم:</strong> اعتقاد خاطئ ناتج عن رغبات إنسانية عميقة، وليس عن نقص في المعرفة أو المعلومات. الوهم يتولد من حاجة نفسية لتصديق شيء معين بغض النظر عن مدى صحته الموضوعية.",
+                "PhiH.textAnalysis.freud.lexical.item2": "<strong>الخطأ:</strong> اعتقاد خاطئ ناتج عن نقص في المعرفة أو المعلومات أو عن استدلال غير صحيح. يمكن تصحيح الخطأ بتوفير المعلومات الصحيحة أو بالتفكير المنطقي السليم.",
+                "PhiH.textAnalysis.freud.lexical.item3": "<strong>الرغبة:</strong> في التحليل النفسي، تمثل القوة الدافعة الأساسية للسلوك الإنساني. الرغبات قد تكون واعية أو لا واعية، وهي التي تولد الأوهام عندما لا تتماشى مع الواقع.",
+                "PhiH.textAnalysis.freud.lexical.item4": "<strong>السهام:</strong> مرض عصبي مزمن كان يعتقد خطأً أنه ناتج عن الشطط الجنسي، بينما هو في الواقع ناتج عن إصابة للمراكز العصبية.",
+                "PhiH.textAnalysis.freud.lexical.item5": "<strong>النزعة القومية:</strong> يقصد بها هنا المعتقدات العنصرية التي كانت سائدة في أوروبا، وخاصة الاعتقاد بتفوق العرق الآري الذي تبناه النازيون.",
+                "PhiH.textAnalysis.freud.questions.title": "أسئلة الفهم والتحليل",
+                "PhiH.textAnalysis.freud.questions.q1": "استخرج من الأمثلة التي وظّفها فرويد خصائص كلّ من الخطأ والوهم.",
+                "PhiH.textAnalysis.freud.questions.q2": "ما الذي يجعل الوهم مختلفا اختلافا جذريا عن الخطأ؟",
+                "PhiH.textAnalysis.freud.questions.q3": "أسْتَحْضِرُ أمثلة عن الوهم والخطأ من معيشك اليومي في ضوء ما انتهيت إليه من تمييزات مفهومية.",
+                "PhiH.textAnalysis.freud.questions.q4": "كيف تفسّر في ضوء النص الطابع العنيد للوهم؟",
+                "PhiH.textAnalysis.freud.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.freud.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.freud.answers.a1.content": "من الأمثلة التي ذكرها فرويد:<br><br><strong>خصائص الخطأ:</strong><br>- اعتقاد أرسطو أن \"الدود وليد القذارة\" → خطأ ناتج عن نقص المعرفة العلمية.<br>- اعتقاد الأطباء القدامى أن \"السهام\" ناتج عن الشطط الجنسي → خطأ ناتج عن نقص المعرفة الطبية.<br><br><strong>خصائص الوهم:</strong><br>- اعتقاد كولومبوس أنه اكتشف طريقاً بحرياً جديداً إلى الهند → وهم ناتج عن رغبة في الاكتشاف والمجد.<br>- اعتقاد النازيين بتفوق العرق الآري → وهم ناتج عن رغبات قومية وعنصرية.",
+                "PhiH.textAnalysis.freud.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.freud.answers.a2.content": "الوهم يختلف جذرياً عن الخطأ في مصدره وطبيعته:<br><br>- <strong>الخطأ</strong> ناتج عن نقص في المعرفة أو استدلال خاطئ، ويمكن تصحيحه بتوفير المعلومات الصحيحة.<br>- <strong>الوهم</strong> ناتج عن رغبات إنسانية عميقة، وهو مقاوم للتغيير حتى مع توفر الأدلة المضادة.<br><br>الفرق الجوهري هو أن الوهم مرتبط بالرغبات والاحتياجات النفسية، بينما الخطأ مرتبط بالمعرفة والاستدلال.",
+                "PhiH.textAnalysis.freud.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.freud.answers.a3.content": "<strong>أمثلة على الخطأ من الحياة اليومية:</strong><br>- الاعتقاد أن الأرض مسطحة (قبل الاكتشافات العلمية).<br>- الاعتقاد أن البرق يحدث قبل الرعد (خطأ في الإدراك الحسي).<br>- الاعتقاد أن جميع الثعابين سامة (تعميم خاطئ).<br><br><strong>أمثلة على الوهم من الحياة اليومية:</strong><br>- الاعتقاد أن الحظ سيدير الأمور لصالحنا دون جهد (وهم ناتج عن رغبة في التهرب من المسؤولية).<br>- الاعتقاد أننا أفضل من الآخرين في مجال معين (وهم ناتج عن حاجة نفسية للتفوق).<br>- الاعتقاد بأن الحب سيحل جميع المشاكل (وهم رومانسي).",
+                "PhiH.textAnalysis.freud.answers.a4.title": "الإجابة عن السؤال الرابع:",
+                "PhiH.textAnalysis.freud.answers.a4.content": "الطابع العنيد للوهم يمكن تفسيره في ضوء النص من خلال:<br><br>- <strong>ارتباط الوهم بالرغبات:</strong> بما أن الوهم ناتج عن رغبات إنسانية عميقة، فإن التخلي عنه يعني التخلي عن إشباع هذه الرغبات.<br>- <strong>الدور الوظيفي للوهم:</strong> الأوهام تلبي حاجات نفسية مهمة، مثل الشعور بالأمان أو التفوق أو الأمل.<br>- <strong>مقاومة التغيير:</strong> الوهم يقاوم التغيير لأنه أصبح جزءاً من الهوية الشخصية أو الجماعية.<br>- <strong>الطابع اللاواعي:</strong> كثير من الأوهام تنبع من اللاوعي، مما يجعل مقاومتها أصعب لأن الفرد لا يدرك مصدرها الحقيقي.<br><br>هذا يفسر لماذا تبقى الأوهام راسخة حتى في مواجهة الأدلة العقلانية المضادة.",
+                "PhiH.textAnalysis.freud.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.freud.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.freud.analysis.thesis.content": "يطرح فرويد فكرة أن الوهم يختلف جذرياً عن الخطأ، فبينما ينشأ الخطأ من نقص في المعرفة أو استدلال خاطئ، ينشأ الوهم من رغبات إنسانية عميقة. الوهم ليس مجرد خطأ يمكن تصحيحه بالمعلومات، بل هو اعتقاد ناتج عن حاجات نفسية لا واعية.",
+                "PhiH.textAnalysis.freud.analysis.mechanisms.title": "آليات عمل الوهم:",
+                "PhiH.textAnalysis.freud.analysis.mechanisms.content": "تعمل آليات الوهم من خلال:<br>- <strong>الرغبات اللاواعية:</strong> حيث تدفع الرغبات المكبوتة الفرد إلى تبني معتقدات تلبي هذه الرغبات.<br>- <strong>التبرير النفسي:</strong> حيث يبحث الفرد عن مبررات لمعتقداته الوهمية ليحافظ على سلامته النفسية.<br>- <strong>الإسقاط:</strong> حيث يسقط الفرد رغباته ومخاوفه على الواقع الخارجي.<br>- <strong>المقاومة:</strong> حيث يقاوم الفعل التغيير حتى في مواجهة الأدلة المضادة، لأن التغيير يهدد إشباع رغباته.",
+                "PhiH.textAnalysis.freud.analysis.consequences.title": "نتائج الوهم:",
+                "PhiH.textAnalysis.freud.analysis.consequences.content": "- <strong>تشويه إدراك الواقع:</strong> حيث يرى الفرد العالم من خلال عدسة رغباته.<br>- <strong>صعوبة التغيير:</strong> حيث يصبح التخلي عن الوهم صعباً لأنه مرتبط بالهوية النفسية.<br>- <strong>تأثير سلبي على القرارات:</strong> حيث قد تتخذ قرارات خاطئة بناءً على أوهام.<br>- <strong>صراعات نفسية:</strong> عندما يتعارض الوهم مع الواقع، قد ينشأ صراع نفسي داخلي.",
+                "PhiH.textAnalysis.freud.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.freud.analysis.significance.content": "يحمل مفهوم الوهم عند فرويد دلالات عميقة تتجاوز التحليل النفسي الفردي إلى فهم الظواهر الاجتماعية والثقافية. فالكثير من المعتقدات الدينية والسياسية والاجتماعية يمكن فهمها كأوهام جماعية تلبي حاجات نفسية مشتركة. هذا المفهيم يساعد في تفسير استمرار المعتقدات غير العقلانية في المجتمعات الحديثة، ويقدم إطاراً لفهم مقاومة التغيير في الأفراد والجماعات. الوهم ليس مجرد خطأ يمكن تصحيحه، بل هو بنية نفسية معقدة تتطلب فهماً عميقاً للدوافع اللاواعية التي تدفع الإنسان إلى التمسك بمعتقدات معينة."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

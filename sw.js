@@ -1,7 +1,7 @@
 // Service Worker for Philosophy Learning Hub
-const CACHE_NAME = 'philosophy-hub-v1.0.8';
-const STATIC_CACHE = 'philosophy-static-v1.0.8';
-const DYNAMIC_CACHE = 'philosophy-dynamic-v1.0.8';
+const CACHE_NAME = 'philosophy-hub-v1.0.9';
+const STATIC_CACHE = 'philosophy-static-v1.0.9';
+const DYNAMIC_CACHE = 'philosophy-dynamic-v1.0.9';
 
 // Assets to cache immediately on install
 const STATIC_ASSETS = [

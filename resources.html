@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#6495ED">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Coral + Cornflower Blue Color Palette */
+        :root {
+            --primary-color: #FF7F50;
+            --secondary-color: #6495ED;
+            --accent-color: #FFA07A;
+            --light-color: #FFF8F6;
+            --dark-color: #2C3E50;
+            --text-color: #2C3E50;
+            --heading-color: #2C3E50;
+            --background-color: #F5F7FA;
+            --card-bg: #FFFFFF;
+            --definition-bg: #E6F2FF;
+            --border-color: #D6E4FF;
+            --table-even-bg: #F5F7FA;
+            --table-hover-bg: #E6F2FF;
+            --border-radius: 20px;
+            --box-shadow: 0 12px 30px rgba(255, 127, 80, 0.15);
+            --gradient-primary: linear-gradient(135deg, #FF7F50 0%, #FF6347 100%);
+            --gradient-secondary: linear-gradient(135deg, #6495ED 0%, #4169E1 100%);
+            --gradient-coral: linear-gradient(135deg, #FF7F50 0%, #FFA07A 100%);
+            --gradient-blue: linear-gradient(135deg, #6495ED 0%, #87CEEB 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #FF8C69;
+            --secondary-color: #7B9EE6;
+            --accent-color: #FFB6A3;
+            --light-color: #2C3E50;
+            --dark-color: #1A2530;
+            --text-color: #ECF0F1;
+            --heading-color: #FFFFFF;
+            --background-color: #1A2530;
+            --card-bg: #2C3E50;
+            --definition-bg: #34495E;
+            --border-color: #4A6FA5;
+            --table-even-bg: #2C3E50;
+            --table-hover-bg: #34495E;
+            --box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #FF8C69 0%, #FF7F50 100%);
+            --gradient-secondary: linear-gradient(135deg, #7B9EE6 0%, #6495ED 100%);
+            --gradient-coral: linear-gradient(135deg, #FF8C69 0%, #FFB6A3 100%);
+            --gradient-blue: linear-gradient(135deg, #7B9EE6 0%, #6495ED 100%);
+        }
+
+        /* Resources Page Specific Styles */
+        .PhiH-resources-page {
+            min-height: 100vh;
+            background: var(--background-color);
+            display: flex;
+            flex-direction: column;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 127, 80, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(100, 149, 237, 0.05) 0%, transparent 20%);
+        }
+
+        .PhiH-resources-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .PhiH-resources-title {
+            font-size: 3.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--heading-color);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+        }
+
+        .PhiH-resources-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .PhiH-resources-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .PhiH-resources-cards {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 3rem;
+            perspective: 1000px;
+        }
+
+        .PhiH-resources-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2.5rem;
+            width: 380px;
+            height: 520px; /* Increased height for more image space */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .PhiH-resources-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: var(--gradient-primary);
+            z-index: 2;
+        }
+
+        .PhiH-resources-card.secondary::before {
+            background: var(--gradient-secondary);
+        }
+
+        .PhiH-resources-card:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .PhiH-resources-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .PhiH-resources-card:hover::after {
+            opacity: 1;
+        }
+
+        .PhiH-resources-card-image-container {
+            width: 240px; /* Increased size */
+            height: 240px; /* Increased size */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.5s ease;
+            cursor: pointer;
+        }
+
+        .PhiH-resources-card:hover .PhiH-resources-card-image-container {
+            transform: scale(1.05);
+        }
+
+        .PhiH-resources-card-image-container::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .PhiH-resources-card.secondary .PhiH-resources-card-image-container::before {
+            background: var(--gradient-secondary);
+        }
+
+        .PhiH-resources-card-image {
+            width: 220px; /* Increased size */
+            height: 220px; /* Increased size */
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .PhiH-resources-card-image-container:hover .PhiH-resources-card-image {
+            transform: scale(1.05);
+        }
+
+        .PhiH-resources-card-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--heading-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .PhiH-resources-card-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .PhiH-resources-card.secondary .PhiH-resources-card-title::after {
+            background: var(--secondary-color);
+        }
+
+        .PhiH-resources-card:hover .PhiH-resources-card-title::after {
+            width: 100px;
+        }
+
+        .PhiH-resources-card-description {
+            color: var(--text-color);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .PhiH-resources-card-button {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 127, 80, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .PhiH-resources-card.secondary .PhiH-resources-card-button {
+            background: var(--gradient-secondary);
+            box-shadow: 0 5px 15px rgba(100, 149, 237, 0.3);
+        }
+
+        .PhiH-resources-card-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 127, 80, 0.4);
+        }
+
+        .PhiH-resources-card.secondary .PhiH-resources-card-button:hover {
+            box-shadow: 0 8px 20px rgba(100, 149, 237, 0.4);
+        }
+
+        .PhiH-resources-card-button:active {
+            transform: translateY(1px);
+        }
+
+        .PhiH-resources-card-button::after {
+            content: '→';
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .PhiH-resources-card-button:hover::after {
+            transform: translateX(5px);
+        }
+
+        /* Image Modal Styles */
+        .PhiH-image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .PhiH-image-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .PhiH-modal-content {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            max-width: 90%;
+            max-height: 90%;
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .PhiH-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .PhiH-modal-title {
+            font-size: 1.5rem;
+            color: var(--heading-color);
+            margin: 0;
+        }
+
+        .PhiH-modal-close {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .PhiH-modal-close:hover {
+            color: var(--primary-color);
+        }
+
+        .PhiH-modal-body {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            overflow: auto;
+        }
+
+        .PhiH-modal-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: var(--background-color);
+            padding: 1rem;
+        }
+
+        .PhiH-modal-image {
+            max-width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+        }
+
+        .PhiH-modal-info {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .PhiH-modal-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .PhiH-modal-control-btn {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(255, 127, 80, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .PhiH-modal-control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 127, 80, 0.4);
+        }
+
+        .PhiH-modal-control-btn:active {
+            transform: translateY(1px);
+        }
+
+        .PhiH-modal-control-btn.secondary {
+            background: var(--gradient-secondary);
+            box-shadow: 0 3px 10px rgba(100, 149, 237, 0.3);
+        }
+
+        .PhiH-modal-control-btn.secondary:hover {
+            box-shadow: 0 5px 15px rgba(100, 149, 237, 0.4);
+        }
+
+        /* Decorative elements */
+        .PhiH-resources-decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .PhiH-resources-decoration-1 {
+            top: 10%;
+            left: 5%;
+            background: var(--primary-color);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .PhiH-resources-decoration-2 {
+            bottom: 15%;
+            right: 8%;
+            background: var(--secondary-color);
+            animation: float 10s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+
+        .PhiH-resources-decoration-3 {
+            top: 40%;
+            left: 10%;
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            animation: float 12s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .PhiH-resources-cards {
+                gap: 2rem;
+            }
+            
+            .PhiH-resources-card {
+                width: 340px;
+                height: 480px;
+            }
+            
+            .PhiH-resources-card-image-container {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .PhiH-resources-card-image {
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .PhiH-resources-title {
+                font-size: 2.5rem;
+            }
+            
+            .PhiH-resources-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .PhiH-resources-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .PhiH-resources-card {
+                width: 100%;
+                max-width: 400px;
+                height: 450px;
+            }
+            
+            .PhiH-resources-card-image-container {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .PhiH-resources-card-image {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .PhiH-modal-content {
+                max-width: 95%;
+                max-height: 95%;
+            }
+            
+            .PhiH-modal-header {
+                padding: 1rem 1.5rem;
+            }
+            
+            .PhiH-modal-body {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .PhiH-resources-title {
+                font-size: 2rem;
+            }
+            
+            .PhiH-resources-subtitle {
+                font-size: 1rem;
+            }
+            
+            .PhiH-resources-card {
+                padding: 1.5rem;
+                height: 420px;
+            }
+            
+            .PhiH-resources-card-title {
+                font-size: 1.7rem;
+            }
+            
+            .PhiH-resources-card-description {
+                font-size: 1rem;
+            }
+            
+            .PhiH-resources-card-button {
+                padding: 0.7rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .PhiH-resources-card-image-container {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .PhiH-resources-card-image {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .PhiH-modal-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .PhiH-modal-control-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-resources-page">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- Manual Install Button (Fallback) -->
+        <button id="manual-install-btn" class="PhiH-pwa-install-btn" style="display: none;">
+            <span class="PhiH-pwa-install-icon">📱</span>
+            <span data-i18n="PhiH.pwa.install">Install App</span>
+        </button>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-resources-main">
+        <!-- Decorative elements -->
+        <div class="PhiH-resources-decoration PhiH-resources-decoration-1"></div>
+        <div class="PhiH-resources-decoration PhiH-resources-decoration-2"></div>
+        <div class="PhiH-resources-decoration PhiH-resources-decoration-3"></div>
+        
+        <h1 class="PhiH-resources-title" data-i18n="PhiH.resources.title">Philosophical Resources</h1>
+        <p class="PhiH-resources-subtitle" data-i18n="PhiH.resources.subtitle">Explore comprehensive resources to deepen your understanding of philosophy and its diverse currents of thought</p>
+        
+        <div class="PhiH-resources-cards">
+            <!-- Philosophical Currents Card -->
+            <div class="PhiH-resources-card" id="currentsCard">
+    <div class="PhiH-resources-card-image-container" 
+         data-image-src="assets/paintings/school_of_athena.jpg" 
+         data-title-key="PhiH.resources.currents.imageTitle"
+         data-description-key="PhiH.resources.currents.imageDescription">
+        <img src="assets/paintings/school_of_athena.jpg" alt="School of Athens" class="PhiH-resources-card-image" data-i18n-alt="PhiH.resources.currents.imageAlt">
+    </div>
+    <h2 class="PhiH-resources-card-title" data-i18n="PhiH.resources.currents.title">Philosophical Currents</h2>
+    <p class="PhiH-resources-card-description" data-i18n="PhiH.resources.currents.description">Explore major philosophical traditions, schools of thought, and intellectual movements that have shaped human understanding throughout history</p>
+    <button class="PhiH-resources-card-button" data-i18n="PhiH.resources.currents.button">Explore Currents</button>
+</div>
+
+<!-- Encyclopedia of Concepts Card -->
+<div class="PhiH-resources-card secondary" id="encyclopediaCard">
+    <div class="PhiH-resources-card-image-container" 
+         data-image-src="assets/paintings/bookworm.jpg" 
+         data-title-key="PhiH.resources.encyclopedia.imageTitle"
+         data-description-key="PhiH.resources.encyclopedia.imageDescription">
+        <img src="assets/paintings/bookworm.jpg" alt="bookworm" class="PhiH-resources-card-image" data-i18n-alt="PhiH.resources.encyclopedia.imageAlt">
+    </div>
+    <h2 class="PhiH-resources-card-title" data-i18n="PhiH.resources.encyclopedia.title">Encyclopedia of Concepts</h2>
+    <p class="PhiH-resources-card-description" data-i18n="PhiH.resources.encyclopedia.description">Access a comprehensive collection of philosophical concepts, terms, and definitions to build your philosophical vocabulary and understanding</p>
+    <button class="PhiH-resources-card-button" data-i18n="PhiH.resources.encyclopedia.button">Browse Concepts</button>
+</div>
+        </div>
+    </main>
+    
+    <!-- Image Modal -->
+    <div class="PhiH-image-modal" id="imageModal">
+        <div class="PhiH-modal-content">
+            <div class="PhiH-modal-header">
+                <h3 class="PhiH-modal-title" id="modalTitle">Image Title</h3>
+                <button class="PhiH-modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="PhiH-modal-body">
+                <div class="PhiH-modal-image-container">
+                    <img src="" alt="" class="PhiH-modal-image" id="modalImage">
+                </div>
+                <div class="PhiH-modal-info" id="modalDescription">
+                    Image description will appear here.
+                </div>
+                <div class="PhiH-modal-controls">
+                    <button class="PhiH-modal-control-btn" id="zoomInBtn">
+                        <span>🔍</span> Zoom In
+                    </button>
+                    <button class="PhiH-modal-control-btn secondary" id="zoomOutBtn">
+                        <span>🔍</span> Zoom Out
+                    </button>
+                    <button class="PhiH-modal-control-btn" id="resetZoomBtn">
+                        <span>🔄</span> Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Page-specific translations for resources page
+        window.translations_PhiHresources = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Resources page translations
+                "PhiH.resources.title": "Ressources Philosophiques",
+                "PhiH.resources.subtitle": "Explorez des ressources complètes pour approfondir votre compréhension de la philosophie et de ses divers courants de pensée",
+                "PhiH.resources.currents.title": "Courants Philosophiques",
+                "PhiH.resources.currents.description": "Explorez les principales traditions philosophiques, écoles de pensée et mouvements intellectuels qui ont façonné la compréhension humaine à travers l'histoire",
+        
+        // Modal image translations
+        "PhiH.resources.currents.imageTitle": "L'École d'Athènes",
+        "PhiH.resources.currents.imageDescription": "L'École d'Athènes est une célèbre fresque de l'artiste de la Renaissance italienne Raphaël. Elle représente les plus grands mathématiciens, philosophes et scientifiques de l'Antiquité classique réunis pour partager leurs idées et apprendre les uns des autres.",
+        "PhiH.resources.encyclopedia.imageTitle": "Le Rat de Bibliothèque",
+        "PhiH.resources.encyclopedia.imageDescription": "Cette peinture de Carl Spitzweg représente un érudit profondément immergé dans des textes philosophiques. Le 'rat de bibliothèque' symbolise une personne dévouée à la lecture et à l'étude, souvent au détriment d'autres activités. En philosophie, cette dédicace aux textes est essentielle pour comprendre les concepts complexes.",
+        
+                "PhiH.resources.currents.button": "Explorer les Courants",
+                "PhiH.resources.currents.imageAlt": "École d'Athènes",
+                "PhiH.resources.encyclopedia.title": "Encyclopédie des Concepts",
+                "PhiH.resources.encyclopedia.description": "Accédez à une collection complète de concepts philosophiques, termes et définitions pour développer votre vocabulaire et votre compréhension philosophiques",
+                "PhiH.resources.encyclopedia.button": "Parcourir les Concepts",
+                "PhiH.resources.encyclopedia.imageAlt": "Le rat de bibliothèque",
+                
+                // Modal translations
+                "PhiH.modal.zoomIn": "Zoomer",
+                "PhiH.modal.zoomOut": "Dézoomer",
+                "PhiH.modal.reset": "Réinitialiser"
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                
+                // Resources page translations
+                "PhiH.resources.title": "Philosophical Resources",
+                "PhiH.resources.subtitle": "Explore comprehensive resources to deepen your understanding of philosophy and its diverse currents of thought",
+                "PhiH.resources.currents.title": "Philosophical Currents",
+                "PhiH.resources.currents.description": "Explore major philosophical traditions, schools of thought, and intellectual movements that have shaped human understanding throughout history",
+        
+        // Modal image translations
+        "PhiH.resources.currents.imageTitle": "School of Athens",
+        "PhiH.resources.currents.imageDescription": "The School of Athens is a famous fresco by the Italian Renaissance artist Raphael. It represents all the greatest mathematicians, philosophers and scientists from classical antiquity gathered together sharing their ideas and learning from each other.",
+        "PhiH.resources.encyclopedia.imageTitle": "The Bookworm", 
+        "PhiH.resources.encyclopedia.imageDescription": "This painting by Carl Spitzweg represents a scholar deeply immersed in philosophical texts. The 'bookworm' metaphor symbolizes someone devoted to reading and studying, often to the exclusion of other activities. In philosophy, this dedication to texts is essential for understanding complex concepts.",
+                "PhiH.resources.currents.button": "Explore Currents",
+                "PhiH.resources.currents.imageAlt": "School of Athens",
+                "PhiH.resources.encyclopedia.title": "Encyclopedia of Concepts",
+                "PhiH.resources.encyclopedia.description": "Access a comprehensive collection of philosophical concepts, terms, and definitions to build your philosophical vocabulary and understanding",
+                "PhiH.resources.encyclopedia.button": "Browse Concepts",
+                "PhiH.resources.encyclopedia.imageAlt": "Bookworm",
+                
+                // Modal translations
+                "PhiH.modal.zoomIn": "Zoom In",
+                "PhiH.modal.zoomOut": "Zoom Out",
+                "PhiH.modal.reset": "Reset"
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                
+                // Resources page translations
+                "PhiH.resources.title": "الموارد الفلسفية",
+                "PhiH.resources.subtitle": "استكشف موارد شاملة لتعميق فهمك للفلسفة وتياراتها الفكرية المتنوعة",
+                "PhiH.resources.currents.title": "التيارات الفلسفية",
+                "PhiH.resources.currents.description": "استكشف التقاليد الفلسفية الرئيسية ومدارس الفكر والحركات الفكرية التي شكلت الفهم البشري عبر التاريخ",
+        "PhiH.resources.currents.imageTitle": "مدرسة أثينا",
+        "PhiH.resources.currents.imageDescription": "مدرسة أثينا هي لوحة جدارية شهيرة للفنان الإيطالي رافائيل خلال عصر النهضة. تمثل أعظم علماء الرياضيات والفلاسفة والعلماء من العصور الكلاسيكية القديمة مجتمعين معًا لتبادل أفكارهم والتعلم من بعضهم البعض.",
+        "PhiH.resources.encyclopedia.imageTitle": "دودة الكتب",
+        "PhiH.resources.encyclopedia.imageDescription": "هذه اللوحة للفنان كارل سبيتزويغ تمثل باحثًا منغمسًا بعمق في النصوص الفلسفية. استعارة 'دودة الكتب' ترمز إلى شخص مكرس للقراءة والدراسة، غالبًا باستبعاد الأنشطة الأخرى. في الفلسفة، هذا التفاني في النصوص ضروري لفهم المفاهيم المعقدة.",
+                "PhiH.resources.currents.button": "استكشف التيارات",
+                "PhiH.resources.currents.imageAlt": "مدرسة أثينا",
+                "PhiH.resources.encyclopedia.title": "موسوعة المفاهيم",
+                "PhiH.resources.encyclopedia.description": "الوصول إلى مجموعة شاملة من المفاهيم الفلسفية والمصطلحات والتعريفات لبناء مفرداتك وفهمك الفلسفي",
+                "PhiH.resources.encyclopedia.button": "تصفح المفاهيم",
+                "PhiH.resources.encyclopedia.imageAlt": "دودة الكتب",
+                
+                // Modal translations
+                "PhiH.modal.zoomIn": "تكبير",
+                "PhiH.modal.zoomOut": "تصغير",
+                "PhiH.modal.reset": "إعادة تعيين"
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHresources;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+    
+    <script>
+        // Resources page specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Card functionality
+            const currentsCard = document.getElementById('currentsCard');
+            const encyclopediaCard = document.getElementById('encyclopediaCard');
+            
+            // Modal functionality
+            const imageModal = document.getElementById('imageModal');
+            const modalClose = document.getElementById('modalClose');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const zoomInBtn = document.getElementById('zoomInBtn');
+            const zoomOutBtn = document.getElementById('zoomOutBtn');
+            const resetZoomBtn = document.getElementById('resetZoomBtn');
+            
+            let currentScale = 1;
+            const scaleStep = 0.2;
+            const maxScale = 3;
+            const minScale = 0.5;
+            
+            // Add click functionality to cards
+            if (currentsCard) {
+                currentsCard.addEventListener('click', function(e) {
+                    // Only trigger if the button wasn't clicked directly
+                    if (!e.target.classList.contains('PhiH-resources-card-button')) {
+                        // Navigate to philosophical currents page
+                        window.location.href = 'philosophical_currents.html';
+                    }
+                });
+                
+                // Add click functionality to the button
+                const currentsButton = currentsCard.querySelector('.PhiH-resources-card-button');
+                if (currentsButton) {
+                    currentsButton.addEventListener('click', function() {
+                        window.location.href = 'philosophical_currents.html';
+                    });
+                }
+                
+                // Add click functionality to the image container
+                const currentsImageContainer = currentsCard.querySelector('.PhiH-resources-card-image-container');
+                if (currentsImageContainer) {
+                    currentsImageContainer.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        openImageModal(this);
+                    });
+                }
+            }
+            
+            if (encyclopediaCard) {
+                encyclopediaCard.addEventListener('click', function(e) {
+                    // Only trigger if the button wasn't clicked directly
+                    if (!e.target.classList.contains('PhiH-resources-card-button')) {
+                        // Navigate to encyclopedia page
+                        window.location.href = 'encyclopedia.html';
+                    }
+                });
+                
+                // Add click functionality to the button
+                const encyclopediaButton = encyclopediaCard.querySelector('.PhiH-resources-card-button');
+                if (encyclopediaButton) {
+                    encyclopediaButton.addEventListener('click', function() {
+                        window.location.href = 'encyclopedia.html';
+                    });
+                }
+                
+                // Add click functionality to the image container
+                const encyclopediaImageContainer = encyclopediaCard.querySelector('.PhiH-resources-card-image-container');
+                if (encyclopediaImageContainer) {
+                    encyclopediaImageContainer.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        openImageModal(this);
+                    });
+                }
+            }
+            
+            // Modal functions
+            function openImageModal(imageContainer) {
+    const imageSrc = imageContainer.getAttribute('data-image-src');
+    const titleKey = imageContainer.getAttribute('data-title-key');
+    const descriptionKey = imageContainer.getAttribute('data-description-key');
+    
+    // Get current language
+    const currentLanguage = document.getElementById('languageSelect').value;
+    
+    // Get translations from currentTranslations
+    const translations = window.currentTranslations[currentLanguage];
+    
+    modalImage.src = imageSrc;
+    modalImage.alt = translations[titleKey] || titleKey;
+    modalTitle.textContent = translations[titleKey] || titleKey;
+    modalDescription.textContent = translations[descriptionKey] || descriptionKey;
+    
+    // Reset zoom
+    currentScale = 1;
+    modalImage.style.transform = `scale(${currentScale})`;
+    
+    imageModal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+}
+
+
+//  update the modal control buttons to use translations
+function updateModalControls() {
+    const currentLanguage = document.getElementById('languageSelect').value;
+    const translations = window.currentTranslations[currentLanguage];
+    
+    if (zoomInBtn) zoomInBtn.innerHTML = `<span>🔍</span> ${translations['PhiH.modal.zoomIn'] || 'Zoom In'}`;
+    if (zoomOutBtn) zoomOutBtn.innerHTML = `<span>🔍</span> ${translations['PhiH.modal.zoomOut'] || 'Zoom Out'}`;
+    if (resetZoomBtn) resetZoomBtn.innerHTML = `<span>🔄</span> ${translations['PhiH.modal.reset'] || 'Reset'}`;
+}
+
+// Call this when language changes
+document.getElementById('languageSelect').addEventListener('change', function() {
+    updateModalControls();
+});
+            
+            function closeImageModal() {
+                imageModal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+            
+            function zoomIn() {
+                if (currentScale < maxScale) {
+                    currentScale += scaleStep;
+                    modalImage.style.transform = `scale(${currentScale})`;
+                }
+            }
+            
+            function zoomOut() {
+                if (currentScale > minScale) {
+                    currentScale -= scaleStep;
+                    modalImage.style.transform = `scale(${currentScale})`;
+                }
+            }
+            
+            function resetZoom() {
+                currentScale = 1;
+                modalImage.style.transform = `scale(${currentScale})`;
+            }
+            
+            // Event listeners for modal
+            if (modalClose) {
+                modalClose.addEventListener('click', closeImageModal);
+            }
+            
+            if (zoomInBtn) {
+                zoomInBtn.addEventListener('click', zoomIn);
+            }
+            
+            if (zoomOutBtn) {
+                zoomOutBtn.addEventListener('click', zoomOut);
+            }
+            
+            if (resetZoomBtn) {
+                resetZoomBtn.addEventListener('click', resetZoom);
+            }
+            
+            // Close modal when clicking outside the content
+            imageModal.addEventListener('click', function(e) {
+                if (e.target === imageModal) {
+                    closeImageModal();
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+                    closeImageModal();
+                }
+            });
+            
+            // Windows bar active state management
+            const currentPage = window.location.pathname.split('/').pop();
+            const windowItems = document.querySelectorAll('.PhiH-window-item');
+            
+            windowItems.forEach(item => {
+                if (item.getAttribute('href') === currentPage) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+    updateModalControls();
+        });
+        
+        // Manual install button handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const manualInstallBtn = document.getElementById('manual-install-btn');
+            let deferredPrompt;
+            
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                manualInstallBtn.style.display = 'flex';
+            });
+            
+            if (manualInstallBtn) {
+                manualInstallBtn.addEventListener('click', async () => {
+                    if (!deferredPrompt) return;
+                    
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    
+                    if (outcome === 'accepted') {
+                        manualInstallBtn.style.display = 'none';
+                        deferredPrompt = null;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

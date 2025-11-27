@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Values - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#9370db">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Medium Purple Theme for Values */
+        :root {
+            --primary-color: #9370db;
+            --secondary-color: #8a2be2;
+            --accent-color: #7b68ee;
+            --light-color: #f0e6ff;
+            --dark-color: #4b0082;
+            --text-color: #4b0082;
+            --heading-color: #4b0082;
+            --background-color: #f9f5ff;
+            --card-bg: #ffffff;
+            --definition-bg: #f0e6ff;
+            --border-color: #d8bfd8;
+            --table-even-bg: #f5f0ff;
+            --table-hover-bg: #f0e6ff;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(147, 112, 219, 0.15);
+            --gradient-primary: linear-gradient(135deg, #9370db 0%, #7b68ee 100%);
+            --gradient-secondary: linear-gradient(135deg, #8a2be2 0%, #4b0082 100%);
+            --gradient-purple: linear-gradient(135deg, #9370db 0%, #4b0082 100%);
+            --gradient-violet: linear-gradient(135deg, #8a2be2 0%, #4b0082 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #a67cff;
+            --secondary-color: #9b59ff;
+            --accent-color: #9370db;
+            --light-color: #2d1b4e;
+            --dark-color: #1a0d2b;
+            --text-color: #e6d9ff;
+            --heading-color: #f7fafc;
+            --background-color: #2d1b4e;
+            --card-bg: #3a2a5e;
+            --definition-bg: #3a2a5e;
+            --border-color: #a67cff;
+            --table-even-bg: #2d1b4e;
+            --table-hover-bg: #3a2a5e;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #a67cff 0%, #9370db 100%);
+            --gradient-secondary: linear-gradient(135deg, #9b59ff 0%, #8a2be2 100%);
+            --gradient-purple: linear-gradient(135deg, #a67cff 0%, #3a2a5e 100%);
+            --gradient-violet: linear-gradient(135deg, #9b59ff 0%, #8a2be2 100%);
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Definition Cards Layout */
+        .PhiH-definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-definition-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(147, 112, 219, 0.2);
+        }
+        
+        .PhiH-definition-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-definition-card-content ul {
+            padding-left: 1.2rem;
+            margin: 0.8rem 0;
+        }
+        
+        .PhiH-definition-card-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        /* Expand/Collapse Functionality */
+        .PhiH-expandable-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .PhiH-expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .PhiH-expandable-header:hover {
+            background: var(--gradient-purple);
+        }
+        
+        .PhiH-expandable-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        .PhiH-expandable-content {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            border-top: none;
+        }
+        
+        .PhiH-expandable-content.hidden {
+            display: none;
+        }
+        
+        .PhiH-expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-expand-icon.expanded {
+            transform: rotate(180deg);
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Section Styling */
+        .PhiH-quotes-container {
+            margin-top: 1rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(147, 112, 219, 0.2);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        /* RTL support for definition cards */
+        body.rtl .PhiH-definition-card-content ul {
+            padding-left: 0;
+            padding-right: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .PhiH-definitions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-values" dir="ltr">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-lesson1-container">
+        <div class="PhiH-lesson1-header">
+            <h1 class="PhiH-lesson1-title" data-i18n="PhiH.lessons.values.title">القيم</h1>
+            <div class="PhiH-lesson1-level" data-i18n="PhiH.lessons.values.level">السنة الثالثة ثانوي - الفلسفة</div>
+        </div>
+        
+        <!-- Introduction Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="introHeader">
+                <h3 data-i18n="PhiH.lessons.values.introduction.title">التمهيد</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="introContent">
+                <p data-i18n="PhiH.lessons.values.introduction.text1">
+                    لئن تشكّلت القيم عبر التاريخِ كمرتكزاتٍ تهدي الإنسانَ في وجودِه وتضفي معنى على عالمه، فإنّ التحوّلات الجذرية التي شهدتها المجتمعاتُ المعاصرةُ أحدثَتْ انقلابًا في المنظومات القيمية، فأصبحتِ القيمُ نفسُها موضعَ مساءلةٍ وجدال.
+                </p>
+                <p data-i18n="PhiH.lessons.values.introduction.text2">
+                    ففي عصرِ العولمةِ والتقنيةِ والاتصال، حيث تتدفّق المعلوماتُ وتتصادمُ الثقافات، بات الفردُ يعيشُ مفارقةً عميقة: فهو من ناحيةٍ يبحثُ عن يقينٍ قيميٍّ يمنحُ حياتَه استقرارًا ومعنى، ومن ناحيةٍ أخرى يواجهُ تعددًا وتناقضًا في القيم يجعله في حيرةٍ دائمة.
+                </p>
+                <p data-i18n="PhiH.lessons.values.introduction.text3">
+                    وهذا الوضعُ يدفعنا إلى التساؤل: كيف يمكنُ للقيم أن تحافظَ على شرعيّتها وثباتِها في عالمٍ متغير؟ وأيّ دورٍ للفلسفةِ في فهمِ هذه الإشكاليةِ وإعادةِ بناءِ مرجعياتٍ قيميةٍ تليقُ بالإنسانِ المعاصر؟
+                </p>
+            </div>
+        </section>
+        
+        <!-- Texts Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="textsHeader">
+                <h3 data-i18n="PhiH.lessons.values.texts.title">النصوص</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="textsContent">
+                <div class="PhiH-texts-container">
+                    <ul class="PhiH-texts-list">
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme1_lesson8_text1.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.values.texts.text1">النص 1: الإعلام والقيم - ميشال هنري</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme1_lesson8_text2.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.values.texts.text2">النص 2: الفلسفة والواقع اليومي - هنري لوفيفر</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quotes Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="quotesHeader">
+                <h3 data-i18n="PhiH.lessons.values.quotes.title">شواهد ونصوص ذات صلة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="quotesContent">
+                <div class="PhiH-quotes-container">
+                    <div class="PhiH-quotes-grid">
+                        <!-- Quote 1 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.values.quotes.quote1">
+                                "إن التلفزيون لم يتغيّر. يرفع من شأن التافه لأقصى حدّ كي يمارس قوّته. ويخفّض من شأن القويّ ليجعله مساويا للتافه."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.values.quotes.author1">جورج تروي</div>
+                            <div class="PhiH-quote-source" data-i18n="PhiH.lessons.values.quotes.source1">سياق من دون سياق</div>
+                        </div>
+                        
+                        <!-- Quote 2 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.values.quotes.quote2">
+                                "المشهد بالمعنى الضيق هو وسائل الاتّصال الجماهيرية التي تجعل ما هو سطحيّ يبدو الأشدّ بريقا"
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.values.quotes.author2">غي ديبور</div>
+                            <div class="PhiH-quote-source" data-i18n="PhiH.lessons.values.quotes.source2">مجتمع المشهد</div>
+                        </div>
+                        
+                        <!-- Quote 3 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.values.quotes.quote3">
+                                "لم يفعل الفلاسفة إلى حدّ الآن غير أن أوّلوا العالم بأشكال شتّى، والأهمّ هو تغييره."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.values.quotes.author3">ماركس</div>
+                            <div class="PhiH-quote-source" data-i18n="PhiH.lessons.values.quotes.source3">أطروحات حول فيورباخ (الأطروحة 11)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Conclusion -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="conclusionHeader">
+                <h3 data-i18n="PhiH.lessons.values.conclusion.title">الخاتمة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="conclusionContent">
+                <p data-i18n="PhiH.lessons.values.conclusion.text1">
+                    يبيّنُ التحليلُ الفلسفيُّ للقيمِ أنّها ليست معطياتٍ ثابتةً أو مسلّماتٍ مطلقة، بل هي بناءاتٌ إنسانيةٌ متطوّرة تحملُ في طيّاتها تاريخَ المجتمعاتِ وتطلّعاتِ الأفراد. فإذا كانتِ القيمُ تشكّلُ الإطارَ الذي يمنحُ الحياةَ معنى ويوجّه السلوك، فإنّ أزماتِ القيمِ في العصرِ الراهن تعكسُ أزمةَ الإنسانِ في علاقتِه مع العالمِ ومع نفسِه.
+                </p>
+                <p data-i18n="PhiH.lessons.values.conclusion.text2">
+                    ولا يعني ذلكَ الاستسلامَ للنسبيةِ أو التخلّيَ عن البحثِ عن المطلق، بل يدعونا إلى وعيٍ نقديٍّ بآلياتِ تشكّلِ القيمِ وتحوّلها، وإلى مسؤوليةٍ أخلاقيةٍ في بنائِها.
+                </p>
+                <p data-i18n="PhiH.lessons.values.conclusion.text3">
+                    وهنا تبرزُ الفلسفةُ كجهدٍ عقليٍّ لا يتوقّفُ عند تشخيصِ الأزمة، بل يساهمُ في تجاوزِها عبرَ إعادةِ تأسيسِ قيمٍ تحترمُ كرامةَ الإنسانِ وتستجيبُ لتحدّياتِ عصرِه، فتبقى القيمُ – رغم كلّ التحوّلات – ضمانةً لإنسانيةِ الإنسانِ وسموّ روحِه.
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Page-specific translations for values lesson
+        window.translations_PhiHvalues = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                
+                // Values lesson specific translations
+                "PhiH.lessons.values.title": "Les Valeurs",
+                "PhiH.lessons.values.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                "PhiH.lessons.values.introduction.title": "Introduction",
+                "PhiH.lessons.values.introduction.text1": "Bien que les valeurs se soient formées tout au long de l'histoire comme des piliers guidant l'être humain dans son existence et donnant un sens à son monde, les transformations radicales qu'ont connues les sociétés contemporaines ont provoqué un bouleversement dans les systèmes de valeurs, faisant des valeurs elles-mêmes un objet de questionnement et de débat.",
+                "PhiH.lessons.values.introduction.text2": "À l'ère de la mondialisation, de la technologie et de la communication, où l'information afflue et les cultures s'affrontent, l'individu vit un paradoxe profond : d'une part, il recherche une certitude axiologique qui donne stabilité et sens à sa vie, et d'autre part, il fait face à une multiplicité et une contradiction de valeurs qui le plongent dans une perplexité permanente.",
+                "PhiH.lessons.values.introduction.text3": "Cette situation nous amène à nous interroger : comment les valeurs peuvent-elles préserver leur légitimité et leur stabilité dans un monde en mutation ? Et quel rôle la philosophie peut-elle jouer dans la compréhension de cette problématique et dans la reconstruction de référents axiologiques dignes de l'être humain contemporain ?",
+                
+                "PhiH.lessons.values.definitions.title": "Définitions",
+                "PhiH.lessons.values.definitions.card1.title": "Divertissement divertissement",
+                "PhiH.lessons.values.definitions.card1.point1": "<strong>Linguistiquement:</strong> divertissement, pluriel divertissements et divertissement, source de divertir. / Essayer de divertir les enfants en jouant : les distraire./ Divertir l'esprit : apporter de la joie à l'esprit et éloigner l'ennui.",
+                "PhiH.lessons.values.definitions.card1.point2": "Le divertissement est le bonheur de ceux qui ne peuvent pas penser \" Alexandre Pope\".",
+                "PhiH.lessons.values.definitions.card1.point3": "La seule chose qui nous console dans notre misère est le divertissement et pourtant c'est notre plus grande misère parce qu'il nous empêche fondamentalement de penser à nous-mêmes, et nous fait errer sans en avoir conscience. Sans le divertissement, l'ennui s'emparerait de nous, et cet ennui même nous pousse à chercher un moyen plus fort de sortir de la misère mais le divertissement en nous distrayant nous conduit à la mort sans que nous nous en rendions compte. \" Blaise Pascal – Le divertissement et l'exigence de penser",
+                
+                "PhiH.lessons.values.definitions.card2.title": "Publicité Publicité",
+                "PhiH.lessons.values.definitions.card2.point1": "<strong>Linguistiquement:</strong> Al-Shirazi le définit comme celui qui rend public, tandis que Butrus al-Bustani a dit qu'il signifie la publication et la divulgation chez les Arabes, tandis que le dictionnaire \"Larousse\" publié par l'Encyclopédie française le définit comme : l'ensemble des moyens utilisés pour faire connaître un établissement commercial ou industriel et promouvoir ses produits.",
+                "PhiH.lessons.values.definitions.card2.point2": "L'\"American Marketing Association\" définit la publicité comme une forme de présentation non personnelle d'idées, de biens ou de services payante et par un annonceur spécifique et connu.",
+                "PhiH.lessons.values.definitions.card2.point3": "Quant à \"Philip Kotler\", il définit la publicité comme \"une forme non personnelle payante pour présenter une idée, un produit ou un service et qui est réalisée par une entité connue.",
+                "PhiH.lessons.values.definitions.card2.point4": "Dr. Weizman \" Texte de l'institution publicitaire \" (Livre de philosophie pour la troisième année littéraire) : La publicité vise à augmenter la consommation et fonctionne en incitant les personnes en s'appuyant sur l'aspect psychologique et social. Selon l'auteur de ce texte, la publicité est un mécanisme qui oriente et encourage l'intensification de la consommation, c'est un mécanisme commercial qui vise à inciter les citoyens à acquérir des biens pour augmenter les profits ← La publicité concerne les marchandises et les biens (produits économiques) et c'est elle qui contrôle tous nos achats quotidiens et c'est un mécanisme parmi les mécanismes de fonctionnement du quotidien.",
+                
+                "PhiH.lessons.values.definitions.card3.title": "Le Quotidien le quotidien",
+                "PhiH.lessons.values.definitions.card3.point1": "Le terme quotidien a des significations très complexes au point qu'il est difficile de définir un concept ou un sens clair de ce terme car le mot quotidien peut renvoyer à : la routine, la rumination, l'enfermement, la léthargie et la paresse intellectuelle, la satisfaction avec ce qui est prêt et l'acceptation de celui-ci.",
+                "PhiH.lessons.values.definitions.card3.point2": "Le quotidien est ce qui se répète chaque jour, ce qui revient chaque jour de la même manière parmi ses significations \" la vie quotidienne \", \" la réalité quotidienne \" le monde et il est formé dans un système basé sur la répétition et la similitude. Le \"quotidien\" englobe tous les niveaux de notre vie et s'étend à toutes les dimensions de notre existence. Il concerne notre nourriture, nos vêtements, nos paroles, nos actions et notre vision des choses. Et il est présent dans l'éthique, les croyances, la politique, l'économie, la publicité et le divertissement. C'est synonyme du familier qui se déroule au même rythme. Et par conséquent, il est prévisible. Ce qui s'est passé hier se produit aujourd'hui et se produira demain et après-demain sans surprises ni interruptions sauf de manière transitoire. Un scandale moral ou politique, local ou mondial, peut ébranler le système quotidien, faisant trembler les nerfs et émouvoir les passions, mais seulement de manière transitoire car tout s'apaise rapidement et les gens retournent à leurs préoccupations antérieures en se soumettant à ses exigences. Le quotidien exerce sur nous un pouvoir qui exige de nous la soumission et la conformité, ce n'est pas seulement ce que nous voyons ou entendons, mais c'est aussi et essentiellement le milieu dans lequel nous nous engageons et la loi que nous devons obéir.",
+                "PhiH.lessons.values.definitions.card3.point3": "Selon Martin Heidegger dans \" L'expérience du quotidien \" (Livre de philosophie pour la troisième année scientifique) : Le quotidien s'élève d'une simple expérience répétée et banale à un mode de notre existence humaine.",
+                "PhiH.lessons.values.definitions.card3.point4": "Selon Abdel Hamid Gouda Al-Sahar dans \" Prisonniers du jour \" (Livre de philosophie pour la troisième année scientifique) : Le quotidien est la routine, le répétitif, la monotonie et l'angoisse.",
+                "PhiH.lessons.values.definitions.card3.point5": "Selon Frany (Livre de philosophie pour la troisième année littéraire) : \" Le quotidien est cet ensemble mixte et confus que nous appelons la vie quotidienne. Et cette vie apparaît dans son essence diverse. Nous y trouvons des événements intellectuels, des choses, des situations, des relations de communication avec les autres, des mots et des scènes. Le quotidien ne peut pas être vu, c'est ce que nous voyons sans le percevoir et ce qui s'oppose à la pensée subjective.",
+                "PhiH.lessons.values.definitions.card3.point6": "Selon Karl Jaspers K.Jaspers : Il cherche à déterminer le concept du quotidien à partir de ses résultats négatifs sur le soi où il génère la dépendance de l'être humain, c'est-à-dire l'état d'esclavage, car l'individu devient esclave d'un produit quelconque et génère également un état de stagnation intellectuelle où la conscience disparaît chez l'individu et il devient lui-même comme une machine, ce qui génère en lui un sentiment de perte et d'égarement et donc d'aliénation et de dépossession.",
+                
+                "PhiH.lessons.values.texts.title": "Textes",
+                "PhiH.lessons.values.texts.text1": "Texte 1 : Médias et Valeurs - Michel Henry",
+                "PhiH.lessons.values.texts.text2": "Texte 2 : Philosophie et Réalité Quotidienne - Henri Lefebvre",
+                
+                // Quotes section translations
+                "PhiH.lessons.values.quotes.title": "Citations et textes connexes",
+                "PhiH.lessons.values.quotes.quote1": "\"La télévision n'a pas changé. Elle élève le trivial à l'extrême pour exercer son pouvoir. Et elle rabaisse le fort pour le rendre égal au trivial.\"",
+                "PhiH.lessons.values.quotes.quote2": "\"Le spectacle au sens étroit est les moyens de communication de masse qui font paraître ce qui est superficiel comme le plus brillant\"",
+                "PhiH.lessons.values.quotes.quote3": "\"Les philosophes n'ont fait jusqu'à présent qu'interpréter le monde de différentes manières, ce qui importe c'est de le transformer.\"",
+                "PhiH.lessons.values.quotes.author1": "Georges Troy",
+                "PhiH.lessons.values.quotes.source1": "Contexte sans contexte",
+                "PhiH.lessons.values.quotes.author2": "Guy Debord",
+                "PhiH.lessons.values.quotes.source2": "La société du spectacle",
+                "PhiH.lessons.values.quotes.author3": "Marx",
+                "PhiH.lessons.values.quotes.source3": "Thèses sur Feuerbach (Thèse 11)",
+                
+                "PhiH.lessons.values.conclusion.title": "Conclusion",
+                "PhiH.lessons.values.conclusion.text1": "L'analyse philosophique des valeurs montre qu'elles ne sont pas des données fixes ou des absolus indiscutables, mais des constructions humaines évolutives qui portent en elles l'histoire des sociétés et les aspirations des individus. Si les valeurs constituent le cadre qui donne un sens à la vie et oriente le comportement, alors les crises des valeurs à l'époque actuelle reflètent la crise de l'être humain dans sa relation avec le monde et avec lui-même.",
+                "PhiH.lessons.values.conclusion.text2": "Cela ne signifie pas se soumettre au relativisme ou renoncer à la recherche de l'absolu, mais nous invite à une conscience critique des mécanismes de formation et de transformation des valeurs, et à une responsabilité éthique dans leur construction.",
+                "PhiH.lessons.values.conclusion.text3": "C'est ici que la philosophie émerge comme un effort intellectuel qui ne s'arrête pas au diagnostic de la crise, mais contribue à la dépasser en refondant des valeurs qui respectent la dignité de l'être humain et répondent aux défis de son époque, de sorte que les valeurs - malgré tous les changements - restent une garantie de l'humanité de l'homme et de la noblesse de son esprit."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                
+                // Values lesson specific translations
+                "PhiH.lessons.values.title": "Values",
+                "PhiH.lessons.values.level": "3rd Secondary - Philosophy",
+                
+                "PhiH.lessons.values.introduction.title": "Introduction",
+                "PhiH.lessons.values.introduction.text1": "Although values have formed throughout history as foundations that guide human beings in their existence and give meaning to their world, the radical transformations that contemporary societies have witnessed have caused a revolution in value systems, making the values themselves a subject of questioning and debate.",
+                "PhiH.lessons.values.introduction.text2": "In the age of globalization, technology, and communication, where information flows and cultures collide, the individual lives a deep paradox: on the one hand, he searches for value certainty that gives his life stability and meaning, and on the other hand, he faces multiplicity and contradiction in values that keep him in constant confusion.",
+                "PhiH.lessons.values.introduction.text3": "This situation prompts us to ask: How can values maintain their legitimacy and stability in a changing world? And what role does philosophy play in understanding this problem and rebuilding value references worthy of contemporary human beings?",
+                
+                "PhiH.lessons.values.definitions.title": "Definitions",
+                "PhiH.lessons.values.definitions.card1.title": "Entertainment divertissement",
+                "PhiH.lessons.values.definitions.card1.point1": "<strong>Linguistically:</strong> entertainment, plural entertainments and entertainment, source of entertain. / Try to entertain children by playing: distract them./ Entertaining the mind: bringing joy to the mind and removing boredom from it.",
+                "PhiH.lessons.values.definitions.card1.point2": "Entertainment is the happiness of those who cannot think \"Alexander Pope\".",
+                "PhiH.lessons.values.definitions.card1.point3": "The only thing that consoles us in our misery is entertainment and yet it is our greatest misery because it fundamentally prevents us from thinking about ourselves, and makes us wander without feeling it. Without entertainment, boredom would take over us, and this same boredom pushes us to search for a stronger way out of misery but entertainment by distracting us leads us to death without us realizing it. \"Blaise Pascal – Entertainment and the requirement to think",
+                
+                "PhiH.lessons.values.definitions.card2.title": "Advertising Publicité",
+                "PhiH.lessons.values.definitions.card2.point1": "<strong>Linguistically:</strong> Al-Shirazi defines it as the one who makes public, while Butrus al-Bustani said that it means publication and disclosure among Arabs, while the \"Larousse\" dictionary published by the French Encyclopedia defines it as: the set of means used to introduce a commercial or industrial establishment and promote its products.",
+                "PhiH.lessons.values.definitions.card2.point2": "The \"American Marketing Association\" defines advertising as a form of non-personal presentation of ideas, goods or services that is paid for and by a specific and known advertiser.",
+                "PhiH.lessons.values.definitions.card2.point3": "As for \"Philip Kotler\", he defines advertising as \"a non-personal paid form to present an idea, product or service and which is carried out by a known entity.",
+                "PhiH.lessons.values.definitions.card2.point4": "Dr. Weizman \"Text of the advertising institution\" (Philosophy book for the third literary year): Advertising aims to increase consumption and works by urging people by relying on the psychological and social aspect. According to the author in this text, advertising is a mechanism that directs and encourages the intensification of consumption, it is a commercial mechanism that aims to urge citizens to acquire goods to increase profits ← Advertising relates to goods and commodities (economic products) and it is what controls all our daily purchases and it is a mechanism among the mechanisms of daily functioning.",
+                
+                "PhiH.lessons.values.definitions.card3.title": "The Daily le quotidien",
+                "PhiH.lessons.values.definitions.card3.point1": "The term daily has very complex meanings to the point that it is difficult to define a clear concept or meaning for this term because the word daily can refer to: routine, rumination, closure, lethargy and intellectual laziness, satisfaction with what is ready and acceptance of it.",
+                "PhiH.lessons.values.definitions.card3.point2": "The daily is what repeats every day, what returns every day in the same way among its meanings \"daily life\", \"daily reality\" the world and it is formed in a system based on repetition and similarity. The \"daily\" encompasses all levels of our life and extends to all dimensions of our existence. It concerns our food, our clothing, our words, our actions and our vision of things. And it is present in ethics, beliefs, politics, economics, advertising and entertainment. It is synonymous with the familiar that runs at the same pace. And therefore it is predictable. What happened yesterday happens today and will happen tomorrow and the day after tomorrow without surprises or interruptions except in a transitory way. A moral or political scandal, local or global, can shake the daily system, making nerves tense and emotions aroused, but only in a transitory way because everything calms down quickly and people return to their previous concerns by submitting to its requirements. The daily exercises over us a power that requires from us submission and conformity, it is not only what we see or hear but it is also and essentially the medium in which we engage and the law that we must obey.",
+                "PhiH.lessons.values.definitions.card3.point3": "According to Martin Heidegger in \"The Experience of the Daily\" (Philosophy book for the third scientific year): The daily rises from a mere repeated and banal experience to a mode of our human existence.",
+                "PhiH.lessons.values.definitions.card3.point4": "According to Abdel Hamid Gouda Al-Sahar in \"Prisoners of the Day\" (Philosophy book for the third scientific year): The daily is routine, repetitive, monotony and anxiety.",
+                "PhiH.lessons.values.definitions.card3.point5": "According to Frany (Philosophy book for the third literary year): \"The daily is this mixed and confused set that we call daily life. And this life appears in its essence diverse. We find in it intellectual events, things, situations, communication relationships with others, words and scenes. The daily cannot be seen, it is what we see without perceiving it and what opposes subjective thinking.",
+                "PhiH.lessons.values.definitions.card3.point6": "According to Karl Jaspers K.Jaspers: He seeks to determine the concept of the daily based on its negative results on the self where it generates human dependence, that is, the state of slavery, as the individual becomes a slave to some product and also generates a state of intellectual stagnation where consciousness disappears in the individual and he becomes himself like a machine, which generates in him a feeling of loss and bewilderment and therefore alienation and dispossession.",
+                
+                "PhiH.lessons.values.texts.title": "Texts",
+                "PhiH.lessons.values.texts.text1": "Text 1: Media and Values - Michel Henry",
+                "PhiH.lessons.values.texts.text2": "Text 2: Philosophy and Daily Reality - Henri Lefebvre",
+                
+                // Quotes section translations
+                "PhiH.lessons.values.quotes.title": "Related Quotes and Texts",
+                "PhiH.lessons.values.quotes.quote1": "\"Television hasn't changed. It elevates the trivial to the extreme to exercise its power. And it lowers the strong to make it equal to the trivial.\"",
+                "PhiH.lessons.values.quotes.quote2": "\"The spectacle in the narrow sense is the mass communication media that make what is superficial appear the most brilliant\"",
+                "PhiH.lessons.values.quotes.quote3": "\"Philosophers have hitherto only interpreted the world in various ways; the point is to change it.\"",
+                "PhiH.lessons.values.quotes.author1": "Georges Troy",
+                "PhiH.lessons.values.quotes.source1": "Context Without Context",
+                "PhiH.lessons.values.quotes.author2": "Guy Debord",
+                "PhiH.lessons.values.quotes.source2": "The Society of the Spectacle",
+                "PhiH.lessons.values.quotes.author3": "Marx",
+                "PhiH.lessons.values.quotes.source3": "Theses on Feuerbach (Thesis 11)",
+                
+                "PhiH.lessons.values.conclusion.title": "Conclusion",
+                "PhiH.lessons.values.conclusion.text1": "Philosophical analysis of values shows that they are not fixed data or absolute certainties, but evolving human constructions that carry within them the history of societies and the aspirations of individuals. If values constitute the framework that gives life meaning and directs behavior, then the crises of values in the current era reflect the crisis of human beings in their relationship with the world and with themselves.",
+                "PhiH.lessons.values.conclusion.text2": "This does not mean surrendering to relativism or abandoning the search for the absolute, but calls us to a critical awareness of the mechanisms of value formation and transformation, and to an ethical responsibility in their construction.",
+                "PhiH.lessons.values.conclusion.text3": "Here philosophy emerges as an intellectual effort that does not stop at diagnosing the crisis, but contributes to overcoming it by re-establishing values that respect human dignity and respond to the challenges of our time, so that values - despite all transformations - remain a guarantee of humanity and the nobility of the human spirit."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                
+                // Values lesson specific translations
+                "PhiH.lessons.values.title": "القيم",
+                "PhiH.lessons.values.level": "السنة الثالثة ثانوي - الفلسفة",
+                
+                "PhiH.lessons.values.introduction.title": "التمهيد",
+                "PhiH.lessons.values.introduction.text1": "لئن تشكّلت القيم عبر التاريخِ كمرتكزاتٍ تهدي الإنسانَ في وجودِه وتضفي معنى على عالمه، فإنّ التحوّلات الجذرية التي شهدتها المجتمعاتُ المعاصرةُ أحدثَتْ انقلابًا في المنظومات القيمية، فأصبحتِ القيمُ نفسُها موضعَ مساءلةٍ وجدال.",
+                "PhiH.lessons.values.introduction.text2": "ففي عصرِ العولمةِ والتقنيةِ والاتصال، حيث تتدفّق المعلوماتُ وتتصادمُ الثقافات، بات الفردُ يعيشُ مفارقةً عميقة: فهو من ناحيةٍ يبحثُ عن يقينٍ قيميٍّ يمنحُ حياتَه استقرارًا ومعنى، ومن ناحيةٍ أخرى يواجهُ تعددًا وتناقضًا في القيم يجعله في حيرةٍ دائمة.",
+                "PhiH.lessons.values.introduction.text3": "وهذا الوضعُ يدفعنا إلى التساؤل: كيف يمكنُ للقيم أن تحافظَ على شرعيّتها وثباتِها في عالمٍ متغير؟ وأيّ دورٍ للفلسفةِ في فهمِ هذه الإشكاليةِ وإعادةِ بناءِ مرجعياتٍ قيميةٍ تليقُ بالإنسانِ المعاصر؟",
+                
+                "PhiH.lessons.values.definitions.title": "التعريفات",
+                "PhiH.lessons.values.definitions.card1.title": "التسلية divertissement",
+                "PhiH.lessons.values.definitions.card1.point1": "<strong>لغة:</strong> تسلية , الجمع تسليات و تسال , مصدر سلى. / حاول تسلية الأطفال باللعب : إلهاءهم./ تسلية النفس: إدخال السرور على النفس و إبعاد الضيم عنها.",
+                "PhiH.lessons.values.definitions.card1.point2": "التسلية سعادة من لا يستطيعون التفكير \" ألكسندر بوب\".",
+                "PhiH.lessons.values.definitions.card1.point3": "إن الشيء الوحيد الذي يواسينا في شقائنا هو التسلية و الحال أنها أكبر شقائنا لأنها تمنعنا أساسا من التفكير في أنفسنا , وما يجعلنا نتيه دونما إحساس بذلك. ولولا التسلية لاستولى علينا السأم, و هذا السأم عينه هو الذي يدفعنا إلى البحث عن وسيلة أقوى للخروج من الشقاء ولكن التسلية إذ تلهينا تنتهي بنا إلى الموت دون أن نشعر. \" بليز باسكال – التسلية ومقتضى التفكير",
+                
+                "PhiH.lessons.values.definitions.card2.title": "الإشهار Publicité",
+                "PhiH.lessons.values.definitions.card2.point1": "<strong>لغة:</strong> يعرفه الشيرازي على أنه المجاهر في حين أن بطرس البستاني قال أنه يعني النشر والإظهار هذا عند العرب بينما يعرفه قاموس \"لاروس\" الصادر عن دائرة المعارف الفرنسية على أنه : مجموعة الوسائل المستخدمة للتعريف بمنشأة تجارية أو صناعية واطراد منتاجاتها.",
+                "PhiH.lessons.values.definitions.card2.point2": "تعرف \" الجمعية الأمريكية للتسويق \" الإشهار بأنه شكل من أشكال تقديم الأفكار أو السلع أو الخدمات غير الشخصية والمدفوعة الأجر بواسطة معلن محدد و معروف.",
+                "PhiH.lessons.values.definitions.card2.point3": "أما \" فيليب كوتلر\" يعرف الإشهار أنه \" شكل غير شخصي مدفوع القيمة لتقديم فكرة أو سلعة أو خدمة ويكون بواسطة جهة معلومة.",
+                "PhiH.lessons.values.definitions.card2.point4": "د. ويزمان \"  نص مؤسسة الإشهار \" ( كتاب الفلسفة للسنة ثالثة آداب): الإشهار يهدف إلى الزيادة في الإستهلاك كما يعمل على حث الناس من خلال الاعتماد على الجانب النفسي و الإجتماعي. حسب الكاتب في هذا النص الإشهار هو آلية توجه و تحفز على تكثيف الاستهلاك فهي آلية تجارية تهدف الى حث المواطنين على اقتناء السلع للزيادة في الربح ← الإشهار يتعلق بالبضائع و السلع ( المنتجات الاقتصادية) وهو الذي يتحكم في كل مشترياتنا اليومية وهو آلية من آليات اشتغال اليومي",
+                
+                "PhiH.lessons.values.definitions.card3.title": "اليومي le quotidien",
+                "PhiH.lessons.values.definitions.card3.point1": "لللفظ اليومي معاني معقدة جدا إلى حد أنه يصعب ضبط مفهوم أو معنى واضح لهذا اللفظ إذ أن كلمة اليومي يمكن أن تحيل على: الرتابة , الاجترار , الانغلاق , الخمول   والكسل الفكري , الرضى بالجاهز و التسليم به.",
+                "PhiH.lessons.values.definitions.card3.point2": "اليومي هو ما يتكرر كل يوم , ما يعود كل يوم على نفس الشاكلة من مدلولاته \" الحياة اليومية \" , \" الواقع اليومي \" العالم وهو متشكل في نظام يقوم على المعاودة و التشابه. يشمل \" اليومي \" كل مستويات حياتنا و يمتد إلى كل أبعاد وجودنا. يتعلق بمأكلنا        وملبسنا و أقوالنا و أفعالنا و رؤيتنا للأشياء . و هو حاضر في الأخلاق و المعتقدات      والسياسة والاقتصاد والإشهار والترفيه. إنه مرادف للمألوف الذي يجري على نفس الوتيرة. و لذلك فهو قابل للتوقع. فما حدث أمس يحدث اليوم و سيحدث غدا وبعد غد بلا مفاجآت و لا تقطع إلا على نحو عابر. فقد تهز فضيحة أخلاقية أو سياسية , محلية أو عالمية, نظام اليومي أيما هزة فتتشنج الأعصاب وتثور العواطف, ولكن على نحو عابر فحسب إذ سرعان ما يهدأ كل شيء ويعود الناس إلى سالف مشاغلهم منصاعين إلى مقتضياته. إن اليومي يمارس علينا سلطة يتطلب منا الخضوع و المسايرة فهو ليس فقط ما نشاهده أو نسمعه بل هو أيضا وفي جوهره الوسط الذي ننخرط فيه و القانون الذي علينا أن نطيعه.",
+                "PhiH.lessons.values.definitions.card3.point3": "حسب مارتن هيدغير في \" تجربة اليومي \" ( كتاب الفلسفة للسنة ثالثة علوم) : يرتقي اليومي من مجرد تجربة مكررة    ومبتذلة الى نمط من أنماط وجودنا الإنساني.",
+                "PhiH.lessons.values.definitions.card3.point4": "حسب عبد الحميد جودة السحار في \" سجناء اليوم \" (كتاب الفلسفة للسنة ثالثة علوم) : اليومي هو الروتين والمكرر  والرتابة والقلق.",
+                "PhiH.lessons.values.definitions.card3.point5": "حسب فرانيي ( كتاب الفلسفة للسنة ثالثة آداب) : \" اليومي هو هذا المجموع المختلط    والمتلبد الذي نسميه الحياة اليومية.  وتتبدى هذه الحياة في جوهرها متباينة. نجد فيها أحداث فكرية وأشياء و وضعيات و علاقات تواصل مع الآخرين و كلمات   ومشاهد. فاليومي لا يمكن رؤيته, هو ما نراه دون أن نبصره وما يتعارض مع التفكير الذاتي.",
+                "PhiH.lessons.values.definitions.card3.point6": "حسب كارل غسبرس  K.Jaspers : يسعى إلى تحديد مفهوم اليومي انطلاقا من نتائجه السلبية على الذات حيث يولد تبعية الإنسان أي حالة العبودية إذ يصبح الفرد عبدا لمنتوج ما و أيضا يولد حالة الجمود الفكري حيث يغيب الوعي عن الفرد  ويصبح هو ذاته كالآلة فيتولد لديه الإحساس بالضياع و التيه وبالتالي الاغتراب والاستلاب",
+                
+                "PhiH.lessons.values.texts.title": "النصوص",
+                "PhiH.lessons.values.texts.text1": "النص 1: الإعلام والقيم - ميشال هنري",
+                "PhiH.lessons.values.texts.text2": "النص 2: الفلسفة والواقع اليومي - هنري لوفيفر",
+                
+                // Quotes section translations
+                "PhiH.lessons.values.quotes.title": "شواهد ونصوص ذات صلة",
+                "PhiH.lessons.values.quotes.quote1": "\"إن التلفزيون لم يتغيّر. يرفع من شأن التافه لأقصى حدّ كي يمارس قوّته. ويخفّض من شأن القويّ ليجعله مساويا للتافه.\"",
+                "PhiH.lessons.values.quotes.quote2": "\"المشهد بالمعنى الضيق هو وسائل الاتّصال الجماهيرية التي تجعل ما هو سطحيّ يبدو الأشدّ بريقا\"",
+                "PhiH.lessons.values.quotes.quote3": "\"لم يفعل الفلاسفة إلى حدّ الآن غير أن أوّلوا العالم بأشكال شتّى، والأهمّ هو تغييره.\"",
+                "PhiH.lessons.values.quotes.author1": "جورج تروي",
+                "PhiH.lessons.values.quotes.source1": "سياق من دون سياق",
+                "PhiH.lessons.values.quotes.author2": "غي ديبور",
+                "PhiH.lessons.values.quotes.source2": "مجتمع المشهد",
+                "PhiH.lessons.values.quotes.author3": "ماركس",
+                "PhiH.lessons.values.quotes.source3": "أطروحات حول فيورباخ (الأطروحة 11)",
+                
+                "PhiH.lessons.values.conclusion.title": "الخاتمة",
+                "PhiH.lessons.values.conclusion.text1": "يبيّنُ التحليلُ الفلسفيُّ للقيمِ أنّها ليست معطياتٍ ثابتةً أو مسلّماتٍ مطلقة، بل هي بناءاتٌ إنسانيةٌ متطوّرة تحملُ في طيّاتها تاريخَ المجتمعاتِ وتطلّعاتِ الأفراد. فإذا كانتِ القيمُ تشكّلُ الإطارَ الذي يمنحُ الحياةَ معنى ويوجّه السلوك، فإنّ أزماتِ القيمِ في العصرِ الراهن تعكسُ أزمةَ الإنسانِ في علاقتِه مع العالمِ ومع نفسِه.",
+                "PhiH.lessons.values.conclusion.text2": "ولا يعني ذلكَ الاستسلامَ للنسبيةِ أو التخلّيَ عن البحثِ عن المطلق، بل يدعونا إلى وعيٍ نقديٍّ بآلياتِ تشكّلِ القيمِ وتحوّلها، وإلى مسؤوليةٍ أخلاقيةٍ في بنائِها.",
+                "PhiH.lessons.values.conclusion.text3": "وهنا تبرزُ الفلسفةُ كجهدٍ عقليٍّ لا يتوقّفُ عند تشخيصِ الأزمة، بل يساهمُ في تجاوزِها عبرَ إعادةِ تأسيسِ قيمٍ تحترمُ كرامةَ الإنسانِ وتستجيبُ لتحدّياتِ عصرِه، فتبقى القيمُ – رغم كلّ التحوّلات – ضمانةً لإنسانيةِ الإنسانِ وسموّ روحِه."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHvalues;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+    
+    <script>
+        // Expand/Collapse functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all expandable headers
+            const expandableHeaders = document.querySelectorAll('.PhiH-expandable-header');
+            
+            // Add click event to each header
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.PhiH-expand-icon');
+                    
+                    // Toggle content visibility
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('expanded');
+                    } else {
+                        content.classList.add('hidden');
+                        icon.classList.remove('expanded');
+                    }
+                });
+            });
+            
+            // Initially hide all expandable content
+            document.querySelectorAll('.PhiH-expandable-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

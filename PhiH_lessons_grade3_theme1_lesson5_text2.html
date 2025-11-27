@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: الإشهار بين الأمس واليوم - هنري لوفيفر - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#8b5cf6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Purple + Violet Color Palette */
+        :root {
+            --primary-color: #8b5cf6;
+            --primary-light: #a78bfa;
+            --primary-dark: #7c3aed;
+            --secondary-color: #7e22ce;
+            --secondary-light: #a855f7;
+            --secondary-dark: #6b21a8;
+            --accent-color: #7e22ce;
+            --accent-light: #a855f7;
+            --accent-dark: #6b21a8;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #faf5ff;
+            --card-bg: #ffffff;
+            --definition-bg: #f3e8ff;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #e9d5ff;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1), 0 2px 4px -1px rgba(139, 92, 246, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(139, 92, 246, 0.1), 0 4px 6px -2px rgba(139, 92, 246, 0.05);
+            --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #7e22ce 100%);
+            --gradient-secondary: linear-gradient(135deg, #7e22ce 0%, #6b21a8 100%);
+            --gradient-accent: linear-gradient(135deg, #7e22ce 0%, #8b5cf6 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #a78bfa;
+            --primary-light: #c4b5fd;
+            --primary-dark: #8b5cf6;
+            --secondary-color: #a855f7;
+            --secondary-light: #c084fc;
+            --secondary-dark: #7e22ce;
+            --accent-color: #a855f7;
+            --accent-light: #c084fc;
+            --accent-dark: #7e22ce;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #581c87;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #7e22ce;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #a78bfa 0%, #a855f7 100%);
+            --gradient-secondary: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+            --gradient-accent: linear-gradient(135deg, #a855f7 0%, #a78bfa 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(139, 92, 246, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(126, 34, 206, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(126, 34, 206, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(139, 92, 246, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.lefebvre.title">تحليل النص: الإشهار بين الأمس واليوم - هنري لوفيفر</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.lefebvre.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.lefebvre.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.lefebvre.introduction.content">
+                    لقد أضحى الإشهار مستغرقا لكل مجالات الحياة اليومية وبالغ التأثير في توجيه ميولات الأفراد وتفكيرهم ووجدانهم ولعلّه تحوّل إلى قوّة لها من النجاعة في التوجيه ما صار يلزمنا أكثر من أي وقت مضى بتشريح آليّاته ورصد ما يستثمره من وسائل.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.lefebvre.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.text.content">
+                        يُنتج الإشهار أساطير أو بالأحرى لا يُنتج شيئا، وإنّما يستحوذ على أساطير سابقة. إنّه يصرف الدَوال<sup>1</sup> صوب هدف مزدوج: فهو يعرضها كما هي للاستهلاك بوجه عام، ويحفّز على الاستهلاك المحدّد لشيء ما. على هذا النحو يستعيد الإشهار الأساطير<sup>2</sup>.
+                    </p>
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.text.content2">
+                        يتّخذ الإشهار أهمّية إيديولوجيا ما<sup>3</sup>، هي إيديولوجيا البضاعة التي أضحت تُعوّض ما كان يُمثّل فلسفة وأخلاقا ودينا وإستطيقا<sup>4</sup>. لقد ولّى الزمن الذي كان الإشهاريون يدّعون فيه "لتشريط<sup>5</sup> الذوات" المستهلكة بتكرار شعار ما. فالصيغ الإشهارية الأكثر براعة تُخفي اليوم رؤية للعالم<sup>6</sup> ... هكذا يُقال لكم كيف تحيون دائما حياة أفضل: ماذا تأكلون وماذا تشربون وأيّ ثياب ترتدون؟ وكيف تسكنون منازلكم وتؤثّونها ؟ ها قد تمّت برمجتکم.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.lefebvre.text.source">هنري لوفيفر. الحياة اليومية في العالم الحديث. ترجمة لجنة التأليف<br>Henri Lefebvre, La vie quotidienne dans le monde moderne. Edt. Gallimard 1968, p200-204</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.lefebvre.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/henri_lefebvre.jpg" alt="هنري لوفيفر" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.lefebvre.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.lefebvre.author.content">
+                            هنري لوفيفر (1905-1991) فيلسوف وعالم اجتماع فرنسي، ماركسي النزعة ارتبطت تحاليله بجملة من المواضيع والقضايا المعيشة المتّصلة بالمدينة والفضاء واليومي وبنية المجتمع البيروقراطي المتقدّم، كما ساهم في تطوير نقد جذري للحداثة، فضلا عن اهتمامه بالعلاقة بين اللغة والمجتمع. من مؤلّفاته: شذرات من فلسفة الوعي (1924-1926)، الوعي الزائف (1946)، نقد الحياة اليومية (1947)، مدخل إلى الحداثة (1962)، الحياة اليومية في العالم الحديث (1967)، نهاية التاريخ (1970)، الفكر الماركسي والمدينة (1972)، الحضور والغياب (1980)، ما هو التفكير؟ (1985).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.lefebvre.lexical.title">المفاهيم والمصطلحات</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.lefebvre.lexical.item1"><strong>الدَوال:</strong> مفردها دالٌ وهو مصطلح استعمله دي سوسير مؤسّس علم الألسنية للتعبير عن الوجه الصوتي للعلامة اللسانية، أما المدلول فهو الوجه التصوَري للعلامة. والعلامة اللسانية هي الوحدة اللغوية الدنيا للجملة ويعرّفها دي سوسير بأنَها ((المجموع الناتج عن الجمع بين الدال والمدلول)). والإحالة في السياق هي على مختلف الرموز التي يستثمرها الخطاب الإشهاري بهدف تحقيق استهلاك رمزي ومادي في آن.</li>
+                    <li data-i18n="PhiH.textAnalysis.lefebvre.lexical.item2"><strong>الأساطير:</strong> الأسطورة هي أول شكل للوعي البشري وهي بمثابة قصَة عجائبية تعبّر عن طموحات البشر ومخاوفهم من خلال أحداث خارقة للطبيعة أبطالها آلهة أو أنصاف آلهة. وهي فضلا عن ذلك رؤية للعالم تضطلع بوظيفة تفسيرية لنشأة الكون ولبعض الظواهر الطبيعية ولعادات الشعوب وتقاليدها. والإشهار، في سياق النص، يستثمر هذا البعد العجائبي وما يقترن به من مخاوف وطموحات في الدعاية.</li>
+                    <li data-i18n="PhiH.textAnalysis.lefebvre.lexical.item3"><strong>الإيديولوجيا:</strong> إشارة إلى أنّ الإشهار لم يعُد مجرّد تقنية تسويق بقدر ما هو حامل لرؤية للعالم ومعبّر عن مصالح معيّنة.</li>
+                    <li data-i18n="PhiH.textAnalysis.lefebvre.lexical.item4"><strong>الإستطيقا:</strong> مبحث يتعلّق بالإحساس الجمالي والتذوّق الفنّي. وسياقيّا هو أقرب للدلالة على رؤية جمالية للعالم.</li>
+                    <li data-i18n="PhiH.textAnalysis.lefebvre.lexical.item5"><strong>التشريط:</strong> يفهم في هذا السياق كآلية تكييف تقوم على التكرار قصد خلق ردود فعل قابلة للتحكّم والتوجيه. ولقد اقترنت هذه الآلية بعلم النفس الحيواني وبأعمال "بافلوف" حول المنعكسات الشرطية.</li>
+                    <li data-i18n="PhiH.textAnalysis.lefebvre.lexical.item6"><strong>رؤية للعالم:</strong> الرؤية تمثّل موحَّد ومنسجم للعالم يهدف إلى إضفاء معنى على وجود الإنسان فيه. من ذلك الرؤية الدينية، الرؤية الفنية، الرؤية العلمية ...</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.lefebvre.questions.title">أسئلة الفهم والتحليل</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.lefebvre.questions.q1">استحضر ومضات إشهارية شاهدتها تقدّر أنّها استثمرت الموروث الثقافي.</li>
+                    <li data-i18n="PhiH.textAnalysis.lefebvre.questions.q2">ما هي المظاهر المعبّرة عن مفعول الإشهار في الحياة اليومية للإنسان المعاصر ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.lefebvre.questions.q3">هل بالإمكان أن نصغي إلى المقتضى الاقتصادي للإشهار دون أن نفرّط في المقتضى القيمي للمعيش ؟</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.lefebvre.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.lefebvre.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.answers.a1.content">
+                        من الأمثلة على الإشهارات التي تستثمر الموروث الثقافي:
+                        <br>- <strong>الإشهارات التي تستخدم الرموز الدينية:</strong> مثل استخدام رموز دينية في إشهارات المنتجات لخلق شعور بالألفة والثقة.
+                        <br>- <strong>الإشهارات التي تستغل التراث الشعبي:</strong> مثل استخدام الأغاني والأمثال الشعبية في الحملات الإعلانية.
+                        <br>- <strong>الإشهارات التي تعتمد على الأساطير:</strong> مثل استخدام شخصيات أسطورية أو قصص شعبية في الإعلانات.
+                        <br>- <strong>الإشهارات التي تستثمر العادات والتقاليد:</strong> مثل التركيز على قيم العائلة والتضامن في الإعلانات الموجهة للمجتمعات التقليدية.
+                        <br>- <strong>الإشهارات التي تستخدم الرموز الوطنية:</strong> مثل الأعلام والألوان الوطنية في الحملات التسويقية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.lefebvre.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.answers.a2.content">
+                        من المظاهر المعبرة عن مفعول الإشهار في الحياة اليومية:
+                        <br>- <strong>توجيه أنماط الاستهلاك:</strong> حيث يحدد الإشهار ما يجب شراؤه واستهلاكه.
+                        <br>- <strong>تشكيل الهوية الشخصية:</strong> حيث يصبح الاستهلاك وسيلة للتعبير عن الذات والانتماء.
+                        <br>- <strong>خلق احتياجات وهمية:</strong> حيث يخلق الإشهار احتياجات غير حقيقية لدفع المستهلكين للشراء.
+                        <br>- <strong>تأثير على القيم والمعتقدات:</strong> حيث يروج الإشهار لقيم الاستهلاك والمادية.
+                        <br>- <strong>تأثير على العلاقات الاجتماعية:</strong> حيث يصبح الاستهلاك معياراً للنجاح الاجتماعي.
+                        <br>- <strong>برمجة الحياة اليومية:</strong> كما يشير لوفيفر، حيث يحدد الإشهار كيفية العيش وتأثيث المنازل وغيرها.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.lefebvre.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.answers.a3.content">
+                        نعم، يمكن الموازنة بين المقتضى الاقتصادي للإشهار والمقتضى القيمي من خلال:
+                        <br>- <strong>الإشهار الأخلاقي:</strong> الذي يحترم القيم الإنسانية ولا يستغل الاحتياجات الإنسانية الأساسية.
+                        <br>- <strong>الشفافية:</strong> تقديم معلومات صادقة وواضحة عن المنتجات والخدمات.
+                        <br>- <strong>احترام الذكاء الجماعي:</strong> عدم التعامل مع المستهلكين ككائنات سلبية قابلة للتشريط.
+                        <br>- <strong>تعزيز القيم الإيجابية:</strong> استخدام الإشهار لنشر قيم المسؤولية الاجتماعية والاستدامة.
+                        <br>- <strong>الوعي النقدي:</strong> تطوير قدرة الأفراد على تحليل الرسائل الإشهارية وفك شفراتها.
+                        <br>- <strong>التنظيم القانوني:</strong> وضع قوانين تحمي المستهلك من الممارسات الإشهارية غير الأخلاقية.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.lefebvre.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.lefebvre.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.analysis.thesis.content">
+                        يطرح هنري لوفيفر فكرة أن الإشهار لم يعد مجرد أداة تسويقية، بل تحول إلى قوة إيديولوجية تهدف إلى برمجة الحياة اليومية للأفراد. فالإشهار يستحوذ على الأساطير والرموز الثقافية ويحولها إلى أدوات للترويج للاستهلاك، مما يجعل منه أداة فعالة في تشكيل وعي الأفراد وتوجيه سلوكهم.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.lefebvre.analysis.mechanisms.title">آليات عمل الإشهار:</h5>
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.analysis.mechanisms.content">
+                        تعمل آليات الإشهار من خلال:
+                        <br>- <strong>استحواذ على الأساطير:</strong> حيث يستعيد الإشهار الأساطير القديمة ويحولها إلى رموز ترويجية.
+                        <br>- <strong>توجيه الدلالات:</strong> حيث يصرف الدوال نحو أهداف استهلاكية محددة.
+                        <br>- <strong>إيديولوجيا البضاعة:</strong> حيث يحل منطق السوق مكان الفلسفة والأخلاق والدين.
+                        <br>- <strong>التشريط:</strong> حيث يستخدم التكرار لخلق ردود فعل قابلة للتوجيه.
+                        <br>- <strong>إخفاء الرؤية للعالم:</strong> حيث تخفي الصيغ الإشهارية المتطورة رؤية معينة للعالم.
+                        <br>- <strong>برمجة الحياة اليومية:</strong> حيث يحدد الإشهار كيفية العيش وتأثيث المنازل وغيرها.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.lefebvre.analysis.consequences.title">نتائج سيطرة الإشهار:</h5>
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.analysis.consequences.content">
+                        تؤدي سيطرة الإشهار إلى:
+                        <br>- <strong>استلاب الوعي:</strong> حيث يصبح الأفراد مجرد مستهلكين سلبيين.
+                        <br>- <strong>تفريغ الثقافة من مضمونها:</strong> حيث تتحول الرموز الثقافية إلى أدوات تسويقية.
+                        <br>- <strong>هيمنة إيديولوجيا الاستهلاك:</strong> حيث يصبح الاستهلاك هو المعيار الأساسي للقيمة.
+                        <br>- <strong>فقدان الاستقلالية:</strong> حيث تفقد الذات قدرتها على اتخاذ القرارات المستقلة.
+                        <br>- <strong>تآكل القيم التقليدية:</strong> حيث تحل قيم السوق مكان القيم الأخلاقية والروحية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.lefebvre.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.lefebvre.analysis.significance.content">
+                        يمثل نقد لوفيفر للإشهار مدخلاً لفهم إشكالية العصر الحديث. فهو يبرز الصراع بين الذات والآلة الاستهلاكية، وبين الحرية والتشريط. كما يوضح ضرورة النقد الجذري للحداثة والوعي بآليات الهيمنة في المجتمعات المعاصرة. ويدفع نحو تأسيس وعي نقدي قادر على مقاومة برمجة الحياة اليومية واستعادة الاستقلالية الإنسانية.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.lefebvre.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.lefebvre.title": "Analyse du texte: La Publicité entre Hier et Aujourd'hui - Henri Lefebvre",
+                "PhiH.textAnalysis.lefebvre.introduction.title": "Introduction",
+                "PhiH.textAnalysis.lefebvre.introduction.content": "La publicité est devenue omniprésente dans tous les domaines de la vie quotidienne et exerce une influence considérable sur l'orientation des tendances, de la pensée et des sentiments des individus. Elle s'est peut-être transformée en une force dont l'efficacité dans l'orientation nous oblige plus que jamais à disséquer ses mécanismes et à observer les moyens qu'elle investit.",
+                "PhiH.textAnalysis.lefebvre.text.title": "Texte",
+                "PhiH.textAnalysis.lefebvre.text.content": "La publicité produit des mythes ou plutôt ne produit rien, mais s'approprie des mythes antérieurs. Elle dirige les signifiants<sup>1</sup> vers un double objectif : elle les présente tels quels pour une consommation générale, et elle stimule la consommation spécifique de quelque chose. De cette manière, la publicité récupère les mythes<sup>2</sup>.",
+                "PhiH.textAnalysis.lefebvre.text.content2": "La publicité prend une importance idéologique<sup>3</sup>, celle de la marchandise qui est venue remplacer ce qui représentait la philosophie, la morale, la religion et l'esthétique<sup>4</sup>. Le temps est révolu où les publicitaires prétendaient \"conditionner<sup>5</sup> les sujets\" consommateurs en répétant un slogan. Les formules publicitaires les plus habiles cachent aujourd'hui une vision du monde<sup>6</sup> ... Ainsi on vous dit comment vivre toujours une vie meilleure : que manger, que boire, quels vêtements porter ? Comment habiter vos maisons et les meubler ? Vous avez été programmés.",
+                "PhiH.textAnalysis.lefebvre.text.source": "Henri Lefebvre. La vie quotidienne dans le monde moderne. Traduction par le comité de rédaction<br>Henri Lefebvre, La vie quotidienne dans le monde moderne. Éd. Gallimard 1968, p200-204",
+                "PhiH.textAnalysis.lefebvre.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.lefebvre.author.alt": "Henri Lefebvre",
+                "PhiH.textAnalysis.lefebvre.author.content": "Henri Lefebvre (1905-1991) est un philosophe et sociologue français, de tendance marxiste, dont les analyses sont liées à un ensemble de sujets et de questions vécues liées à la ville, à l'espace, au quotidien et à la structure de la société bureaucratique avancée. Il a également contribué au développement d'une critique radicale de la modernité, en plus de son intérêt pour la relation entre le langage et la société. Parmi ses œuvres : Fragments d'une philosophie de la conscience (1924-1926), La conscience mystifiée (1946), Critique de la vie quotidienne (1947), Introduction à la modernité (1962), La vie quotidienne dans le monde moderne (1967), La fin de l'histoire (1970), La pensée marxiste et la ville (1972), La présence et l'absence (1980), Qu'est-ce que penser ? (1985).",
+                "PhiH.textAnalysis.lefebvre.lexical.title": "Concepts et terminologie",
+                "PhiH.textAnalysis.lefebvre.lexical.item1": "<strong>Signifiants:</strong> Singulier signifiant, c'est un terme utilisé par Saussure, fondateur de la linguistique, pour exprimer la face phonique du signe linguistique, tandis que le signifié est la face conceptuelle du signe. Le signe linguistique est l'unité linguistique minimale de la phrase et Saussure le définit comme ((l'ensemble résultant de l'association du signifiant et du signifié)). La référence dans le contexte est aux différents symboles qu'investit le discours publicitaire dans le but de réaliser une consommation à la fois symbolique et matérielle.",
+                "PhiH.textAnalysis.lefebvre.lexical.item2": "<strong>Mythes:</strong> Le mythe est la première forme de conscience humaine et est comme un conte merveilleux qui exprime les aspirations et les craintes des humains à travers des événements surnaturels dont les héros sont des dieux ou des demi-dieux. C'est en outre une vision du monde qui assume une fonction explicative de l'origine de l'univers, de certains phénomènes naturels et des coutumes et traditions des peuples. La publicité, dans le contexte du texte, investit cette dimension merveilleuse et les craintes et aspirations qui l'accompagnent dans la propagande.",
+                "PhiH.textAnalysis.lefebvre.lexical.item3": "<strong>Idéologie:</strong> Référence au fait que la publicité n'est plus seulement une technique de marketing mais qu'elle est porteuse d'une vision du monde et exprime des intérêts spécifiques.",
+                "PhiH.textAnalysis.lefebvre.lexical.item4": "<strong>Esthétique:</strong> Domaine qui concerne la sensation esthétique et l'appréciation artistique. Contextuellement, il est plus proche de la signification d'une vision esthétique du monde.",
+                "PhiH.textAnalysis.lefebvre.lexical.item5": "<strong>Conditionnement:</strong> Compris dans ce contexte comme un mécanisme d'adaptation basé sur la répétition dans le but de créer des réactions contrôlables et orientables. Ce mécanisme a été associé à la psychologie animale et aux travaux de \"Pavlov\" sur les réflexes conditionnés.",
+                "PhiH.textAnalysis.lefebvre.lexical.item6": "<strong>Vision du monde:</strong> La vision représente une unité cohérente et harmonieuse du monde visant à donner un sens à l'existence humaine. Parmi celles-ci, la vision religieuse, la vision artistique, la vision scientifique ...",
+                "PhiH.textAnalysis.lefebvre.questions.title": "Questions de compréhension et d'analyse",
+                "PhiH.textAnalysis.lefebvre.questions.q1": "Rappelez des flashs publicitaires que vous avez vus et que vous estimez avoir investi le patrimoine culturel.",
+                "PhiH.textAnalysis.lefebvre.questions.q2": "Quelles sont les manifestations expressives de l'effet de la publicité dans la vie quotidienne de l'homme contemporain ?",
+                "PhiH.textAnalysis.lefebvre.questions.q3": "Est-il possible d'écouter l'exigence économique de la publicité sans renoncer à l'exigence axiologique du vécu ?",
+                "PhiH.textAnalysis.lefebvre.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.lefebvre.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.lefebvre.answers.a1.content": "Exemples de publicités qui investissent le patrimoine culturel:<br>- <strong>Publicités utilisant des symboles religieux:</strong> comme l'utilisation de symboles religieux dans les publicités de produits pour créer un sentiment de familiarité et de confiance.<br>- <strong>Publicités exploitant le patrimoine populaire:</strong> comme l'utilisation de chansons et de proverbes populaires dans les campagnes publicitaires.<br>- <strong>Publicités basées sur des mythes:</strong> comme l'utilisation de personnages mythiques ou d'histoires populaires dans les publicités.<br>- <strong>Publicités investissant les coutumes et traditions:</strong> comme se concentrer sur les valeurs familiales et la solidarité dans les publicités destinées aux sociétés traditionnelles.<br>- <strong>Publicités utilisant des symboles nationaux:</strong> comme les drapeaux et les couleurs nationales dans les campagnes marketing.",
+                "PhiH.textAnalysis.lefebvre.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.lefebvre.answers.a2.content": "Manifestations expressives de l'effet de la publicité dans la vie quotidienne:<br>- <strong>Orientation des modes de consommation:</strong> où la publicité détermine ce qui doit être acheté et consommé.<br>- <strong>Formation de l'identité personnelle:</strong> où la consommation devient un moyen d'exprimer soi-même et d'appartenance.<br>- <strong>Création de besoins illusoires:</strong> où la publicité crée des besoins non réels pour pousser les consommateurs à acheter.<br>- <strong>Influence sur les valeurs et croyances:</strong> où la publicité promeut les valeurs de consommation et de matérialisme.<br>- <strong>Influence sur les relations sociales:</strong> où la consommation devient un critère de succès social.<br>- <strong>Programmation de la vie quotidienne:</strong> comme le souligne Lefebvre, où la publicité détermine comment vivre et meubler les maisons, etc.",
+                "PhiH.textAnalysis.lefebvre.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.lefebvre.answers.a3.content": "Oui, il est possible d'équilibrer l'exigence économique de la publicité et l'exigence axiologique à travers:<br>- <strong>Publicité éthique:</strong> qui respecte les valeurs humaines et n'exploite pas les besoins humains fondamentaux.<br>- <strong>Transparence:</strong> fournir des informations honnêtes et claires sur les produits et services.<br>- <strong>Respect de l'intelligence collective:</strong> ne pas traiter les consommateurs comme des êtres passifs conditionnables.<br>- <strong>Renforcement des valeurs positives:</strong> utiliser la publicité pour diffuser des valeurs de responsabilité sociale et de durabilité.<br>- <strong>Conscience critique:</strong> développer la capacité des individus à analyser les messages publicitaires et à décoder leurs codes.<br>- <strong>Régulation légale:</strong> établir des lois protégeant le consommateur contre les pratiques publicitaires non éthiques.",
+                "PhiH.textAnalysis.lefebvre.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.lefebvre.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.lefebvre.analysis.thesis.content": "Henri Lefebvre présente l'idée que la publicité n'est plus seulement un outil marketing, mais s'est transformée en une force idéologique visant à programmer la vie quotidienne des individus. La publicité s'approprie les mythes et symboles culturels et les transforme en outils de promotion de la consommation, ce qui en fait un instrument efficace pour façonner la conscience des individus et orienter leur comportement.",
+                "PhiH.textAnalysis.lefebvre.analysis.mechanisms.title": "Mécanismes de fonctionnement de la publicité:",
+                "PhiH.textAnalysis.lefebvre.analysis.mechanisms.content": "Les mécanismes de la publicité fonctionnent à travers:<br>- <strong>Appropriation des mythes:</strong> où la publicité récupère les anciens mythes et les transforme en symboles promotionnels.<br>- <strong>Orientation des significations:</strong> où elle dirige les signifiants vers des objectifs de consommation spécifiques.<br>- <strong>Idéologie de la marchandise:</strong> où la logique du marché remplace la philosophie, la morale et la religion.<br>- <strong>Conditionnement:</strong> où elle utilise la répétition pour créer des réactions orientables.<br>- <strong>Dissimulation de la vision du monde:</strong> où les formules publicitaires sophistiquées cachent une certaine vision du monde.<br>- <strong>Programmation de la vie quotidienne:</strong> où la publicité détermine comment vivre et meubler les maisons, etc.",
+                "PhiH.textAnalysis.lefebvre.analysis.consequences.title": "Conséquences de la domination de la publicité:",
+                "PhiH.textAnalysis.lefebvre.analysis.consequences.content": "La domination de la publicité conduit à:<br>- <strong>Aliénation de la conscience:</strong> où les individus deviennent de simples consommateurs passifs.<br>- <strong>Vidage de la culture de son contenu:</strong> où les symboles culturels se transforment en outils marketing.<br>- <strong>Hégémonie de l'idéologie de la consommation:</strong> où la consommation devient le critère fondamental de valeur.<br>- <strong>Perte d'autonomie:</strong> où le sujet perd sa capacité à prendre des décisions indépendantes.<br>- <strong>Érosion des valeurs traditionnelles:</strong> où les valeurs du marché remplacent les valeurs morales et spirituelles.",
+                "PhiH.textAnalysis.lefebvre.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.lefebvre.analysis.significance.content": "La critique de Lefebvre de la publicité représente une entrée pour comprendre la problématique de l'époque moderne. Elle met en lumière le conflit entre le sujet et la machine consumériste, et entre la liberté et le conditionnement. Elle clarifie également la nécessité d'une critique radicale de la modernité et de la conscience des mécanismes de domination dans les sociétés contemporaines. Et pousse vers l'établissement d'une conscience critique capable de résister à la programmation de la vie quotidienne et de retrouver l'autonomie humaine."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.lefebvre.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.lefebvre.title": "Text Analysis: Advertising Between Yesterday and Today - Henri Lefebvre",
+                "PhiH.textAnalysis.lefebvre.introduction.title": "Introduction",
+                "PhiH.textAnalysis.lefebvre.introduction.content": "Advertising has become pervasive in all areas of daily life and has a profound influence on directing individuals' tendencies, thinking, and emotions. It may have transformed into a force whose effectiveness in guidance requires us more than ever to dissect its mechanisms and observe the means it invests in.",
+                "PhiH.textAnalysis.lefebvre.text.title": "Text",
+                "PhiH.textAnalysis.lefebvre.text.content": "Advertising produces myths or rather produces nothing, but appropriates previous myths. It directs signifiers<sup>1</sup> toward a dual objective: it presents them as they are for general consumption, and it stimulates the specific consumption of something. In this way, advertising recovers myths<sup>2</sup>.",
+                "PhiH.textAnalysis.lefebvre.text.content2": "Advertising takes on an ideological importance<sup>3</sup>, that of the commodity which has come to replace what represented philosophy, morality, religion, and aesthetics<sup>4</sup>. The time is gone when advertisers claimed to \"condition<sup>5</sup> consumer subjects\" by repeating a slogan. The most skillful advertising formulas today hide a worldview<sup>6</sup> ... Thus you are told how to always live a better life: what to eat, what to drink, what clothes to wear? How to inhabit your homes and furnish them? You have been programmed.",
+                "PhiH.textAnalysis.lefebvre.text.source": "Henri Lefebvre. Everyday Life in the Modern World. Translation by the editorial committee<br>Henri Lefebvre, La vie quotidienne dans le monde moderne. Ed. Gallimard 1968, p200-204",
+                "PhiH.textAnalysis.lefebvre.author.title": "Author Presentation",
+                "PhiH.textAnalysis.lefebvre.author.alt": "Henri Lefebvre",
+                "PhiH.textAnalysis.lefebvre.author.content": "Henri Lefebvre (1905-1991) is a French philosopher and sociologist, of Marxist tendency, whose analyses are linked to a set of topics and lived issues related to the city, space, everyday life, and the structure of advanced bureaucratic society. He also contributed to the development of a radical critique of modernity, in addition to his interest in the relationship between language and society. Among his works: Fragments of a Philosophy of Consciousness (1924-1926), Mystified Consciousness (1946), Critique of Everyday Life (1947), Introduction to Modernity (1962), Everyday Life in the Modern World (1967), The End of History (1970), Marxist Thought and the City (1972), Presence and Absence (1980), What is Thinking? (1985).",
+                "PhiH.textAnalysis.lefebvre.lexical.title": "Concepts and Terminology",
+                "PhiH.textAnalysis.lefebvre.lexical.item1": "<strong>Signifiers:</strong> Singular signifier, it is a term used by Saussure, founder of linguistics, to express the phonic aspect of the linguistic sign, while the signified is the conceptual aspect of the sign. The linguistic sign is the minimal linguistic unit of the sentence and Saussure defines it as ((the whole resulting from the association of the signifier and the signified)). The reference in the context is to the various symbols that advertising discourse invests in order to achieve both symbolic and material consumption.",
+                "PhiH.textAnalysis.lefebvre.lexical.item2": "<strong>Myths:</strong> The myth is the first form of human consciousness and is like a marvelous tale that expresses human aspirations and fears through supernatural events whose heroes are gods or demigods. It is furthermore a worldview that assumes an explanatory function of the origin of the universe, of some natural phenomena, and of the customs and traditions of peoples. Advertising, in the context of the text, invests this marvelous dimension and the fears and aspirations that accompany it in propaganda.",
+                "PhiH.textAnalysis.lefebvre.lexical.item3": "<strong>Ideology:</strong> Reference to the fact that advertising is no longer just a marketing technique but is a carrier of a worldview and expresses specific interests.",
+                "PhiH.textAnalysis.lefebvre.lexical.item4": "<strong>Aesthetics:</strong> Domain that concerns aesthetic sensation and artistic appreciation. Contextually, it is closer to the meaning of an aesthetic worldview.",
+                "PhiH.textAnalysis.lefebvre.lexical.item5": "<strong>Conditioning:</strong> Understood in this context as an adaptation mechanism based on repetition in order to create controllable and orientable reactions. This mechanism has been associated with animal psychology and the work of \"Pavlov\" on conditioned reflexes.",
+                "PhiH.textAnalysis.lefebvre.lexical.item6": "<strong>Worldview:</strong> The vision represents a coherent and harmonious unity of the world aiming to give meaning to human existence. Among these, the religious vision, the artistic vision, the scientific vision ...",
+                "PhiH.textAnalysis.lefebvre.questions.title": "Comprehension and Analysis Questions",
+                "PhiH.textAnalysis.lefebvre.questions.q1": "Recall advertising flashes you have seen that you believe have invested cultural heritage.",
+                "PhiH.textAnalysis.lefebvre.questions.q2": "What are the expressive manifestations of the effect of advertising in the daily life of contemporary man?",
+                "PhiH.textAnalysis.lefebvre.questions.q3": "Is it possible to listen to the economic requirement of advertising without abandoning the axiological requirement of lived experience?",
+                "PhiH.textAnalysis.lefebvre.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.lefebvre.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.lefebvre.answers.a1.content": "Examples of advertisements that invest cultural heritage:<br>- <strong>Advertisements using religious symbols:</strong> such as using religious symbols in product advertisements to create a feeling of familiarity and trust.<br>- <strong>Advertisements exploiting popular heritage:</strong> such as using folk songs and proverbs in advertising campaigns.<br>- <strong>Advertisements based on myths:</strong> such as using mythical characters or folk stories in advertisements.<br>- <strong>Advertisements investing customs and traditions:</strong> such as focusing on family values and solidarity in advertisements aimed at traditional societies.<br>- <strong>Advertisements using national symbols:</strong> such as flags and national colors in marketing campaigns.",
+                "PhiH.textAnalysis.lefebvre.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.lefebvre.answers.a2.content": "Expressive manifestations of the effect of advertising in daily life:<br>- <strong>Orientation of consumption patterns:</strong> where advertising determines what should be bought and consumed.<br>- <strong>Formation of personal identity:</strong> where consumption becomes a means of expressing oneself and belonging.<br>- <strong>Creation of illusory needs:</strong> where advertising creates unreal needs to push consumers to buy.<br>- <strong>Influence on values and beliefs:</strong> where advertising promotes consumption and materialistic values.<br>- <strong>Influence on social relationships:</strong> where consumption becomes a criterion for social success.<br>- <strong>Programming of daily life:</strong> as Lefebvre points out, where advertising determines how to live and furnish homes, etc.",
+                "PhiH.textAnalysis.lefebvre.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.lefebvre.answers.a3.content": "Yes, it is possible to balance the economic requirement of advertising and the axiological requirement through:<br>- <strong>Ethical advertising:</strong> that respects human values and does not exploit fundamental human needs.<br>- <strong>Transparency:</strong> providing honest and clear information about products and services.<br>- <strong>Respect for collective intelligence:</strong> not treating consumers as passive, conditionable beings.<br>- <strong>Promotion of positive values:</strong> using advertising to spread values of social responsibility and sustainability.<br>- <strong>Critical awareness:</strong> developing individuals' ability to analyze advertising messages and decode their codes.<br>- <strong>Legal regulation:</strong> establishing laws protecting consumers from unethical advertising practices.",
+                "PhiH.textAnalysis.lefebvre.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.lefebvre.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.lefebvre.analysis.thesis.content": "Henri Lefebvre presents the idea that advertising is no longer just a marketing tool, but has transformed into an ideological force aiming to program the daily life of individuals. Advertising appropriates myths and cultural symbols and transforms them into tools for promoting consumption, making it an effective instrument for shaping individuals' consciousness and directing their behavior.",
+                "PhiH.textAnalysis.lefebvre.analysis.mechanisms.title": "Mechanisms of advertising functioning:",
+                "PhiH.textAnalysis.lefebvre.analysis.mechanisms.content": "The mechanisms of advertising work through:<br>- <strong>Appropriation of myths:</strong> where advertising recovers ancient myths and transforms them into promotional symbols.<br>- <strong>Orientation of meanings:</strong> where it directs signifiers toward specific consumption objectives.<br>- <strong>Ideology of the commodity:</strong> where market logic replaces philosophy, morality, and religion.<br>- <strong>Conditioning:</strong> where it uses repetition to create orientable reactions.<br>- <strong>Concealment of worldview:</strong> where sophisticated advertising formulas hide a certain worldview.<br>- <strong>Programming of daily life:</strong> where advertising determines how to live and furnish homes, etc.",
+                "PhiH.textAnalysis.lefebvre.analysis.consequences.title": "Consequences of advertising domination:",
+                "PhiH.textAnalysis.lefebvre.analysis.consequences.content": "The domination of advertising leads to:<br>- <strong>Alienation of consciousness:</strong> where individuals become mere passive consumers.<br>- <strong>Emptying culture of its content:</strong> where cultural symbols become marketing tools.<br>- <strong>Hegemony of consumption ideology:</strong> where consumption becomes the fundamental criterion of value.<br>- <strong>Loss of autonomy:</strong> where the subject loses its ability to make independent decisions.<br>- <strong>Erosion of traditional values:</strong> where market values replace moral and spiritual values.",
+                "PhiH.textAnalysis.lefebvre.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.lefebvre.analysis.significance.content": "Lefebvre's critique of advertising represents an entry point for understanding the problematics of the modern era. It highlights the conflict between the subject and the consumerist machine, and between freedom and conditioning. It also clarifies the necessity of a radical critique of modernity and awareness of domination mechanisms in contemporary societies. And pushes towards establishing a critical consciousness capable of resisting the programming of daily life and recovering human autonomy."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.lefebvre.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.lefebvre.title": "تحليل النص: الإشهار بين الأمس واليوم - هنري لوفيفر",
+                "PhiH.textAnalysis.lefebvre.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.lefebvre.introduction.content": "لقد أضحى الإشهار مستغرقا لكل مجالات الحياة اليومية وبالغ التأثير في توجيه ميولات الأفراد وتفكيرهم ووجدانهم ولعلّه تحوّل إلى قوّة لها من النجاعة في التوجيه ما صار يلزمنا أكثر من أي وقت مضى بتشريح آليّاته ورصد ما يستثمره من وسائل.",
+                "PhiH.textAnalysis.lefebvre.text.title": "النص",
+                "PhiH.textAnalysis.lefebvre.text.content": "يُنتج الإشهار أساطير أو بالأحرى لا يُنتج شيئا، وإنّما يستحوذ على أساطير سابقة. إنّه يصرف الدَوال<sup>1</sup> صوب هدف مزدوج: فهو يعرضها كما هي للاستهلاك بوجه عام، ويحفّز على الاستهلاك المحدّد لشيء ما. على هذا النحو يستعيد الإشهار الأساطير<sup>2</sup>.",
+                "PhiH.textAnalysis.lefebvre.text.content2": "يتّخذ الإشهار أهمّية إيديولوجيا ما<sup>3</sup>، هي إيديولوجيا البضاعة التي أضحت تُعوّض ما كان يُمثّل فلسفة وأخلاقا ودينا وإستطيقا<sup>4</sup>. لقد ولّى الزمن الذي كان الإشهاريون يدّعون فيه \"لتشريط<sup>5</sup> الذوات\" المستهلكة بتكرار شعار ما. فالصيغ الإشهارية الأكثر براعة تُخفي اليوم رؤية للعالم<sup>6</sup> ... هكذا يُقال لكم كيف تحيون دائما حياة أفضل: ماذا تأكلون وماذا تشربون وأيّ ثياب ترتدون؟ وكيف تسكنون منازلكم وتؤثّونها ؟ ها قد تمّت برمجتکم.",
+                "PhiH.textAnalysis.lefebvre.text.source": "هنري لوفيفر. الحياة اليومية في العالم الحديث. ترجمة لجنة التأليف<br>Henri Lefebvre, La vie quotidienne dans le monde moderne. Edt. Gallimard 1968, p200-204",
+                "PhiH.textAnalysis.lefebvre.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.lefebvre.author.alt": "هنري لوفيفر",
+                "PhiH.textAnalysis.lefebvre.author.content": "هنري لوفيفر (1905-1991) فيلسوف وعالم اجتماع فرنسي، ماركسي النزعة ارتبطت تحاليله بجملة من المواضيع والقضايا المعيشة المتّصلة بالمدينة والفضاء واليومي وبنية المجتمع البيروقراطي المتقدّم، كما ساهم في تطوير نقد جذري للحداثة، فضلا عن اهتمامه بالعلاقة بين اللغة والمجتمع. من مؤلّفاته: شذرات من فلسفة الوعي (1924-1926)، الوعي الزائف (1946)، نقد الحياة اليومية (1947)، مدخل إلى الحداثة (1962)، الحياة اليومية في العالم الحديث (1967)، نهاية التاريخ (1970)، الفكر الماركسي والمدينة (1972)، الحضور والغياب (1980)، ما هو التفكير؟ (1985).",
+                "PhiH.textAnalysis.lefebvre.lexical.title": "المفاهيم والمصطلحات",
+                "PhiH.textAnalysis.lefebvre.lexical.item1": "<strong>الدَوال:</strong> مفردها دالٌ وهو مصطلح استعمله دي سوسير مؤسّس علم الألسنية للتعبير عن الوجه الصوتي للعلامة اللسانية، أما المدلول فهو الوجه التصوَري للعلامة. والعلامة اللسانية هي الوحدة اللغوية الدنيا للجملة ويعرّفها دي سوسير بأنَها ((المجموع الناتج عن الجمع بين الدال والمدلول)). والإحالة في السياق هي على مختلف الرموز التي يستثمرها الخطاب الإشهاري بهدف تحقيق استهلاك رمزي ومادي في آن.",
+                "PhiH.textAnalysis.lefebvre.lexical.item2": "<strong>الأساطير:</strong> الأسطورة هي أول شكل للوعي البشري وهي بمثابة قصَة عجائبية تعبّر عن طموحات البشر ومخاوفهم من خلال أحداث خارقة للطبيعة أبطالها آلهة أو أنصاف آلهة. وهي فضلا عن ذلك رؤية للعالم تضطلع بوظيفة تفسيرية لنشأة الكون ولبعض الظواهر الطبيعية ولعادات الشعوب وتقاليدها. والإشهار، في سياق النص، يستثمر هذا البعد العجائبي وما يقترن به من مخاوف وطموحات في الدعاية.",
+                "PhiH.textAnalysis.lefebvre.lexical.item3": "<strong>الإيديولوجيا:</strong> إشارة إلى أنّ الإشهار لم يعُد مجرّد تقنية تسويق بقدر ما هو حامل لرؤية للعالم ومعبّر عن مصالح معيّنة.",
+                "PhiH.textAnalysis.lefebvre.lexical.item4": "<strong>الإستطيقا:</strong> مبحث يتعلّق بالإحساس الجمالي والتذوّق الفنّي. وسياقيّا هو أقرب للدلالة على رؤية جمالية للعالم.",
+                "PhiH.textAnalysis.lefebvre.lexical.item5": "<strong>التشريط:</strong> يفهم في هذا السياق كآلية تكييف تقوم على التكرار قصد خلق ردود فعل قابلة للتحكّم والتوجيه. ولقد اقترنت هذه الآلية بعلم النفس الحيواني وبأعمال \"بافلوف\" حول المنعكسات الشرطية.",
+                "PhiH.textAnalysis.lefebvre.lexical.item6": "<strong>رؤية للعالم:</strong> الرؤية تمثّل موحَّد ومنسجم للعالم يهدف إلى إضفاء معنى على وجود الإنسان فيه. من ذلك الرؤية الدينية، الرؤية الفنية، الرؤية العلمية ...",
+                "PhiH.textAnalysis.lefebvre.questions.title": "أسئلة الفهم والتحليل",
+                "PhiH.textAnalysis.lefebvre.questions.q1": "استحضر ومضات إشهارية شاهدتها تقدّر أنّها استثمرت الموروث الثقافي.",
+                "PhiH.textAnalysis.lefebvre.questions.q2": "ما هي المظاهر المعبّرة عن مفعول الإشهار في الحياة اليومية للإنسان المعاصر ؟",
+                "PhiH.textAnalysis.lefebvre.questions.q3": "هل بالإمكان أن نصغي إلى المقتضى الاقتصادي للإشهار دون أن نفرّط في المقتضى القيمي للمعيش ؟",
+                "PhiH.textAnalysis.lefebvre.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.lefebvre.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.lefebvre.answers.a1.content": "من الأمثلة على الإشهارات التي تستثمر الموروث الثقافي:<br>- <strong>الإشهارات التي تستخدم الرموز الدينية:</strong> مثل استخدام رموز دينية في إشهارات المنتجات لخلق شعور بالألفة والثقة.<br>- <strong>الإشهارات التي تستغل التراث الشعبي:</strong> مثل استخدام الأغاني والأمثال الشعبية في الحملات الإعلانية.<br>- <strong>الإشهارات التي تعتمد على الأساطير:</strong> مثل استخدام شخصيات أسطورية أو قصص شعبية في الإعلانات.<br>- <strong>الإشهارات التي تستثمر العادات والتقاليد:</strong> مثل التركيز على قيم العائلة والتضامن في الإعلانات الموجهة للمجتمعات التقليدية.<br>- <strong>الإشهارات التي تستخدم الرموز الوطنية:</strong> مثل الأعلام والألوان الوطنية في الحملات التسويقية.",
+                "PhiH.textAnalysis.lefebvre.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.lefebvre.answers.a2.content": "من المظاهر المعبرة عن مفعول الإشهار في الحياة اليومية:<br>- <strong>توجيه أنماط الاستهلاك:</strong> حيث يحدد الإشهار ما يجب شراؤه واستهلاكه.<br>- <strong>تشكيل الهوية الشخصية:</strong> حيث يصبح الاستهلاك وسيلة للتعبير عن الذات والانتماء.<br>- <strong>خلق احتياجات وهمية:</strong> حيث يخلق الإشهار احتياجات غير حقيقية لدفع المستهلكين للشراء.<br>- <strong>تأثير على القيم والمعتقدات:</strong> حيث يروج الإشهار لقيم الاستهلاك والمادية.<br>- <strong>تأثير على العلاقات الاجتماعية:</strong> حيث يصبح الاستهلاك معياراً للنجاح الاجتماعي.<br>- <strong>برمجة الحياة اليومية:</strong> كما يشير لوفيفر، حيث يحدد الإشهار كيفية العيش وتأثيث المنازل وغيرها.",
+                "PhiH.textAnalysis.lefebvre.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.lefebvre.answers.a3.content": "نعم، يمكن الموازنة بين المقتضى الاقتصادي للإشهار والمقتضى القيمي من خلال:<br>- <strong>الإشهار الأخلاقي:</strong> الذي يحترم القيم الإنسانية ولا يستغل الاحتياجات الإنسانية الأساسية.<br>- <strong>الشفافية:</strong> تقديم معلومات صادقة وواضحة عن المنتجات والخدمات.<br>- <strong>احترام الذكاء الجماعي:</strong> عدم التعامل مع المستهلكين ككائنات سلبية قابلة للتشريط.<br>- <strong>تعزيز القيم الإيجابية:</strong> استخدام الإشهار لنشر قيم المسؤولية الاجتماعية والاستدامة.<br>- <strong>الوعي النقدي:</strong> تطوير قدرة الأفراد على تحليل الرسائل الإشهارية وفك شفراتها.<br>- <strong>التنظيم القانوني:</strong> وضع قوانين تحمي المستهلك من الممارسات الإشهارية غير الأخلاقية.",
+                "PhiH.textAnalysis.lefebvre.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.lefebvre.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.lefebvre.analysis.thesis.content": "يطرح هنري لوفيفر فكرة أن الإشهار لم يعد مجرد أداة تسويقية، بل تحول إلى قوة إيديولوجية تهدف إلى برمجة الحياة اليومية للأفراد. فالإشهار يستحوذ على الأساطير والرموز الثقافية ويحولها إلى أدوات للترويج للاستهلاك، مما يجعل منه أداة فعالة في تشكيل وعي الأفراد وتوجيه سلوكهم.",
+                "PhiH.textAnalysis.lefebvre.analysis.mechanisms.title": "آليات عمل الإشهار:",
+                "PhiH.textAnalysis.lefebvre.analysis.mechanisms.content": "تعمل آليات الإشهار من خلال:<br>- <strong>استحواذ على الأساطير:</strong> حيث يستعيد الإشهار الأساطير القديمة ويحولها إلى رموز ترويجية.<br>- <strong>توجيه الدلالات:</strong> حيث يصرف الدوال نحو أهداف استهلاكية محددة.<br>- <strong>إيديولوجيا البضاعة:</strong> حيث يحل منطق السوق مكان الفلسفة والأخلاق والدين.<br>- <strong>التشريط:</strong> حيث يستخدم التكرار لخلق ردود فعل قابلة للتوجيه.<br>- <strong>إخفاء الرؤية للعالم:</strong> حيث تخفي الصيغ الإشهارية المتطورة رؤية معينة للعالم.<br>- <strong>برمجة الحياة اليومية:</strong> حيث يحدد الإشهار كيفية العيش وتأثيث المنازل وغيرها.",
+                "PhiH.textAnalysis.lefebvre.analysis.consequences.title": "نتائج سيطرة الإشهار:",
+                "PhiH.textAnalysis.lefebvre.analysis.consequences.content": "تؤدي سيطرة الإشهار إلى:<br>- <strong>استلاب الوعي:</strong> حيث يصبح الأفراد مجرد مستهلكين سلبيين.<br>- <strong>تفريغ الثقافة من مضمونها:</strong> حيث تتحول الرموز الثقافية إلى أدوات تسويقية.<br>- <strong>هيمنة إيديولوجيا الاستهلاك:</strong> حيث يصبح الاستهلاك هو المعيار الأساسي للقيمة.<br>- <strong>فقدان الاستقلالية:</strong> حيث تفقد الذات قدرتها على اتخاذ القرارات المستقلة.<br>- <strong>تآكل القيم التقليدية:</strong> حيث تحل قيم السوق مكان القيم الأخلاقية والروحية.",
+                "PhiH.textAnalysis.lefebvre.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.lefebvre.analysis.significance.content": "يمثل نقد لوفيفر للإشهار مدخلاً لفهم إشكالية العصر الحديث. فهو يبرز الصراع بين الذات والآلة الاستهلاكية، وبين الحرية والتشريط. كما يوضح ضرورة النقد الجذري للحداثة والوعي بآليات الهيمنة في المجتمعات المعاصرة. ويدفع نحو تأسيس وعي نقدي قادر على مقاومة برمجة الحياة اليومية واستعادة الاستقلالية الإنسانية."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

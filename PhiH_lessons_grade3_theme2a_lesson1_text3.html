@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: في ضرورة التمييز بين المشكل الحقيقي والمشكل الرَّائف - ميشال ميار - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#059669">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Green + Emerald Color Palette */
+        :root {
+            --primary-color: #059669;
+            --primary-light: #10b981;
+            --primary-dark: #047857;
+            --secondary-color: #0d9488;
+            --secondary-light: #14b8a6;
+            --secondary-dark: #0f766e;
+            --accent-color: #0d9488;
+            --accent-light: #14b8a6;
+            --accent-dark: #0f766e;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #ecfdf5;
+            --card-bg: #ffffff;
+            --definition-bg: #d1fae5;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #a7f3d0;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.1), 0 2px 4px -1px rgba(5, 150, 105, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(5, 150, 105, 0.1), 0 4px 6px -2px rgba(5, 150, 105, 0.05);
+            --gradient-primary: linear-gradient(135deg, #059669 0%, #0d9488 100%);
+            --gradient-secondary: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+            --gradient-accent: linear-gradient(135deg, #0d9488 0%, #059669 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #10b981;
+            --primary-light: #34d399;
+            --primary-dark: #059669;
+            --secondary-color: #14b8a6;
+            --secondary-light: #5eead4;
+            --secondary-dark: #0d9488;
+            --accent-color: #14b8a6;
+            --accent-light: #5eead4;
+            --accent-dark: #0d9488;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #064e3b;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #047857;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+            --gradient-secondary: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            --gradient-accent: linear-gradient(135deg, #14b8a6 0%, #10b981 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(5, 150, 105, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(13, 148, 136, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(13, 148, 136, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(5, 150, 105, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.meyer.title">تحليل النص: في ضرورة التمييز بين المشكل الحقيقي والمشكل الرَّائف - ميشال ميار</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.meyer.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.meyer.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.meyer.introduction.content">
+                    إن الاعتقاد بأن الحقيقة والخطأ صفتان تتعلّقان فقط بالحلول أو بالأجوبة هو من الأحكام المسبقة الأكثر شيوعا. ولكن وقائع عديدة في تاريخ الفكر الديني والفلسفي والعلمي تكشف للإنسان أن خطأ بعض الحلول إنما يعود إلى أنّ المشاكل نفسها قد أسيئ طرحها أو هي مشاكل مغلوطة. وهو ما يستدعي النظر في ما إذا لم يكن من الضروري مراجعة صياغتنا للمشاكل ذاتها وضبط المعايير قصد التعرّف إلى أشباه المشاكل والتحرّر منها.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.meyer.text.title">في ضرورة التمييز بين المشكل الحقيقي والمشكل الرَّائف</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.meyer.text.content">
+                        إن كنّا نطرح سؤالا، فذلك لحلّه. فمعنى السؤال إنما يكمن في قابليّته للحل. إن السؤال الذي لا معنى (1) له هو سؤال غير قابل للحلّ. وإذا ما كان السؤال بلا معنى، فذلك يعني أنه سؤال عبثيّ. إنه يوهمنا بأنه سؤال، وهو في الواقع مشكل زائف. تكمن العبثيّة في أننا نطرحه وذلك لأنه لا يمكّن من الحصول على ما نُقدِّر أنه يسمح بالحصول عليه. وإنه لمن العبث أن نريد الحصول على جواب مستحيل، أي أن نطرح سؤالا محكوما عليه منذ البدء بأن يبقى دون إجابة. إنه من جهة ما هو سؤال فاقد لكل دلالة. ويظلّ بالإمكان طبعا أن نطرح دائما ذلك السؤال (2) ونعتقد أنه بالإمكان الإجابة عنه، وإلا ما كنّا لنطرحه، لكن لو حصل ذلك لكان نتيجة جهل أو توهّم: إنّ طرح سؤال لا معنی له لا یکفي لإکسابه دلالة هو فاقد لها، كما لو كان مجرّد طرحه کافیا لإ كسابه دلالة.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.meyer.text.source">ميشال ميار، في علم المشاكل، ترجمة لجنة التأليف، Michel Meyer «De la problématologie», Livre de poche, p.50</em></p>
+                    <p><small data-i18n="PhiH.textAnalysis.meyer.text.note">(*) لا يُقدِّم الكاتب في هذا النص أطروحته الخاصة بشأن المشكل الفلسفي بل يقتصر على عرض الأطروحة الوضعية المنطقية في هذا الشأن ممهّدا بذلك لنقدها (أنظر الفصل الأول من مؤلفه "علم المشاكل")</small></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.meyer.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/michel_meyer.jpg" alt="ميشال ميار" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.meyer.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.meyer.author.content">
+                            ميشال ميار (1950): فيلسوف بلجيكي معاصر، ورئيس "المركز الأوروبي لدراسة الحجاج". عُرف بمشروعه الفلسفي المتمثل في "علم المشاكل" (Problematologie) الذي يسعى من خلاله إلى مجاوزة أزمة الخطاب الفلسفي المعاصر وذلك بإعادة الاعتبار إلى المساءلة بما هي مبدأ الفلسفة الجذري بامتياز، وهو مبدأ وقع كبته والتعتيم عليه، خلال تاريخ الفلسفة، بفعل هيمنة نموذج للعقل هو نَمُوذَجُ القضايا القابلة للتبرير (Modele propositionnel de la raison) أي التي تحيل على قدرة العقل على تقديم أجوبة حاسمة وملزمة. وإذا كانت مهمّة الفلسفة الأصيلة هي الاستمرار في المساءلة والأشكلة فإن "علم المشاكل" يستوجب تمييز الأسئلة الوجيهة التي يتوجّب طرحها، عن الأسئلة الزائفة، والتعرّف إلى الأجوبة الأصيلة لتمييزها عن الإقرارات الخالية من المعنى.
+                        </p>
+                        <p data-i18n="PhiH.textAnalysis.meyer.author.works">
+                            من أهم مؤلفاته: "المنطق واللغة والحجاج" (1982)، "الفيلسوف والأهواء" (1991)، "من أجل نقد للأنطولوجيا" (1991)، "في علم المشاكل" (1994)، "المساءلة والتاريخية" (2000)، "الخطابة" (2004)، "ما هو الحجاج؟" (2005).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.meyer.lexical.title">المفاهيم والمصطلحات</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.meyer.lexical.item1"><strong>معنى:</strong> في هذا تنبيه إلى شرط من شروط بناء المشكل الحقيقي وهو أن يكون قابلا للحلّ، وهذا الشرط يُحيل على ما تعتبره الوضعية المنطقية (فيتغنشتاين) معيار القضية المقبولة منطقيا، وهو إحالتها على مرجع واقعي يمكن بالرجوع إليه الحسم في ما إذا كانت القضيّة صائبة أم خاطئة.</li>
+                    <li data-i18n="PhiH.textAnalysis.meyer.lexical.item2"><strong>السؤال:</strong> أن يظلّ مشكل ما يُطرح ويُعاد طرحه باستمرار فذلك لا يمثّل ضمانة كافية لوجاهة طرحه ولا للحكم بأنّه مشكل أصيل، فقد لا تعود استمرارية طرحه إلاّ إلى الطّابع العنيد لبعض الأوهام الإيديولوجية التي يقترن بها طرح بعض المشاكل في علاقة بالمناخ الثقافي والتاريخي الذي يشكّل أرضية طرحها.</li>
+                    <li data-i18n="PhiH.textAnalysis.meyer.lexical.item3"><strong>المشكل الزائف:</strong> هو سؤال أو إشكال يبدو في الظاهر وكأنه مشكل حقيقي قابل للحل، لكنه في الواقع سؤال عبثي لا معنى له لأنه لا يمكن الإجابة عنه أو لأنه يطرح بطريقة خاطئة تجعل الحل مستحيلاً.</li>
+                    <li data-i18n="PhiH.textAnalysis.meyer.lexical.item4"><strong>الوضعية المنطقية:</strong> تيار فلسفي يعتبر أن القضايا الفلسفية التقليدية هي قضايا زائفة لأنها لا تخضع للتحقق التجريبي، وبالتالي فهي لا معنى لها من الناحية المعرفية.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.meyer.questions.title">أسئلة الفهم والتحليل</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.meyer.questions.q1">أحدّد المعيار الذي يميّز به الكاتب المشاكل الحقيقيّة عن المشاكل الزائفة.</li>
+                    <li data-i18n="PhiH.textAnalysis.meyer.questions.q2">أستحضر في ضوء المعيار الذي عرضه الكاتب في النص أمثلة عن مشاكل زائفة في تاريخ الفكر الأسطوري والديني والفلسفي والع科学ي.</li>
+                    <li data-i18n="PhiH.textAnalysis.meyer.questions.q3">أحدّد ما يتعيّن عليّ اتخاذه من موقف عندما يُطرح عليّ سؤال ما، مرتّبا الإمكانيات التالية ومعلّلا ذلك:<br>• أجتهد في الإجابة عن السؤال<br>• أنظر في بنية السؤال<br>• أبحث عن المفترضات الضمنية للسؤال<br>• أتثّت من قابلية السؤال للحلّ</li>
+                    <li data-i18n="PhiH.textAnalysis.meyer.questions.q4">أنظر في ما إذا كانت بعض المشاكل التي لم تُحسم (مثل مشكل الحرية) هي مشاكل بلا معنى.</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.meyer.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.meyer.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.meyer.answers.a1.content">
+                        يميّز الكاتب بين المشاكل الحقيقية والمشاكل الزائفة بناءً على معيار "القابلية للحل". فالمشكل الحقيقي هو الذي يكون قابلاً للحل، أي أنه يمكن الوصول إلى إجابة عليه. أما المشكل الزائف فهو سؤال لا معنى له، لا يمكن حله أصلاً لأنه يفتقر إلى الدلالة أو لأنه يُطرح بطريقة تجعل الإجابة عليه مستحيلة. المشكل الزائف يبدو كسؤال حقيقي لكنه في الواقع عبثي، لأنه لا يمكن من الحصول على ما نتوهم أنه يسمح بالحصول عليه.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.meyer.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.meyer.answers.a2.content">
+                        من أمثلة المشاكل الزائفة في تاريخ الفكر:
+                        <br><strong>في الفكر الأسطوري:</strong> سؤال "من خلق الله؟" - هذا سؤال زائف لأنه يفترض أن الخالق نفسه يحتاج إلى خالق، وهو افتراض يتناقض مع مفهوم الإله الخالق غير المخلوق.
+                        <br><strong>في الفكر الديني:</strong> "كم عدد الملائكة الذين يمكن أن يقفوا على رأس دبوس؟" - سؤال شكلي لا معنى له لا يؤدي إلى أي معرفة حقيقية.
+                        <br><strong>في الفكر الفلسفي:</strong> بعض الأسئلة الميتافيزيقية التي تطرحها المثالية المطلقة حول "ماهية الوجود في ذاته" دون إمكانية التحقق منها.
+                        <br><strong>في الفكر العلمي:</strong> محاولات بناء "آلة الحركة الدائمة" التي تنتهك قوانين الديناميكا الحرارية - مشكلة زائفة لأن حلها مستحيل فيزيائياً.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.meyer.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.meyer.answers.a3.content">
+                        الترتيب المنطقي للموقف عندما يُطرح عليّ سؤال ما هو:
+                        <br>1. <strong>أتثّت من قابلية السؤال للحلّ:</strong> أولاً يجب التأكد من أن السؤال قابل للحل، أي أنه ليس سؤالاً زائفاً أو عبثياً.
+                        <br>2. <strong>أنظر في بنية السؤال:</strong> أفحص صياغة السؤال وهل هي واضحة ومحددة أم غامضة وعامة.
+                        <br>3. <strong>أبحث عن المفترضات الضمنية للسؤال:</strong> أكتشف الافتراضات الخفية التي يستند إليها السؤال والتي قد تجعله زائفاً.
+                        <br>4. <strong>أجتهد في الإجابة عن السؤال:</strong> فقط بعد التحقق من أن السؤال حقيقي وقابل للحل، أبدأ في البحث عن الإجابة.
+                        <br>هذا الترتيب ضروري لأنه يمنع تضييع الوقت والجهد في محاولة حل مشاكل زائفة.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.meyer.answers.a4.title">الإجابة عن السؤال الرابع:</h5>
+                    <p data-i18n="PhiH.textAnalysis.meyer.answers.a4.content">
+                        لا يمكن القول إن جميع المشاكل التي لم تُحسم هي بالضرورة مشاكل بلا معنى. فمشكلة الحرية مثلاً، رغم أنها لم تُحسم بشكل نهائي في تاريخ الفلسفة، إلا أنها ليست مشكلة زائفة. فمشكلة الحرية:
+                        <br>1. لها معنى واضح: تتعلق بطبيعة الإرادة الإنسانية وعلاقتها بالضرورة.
+                        <br>2. قابلة للحل نظرياً: يمكن طرح إجابات وحلول لها، حتى لو كانت هذه الحلول متناقضة.
+                        <br>3. لها آثار عملية: تتعلق بمسؤولية الإنسان وأخلاقه.
+                        <br>ما يميّز المشاكل الفلسفية الأصيلة مثل الحرية هو أنها مشاكل "مفتوحة" قابلة لإعادة النظر باستمرار، وليست "مغلقة" بحل نهائي. استمرار طرحها عبر التاريخ لا يعود إلى أنها زائفة، بل إلى تعقّدها وارتباطها بالوجود الإنساني نفسه. الفرق بينها وبين المشاكل الزائفة هو أن الأخيرة لا يمكن حتى تصور إجابة ممكنة لها.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.meyer.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.meyer.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.meyer.analysis.thesis.content">
+                        يقدم ميشال ميار في هذا النص معياراً أساسياً للتمييز بين المشاكل الحقيقية والمشاكل الزائفة، وهو معيار "القابلية للحل". فالمشكل الحقيقي هو الذي يكون قابلاً للحل وذا معنى، بينما المشكل الزائف هو سؤال عبثي لا معنى له، لا يمكن الإجابة عنه لأنه يُطرح بطريقة تجعل الحل مستحيلاً. النص يدعو إلى ضرورة فحص الأسئلة والمشاكل قبل محاولة حلها، للتأكد من أنها ليست أسئلة زائفة تضيّع الوقت والجهد.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.meyer.analysis.mechanisms.title">آليات التمييز بين المشكل الحقيقي والزائف:</h5>
+                    <p data-i18n="PhiH.textAnalysis.meyer.analysis.mechanisms.content">
+                        يعرض النص عدة آليات للتمييز بين المشاكل الحقيقية والزائفة:
+                        <br>1. <strong>فحص القابلية للحل:</strong> السؤال الحقيقي يجب أن يكون قابلاً للحل، أي أن يمكن تصور إجابة ممكنة له.
+                        <br>2. <strong>الكشف عن العبثية:</strong> المشكل الزائف يكون عبثياً لأنه لا يمكن من الحصول على ما نعتقد أنه يسمح بالحصول عليه.
+                        <br>3. <strong>تحليل المعنى:</strong> السؤال الذي لا معنى له هو سؤال زائف، والمعنى هنا مرتبط بإمكانية التحقق والمرجعية الواقعية.
+                        <br>4. <strong>التمييز بين الاستمرارية والوجاهة:</strong> مجرد أن سؤالاً ما يُطرح باستمرار لا يعني أنه سؤال وجيه، فقد يكون استمرار طرحه ناتجاً عن أوهام إيديولوجية أو ثقافية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.meyer.analysis.consequences.title">نتائج هذا التمييز:</h5>
+                    <p data-i18n="PhiH.textAnalysis.meyer.analysis.consequences.content">
+                        للتمييز بين المشاكل الحقيقية والزائفة عدة نتائج مهمة:
+                        <br>1. <strong>توفير الجهد والوقت:</strong> يمنع تضييع الموارد الفكرية في محاولة حل مشاكل زائفة.
+                        <br>2. <strong>تطوير منهجية التفكير:</strong> يشجع على تطوير عادة فحص الأسئلة قبل الإجابة عنها.
+                        <br>3. <strong>نقد التراث الفكري:</strong> يمكن من إعادة تقييم المشاكل التقليدية في تاريخ الفلسفة والعلوم.
+                        <br>4. <strong>توجيه البحث العلمي:</strong> يساعد في توجيه البحث نحو المشاكل الحقيقية التي يمكن أن تؤدي إلى تقدم معرفي.
+                        <br>5. <strong>التحرر من الأوهام:</strong> يمكن من التحرر من الأوهام الإيديولوجية والثقافية التي تنتج أسئلة زائفة.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.meyer.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.meyer.analysis.significance.content">
+                        يحمل تحليل ميشال ميار لدور "علم المشاكل" دلالات عميقة تتجاوز التمييز البسيط بين الأسئلة:
+                        <br>1. <strong>نقد الفلسفة التقليدية:</strong> يشكل النص جزءاً من مشروع ميار الأوسع لنقد النموذج الفلسفي القائم على تقديم الأجوبة الجاهزة، وإعادة الاعتبار للمساءلة كجوهر الفلسفة.
+                        <br>2. <strong>الحوار مع الوضعية المنطقية:</strong> النص يتبنى مؤقتاً موقف الوضعية المنطقية (كما يذكر في الحاشية) الذي يرى أن العديد من المشاكل الفلسفية التقليدية هي مشاكل زائفة، لكن ميار يهدف إلى تجاوز هذا الموقف نحو تأسيس "علم للمشاكل".
+                        <br>3. <strong>أهمية صياغة المشاكل:</strong> يشير النص ضمناً إلى أن خطأ الحلول قد يعود إلى خطأ في صياغة المشاكل نفسها، مما يبرز أهمية "فن طرح السؤال" في الفلسفة والعلوم.
+                        <br>4. <strong>البعد التحرري:</strong> التمييز بين المشاكل الحقيقية والزائفة له بعد تحرري، لأنه يمكن من التحرر من الأسئلة العبثية التي تشغل الفكر دون طائل.
+                        <br>5. <strong>تأسيس فلسفة جديدة:</strong> يمهد هذا التمييز الطريق لمشروع ميار في تأسيس "علم المشاكل" كبديل للنموذج الفلسفي التقليدي، فلسفة تعيد الاعتبار للمساءلة والتساؤل كفعل تأسيسي للفكر.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.meyer.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.meyer.title": "Analyse du texte: De la nécessité de distinguer le problème réel du problème fallacieux - Michel Meyer",
+                "PhiH.textAnalysis.meyer.introduction.title": "Introduction",
+                "PhiH.textAnalysis.meyer.introduction.content": "Croire que la vérité et l'erreur sont des qualités qui ne concernent que les solutions ou les réponses est l'un des préjugés les plus répandus. Mais de nombreux faits dans l'histoire de la pensée religieuse, philosophique et scientifique révèlent à l'homme que l'erreur de certaines solutions est due au fait que les problèmes eux-mêmes ont été mal posés ou sont des problèmes fallacieux. Ce qui nécessite d'examiner s'il n'est pas nécessaire de revoir notre formulation des problèmes eux-mêmes et de définir des critères pour identifier les pseudo-problèmes et s'en libérer.",
+                "PhiH.textAnalysis.meyer.text.title": "De la nécessité de distinguer le problème réel du problème fallacieux",
+                "PhiH.textAnalysis.meyer.text.content": "Si nous posons une question, c'est pour la résoudre. Le sens de la question réside dans sa solubilité. La question qui n'a pas de sens (1) est une question insoluble. Si la question n'a pas de sens, cela signifie que c'est une question absurde. Elle nous fait croire que c'est une question, alors qu'en réalité c'est un problème fallacieux. L'absurdité réside dans le fait que nous la posons alors qu'elle ne permet pas d'obtenir ce que nous estimons qu'elle permet d'obtenir. Et il est absurde de vouloir obtenir une réponse impossible, c'est-à-dire de poser une question condamnée dès le départ à rester sans réponse. C'est d'une certaine manière une question dépourvue de toute signification. Il reste bien sûr possible de toujours poser cette question (2) et de croire qu'il est possible d'y répondre, sinon nous ne la poserions pas, mais si cela se produit, ce serait le résultat d'une ignorance ou d'une illusion: poser une question qui n'a pas de sens ne suffit pas à lui donner une signification qu'elle n'a pas, comme si le simple fait de la poser suffisait à lui donner une signification.",
+                "PhiH.textAnalysis.meyer.text.source": "Michel Meyer, De la problématologie, traduction du comité de rédaction, Michel Meyer «De la problématologie», Livre de poche, p.50",
+                "PhiH.textAnalysis.meyer.text.note": "(*) L'auteur ne présente pas dans ce texte sa propre thèse concernant le problème philosophique, mais se limite à exposer la thèse positiviste logique à ce sujet, préparant ainsi sa critique (voir le premier chapitre de son ouvrage \"De la problématologie\")",
+                "PhiH.textAnalysis.meyer.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.meyer.author.alt": "Michel Meyer",
+                "PhiH.textAnalysis.meyer.author.content": "Michel Meyer (1950): philosophe belge contemporain, président du \"Centre européen d'étude de l'argumentation\". Il est connu pour son projet philosophique de \"problématologie\" qu'il cherche à travers pour dépasser la crise du discours philosophique contemporain en redonnant sa place au questionnement comme principe radical par excellence de la philosophie, principe qui a été réprimé et obscurci, au cours de l'histoire de la philosophie, par la domination d'un modèle de raison qui est le modèle des propositions justifiables (Modele propositionnel de la raison) c'est-à-dire qui renvoie à la capacité de la raison à fournir des réponses décisives et contraignantes. Si la tâche de la philosophie authentique est de continuer à interroger et à problématiser, la \"problématologie\" nécessite de distinguer les questions pertinentes qui doivent être posées, des questions fallacieuses, et de reconnaître les réponses authentiques pour les distinguer des énoncés dépourvus de sens.",
+                "PhiH.textAnalysis.meyer.author.works": "Parmi ses œuvres les plus importantes: \"Logique, langage et argumentation\" (1982), \"Le philosophe et les passions\" (1991), \"Pour une critique de l'ontologie\" (1991), \"De la problématologie\" (1994), \"Questionnement et historicité\" (2000), \"Rhétorique\" (2004), \"Qu'est-ce que l'argumentation?\" (2005).",
+                "PhiH.textAnalysis.meyer.lexical.title": "Concepts et terminologie",
+                "PhiH.textAnalysis.meyer.lexical.item1": "<strong>Sens:</strong> Ici, une mise en garde sur une condition pour construire un problème réel: qu'il soit soluble, et cette condition renvoie à ce que le positivisme logique (Wittgenstein) considère comme critère d'une proposition acceptable logiquement, à savoir son renvoi à une référence réelle qui permet, en s'y référant, de décider si la proposition est correcte ou erronée.",
+                "PhiH.textAnalysis.meyer.lexical.item2": "<strong>Question:</strong> Qu'un problème continue à être posé et repris constamment ne représente pas une garantie suffisante de la pertinence de sa formulation ni pour juger qu'il s'agit d'un problème authentique, car la continuité de sa formulation peut être due au caractère tenace de certaines illusions idéologiques qui accompagnent la formulation de certains problèmes en relation avec le climat culturel et historique qui constitue le fondement de leur formulation.",
+                "PhiH.textAnalysis.meyer.lexical.item3": "<strong>Problème fallacieux:</strong> C'est une question ou un problème qui semble en surface être un problème réel soluble, mais qui en réalité est une question absurde sans signification parce qu'on ne peut y répondre ou parce qu'elle est posée d'une manière erronée qui rend la solution impossible.",
+                "PhiH.textAnalysis.meyer.lexical.item4": "<strong>Positivisme logique:</strong> Courant philosophique qui considère que les propositions philosophiques traditionnelles sont des propositions fallacieuses car elles ne sont pas soumises à la vérification empirique, et donc n'ont pas de sens d'un point de vue cognitif.",
+                "PhiH.textAnalysis.meyer.questions.title": "Questions de compréhension et d'analyse",
+                "PhiH.textAnalysis.meyer.questions.q1": "Je détermine le critère par lequel l'auteur distingue les problèmes réels des problèmes fallacieux.",
+                "PhiH.textAnalysis.meyer.questions.q2": "Je rappelle, à la lumière du critère présenté par l'auteur dans le texte, des exemples de problèmes fallacieux dans l'histoire de la pensée mythique, religieuse, philosophique et scientifique.",
+                "PhiH.textAnalysis.meyer.questions.q3": "Je détermine quelle attitude je dois adopter lorsqu'on me pose une question, en classant les possibilités suivantes et en justifiant:<br>• Je m'efforce de répondre à la question<br>• J'examine la structure de la question<br>• Je recherche les présupposés implicites de la question<br>• Je vérifie la solubilité de la question",
+                "PhiH.textAnalysis.meyer.questions.q4": "J'examine si certains problèmes non résolus (comme le problème de la liberté) sont des problèmes sans signification.",
+                "PhiH.textAnalysis.meyer.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.meyer.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.meyer.answers.a1.content": "L'auteur distingue les problèmes réels des problèmes fallacieux sur la base du critère de \"solubilité\". Le problème réel est celui qui est soluble, c'est-à-dire qu'on peut trouver une réponse. Le problème fallacieux est une question sans signification, insoluble parce qu'elle manque de sens ou est posée d'une manière qui rend la réponse impossible. Le problème fallacieux semble être une vraie question mais est en réalité absurde, car il ne permet pas d'obtenir ce que nous imaginons qu'il permet d'obtenir.",
+                "PhiH.textAnalysis.meyer.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.meyer.answers.a2.content": "Exemples de problèmes fallacieux dans l'histoire de la pensée:<br><strong>Dans la pensée mythique:</strong> La question \"Qui a créé Dieu?\" - cette question est fallacieuse car elle suppose que le créateur lui-même a besoin d'un créateur, supposition qui contredit le concept de Dieu créateur non créé.<br><strong>Dans la pensée religieuse:</strong> \"Combien d'anges peuvent tenir sur la pointe d'une aiguille?\" - question formelle sans signification qui ne conduit à aucune connaissance réelle.<br><strong>Dans la pensée philosophique:</strong> Certaines questions métaphysiques posées par l'idéalisme absolu sur \"l'essence de l'être en soi\" sans possibilité de vérification.<br><strong>Dans la pensée scientifique:</strong> Les tentatives de construction d'une \"machine à mouvement perpétuel\" qui violent les lois de la thermodynamique - problème fallacieux car sa solution est physiquement impossible.",
+                "PhiH.textAnalysis.meyer.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.meyer.answers.a3.content": "L'ordre logique de l'attitude à adopter lorsqu'on me pose une question est:<br>1. <strong>Je vérifie la solubilité de la question:</strong> D'abord, il faut s'assurer que la question est soluble, c'est-à-dire qu'elle n'est pas une question fallacieuse ou absurde.<br>2. <strong>J'examine la structure de la question:</strong> J'examine la formulation de la question: est-elle claire et précise ou vague et générale?<br>3. <strong>Je recherche les présupposés implicites de la question:</strong> Je découvre les suppositions cachées sur lesquelles la question se base et qui pourraient la rendre fallacieuse.<br>4. <strong>Je m'efforce de répondre à la question:</strong> Seulement après avoir vérifié que la question est réelle et soluble, je commence à chercher la réponse.<br>Cet ordre est nécessaire car il empêche de perdre du temps et des efforts à essayer de résoudre des problèmes fallacieux.",
+                "PhiH.textAnalysis.meyer.answers.a4.title": "Réponse à la quatrième question:",
+                "PhiH.textAnalysis.meyer.answers.a4.content": "On ne peut pas dire que tous les problèmes non résolus sont nécessairement des problèmes sans signification. Le problème de la liberté, par exemple, bien qu'il n'ait pas été résolu de manière définitive dans l'histoire de la philosophie, n'est pas un problème fallacieux. Le problème de la liberté:<br>1. A un sens clair: il concerne la nature de la volonté humaine et sa relation à la nécessité.<br>2. Est théoriquement soluble: on peut proposer des réponses et des solutions, même si ces solutions sont contradictoires.<br>3. A des implications pratiques: il concerne la responsabilité et l'éthique de l'homme.<br>Ce qui distingue les problèmes philosophiques authentiques comme la liberté, c'est qu'ils sont des problèmes \"ouverts\" susceptibles d'être constamment réexaminés, et non \"fermés\" par une solution définitive. Le fait qu'ils continuent à être posés à travers l'histoire ne vient pas du fait qu'ils sont fallacieux, mais de leur complexité et de leur lien avec l'existence humaine elle-même. La différence avec les problèmes fallacieux est que ces derniers ne permettent même pas de concevoir une réponse possible.",
+                "PhiH.textAnalysis.meyer.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.meyer.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.meyer.analysis.thesis.content": "Michel Meyer présente dans ce texte un critère fondamental pour distinguer les problèmes réels des problèmes fallacieux, le critère de \"solubilité\". Le problème réel est celui qui est soluble et significatif, tandis que le problème fallacieux est une question absurde sans signification, à laquelle on ne peut répondre car elle est posée d'une manière qui rend la solution impossible. Le texte appelle à la nécessité d'examiner les questions et les problèmes avant d'essayer de les résoudre, pour s'assurer qu'il ne s'agit pas de questions fallacieuses qui gaspillent temps et efforts.",
+                "PhiH.textAnalysis.meyer.analysis.mechanisms.title": "Mécanismes de distinction entre problème réel et fallacieux:",
+                "PhiH.textAnalysis.meyer.analysis.mechanisms.content": "Le texte présente plusieurs mécanismes pour distinguer les problèmes réels des fallacieux:<br>1. <strong>Examen de la solubilité:</strong> La question réelle doit être soluble, c'est-à-dire qu'on peut concevoir une réponse possible.<br>2. <strong>Révélation de l'absurdité:</strong> Le problème fallacieux est absurde car il ne permet pas d'obtenir ce que nous croyons qu'il permet d'obtenir.<br>3. <strong>Analyse du sens:</strong> La question qui n'a pas de sens est une question fallacieuse, le sens étant lié à la possibilité de vérification et à la référence réelle.<br>4. <strong>Distinction entre continuité et pertinence:</strong> Le simple fait qu'une question soit posée continuellement ne signifie pas qu'elle est pertinente, sa continuité peut provenir d'illusions idéologiques ou culturelles.",
+                "PhiH.textAnalysis.meyer.analysis.consequences.title": "Conséquences de cette distinction:",
+                "PhiH.textAnalysis.meyer.analysis.consequences.content": "La distinction entre problèmes réels et fallacieux a plusieurs conséquences importantes:<br>1. <strong>Économie d'effort et de temps:</strong> Empêche de gaspiller des ressources intellectuelles en essayant de résoudre des problèmes fallacieux.<br>2. <strong>Développement d'une méthodologie de pensée:</strong> Encourage à développer l'habitude d'examiner les questions avant d'y répondre.<br>3. <strong>Critique de l'héritage intellectuel:</strong> Permet de réévaluer les problèmes traditionnels dans l'histoire de la philosophie et des sciences.<br>4. <strong>Orientation de la recherche scientifique:</strong> Aide à orienter la recherche vers les problèmes réels qui peuvent conduire à un progrès cognitif.<br>5. <strong>Libération des illusions:</strong> Permet de se libérer des illusions idéologiques et culturelles qui produisent des questions fallacieuses.",
+                "PhiH.textAnalysis.meyer.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.meyer.analysis.significance.content": "L'analyse de Michel Meyer sur le rôle de la \"problématologie\" porte des significations profondes qui vont au-delà de la simple distinction entre questions:<br>1. <strong>Critique de la philosophie traditionnelle:</strong> Le texte fait partie du projet plus large de Meyer de critiquer le modèle philosophique basé sur la fourniture de réponses toutes faites, et de redonner sa place au questionnement comme essence de la philosophie.<br>2. <strong>Dialogue avec le positivisme logique:</strong> Le texte adopte temporairement la position du positivisme logique (comme indiqué en note) qui considère que de nombreux problèmes philosophiques traditionnels sont fallacieux, mais Meyer vise à dépasser cette position vers l'établissement d'une \"science des problèmes\".<br>3. <strong>Importance de la formulation des problèmes:</strong> Le texte suggère implicitement que l'erreur des solutions peut provenir d'une erreur dans la formulation des problèmes eux-mêmes, ce qui souligne l'importance de \"l'art de poser la question\" en philosophie et en sciences.<br>4. <strong>Dimension libératrice:</strong> La distinction entre problèmes réels et fallacieux a une dimension libératrice, car elle permet de se libérer des questions absurdes qui occupent la pensée en vain.<br>5. <strong>Fondation d'une nouvelle philosophie:</strong> Cette distinction prépare le chemin pour le projet de Meyer de fonder une \"science des problèmes\" comme alternative au modèle philosophique traditionnel, une philosophie qui redonne sa place au questionnement et à l'interrogation comme acte fondateur de la pensée."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.meyer.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.meyer.title": "Text Analysis: On the Need to Distinguish Real Problems from Fallacious Problems - Michel Meyer",
+                "PhiH.textAnalysis.meyer.introduction.title": "Introduction",
+                "PhiH.textAnalysis.meyer.introduction.content": "Believing that truth and error are qualities that concern only solutions or answers is one of the most common prejudices. But many facts in the history of religious, philosophical and scientific thought reveal to man that the error of some solutions is due to the fact that the problems themselves have been poorly formulated or are fallacious problems. This requires examining whether it is not necessary to review our formulation of the problems themselves and establish criteria to identify pseudo-problems and free ourselves from them.",
+                "PhiH.textAnalysis.meyer.text.title": "On the Need to Distinguish Real Problems from Fallacious Problems",
+                "PhiH.textAnalysis.meyer.text.content": "If we ask a question, it is to solve it. The meaning of the question lies in its solvability. The question that has no meaning (1) is an insoluble question. If the question has no meaning, that means it is an absurd question. It makes us believe that it is a question, when in reality it is a fallacious problem. The absurdity lies in the fact that we ask it because it does not allow us to obtain what we estimate it allows us to obtain. And it is absurd to want to obtain an impossible answer, that is, to ask a question condemned from the beginning to remain unanswered. In a way, it is a question devoid of any meaning. It is of course always possible to ask that question (2) and believe that it is possible to answer it, otherwise we would not ask it, but if that happens, it would be the result of ignorance or illusion: asking a question that has no meaning is not enough to give it a meaning it lacks, as if the mere fact of asking it was enough to give it meaning.",
+                "PhiH.textAnalysis.meyer.text.source": "Michel Meyer, De la problématologie, translation by the editorial committee, Michel Meyer «De la problématologie», Livre de poche, p.50",
+                "PhiH.textAnalysis.meyer.text.note": "(*) The author does not present in this text his own thesis concerning the philosophical problem, but limits himself to presenting the logical positivist thesis on this matter, thus preparing its criticism (see the first chapter of his work \"De la problématologie\")",
+                "PhiH.textAnalysis.meyer.author.title": "Author Presentation",
+                "PhiH.textAnalysis.meyer.author.alt": "Michel Meyer",
+                "PhiH.textAnalysis.meyer.author.content": "Michel Meyer (1950): Contemporary Belgian philosopher, president of the \"European Center for the Study of Argumentation\". He is known for his philosophical project of \"problematology\" through which he seeks to overcome the crisis of contemporary philosophical discourse by restoring the importance of questioning as the radical principle par excellence of philosophy, a principle that has been repressed and obscured, throughout the history of philosophy, by the domination of a model of reason which is the model of justifiable propositions (Propositional model of reason) that is, which refers to the ability of reason to provide decisive and binding answers. If the task of authentic philosophy is to continue questioning and problematizing, \"problematology\" requires distinguishing the relevant questions that must be asked from fallacious questions, and recognizing authentic answers to distinguish them from meaningless statements.",
+                "PhiH.textAnalysis.meyer.author.works": "Among his most important works: \"Logic, Language and Argumentation\" (1982), \"The Philosopher and the Passions\" (1991), \"For a Critique of Ontology\" (1991), \"De la problématologie\" (1994), \"Questioning and Historicity\" (2000), \"Rhetoric\" (2004), \"What is Argumentation?\" (2005).",
+                "PhiH.textAnalysis.meyer.lexical.title": "Concepts and Terminology",
+                "PhiH.textAnalysis.meyer.lexical.item1": "<strong>Meaning:</strong> Here, a warning about a condition for constructing a real problem: that it be soluble, and this condition refers to what logical positivism (Wittgenstein) considers as the criterion for a logically acceptable proposition, namely its reference to a real referent that allows, by referring to it, to decide whether the proposition is correct or erroneous.",
+                "PhiH.textAnalysis.meyer.lexical.item2": "<strong>Question:</strong> That a problem continues to be posed and reformulated constantly does not represent a sufficient guarantee of the relevance of its formulation nor for judging that it is an authentic problem, because the continuity of its formulation may be due to the tenacious character of some ideological illusions that accompany the formulation of certain problems in relation to the cultural and historical climate that constitutes the basis of their formulation.",
+                "PhiH.textAnalysis.meyer.lexical.item3": "<strong>Fallacious problem:</strong> It is a question or problem that appears on the surface to be a real soluble problem, but which in reality is an absurd question without meaning because it cannot be answered or because it is posed in an erroneous way that makes the solution impossible.",
+                "PhiH.textAnalysis.meyer.lexical.item4": "<strong>Logical positivism:</strong> Philosophical current that considers that traditional philosophical propositions are fallacious propositions because they are not subject to empirical verification, and therefore have no meaning from a cognitive point of view.",
+                "PhiH.textAnalysis.meyer.questions.title": "Comprehension and Analysis Questions",
+                "PhiH.textAnalysis.meyer.questions.q1": "I determine the criterion by which the author distinguishes real problems from fallacious problems.",
+                "PhiH.textAnalysis.meyer.questions.q2": "I recall, in light of the criterion presented by the author in the text, examples of fallacious problems in the history of mythical, religious, philosophical and scientific thought.",
+                "PhiH.textAnalysis.meyer.questions.q3": "I determine what attitude I should adopt when a question is asked to me, by ranking the following possibilities and justifying:<br>• I strive to answer the question<br>• I examine the structure of the question<br>• I search for the implicit presuppositions of the question<br>• I verify the solvability of the question",
+                "PhiH.textAnalysis.meyer.questions.q4": "I examine whether some unresolved problems (such as the problem of freedom) are meaningless problems.",
+                "PhiH.textAnalysis.meyer.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.meyer.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.meyer.answers.a1.content": "The author distinguishes real problems from fallacious problems based on the criterion of \"solvability\". The real problem is one that is soluble, that is, an answer can be found. The fallacious problem is a meaningless question, insoluble because it lacks meaning or is posed in a way that makes the answer impossible. The fallacious problem appears to be a real question but is in fact absurd, because it does not allow obtaining what we imagine it allows obtaining.",
+                "PhiH.textAnalysis.meyer.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.meyer.answers.a2.content": "Examples of fallacious problems in the history of thought:<br><strong>In mythical thought:</strong> The question \"Who created God?\" - this question is fallacious because it assumes that the creator himself needs a creator, an assumption that contradicts the concept of an uncreated creator God.<br><strong>In religious thought:</strong> \"How many angels can stand on the head of a pin?\" - a formal question without meaning that leads to no real knowledge.<br><strong>In philosophical thought:</strong> Some metaphysical questions posed by absolute idealism about \"the essence of being in itself\" without possibility of verification.<br><strong>In scientific thought:</strong> Attempts to build a \"perpetual motion machine\" that violate the laws of thermodynamics - a fallacious problem because its solution is physically impossible.",
+                "PhiH.textAnalysis.meyer.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.meyer.answers.a3.content": "The logical order of attitude to adopt when a question is asked to me is:<br>1. <strong>I verify the solvability of the question:</strong> First, make sure that the question is soluble, that is, it is not a fallacious or absurd question.<br>2. <strong>I examine the structure of the question:</strong> I examine the formulation of the question: is it clear and precise or vague and general?<br>3. <strong>I search for the implicit presuppositions of the question:</strong> I discover the hidden assumptions on which the question is based and which could make it fallacious.<br>4. <strong>I strive to answer the question:</strong> Only after verifying that the question is real and soluble, I begin to look for the answer.<br>This order is necessary because it prevents wasting time and effort trying to solve fallacious problems.",
+                "PhiH.textAnalysis.meyer.answers.a4.title": "Answer to the fourth question:",
+                "PhiH.textAnalysis.meyer.answers.a4.content": "It cannot be said that all unresolved problems are necessarily meaningless problems. The problem of freedom, for example, although it has not been definitively resolved in the history of philosophy, is not a fallacious problem. The problem of freedom:<br>1. Has a clear meaning: it concerns the nature of human will and its relationship to necessity.<br>2. Is theoretically soluble: answers and solutions can be proposed, even if these solutions are contradictory.<br>3. Has practical implications: it concerns human responsibility and ethics.<br>What distinguishes authentic philosophical problems like freedom is that they are \"open\" problems susceptible to constant reexamination, and not \"closed\" by a definitive solution. The fact that they continue to be posed throughout history does not come from them being fallacious, but from their complexity and their connection with human existence itself. The difference with fallacious problems is that the latter do not even allow conceiving a possible answer.",
+                "PhiH.textAnalysis.meyer.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.meyer.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.meyer.analysis.thesis.content": "Michel Meyer presents in this text a fundamental criterion for distinguishing real problems from fallacious problems, the criterion of \"solvability\". The real problem is one that is soluble and meaningful, while the fallacious problem is an absurd question without meaning, which cannot be answered because it is posed in a way that makes the solution impossible. The text calls for the necessity of examining questions and problems before trying to solve them, to ensure that they are not fallacious questions that waste time and effort.",
+                "PhiH.textAnalysis.meyer.analysis.mechanisms.title": "Mechanisms for distinguishing between real and fallacious problems:",
+                "PhiH.textAnalysis.meyer.analysis.mechanisms.content": "The text presents several mechanisms to distinguish real problems from fallacious ones:<br>1. <strong>Examination of solvability:</strong> The real question must be soluble, that is, a possible answer can be conceived.<br>2. <strong>Revelation of absurdity:</strong> The fallacious problem is absurd because it does not allow obtaining what we believe it allows obtaining.<br>3. <strong>Analysis of meaning:</strong> The question that has no meaning is a fallacious question, meaning being linked to the possibility of verification and real reference.<br>4. <strong>Distinction between continuity and relevance:</strong> The mere fact that a question is continually posed does not mean it is relevant, its continuity may come from ideological or cultural illusions.",
+                "PhiH.textAnalysis.meyer.analysis.consequences.title": "Consequences of this distinction:",
+                "PhiH.textAnalysis.meyer.analysis.consequences.content": "The distinction between real and fallacious problems has several important consequences:<br>1. <strong>Saving effort and time:</strong> Prevents wasting intellectual resources trying to solve fallacious problems.<br>2. <strong>Development of a thinking methodology:</strong> Encourages developing the habit of examining questions before answering them.<br>3. <strong>Critique of intellectual heritage:</strong> Allows reevaluating traditional problems in the history of philosophy and sciences.<br>4. <strong>Orientation of scientific research:</strong> Helps direct research towards real problems that can lead to cognitive progress.<br>5. <strong>Liberation from illusions:</strong> Allows freeing oneself from ideological and cultural illusions that produce fallacious questions.",
+                "PhiH.textAnalysis.meyer.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.meyer.analysis.significance.content": "Michel Meyer's analysis of the role of \"problematology\" carries deep meanings that go beyond the simple distinction between questions:<br>1. <strong>Critique of traditional philosophy:</strong> The text is part of Meyer's broader project to criticize the philosophical model based on providing ready-made answers, and to restore the importance of questioning as the essence of philosophy.<br>2. <strong>Dialogue with logical positivism:</strong> The text temporarily adopts the position of logical positivism (as noted) which considers that many traditional philosophical problems are fallacious, but Meyer aims to surpass this position towards establishing a \"science of problems\".<br>3. <strong>Importance of problem formulation:</strong> The text implicitly suggests that the error of solutions may come from an error in the formulation of the problems themselves, which highlights the importance of \"the art of asking the question\" in philosophy and sciences.<br>4. <strong>Liberating dimension:</strong> The distinction between real and fallacious problems has a liberating dimension, because it allows freeing oneself from absurd questions that occupy thought in vain.<br>5. <strong>Foundation of a new philosophy:</strong> This distinction prepares the way for Meyer's project to found a \"science of problems\" as an alternative to the traditional philosophical model, a philosophy that restores the importance of questioning and interrogation as a foundational act of thought."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.meyer.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.meyer.title": "تحليل النص: في ضرورة التمييز بين المشكل الحقيقي والمشكل الرَّائف - ميشال ميار",
+                "PhiH.textAnalysis.meyer.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.meyer.introduction.content": "إن الاعتقاد بأن الحقيقة والخطأ صفتان تتعلّقان فقط بالحلول أو بالأجوبة هو من الأحكام المسبقة الأكثر شيوعا. ولكن وقائع عديدة في تاريخ الفكر الديني والفلسفي والعلمي تكشف للإنسان أن خطأ بعض الحلول إنما يعود إلى أنّ المشاكل نفسها قد أسيئ طرحها أو هي مشاكل مغلوطة. وهو ما يستدعي النظر في ما إذا لم يكن من الضروري مراجعة صياغتنا للمشاكل ذاتها وضبط المعايير قصد التعرّف إلى أشباه المشاكل والتحرّر منها.",
+                "PhiH.textAnalysis.meyer.text.title": "في ضرورة التمييز بين المشكل الحقيقي والمشكل الرَّائف",
+                "PhiH.textAnalysis.meyer.text.content": "إن كنّا نطرح سؤالا، فذلك لحلّه. فمعنى السؤال إنما يكمن في قابليّته للحل. إن السؤال الذي لا معنى (1) له هو سؤال غير قابل للحلّ. وإذا ما كان السؤال بلا معنى، فذلك يعني أنه سؤال عبثيّ. إنه يوهمنا بأنه سؤال، وهو في الواقع مشكل زائف. تكمن العبثيّة في أننا نطرحه وذلك لأنه لا يمكّن من الحصول على ما نُقدِّر أنه يسمح بالحصول عليه. وإنه لمن العبث أن نريد الحصول على جواب مستحيل، أي أن نطرح سؤالا محكوما عليه منذ البدء بأن يبقى دون إجابة. إنه من جهة ما هو سؤال فاقد لكل دلالة. ويظلّ بالإمكان طبعا أن نطرح دائما ذلك السؤال (2) ونعتقد أنه بالإمكان الإجابة عنه، وإلا ما كنّا لنطرحه، لكن لو حصل ذلك لكان نتيجة جهل أو توهّم: إنّ طرح سؤال لا معنی له لا یکفي لإکسابه دلالة هو فاقد لها، كما لو كان مجرّد طرحه کافیا لإ كسابه دلالة.",
+                "PhiH.textAnalysis.meyer.text.source": "ميشال ميار، في علم المشاكل، ترجمة لجنة التأليف، Michel Meyer «De la problématologie», Livre de poche, p.50",
+                "PhiH.textAnalysis.meyer.text.note": "(*) لا يُقدِّم الكاتب في هذا النص أطروحته الخاصة بشأن المشكل الفلسفي بل يقتصر على عرض الأطروحة الوضعية المنطقية في هذا الشأن ممهّدا بذلك لنقدها (أنظر الفصل الأول من مؤلفه \"علم المشاكل\")",
+                "PhiH.textAnalysis.meyer.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.meyer.author.alt": "ميشال ميار",
+                "PhiH.textAnalysis.meyer.author.content": "ميشال ميار (1950): فيلسوف بلجيكي معاصر، ورئيس \"المركز الأوروبي لدراسة الحجاج\". عُرف بمشروعه الفلسفي المتمثل في \"علم المشاكل\" (Problematologie) الذي يسعى من خلاله إلى مجاوزة أزمة الخطاب الفلسفي المعاصر وذلك بإعادة الاعتبار إلى المساءلة بما هي مبدأ الفلسفة الجذري بامتياز، وهو مبدأ وقع كبته والتعتيم عليه، خلال تاريخ الفلسفة، بفعل هيمنة نموذج للعقل هو نَمُوذَجُ القضايا القابلة للتبرير (Modele propositionnel de la raison) أي التي تحيل على قدرة العقل على تقديم أجوبة حاسمة وملزمة. وإذا كانت مهمّة الفلسفة الأصيلة هي الاستمرار في المساءلة والأشكلة فإن \"علم المشاكل\" يستوجب تمييز الأسئلة الوجيهة التي يتوجّب طرحها، عن الأسئلة الزائفة، والتعرّف إلى الأجوبة الأصيلة لتمييزها عن الإقرارات الخالية من المعنى.",
+                "PhiH.textAnalysis.meyer.author.works": "من أهم مؤلفاته: \"المنطق واللغة والحجاج\" (1982)، \"الفيلسوف والأهواء\" (1991)، \"من أجل نقد للأنطولوجيا\" (1991)، \"في علم المشاكل\" (1994)، \"المساءلة والتاريخية\" (2000)، \"الخطابة\" (2004)، \"ما هو الحجاج؟\" (2005).",
+                "PhiH.textAnalysis.meyer.lexical.title": "المفاهيم والمصطلحات",
+                "PhiH.textAnalysis.meyer.lexical.item1": "<strong>معنى:</strong> في هذا تنبيه إلى شرط من شروط بناء المشكل الحقيقي وهو أن يكون قابلا للحلّ، وهذا الشرط يُحيل على ما تعتبره الوضعية المنطقية (فيتغنشتاين) معيار القضية المقبولة منطقيا، وهو إحالتها على مرجع واقعي يمكن بالرجوع إليه الحسم في ما إذا كانت القضيّة صائبة أم خاطئة.",
+                "PhiH.textAnalysis.meyer.lexical.item2": "<strong>السؤال:</strong> أن يظلّ مشكل ما يُطرح ويُعاد طرحه باستمرار فذلك لا يمثّل ضمانة كافية لوجاهة طرحه ولا للحكم بأنّه مشكل أصيل، فقد لا تعود استمرارية طرحه إلاّ إلى الطّابع العنيد لبعض الأوهام الإيديولوجية التي يقترن بها طرح بعض المشاكل في علاقة بالمناخ الثقافي والتاريخي الذي يشكّل أرضية طرحها.",
+                "PhiH.textAnalysis.meyer.lexical.item3": "<strong>المشكل الزائف:</strong> هو سؤال أو إشكال يبدو في الظاهر وكأنه مشكل حقيقي قابل للحل، لكنه في الواقع سؤال عبثي لا معنى له لأنه لا يمكن الإجابة عنه أو لأنه يطرح بطريقة خاطئة تجعل الحل مستحيلاً.",
+                "PhiH.textAnalysis.meyer.lexical.item4": "<strong>الوضعية المنطقية:</strong> تيار فلسفي يعتبر أن القضايا الفلسفية التقليدية هي قضايا زائفة لأنها لا تخضع للتحقق التجريبي، وبالتالي فهي لا معنى لها من الناحية المعرفية.",
+                "PhiH.textAnalysis.meyer.questions.title": "أسئلة الفهم والتحليل",
+                "PhiH.textAnalysis.meyer.questions.q1": "أحدّد المعيار الذي يميّز به الكاتب المشاكل الحقيقيّة عن المشاكل الزائفة.",
+                "PhiH.textAnalysis.meyer.questions.q2": "أستحضر في ضوء المعيار الذي عرضه الكاتب في النص أمثلة عن مشاكل زائفة في تاريخ الفكر الأسطوري والديني والفلسفي والعلمي.",
+                "PhiH.textAnalysis.meyer.questions.q3": "أحدّد ما يتعيّن عليّ اتخاذه من موقف عندما يُطرح عليّ سؤال ما، مرتّبا الإمكانيات التالية ومعلّلا ذلك:<br>• أجتهد في الإجابة عن السؤال<br>• أنظر في بنية السؤال<br>• أبحث عن المفترضات الضمنية للسؤال<br>• أتثّت من قابلية السؤال للحلّ",
+                "PhiH.textAnalysis.meyer.questions.q4": "أنظر في ما إذا كانت بعض المشاكل التي لم تُحسم (مثل مشكل الحرية) هي مشاكل بلا معنى.",
+                "PhiH.textAnalysis.meyer.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.meyer.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.meyer.answers.a1.content": "يميّز الكاتب بين المشاكل الحقيقية والمشاكل الزائفة بناءً على معيار \"القابلية للحل\". فالمشكل الحقيقي هو الذي يكون قابلاً للحل، أي أنه يمكن الوصول إلى إجابة عليه. أما المشكل الزائف فهو سؤال لا معنى له، لا يمكن حله أصلاً لأنه يفتقر إلى الدلالة أو لأنه يُطرح بطريقة تجعل الإجابة عليه مستحيلة. المشكل الزائف يبدو كسؤال حقيقي لكنه في الواقع عبثي، لأنه لا يمكن من الحصول على ما نتوهم أنه يسمح بالحصول عليه.",
+                "PhiH.textAnalysis.meyer.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.meyer.answers.a2.content": "من أمثلة المشاكل الزائفة في تاريخ الفكر:<br><strong>في الفكر الأسطوري:</strong> سؤال \"من خلق الله؟\" - هذا سؤال زائف لأنه يفترض أن الخالق نفسه يحتاج إلى خالق، وهو افتراض يتناقض مع مفهوم الإله الخالق غير المخلوق.<br><strong>في الفكر الديني:</strong> \"كم عدد الملائكة الذين يمكن أن يقفوا على رأس دبوس؟\" - سؤال شكلي لا معنى له لا يؤدي إلى أي معرفة حقيقية.<br><strong>في الفكر الفلسفي:</strong> بعض الأسئلة الميتافيزيقية التي تطرحها المثالية المطلقة حول \"ماهية الوجود في ذاته\" دون إمكانية التحقق منها.<br><strong>في الفكر العلمي:</strong> محاولات بناء \"آلة الحركة الدائمة\" التي تنتهك قوانين الديناميكا الحرارية - مشكلة زائفة لأن حلها مستحيل فيزيائياً.",
+                "PhiH.textAnalysis.meyer.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.meyer.answers.a3.content": "الترتيب المنطقي للموقف عندما يُطرح عليّ سؤال ما هو:<br>1. <strong>أتثّت من قابلية السؤال للحلّ:</strong> أولاً يجب التأكد من أن السؤال قابل للحل، أي أنه ليس سؤالاً زائفاً أو عبثياً.<br>2. <strong>أنظر في بنية السؤال:</strong> أفحص صياغة السؤال وهل هي واضحة ومحددة أم غامضة وعامة.<br>3. <strong>أبحث عن المفترضات الضمنية للسؤال:</strong> أكتشف الافتراضات الخفية التي يستند إليها السؤال والتي قد تجعله زائفاً.<br>4. <strong>أجتهد في الإجابة عن السؤال:</strong> فقط بعد التحقق من أن السؤال حقيقي وقابل للحل، أبدأ في البحث عن الإجابة.<br>هذا الترتيب ضروري لأنه يمنع تضييع الوقت والجهد في محاولة حل مشاكل زائفة.",
+                "PhiH.textAnalysis.meyer.answers.a4.title": "الإجابة عن السؤال الرابع:",
+                "PhiH.textAnalysis.meyer.answers.a4.content": "لا يمكن القول إن جميع المشاكل التي لم تُحسم هي بالضرورة مشاكل بلا معنى. فمشكلة الحرية مثلاً، رغم أنها لم تُحسم بشكل نهائي في تاريخ الفلسفة، إلا أنها ليست مشكلة زائفة. فمشكلة الحرية:<br>1. لها معنى واضح: تتعلق بطبيعة الإرادة الإنسانية وعلاقتها بالضرورة.<br>2. قابلة للحل نظرياً: يمكن طرح إجابات وحلول لها، حتى لو كانت هذه الحلول متناقضة.<br>3. لها آثار عملية: تتعلق بمسؤولية الإنسان وأخلاقه.<br>ما يميّز المشاكل الفلسفية الأصيلة مثل الحرية هو أنها مشاكل \"مفتوحة\" قابلة لإعادة النظر باستمرار، وليست \"مغلقة\" بحل نهائي. استمرار طرحها عبر التاريخ لا يعود إلى أنها زائفة، بل إلى تعقّدها وارتباطها بالوجود الإنساني نفسه. الفرق بينها وبين المشاكل الزائفة هو أن الأخيرة لا يمكن حتى تصور إجابة ممكنة لها.",
+                "PhiH.textAnalysis.meyer.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.meyer.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.meyer.analysis.thesis.content": "يقدم ميشال ميار في هذا النص معياراً أساسياً للتمييز بين المشاكل الحقيقية والمشاكل الزائفة، وهو معيار \"القابلية للحل\". فالمشكل الحقيقي هو الذي يكون قابلاً للحل وذا معنى، بينما المشكل الزائف هو سؤال عبثي لا معنى له، لا يمكن الإجابة عنه لأنه يُطرح بطريقة تجعل الحل مستحيلاً. النص يدعو إلى ضرورة فحص الأسئلة والمشاكل قبل محاولة حلها، للتأكد من أنها ليست أسئلة زائفة تضيّع الوقت والجهد.",
+                "PhiH.textAnalysis.meyer.analysis.mechanisms.title": "آليات التمييز بين المشكل الحقيقي والزائف:",
+                "PhiH.textAnalysis.meyer.analysis.mechanisms.content": "يعرض النص عدة آليات للتمييز بين المشاكل الحقيقية والزائفة:<br>1. <strong>فحص القابلية للحل:</strong> السؤال الحقيقي يجب أن يكون قابلاً للحل، أي أن يمكن تصور إجابة ممكنة له.<br>2. <strong>الكشف عن العبثية:</strong> المشكل الزائف يكون عبثياً لأنه لا يمكن من الحصول على ما نعتقد أنه يسمح بالحصول عليه.<br>3. <strong>تحليل المعنى:</strong> السؤال الذي لا معنى له هو سؤال زائف، والمعنى هنا مرتبط بإمكانية التحقق والمرجعية الواقعية.<br>4. <strong>التمييز بين الاستمرارية والوجاهة:</strong> مجرد أن سؤالاً ما يُطرح باستمرار لا يعني أنه سؤال وجيه، فقد يكون استمرار طرحه ناتجاً عن أوهام إيديولوجية أو ثقافية.",
+                "PhiH.textAnalysis.meyer.analysis.consequences.title": "نتائج هذا التمييز:",
+                "PhiH.textAnalysis.meyer.analysis.consequences.content": "للتمييز بين المشاكل الحقيقية والزائفة عدة نتائج مهمة:<br>1. <strong>توفير الجهد والوقت:</strong> يمنع تضييع الموارد الفكرية في محاولة حل مشاكل زائفة.<br>2. <strong>تطوير منهجية التفكير:</strong> يشجع على تطوير عادة فحص الأسئلة قبل الإجابة عنها.<br>3. <strong>نقد التراث الفكري:</strong> يمكن من إعادة تقييم المشاكل التقليدية في تاريخ الفلسفة والعلوم.<br>4. <strong>توجيه البحث العلمي:</strong> يساعد في توجيه البحث نحو المشاكل الحقيقية التي يمكن أن تؤدي إلى تقدم معرفي.<br>5. <strong>التحرر من الأوهام:</strong> يمكن من التحرر من الأوهام الإيديولوجية والثقافية التي تنتج أسئلة زائفة.",
+                "PhiH.textAnalysis.meyer.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.meyer.analysis.significance.content": "يحمل تحليل ميشال ميار لدور \"علم المشاكل\" دلالات عميقة تتجاوز التمييز البسيط بين الأسئلة:<br>1. <strong>نقد الفلسفة التقليدية:</strong> يشكل النص جزءاً من مشروع ميار الأوسع لنقد النموذج الفلسفي القائم على تقديم الأجوبة الجاهزة، وإعادة الاعتبار للمساءلة كجوهر الفلسفة.<br>2. <strong>الحوار مع الوضعية المنطقية:</strong> النص يتبنى مؤقتاً موقف الوضعية المنطقية (كما يذكر في الحاشية) الذي يرى أن العديد من المشاكل الفلسفية التقليدية هي مشاكل زائفة، لكن ميار يهدف إلى تجاوز هذا الموقف نحو تأسيس \"علم للمشاكل\".<br>3. <strong>أهمية صياغة المشاكل:</strong> يشير النص ضمناً إلى أن خطأ الحلول قد يعود إلى خطأ في صياغة المشاكل نفسها، مما يبرز أهمية \"فن طرح السؤال\" في الفلسفة والعلوم.<br>4. <strong>البعد التحرري:</strong> التمييز بين المشاكل الحقيقية والزائفة له بعد تحرري، لأنه يمكن من التحرر من الأسئلة العبثية التي تشغل الفكر دون طائل.<br>5. <strong>تأسيس فلسفة جديدة:</strong> يمهد هذا التمييز الطريق لمشروع ميار في تأسيس \"علم المشاكل\" كبديل للنموذج الفلسفي التقليدي، فلسفة تعيد الاعتبار للمساءلة والتساؤل كفعل تأسيسي للفكر."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

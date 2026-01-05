@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الاستدلال والمغالطة - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#d2691e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Copper Orange Theme for Reasoning and Fallacy */
+        :root {
+            --primary-color: #d2691e;
+            --secondary-color: #b85c1a;
+            --accent-color: #ff8c00;
+            --light-color: #fff5e6;
+            --dark-color: #8b4513;
+            --text-color: #5a3a22;
+            --heading-color: #5a3a22;
+            --background-color: #fffaf0;
+            --card-bg: #ffffff;
+            --definition-bg: #fff5e6;
+            --border-color: #ffd1a7;
+            --table-even-bg: #fff5e6;
+            --table-hover-bg: #ffe8d1;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(210, 105, 30, 0.15);
+            --gradient-primary: linear-gradient(135deg, #d2691e 0%, #ff8c00 100%);
+            --gradient-secondary: linear-gradient(135deg, #b85c1a 0%, #8b4513 100%);
+            --gradient-copper: linear-gradient(135deg, #d2691e 0%, #8b4513 100%);
+            --gradient-orange: linear-gradient(135deg, #ff8c00 0%, #d2691e 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #ff9933;
+            --secondary-color: #e68a00;
+            --accent-color: #ffad5c;
+            --light-color: #3a2a1a;
+            --dark-color: #1a1208;
+            --text-color: #ffedd1;
+            --heading-color: #fffaf0;
+            --background-color: #2a1f14;
+            --card-bg: #3a2a1a;
+            --definition-bg: #3a2a1a;
+            --border-color: #ff9933;
+            --table-even-bg: #2a1f14;
+            --table-hover-bg: #3a2a1a;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #ff9933 0%, #ff8c00 100%);
+            --gradient-secondary: linear-gradient(135deg, #e68a00 0%, #b85c1a 100%);
+            --gradient-copper: linear-gradient(135deg, #ff9933 0%, #3a2a1a 100%);
+            --gradient-orange: linear-gradient(135deg, #e68a00 0%, #b85c1a 100%);
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Definition Cards Layout */
+        .PhiH-definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-definition-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(210, 105, 30, 0.2);
+        }
+        
+        .PhiH-definition-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-definition-card-content ul {
+            padding-left: 1.2rem;
+            margin: 0.8rem 0;
+        }
+        
+        .PhiH-definition-card-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        /* Expand/Collapse Functionality */
+        .PhiH-expandable-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .PhiH-expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .PhiH-expandable-header:hover {
+            background: var(--gradient-copper);
+        }
+        
+        .PhiH-expandable-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        .PhiH-expandable-content {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            border-top: none;
+        }
+        
+        .PhiH-expandable-content.hidden {
+            display: none;
+        }
+        
+        .PhiH-expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-expand-icon.expanded {
+            transform: rotate(180deg);
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Section Styling */
+        .PhiH-quotes-container {
+            margin-top: 1rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(210, 105, 30, 0.2);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        /* RTL support for definition cards */
+        body.rtl .PhiH-definition-card-content ul {
+            padding-left: 0;
+            padding-right: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .PhiH-definitions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-reasoning" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-lesson1-container">
+        <div class="PhiH-lesson1-header">
+            <h1 class="PhiH-lesson1-title" data-i18n="PhiH.lessons.reasoning.title">مدخل إلى الاستدلال والمغالطة</h1>
+            <div class="PhiH-lesson1-level" data-i18n="PhiH.lessons.reasoning.level">السنة الثالثة ثانوي - الفلسفة</div>
+        </div>
+        
+        <!-- Introduction Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="introHeader">
+                <h3 data-i18n="PhiH.lessons.reasoning.introduction.title">التمهيد</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="introContent">
+                <p data-i18n="PhiH.lessons.reasoning.introduction.text1">
+                    يبدو الكلام بين النّاس مجرّد تبادل لكلمات وصراعاً حول كلمات تظلّ بلا تأثير في واقع وجودهم، غير أنّ الفلاسفة كانوا أوّل من نبّه إلى مدى خطورة سلطة الكلام من حيث قدرته على نسج المغالطة ممّا يستوجب معايير لتحليل الكلام تحصّن الفكر من مخاطر المغالطة.
+                </p>
+                <p data-i18n="PhiH.lessons.reasoning.introduction.text2">
+                    لطالما كان التفكير الإنساني يحمل في طياته إمكانية الخطأ والزلل، ولكن ما يجعل هذا الأمر إشكالياً هو صعوبة التمييز بين الاستدلال الصحيح والاستدلال المزيف. فكما توجد عملات ذهبية حقيقية وأخرى مزيّفة، توجد أيضاً استدلالات سليمة وأخرى مغلوطة تظهر وكأنها صحيحة.
+                </p>
+                <p data-i18n="PhiH.lessons.reasoning.introduction.text3">
+                    وهذا ما يدفعنا إلى التساؤل: كيف نميّز بين الاستدلال الحقيقي والاستدلال الرّائف؟ وما هي المعايير التي يمكن أن تحمينا من الوقوع في المغالطات المنطقية؟ وأيّ دور للمنطق الفلسفي في تحصين الفكر البشري من الزلل والخطأ؟
+                </p>
+            </div>
+        </section>
+        
+        <!-- Texts Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="textsHeader">
+                <h3 data-i18n="PhiH.lessons.reasoning.texts.title">النصوص</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="textsContent">
+                <div class="PhiH-texts-container">
+                    <ul class="PhiH-texts-list">
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2a_lesson1_text1.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.reasoning.texts.text1">النص 1: بين الاستدلال الحقيقي والاستدلال الرائف - أرسطو</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2a_lesson1_text2.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.reasoning.texts.text2">النص 2: في إحصاء المواضع المغلطة - ابن سينا</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2a_lesson1_text3.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.reasoning.texts.text3">النص 3: في ضرورة التمييز بين المشكل الحقيقي والمشكل الرائف - ميشال ميار</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quotes Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="quotesHeader">
+                <h3 data-i18n="PhiH.lessons.reasoning.quotes.title">شواهد ونصوص ذات صلة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="quotesContent">
+                <div class="PhiH-quotes-container">
+                    <div class="PhiH-quotes-grid">
+                        <!-- Quote 1 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.reasoning.quotes.quote1">
+                                "المنطق هو أخلاق الفكر"
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.reasoning.quotes.author1">هنريش ريكرت</div>
+                        </div>
+                        
+                        <!-- Quote 2 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.reasoning.quotes.quote2">
+                                "لا يُمكن للاستدلال أن يكون صالحاً إذا لم يوجد من البداية معيار حقيقيّ، ولا يُمكن للمعيار أن يكون حقيقيّاً إذا لم يتمكّن الاستدلال من الفوز باقتناع الآخرين. وهكذا يسقط كلّ من الاستدلال والمعيار في الحلقة المفرغة."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.reasoning.quotes.author2">سكستوس أمبريكوس</div>
+                        </div>
+                        
+                        <!-- Quote 3 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.reasoning.quotes.quote3">
+                                "من لم تكن عنده معرفة بطبائع الألفاظ فهو جدير أن يغلِط إن هو تكلّم بشيء وإن هو أيضا سمعه."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.reasoning.quotes.author3">ابن رشد</div>
+                        </div>
+                        
+                        <!-- Quote 4 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.reasoning.quotes.quote4">
+                                "لا ينبغي لنا أن نتسرّع بدعوى حبّ المعرفة الكونيّة إلى طرح أسئلة على أنفسنا وعلى الآخرين يغلب عليها السجال والتردّد بشأن مواضيع لا نَقدِر على تكوين أيّة فكرة واضحة ومتميّزة عنها في أذهاننا."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.reasoning.quotes.author4">جون لوك</div>
+                        </div>
+                        
+                        <!-- Quote 5 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.reasoning.quotes.quote5">
+                                "ما من شيء إلاّ وهو موضوع نقاشات، وما من شيء إلا وتضاربت حوله آراء العارفين. وأبسط الأسئلة لا تُفلت من مجادلاتنا، ونحن عاجزون عن تقديم إجابة يقينية عن أكثر الأشياء أهميّة."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.reasoning.quotes.author5">دافيد هيوم</div>
+                        </div>
+                        
+                        <!-- Quote 6 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.reasoning.quotes.quote6">
+                                "إنّ المشاكل الحقيقيّة مُرّة المذاق في البداية، ولكنّ اللذّة إنّما يفوز بها من يقهر المرارة."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.reasoning.quotes.author6">آلان</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Conclusion -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="conclusionHeader">
+                <h3 data-i18n="PhiH.lessons.reasoning.conclusion.title">الخاتمة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="conclusionContent">
+                <p data-i18n="PhiH.lessons.reasoning.conclusion.text1">
+                    يُظهر التحليل الفلسفي للاستدلال والمغالطة أنّ الفكر البشري ليس معصوماً عن الخطأ، بل هو عرضة للزلل والانحراف. غير أن هذه القابلية للخطأ ليست نقصاً في الذات المفكرة، بل هي إمكانية كامنة في طبيعة التفكير الإنساني ذاته، مما يستوجب تطوير أدوات نقدية لفحص الاستدلالات وتمييز السليم منها عن المغلوط.
+                </p>
+                <p data-i18n="PhiH.lessons.reasoning.conclusion.text2">
+                    إنّ أهمية المنطق الفلسفي لا تكمن فقط في كشف المغالطات، بل في بناء معايير للتفكير السليم تحمي العقل من الوقوع في الأخطاء. فكما يحتاج الصائغ إلى موازين دقيقة لتمييز الذهب الحقيقي من المزيّف، يحتاج المفكر إلى أدوات منطقية لتمييز الاستدلال الصحيح من الرّائف.
+                </p>
+                <p data-i18n="PhiH.lessons.reasoning.conclusion.text3">
+                    وفي النهاية، تبقى الفلسفة جهداً عقلياً مستمراً لتنقية الفكر من الشوائب المنطقية، وتأسيس ثقافة الحجاج العقلاني الذي يحترم قواعد التفكير السليم، ويكون قادراً على التمييز بين المشكلات الحقيقية والمشكلات الرّائفة، وبين الاستدلالات الصحيحة والمغالطات الخادعة.
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Page-specific translations for reasoning lesson
+        window.translations_PhiHreasoning = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                
+                // Reasoning lesson specific translations
+                "PhiH.lessons.reasoning.title": "Introduction au Raisonnement et à la Fallace",
+                "PhiH.lessons.reasoning.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                
+                "PhiH.lessons.reasoning.introduction.title": "Introduction",
+                "PhiH.lessons.reasoning.introduction.text1": "Le discours entre les gens semble n'être qu'un échange de mots et une lutte autour de mots qui restent sans effet sur la réalité de leur existence, mais les philosophes ont été les premiers à alerter sur le danger du pouvoir du discours quant à sa capacité à tisser des fallaces, ce qui exige des critères pour analyser le discours qui protègent la pensée des dangers de la fallace.",
+                "PhiH.lessons.reasoning.introduction.text2": "La pensée humaine a toujours porté en elle la possibilité d'erreur et de faute, mais ce qui rend cette question problématique est la difficulté de distinguer le raisonnement correct du raisonnement faux. De même qu'il existe de vraies pièces d'or et d'autres contrefaites, il existe également des raisonnements valides et d'autres fallacieux qui apparaissent comme corrects.",
+                "PhiH.lessons.reasoning.introduction.text3": "Cela nous amène à nous interroger : comment distinguer le raisonnement véritable du raisonnement fallacieux ? Quels sont les critères qui peuvent nous protéger de tomber dans les sophismes logiques ? Et quel rôle pour la logique philosophique dans la protection de la pensée humaine contre l'erreur et la faute ?",
+                
+                "PhiH.lessons.reasoning.texts.title": "Textes",
+                "PhiH.lessons.reasoning.texts.text1": "Texte 1 : Entre le raisonnement véritable et le raisonnement fallacieux - Aristote",
+                "PhiH.lessons.reasoning.texts.text2": "Texte 2 : Dans le recensement des lieux fallacieux - Ibn Sina",
+                "PhiH.lessons.reasoning.texts.text3": "Texte 3 : Dans la nécessité de distinguer le problème véritable du problème fallacieux - Michel Meyer",
+                
+                // Quotes section translations
+                "PhiH.lessons.reasoning.quotes.title": "Citations et textes connexes",
+                "PhiH.lessons.reasoning.quotes.quote1": "\"La logique est l'éthique de la pensée\"",
+                "PhiH.lessons.reasoning.quotes.quote2": "\"Le raisonnement ne peut être valable s'il n'existe pas dès le début un critère véritable, et le critère ne peut être véritable si le raisonnement ne parvient pas à gagner la conviction des autres. Ainsi tombent à la fois le raisonnement et le critère dans le cercle vicieux.\"",
+                "PhiH.lessons.reasoning.quotes.quote3": "\"Celui qui n'a pas de connaissance des natures des mots est digne d'errer s'il parle de quelque chose et s'il l'écoute aussi.\"",
+                "PhiH.lessons.reasoning.quotes.quote4": "\"Nous ne devrions pas nous précipiter sous prétexte d'aimer la connaissance universelle pour poser des questions à nous-mêmes et aux autres dominées par la polémique et l'hésitation concernant des sujets sur lesquels nous ne pouvons former aucune idée claire et distincte dans nos esprits.\"",
+                "PhiH.lessons.reasoning.quotes.quote5": "\"Il n'y a rien qui ne soit sujet à discussions, et il n'y a rien sur quoi les opinions des connaisseurs n'aient divergé. Les questions les plus simples n'échappent pas à nos controverses, et nous sommes incapables de fournir une réponse certaine sur les choses les plus importantes.\"",
+                "PhiH.lessons.reasoning.quotes.quote6": "\"Les vrais problèmes sont amers au goût au début, mais le plaisir est gagné par celui qui surmonte l'amertume.\"",
+                "PhiH.lessons.reasoning.quotes.author1": "Heinrich Rickert",
+                "PhiH.lessons.reasoning.quotes.author2": "Sextus Empiricus",
+                "PhiH.lessons.reasoning.quotes.author3": "Averroès",
+                "PhiH.lessons.reasoning.quotes.author4": "John Locke",
+                "PhiH.lessons.reasoning.quotes.author5": "David Hume",
+                "PhiH.lessons.reasoning.quotes.author6": "Alain",
+                
+                "PhiH.lessons.reasoning.conclusion.title": "Conclusion",
+                "PhiH.lessons.reasoning.conclusion.text1": "L'analyse philosophique du raisonnement et de la fallace montre que la pensée humaine n'est pas infaillible, mais qu'elle est sujette à l'erreur et à la déviation. Cependant, cette possibilité d'erreur n'est pas une déficience de l'esprit pensant, mais une possibilité inhérente à la nature même de la pensée humaine, ce qui exige le développement d'outils critiques pour examiner les raisonnements et distinguer le valide du fallacieux.",
+                "PhiH.lessons.reasoning.conclusion.text2": "L'importance de la logique philosophique ne réside pas seulement dans la détection des sophismes, mais dans la construction de critères pour une pensée saine qui protège l'esprit de tomber dans des erreurs. De même que l'orfèvre a besoin de balances précises pour distinguer l'or véritable du contrefait, le penseur a besoin d'outils logiques pour distinguer le raisonnement correct du fallacieux.",
+                "PhiH.lessons.reasoning.conclusion.text3": "En fin de compte, la philosophie reste un effort intellectuel continu pour purifier la pensée des impuretés logiques, et fonder une culture de l'argumentation rationnelle qui respecte les règles de la pensée saine, et qui soit capable de distinguer entre les problèmes réels et les problèmes fallacieux, entre les raisonnements corrects et les sophismes trompeurs."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                
+                // Reasoning lesson specific translations
+                "PhiH.lessons.reasoning.title": "Introduction to Reasoning and Fallacy",
+                "PhiH.lessons.reasoning.level": "3rd Secondary - Philosophy",
+                
+                "PhiH.lessons.reasoning.introduction.title": "Introduction",
+                "PhiH.lessons.reasoning.introduction.text1": "Speech between people seems to be merely an exchange of words and a struggle over words that remain without effect on the reality of their existence, but philosophers were the first to warn of the danger of the power of speech in terms of its ability to weave fallacies, which requires criteria for analyzing speech that protect thought from the dangers of fallacy.",
+                "PhiH.lessons.reasoning.introduction.text2": "Human thought has always carried within it the possibility of error and mistake, but what makes this matter problematic is the difficulty of distinguishing correct reasoning from false reasoning. Just as there are real gold coins and counterfeit ones, there are also valid arguments and fallacious ones that appear to be correct.",
+                "PhiH.lessons.reasoning.introduction.text3": "This leads us to ask: How do we distinguish true reasoning from fallacious reasoning? What are the criteria that can protect us from falling into logical fallacies? And what role does philosophical logic play in protecting human thought from error and mistake?",
+                
+                "PhiH.lessons.reasoning.texts.title": "Texts",
+                "PhiH.lessons.reasoning.texts.text1": "Text 1: Between True Reasoning and Fallacious Reasoning - Aristotle",
+                "PhiH.lessons.reasoning.texts.text2": "Text 2: On the Enumeration of Fallacious Places - Ibn Sina",
+                "PhiH.lessons.reasoning.texts.text3": "Text 3: On the Necessity of Distinguishing Real Problems from Fallacious Problems - Michel Meyer",
+                
+                // Quotes section translations
+                "PhiH.lessons.reasoning.quotes.title": "Related Quotes and Texts",
+                "PhiH.lessons.reasoning.quotes.quote1": "\"Logic is the ethics of thought\"",
+                "PhiH.lessons.reasoning.quotes.quote2": "\"Reasoning cannot be valid if there is no true criterion from the beginning, and the criterion cannot be true if reasoning cannot win the conviction of others. Thus both reasoning and criterion fall into the vicious circle.\"",
+                "PhiH.lessons.reasoning.quotes.quote3": "\"He who has no knowledge of the natures of words is worthy of error if he speaks of something and if he also hears it.\"",
+                "PhiH.lessons.reasoning.quotes.quote4": "\"We should not rush under the pretext of loving universal knowledge to ask questions of ourselves and others dominated by polemics and hesitation about subjects on which we cannot form any clear and distinct idea in our minds.\"",
+                "PhiH.lessons.reasoning.quotes.quote5": "\"There is nothing that is not subject to discussions, and there is nothing on which the opinions of connoisseurs have not diverged. The simplest questions do not escape our controversies, and we are unable to provide a certain answer about the most important things.\"",
+                "PhiH.lessons.reasoning.quotes.quote6": "\"Real problems are bitter in taste at first, but pleasure is won by the one who overcomes bitterness.\"",
+                "PhiH.lessons.reasoning.quotes.author1": "Heinrich Rickert",
+                "PhiH.lessons.reasoning.quotes.author2": "Sextus Empiricus",
+                "PhiH.lessons.reasoning.quotes.author3": "Averroes",
+                "PhiH.lessons.reasoning.quotes.author4": "John Locke",
+                "PhiH.lessons.reasoning.quotes.author5": "David Hume",
+                "PhiH.lessons.reasoning.quotes.author6": "Alain",
+                
+                "PhiH.lessons.reasoning.conclusion.title": "Conclusion",
+                "PhiH.lessons.reasoning.conclusion.text1": "The philosophical analysis of reasoning and fallacy shows that human thought is not infallible, but is prone to error and deviation. However, this possibility of error is not a deficiency in the thinking self, but a possibility inherent in the very nature of human thought, which requires the development of critical tools to examine arguments and distinguish the sound from the fallacious.",
+                "PhiH.lessons.reasoning.conclusion.text2": "The importance of philosophical logic lies not only in detecting sophisms, but in building criteria for sound thinking that protect the mind from falling into errors. Just as the jeweler needs accurate scales to distinguish real gold from counterfeit, the thinker needs logical tools to distinguish correct reasoning from fallacious.",
+                "PhiH.lessons.reasoning.conclusion.text3": "Ultimately, philosophy remains a continuous intellectual effort to purify thought of logical impurities, and to establish a culture of rational argumentation that respects the rules of sound thinking, and is able to distinguish between real problems and fallacious problems, between correct reasoning and deceptive fallacies."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                
+                // Reasoning lesson specific translations
+                "PhiH.lessons.reasoning.title": "مدخل إلى الاستدلال والمغالطة",
+                "PhiH.lessons.reasoning.level": "السنة الثالثة ثانوي - الفلسفة",
+                
+                "PhiH.lessons.reasoning.introduction.title": "التمهيد",
+                "PhiH.lessons.reasoning.introduction.text1": "يبدو الكلام بين النّاس مجرّد تبادل لكلمات وصراعاً حول كلمات تظلّ بلا تأثير في واقع وجودهم، غير أنّ الفلاسفة كانوا أوّل من نبّه إلى مدى خطورة سلطة الكلام من حيث قدرته على نسج المغالطة ممّا يستوجب معايير لتحليل الكلام تحصّن الفكر من مخاطر المغالطة.",
+                "PhiH.lessons.reasoning.introduction.text2": "لطالما كان التفكير الإنساني يحمل في طياته إمكانية الخطأ والزلل، ولكن ما يجعل هذا الأمر إشكالياً هو صعوبة التمييز بين الاستدلال الصحيح والاستدلال المزيف. فكما توجد عملات ذهبية حقيقية وأخرى مزيّفة، توجد أيضاً استدلالات سليمة وأخرى مغلوطة تظهر وكأنها صحيحة.",
+                "PhiH.lessons.reasoning.introduction.text3": "وهذا ما يدفعنا إلى التساؤل: كيف نميّز بين الاستدلال الحقيقي والاستدلال الرّائف؟ وما هي المعايير التي يمكن أن تحمينا من الوقوع في المغالطات المنطقية؟ وأيّ دور للمنطق الفلسفي في تحصين الفكر البشري من الزلل والخطأ؟",
+                
+                "PhiH.lessons.reasoning.texts.title": "النصوص",
+                "PhiH.lessons.reasoning.texts.text1": "النص 1: بين الاستدلال الحقيقي والاستدلال الرائف - أرسطو",
+                "PhiH.lessons.reasoning.texts.text2": "النص 2: في إحصاء المواضع المغلطة - ابن سينا",
+                "PhiH.lessons.reasoning.texts.text3": "النص 3: في ضرورة التمييز بين المشكل الحقيقي والمشكل الرائف - ميشال ميار",
+                
+                // Quotes section translations
+                "PhiH.lessons.reasoning.quotes.title": "شواهد ونصوص ذات صلة",
+                "PhiH.lessons.reasoning.quotes.quote1": "المنطق هو أخلاق الفكر",
+                "PhiH.lessons.reasoning.quotes.quote2": "لا يُمكن للاستدلال أن يكون صالحاً إذا لم يوجد من البداية معيار حقيقيّ، ولا يُمكن للمعيار أن يكون حقيقيّاً إذا لم يتمكّن الاستدلال من الفوز باقتناع الآخرين. وهكذا يسقط كلّ من الاستدلال والمعيار في الحلقة المفرغة.",
+                "PhiH.lessons.reasoning.quotes.quote3": "من لم تكن عنده معرفة بطبائع الألفاظ فهو جدير أن يغلِط إن هو تكلّم بشيء وإن هو أيضا سمعه.",
+                "PhiH.lessons.reasoning.quotes.quote4": "لا ينبغي لنا أن نتسرّع بدعوى حبّ المعرفة الكونيّة إلى طرح أسئلة على أنفسنا وعلى الآخرين يغلب عليها السجال والتردّد بشأن مواضيع لا نَقدِر على تكوين أيّة فكرة واضحة ومتميّزة عنها في أذهاننا.",
+                "PhiH.lessons.reasoning.quotes.quote5": "ما من شيء إلاّ وهو موضوع نقاشات، وما من شيء إلا وتضاربت حوله آراء العارفين. وأبسط الأسئلة لا تُفلت من مجادلاتنا، ونحن عاجزون عن تقديم إجابة يقينية عن أكثر الأشياء أهميّة.",
+                "PhiH.lessons.reasoning.quotes.quote6": "إنّ المشاكل الحقيقيّة مُرّة المذاق في البداية، ولكنّ اللذّة إنّما يفوز بها من يقهر المرارة.",
+                "PhiH.lessons.reasoning.quotes.author1": "هنريش ريكرت",
+                "PhiH.lessons.reasoning.quotes.author2": "سكستوس أمبريكوس",
+                "PhiH.lessons.reasoning.quotes.author3": "ابن رشد",
+                "PhiH.lessons.reasoning.quotes.author4": "جون لوك",
+                "PhiH.lessons.reasoning.quotes.author5": "دافيد هيوم",
+                "PhiH.lessons.reasoning.quotes.author6": "آلان",
+                
+                "PhiH.lessons.reasoning.conclusion.title": "الخاتمة",
+                "PhiH.lessons.reasoning.conclusion.text1": "يُظهر التحليل الفلسفي للاستدلال والمغالطة أنّ الفكر البشري ليس معصوماً عن الخطأ، بل هو عرضة للزلل والانحراف. غير أن هذه القابلية للخطأ ليست نقصاً في الذات المفكرة، بل هي إمكانية كامنة في طبيعة التفكير الإنساني ذاته، مما يستوجب تطوير أدوات نقدية لفحص الاستدلالات وتمييز السليم منها عن المغلوط.",
+                "PhiH.lessons.reasoning.conclusion.text2": "إنّ أهمية المنطق الفلسفي لا تكمن فقط في كشف المغالطات، بل في بناء معايير للتفكير السليم تحمي العقل من الوقوع في الأخطاء. فكما يحتاج الصائغ إلى موازين دقيقة لتمييز الذهب الحقيقي من المزيّف، يحتاج المفكر إلى أدوات منطقية لتمييز الاستدلال الصحيح من الرّائف.",
+                "PhiH.lessons.reasoning.conclusion.text3": "وفي النهاية، تبقى الفلسفة جهداً عقلياً مستمراً لتنقية الفكر من الشوائب المنطقية، وتأسيس ثقافة الحجاج العقلاني الذي يحترم قواعد التفكير السليم، ويكون قادراً على التمييز بين المشكلات الحقيقية والمشكلات الرّائفة، وبين الاستدلالات الصحيحة والمغالطات الخادعة."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHreasoning;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+    
+    <script>
+        // Expand/Collapse functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all expandable headers
+            const expandableHeaders = document.querySelectorAll('.PhiH-expandable-header');
+            
+            // Add click event to each header
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.PhiH-expand-icon');
+                    
+                    // Toggle content visibility
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('expanded');
+                    } else {
+                        content.classList.add('hidden');
+                        icon.classList.remove('expanded');
+                    }
+                });
+            });
+            
+            // Initially hide all expandable content
+            document.querySelectorAll('.PhiH-expandable-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

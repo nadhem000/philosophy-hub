@@ -734,5 +734,250 @@ const PhiH_Authors = {
 			"birthYear": "1922",
 			"deathYear": "2002"
 		}
-	}
+	},
+    "aristotle": {
+        "ar": {
+            "name": "أرسطو",
+            "image": "assets/images/aristotle.jpg",
+            "alt": "أرسطو",
+            "content": "أرسطو (385 ق م - 322 ق م) فيلسوف يونانيّ انتسب إلى الأكاديمية ليتتلمذ على أفلاطون، وبعد وفاة أستاذه تفرّغ لتأسيس مدرسته الفلسفيّة الخاصة المسمّاة بـ \"الليسي\" Lycee. نقد الجدليّة الأفلاطونيّة واستبدلها بالمنطق الذي يبحث في مبادئ الفكر والشروط الصوريّة لصلاحيّة الاستدلال التي تعصمه من الخطأ والمغالطة. وجّه البحث في الوجود من منظور واقعيّ يؤصّله في تضايف بين الصورة والمادة، وجعل من عالم الكون والفساد موضوعا للعلم، كما جعل من التجربة منطلقا لاستقراء أسس الممارسة في إطار الأخلاق والسياسة، فكان فيلسوفا موسوعيّا بامتياز ومكّنه ذلك من أن يكون رمز العصر الوسيط حيث جعله توماس الإكويني مرجع الفكر السكولائيّ ولقبّه العرب \"بالمعلّم الأوّل\". من أهمّ مؤلفاته: \"الارغانون\"، \"الميتافيزيقا\"، \"السماع الطبيعيّ\"، \"في السماء\"، \"في النفس\"، \"أجزاء الحيوان\"، \"أخلاق إلى نيقوماخوس\"، \"السياسات\".",
+            "century": "4th BC",
+            "school": "المشّائيّة",
+            "themes": ["المنطق", "الميتافيزيقا", "الأخلاق", "السياسة", "الطبيعة"],
+            "birthYear": "385 BC",
+            "deathYear": "322 BC"
+		},
+        "fr": {
+            "name": "Aristote",
+            "image": "assets/images/aristotle.jpg",
+            "alt": "Aristote",
+            "content": "Aristote (385 av. J.-C. - 322 av. J.-C.) philosophe grec qui a rejoint l'Académie pour étudier sous Platon, et après la mort de son maître, il a fondé sa propre école philosophique appelée le Lycée. Il a critiqué la dialectique platonicienne et l'a remplacée par la logique qui examine les principes de la pensée et les conditions formelles de la validité du raisonnement, le protégeant ainsi de l'erreur et de la sophistique. Il a orienté la recherche sur l'être d'un point de vue réaliste, l'ancrant dans la corrélation entre la forme et la matière, et a fait du monde de la génération et de la corruption un objet de science, tout en faisant de l'expérience le point de départ de l'induction des fondements de la pratique dans le cadre de l'éthique et de la politique. C'était un philosophe encyclopédique par excellence, ce qui lui a permis d'être un symbole du Moyen Âge, où Thomas d'Aquin l'a établi comme référence de la pensée scolastique et les Arabes l'ont surnommé « le premier enseignant ». Parmi ses œuvres majeures : \"Organon\", \"Métaphysique\", \"Physique\", \"Du Ciel\", \"De l'Âme\", \"Les Parties des Animaux\", \"Éthique à Nicomaque\", \"Politique\".",
+            "century": "4th BC",
+            "school": "École péripatéticienne",
+            "themes": ["logique", "métaphysique", "éthique", "politique", "nature"],
+            "birthYear": "385 BC",
+            "deathYear": "322 BC"
+		},
+        "en": {
+            "name": "Aristotle",
+            "image": "assets/images/aristotle.jpg",
+            "alt": "Aristotle",
+            "content": "Aristotle (385 BC – 322 BC) was a Greek philosopher who joined the Academy to study under Plato, and after his teacher's death, he founded his own philosophical school called the Lyceum. He criticized Platonic dialectic and replaced it with logic, which examines the principles of thought and the formal conditions for the validity of reasoning, thus protecting it from error and sophistry. He directed the inquiry into being from a realistic perspective, grounding it in the correlation between form and matter, and made the world of generation and corruption an object of science, while making experience the starting point for inducing the foundations of practice within the framework of ethics and politics. He was an encyclopedic philosopher par excellence, which allowed him to become a symbol of the Middle Ages, where Thomas Aquinas established him as a reference for scholastic thought and the Arabs nicknamed him 'the First Teacher'. Among his major works: \"Organon\", \"Metaphysics\", \"Physics\", \"On the Heavens\", \"On the Soul\", \"Parts of Animals\", \"Nicomachean Ethics\", \"Politics\".",
+            "century": "4th BC",
+            "school": "Peripatetic school",
+            "themes": ["logic", "metaphysics", "ethics", "politics", "nature"],
+            "birthYear": "385 BC",
+            "deathYear": "322 BC"
+		}
+	},
+    "ibn_sina": {
+        "ar": {
+            "name": "ابن سينا",
+            "image": "assets/images/ibn_sina.jpg",
+            "alt": "ابن سينا",
+            "content": "هو أبو الحسن ابن سينا (980 م - 1037 م). فيلسوف وطبيب وعالم، من كبار فلاسفة المسلمين وأطبّائهم، يلقّب: ((بالشيخ الرئيس)). يُعّد مذهب ابن سينا أوسع نتاج موسوعيّ في الفكر الفلسفي الإسلامي وقد مزج فيه بين العقيدة الإسلامية والفكر الفارسيّ وفلسفة أرسطو وأجزاء من فلسفة أفلاطون وأفلوطين، لكن الاتجاه الغالب في مذهبه هو الفلسفة المشّائيّة، غير أن ذلك لم يمنعه من الاستقلال بفكره الخاص ويتجلّى ذلك في \"فلسفته المشرقية\". لقد قدّم ابن سينا من خلال مؤلّفه \"الشفاء\" أوفَى دائرة معارف فلسفية عرفتها القرون الوسطى، وكان تأثيره في العالم الإسلامي واللاتيني - الأوروبي في العصر الوسيط هائلا، حتّى أنّ كتاب \"القانون في الطب\" بقي ما يناهز الخمسة قرون مرجعا رئيسيّا للأطبّاء. لابن سينا مؤلّفات عديدة في المنطق وعلم الطبيعة وما بعد الطبيعة، والطب والشعر، من أهمها: \"الشفاء\"، \"النجاة\"، \"الإشارات والتنبيهات\"، \"القانون في الطب\" ...",
+            "century": "10th-11th",
+            "school": "المشّائيّة / الفلسفة الإسلامية",
+            "themes": ["الطب", "الميتافيزيقا", "المنطق", "الفلسفة المشرقية", "العلم"],
+            "birthYear": "980",
+            "deathYear": "1037"
+		},
+        "fr": {
+            "name": "Ibn Sina (Avicenne)",
+            "image": "assets/images/ibn_sina.jpg",
+            "alt": "Ibn Sina (Avicenne)",
+            "content": "Ibn Sina (Avicenne) (980 - 1037) est un philosophe, médecin et scientifique, l'un des plus grands philosophes et médecins musulmans, surnommé « le Chef suprême ». Sa doctrine représente la production encyclopédique la plus vaste de la pensée philosophique islamique, mêlant croyance islamique, pensée persane, philosophie d'Aristote et des éléments de Platon et Plotin, mais la tendance dominante dans sa doctrine est la philosophie péripatéticienne. Cela ne l'a pas empêché de développer sa propre pensée indépendante, comme en témoigne sa « philosophie orientale ». À travers son ouvrage \"Al-Shifa\", Ibn Sina a offert l'encyclopédie philosophique la plus complète connue au Moyen Âge, et son influence dans le monde islamique et latin-européen au Moyen Âge a été immense, au point que son livre \"Canon de la médecine\" est resté une référence majeure pour les médecins pendant près de cinq siècles. Parmi ses œuvres majeures : \"Al-Shifa\", \"Al-Najat\", \"Al-Isharat wa al-Tanbihat\", \"Canon de la médecine\".",
+            "century": "10th-11th",
+            "school": "École péripatéticienne / Philosophie islamique",
+            "themes": ["médecine", "métaphysique", "logique", "philosophie orientale", "science"],
+            "birthYear": "980",
+            "deathYear": "1037"
+		},
+        "en": {
+            "name": "Ibn Sina (Avicenna)",
+            "image": "assets/images/ibn_sina.jpg",
+            "alt": "Ibn Sina (Avicenna)",
+            "content": "Ibn Sina (Avicenna) (980 – 1037) was a philosopher, physician, and scientist, one of the greatest Muslim philosophers and physicians, nicknamed 'the Chief Master'. His doctrine represents the most extensive encyclopedic output in Islamic philosophical thought, blending Islamic belief, Persian thought, Aristotle's philosophy, and elements of Plato and Plotinus, but the dominant trend in his doctrine is Peripatetic philosophy. This did not prevent him from developing his own independent thought, as evidenced by his 'Oriental philosophy'. Through his work \"Al-Shifa\", Ibn Sina provided the most comprehensive philosophical encyclopedia known in the Middle Ages, and his influence in the Islamic and Latin-European world during the Middle Ages was immense, to the extent that his book \"Canon of Medicine\" remained a major reference for physicians for nearly five centuries. Among his major works: \"Al-Shifa\", \"Al-Najat\", \"Al-Isharat wa al-Tanbihat\", \"Canon of Medicine\".",
+            "century": "10th-11th",
+            "school": "Peripatetic school / Islamic philosophy",
+            "themes": ["medicine", "metaphysics", "logic", "oriental philosophy", "science"],
+            "birthYear": "980",
+            "deathYear": "1037"
+		}
+	},
+    "michel_meyer": {
+        "ar": {
+            "name": "ميشال ميار",
+            "image": "assets/images/michel_meyer.jpg",
+            "alt": "ميشال ميار",
+            "content": "ميشال ميار (1950-2025) فيلسوف بلجيكي معاصر، ورئيس \"المركز الأوروبي لدراسة الحجاج\". عُرف بمشروعه الفلسفي المتمثل في \"علم المشاكل\" (Problematologie) الذي يسعى من خلاله إلى مجاوزة أزمة الخطاب الفلسفي المعاصر وذلك بإعادة الاعتبار إلى المساءلة بما هي مبدأ الفلسفة الجذري بامتياز، وهو مبدأ وقع كبته والتعتيم عليه، خلال تاريخ الفلسفة، بفعل هيمنة نموذج للعقل هو نَمُوذَجُ القضايا القابلة للتبرير (Modele propositionnel de la raison) أي التي تحيل على قدرة العقل على تقديم أجوبة حاسمة وملزمة. وإذا كانت مهمّة الفلسفة الأصيلة هي الاستمرار في المساءلة والأشكلة فإن \"علم المشاكل\" يستوجب تمييز الأسئلة الوجيهة التي يتوجّب طرحها، عن الأسئلة الزائفة، والتعرّف إلى الأجوبة الأصيلة لتمييزها عن الإقرارات الخالية من المعنى. من أهم مؤلفاته : : \"المنطق واللغة والحجاج\" (1982)، \"الفيلسوف والأهواء\" (1991)، \"من أجل نقد للأنطولوجيا\" (1991)، \"في علم المشاكل\" (1994)، \"المساءلة والتاريخية\" (2000)، \"الخطابة\" (2004)، \"ما هو الحجاج؟\" (2005).",
+            "century": "20th-21st",
+            "school": "علم المشاكل (Problematologie)",
+            "themes": ["الحجاج", "المساءلة", "المشاكل", "الخطابة", "الفلسفة المعاصرة"],
+            "birthYear": "1950",
+            "deathYear": "2025"
+		},
+        "fr": {
+            "name": "Michel Meyer",
+            "image": "assets/images/michel_meyer.jpg",
+            "alt": "Michel Meyer",
+            "content": "Michel Meyer (1950-2025) est un philosophe belge contemporain, président du \"Centre européen pour l'étude de l'argumentation\". Il est connu pour son projet philosophique de \"problématologie\" qui vise à dépasser la crise du discours philosophique contemporain en redonnant de l'importance au questionnement en tant que principe radical de la philosophie par excellence, un principe qui a été refoulé et occulté tout au long de l'histoire de la philosophie, en raison de la domination d'un modèle de raison qu'est le modèle propositionnel (modèle de la raison qui renvoie à la capacité de fournir des réponses décisives et contraignantes). Si la tâche de la philosophie authentique est de continuer à interroger et à problématiser, la \"problématologie\" exige de distinguer les questions pertinentes à poser des questions fausses, et de reconnaître les réponses authentiques pour les distinguer des déclarations vides de sens. Parmi ses œuvres majeures : \"Logique, langage et argumentation\" (1982), \"Le philosophe et les passions\" (1991), \"Pour une critique de l'ontologie\" (1991), \"De la problématicologie\" (1994), \"Questionnement et historicité\" (2000), \"Rhétorique\" (2004), \"Qu'est-ce que l'argumentation ?\" (2005).",
+            "century": "20th-21st",
+            "school": "Problématologie",
+            "themes": ["argumentation", "questionnement", "problèmes", "rhétorique", "philosophie contemporaine"],
+            "birthYear": "1950",
+            "deathYear": "2025"
+		},
+        "en": {
+            "name": "Michel Meyer",
+            "image": "assets/images/michel_meyer.jpg",
+            "alt": "Michel Meyer",
+            "content": "Michel Meyer (1950-2025) is a contemporary Belgian philosopher, president of the \"European Center for the Study of Argumentation\". He is known for his philosophical project of \"problematology\", which aims to overcome the crisis of contemporary philosophical discourse by restoring the importance of questioning as the radical principle of philosophy par excellence, a principle that has been repressed and obscured throughout the history of philosophy due to the domination of a model of reason: the propositional model (model of reason that refers to the ability to provide decisive and binding answers). If the task of authentic philosophy is to continue questioning and problematizing, \"problematology\" requires distinguishing relevant questions to be asked from false ones, and recognizing authentic answers to distinguish them from meaningless statements. Among his major works: \"Logic, Language and Argumentation\" (1982), \"The Philosopher and the Passions\" (1991), \"For a Critique of Ontology\" (1991), \"Of Problematology\" (1994), \"Questioning and Historicity\" (2000), \"Rhetoric\" (2004), \"What is Argumentation?\" (2005).",
+            "century": "20th-21st",
+            "school": "Problematology",
+            "themes": ["argumentation", "questioning", "problems", "rhetoric", "contemporary philosophy"],
+            "birthYear": "1950",
+            "deathYear": "2025"
+		}
+	},
+    "henri_bergson": {
+        "ar": {
+            "name": "هنري برغسون",
+            "image": "assets/images/henri_bergson.jpg",
+            "alt": "هنري برغسون",
+            "content": "هنري برغسون (1859-1941) من أهمّ الفلاسفة الفرنسيين في مطلع القرن العشرين وتُعدّ فلسفته ردّة فعل على النزعة الوضعية المهيمنة، وإعادة اعتبار للميتافيزيقا عبر تأكيد قدرتها على بلوغ المطلق كفرادةٍ واختلاف. ويُعدّ مفهوم ((الديمومة)) نقطة الارتكاز في نظريته، والديمومة هي الزمن المعيش أو الحياة أو الحريّة كخلق متجدّد وكحركة انبجاس للجديد دون توقّف. ويُعتبر الحدس منهج الفلسفة بامتياز، فخلافا للذكاء وما يعتمده من وساطات لغوية ومفهومية أبلاها الاستعمال الاجتماعي والنفعي، يُعدّ الحدس إدراكا مباشرا للأشياء ذاتها و\"تعاطفا ذهنيا ننتقل به إلى داخل الموضوع ذاته للالتقاء بما هو عليه من فرادة\". من أهمّ مؤلفاته: \"الضحك\" (1899)، \"التطوّر الخلاّق\" (1907)، \"منبعا الأخلاق والدين\" (1932)، \"الفكر والواقع المتحرّك\" (1934)، ((الطاقة الروحية)) (1939) ...",
+            "century": "19th-20th",
+            "school": "فلسفة الحياة / البرغسونية",
+            "themes": ["الديمومة", "الزمن", "الحدس", "الميتافيزيقا", "التطور الخلاق"],
+            "birthYear": "1859",
+            "deathYear": "1941"
+		},
+        "fr": {
+            "name": "Henri Bergson",
+            "image": "assets/images/henri_bergson.jpg",
+            "alt": "Henri Bergson",
+            "content": "Henri Bergson (1859-1941) est l'un des plus importants philosophes français du début du XXe siècle. Sa philosophie est une réaction contre le positivisme dominant et une réhabilitation de la métaphysique, affirmant sa capacité à atteindre l'absolu en tant que singularité et différence. Le concept de « durée » est au cœur de sa théorie : la durée est le temps vécu, la vie ou la liberté en tant que création renouvelée et mouvement d'émergence permanente du nouveau. L'intuition est considérée comme la méthode par excellence de la philosophie : contrairement à l'intelligence, qui utilise des médiations langagières et conceptuelles usées par l'usage social et utilitaire, l'intuition est une perception directe des choses elles-mêmes et une « sympathie intellectuelle par laquelle on se transporte à l'intérieur d'un objet pour coïncider avec ce qu'il a d'unique ». Parmi ses œuvres majeures : « Le Rire » (1899), « L'Évolution créatrice » (1907), « Les Deux Sources de la morale et de la religion » (1932), « La Pensée et le Mouvant » (1934), « L'Énergie spirituelle » (1939).",
+            "century": "19th-20th",
+            "school": "Philosophie de la vie / Bergsonisme",
+            "themes": ["durée", "temps", "intuition", "métaphysique", "évolution créatrice"],
+            "birthYear": "1859",
+            "deathYear": "1941"
+		},
+        "en": {
+            "name": "Henri Bergson",
+            "image": "assets/images/henri_bergson.jpg",
+            "alt": "Henri Bergson",
+            "content": "Henri Bergson (1859–1941) is one of the most important French philosophers of the early 20th century. His philosophy is a reaction against dominant positivism and a rehabilitation of metaphysics, affirming its ability to reach the absolute as singularity and difference. The concept of 'duration' is central to his theory: duration is lived time, life, or freedom as renewed creation and a constant movement of emergence of the new. Intuition is considered the method par excellence of philosophy: unlike intelligence, which uses linguistic and conceptual mediations worn out by social and utilitarian use, intuition is a direct perception of things themselves and an 'intellectual sympathy by which one places oneself within an object to coincide with what is unique in it.' Among his major works: 'Laughter' (1899), 'Creative Evolution' (1907), 'The Two Sources of Morality and Religion' (1932), 'The Creative Mind' (1934), 'Spiritual Energy' (1939).",
+            "century": "19th-20th",
+            "school": "Philosophy of life / Bergsonism",
+            "themes": ["duration", "time", "intuition", "metaphysics", "creative evolution"],
+            "birthYear": "1859",
+            "deathYear": "1941"
+		}
+	},
+    "john_stuart_mill": {
+        "ar": {
+            "name": "جون ستوارت ميل",
+            "image": "assets/images/john_stuart_mill.jpg",
+            "alt": "جون ستوارت ميل",
+            "content": "جون ستوارت ميل (1806-1873) فيلسوف ورجل اقتصاد انجليزيّ اتّخذ من التجربّة على إثر هيوم وبنثام إحداثّة موجّهة لإسهامه الفلسفيّ سواء في مجال المنطق أو نظريّة المعرفة أو الأخلاق. ففي المنطق لا يكون الاستنتاج مشروعا إلاّ كانتقال من قضيّة جزئيّة إلى أخرى جزئيّة نظرا إلى أنّ كلٍ مقدّمة كليّة في الاستنتاج هي نتاج استقراءٍ منطلقه وقائع جزئيّة، في حين أنّ مشروعيّة الاستقراء لا تتحدّد إلا بمدى احترام قواعد صارمة في التحقيق التجريبيّ. أما نظريّته في المعرفة فتقوم على رفض كل ما هو فطريّ في العقل لتأصيل مختلف عمليّاته بشكلٍ ترابطيّ في التجربة. أمّا نظريّته في الأخلاق فهي نفعيّة ترى في المنفعة الخير الأسمى الذي ينشده كل فرد في إطار اجتماعيّ وسياسيّ مشترك مع الآخرين. من أهمّ مؤلفاته: \"نسق المنطق الاستنتاجي والاستقرائي\" (1843)، \"مبادئ الاقتصاد السياسيّ\" (1848)، \"في الحريّة\" (1859)، \"في النفعيّة\" (1861)، \"في إخضاع النساء\" (1869).",
+            "century": "19th",
+            "school": "النفعية / التجريبية",
+            "themes": ["المنفعة", "الحرية", "المنطق", "الاستقراء", "الأخلاق"],
+            "birthYear": "1806",
+            "deathYear": "1873"
+		},
+        "fr": {
+            "name": "John Stuart Mill",
+            "image": "assets/images/john_stuart_mill.jpg",
+            "alt": "John Stuart Mill",
+            "content": "John Stuart Mill (1806-1873) est un philosophe et économiste anglais qui a pris l'expérience, à la suite de Hume et Bentham, comme le tournant guidant sa contribution philosophique, que ce soit dans le domaine de la logique, de la théorie de la connaissance ou de l'éthique. En logique, la déduction n'est légitime que comme passage d'une proposition particulière à une autre, étant donné que toute prémisse universelle dans un syllogisme est le produit d'une induction partant de faits particuliers, tandis que la légitimité de l'induction ne se détermine que par le respect de règles strictes d'investigation expérimentale. Sa théorie de la connaissance rejette tout ce qui est inné dans l'esprit pour ancrer ses différentes opérations de manière associative dans l'expérience. Sa théorie éthique est utilitariste, considérant l'utilité comme le bien suprême que chaque individu recherche dans un cadre social et politique partagé avec les autres. Parmi ses œuvres majeures : « Système de logique déductive et inductive » (1843), « Principes d'économie politique » (1848), « De la liberté » (1859), « L'utilitarisme » (1861), « De l'assujettissement des femmes » (1869).",
+            "century": "19th",
+            "school": "Utilitarisme / Empirisme",
+            "themes": ["utilité", "liberté", "logique", "induction", "éthique"],
+            "birthYear": "1806",
+            "deathYear": "1873"
+		},
+        "en": {
+            "name": "John Stuart Mill",
+            "image": "assets/images/john_stuart_mill.jpg",
+            "alt": "John Stuart Mill",
+            "content": "John Stuart Mill (1806–1873) was an English philosopher and economist who took experience, following Hume and Bentham, as the guiding turn for his philosophical contribution, whether in the field of logic, epistemology, or ethics. In logic, deduction is legitimate only as a passage from one particular proposition to another, since every universal premise in a syllogism is the product of induction starting from particular facts, while the legitimacy of induction is determined only by respecting strict rules of experimental investigation. His theory of knowledge rejects everything innate in the mind to ground its various operations in an associative manner in experience. His ethical theory is utilitarian, considering utility as the supreme good that every individual seeks within a social and political framework shared with others. Among his major works: 'A System of Logic, Ratiocinative and Inductive' (1843), 'Principles of Political Economy' (1848), 'On Liberty' (1859), 'Utilitarianism' (1861), 'The Subjection of Women' (1869).",
+            "century": "19th",
+            "school": "Utilitarianism / Empiricism",
+            "themes": ["utility", "liberty", "logic", "induction", "ethics"],
+            "birthYear": "1806",
+            "deathYear": "1873"
+		}
+	},
+	"ibn_rushd": {
+        "ar": {
+            "name": "ابن رشد",
+            "image": "assets/images/ibn_rushd.jpg",
+            "alt": "ابن رشد",
+            "content": "بن رشد (520 هـ/595هـ - 1126م /1198م) يُعدّ ابن رشد من كبار فقهاء المغرب الإسلامي وفلاسفته في العصر الوسيط ويمثّل أكبر شرّاح أرسطو إذ اهتمّ بوضع تلاخيص لمجمل مؤلّفات \"المعلّم الأوّل\"، ولُقّب إثرها \"بالشارح\". اتّجه جهد ابن رشد الفلسفي إلى إثبات علاقة التوافق بين الفلسفة والشريعة وتكاملهما من موقع الاعتقاد في وحدة الحقيقة التي نبلغها بواسطة آليّة التأويل وهو ما يفترض القول بأولويّة العقل. من أهمّ مؤلّفاته: \"تهافت التهافت\"، \"فصل المقال فيما بين الشريعة والحكمة من اتّصال\"، \"مناهج الأدلّة\"، \"تلخيص ما بعد الطبيعة\"، تلاخيص لمؤلّفات أرسطو المنطقيّة من بينها \"تلخيص السفسطة\".",
+            "century": "12th",
+            "school": "المشّائيّة / الفلسفة الإسلامية",
+            "themes": ["الفقه", "التأويل", "المنطق", "الشرح", "التوفيق بين الفلسفة والدين"],
+            "birthYear": "1126",
+            "deathYear": "1198"
+		},
+        "fr": {
+            "name": "Ibn Rushd (Averroès)",
+            "image": "assets/images/ibn_rushd.jpg",
+            "alt": "Ibn Rushd (Averroès)",
+            "content": "Ibn Rushd (Averroès) (1126 - 1198) est l'un des plus grands juristes et philosophes du Maghreb islamique au Moyen Âge. Il est considéré comme le plus grand commentateur d'Aristote, ayant résumé l'ensemble des œuvres du « Premier Maître », ce qui lui a valu le surnom de « Commentateur ». L'effort philosophique d'Ibn Rushd visait à prouver la compatibilité et la complémentarité de la philosophie et de la loi religieuse, en partant de la croyance en l'unité de la vérité atteinte par le mécanisme de l'interprétation, ce qui suppose la primauté de la raison. Parmi ses œuvres majeures : \"L'Incohérence de l'incohérence\", \"Le Traité décisif sur l'accord de la religion et de la philosophie\", \"Les Méthodes des preuves\", \"Résumé de la Métaphysique\", et des résumés des œuvres logiques d'Aristote, dont \"Résumé des Sophismes\".",
+            "century": "12th",
+            "school": "École péripatéticienne / Philosophie islamique",
+            "themes": ["jurisprudence", "herméneutique", "logique", "commentaire", "conciliation entre philosophie et religion"],
+            "birthYear": "1126",
+            "deathYear": "1198"
+		},
+        "en": {
+            "name": "Ibn Rushd (Averroes)",
+            "image": "assets/images/ibn_rushd.jpg",
+            "alt": "Ibn Rushd (Averroes)",
+            "content": "Ibn Rushd (Averroes) (1126 – 1198) is one of the greatest jurists and philosophers of the Islamic Maghreb in the Middle Ages. He is considered the greatest commentator of Aristotle, having summarized the entire works of the 'First Teacher', earning him the nickname 'The Commentator'. Ibn Rushd's philosophical effort aimed to prove the compatibility and complementarity of philosophy and religious law, based on the belief in the unity of truth achieved through the mechanism of interpretation, which presupposes the primacy of reason. Among his major works: \"The Incoherence of the Incoherence\", \"The Decisive Treatise on the Harmony of Religion and Philosophy\", \"The Methods of Proofs\", \"Summary of Metaphysics\", and summaries of Aristotle's logical works, including \"Summary of Sophistics\".",
+            "century": "12th",
+            "school": "Peripatetic school / Islamic philosophy",
+            "themes": ["jurisprudence", "hermeneutics", "logic", "commentary", "reconciliation of philosophy and religion"],
+            "birthYear": "1126",
+            "deathYear": "1198"
+		}
+	},
+	"adolf_hitler": {
+        "ar": {
+            "name": "أدولف هتلر",
+            "image": "assets/images/adolf_hitler.jpg",
+            "alt": "أدولف هتلر",
+            "content": "أدولف هتلر (1889 - 1945) رجل دولة ألماني، منظّر للإيديولوجيا النازية القائمة على القول بأفضليّة العرق الآري على بقيّة العروق البشرية وعلى حقّها في التوسّع على حساب الشعوب الأخرى واكتساح \"الفضاء الحيوي\". ترأس حزب العمّال الوطني الاشتراكي سنة 1921. بعث منظّمة عسكرية موازية، \"جند الانقضاض\". سُجن إثر قيامه بانقلاب فاشل في نوفمبر 1923 ميونيخ، وألّف في السجن كتابه \"كفاحي\". تمكّن في سنة واحدة من فرض دكتاتورية الحزب الوطني الاشتراكي وأقام النظام الجديد على فكرة الثأر من القوى الغربية، كما نجح في جعل الشعب الألماني بمختلف شرائحه ينخرط في ميثاق وطني شوفيني. قاد بلاده إلى الحرب العالمية الثانية وراقب أكبر جزء من أوروبا أين نظّم محتشدات الإبادة. خسر الحرب وانتحر سنة 1945.",
+            "century": "20th",
+            "school": "النازية",
+            "themes": ["الإيديولوجيا النازية", "العنصرية", "القومية الشوفينية", "الحرب العالمية الثانية", "الدكتاتورية"],
+            "birthYear": "1889",
+            "deathYear": "1945"
+        },
+        "fr": {
+            "name": "Adolf Hitler",
+            "image": "assets/images/adolf_hitler.jpg",
+            "alt": "Adolf Hitler",
+            "content": "Adolf Hitler (1889 - 1945) homme d'État allemand, théoricien de l'idéologie nazie fondée sur la prétendue supériorité de la race aryenne sur les autres races humaines et sur son droit à l'expansion aux dépens des autres peuples et à la conquête de l'« espace vital ». Il a pris la tête du Parti national-socialiste des travailleurs allemands en 1921. Il a créé une organisation militaire parallèle, les « SA » (Sturmabteilung). Emprisonné à la suite d'un coup d'État raté en novembre 1923 à Munich, il a rédigé en prison son livre \"Mein Kampf\". En l'espace d'une année, il a imposé la dictature du Parti national-socialiste et établi le nouveau régime sur l'idée de revanche contre les puissances occidentales, réussissant également à faire adhérer le peuple allemand, de toutes les couches sociales, à un pacte national chauvin. Il a conduit son pays à la Seconde Guerre mondiale et a contrôlé une grande partie de l'Europe où il a organisé des camps d'extermination. Il a perdu la guerre et s'est suicidé en 1945.",
+            "century": "20th",
+            "school": "Nazisme",
+            "themes": ["Idéologie nazie", "Racisme", "Nationalisme chauvin", "Seconde Guerre mondiale", "Dictature"],
+            "birthYear": "1889",
+            "deathYear": "1945"
+        },
+        "en": {
+            "name": "Adolf Hitler",
+            "image": "assets/images/adolf_hitler.jpg",
+            "alt": "Adolf Hitler",
+            "content": "Adolf Hitler (1889 – 1945) was a German statesman and theorist of Nazi ideology based on the alleged superiority of the Aryan race over other human races and its right to expand at the expense of other peoples and conquer \"living space\". He became the leader of the National Socialist German Workers' Party in 1921. He established a parallel military organization, the \"Sturmabteilung\" (SA). Imprisoned following a failed coup attempt in November 1923 in Munich, he wrote his book \"Mein Kampf\" in prison. Within a year, he imposed the dictatorship of the National Socialist Party and established the new regime on the idea of revenge against Western powers, also succeeding in making the German people, from all social strata, adhere to a chauvinistic national pact. He led his country into World War II and controlled much of Europe where he organized extermination camps. He lost the war and committed suicide in 1945.",
+            "century": "20th",
+            "school": "Nazism",
+            "themes": ["Nazi ideology", "Racism", "Chauvinistic nationalism", "World War II", "Dictatorship"],
+            "birthYear": "1889",
+            "deathYear": "1945"
+        }
+    }
 };

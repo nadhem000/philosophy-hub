@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: مشكل الهدف من الحياة - فرويد - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#008080">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Teal/Turquoise Color Palette (زبرجد/فيروزي) */
+        :root {
+            --primary-color: #008080;
+            --primary-light: #20b2aa;
+            --primary-dark: #006666;
+            --secondary-color: #48d1cc;
+            --secondary-light: #7fffd4;
+            --secondary-dark: #20b2aa;
+            --accent-color: #48d1cc;
+            --accent-light: #7fffd4;
+            --accent-dark: #20b2aa;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #f0ffff;
+            --card-bg: #ffffff;
+            --definition-bg: #e0ffff;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #c1f0f0;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(0, 128, 128, 0.1), 0 2px 4px -1px rgba(0, 128, 128, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 128, 128, 0.1), 0 4px 6px -2px rgba(0, 128, 128, 0.05);
+            --gradient-primary: linear-gradient(135deg, #008080 0%, #48d1cc 100%);
+            --gradient-secondary: linear-gradient(135deg, #48d1cc 0%, #20b2aa 100%);
+            --gradient-accent: linear-gradient(135deg, #48d1cc 0%, #008080 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #20b2aa;
+            --primary-light: #48d1cc;
+            --primary-dark: #008080;
+            --secondary-color: #7fffd4;
+            --secondary-light: #b0f0e6;
+            --secondary-dark: #48d1cc;
+            --accent-color: #7fffd4;
+            --accent-light: #b0f0e6;
+            --accent-dark: #48d1cc;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #1e4d4d;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #2d6666;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #20b2aa 0%, #7fffd4 100%);
+            --gradient-secondary: linear-gradient(135deg, #7fffd4 0%, #48d1cc 100%);
+            --gradient-accent: linear-gradient(135deg, #7fffd4 0%, #20b2aa 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(0, 128, 128, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(72, 209, 204, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(72, 209, 204, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(0, 128, 128, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.freud.title">تحليل النص: مشكل الهدف من الحياة - سيغموند فرويد</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.freud.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.freud.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.freud.introduction.content">
+                    غالبا ما يتبرّم الإنسان ممّا يُشكِلُ عليه من أسئلة هي من الإعضال والاستعصاء بحيث تُورِثه من القلق ما يُفسد عليه متعة الحياة، ولكنّ التفحّص الدقيق لبعض هذه الأسئلة قد يُثبت أنّها ليست سوى أشباه مشاكل. لذلك فإنّ الإنسان مدعوّ إلى إعادة الاعتبار للسؤال وإلى إيلائه من القيمة على جهة الفحص والتثّت ما يمكّنه من التمييز بين المشكل الحقيقي والمشكل الزائف.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.freud.text.title">مشكل الهدف من الحياة</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.freud.text.content">
+                        إنّ مسألة الهدف<sup>1</sup> من الحياة الإنسانية قد طُرحت على بساط البحث مرارا لا تُحصى، بَيْد أنّها لم تجد إلى الآن الجواب الشافي. ولعلّها لا تنطوي على أيّ جواب البتّة. والعديد من المفكّرين "السائلين"<sup>2</sup> الذين طرحوها أضافوا قولهم: إذا اتّضح أنّ الحياة ليس لها أيّ هدف، فستفقد في نظرنا كلّ قيمة. لكنّ هذا التهديد لا يُغيّر في واقع الأمر شيئا، ولعلّ الأصحّ هو أنّه من حقّنا أن ننحّي السؤال جانبا<sup>3</sup>، إذ أنّه يرجع في أصله، على ما يبدو لنا، إلى تلك الكبرياء الإنسانية<sup>4</sup> التي نعرف أساسا العديد من مظاهرها الأخرى، فليس ثمّة أبدا من يتكلّم عن هدف حياة الحيوانات، اللهمّ إلّ ليُقرّر أنّ الحيوانات لم تُوجد إلّ لخدمة الإنسان. لكن وجهة النظر هذه لا سند لها هي الأخرى، إذ كثيرة هي الحيوانات التي لا يعرف الإنسان ماذا يفعل بها - غير أن يصفها ويُصنّفها ويدرسها- وجمّة حقّا هي الأنواع التي تملّصت من هذا الاستعمال لأنّها عاشت وانقرضت حتى قبل أن يقع عليها نظر الإنسان.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.freud.text.source">سيقموند فرويد، قلق في الحضارة، ص 22.21 - Freud, "Malaise dans la civilisation"</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.freud.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/sigmund_freud.jpg" alt="سيغموند فرويد" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.freud.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.freud.author.content">
+                            سيغموند فرويد (1856-1939) طبيب نمساوي، مؤسّس التحليل النفسي ومكتشف اللاشعور. حاول اختبار صحّة فرضية اللاشعور عن طريق توسيع مجال تطبيقها لتشمل الإبداعات الثقافية. من أهمّ مؤلّفاته: تأويل الأحلام (1899)، خمسة دروس في التحليل النفسي (1909)، الطوطم والحرام (1912)، مقدّمة للتحليل النفسي (1916)، مستقبل وهم (1927)، قلق في الحضارة (1929)، موسى والتوحيد (1938).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.freud.lexical.title">الهوامش والمفاهيم</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.freud.lexical.item1"><strong>الهدف من الحياة:</strong> إشارة إلى مبحث الغاية في انفتاحه على ما وراء الحياة نفسها. ويُقدِّر فرويد أنّه مشكل زائف.</li>
+                    <li data-i18n="PhiH.textAnalysis.freud.lexical.item2"><strong>السائلين:</strong> وضع العبارة بين معقوفين يُشير إلى أنّ هؤلاء "السائلين" لم يفعلوا غير أن أعادوا طرح سؤال قديم وإذن فإنّهم كانوا ضحّيّة فكر سائد حاصر فكرهم بأسئلته وأجوبته، وأنّ الارتقاء إلى مرتبة السائل الحقيقي يقتضي القطع مع هذا السؤال الزائف المتعلّق بمسألة الهدف من الحياة، لأنّ المعنى هو ما يُضفيه الإنسان بفكره على وجوده لا ما يرثه.</li>
+                    <li data-i18n="PhiH.textAnalysis.freud.lexical.item3"><strong>أن ننحّي السؤال جانبا:</strong> يقترح فرويد في الصفحة الموالية لهذا النص من مؤلّفه "قلق في الحضارة"، استبدال سؤال الهدف من الحياة بسؤال آخر يعتبره وجيها ويصوغه كالتالي: "ما المقاصد وما المرامي الحيويّة التي ينمّ عنها سلوك البشر ؟ ماذا يطلبون من الحياة وإِلاَمَ يَرْمون ؟" وهي صياغة تهدف إلى استبدال سؤال الهدف من الحياة بسؤال عن المقاصد والمرامي الحيويّة وذلك لقطع الطريق أمام سؤال يتكرّر خطأ أو زورا ويربط الحياة بغاية خارجة عنها.</li>
+                    <li data-i18n="PhiH.textAnalysis.freud.lexical.item4"><strong>الكبرياء الإنسانية:</strong> إحالة على ما ظلّ قناعة لدى الإنسان إذ تمسّك وعلى مدى قرون بكبرياء ألهمته أنّه أشرف المخلوقات وأنّه ابن السماء وأنّ كلّ شيء في الطبيعة جُعل من أجله، غير أن تاريخ التحوّلات العلمية بيّن كيف نالت هذه الكبرياء من الطعنات ما أضعفها، فالثورة الكوبرنيكية أطاحت بمركزية الأرض ومن ثمّة بمركزية الإنسان، وهو ما أكّدته الثورة البيولوجية التي بيّنت أنّ الإنسان من سلالة حيوانية ... ويأتي التحليل النفسي مع فرويد ليثبت أن الحياة النفسية تحكمها قوى لاشعورية، وبذلك تكتمل الطعنة الثالثة في كبرياء هي في الأصل موهومة.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.freud.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.freud.questions.q1">أَستخرج من النص الحجج التي اعتمدها الكاتب لبيان عدم وجاهة السؤال عن الهدف من الحياة.</li>
+                    <li data-i18n="PhiH.textAnalysis.freud.questions.q2">أحدّد المعايير التي اعتمدها في ذلك.</li>
+                    <li data-i18n="PhiH.textAnalysis.freud.questions.q3">أُميّز داخل القائمة التالية بين المشاكل الحقيقية وأشباه المشاكل (نوع المشكل) وأُعيّن المقياس المعتمد في التمييز.
+                        <div data-i18n="PhiH.textAnalysis.freud.questions.table">
+                            <table style="width:100%; border-collapse: collapse; margin-top:1rem;">
+                                <thead>
+                                    <tr style="background-color: var(--primary-color); color: white;">
+                                        <th style="padding:0.75rem; border:1px solid var(--border-color);">الأسئلة</th>
+                                        <th style="padding:0.75rem; border:1px solid var(--border-color);">المقياس المعتمد</th>
+                                        <th style="padding:0.75rem; border:1px solid var(--border-color);">نوع المشكل</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background-color: var(--table-even-bg);">
+                                        <td style="padding:0.75rem; border:1px solid var(--border-color);">ما الذي يجوز لي أن آمل ؟</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--border-color);"></td>
+                                        <td style="padding:0.75rem; border:1px solid var(--border-color);"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--border-color);">ما جنس الملائكة ؟</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--border-color);"></td>
+                                        <td style="padding:0.75rem; border:1px solid var(--border-color);"></td>
+                                    </tr>
+                                    <tr style="background-color: var(--table-even-bg);">
+                                        <td style="padding:0.75rem; border:1px solid var(--border-color);">هل للأشباح وجود حقيقي ؟</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--border-color);"></td>
+                                        <td style="padding:0.75rem; border:1px solid var(--border-color);"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--border-color);">هل يحقّ للمرأة العربية أن تتقلّد مناصب سياسية ؟</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--border-color);"></td>
+                                        <td style="padding:0.75rem; border:1px solid var(--border-color);"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.freud.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.freud.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.freud.answers.a1.content">
+                        الحجج التي اعتمدها فرويد لبيان عدم وجاهة السؤال عن الهدف من الحياة:
+                        <br><br>
+                        1. <strong>عدم وجود جواب شافٍ:</strong> رغم تكرار طرح السؤال عبر التاريخ، إلا أنه لم يجد إجابة مُقنعة، مما قد يشير إلى أنه سؤال خاطئ في الأساس.
+                        <br><br>
+                        2. <strong>عدم ارتباط الهدف بالقيمة:</strong> رفض فكرة أن الحياة بدون هدف تفقد قيمتها، مؤكدًا أن هذا التهديد لا يغير من الواقع شيئًا.
+                        <br><br>
+                        3. <strong>المقارنة مع الحيوانات:</strong> ندرة الحديث عن هدف حياة الحيوانات يدل على أن السؤال خاص بالإنسان فقط، مما يشير إلى أنه نابع من كبرياء إنساني وليس من حقيقة موضوعية.
+                        <br><br>
+                        4. <strong>عدم شمولية الفكرة:</strong> فكرة أن الحيوانات خلقت لخدمة الإنسان لا سند لها، فهناك حيوانات لا فائدة عملية معروفة للإنسان منها، بل وأنواع انقرضت قبل أن يعرفها الإنسان.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.freud.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.freud.answers.a2.content">
+                        المعايير التي اعتمدها فرويد في الحكم على سؤال الهدف من الحياة:
+                        <br><br>
+                        1. <strong>معيار المنفعة والتجربة:</strong> هل يمكن التحقق من الإجابة تجريبيًا أو عمليًا؟
+                        <br><br>
+                        2. <strong>معيار الشمولية:</strong> هل ينطبق السؤال على جميع الكائنات الحية أم على الإنسان فقط؟
+                        <br><br>
+                        3. <strong>معيار الأصالة:</strong> هل السؤال أصيل ونابع من حاجة حقيقية أم أنه مُستورد من فكر سابق؟
+                        <br><br>
+                        4. <strong>معيار النتائج العملية:</strong> هل يؤدي طرح السؤال إلى نتائج عملية مفيدة أم أنه يعيق التفكير؟
+                        <br><br>
+                        5. <strong>معيار النقد الذاتي:</strong> هل نطرح السؤال لأننا نبحث عن الحقيقة أم لأنه يُرضي كبرياءنا الإنسانية؟
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.freud.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <div data-i18n="PhiH.textAnalysis.freud.answers.a3.content">
+                        <table style="width:100%; border-collapse: collapse; margin-top:1rem;">
+                            <thead>
+                                <tr style="background-color: var(--primary-color); color: white;">
+                                    <th style="padding:0.75rem; border:1px solid var(--border-color);">الأسئلة</th>
+                                    <th style="padding:0.75rem; border:1px solid var(--border-color);">المقياس المعتمد</th>
+                                    <th style="padding:0.75rem; border:1px solid var(--border-color);">نوع المشكل</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: var(--table-even-bg);">
+                                    <td style="padding:0.75rem; border:1px solid var(--border-color);">ما الذي يجوز لي أن آمل ؟</td>
+                                    <td style="padding:0.75rem; border:1px solid var(--border-color);">معيار الواقعية والتجربة</td>
+                                    <td style="padding:0.75rem; border:1px solid var(--border-color);">مشكل حقيقي</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0.75rem; border:1px solid var(--border-color);">ما جنس الملائكة ؟</td>
+                                    <td style="padding:0.75rem; border:1px solid var(--border-color);">معيار التحقق التجريبي</td>
+                                    <td style="padding:0.75rem; border:1px solid var(--border-color);">شبه مشكل</td>
+                                </tr>
+                                <tr style="background-color: var(--table-even-bg);">
+                                    <td style="padding:0.75rem; border:1px solid var(--border-color);">هل للأشباح وجود حقيقي ؟</td>
+                                    <td style="padding:0.75rem; border:1px solid var(--border-color);">معيار الأدلة العلمية</td>
+                                    <td style="padding:0.75rem; border:1px solid var(--border-color);">شبه مشكل</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0.75rem; border:1px solid var(--border-color);">هل يحقّ للمرأة العربية أن تتقلّد مناصب سياسية ؟</td>
+                                    <td style="padding:0.75rem; border:1px solid var(--border-color);">معيار الحقوق والعدالة</td>
+                                    <td style="padding:0.75rem; border:1px solid var(--border-color);">مشكل حقيقي</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style="margin-top: 1rem;">
+                        <strong>التفسير:</strong> المشكل الحقيقي هو الذي يمكن البحث فيه بناءً على معايير موضوعية ويؤدي إلى نتائج عملية، بينما شبه المشكل هو سؤال لا يمكن التحقق من إجابته تجريبيًا أو لا يؤدي إلى نتائج عملية مفيدة.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.freud.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.freud.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.freud.analysis.thesis.content">
+                        يطرح فرويد فكرة جذرية مفادها أن سؤال "الهدف من الحياة" هو سؤال زائف لا معنى له، وينبع من الكبرياء الإنساني أكثر من كونه نابعًا من حاجة فكرية حقيقية. يدعو فرويد إلى التخلي عن هذا السؤال واستبداله بأسئلة أكثر عملية تتعلق بمقاصد البشر ومراميهم الحيوية في الحياة الواقعية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.freud.analysis.mechanisms.title">آليات تفكيك السؤال الزائف:</h5>
+                    <p data-i18n="PhiH.textAnalysis.freud.analysis.mechanisms.content">
+                        يعتمد فرويد على عدة آليات لتفكيك سؤال الهدف من الحياة:
+                        <br><br>
+                        1. <strong>التاريخية:</strong> يشير إلى أن السؤال طرح مرارًا ولم يجد إجابة، مما قد يدل على أنه سؤال خاطئ.
+                        <br><br>
+                        2. <strong>المقارنة:</strong> يقارن بين وضع الإنسان والحيوان ليبين أن السؤال خاص بالإنسان فقط.
+                        <br><br>
+                        3. <strong>النقد الأنثروبولوجي:</strong> يربط السؤال بالكبرياء الإنساني والتعلق بمركزية الإنسان في الكون.
+                        <br><br>
+                        4. <strong>النفعية:</strong> يبحث عن الجدوى العملية من طرح السؤال ويفضل الأسئلة التي تؤدي إلى نتائج عملية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.freud.analysis.consequences.title">نتائج التمييز بين المشكل الحقيقي والزائف:</h5>
+                    <p data-i18n="PhiH.textAnalysis.freud.analysis.consequences.content">
+                        - <strong>تحرير الفكر:</strong> التحرر من الأسئلة الزائفة التي تشغل الفكر دون فائدة.
+                        <br><br>
+                        - <strong>تركيز الجهود:</strong> توجيه الطاقة الفكرية نحو الأسئلة الحقيقية التي يمكن البحث فيها.
+                        <br><br>
+                        - <strong>التواضع المعرفي:</strong> التخلي عن الكبرياء الإنساني المبالغ فيه.
+                        <br><br>
+                        - <strong>الواقعية:</strong> التركيز على الحياة الواقعية ومشاكلها بدلاً من التساؤلات الميتافيزيقية.
+                        <br><br>
+                        - <strong>الإنتاجية الفكرية:</strong> زيادة إنتاجية التفكير الفلسفي بتوجيهه نحو القضايا القابلة للحل.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.freud.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.freud.analysis.significance.content">
+                        يحمل تحليل فرويد للمشكل الزائف دلالات عميقة في الفلسفة وعلم النفس:
+                        <br><br>
+                        1. <strong>النقد الفلسفي:</strong> يمثل نموذجًا للتفكيك النقدي للأسئلة الفلسفية التقليدية.
+                        <br><br>
+                        2. <strong>التحليل النفسي:</strong> يكشف عن الجذور النفسية (الكبرياء) للعديد من التساؤلات الفلسفية.
+                        <br><br>
+                        3. <strong>المنهج العلمي:</strong> يؤكد على أهمية المعايير التجريبية والواقعية في تقييم الأسئلة.
+                        <br><br>
+                        4. <strong>التحرر الفكري:</strong> يدعو إلى التحرر من قيود الفكر التقليدي والأسئلة المُورَثة.
+                        <br><br>
+                        5. <strong>التركيز على الذاتية:</strong> ينقل الاهتمام من الأسئلة الميتافيزيقية إلى البحث عن المعنى الذاتي للحياة.
+                        <br><br>
+                        هذا النص يمثل تحولاً مهماً في الفكر الغربي من البحث عن معانٍ مطلقة خارجية إلى البحث عن المعنى الداخلي الذاتي للحياة الإنسانية.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.freud.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.freud.title": "Analyse du texte: Le problème du but de la vie - Sigmund Freud",
+                "PhiH.textAnalysis.freud.introduction.title": "Introduction",
+                "PhiH.textAnalysis.freud.introduction.content": "L'homme se lasse souvent des questions qui lui posent problème et sont si difficiles et complexes qu'elles lui causent une anxiété qui gâche le plaisir de la vie, mais un examen attentif de certaines de ces questions peut prouver qu'elles ne sont que de faux problèmes. Par conséquent, l'homme est invité à reconsidérer la question et à lui accorder la valeur de l'examen et de la vérification qui lui permet de distinguer entre le vrai problème et le faux problème.",
+                "PhiH.textAnalysis.freud.text.title": "Le problème du but de la vie",
+                "PhiH.textAnalysis.freud.text.content": "La question du but<sup>1</sup> de la vie humaine a été posée sur la table de recherche d'innombrables fois, mais elle n'a pas encore trouvé de réponse satisfaisante. Peut-être qu'elle ne contient aucune réponse du tout. Et de nombreux penseurs \"demandeurs\"<sup>2</sup> qui l'ont posée ont ajouté : s'il s'avère que la vie n'a aucun but, elle perdra à nos yeux toute valeur. Mais cette menace ne change rien en réalité, et il est peut-être plus juste que nous ayons le droit de mettre la question de côté<sup>3</sup>, car elle remonte, semble-t-il, à cette fierté humaine<sup>4</sup> dont nous connaissons déjà de nombreuses autres manifestations, car personne ne parle jamais du but de la vie des animaux, sauf pour décider que les animaux n'existent que pour servir l'homme. Mais ce point de vue n'est pas non plus fondé, car il y a de nombreux animaux dont l'homme ne sait que faire - sauf les décrire, les classer et les étudier - et nombreuses sont vraiment les espèces qui ont échappé à cette utilisation parce qu'elles ont vécu et se sont éteintes avant même que l'homme ne les regarde.",
+                "PhiH.textAnalysis.freud.text.source": "Sigmund Freud, Malaise dans la civilisation, p. 22.21 - Freud, \"Malaise dans la civilisation\"",
+                "PhiH.textAnalysis.freud.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.freud.author.alt": "Sigmund Freud",
+                "PhiH.textAnalysis.freud.author.content": "Sigmund Freud (1856-1939) médecin autrichien, fondateur de la psychanalyse et découvreur de l'inconscient. Il a tenté de tester la validité de l'hypothèse de l'inconscient en étendant son domaine d'application pour inclure les créations culturelles. Parmi ses œuvres les plus importantes : L'Interprétation des rêves (1899), Cinq leçons sur la psychanalyse (1909), Totem et Tabou (1912), Introduction à la psychanalyse (1916), L'Avenir d'une illusion (1927), Malaise dans la civilisation (1929), Moïse et le monothéisme (1938).",
+                "PhiH.textAnalysis.freud.lexical.title": "Notes et concepts",
+                "PhiH.textAnalysis.freud.lexical.item1": "<strong>Le but de la vie:</strong> référence à la recherche de la finalité dans son ouverture sur l'au-delà de la vie elle-même. Freud estime que c'est un faux problème.",
+                "PhiH.textAnalysis.freud.lexical.item2": "<strong>Les demandeurs:</strong> mettre l'expression entre crochets indique que ces \"demandeurs\" n'ont fait que répéter une vieille question et donc qu'ils ont été victimes d'une pensée dominante qui a enfermé leur pensée avec ses questions et réponses, et que l'élévation au rang de vrai demandeur nécessite de rompre avec cette question fausse concernant la question du but de la vie, car le sens est ce que l'homme ajoute par sa pensée à son existence et non ce qu'il hérite.",
+                "PhiH.textAnalysis.freud.lexical.item3": "<strong>Mettre la question de côté:</strong> Freud propose dans la page suivante de ce texte de son ouvrage \"Malaise dans la civilisation\", de remplacer la question du but de la vie par une autre question qu'il considère pertinente et qu'il formule comme suit : \"Quels sont les buts et les objectifs vitaux que révèle le comportement des humains ? Que demandent-ils de la vie et à quoi visent-ils ?\" Cette formulation vise à remplacer la question du but de la vie par une question sur les buts et objectifs vitaux afin de couper la route à une question qui se répète par erreur ou faussement et qui lie la vie à une fin extérieure à elle.",
+                "PhiH.textAnalysis.freud.lexical.item4": "<strong>La fierté humaine:</strong> référence à ce qui est resté une conviction chez l'homme qui a persisté pendant des siècles avec une fierté qui lui a inspiré qu'il était la créature la plus noble, qu'il était le fils du ciel et que tout dans la nature a été fait pour lui, mais l'histoire des transformations scientifiques a montré comment cette fierté a été affaiblie par des coups, car la révolution copernicienne a renversé la centralité de la terre et donc la centralité de l'homme, ce qui a été confirmé par la révolution biologique qui a montré que l'homme est d'une lignée animale ... et la psychanalyse avec Freud vient prouver que la vie psychique est gouvernée par des forces inconscientes, et ainsi se complète le troisième coup porté à une fierté qui est à l'origine illusoire.",
+                "PhiH.textAnalysis.freud.questions.title": "Tâches",
+                "PhiH.textAnalysis.freud.questions.q1": "J'extrais du texte les arguments que l'auteur a utilisés pour montrer le manque de pertinence de la question sur le but de la vie.",
+                "PhiH.textAnalysis.freud.questions.q2": "Je détermine les critères qu'il a utilisés pour cela.",
+                "PhiH.textAnalysis.freud.questions.q3": "Je distingue dans la liste suivante entre les vrais problèmes et les faux problèmes (type de problème) et j'indique le critère utilisé dans la distinction.",
+                "PhiH.textAnalysis.freud.questions.table": "<table style='width:100%; border-collapse: collapse; margin-top:1rem;'><thead><tr style='background-color: var(--primary-color); color: white;'><th style='padding:0.75rem; border:1px solid var(--border-color);'>Questions</th><th style='padding:0.75rem; border:1px solid var(--border-color);'>Critère utilisé</th><th style='padding:0.75rem; border:1px solid var(--border-color);'>Type de problème</th></tr></thead><tbody><tr style='background-color: var(--table-even-bg);'><td style='padding:0.75rem; border:1px solid var(--border-color);'>Que puis-je espérer ?</td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td></tr><tr><td style='padding:0.75rem; border:1px solid var(--border-color);'>Quel est le sexe des anges ?</td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td></tr><tr style='background-color: var(--table-even-bg);'><td style='padding:0.75rem; border:1px solid var(--border-color);'>Les fantômes ont-ils une existence réelle ?</td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td></tr><tr><td style='padding:0.75rem; border:1px solid var(--border-color);'>La femme arabe a-t-elle le droit d'occuper des postes politiques ?</td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td></tr></tbody></table>",
+                "PhiH.textAnalysis.freud.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.freud.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.freud.answers.a1.content": "Les arguments que Freud a utilisés pour montrer le manque de pertinence de la question sur le but de la vie :<br><br>1. <strong>Absence de réponse satisfaisante :</strong> Bien que la question ait été posée à plusieurs reprises à travers l'histoire, elle n'a pas trouvé de réponse convaincante, ce qui peut indiquer qu'il s'agit d'une question erronée en principe.<br><br>2. <strong>Non-lien entre le but et la valeur :</strong> Rejette l'idée que la vie sans but perd sa valeur, affirmant que cette menace ne change rien à la réalité.<br><br>3. <strong>Comparaison avec les animaux :</strong> La rareté du discours sur le but de la vie des animaux indique que la question est spécifique à l'homme seulement, ce qui suggère qu'elle découle d'une fierté humaine et non d'une vérité objective.<br><br>4. <strong>Non-universalité de l'idée :</strong> L'idée que les animaux ont été créés pour servir l'homme n'a aucun fondement, car il y a des animaux dont l'homme ne connaît aucun avantage pratique, et même des espèces qui se sont éteintes avant que l'homme ne les connaisse.",
+                "PhiH.textAnalysis.freud.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.freud.answers.a2.content": "Les critères que Freud a utilisés pour juger la question du but de la vie :<br><br>1. <strong>Critère d'utilité et d'expérience :</strong> La réponse peut-elle être vérifiée empiriquement ou pratiquement ?<br><br>2. <strong>Critère d'universalité :</strong> La question s'applique-t-elle à tous les êtres vivants ou seulement à l'homme ?<br><br>3. <strong>Critère d'authenticité :</strong> La question est-elle authentique et découle-t-elle d'un besoin réel ou est-elle importée d'une pensée antérieure ?<br><br>4. <strong>Critère des résultats pratiques :</strong> Le fait de poser la question conduit-il à des résultats pratiques utiles ou entrave-t-il la réflexion ?<br><br>5. <strong>Critère d'autocritique :</strong> Posons-nous la question parce que nous recherchons la vérité ou parce qu'elle satisfait notre fierté humaine ?",
+                "PhiH.textAnalysis.freud.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.freud.answers.a3.content": "<table style='width:100%; border-collapse: collapse; margin-top:1rem;'><thead><tr style='background-color: var(--primary-color); color: white;'><th style='padding:0.75rem; border:1px solid var(--border-color);'>Questions</th><th style='padding:0.75rem; border:1px solid var(--border-color);'>Critère utilisé</th><th style='padding:0.75rem; border:1px solid var(--border-color);'>Type de problème</th></tr></thead><tbody><tr style='background-color: var(--table-even-bg);'><td style='padding:0.75rem; border:1px solid var(--border-color);'>Que puis-je espérer ?</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>Critère de réalisme et d'expérience</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>Vrai problème</td></tr><tr><td style='padding:0.75rem; border:1px solid var(--border-color);'>Quel est le sexe des anges ?</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>Critère de vérification empirique</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>Faux problème</td></tr><tr style='background-color: var(--table-even-bg);'><td style='padding:0.75rem; border:1px solid var(--border-color);'>Les fantômes ont-ils une existence réelle ?</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>Critère des preuves scientifiques</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>Faux problème</td></tr><tr><td style='padding:0.75rem; border:1px solid var(--border-color);'>La femme arabe a-t-elle le droit d'occuper des postes politiques ?</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>Critère des droits et de la justice</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>Vrai problème</td></tr></tbody></table><p style='margin-top: 1rem;'><strong>Explication :</strong> Le vrai problème est celui qui peut être étudié sur la base de critères objectifs et conduit à des résultats pratiques, tandis que le faux problème est une question dont la réponse ne peut être vérifiée empiriquement ou ne conduit pas à des résultats pratiques utiles.</p>",
+                "PhiH.textAnalysis.freud.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.freud.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.freud.analysis.thesis.content": "Freud propose une idée radicale selon laquelle la question \"du but de la vie\" est une question fausse et dénuée de sens, et découle de la fierté humaine plus que d'un besoin intellectuel réel. Freud appelle à abandonner cette question et à la remplacer par des questions plus pratiques concernant les buts et objectifs vitaux des humains dans la vie réelle.",
+                "PhiH.textAnalysis.freud.analysis.mechanisms.title": "Mécanismes de déconstruction de la question fausse:",
+                "PhiH.textAnalysis.freud.analysis.mechanisms.content": "Freud s'appuie sur plusieurs mécanismes pour déconstruire la question du but de la vie :<br><br>1. <strong>Historicité :</strong> Il indique que la question a été posée à plusieurs reprises et n'a pas trouvé de réponse, ce qui peut indiquer qu'il s'agit d'une question erronée.<br><br>2. <strong>Comparaison :</strong> Il compare la situation de l'homme et de l'animal pour montrer que la question est spécifique à l'homme seulement.<br><br>3. <strong>Critique anthropologique :</strong> Il relie la question à la fierté humaine et à l'attachement à la centralité de l'homme dans l'univers.<br><br>4. <strong>Utilitarisme :</strong> Il recherche l'utilité pratique de poser la question et préfère les questions qui conduisent à des résultats pratiques.",
+                "PhiH.textAnalysis.freud.analysis.consequences.title": "Conséquences de la distinction entre problème réel et faux:",
+                "PhiH.textAnalysis.freud.analysis.consequences.content": "- <strong>Libération de la pensée :</strong> Se libérer des questions fausses qui occupent la pensée sans bénéfice.<br><br>- <strong>Concentration des efforts :</strong> Orienter l'énergie intellectuelle vers les vraies questions qui peuvent être étudiées.<br><br>- <strong>Humilité cognitive :</strong> Abandonner la fierté humaine exagérée.<br><br>- <strong>Réalisme :</strong> Se concentrer sur la vie réelle et ses problèmes au lieu des interrogations métaphysiques.<br><br>- <strong>Productivité intellectuelle :</strong> Augmenter la productivité de la pensée philosophique en l'orientant vers les problèmes solubles.",
+                "PhiH.textAnalysis.freud.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.freud.analysis.significance.content": "L'analyse de Freud du faux problème porte des significations profondes en philosophie et en psychologie :<br><br>1. <strong>Critique philosophique :</strong> Représente un modèle de déconstruction critique des questions philosophiques traditionnelles.<br><br>2. <strong>Analyse psychanalytique :</strong> Révèle les racines psychologiques (la fierté) de nombreuses questions philosophiques.<br><br>3. <strong>Méthode scientifique :</strong> Insiste sur l'importance des critères empiriques et réalistes dans l'évaluation des questions.<br><br>4. <strong>Libération intellectuelle :</strong> Appelle à se libérer des contraintes de la pensée traditionnelle et des questions héritées.<br><br>5. <strong>Concentration sur la subjectivité :</strong> Transfère l'attention des questions métaphysiques à la recherche du sens subjectif de la vie.<br><br>Ce texte représente un tournant important dans la pensée occidentale, passant de la recherche de significations absolues externes à la recherche du sens intérieur subjectif de la vie humaine."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.freud.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.freud.title": "Text Analysis: The Problem of the Purpose of Life - Sigmund Freud",
+                "PhiH.textAnalysis.freud.introduction.title": "Introduction",
+                "PhiH.textAnalysis.freud.introduction.content": "Man often becomes weary of the questions that pose a problem for him and are so difficult and complex that they cause him anxiety that spoils the pleasure of life, but a careful examination of some of these questions may prove that they are only pseudo-problems. Therefore, man is invited to reconsider the question and give it the value of examination and verification that enables him to distinguish between the real problem and the false problem.",
+                "PhiH.textAnalysis.freud.text.title": "The Problem of the Purpose of Life",
+                "PhiH.textAnalysis.freud.text.content": "The question of the purpose<sup>1</sup> of human life has been put on the research table countless times, but it has not yet found a satisfactory answer. Perhaps it contains no answer at all. And many \"questioners\"<sup>2</sup> thinkers who posed it added: if it turns out that life has no purpose, it will lose all value in our eyes. But this threat does not change anything in reality, and it may be more correct that we have the right to set the question aside<sup>3</sup>, because it seems to us to stem from that human pride<sup>4</sup> of which we already know many other manifestations, for no one ever speaks about the purpose of animal life, except to decide that animals exist only to serve man. But this view is also unfounded, for there are many animals that man does not know what to do with - except to describe, classify and study them - and truly numerous are the species that escaped this use because they lived and became extinct even before man looked at them.",
+                "PhiH.textAnalysis.freud.text.source": "Sigmund Freud, Civilization and Its Discontents, p. 22.21 - Freud, \"Civilization and Its Discontents\"",
+                "PhiH.textAnalysis.freud.author.title": "Author Presentation",
+                "PhiH.textAnalysis.freud.author.alt": "Sigmund Freud",
+                "PhiH.textAnalysis.freud.author.content": "Sigmund Freud (1856-1939) Austrian physician, founder of psychoanalysis and discoverer of the unconscious. He attempted to test the validity of the unconscious hypothesis by extending its field of application to include cultural creations. Among his most important works: The Interpretation of Dreams (1899), Five Lectures on Psychoanalysis (1909), Totem and Taboo (1912), Introduction to Psychoanalysis (1916), The Future of an Illusion (1927), Civilization and Its Discontents (1929), Moses and Monotheism (1938).",
+                "PhiH.textAnalysis.freud.lexical.title": "Footnotes and Concepts",
+                "PhiH.textAnalysis.freud.lexical.item1": "<strong>The purpose of life:</strong> reference to the investigation of finality in its openness to what is beyond life itself. Freud considers it a false problem.",
+                "PhiH.textAnalysis.freud.lexical.item2": "<strong>Questioners:</strong> putting the phrase in brackets indicates that these \"questioners\" did nothing but repeat an old question and therefore they were victims of a dominant thought that enclosed their thought with its questions and answers, and that rising to the rank of a true questioner requires breaking with this false question concerning the question of the purpose of life, because meaning is what man adds by his thought to his existence and not what he inherits.",
+                "PhiH.textAnalysis.freud.lexical.item3": "<strong>To set the question aside:</strong> Freud proposes in the following page of this text from his work \"Civilization and Its Discontents\", to replace the question of the purpose of life with another question that he considers relevant and formulates as follows: \"What are the purposes and vital aims revealed by human behavior? What do they ask of life and what do they aim at?\" This formulation aims to replace the question of the purpose of life with a question about purposes and vital aims in order to cut off the road to a question that repeats itself erroneously or falsely and links life to an end external to it.",
+                "PhiH.textAnalysis.freud.lexical.item4": "<strong>Human pride:</strong> reference to what remained a conviction in man who persisted for centuries with a pride that inspired him that he was the noblest creature, that he was the son of heaven and that everything in nature was made for him, but the history of scientific transformations has shown how this pride was weakened by blows, for the Copernican revolution overthrew the centrality of the earth and therefore the centrality of man, which was confirmed by the biological revolution which showed that man is from an animal lineage ... and psychoanalysis with Freud comes to prove that psychic life is governed by unconscious forces, and thus the third blow to a pride that is originally illusory is completed.",
+                "PhiH.textAnalysis.freud.questions.title": "Tasks",
+                "PhiH.textAnalysis.freud.questions.q1": "I extract from the text the arguments that the author used to show the lack of relevance of the question about the purpose of life.",
+                "PhiH.textAnalysis.freud.questions.q2": "I determine the criteria he used for that.",
+                "PhiH.textAnalysis.freud.questions.q3": "I distinguish in the following list between real problems and pseudo-problems (type of problem) and I indicate the criterion used in the distinction.",
+                "PhiH.textAnalysis.freud.questions.table": "<table style='width:100%; border-collapse: collapse; margin-top:1rem;'><thead><tr style='background-color: var(--primary-color); color: white;'><th style='padding:0.75rem; border:1px solid var(--border-color);'>Questions</th><th style='padding:0.75rem; border:1px solid var(--border-color);'>Criterion used</th><th style='padding:0.75rem; border:1px solid var(--border-color);'>Type of problem</th></tr></thead><tbody><tr style='background-color: var(--table-even-bg);'><td style='padding:0.75rem; border:1px solid var(--border-color);'>What may I hope?</td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td></tr><tr><td style='padding:0.75rem; border:1px solid var(--border-color);'>What is the sex of angels?</td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td></tr><tr style='background-color: var(--table-even-bg);'><td style='padding:0.75rem; border:1px solid var(--border-color);'>Do ghosts have real existence?</td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td></tr><tr><td style='padding:0.75rem; border:1px solid var(--border-color);'>Does the Arab woman have the right to hold political positions?</td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td></tr></tbody></table>",
+                "PhiH.textAnalysis.freud.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.freud.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.freud.answers.a1.content": "The arguments that Freud used to show the lack of relevance of the question about the purpose of life:<br><br>1. <strong>Absence of a satisfactory answer:</strong> Although the question has been asked repeatedly throughout history, it has not found a convincing answer, which may indicate that it is a fundamentally wrong question.<br><br>2. <strong>No link between purpose and value:</strong> Rejects the idea that life without purpose loses its value, asserting that this threat does not change reality.<br><br>3. <strong>Comparison with animals:</strong> The rarity of discourse on the purpose of animal life indicates that the question is specific to humans only, suggesting that it stems from human pride rather than an objective truth.<br><br>4. <strong>Non-universality of the idea:</strong> The idea that animals were created to serve humans has no basis, as there are animals of which humans know no practical use, and even species that became extinct before humans knew them.",
+                "PhiH.textAnalysis.freud.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.freud.answers.a2.content": "The criteria Freud used to judge the question of the purpose of life:<br><br>1. <strong>Criterion of utility and experience:</strong> Can the answer be verified empirically or practically?<br><br>2. <strong>Criterion of universality:</strong> Does the question apply to all living beings or only to humans?<br><br>3. <strong>Criterion of authenticity:</strong> Is the question authentic and does it stem from a real need or is it imported from previous thought?<br><br>4. <strong>Criterion of practical results:</strong> Does asking the question lead to useful practical results or does it hinder thinking?<br><br>5. <strong>Criterion of self-criticism:</strong> Do we ask the question because we are seeking truth or because it satisfies our human pride?",
+                "PhiH.textAnalysis.freud.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.freud.answers.a3.content": "<table style='width:100%; border-collapse: collapse; margin-top:1rem;'><thead><tr style='background-color: var(--primary-color); color: white;'><th style='padding:0.75rem; border:1px solid var(--border-color);'>Questions</th><th style='padding:0.75rem; border:1px solid var(--border-color);'>Criterion used</th><th style='padding:0.75rem; border:1px solid var(--border-color);'>Type of problem</th></tr></thead><tbody><tr style='background-color: var(--table-even-bg);'><td style='padding:0.75rem; border:1px solid var(--border-color);'>What may I hope?</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>Criterion of realism and experience</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>Real problem</td></tr><tr><td style='padding:0.75rem; border:1px solid var(--border-color);'>What is the sex of angels?</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>Criterion of empirical verification</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>Pseudo-problem</td></tr><tr style='background-color: var(--table-even-bg);'><td style='padding:0.75rem; border:1px solid var(--border-color);'>Do ghosts have real existence?</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>Criterion of scientific evidence</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>Pseudo-problem</td></tr><tr><td style='padding:0.75rem; border:1px solid var(--border-color);'>Does the Arab woman have the right to hold political positions?</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>Criterion of rights and justice</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>Real problem</td></tr></tbody></table><p style='margin-top: 1rem;'><strong>Explanation:</strong> A real problem is one that can be studied based on objective criteria and leads to practical results, while a pseudo-problem is a question whose answer cannot be verified empirically or does not lead to useful practical results.</p>",
+                "PhiH.textAnalysis.freud.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.freud.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.freud.analysis.thesis.content": "Freud proposes a radical idea that the question of \"the purpose of life\" is a false and meaningless question, and stems from human pride more than from a real intellectual need. Freud calls for abandoning this question and replacing it with more practical questions concerning the purposes and vital aims of humans in real life.",
+                "PhiH.textAnalysis.freud.analysis.mechanisms.title": "Mechanisms of deconstruction of the false question:",
+                "PhiH.textAnalysis.freud.analysis.mechanisms.content": "Freud relies on several mechanisms to deconstruct the question of the purpose of life:<br><br>1. <strong>Historicity:</strong> He indicates that the question has been asked repeatedly and has not found an answer, which may indicate that it is an erroneous question.<br><br>2. <strong>Comparison:</strong> He compares the situation of humans and animals to show that the question is specific to humans only.<br><br>3. <strong>Anthropological criticism:</strong> He links the question to human pride and attachment to the centrality of humans in the universe.<br><br>4. <strong>Utilitarianism:</strong> He seeks the practical utility of asking the question and prefers questions that lead to practical results.",
+                "PhiH.textAnalysis.freud.analysis.consequences.title": "Consequences of distinguishing between real and false problems:",
+                "PhiH.textAnalysis.freud.analysis.consequences.content": "- <strong>Liberation of thought:</strong> Freeing oneself from false questions that occupy thought without benefit.<br><br>- <strong>Concentration of efforts:</strong> Directing intellectual energy towards real questions that can be studied.<br><br>- <strong>Cognitive humility:</strong> Abandoning exaggerated human pride.<br><br>- <strong>Realism:</strong> Focusing on real life and its problems instead of metaphysical questions.<br><br>- <strong>Intellectual productivity:</strong> Increasing the productivity of philosophical thought by directing it towards solvable problems.",
+                "PhiH.textAnalysis.freud.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.freud.analysis.significance.content": "Freud's analysis of the false problem carries deep meanings in philosophy and psychology:<br><br>1. <strong>Philosophical criticism:</strong> Represents a model of critical deconstruction of traditional philosophical questions.<br><br>2. <strong>Psychoanalytic analysis:</strong> Reveals the psychological roots (pride) of many philosophical questions.<br><br>3. <strong>Scientific method:</strong> Emphasizes the importance of empirical and realistic criteria in evaluating questions.<br><br>4. <strong>Intellectual liberation:</strong> Calls for liberation from the constraints of traditional thought and inherited questions.<br><br>5. <strong>Focus on subjectivity:</strong> Shifts attention from metaphysical questions to the search for subjective meaning of life.<br><br>This text represents an important shift in Western thought from the search for external absolute meanings to the search for the inner subjective meaning of human life."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.freud.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.freud.title": "تحليل النص: مشكل الهدف من الحياة - سيغموند فرويد",
+                "PhiH.textAnalysis.freud.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.freud.introduction.content": "غالبا ما يتبرّم الإنسان ممّا يُشكِلُ عليه من أسئلة هي من الإعضال والاستعصاء بحيث تُورِثه من القلق ما يُفسد عليه متعة الحياة، ولكنّ التفحّص الدقيق لبعض هذه الأسئلة قد يُثبت أنّها ليست سوى أشباه مشاكل. لذلك فإنّ الإنسان مدعوّ إلى إعادة الاعتبار للسؤال وإلى إيلائه من القيمة على جهة الفحص والتثّت ما يمكّنه من التمييز بين المشكل الحقيقي والمشكل الزائف.",
+                "PhiH.textAnalysis.freud.text.title": "مشكل الهدف من الحياة",
+                "PhiH.textAnalysis.freud.text.content": "إنّ مسألة الهدف<sup>1</sup> من الحياة الإنسانية قد طُرحت على بساط البحث مرارا لا تُحصى، بَيْد أنّها لم تجد إلى الآن الجواب الشافي. ولعلّها لا تنطوي على أيّ جواب البتّة. والعديد من المفكّرين \"السائلين\"<sup>2</sup> الذين طرحوها أضافوا قولهم: إذا اتّضح أنّ الحياة ليس لها أيّ هدف، فستفقد في نظرنا كلّ قيمة. لكنّ هذا التهديد لا يُغيّر في واقع الأمر شيئا، ولعلّ الأصحّ هو أنّه من حقّنا أن ننحّي السؤال جانبا<sup>3</sup>، إذ أنّه يرجع في أصله، على ما يبدو لنا، إلى تلك الكبرياء الإنسانية<sup>4</sup> التي نعرف أساسا العديد من مظاهرها الأخرى، فليس ثمّة أبدا من يتكلّم عن هدف حياة الحيوانات، اللهمّ إلّ ليُقرّر أنّ الحيوانات لم تُوجد إلّ لخدمة الإنسان. لكن وجهة النظر هذه لا سند لها هي الأخرى، إذ كثيرة هي الحيوانات التي لا يعرف الإنسان ماذا يفعل بها - غير أن يصفها ويُصنّفها ويدرسها- وجمّة حقّا هي الأنواع التي تملّصت من هذا الاستعمال لأنّها عاشت وانقرضت حتى قبل أن يقع عليها نظر الإنسان.",
+                "PhiH.textAnalysis.freud.text.source": "سيقموند فرويد، قلق في الحضارة، ص 22.21 - Freud, \"Malaise dans la civilisation\"",
+                "PhiH.textAnalysis.freud.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.freud.author.alt": "سيغموند فرويد",
+                "PhiH.textAnalysis.freud.author.content": "سيغموند فرويد (1856-1939) طبيب نمساوي، مؤسّس التحليل النفسي ومكتشف اللاشعور. حاول اختبار صحّة فرضية اللاشعور عن طريق توسيع مجال تطبيقها لتشمل الإبداعات الثقافية. من أهمّ مؤلّفاته: تأويل الأحلام (1899)، خمسة دروس في التحليل النفسي (1909)، الطوطم والحرام (1912)، مقدّمة للتحليل النفسي (1916)، مستقبل وهم (1927)، قلق في الحضارة (1929)، موسى والتوحيد (1938).",
+                "PhiH.textAnalysis.freud.lexical.title": "الهوامش والمفاهيم",
+                "PhiH.textAnalysis.freud.lexical.item1": "<strong>الهدف من الحياة:</strong> إشارة إلى مبحث الغاية في انفتاحه على ما وراء الحياة نفسها. ويُقدِّر فرويد أنّه مشكل زائف.",
+                "PhiH.textAnalysis.freud.lexical.item2": "<strong>السائلين:</strong> وضع العبارة بين معقوفين يُشير إلى أنّ هؤلاء \"السائلين\" لم يفعلوا غير أن أعادوا طرح سؤال قديم وإذن فإنّهم كانوا ضحّيّة فكر سائد حاصر فكرهم بأسئلته وأجوبته، وأنّ الارتقاء إلى مرتبة السائل الحقيقي يقتضي القطع مع هذا السؤال الزائف المتعلّق بمسألة الهدف من الحياة، لأنّ المعنى هو ما يُضفيه الإنسان بفكره على وجوده لا ما يرثه.",
+                "PhiH.textAnalysis.freud.lexical.item3": "<strong>أن ننحّي السؤال جانبا:</strong> يقترح فرويد في الصفحة الموالية لهذا النص من مؤلّفه \"قلق في الحضارة\"، استبدال سؤال الهدف من الحياة بسؤال آخر يعتبره وجيها ويصوغه كالتالي: \"ما المقاصد وما المرامي الحيويّة التي ينمّ عنها سلوك البشر ؟ ماذا يطلبون من الحياة وإِلاَمَ يَرْمون ؟\" وهي صياغة تهدف إلى استبدال سؤال الهدف من الحياة بسؤال عن المقاصد والمرامي الحيويّة وذلك لقطع الطريق أمام سؤال يتكرّر خطأ أو زورا ويربط الحياة بغاية خارجة عنها.",
+                "PhiH.textAnalysis.freud.lexical.item4": "<strong>الكبرياء الإنسانية:</strong> إحالة على ما ظلّ قناعة لدى الإنسان إذ تمسّك وعلى مدى قرون بكبرياء ألهمته أنّه أشرف المخلوقات وأنّه ابن السماء وأنّ كلّ شيء في الطبيعة جُعل من أجله، غير أن تاريخ التحوّلات العلمية بيّن كيف نالت هذه الكبرياء من الطعنات ما أضعفها، فالثورة الكوبرنيكية أطاحت بمركزية الأرض ومن ثمّة بمركزية الإنسان، وهو ما أكّدته الثورة البيولوجية التي بيّنت أنّ الإنسان من سلالة حيوانية ... ويأتي التحليل النفسي مع فرويد ليثبت أن الحياة النفسية تحكمها قوى لاشعورية، وبذلك تكتمل الطعنة الثالثة في كبرياء هي في الأصل موهومة.",
+                "PhiH.textAnalysis.freud.questions.title": "المهام",
+                "PhiH.textAnalysis.freud.questions.q1": "أَستخرج من النص الحجج التي اعتمدها الكاتب لبيان عدم وجاهة السؤال عن الهدف من الحياة.",
+                "PhiH.textAnalysis.freud.questions.q2": "أحدّد المعايير التي اعتمدها في ذلك.",
+                "PhiH.textAnalysis.freud.questions.q3": "أُميّز داخل القائمة التالية بين المشاكل الحقيقية وأشباه المشاكل (نوع المشكل) وأُعيّن المقياس المعتمد في التمييز.",
+                "PhiH.textAnalysis.freud.questions.table": "<table style='width:100%; border-collapse: collapse; margin-top:1rem;'><thead><tr style='background-color: var(--primary-color); color: white;'><th style='padding:0.75rem; border:1px solid var(--border-color);'>الأسئلة</th><th style='padding:0.75rem; border:1px solid var(--border-color);'>المقياس المعتمد</th><th style='padding:0.75rem; border:1px solid var(--border-color);'>نوع المشكل</th></tr></thead><tbody><tr style='background-color: var(--table-even-bg);'><td style='padding:0.75rem; border:1px solid var(--border-color);'>ما الذي يجوز لي أن آمل ؟</td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td></tr><tr><td style='padding:0.75rem; border:1px solid var(--border-color);'>ما جنس الملائكة ؟</td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td></tr><tr style='background-color: var(--table-even-bg);'><td style='padding:0.75rem; border:1px solid var(--border-color);'>هل للأشباح وجود حقيقي ؟</td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td></tr><tr><td style='padding:0.75rem; border:1px solid var(--border-color);'>هل يحقّ للمرأة العربية أن تتقلّد مناصب سياسية ؟</td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td><td style='padding:0.75rem; border:1px solid var(--border-color);'></td></tr></tbody></table>",
+                "PhiH.textAnalysis.freud.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.freud.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.freud.answers.a1.content": "الحجج التي اعتمدها فرويد لبيان عدم وجاهة السؤال عن الهدف من الحياة:<br><br>1. <strong>عدم وجود جواب شافٍ:</strong> رغم تكرار طرح السؤال عبر التاريخ، إلا أنه لم يجد إجابة مُقنعة، مما قد يشير إلى أنه سؤال خاطئ في الأساس.<br><br>2. <strong>عدم ارتباط الهدف بالقيمة:</strong> رفض فكرة أن الحياة بدون هدف تفقد قيمتها، مؤكدًا أن هذا التهديد لا يغير من الواقع شيئًا.<br><br>3. <strong>المقارنة مع الحيوانات:</strong> ندرة الحديث عن هدف حياة الحيوانات يدل على أن السؤال خاص بالإنسان فقط، مما يشير إلى أنه نابع من كبرياء إنساني وليس من حقيقة موضوعية.<br><br>4. <strong>عدم شمولية الفكرة:</strong> فكرة أن الحيوانات خلقت لخدمة الإنسان لا سند لها، فهناك حيوانات لا فائدة عملية معروفة للإنسان منها، بل وأنواع انقرضت قبل أن يعرفها الإنسان.",
+                "PhiH.textAnalysis.freud.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.freud.answers.a2.content": "المعايير التي اعتمدها فرويد في الحكم على سؤال الهدف من الحياة:<br><br>1. <strong>معيار المنفعة والتجربة:</strong> هل يمكن التحقق من الإجابة تجريبيًا أو عمليًا؟<br><br>2. <strong>معيار الشمولية:</strong> هل ينطبق السؤال على جميع الكائنات الحية أم على الإنسان فقط؟<br><br>3. <strong>معيار الأصالة:</strong> هل السؤال أصيل ونابع من حاجة حقيقية أم أنه مُستورد من فكر سابق؟<br><br>4. <strong>معيار النتائج العملية:</strong> هل يؤدي طرح السؤال إلى نتائج عملية مفيدة أم أنه يعيق التفكير؟<br><br>5. <strong>معيار النقد الذاتي:</strong> هل نطرح السؤال لأننا نبحث عن الحقيقة أم لأنه يُرضي كبرياءنا الإنسانية؟",
+                "PhiH.textAnalysis.freud.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.freud.answers.a3.content": "<table style='width:100%; border-collapse: collapse; margin-top:1rem;'><thead><tr style='background-color: var(--primary-color); color: white;'><th style='padding:0.75rem; border:1px solid var(--border-color);'>الأسئلة</th><th style='padding:0.75rem; border:1px solid var(--border-color);'>المقياس المعتمد</th><th style='padding:0.75rem; border:1px solid var(--border-color);'>نوع المشكل</th></tr></thead><tbody><tr style='background-color: var(--table-even-bg);'><td style='padding:0.75rem; border:1px solid var(--border-color);'>ما الذي يجوز لي أن آمل ؟</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>معيار الواقعية والتجربة</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>مشكل حقيقي</td></tr><tr><td style='padding:0.75rem; border:1px solid var(--border-color);'>ما جنس الملائكة ؟</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>معيار التحقق التجريبي</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>شبه مشكل</td></tr><tr style='background-color: var(--table-even-bg);'><td style='padding:0.75rem; border:1px solid var(--border-color);'>هل للأشباح وجود حقيقي ؟</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>معيار الأدلة العلمية</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>شبه مشكل</td></tr><tr><td style='padding:0.75rem; border:1px solid var(--border-color);'>هل يحقّ للمرأة العربية أن تتقلّد مناصب سياسية ؟</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>معيار الحقوق والعدالة</td><td style='padding:0.75rem; border:1px solid var(--border-color);'>مشكل حقيقي</td></tr></tbody></table><p style='margin-top: 1rem;'><strong>التفسير:</strong> المشكل الحقيقي هو الذي يمكن البحث فيه بناءً على معايير موضوعية ويؤدي إلى نتائج عملية، بينما شبه المشكل هو سؤال لا يمكن التحقق من إجابته تجريبيًا أو لا يؤدي إلى نتائج عملية مفيدة.</p>",
+                "PhiH.textAnalysis.freud.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.freud.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.freud.analysis.thesis.content": "يطرح فرويد فكرة جذرية مفادها أن سؤال \"الهدف من الحياة\" هو سؤال زائف لا معنى له، وينبع من الكبرياء الإنساني أكثر من كونه نابعًا من حاجة فكرية حقيقية. يدعو فرويد إلى التخلي عن هذا السؤال واستبداله بأسئلة أكثر عملية تتعلق بمقاصد البشر ومراميهم الحيوية في الحياة الواقعية.",
+                "PhiH.textAnalysis.freud.analysis.mechanisms.title": "آليات تفكيك السؤال الزائف:",
+                "PhiH.textAnalysis.freud.analysis.mechanisms.content": "يعتمد فرويد على عدة آليات لتفكيك سؤال الهدف من الحياة:<br><br>1. <strong>التاريخية:</strong> يشير إلى أن السؤال طرح مرارًا ولم يجد إجابة، مما قد يدل على أنه سؤال خاطئ.<br><br>2. <strong>المقارنة:</strong> يقارن بين وضع الإنسان والحيوان ليبين أن السؤال خاص بالإنسان فقط.<br><br>3. <strong>النقد الأنثروبولوجي:</strong> يربط السؤال بالكبرياء الإنساني والتعلق بمركزية الإنسان في الكون.<br><br>4. <strong>النفعية:</strong> يبحث عن الجدوى العملية من طرح السؤال ويفضل الأسئلة التي تؤدي إلى نتائج عملية.",
+                "PhiH.textAnalysis.freud.analysis.consequences.title": "نتائج التمييز بين المشكل الحقيقي والزائف:",
+                "PhiH.textAnalysis.freud.analysis.consequences.content": "- <strong>تحرير الفكر:</strong> التحرر من الأسئلة الزائفة التي تشغل الفكر دون فائدة.<br><br>- <strong>تركيز الجهود:</strong> توجيه الطاقة الفكرية نحو الأسئلة الحقيقية التي يمكن البحث فيها.<br><br>- <strong>التواضع المعرفي:</strong> التخلي عن الكبرياء الإنساني المبالغ فيه.<br><br>- <strong>الواقعية:</strong> التركيز على الحياة الواقعية ومشاكلها بدلاً من التساؤلات الميتافيزيقية.<br><br>- <strong>الإنتاجية الفكرية:</strong> زيادة إنتاجية التفكير الفلسفي بتوجيهه نحو القضايا القابلة للحل.",
+                "PhiH.textAnalysis.freud.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.freud.analysis.significance.content": "يحمل تحليل فرويد للمشكل الزائف دلالات عميقة في الفلسفة وعلم النفس:<br><br>1. <strong>النقد الفلسفي:</strong> يمثل نموذجًا للتفكيك النقدي للأسئلة الفلسفية التقليدية.<br><br>2. <strong>التحليل النفسي:</strong> يكشف عن الجذور النفسية (الكبرياء) للعديد من التساؤلات الفلسفية.<br><br>3. <strong>المنهج العلمي:</strong> يؤكد على أهمية المعايير التجريبية والواقعية في تقييم الأسئلة.<br><br>4. <strong>التحرر الفكري:</strong> يدعو إلى التحرر من قيود الفكر التقليدي والأسئلة المُورَثة.<br><br>5. <strong>التركيز على الذاتية:</strong> ينقل الاهتمام من الأسئلة الميتافيزيقية إلى البحث عن المعنى الذاتي للحياة.<br><br>هذا النص يمثل تحولاً مهماً في الفكر الغربي من البحث عن معانٍ مطلقة خارجية إلى البحث عن المعنى الداخلي الذاتي للحياة الإنسانية."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

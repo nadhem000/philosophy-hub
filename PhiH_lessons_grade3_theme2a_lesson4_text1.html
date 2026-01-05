@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: في الخلط بين معاني الألفاظ - ابن رشد - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#6B21A8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Purple/Violet Color Palette (أرجواني/بنفسجي) */
+        :root {
+            --primary-color: #6B21A8;
+            --primary-light: #8B5CF6;
+            --primary-dark: #4C1D95;
+            --secondary-color: #A855F7;
+            --secondary-light: #C084FC;
+            --secondary-dark: #7C3AED;
+            --accent-color: #A855F7;
+            --accent-light: #C084FC;
+            --accent-dark: #7C3AED;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #faf5ff;
+            --card-bg: #ffffff;
+            --definition-bg: #f3e8ff;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #e9d5ff;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(107, 33, 168, 0.1), 0 2px 4px -1px rgba(107, 33, 168, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(107, 33, 168, 0.1), 0 4px 6px -2px rgba(107, 33, 168, 0.05);
+            --gradient-primary: linear-gradient(135deg, #6B21A8 0%, #A855F7 100%);
+            --gradient-secondary: linear-gradient(135deg, #A855F7 0%, #8B5CF6 100%);
+            --gradient-accent: linear-gradient(135deg, #A855F7 0%, #6B21A8 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #8B5CF6;
+            --primary-light: #A855F7;
+            --primary-dark: #6B21A8;
+            --secondary-color: #C084FC;
+            --secondary-light: #D8B4FE;
+            --secondary-dark: #A855F7;
+            --accent-color: #C084FC;
+            --accent-light: #D8B4FE;
+            --accent-dark: #A855F7;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #4C1D95;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #6B21A8;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #8B5CF6 0%, #C084FC 100%);
+            --gradient-secondary: linear-gradient(135deg, #C084FC 0%, #A855F7 100%);
+            --gradient-accent: linear-gradient(135deg, #C084FC 0%, #8B5CF6 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(107, 33, 168, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(168, 85, 247, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(168, 85, 247, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(107, 33, 168, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+        
+        /* Header and controls styles - Same as other files */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Windows Bar Styling */
+        .PhiH-windows-bar {
+            display: flex;
+            justify-content: center;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-window-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: var(--text-color);
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+            margin: 0 0.25rem;
+        }
+        
+        .PhiH-window-item:hover {
+            background-color: var(--definition-bg);
+            color: var(--primary-color);
+        }
+        
+        .PhiH-window-item.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .PhiH-window-icon {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.ibnRushd.title">تحليل النص: في الخلط بين معاني الألفاظ - ابن رشد</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.ibnRushd.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ibnRushd.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.ibnRushd.introduction.content">
+                    غالبا ما يُثمّن تنوّع معاني الألفاظ باعتباره عنوان ثراء اللغة وعلامة قدرتها على التلاؤم مع تنوّع الواقع واستجابتها لمقتضيات التعبير الإنساني، غير أنّ هذه الميزة كثيرا ما تتحوّل إلى مخزون دلاليّ يُستثمر من أجل التغليط ممّا يدعونا إلى الحذر والعمل على كشف الآليّات المعتمدة في هذا التغليط.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ibnRushd.text.title">في الخلط بين معاني الألفاظ</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.ibnRushd.text.content">
+                        ... والتبكيت <sup>1</sup> والتغلِيط منه ما يكون من قِبل الألفاظ من خارج <sup>2</sup>، ومنه ما يكون من قِبل المعاني <sup>3</sup> ... والذي يكون من قِبل الألفاظ ستّة أصناف: أحدها اشتراك اللفظ المُفرد...
+                        <br><br>
+                        فمثال اشتراك الاسم المفرد قول القائل: المتعلِّم عالِم، لأنّ المتعلِّم يَعْلَمُ والذي يَعلَم عالِم، فالمتعلِّم عالِم.
+                        <br><br>
+                        ووجه المغالطة في هذا أنّ لفظة "يَعْلَمُ" تُقال على الزمان المستقبلِ، وتُقال على الحاضر، فهي تصدُق على العَالِمِ في الحاضر وعلى المتعلّم في المستقبل. وكذلك قول القائل أيضا: بعض الشرّ واجب، والواجب خير، فبعض الشرّ خير.
+                        <br><br>
+                        والمغالطة في هذا أنّ اسم "الواجب" دلّ في قولنا: "بعض الشرّ واجب" على ما يدلّ عليه اسم "الضروري"، ودلّ في قولنا: "والواجب خير" على ما يدلّ عليه "المُؤْثِر والشيء الذي ينبغي".
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.ibnRushd.text.source">ابن رشد، تلخیص السفسطة</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ibnRushd.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/ibn_rushd.jpg" alt="ابن رشد" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.ibnRushd.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.ibnRushd.author.content">
+                            أبو الوليد بن رشد (520 هـ/595هـ - 1126م/1198م) يُعدّ من كبار فقهاء المغرب الإسلامي وفلاسفته في العصر الوسيط. يمثّل أكبر شرّاح أرسطو إذ اهتمّ بوضع تلاخيص لمجمل مؤلّفات "المعلّم الأوّل"، ولُقّب إثرها "بالشارح". اتّجه جهد ابن رشد الفلسفي إلى إثبات علاقة التوافق بين الفلسفة والشريعة وتكاملهما من موقع الاعتقاد في وحدة الحقيقة التي نبلغها بواسطة آليّة التأويل وهو ما يفترض القول بأولويّة العقل. من أهمّ مؤلّفاته: "تهافت التهافت"، "فصل المقال فيما بين الشريعة والحكمة من اتّصال"، "مناهج الأدلّة"، "تلخيص ما بعد الطبيعة"، تلاخيص لمؤلّفات أرسطو المنطقيّة من بينها "تلخيص السفسطة".
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ibnRushd.lexical.title">الهوامش والمفاهيم</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.ibnRushd.lexical.item1"><strong>"التبكيت":</strong> المقصود به الدحض. أُنظر السند عدد1 من نفس الفصل.</li>
+                    <li data-i18n="PhiH.textAnalysis.ibnRushd.lexical.item2"><strong>"من قبل الألفاظ من خارج":</strong> إنّ المجال الأوّلي للمغالطة يتعلّق بظاهر اللفظ في تعدّد معانيه سواء أُخذ في حدّ ذاته (حيث يمكن للفظ الواحد أن يُحيل على دلالات مختلفة homonymie) أو في علاقته بألفاظ أخرى (حيث يصبح اللفظ ملتبس الدلالة عند ارتباطه بألفاظ أخرى في سياق الجملة amphibolie).</li>
+                    <li data-i18n="PhiH.textAnalysis.ibnRushd.lexical.item3"><strong>"من قبل المعاني":</strong> وفي هذا إحالة على المجال الثاني للمغالطة الذي لا يتعلّق بدلالة الألفاظ في حدّ ذاتها أو في علاقة بعضها بالبعض الآخر وإنّما يتعلّق بكيفيّة استعمالها في سياق القول كأخذ ما يصدق نسبيًا على أنّه يصدق بإطلاق كقولنا: أبقراط عالِم في الطبّ إذن هو عالِم.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ibnRushd.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.ibnRushd.questions.q1">
+                        ألاحظ المثال الأوّل الوارد في النص وأتبيّن طبيعة الخلط القائم فيه:
+                        <br>
+                        المتعلّم يَعْلَم.
+                        <br>
+                        والذي يَعْلَم عالِم.
+                        <br>
+                        إذن فالمتعلّم عالِم.
+                    </li>
+                    <li data-i18n="PhiH.textAnalysis.ibnRushd.questions.q2">
+                        ألاحظ المثال الثاني الوارد في النص وأتبيّن طبيعة الخلط القائم فيه:
+                        <br>
+                        بعض الشرّ واجب.
+                        <br>
+                        والواجب خير.
+                        <br>
+                        إذن بعض الشرّ خير.
+                    </li>
+                    <li data-i18n="PhiH.textAnalysis.ibnRushd.questions.q3">أكشف عن الآليّة المشتركة التي قادت التغليط في المثالين المذكورين رغم ما يوجد من اختلاف بينهما.</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ibnRushd.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ibnRushd.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ibnRushd.answers.a1.content">
+                        <strong>طبيعة الخلط في المثال الأول:</strong>
+                        <br><br>
+                        المثال: "المتعلّم يَعْلَم، والذي يَعْلَم عالِم، إذن فالمتعلّم عالِم".
+                        <br><br>
+                        <strong>التحليل:</strong>
+                        <br><br>
+                        1. <strong>الاشتراك اللفظي:</strong> اللفظ "يَعْلَم" هنا يحمل معنيين مختلفين:
+                        <br>
+                        - في المقدمة الأولى ("المتعلّم يَعْلَم"): يُقصد به المعرفة المستقبلية، أي أن المتعلّم سيعلم في المستقبل بعد أن يتعلم.
+                        <br>
+                        - في المقدمة الثانية ("والذي يَعْلَم عالِم"): يُقصد به المعرفة الحالية، أي الشخص الذي يملك المعرفة الآن.
+                        <br><br>
+                        2. <strong>الخلط الزمني:</strong> تمّ الخلط بين الزمن المستقبلي (إمكانية المعرفة) والزمن الحاضر (امتلاك المعرفة الفعلي).
+                        <br><br>
+                        3. <strong>المغالطة:</strong> النتيجة غير صحيحة لأنها تعتمد على استخدام نفس اللفظ ("يَعْلَم") لمعنيين مختلفين دون التمييز بينهما.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ibnRushd.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ibnRushd.answers.a2.content">
+                        <strong>طبيعة الخلط في المثال الثاني:</strong>
+                        <br><br>
+                        المثال: "بعض الشرّ واجب، والواجب خير، إذن بعض الشرّ خير".
+                        <br><br>
+                        <strong>التحليل:</strong>
+                        <br><br>
+                        1. <strong>الاشتراك اللفظي:</strong> اللفظ "الواجب" هنا يحمل معنيين مختلفين:
+                        <br>
+                        - في المقدمة الأولى ("بعض الشرّ واجب"): يُقصد به "الضروري" أو "الذي لا بد منه"، أي أن بعض الشرور ضرورية ولا يمكن تجنبها.
+                        <br>
+                        - في المقدمة الثانية ("والواجب خير"): يُقصد به "المؤثر" أو "الشيء الذي ينبغي فعله"، أي ما هو خيّر ويستحق الفعل.
+                        <br><br>
+                        2. <strong>الخلط الدلالي:</strong> تمّ الخلط بين معنى "الضرورة" ومعنى "الخيرية الأخلاقية".
+                        <br><br>
+                        3. <strong>المغالطة:</strong> النتيجة غير صحيحة لأنها تخلط بين "الضرورة الواقعية" (بعض الشرور ضرورية) و"القيمة الأخلاقية" (الواجب الأخلاقي خير).
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ibnRushd.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ibnRushd.answers.a3.content">
+                        <strong>الآلية المشتركة للتغليط في المثالين:</strong>
+                        <br><br>
+                        رغم الاختلاف الظاهري بين المثالين، فإن الآلية المشتركة التي قادت إلى التغليط في كليهما هي:
+                        <br><br>
+                        1. <strong>الاشتراك اللفظي (Homonymy):</strong> استخدام لفظ واحد يحمل معنيين مختلفين في نفس السياق الاستدلالي.
+                        <br><br>
+                        2. <strong>الخلط بين المستويات الدلالية:</strong> في كلا المثالين، تمّ الخلط بين مستويات دلالية مختلفة لنفس اللفظ:
+                        <br>
+                        - في المثال الأول: الخلط بين المستوى الزمني (المستقبلي مقابل الحاضر).
+                        <br>
+                        - في المثال الثاني: الخلط بين المستوى الوصفي (الضرورة الواقعية) والمستوى المعياري (القيمة الأخلاقية).
+                        <br><br>
+                        3. <strong>الانتقال غير المشروع:</strong> الانتقال من معنى إلى آخر لنفس اللفظ دون التنبيه إلى تغيّر الدلالة.
+                        <br><br>
+                        4. <strong>إيهام الاتساق الدلالي:</strong> إيهام القارئ بأن اللفظ يحمل نفس المعنى في جميع مراحل الاستدلال، بينما في الواقع يتغير معناه.
+                        <br><br>
+                        5. <strong>الاستفادة من غنى اللغة:</strong> استغلال ثراء اللغة وتعدد معاني الألفاظ لإخفاء الخلل في الاستدلال.
+                        <br><br>
+                        <strong>الخلاصة:</strong> الآلية المشتركة هي "الخلط الدلالي" الناتج عن "الاشتراك اللفظي"، حيث يتم استخدام نفس اللفظ بمعنيين مختلفين في سياق استدلالي واحد، مما يؤدي إلى استنتاج غير صحيح.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ibnRushd.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ibnRushd.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ibnRushd.analysis.thesis.content">
+                        يوضح ابن رشد في هذا النص أحد أنواع المغالطات المنطقية التي تنشأ من الخلط بين معاني الألفاظ، ويُعرِّف "الاشتراك اللفظي" كأحد الأصناف الستة للمغالطات التي تكون من قبل الألفاظ. يؤكد أن تنوع معاني الألفاظ الذي يعد ميزة للغة يمكن أن يتحول إلى أداة للتغليط عندما يتم استغلاله في الاستدلالات الخاطئة، وذلك من خلال استخدام اللفظ نفسه بمعنيين مختلفين دون التنبيه إلى هذا الاختلاف.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ibnRushd.analysis.mechanisms.title">آليات الخلط بين معاني الألفاظ:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ibnRushd.analysis.mechanisms.content">
+                        يعرض ابن رشد آليتين رئيسيتين للخلط بين معاني الألفاظ:
+                        <br><br>
+                        1. <strong>الخلط الزمني:</strong> كما في المثال الأول حيث تم الخلط بين المعرفة المستقبلية (إمكانية المعرفة) والمعرفة الحالية (امتلاك المعرفة).
+                        <br><br>
+                        2. <strong>الخلط بين المستوى الوصفي والمعياري:</strong> كما في المثال الثاني حيث تم الخلط بين "الضرورة الواقعية" (بعض الشرور ضرورية) و"القيمة الأخلاقية" (الواجب خير).
+                        <br><br>
+                        3. <strong>الاستفادة من تعدد الدلالات:</strong> استغلال ثراء اللغة وتعدد معاني الألفاظ لإخفاء الخلل في الاستدلال.
+                        <br><br>
+                        4. <strong>إيهام الاتساق الدلالي:</strong> تقديم الاستدلال بشكل يوحي بأن اللفظ يحمل نفس المعنى في جميع مراحله.
+                        <br><br>
+                        5. <strong>الانتقال غير المشروع:</strong> الانتقال من معنى إلى آخر لنفس اللفظ دون الإشارة إلى هذا التغير.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ibnRushd.analysis.consequences.title">نتائج وخطورة الخلط بين معاني الألفاظ:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ibnRushd.analysis.consequences.content">
+                        - <strong>تشويه الفكر النقدي:</strong> الخلط بين معاني الألفاظ يعطل القدرة على التفكير النقدي السليم.
+                        <br><br>
+                        - <strong>تضليل الحوار والنقاش:</strong> يمكن استخدام هذه المغالطات لتضليل الخصم في الحوارات والنقاشات.
+                        <br><br>
+                        - <strong>إعاقة التقدم المعرفي:</strong> قبول الاستدلالات الخاطئة يعيق التقدم المعرفي ويحول دون الوصول إلى الحقائق.
+                        <br><br>
+                        - <strong>تأسيس المعتقدات على أساس واه:</strong> يمكن بناء معتقدات خاطئة على استدلالات تعتمد على الخلط بين معاني الألفاظ.
+                        <br><br>
+                        - <strong>إضعاف اللغة كأداة للتواصل:</strong> الإكثار من هذه الممارسات يضعف دور اللغة كأداة دقيقة للتواصل والفهم المتبادل.
+                        <br><br>
+                        - <strong>صعوبة كشف المغالطة:</strong> هذه النوعية من المغالطات قد تكون صعبة الكشف لأنها تعتمد على ثراء اللغة الذي هو في الأصل ميزة إيجابية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ibnRushd.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ibnRushd.analysis.significance.content">
+                        يحمل تحليل ابن رشد للخلط بين معاني الألفاظ دلالات عميقة في الفلسفة والمنطق واللغة:
+                        <br><br>
+                        1. <strong>تطور الفكر المنطقي الإسلامي:</strong> يمثل النص تطوراً مهماً في الفكر المنطقي الإسلامي من خلال التحليل الدقيق لأنواع المغالطات.
+                        <br><br>
+                        2. <strong>العلاقة بين اللغة والمنطق:</strong> يسلط الضوء على العلاقة الوثيقة بين اللغة والمنطق، وكيف يمكن للخصائص اللغوية أن تؤثر على صحة الاستدلالات.
+                        <br><br>
+                        3. <strong>التمييز بين الثراء اللغوي والتغليط:</strong> يميز بين تنوع معاني الألفاظ كعلامة على ثراء اللغة، واستغلال هذا التنوع لأغراض التغليط.
+                        <br><br>
+                        4. <strong>الأهمية المنهجية:</strong> يؤكد على أهمية الدقة اللغوية في البحث الفلسفي والعلمي، وضرورة تجنب الخلط بين معاني الألفاظ.
+                        <br><br>
+                        5. <strong>استمرارية المشكلة:</strong> مشكلة الخلط بين معاني الألفاظ لا تزال قائمة في عصرنا الحالي في مختلف المجالات بما في ذلك النقاشات العامة والإعلام.
+                        <br><br>
+                        6. <strong>دروس معاصرة:</strong> يقدم النص دروساً معاصرة حول أهمية التدقيق اللغوي في عصر المعلومات وانتشار الخطابات المشبوهة.
+                        <br><br>
+                        هذا النص يمثل مساهمة مهمة في فهم أحد أنواع المغالطات المنطقية وتوضيح آليات عملها، مما يساعد على تطوير قدرات التفكير النقدي والتحليلي.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.ibnRushd.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.ibnRushd.title": "Analyse du texte: De la confusion entre les significations des termes - Ibn Rushd",
+                "PhiH.textAnalysis.ibnRushd.introduction.title": "Introduction",
+                "PhiH.textAnalysis.ibnRushd.introduction.content": "La diversité des significations des termes est souvent valorisée comme un signe de la richesse de la langue et de sa capacité à s'adapter à la diversité de la réalité et à répondre aux exigences de l'expression humaine. Cependant, cette caractéristique se transforme souvent en un réservoir sémantique exploité pour tromper, ce qui nous appelle à la prudence et à travailler à découvrir les mécanismes utilisés dans cette tromperie.",
+                "PhiH.textAnalysis.ibnRushd.text.title": "De la confusion entre les significations des termes",
+                "PhiH.textAnalysis.ibnRushd.text.content": "... et la réfutation <sup>1</sup> et la tromperie proviennent parfois des termes de l'extérieur <sup>2</sup>, et parfois des significations <sup>3</sup> ... et ce qui provient des termes est de six types: l'un d'eux est l'homonymie du terme individuel...<br><br>Un exemple d'homonymie du nom individuel est la parole de celui qui dit: L'apprenant est savant, car l'apprenant sait et celui qui sait est savant, donc l'apprenant est savant.<br><br>L'aspect de la sophistique dans ceci est que le terme \"sait\" est dit pour le temps futur, et il est dit pour le présent, donc il est vrai pour le savant dans le présent et pour l'apprenant dans le futur. De même, la parole de celui qui dit aussi: Un certain mal est nécessaire, et le nécessaire est bon, donc un certain mal est bon.<br><br>La sophistique dans ceci est que le nom \"nécessaire\" a indiqué dans notre parole: \"Un certain mal est nécessaire\" ce qu'indique le nom \"obligatoire\", et a indiqué dans notre parole: \"et le nécessaire est bon\" ce qu'indique \"l'influent et la chose qui devrait être\".",
+                "PhiH.textAnalysis.ibnRushd.text.source": "Ibn Rushd, Résumé de la Sophistique",
+                "PhiH.textAnalysis.ibnRushd.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.ibnRushd.author.alt": "Ibn Rushd (Averroès)",
+                "PhiH.textAnalysis.ibnRushd.author.content": "Abu al-Walid Ibn Rushd (520 AH/595AH - 1126 CE/1198 CE) est considéré comme l'un des grands juristes et philosophes du Maghreb islamique au Moyen Âge. Il représente le plus grand commentateur d'Aristote, s'intéressant à la rédaction de résumés de l'ensemble des œuvres du \"Premier Maître\", et fut surnommé à la suite de cela \"le Commentateur\". L'effort philosophique d'Ibn Rushd visait à prouver la relation de conformité entre la philosophie et la charia et leur complémentarité à partir de la croyance en l'unité de la vérité que nous atteignons par le mécanisme de l'interprétation, ce qui suppose de dire la priorité de la raison. Parmi ses œuvres les plus importantes: \"L'incohérence de l'incohérence\", \"Le discours décisif sur la connexion entre la charia et la sagesse\", \"Les méthodes des preuves\", \"Résumé de la métaphysique\", des résumés des œuvres logiques d'Aristote dont \"Résumé de la Sophistique\".",
+                "PhiH.textAnalysis.ibnRushd.lexical.title": "Notes et concepts",
+                "PhiH.textAnalysis.ibnRushd.lexical.item1": "<strong>\"La réfutation\":</strong> Signifie la réfutation. Voir le document numéro 1 du même chapitre.",
+                "PhiH.textAnalysis.ibnRushd.lexical.item2": "<strong>\"Des termes de l'extérieur\":</strong> Le premier domaine de la sophistique concerne l'apparence du terme dans la multiplicité de ses significations, qu'il soit pris en lui-même (où un même terme peut renvoyer à des significations différentes - homonymie) ou dans sa relation avec d'autres termes (où le terme devient ambigu dans sa signification lorsqu'il est associé à d'autres termes dans le contexte de la phrase - amphibologie).",
+                "PhiH.textAnalysis.ibnRushd.lexical.item3": "<strong>\"Des significations\":</strong> Cela renvoie au deuxième domaine de la sophistique qui ne concerne pas la signification des termes en elles-mêmes ou dans leur relation les unes avec les autres, mais concerne la manière de les utiliser dans le contexte du discours, comme prendre ce qui est vrai relativement comme étant vrai absolument, comme dire: Hippocrate est savant en médecine donc il est savant.",
+                "PhiH.textAnalysis.ibnRushd.questions.title": "Tâches",
+                "PhiH.textAnalysis.ibnRushd.questions.q1": "J'observe le premier exemple dans le texte et je détermine la nature de la confusion qui y existe:<br>L'apprenant sait.<br>Celui qui sait est savant.<br>Donc l'apprenant est savant.",
+                "PhiH.textAnalysis.ibnRushd.questions.q2": "J'observe le deuxième exemple dans le texte et je détermine la nature de la confusion qui y existe:<br>Un certain mal est nécessaire.<br>Le nécessaire est bon.<br>Donc un certain mal est bon.",
+                "PhiH.textAnalysis.ibnRushd.questions.q3": "Je découvre le mécanisme commun qui a conduit à la tromperie dans les deux exemples mentionnés malgré les différences qui existent entre eux.",
+                "PhiH.textAnalysis.ibnRushd.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.ibnRushd.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.ibnRushd.answers.a1.content": "<strong>Nature de la confusion dans le premier exemple:</strong><br><br>Exemple: \"L'apprenant sait, celui qui sait est savant, donc l'apprenant est savant\".<br><br><strong>Analyse:</strong><br><br>1. <strong>Homonymie:</strong> Le terme \"sait\" porte ici deux significations différentes:<br>- Dans la première prémisse (\"L'apprenant sait\"): Il signifie la connaissance future, c'est-à-dire que l'apprenant saura dans le futur après avoir appris.<br>- Dans la deuxième prémisse (\"Celui qui sait est savant\"): Il signifie la connaissance actuelle, c'est-à-dire la personne qui possède la connaissance maintenant.<br><br>2. <strong>Confusion temporelle:</strong> Il y a eu confusion entre le temps futur (possibilité de connaissance) et le temps présent (possession actuelle de connaissance).<br><br>3. <strong>Sophisme:</strong> La conclusion n'est pas correcte car elle repose sur l'utilisation du même terme (\"sait\") avec deux significations différentes sans les distinguer.",
+                "PhiH.textAnalysis.ibnRushd.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.ibnRushd.answers.a2.content": "<strong>Nature de la confusion dans le deuxième exemple:</strong><br><br>Exemple: \"Un certain mal est nécessaire, le nécessaire est bon, donc un certain mal est bon\".<br><br><strong>Analyse:</strong><br><br>1. <strong>Homonymie:</strong> Le terme \"nécessaire\" porte ici deux significations différentes:<br>- Dans la première prémisse (\"Un certain mal est nécessaire\"): Il signifie \"obligatoire\" ou \"inévitable\", c'est-à-dire que certains maux sont nécessaires et ne peuvent être évités.<br>- Dans la deuxième prémisse (\"Le nécessaire est bon\"): Il signifie \"l'influent\" ou \"la chose qui devrait être faite\", c'est-à-dire ce qui est bon et mérite d'être fait.<br><br>2. <strong>Confusion sémantique:</strong> Il y a eu confusion entre le sens de \"nécessité\" et le sens de \"bonté morale\".<br><br>3. <strong>Sophisme:</strong> La conclusion n'est pas correcte car elle mélange la \"nécessité réelle\" (certains maux sont nécessaires) et la \"valeur morale\" (le devoir moral est bon).",
+                "PhiH.textAnalysis.ibnRushd.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.ibnRushd.answers.a3.content": "<strong>Le mécanisme commun de tromperie dans les deux exemples:</strong><br><br>Malgré la différence apparente entre les deux exemples, le mécanisme commun qui a conduit à la tromperie dans les deux est:<br><br>1. <strong>Homonymie:</strong> Utilisation d'un même terme portant deux significations différentes dans le même contexte déductif.<br><br>2. <strong>Confusion entre les niveaux sémantiques:</strong> Dans les deux exemples, il y a eu confusion entre différents niveaux sémantiques du même terme:<br>- Dans le premier exemple: Confusion entre le niveau temporel (futur vs présent).<br>- Dans le deuxième exemple: Confusion entre le niveau descriptif (nécessité réelle) et le niveau normatif (valeur morale).<br><br>3. <strong>Transition illégitime:</strong> Passage d'un sens à un autre pour le même terme sans alerter du changement de signification.<br><br>4. <strong>Illusion de cohérence sémantique:</strong> Donner l'illusion au lecteur que le terme porte la même signification dans toutes les étapes du raisonnement, alors qu'en réalité sa signification change.<br><br>5. <strong>Exploitation de la richesse de la langue:</strong> Exploitation de la richesse de la langue et de la multiplicité des significations des termes pour cacher le défaut dans le raisonnement.<br><br><strong>Conclusion:</strong> Le mécanisme commun est la \"confusion sémantique\" résultant de l'\"homonymie\", où le même terme est utilisé avec deux significations différentes dans un même contexte déductif, conduisant à une conclusion incorrecte.",
+                "PhiH.textAnalysis.ibnRushd.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.ibnRushd.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.ibnRushd.analysis.thesis.content": "Ibn Rushd clarifie dans ce texte l'un des types de sophismes logiques qui naissent de la confusion entre les significations des termes, et définit l'\"homonymie\" comme l'un des six types de sophismes qui proviennent des termes. Il affirme que la diversité des significations des termes, qui est une caractéristique de la langue, peut se transformer en un outil de tromperie lorsqu'elle est exploitée dans des raisonnements erronés, en utilisant le même terme avec deux significations différentes sans alerter de cette différence.",
+                "PhiH.textAnalysis.ibnRushd.analysis.mechanisms.title": "Mécanismes de confusion entre les significations des termes:",
+                "PhiH.textAnalysis.ibnRushd.analysis.mechanisms.content": "Ibn Rushd présente deux mécanismes principaux de confusion entre les significations des termes:<br><br>1. <strong>Confusion temporelle:</strong> Comme dans le premier exemple où il y a eu confusion entre la connaissance future (possibilité de connaissance) et la connaissance actuelle (possession de connaissance).<br><br>2. <strong>Confusion entre le niveau descriptif et normatif:</strong> Comme dans le deuxième exemple où il y a eu confusion entre la \"nécessité réelle\" (certains maux sont nécessaires) et la \"valeur morale\" (le devoir est bon).<br><br>3. <strong>Exploitation de la multiplicité des significations:</strong> Exploitation de la richesse de la langue et de la multiplicité des significations des termes pour cacher le défaut dans le raisonnement.<br><br>4. <strong>Illusion de cohérence sémantique:</strong> Présentation du raisonnement de manière à donner l'illusion que le terme porte la même signification dans toutes ses étapes.<br><br>5. <strong>Transition illégitime:</strong> Passage d'un sens à un autre pour le même terme sans indiquer ce changement.",
+                "PhiH.textAnalysis.ibnRushd.analysis.consequences.title": "Conséquences et danger de la confusion entre les significations des termes:",
+                "PhiH.textAnalysis.ibnRushd.analysis.consequences.content": "- <strong>Déformation de la pensée critique:</strong> La confusion entre les significations des termes paralyse la capacité de penser de manière critique et correcte.<br><br>- <strong>Tromperie dans le dialogue et le débat:</strong> Ces sophismes peuvent être utilisés pour tromper l'adversaire dans les dialogues et les débats.<br><br>- <strong>Obstruction du progrès cognitif:</strong> L'acceptation de raisonnements erronés entrave le progrès cognitif et empêche d'atteindre les vérités.<br><br>- <strong>Établissement de croyances sur des bases fragiles:</strong> Des croyances erronées peuvent être construites sur des raisonnements reposant sur la confusion entre les significations des termes.<br><br>- <strong>Affaiblissement de la langue comme outil de communication:</strong> La multiplication de ces pratiques affaiblit le rôle de la langue comme outil précis de communication et de compréhension mutuelle.<br><br>- <strong>Difficulté à détecter la sophistique:</strong> Ce type de sophismes peut être difficile à détecter car il repose sur la richesse de la langue qui est à l'origine une caractéristique positive.",
+                "PhiH.textAnalysis.ibnRushd.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.ibnRushd.analysis.significance.content": "L'analyse d'Ibn Rushd de la confusion entre les significations des termes porte des significations profondes en philosophie, logique et langue:<br><br>1. <strong>Développement de la pensée logique islamique:</strong> Le texte représente un développement important de la pensée logique islamique à travers l'analyse précise des types de sophismes.<br><br>2. <strong>Relation entre langue et logique:</strong> Met en lumière la relation étroite entre la langue et la logique, et comment les caractéristiques linguistiques peuvent affecter la validité des raisonnements.<br><br>3. <strong>Distinction entre richesse linguistique et tromperie:</strong> Distingue entre la diversité des significations des termes comme signe de richesse de la langue, et l'exploitation de cette diversité à des fins de tromperie.<br><br>4. <strong>Importance méthodologique:</strong> Souligne l'importance de la précision linguistique dans la recherche philosophique et scientifique, et la nécessité d'éviter la confusion entre les significations des termes.<br><br>5. <strong>Continuité du problème:</strong> Le problème de la confusion entre les significations des termes persiste encore à notre époque dans divers domaines, y compris les débats publics et les médias.<br><br>6. <strong>Leçons contemporaines:</strong> Le texte offre des leçons contemporaines sur l'importance de la précision linguistique à l'ère de l'information et de la propagation de discours suspects.<br><br>Ce texte représente une contribution importante à la compréhension de l'un des types de sophismes logiques et à la clarification de ses mécanismes de fonctionnement, aidant ainsi au développement des capacités de pensée critique et analytique."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.ibnRushd.level": "3rd Secondary - Philosophy",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.ibnRushd.title": "Text Analysis: On Confusion Between Meanings of Terms - Ibn Rushd",
+                "PhiH.textAnalysis.ibnRushd.introduction.title": "Introduction",
+                "PhiH.textAnalysis.ibnRushd.introduction.content": "The diversity of meanings of terms is often valued as a sign of the richness of language and its ability to adapt to the diversity of reality and respond to the requirements of human expression. However, this characteristic often transforms into a semantic reservoir exploited for deception, which calls us to caution and to work on uncovering the mechanisms used in this deception.",
+                "PhiH.textAnalysis.ibnRushd.text.title": "On Confusion Between Meanings of Terms",
+                "PhiH.textAnalysis.ibnRushd.text.content": "... and refutation <sup>1</sup> and deception sometimes come from terms from outside <sup>2</sup>, and sometimes from meanings <sup>3</sup> ... and what comes from terms is of six types: one of them is the homonymy of the individual term...<br><br>An example of homonymy of the individual name is the statement of one who says: The learner is knowledgeable, because the learner knows and the one who knows is knowledgeable, therefore the learner is knowledgeable.<br><br>The aspect of sophistry in this is that the term \"knows\" is said for the future time, and it is said for the present, so it is true for the knowledgeable in the present and for the learner in the future. Similarly, the statement of one who also says: Some evil is necessary, and the necessary is good, therefore some evil is good.<br><br>The sophistry in this is that the name \"necessary\" indicated in our statement: \"Some evil is necessary\" what the name \"obligatory\" indicates, and indicated in our statement: \"and the necessary is good\" what indicates \"the influential and the thing that should be\".",
+                "PhiH.textAnalysis.ibnRushd.text.source": "Ibn Rushd, Summary of Sophistry",
+                "PhiH.textAnalysis.ibnRushd.author.title": "Author Presentation",
+                "PhiH.textAnalysis.ibnRushd.author.alt": "Ibn Rushd (Averroes)",
+                "PhiH.textAnalysis.ibnRushd.author.content": "Abu al-Walid Ibn Rushd (520 AH/595AH - 1126 CE/1198 CE) is considered one of the great jurists and philosophers of Islamic Maghreb in the Middle Ages. He represents the greatest commentator of Aristotle, interested in writing summaries of all the works of the \"First Teacher\", and was nicknamed consequently \"the Commentator\". Ibn Rushd's philosophical effort aimed to prove the relationship of conformity between philosophy and Sharia and their complementarity from the belief in the unity of truth that we reach through the mechanism of interpretation, which assumes saying the priority of reason. Among his most important works: \"The Incoherence of the Incoherence\", \"The Decisive Treatise on the Connection Between Sharia and Wisdom\", \"Methods of Proofs\", \"Summary of Metaphysics\", summaries of Aristotle's logical works including \"Summary of Sophistry\".",
+                "PhiH.textAnalysis.ibnRushd.lexical.title": "Footnotes and Concepts",
+                "PhiH.textAnalysis.ibnRushd.lexical.item1": "<strong>\"Refutation\":</strong> Means refutation. See document number 1 of the same chapter.",
+                "PhiH.textAnalysis.ibnRushd.lexical.item2": "<strong>\"From terms from outside\":</strong> The first domain of sophistry concerns the appearance of the term in the multiplicity of its meanings, whether taken in itself (where a single term can refer to different meanings - homonymy) or in its relation to other terms (where the term becomes ambiguous in meaning when associated with other terms in the context of the sentence - amphibology).",
+                "PhiH.textAnalysis.ibnRushd.lexical.item3": "<strong>\"From meanings\":</strong> This refers to the second domain of sophistry that does not concern the meaning of terms in themselves or in their relation to each other, but concerns how to use them in the context of discourse, such as taking what is relatively true as being absolutely true, like saying: Hippocrates is knowledgeable in medicine therefore he is knowledgeable.",
+                "PhiH.textAnalysis.ibnRushd.questions.title": "Tasks",
+                "PhiH.textAnalysis.ibnRushd.questions.q1": "I observe the first example in the text and determine the nature of the confusion that exists in it:<br>The learner knows.<br>The one who knows is knowledgeable.<br>Therefore the learner is knowledgeable.",
+                "PhiH.textAnalysis.ibnRushd.questions.q2": "I observe the second example in the text and determine the nature of the confusion that exists in it:<br>Some evil is necessary.<br>The necessary is good.<br>Therefore some evil is good.",
+                "PhiH.textAnalysis.ibnRushd.questions.q3": "I discover the common mechanism that led to deception in the two mentioned examples despite the differences that exist between them.",
+                "PhiH.textAnalysis.ibnRushd.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.ibnRushd.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.ibnRushd.answers.a1.content": "<strong>Nature of confusion in the first example:</strong><br><br>Example: \"The learner knows, the one who knows is knowledgeable, therefore the learner is knowledgeable\".<br><br><strong>Analysis:</strong><br><br>1. <strong>Homonymy:</strong> The term \"knows\" carries two different meanings here:<br>- In the first premise (\"The learner knows\"): It means future knowledge, i.e., the learner will know in the future after learning.<br>- In the second premise (\"The one who knows is knowledgeable\"): It means current knowledge, i.e., the person who possesses knowledge now.<br><br>2. <strong>Temporal confusion:</strong> There was confusion between future time (possibility of knowledge) and present time (actual possession of knowledge).<br><br>3. <strong>Fallacy:</strong> The conclusion is not correct because it relies on using the same term (\"knows\") with two different meanings without distinguishing them.",
+                "PhiH.textAnalysis.ibnRushd.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.ibnRushd.answers.a2.content": "<strong>Nature of confusion in the second example:</strong><br><br>Example: \"Some evil is necessary, the necessary is good, therefore some evil is good\".<br><br><strong>Analysis:</strong><br><br>1. <strong>Homonymy:</strong> The term \"necessary\" carries two different meanings here:<br>- In the first premise (\"Some evil is necessary\"): It means \"obligatory\" or \"inevitable\", i.e., some evils are necessary and cannot be avoided.<br>- In the second premise (\"The necessary is good\"): It means \"the influential\" or \"the thing that should be done\", i.e., what is good and deserves to be done.<br><br>2. <strong>Semantic confusion:</strong> There was confusion between the meaning of \"necessity\" and the meaning of \"moral goodness\".<br><br>3. <strong>Fallacy:</strong> The conclusion is not correct because it mixes \"real necessity\" (some evils are necessary) and \"moral value\" (moral duty is good).",
+                "PhiH.textAnalysis.ibnRushd.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.ibnRushd.answers.a3.content": "<strong>Common mechanism of deception in the two examples:</strong><br><br>Despite the apparent difference between the two examples, the common mechanism that led to deception in both is:<br><br>1. <strong>Homonymy:</strong> Use of the same term carrying two different meanings in the same deductive context.<br><br>2. <strong>Confusion between semantic levels:</strong> In both examples, there was confusion between different semantic levels of the same term:<br>- In the first example: Confusion between temporal level (future vs present).<br>- In the second example: Confusion between descriptive level (real necessity) and normative level (moral value).<br><br>3. <strong>Illegitimate transition:</strong> Transition from one meaning to another for the same term without alerting to the change in meaning.<br><br>4. <strong>Illusion of semantic consistency:</strong> Giving the illusion to the reader that the term carries the same meaning in all stages of reasoning, while in reality its meaning changes.<br><br>5. <strong>Exploitation of language richness:</strong> Exploitation of the richness of language and the multiplicity of meanings of terms to hide the flaw in reasoning.<br><br><strong>Conclusion:</strong> The common mechanism is \"semantic confusion\" resulting from \"homonymy\", where the same term is used with two different meanings in the same deductive context, leading to an incorrect conclusion.",
+                "PhiH.textAnalysis.ibnRushd.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.ibnRushd.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.ibnRushd.analysis.thesis.content": "Ibn Rushd clarifies in this text one of the types of logical fallacies that arise from confusion between meanings of terms, and defines \"homonymy\" as one of the six types of fallacies that come from terms. He affirms that the diversity of meanings of terms, which is a characteristic of language, can transform into a tool of deception when exploited in erroneous reasoning, by using the same term with two different meanings without alerting to this difference.",
+                "PhiH.textAnalysis.ibnRushd.analysis.mechanisms.title": "Mechanisms of confusion between meanings of terms:",
+                "PhiH.textAnalysis.ibnRushd.analysis.mechanisms.content": "Ibn Rushd presents two main mechanisms of confusion between meanings of terms:<br><br>1. <strong>Temporal confusion:</strong> As in the first example where there was confusion between future knowledge (possibility of knowledge) and current knowledge (possession of knowledge).<br><br>2. <strong>Confusion between descriptive and normative levels:</strong> As in the second example where there was confusion between \"real necessity\" (some evils are necessary) and \"moral value\" (duty is good).<br><br>3. <strong>Exploitation of multiplicity of meanings:</strong> Exploitation of the richness of language and the multiplicity of meanings of terms to hide the flaw in reasoning.<br><br>4. <strong>Illusion of semantic consistency:</strong> Presentation of reasoning in a way that gives the illusion that the term carries the same meaning in all its stages.<br><br>5. <strong>Illegitimate transition:</strong> Transition from one meaning to another for the same term without indicating this change.",
+                "PhiH.textAnalysis.ibnRushd.analysis.consequences.title": "Consequences and danger of confusion between meanings of terms:",
+                "PhiH.textAnalysis.ibnRushd.analysis.consequences.content": "- <strong>Deformation of critical thinking:</strong> Confusion between meanings of terms paralyzes the ability to think critically and correctly.<br><br>- <strong>Deception in dialogue and debate:</strong> These fallacies can be used to deceive the opponent in dialogues and debates.<br><br>- <strong>Obstruction of cognitive progress:</strong> Acceptance of erroneous reasoning hinders cognitive progress and prevents reaching truths.<br><br>- <strong>Establishment of beliefs on fragile bases:</strong> Erroneous beliefs can be built on reasoning relying on confusion between meanings of terms.<br><br>- <strong>Weakening of language as a communication tool:</strong> Multiplication of these practices weakens the role of language as a precise tool for communication and mutual understanding.<br><br>- <strong>Difficulty in detecting fallacy:</strong> This type of fallacies may be difficult to detect because it relies on the richness of language which is originally a positive characteristic.",
+                "PhiH.textAnalysis.ibnRushd.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.ibnRushd.analysis.significance.content": "Ibn Rushd's analysis of confusion between meanings of terms carries deep meanings in philosophy, logic and language:<br><br>1. <strong>Development of Islamic logical thought:</strong> The text represents an important development in Islamic logical thought through precise analysis of types of fallacies.<br><br>2. <strong>Relation between language and logic:</strong> Highlights the close relationship between language and logic, and how linguistic characteristics can affect the validity of reasoning.<br><br>3. <strong>Distinction between linguistic richness and deception:</strong> Distinguishes between diversity of meanings of terms as a sign of richness of language, and exploitation of this diversity for deceptive purposes.<br><br>4. <strong>Methodological importance:</strong> Emphasizes the importance of linguistic precision in philosophical and scientific research, and the necessity of avoiding confusion between meanings of terms.<br><br>5. <strong>Continuity of the problem:</strong> The problem of confusion between meanings of terms still persists in our time in various fields, including public debates and media.<br><br>6. <strong>Contemporary lessons:</strong> The text offers contemporary lessons on the importance of linguistic precision in the information age and the spread of suspicious discourses.<br><br>This text represents an important contribution to understanding one of the types of logical fallacies and clarifying its mechanisms of operation, thus helping to develop critical and analytical thinking abilities."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.ibnRushd.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.ibnRushd.title": "تحليل النص: في الخلط بين معاني الألفاظ - ابن رشد",
+                "PhiH.textAnalysis.ibnRushd.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.ibnRushd.introduction.content": "غالبا ما يُثمّن تنوّع معاني الألفاظ باعتباره عنوان ثراء اللغة وعلامة قدرتها على التلاؤم مع تنوّع الواقع واستجابتها لمقتضيات التعبير الإنساني، غير أنّ هذه الميزة كثيرا ما تتحوّل إلى مخزون دلاليّ يُستثمر من أجل التغليط ممّا يدعونا إلى الحذر والعمل على كشف الآليّات المعتمدة في هذا التغليط.",
+                "PhiH.textAnalysis.ibnRushd.text.title": "في الخلط بين معاني الألفاظ",
+                "PhiH.textAnalysis.ibnRushd.text.content": "... والتبكيت <sup>1</sup> والتغلِيط منه ما يكون من قِبل الألفاظ من خارج <sup>2</sup>، ومنه ما يكون من قِبل المعاني <sup>3</sup> ... والذي يكون من قِبل الألفاظ ستّة أصناف: أحدها اشتراك اللفظ المُفرد...<br><br>فمثال اشتراك الاسم المفرد قول القائل: المتعلِّم عالِم، لأنّ المتعلِّم يَعْلَمُ والذي يَعلَم عالِم، فالمتعلِّم عالِم.<br><br>ووجه المغالطة في هذا أنّ لفظة \"يَعْلَمُ\" تُقال على الزمان المستقبلِ، وتُقال على الحاضر، فهي تصدُق على العَالِمِ في الحاضر وعلى المتعلّم في المستقبل. وكذلك قول القائل أيضا: بعض الشرّ واجب، والواجب خير، فبعض الشرّ خير.<br><br>والمغالطة في هذا أنّ اسم \"الواجب\" دلّ في قولنا: \"بعض الشرّ واجب\" على ما يدلّ عليه اسم \"الضروري\"، ودلّ في قولنا: \"والواجب خير\" على ما يدلّ عليه \"المُؤْثِر والشيء الذي ينبغي\".",
+                "PhiH.textAnalysis.ibnRushd.text.source": "ابن رشد، تلخیص السفسطة",
+                "PhiH.textAnalysis.ibnRushd.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.ibnRushd.author.alt": "ابن رشد",
+                "PhiH.textAnalysis.ibnRushd.author.content": "أبو الوليد بن رشد (520 هـ/595هـ - 1126م/1198م) يُعدّ من كبار فقهاء المغرب الإسلامي وفلاسفته في العصر الوسيط. يمثّل أكبر شرّاح أرسطو إذ اهتمّ بوضع تلاخيص لمجمل مؤلّفات \"المعلّم الأوّل\"، ولُقّب إثرها \"بالشارح\". اتّجه جهد ابن رشد الفلسفي إلى إثبات علاقة التوافق بين الفلسفة والشريعة وتكاملهما من موقع الاعتقاد في وحدة الحقيقة التي نبلغها بواسطة آليّة التأويل وهو ما يفترض القول بأولويّة العقل. من أهمّ مؤلّفاته: \"تهافت التهافت\"، \"فصل المقال فيما بين الشريعة والحكمة من اتّصال\"، \"مناهج الأدلّة\"، \"تلخيص ما بعد الطبيعة\"، تلاخيص لمؤلّفات أرسطو المنطقيّة من بينها \"تلخيص السفسطة\".",
+                "PhiH.textAnalysis.ibnRushd.lexical.title": "الهوامش والمفاهيم",
+                "PhiH.textAnalysis.ibnRushd.lexical.item1": "<strong>\"التبكيت\":</strong> المقصود به الدحض. أُنظر السند عدد1 من نفس الفصل.",
+                "PhiH.textAnalysis.ibnRushd.lexical.item2": "<strong>\"من قبل الألفاظ من خارج\":</strong> إنّ المجال الأوّلي للمغالطة يتعلّق بظاهر اللفظ في تعدّد معانيه سواء أُخذ في حدّ ذاته (حيث يمكن للفظ الواحد أن يُحيل على دلالات مختلفة homonymie) أو في علاقته بألفاظ أخرى (حيث يصبح اللفظ ملتبس الدلالة عند ارتباطه بألفاظ أخرى في سياق الجملة amphibolie).",
+                "PhiH.textAnalysis.ibnRushd.lexical.item3": "<strong>\"من قبل المعاني\":</strong> وفي هذا إحالة على المجال الثاني للمغالطة الذي لا يتعلّق بدلالة الألفاظ في حدّ ذاتها أو في علاقة بعضها بالبعض الآخر وإنّما يتعلّق بكيفيّة استعمالها في سياق القول كأخذ ما يصدق نسبيًا على أنّه يصدق بإطلاق كقولنا: أبقراط عالِم في الطبّ إذن هو عالِم.",
+                "PhiH.textAnalysis.ibnRushd.questions.title": "المهام",
+                "PhiH.textAnalysis.ibnRushd.questions.q1": "ألاحظ المثال الأوّل الوارد في النص وأتبيّن طبيعة الخلط القائم فيه:<br>المتعلّم يَعْلَم.<br>والذي يَعْلَم عالِم.<br>إذن فالمتعلّم عالِم.",
+                "PhiH.textAnalysis.ibnRushd.questions.q2": "ألاحظ المثال الثاني الوارد في النص وأتبيّن طبيعة الخلط القائم فيه:<br>بعض الشرّ واجب.<br>والواجب خير.<br>إذن بعض الشرّ خير.",
+                "PhiH.textAnalysis.ibnRushd.questions.q3": "أكشف عن الآليّة المشتركة التي قادت التغليط في المثالين المذكورين رغم ما يوجد من اختلاف بينهما.",
+                "PhiH.textAnalysis.ibnRushd.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.ibnRushd.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.ibnRushd.answers.a1.content": "<strong>طبيعة الخلط في المثال الأول:</strong><br><br>المثال: \"المتعلّم يَعْلَم، والذي يَعْلَم عالِم، إذن فالمتعلّم عالِم\".<br><br><strong>التحليل:</strong><br><br>1. <strong>الاشتراك اللفظي:</strong> اللفظ \"يَعْلَم\" هنا يحمل معنيين مختلفين:<br>- في المقدمة الأولى (\"المتعلّم يَعْلَم\"): يُقصد به المعرفة المستقبلية، أي أن المتعلّم سيعلم في المستقبل بعد أن يتعلم.<br>- في المقدمة الثانية (\"والذي يَعْلَم عالِم\"): يُقصد به المعرفة الحالية، أي الشخص الذي يملك المعرفة الآن.<br><br>2. <strong>الخلط الزمني:</strong> تمّ الخلط بين الزمن المستقبلي (إمكانية المعرفة) والزمن الحاضر (امتلاك المعرفة الفعلي).<br><br>3. <strong>المغالطة:</strong> النتيجة غير صحيحة لأنها تعتمد على استخدام نفس اللفظ (\"يَعْلَم\") لمعنيين مختلفين دون التمييز بينهما.",
+                "PhiH.textAnalysis.ibnRushd.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.ibnRushd.answers.a2.content": "<strong>طبيعة الخلط في المثال الثاني:</strong><br><br>المثال: \"بعض الشرّ واجب، والواجب خير، إذن بعض الشرّ خير\".<br><br><strong>التحليل:</strong><br><br>1. <strong>الاشتراك اللفظي:</strong> اللفظ \"الواجب\" هنا يحمل معنيين مختلفين:<br>- في المقدمة الأولى (\"بعض الشرّ واجب\"): يُقصد به \"الضروري\" أو \"الذي لا بد منه\"، أي أن بعض الشرور ضرورية ولا يمكن تجنبها.<br>- في المقدمة الثانية (\"والواجب خير\"): يُقصد به \"المؤثر\" أو \"الشيء الذي ينبغي فعله\"، أي ما هو خيّر ويستحق الفعل.<br><br>2. <strong>الخلط الدلالي:</strong> تمّ الخلط بين معنى \"الضرورة\" ومعنى \"الخيرية الأخلاقية\".<br><br>3. <strong>المغالطة:</strong> النتيجة غير صحيحة لأنها تخلط بين \"الضرورة الواقعية\" (بعض الشرور ضرورية) و\"القيمة الأخلاقية\" (الواجب الأخلاقي خير).",
+                "PhiH.textAnalysis.ibnRushd.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.ibnRushd.answers.a3.content": "<strong>الآلية المشتركة للتغليط في المثالين:</strong><br><br>رغم الاختلاف الظاهري بين المثالين، فإن الآلية المشتركة التي قادت إلى التغليط في كليهما هي:<br><br>1. <strong>الاشتراك اللفظي (Homonymy):</strong> استخدام لفظ واحد يحمل معنيين مختلفين في نفس السياق الاستدلالي.<br><br>2. <strong>الخلط بين المستويات الدلالية:</strong> في كلا المثالين، تمّ الخلط بين مستويات دلالية مختلفة لنفس اللفظ:<br>- في المثال الأول: الخلط بين المستوى الزمني (المستقبلي مقابل الحاضر).<br>- في المثال الثاني: الخلط بين المستوى الوصفي (الضرورة الواقعية) والمستوى المعياري (القيمة الأخلاقية).<br><br>3. <strong>الانتقال غير المشروع:</strong> الانتقال من معنى إلى آخر لنفس اللفظ دون التنبيه إلى تغيّر الدلالة.<br><br>4. <strong>إيهام الاتساق الدلالي:</strong> إيهام القارئ بأن اللفظ يحمل نفس المعنى في جميع مراحل الاستدلال، بينما في الواقع يتغير معناه.<br><br>5. <strong>الاستفادة من غنى اللغة:</strong> استغلال ثراء اللغة وتعدد معاني الألفاظ لإخفاء الخلل في الاستدلال.<br><br><strong>الخلاصة:</strong> الآلية المشتركة هي \"الخلط الدلالي\" الناتج عن \"الاشتراك اللفظي\"، حيث يتم استخدام نفس اللفظ بمعنيين مختلفين في سياق استدلالي واحد، مما يؤدي إلى استنتاج غير صحيح.",
+                "PhiH.textAnalysis.ibnRushd.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.ibnRushd.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.ibnRushd.analysis.thesis.content": "يوضح ابن رشد في هذا النص أحد أنواع المغالطات المنطقية التي تنشأ من الخلط بين معاني الألفاظ، ويُعرِّف \"الاشتراك اللفظي\" كأحد الأصناف الستة للمغالطات التي تكون من قبل الألفاظ. يؤكد أن تنوع معاني الألفاظ الذي يعد ميزة للغة يمكن أن يتحول إلى أداة للتغليط عندما يتم استغلاله في الاستدلالات الخاطئة، وذلك من خلال استخدام اللفظ نفسه بمعنيين مختلفين دون التنبيه إلى هذا الاختلاف.",
+                "PhiH.textAnalysis.ibnRushd.analysis.mechanisms.title": "آليات الخلط بين معاني الألفاظ:",
+                "PhiH.textAnalysis.ibnRushd.analysis.mechanisms.content": "يعرض ابن رشد آليتين رئيسيتين للخلط بين معاني الألفاظ:<br><br>1. <strong>الخلط الزمني:</strong> كما في المثال الأول حيث تم الخلط بين المعرفة المستقبلية (إمكانية المعرفة) والمعرفة الحالية (امتلاك المعرفة).<br><br>2. <strong>الخلط بين المستوى الوصفي والمعياري:</strong> كما في المثال الثاني حيث تم الخلط بين \"الضرورة الواقعية\" (بعض الشرور ضرورية) و\"القيمة الأخلاقية\" (الواجب خير).<br><br>3. <strong>الاستفادة من تعدد الدلالات:</strong> استغلال ثراء اللغة وتعدد معاني الألفاظ لإخفاء الخلل في الاستدلال.<br><br>4. <strong>إيهام الاتساق الدلالي:</strong> تقديم الاستدلال بشكل يوحي بأن اللفظ يحمل نفس المعنى في جميع مراحله.<br><br>5. <strong>الانتقال غير المشروع:</strong> الانتقال من معنى إلى آخر لنفس اللفظ دون الإشارة إلى هذا التغير.",
+                "PhiH.textAnalysis.ibnRushd.analysis.consequences.title": "نتائج وخطورة الخلط بين معاني الألفاظ:",
+                "PhiH.textAnalysis.ibnRushd.analysis.consequences.content": "- <strong>تشويه الفكر النقدي:</strong> الخلط بين معاني الألفاظ يعطل القدرة على التفكير النقدي السليم.<br><br>- <strong>تضليل الحوار والنقاش:</strong> يمكن استخدام هذه المغالطات لتضليل الخصم في الحوارات والنقاشات.<br><br>- <strong>إعاقة التقدم المعرفي:</strong> قبول الاستدلالات الخاطئة يعيق التقدم المعرفي ويحول دون الوصول إلى الحقائق.<br><br>- <strong>تأسيس المعتقدات على أساس واه:</strong> يمكن بناء معتقدات خاطئة على استدلالات تعتمد على الخلط بين معاني الألفاظ.<br><br>- <strong>إضعاف اللغة كأداة للتواصل:</strong> الإكثار من هذه الممارسات يضعف دور اللغة كأداة دقيقة للتواصل والفهم المتبادل.<br><br>- <strong>صعوبة كشف المغالطة:</strong> هذه النوعية من المغالطات قد تكون صعبة الكشف لأنها تعتمد على ثراء اللغة الذي هو في الأصل ميزة إيجابية.",
+                "PhiH.textAnalysis.ibnRushd.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.ibnRushd.analysis.significance.content": "يحمل تحليل ابن رشد للخلط بين معاني الألفاظ دلالات عميقة في الفلسفة والمنطق واللغة:<br><br>1. <strong>تطور الفكر المنطقي الإسلامي:</strong> يمثل النص تطوراً مهماً في الفكر المنطقي الإسلامي من خلال التحليل الدقيق لأنواع المغالطات.<br><br>2. <strong>العلاقة بين اللغة والمنطق:</strong> يسلط الضوء على العلاقة الوثيقة بين اللغة والمنطق، وكيف يمكن للخصائص اللغوية أن تؤثر على صحة الاستدلالات.<br><br>3. <strong>التمييز بين الثراء اللغوي والتغليط:</strong> يميز بين تنوع معاني الألفاظ كعلامة على ثراء اللغة، واستغلال هذا التنوع لأغراض التغليط.<br><br>4. <strong>الأهمية المنهجية:</strong> يؤكد على أهمية الدقة اللغوية في البحث الفلسفي والعلمي، وضرورة تجنب الخلط بين معاني الألفاظ.<br><br>5. <strong>استمرارية المشكلة:</strong> مشكلة الخلط بين معاني الألفاظ لا تزال قائمة في عصرنا الحالي في مختلف المجالات بما في ذلك النقاشات العامة والإعلام.<br><br>6. <strong>دروس معاصرة:</strong> يقدم النص دروساً معاصرة حول أهمية التدقيق اللغوي في عصر المعلومات وانتشار الخطابات المشبوهة.<br><br>هذا النص يمثل مساهمة مهمة في فهم أحد أنواع المغالطات المنطقية وتوضيح آليات عملها، مما يساعد على تطوير قدرات التفكير النقدي والتحليلي."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

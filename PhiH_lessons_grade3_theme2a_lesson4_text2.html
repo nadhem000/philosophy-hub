@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="ar">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>تحليل النص: المفارقة - أرسطو - Philosophy Learning Hub</title>
+        
+        <!-- PWA Meta Tags -->
+        <meta name="theme-color" content="#F59E0B">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+        <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+        
+        <!-- Link to external CSS -->
+        <link rel="stylesheet" href="styles/main.css">
+        
+        <!-- Web App Manifest -->
+        <link rel="manifest" href="manifest.json">
+        
+        <style>
+            /* Orange/Amber Color Palette (برتقالي/عنبر) */
+            :root {
+                --primary-color: #F59E0B;
+                --primary-light: #FBBF24;
+                --primary-dark: #D97706;
+                --secondary-color: #FBBF24;
+                --secondary-light: #FCD34D;
+                --secondary-dark: #F59E0B;
+                --accent-color: #FBBF24;
+                --accent-light: #FCD34D;
+                --accent-dark: #F59E0B;
+                --light-color: #f8fafc;
+                --dark-color: #0f172a;
+                --text-color: #334155;
+                --heading-color: #1e293b;
+                --background-color: #fffbeb;
+                --card-bg: #ffffff;
+                --definition-bg: #fef3c7;
+                --border-color: #cbd5e1;
+                --table-even-bg: #f8fafc;
+                --table-hover-bg: #fde68a;
+                --border-radius: 12px;
+                --border-radius-lg: 16px;
+                --box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.1), 0 2px 4px -1px rgba(245, 158, 11, 0.06);
+                --box-shadow-lg: 0 10px 15px -3px rgba(245, 158, 11, 0.1), 0 4px 6px -2px rgba(245, 158, 11, 0.05);
+                --gradient-primary: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+                --gradient-secondary: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+                --gradient-accent: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+                --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+            }
+            
+            [data-theme="dark"] {
+                --primary-color: #FBBF24;
+                --primary-light: #FCD34D;
+                --primary-dark: #F59E0B;
+                --secondary-color: #FCD34D;
+                --secondary-light: #FDE68A;
+                --secondary-dark: #FBBF24;
+                --accent-color: #FCD34D;
+                --accent-light: #FDE68A;
+                --accent-dark: #FBBF24;
+                --light-color: #1e293b;
+                --dark-color: #0f172a;
+                --text-color: #cbd5e1;
+                --heading-color: #f1f5f9;
+                --background-color: #0f172a;
+                --card-bg: #1e293b;
+                --definition-bg: #78350f;
+                --border-color: #334155;
+                --table-even-bg: #1e293b;
+                --table-hover-bg: #92400e;
+                --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+                --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+                --gradient-primary: linear-gradient(135deg, #FBBF24 0%, #FCD34D 100%);
+                --gradient-secondary: linear-gradient(135deg, #FCD34D 0%, #FBBF24 100%);
+                --gradient-accent: linear-gradient(135deg, #FCD34D 0%, #FBBF24 100%);
+                --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+            }
+            
+            /* Base Typography */
+            body {
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                line-height: 1.6;
+                color: var(--text-color);
+                background-color: var(--background-color);
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+            
+            h1, h2, h3, h4, h5, h6 {
+                color: var(--heading-color);
+                font-weight: 600;
+                line-height: 1.3;
+            }
+            
+            /* Text Analysis Level Styling */
+            .text-analysis-level-1 {
+                font-weight: 700;
+                color: var(--primary-color);
+                margin-top: 1.5rem;
+                margin-bottom: 1rem;
+                font-size: 1.3rem;
+                border-left: 4px solid var(--primary-color);
+                padding-left: 1rem;
+                background: linear-gradient(to right, rgba(245, 158, 11, 0.05), transparent);
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+                border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            }
+            
+            .text-analysis-level-2 {
+                font-weight: 600;
+                color: var(--secondary-color);
+                margin-top: 1.2rem;
+                margin-bottom: 0.8rem;
+                font-size: 1.1rem;
+                border-left: 3px solid var(--secondary-color);
+                padding-left: 1rem;
+                background: linear-gradient(to right, rgba(251, 191, 36, 0.05), transparent);
+                padding-top: 0.4rem;
+                padding-bottom: 0.4rem;
+                border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            }
+            
+            .text-analysis-level-3 {
+                font-weight: 600;
+                color: var(--accent-color);
+                margin-top: 1rem;
+                margin-bottom: 0.6rem;
+                font-size: 1rem;
+                border-left: 2px solid var(--accent-color);
+                padding-left: 1rem;
+                background: linear-gradient(to right, rgba(251, 191, 36, 0.05), transparent);
+                padding-top: 0.3rem;
+                padding-bottom: 0.3rem;
+                border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            }
+            
+            .text-analysis-level-4 {
+                font-weight: 500;
+                color: var(--text-color);
+                margin-top: 0.8rem;
+                margin-bottom: 0.5rem;
+                font-size: 0.95rem;
+                border-left: 1px solid var(--border-color);
+                padding-left: 1rem;
+                padding-top: 0.2rem;
+                padding-bottom: 0.2rem;
+                border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            }
+            
+            .text-analysis-indent {
+                margin-left: 1.5rem;
+            }
+            
+            .text-analysis-indent-2 {
+                margin-left: 3rem;
+            }
+            
+            .text-analysis-indent-3 {
+                margin-left: 4.5rem;
+            }
+            
+            /* Text Card Styling */
+            .PhiH-text-card {
+                background-color: var(--card-bg);
+                border-radius: var(--border-radius-lg);
+                box-shadow: var(--box-shadow);
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+                border: 1px solid var(--border-color);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .PhiH-text-card:hover {
+                transform: translateY(-3px);
+                box-shadow: var(--box-shadow-lg);
+            }
+            
+            .PhiH-text-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 4px;
+                height: 100%;
+                background: var(--gradient-primary);
+                border-radius: var(--border-radius) 0 0 var(--border-radius);
+            }
+            
+            .PhiH-text-card-title {
+                font-size: 1.3rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                color: var(--primary-color);
+                border-bottom: 2px solid var(--border-color);
+                padding-bottom: 0.5rem;
+                display: flex;
+                align-items: center;
+            }
+            
+            .PhiH-text-card-title::before {
+                content: '';
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                background-color: var(--primary-color);
+                border-radius: 50%;
+                margin-right: 0.75rem;
+            }
+            
+            /* Author Presentation Styling */
+            .PhiH-author-card {
+                display: flex;
+                gap: 1.5rem;
+                align-items: flex-start;
+            }
+            
+            .PhiH-author-image {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 3px solid var(--primary-color);
+                box-shadow: var(--box-shadow);
+            }
+            
+            .PhiH-author-info {
+                flex: 1;
+            }
+            
+            /* Footer Styling */
+            .PhiH-general-footer {
+                background-color: var(--dark-color);
+                color: var(--light-color);
+                padding: 2rem 0;
+                margin-top: 3rem;
+            }
+            
+            .PhiH-general-footer-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 1.5rem;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 2rem;
+            }
+            
+            .PhiH-general-footer-column h4 {
+                color: white;
+                margin-bottom: 1rem;
+                font-size: 1.1rem;
+            }
+            
+            .PhiH-general-footer-column p {
+                margin: 0.5rem 0;
+            }
+            
+            .PhiH-general-footer-links {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .PhiH-general-footer-links a {
+                color: var(--secondary-light);
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            
+            .PhiH-general-footer-links a:hover {
+                color: white;
+            }
+            
+            /* Lists Styling */
+            ul, ol {
+                padding-left: 1.5rem;
+            }
+            
+            li {
+                margin-bottom: 0.5rem;
+                line-height: 1.6;
+            }
+            
+            li strong {
+                color: var(--primary-color);
+            }
+            
+            /* Definition Styling */
+            .PhiH-text-card ul li {
+                background-color: var(--definition-bg);
+                padding: 1rem;
+                border-radius: var(--border-radius);
+                margin-bottom: 1rem;
+                border-left: 3px solid var(--primary-color);
+            }
+            
+            /* Questions Styling */
+            .PhiH-text-card ol li {
+                background-color: var(--card-bg);
+                padding: 1rem;
+                border-radius: var(--border-radius);
+                margin-bottom: 1rem;
+                border: 1px solid var(--border-color);
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+            
+            .PhiH-text-card ol li:hover {
+                transform: translateX(5px);
+                box-shadow: var(--box-shadow);
+            }
+            
+            /* RTL support for indentation */
+            body.rtl .text-analysis-level-1,
+            body.rtl .text-analysis-level-2,
+            body.rtl .text-analysis-level-3,
+            body.rtl .text-analysis-level-4 {
+                border-left: none;
+                border-right: 4px solid var(--primary-color);
+                padding-left: 0;
+                padding-right: 1rem;
+                border-radius: var(--border-radius) 0 0 var(--border-radius);
+                background: linear-gradient(to left, rgba(245, 158, 11, 0.05), transparent);
+            }
+            
+            body.rtl .text-analysis-level-2 {
+                border-right: 3px solid var(--secondary-color);
+            }
+            
+            body.rtl .text-analysis-level-3 {
+                border-right: 2px solid var(--accent-color);
+            }
+            
+            body.rtl .text-analysis-level-4 {
+                border-right: 1px solid var(--border-color);
+            }
+            
+            body.rtl .text-analysis-indent {
+                margin-left: 0;
+                margin-right: 1.5rem;
+            }
+            
+            body.rtl .text-analysis-indent-2 {
+                margin-left: 0;
+                margin-right: 3rem;
+            }
+            
+            body.rtl .text-analysis-indent-3 {
+                margin-left: 0;
+                margin-right: 4.5rem;
+            }
+            
+            body.rtl .PhiH-text-card::before {
+                left: auto;
+                right: 0;
+                border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            }
+            
+            body.rtl .PhiH-text-card-title::before {
+                margin-right: 0;
+                margin-left: 0.75rem;
+            }
+            
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .PhiH-author-card {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                
+                .PhiH-author-image {
+                    align-self: center;
+                }
+                
+                .PhiH-text-analysis-title {
+                    font-size: 1.5rem;
+                }
+                
+                .PhiH-text-card {
+                    padding: 1.25rem;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .PhiH-text-analysis-container {
+                    padding: 0 1rem;
+                }
+                
+                .PhiH-text-card {
+                    padding: 1rem;
+                }
+                
+                .PhiH-general-footer-content {
+                    grid-template-columns: 1fr;
+                }
+            }
+            
+            /* Print Styles */
+            @media print {
+                .PhiH-general-header,
+                .PhiH-general-footer,
+                .PhiH-general-header-controls {
+                    display: none;
+                }
+                
+                .PhiH-text-card {
+                    box-shadow: none;
+                    border: 1px solid #ddd;
+                    page-break-inside: avoid;
+                }
+                
+                body {
+                    background-color: white;
+                    color: black;
+                }
+            }
+            
+            /* Header and controls styles - Same as other files */
+            .PhiH-general-header {
+                background: var(--gradient-primary);
+                color: white;
+                padding: 1rem 0;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                margin-bottom: 2rem;
+            }
+            
+            .PhiH-general-header-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 1.5rem;
+            }
+            
+            .PhiH-general-logo-container {
+                flex: 0 0 auto;
+            }
+            
+            .PhiH-general-logo {
+                width: 48px;
+                height: 48px;
+                border-radius: 8px;
+                transition: transform 0.3s ease;
+            }
+            
+            .PhiH-general-logo:hover {
+                transform: scale(1.05);
+            }
+            
+            .PhiH-general-title-container {
+                flex: 1;
+                text-align: center;
+            }
+            
+            .PhiH-general-title-container h1 {
+                color: white;
+                margin: 0;
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+            
+            .PhiH-general-header-controls {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+            }
+            
+            .PhiH-general-theme-toggle {
+                display: flex;
+                align-items: center;
+            }
+            
+            .PhiH-theme-toggle-label {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                color: white;
+                font-weight: 500;
+                cursor: pointer;
+            }
+            
+            .PhiH-theme-toggle-switch {
+                position: relative;
+                display: inline-block;
+                width: 50px;
+                height: 24px;
+            }
+            
+            .PhiH-theme-toggle-switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+            
+            .PhiH-theme-toggle-slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(255, 255, 255, 0.3);
+                transition: .4s;
+                border-radius: 24px;
+            }
+            
+            .PhiH-theme-toggle-slider:before {
+                position: absolute;
+                content: "";
+                height: 16px;
+                width: 16px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                transition: .4s;
+                border-radius: 50%;
+            }
+            
+            input:checked + .PhiH-theme-toggle-slider {
+                background-color: var(--primary-dark);
+            }
+            
+            input:checked + .PhiH-theme-toggle-slider:before {
+                transform: translateX(26px);
+            }
+            
+            .PhiH-general-language-selector select {
+                background-color: rgba(255, 255, 255, 0.2);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                color: white;
+                padding: 0.4rem 0.8rem;
+                border-radius: 6px;
+                font-size: 0.9rem;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            
+            .PhiH-general-language-selector select:hover {
+                background-color: rgba(255, 255, 255, 0.3);
+            }
+            
+            .PhiH-general-language-selector select option {
+                color: #333;
+            }
+            
+            /* Main Content Styling */
+            .PhiH-text-analysis-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 1.5rem;
+            }
+            
+            .PhiH-text-analysis-header {
+                text-align: center;
+                margin-bottom: 2.5rem;
+                padding: 1.5rem;
+                background-color: var(--card-bg);
+                border-radius: var(--border-radius-lg);
+                box-shadow: var(--box-shadow);
+            }
+            
+            .PhiH-text-analysis-title {
+                color: var(--primary-color);
+                margin-bottom: 0.5rem;
+                font-size: 1.8rem;
+                font-weight: 700;
+            }
+            
+            .PhiH-text-analysis-level {
+                color: var(--secondary-color);
+                font-weight: 500;
+                font-size: 1rem;
+            }
+            
+            /* Windows Bar Styling */
+            .PhiH-windows-bar {
+                display: flex;
+                justify-content: center;
+                background-color: var(--card-bg);
+                border-bottom: 1px solid var(--border-color);
+                padding: 0.75rem 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .PhiH-window-item {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.5rem 1rem;
+                text-decoration: none;
+                color: var(--text-color);
+                border-radius: var(--border-radius);
+                transition: all 0.3s ease;
+                margin: 0 0.25rem;
+            }
+            
+            .PhiH-window-item:hover {
+                background-color: var(--definition-bg);
+                color: var(--primary-color);
+            }
+            
+            .PhiH-window-item.active {
+                background-color: var(--primary-color);
+                color: white;
+            }
+            
+            .PhiH-window-icon {
+                font-size: 1.2rem;
+            }
+        </style>
+    </head>
+    <body class="PhiH-lesson-text-analysis" dir="rtl">
+        <header class="PhiH-general-header">
+            <div class="PhiH-general-header-content">
+                <!-- Column 1: Icon - Now clickable -->
+                <div class="PhiH-general-logo-container">
+                    <a href="index.html">
+                        <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                    </a>
+                </div>
+                
+                <!-- Column 2: Title -->
+                <div class="PhiH-general-title-container">
+                    <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+                </div>
+                
+                <!-- Column 3: Options -->
+                <div class="PhiH-general-header-controls">
+                    <div class="PhiH-general-theme-toggle">
+                        <label class="PhiH-theme-toggle-label">
+                            <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                            <div class="PhiH-theme-toggle-switch">
+                                <input type="checkbox" id="themeToggle">
+                                <span class="PhiH-theme-toggle-slider"></span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="PhiH-general-language-selector">
+                        <select class="PhiH-general-language-dropdown" id="languageSelect">
+                            <option value="ar">العربية</option>
+                            <option value="fr">Français</option>
+                            <option value="en">English</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Windows Bar -->
+        <nav class="PhiH-windows-bar">
+            <a href="index.html" class="PhiH-window-item">
+                <span class="PhiH-window-icon">🏠</span>
+                <span data-i18n="PhiH.windows.home">الرئيسية</span>
+            </a>
+            <a href="authors.html" class="PhiH-window-item">
+                <span class="PhiH-window-icon">👥</span>
+                <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+            </a>
+            <a href="quotes.html" class="PhiH-window-item">
+                <span class="PhiH-window-icon">📚</span>
+                <span data-i18n="PhiH.windows.quotes">شواهد</span>
+            </a>
+            <a href="resources.html" class="PhiH-window-item active">
+                <span class="PhiH-window-icon">🔍</span>
+                <span data-i18n="PhiH.windows.resources">الموارد</span>
+            </a>
+        </nav>
+        
+        <main class="PhiH-text-analysis-container">
+            <div class="PhiH-text-analysis-header">
+                <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.aristotleParadox.title">تحليل النص: المفارقة - أرسطو</h1>
+                <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.aristotleParadox.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+            </div>
+            
+            <!-- Text Analysis Section -->
+            <section class="PhiH-text-analysis-section">
+                
+                <!-- Text Introduction -->
+                <div class="PhiH-text-card">
+                    <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotleParadox.introduction.title">التمهيد</h4>
+                    <p data-i18n="PhiH.textAnalysis.aristotleParadox.introduction.content">
+                        كثيرا ما يتحدّد جوابنا، وعلى نحو لا يخلو من تسرّع، وفق موضوع السؤال الموجّه إلينا، ولكن نادرا ما نتظّن على المنطق المحايث للسؤال وعلى مفترضاته ومقاصده. ولعلّ هذا التسرّع هو ما قد يقود دونما تفطّن إلى الوقوع في التناقض والمفارقات.
+                    </p>
+                </div>
+                
+                <!-- Text Content -->
+                <div class="PhiH-text-card">
+                    <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotleParadox.text.title">المفارقة</h4>
+                    <div class="text-analysis-indent">
+                        <p data-i18n="PhiH.textAnalysis.aristotleParadox.text.content">
+                            إنّ بعض الأسئلة مصوغة على نحو<sup>1</sup> تؤدّي فيه الإجابة إلى مفارقة، سواء اتّخذت فيه هذا الاتّجاه أو ذاك ، ومثال ذلك: هل ينبغي أن يُطيع المرء الحُكَماء أم<sup>2</sup> أن يُطيع أباه؟، وكذلك: هل ينبغي أن نأتي من الأفعال ما كان نافعا أم ما كان عادلا ؟، وأيضا: أيّهما أفضل: أن نتحمّل الظلم أم أن نرتكبه؟ ينبغي حينئذ أن ندفع المحاور نحو إقرارات مضادّة للعامي وللحكماء: فإذا ما تكلّم على طريقة المفكّرين المهرة نجرّه<sup>3</sup> نحو معارضة العاميّ، وإذا ما تكلّم على طريقة العاميّ نجرّه نحو معارضة المفكّرين المهرة. وبالفعل، يذهب البعض إلى القول بأنّ الإنسان السعيد هو بالضّرورة عادل، في حين يعتبر العامي أنّه من المفارقة أن لا يكون الملك سعيد<sup>4</sup>. إنّ استدراج<sup>5</sup> المحاور نحو مفارقات من هذا القبيل يتمثّل في إيقاعه في مخالفة الطبيعة والقانون<sup>6</sup>، لأنّ القانون هو رأي العاميّ، في حين يتكلّم الحُكَماء وفق الطبيعة ووفق الحقيقة.
+                        </p>
+                        <p><em data-i18n="PhiH.textAnalysis.aristotleParadox.text.source">أرسطو، الدحوضات السفسطائية، ترجمة لجنة التأليف، Réfutations sophistiques, p 60-61, 173a-</em></p>
+                    </div>
+                </div>
+                
+                <!-- Author Presentation -->
+                <div class="PhiH-text-card">
+                    <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotleParadox.author.title">تقديم المؤلف</h4>
+                    <div class="PhiH-author-card">
+                        <div class="PhiH-author-image-container">
+                            <!-- Author image -->
+                            <img src="assets/images/aristotle.jpg" alt="أرسطو" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.aristotleParadox.author.alt">
+                        </div>
+                        <div class="PhiH-author-info">
+                            <p data-i18n="PhiH.textAnalysis.aristotleParadox.author.content">
+                                أرسطو Aristote (385 ق م / 322 ق م): فيلسوف يونانيّ انتسب إلى الأكاديمية ليتتلمذ على أفلاطون، وبعد وفاة أستاذه تفرّغ لتأسيس مدرسته الفلسفيّة الخاصة المسمّاة بـ "الليسي" Lycee. نقد الجدليّة الأفلاطونيّة واستبدلها بالمنطق الذي يبحث في مبادئ الفكر والشروط الصوريّة لصلاحيّة الاستدلال التي تعصمه من الخطأ والمغالطة. وجّه البحث في الوجود من منظور واقعيّ يؤصّله في تضايف بين الصورة والمادة، وجعل من عالم الكون والفساد موضوعا للعلم، كما جعل من التجربة منطلقا لاستقراء أسس الممارسة في إطار الأخلاق والسياسة، فكان فيلسوفا موسوعيّا بامتياز ومكّنه ذلك من أن يكون رمز العصر الوسيط حيث جعله توماس الإكويني مرجع الفكر السكولائيّ ولقبّه العرب "بالمعلّم الأوّل". من أهمّ مؤلفاته: "الارغانون"، "الميتافيزيقا"، "السماع الطبيعيّ"، "في السماء"، "في النفس"، "أجزاء الحيوان"، "أخلاق إلى نيقوماخوس"، "السياسات".
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lexical -->
+                <div class="PhiH-text-card">
+                    <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotleParadox.lexical.title">الهوامش والمفاهيم</h4>
+                    <ul>
+                        <li data-i18n="PhiH.textAnalysis.aristotleParadox.lexical.item1"><strong>"على نحو":</strong> بيّن أرسطو في موضع متقدّم أنّ المفارقة ترتّب عن طريقتنا في صياغة الأسئلة.</li>
+                        <li data-i18n="PhiH.textAnalysis.aristotleParadox.lexical.item2"><strong>"أم":</strong> بعض الأسئلة التي تُصاغ على هذا النحو قد تُوقعنا في مغالطة لكونها تُغيّب بدائل أخرى فضلا عن كونها تفترض تقابلا بين الإمكانيتين.</li>
+                        <li data-i18n="PhiH.textAnalysis.aristotleParadox.lexical.item3"><strong>"نجرّه":</strong> رغم أنّ السائل والمجيب يتقاسمان الأدوار في بناء المناقشة، إلاّ أنّ دور السائل يبقى الأهمّ كما بيّن ذلك أرسطو في المقالة الثامنة من كتاب "المواضع" فالسائل هو الذي يَرسُم بأسئلته حركة الحجاج وهو الذي يستدرج بأسئلته المجيب نحو مراميه.</li>
+                        <li data-i18n="PhiH.textAnalysis.aristotleParadox.lexical.item4"><strong>"سعيد":</strong> أي أنّ الملك وإن لم يكن عادلا فهو سعيد.</li>
+                        <li data-i18n="PhiH.textAnalysis.aristotleParadox.lexical.item5"><strong>"استدراج":</strong> ينصح أرسطو في موضع متأخّر من كتاب "الدحوضات السفسطائية" (ص89) بتنسيب الأجوبة لتجنّب الوقوع في مفارقة وذلك ببيان أنّ هذا الأمر أو ذاك، إن كان يصدق في ظروف معيّنة، فهو لا يصدق في ظروف أخرى.</li>
+                        <li data-i18n="PhiH.textAnalysis.aristotleParadox.lexical.item6"><strong>"الطبيعة والقانون":</strong> تُحيل الطبيعة على نظام أشياء معطى لم يتدخّل الإنسان في تحديده، وفي المقابل يُحيل القانون على كلّ ما يتأسّس على اصطلاح اجتماعي ويتميّز تبعا لذلك بالنسبيّة. يستحضر أرسطو هذه الثنائيّة في سياق الحديث عن الحجاج السفسطائي. كما يُحيل في (ص59) على ثنائيّة أخرى هي الرأي المعلن والرأي المتخفّي أو الُعبِّر عن رغبة. وتُستعمل هذه الثنائية على النحو التالي: لو كان السؤال: أيّهما أفضل الموت مع صلاح الحالِ أم الحياة مع الشرّ؟ فإنّه إذا أجاب المحاور وفق الرأي المعلن (الموت مع صلاح الحال) نجرّه إلى الرأي المتخفّي (الحياة مع الشرّ)، وإذا أجاب وفق الرأي المتخفّي نجرّه إلى الرأي المعلن.</li>
+                    </ul>
+                </div>
+                
+                <!-- Questions -->
+                <div class="PhiH-text-card">
+                    <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotleParadox.questions.title">المهام</h4>
+                    <ol>
+                        <li data-i18n="PhiH.textAnalysis.aristotleParadox.questions.q1">أعود إلى معجم فلسفيّ لأحدّد دلالة المفارقة.</li>
+                        <li data-i18n="PhiH.textAnalysis.aristotleParadox.questions.q2">أيّهما أفضل أن تكون فقيرا عادلا أم غنيّا جائرا ؟ أتخيّل حوارا في الغرض تُفضي فيه الأجوبة إلى مفارقة. ثمّ أبيّن إن كان هناك من سبيل لرفعها.</li>
+                        <li data-i18n="PhiH.textAnalysis.aristotleParadox.questions.q3">أستحضر من معيشي اليومي أمثلة داّة على مفارقات ، وأبيّن وجه المفارقة في هذه الأمثلة.</li>
+                    </ol>
+                </div>
+                
+                <!-- Answers -->
+                <div class="PhiH-text-card">
+                    <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotleParadox.answers.title">إجابات مقترحة</h4>
+                    <div class="text-analysis-indent">
+                        <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotleParadox.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                        <p data-i18n="PhiH.textAnalysis.aristotleParadox.answers.a1.content">
+                            <strong>المفارقة (Paradox):</strong> هي قضية أو بيان يبدو متناقضاً مع نفسه أو مع المنطق العام، لكنه قد يحتوي على حقيقة كامنة. تظهر المفارقة عندما يكون هناك تعارض بين ما يبدو صحيحاً في الظاهر وما هو صحيح فعلياً.
+                            <br><br>
+                            في المنطق الفلسفي، المفارقة هي موقف تناقضي حيث الاستنتاجات المستخلصة من فرضيات صحيحة تبدو غير متسقة أو متناقضة ذاتياً. تعتبر المفارقات مهمة في الفلسفة لأنها تكشف عن حدود الأنظمة المنطقية وتحفز على تطويرها.
+                        </p>
+                        
+                        <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotleParadox.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                        <p data-i18n="PhiH.textAnalysis.aristotleParadox.answers.a2.content">
+                            <strong>حوار تخيلي حول: "أيهما أفضل أن تكون فقيرا عادلا أم غنيا جائرا؟"</strong>
+                            <br><br>
+                            <strong>السائل:</strong> أيهما أفضل في نظرك: أن تكون فقيرا عادلا أم غنيا جائرا؟
+                            <br><br>
+                            <strong>المجيب:</strong> بالتأكيد أن أكون فقيرا عادلا، لأن العدالة فضيلة عظيمة.
+                            <br><br>
+                            <strong>السائل:</strong> ولكن إذا كنت فقيرا، ألن تكون عاجزا عن مساعدة أسرتك وإعالة أطفالك؟ أليس في ذلك ظلم لهم؟
+                            <br><br>
+                            <strong>المجيب:</strong> ربما... لكن الغنى الظالم سيجلب اللعنة والندامة.
+                            <br><br>
+                            <strong>السائل:</strong> لكن العديد من الأغنياء الجائرين يعيشون حياة سعيدة ويورثون لأبنائهم الثروة والسلطة!
+                            <br><br>
+                            <strong>وجه المفارقة:</strong> المجيب وقع في مفارقة: من جهة يدافع عن العدالة كقيمة مطلقة، ومن جهة أخرى يواجه واقعاً يبدو فيه الظلم مفيداً. وهذا ما يسميه أرسطو "استدراج المحاور نحو مفارقة".
+                            <br><br>
+                            <strong>سبيل رفع المفارقة:</strong>
+                            <br>
+                            1. تنسيب الإجابة حسب السياق.
+                            <br>
+                            2. رفض ثنائية "فقير عادل/غني جائر" واقتراح بدائل ثالثة.
+                            <br>
+                            3. التمييز بين العدالة الشخصية والعدالة الاجتماعية.
+                            <br>
+                            4. التأكيد على أن السعادة الحقيقية لا تكمن في الغنى المادي وحده.
+                        </p>
+                        
+                        <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotleParadox.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                        <p data-i18n="PhiH.textAnalysis.aristotleParadox.answers.a3.content">
+                            <strong>أمثلة يومية على المفارقات:</strong>
+                            <br><br>
+                            1. <strong>مفارقة التوفير:</strong> "كلما ادخرت أكثر، كلما أنفقت أقل، وكلما أنفقت أقل، كلما تأثر الاقتصاد سلباً، مما قد يؤثر على دخلك في النهاية." 
+                            <br><strong>وجه المفارقة:</strong> الفعل الفردي العقلاني (التوفير) قد يؤدي إلى نتيجة جماعية غير عقلانية (ركود اقتصادي).
+                            <br><br>
+                            2. <strong>مفارقة الاختيار:</strong> "كلما زادت الخيارات المتاحة أمامنا، كلما صعب علينا الاختيار، وكلما قلّت رضانا عن اختيارنا النهائي."
+                            <br><strong>وجه المفارقة:</strong> المزيد من الحرية (في الاختيار) يؤدي إلى مزيد من القلق وعدم الرضا.
+                            <br><br>
+                            3. <strong>مفارقة التكنولوجيا:</strong> "التكنولوجيا توفر الوقت، لكننا نشعر بأننا نملك وقتاً أقل من أي وقت مضى."
+                            <br><strong>وجه المفارقة:</strong> الوسائل المصممة لتوفير الوقت تستهلك وقتنا أكثر.
+                            <br><br>
+                            4. <strong>مفارقة الديمقراطية:</strong> "في الانتخابات، كل صوت مهم، لكن صوت الفرد الواحد لا يغير النتيجة عادة."
+                            <br><strong>وجه المفارقة:</strong> الأهمية النظرية للفرد تتعارض مع تأثيره العملي الضئيل.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Text Analysis -->
+                <div class="PhiH-text-card">
+                    <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotleParadox.analysis.title">تحليل النص</h4>
+                    <div class="text-analysis-indent">
+                        <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotleParadox.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                        <p data-i18n="PhiH.textAnalysis.aristotleParadox.analysis.thesis.content">
+                            يوضح أرسطو في هذا النص كيفية استغلال السفسطائيين لبنية الأسئلة لخلق مفارقات وإيقاع الخصم في التناقض. يؤكد أن بعض الأسئلة مصوغة بطريقة تؤدي أي إجابة عليها إلى مفارقة، سواء اختار المحاور هذا الجواب أو ذاك. النص يكشف عن آليات الجدل السفسطائي التي تعتمد على صياغة أسئلة ثنائية متعارضة تضع المحاور في مأزق منطقي.
+                        </p>
+                        
+                        <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotleParadox.analysis.mechanisms.title">آليات خلق المفارقة في الجدل:</h5>
+                        <p data-i18n="PhiH.textAnalysis.aristotleParadox.analysis.mechanisms.content">
+                            يحدد أرسطو عدة آليات لخلق المفارقات في الجدل:
+                            <br><br>
+                            1. <strong>صياغة أسئلة ثنائية متعارضة:</strong> أسئلة تضع خيارين متعارضين فقط (إما/أو) وتستبعد إمكانيات أخرى.
+                            <br><br>
+                            2. <strong>استغلال التناقض بين العامي والحكيم:</strong> دفع المحاور ليعارض آراء العامة إذا تكلم كحكيم، أو يعارض آراء الحكماء إذا تككلم كعامي.
+                            <br><br>
+                            3. <strong>التلاعب بمفاهيم الطبيعة والقانون:</strong> استغلال الاختلاف بين ما هو طبيعي (ثابت) وما هو قانوني (نسبي متغير).
+                            <br><br>
+                            4. <strong>إخفاء البدائل والافتراضات:</strong> تقديم الأسئلة بطريقة تخفي البدائل الأخرى والافتراضات الكامنة.
+                            <br><br>
+                            5. <strong>استدراج المحاور:</strong> توجيه الأسئلة بطريقة تجر المحاور نحو المواقف التي يريدها السائل.
+                        </p>
+                        
+                        <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotleParadox.analysis.consequences.title">نتائج وخطورة المفارقات في الجدل:</h5>
+                        <p data-i18n="PhiH.textAnalysis.aristotleParadox.analysis.consequences.content">
+                            - <strong>تعطيل التفكير النقدي:</strong> المفارقات تشل قدرة المحاور على التفكير المنطقي السليم.
+                            <br><br>
+                            - <strong>تضليل الحوار:</strong> تحويل الحوار من بحث عن الحقيقة إلى لعبة كلامية هدفها الانتصار وليس الوصول للحقيقة.
+                            <br><br>
+                            - <strong>استغلال في النقاش العام:</strong> يمكن استخدام هذه الآليات في النقاشات السياسية والدينية للتأثير على الرأي العام.
+                            <br><br>
+                            - <strong>تهديد الأسس المنطقية:</strong> المفارقات تكشف عن نقاط ضعف في الأنظمة المنطقية والقيمية.
+                            <br><br>
+                            - <strong>إعاقة التواصل الفعال:</strong> عندما يقع المتحاورون في مفارقات، يصبح التواصل مضطرباً وغير منتج.
+                        </p>
+                        
+                        <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotleParadox.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                        <p data-i18n="PhiH.textAnalysis.aristotleParadox.analysis.significance.content">
+                            يحمل تحليل أرسطو للمفارقة دلالات عميقة في الفلسفة والمنطق والجدل:
+                            <br><br>
+                            1. <strong>أهمية صياغة الأسئلة:</strong> يبرز النص أن الطريقة التي نطرح بها الأسئلة قد تكون أهم من الإجابات نفسها.
+                            <br><br>
+                            2. <strong>نقد الخطاب السفسطائي:</strong> يمثل النص جزءاً من نقد أرسطو الشامل للسفسطائية وأساليبها في الجدل.
+                            <br><br>
+                            3. <strong>التمييز بين الجدل الصحيح والجدل المموه:</strong> يوضح الفرق بين الجدل الذي يهدف إلى البحث عن الحقيقة والجدل الذي يهدف إلى الانتصار بأي ثمن.
+                            <br><br>
+                            4. <strong>العلاقة بين المنطق واللغة:</strong> يكشف كيف يمكن استخدام اللغة للتلاعب بالمنطق وخلق أوهام المفارقة.
+                            <br><br>
+                            5. <strong>الاستمرارية التاريخية:</strong> لا تزال مشكلة المفارقات قائمة في عصرنا الحاضر في مختلف المجالات.
+                            <br><br>
+                            6. <strong>التطبيق المعاصر:</strong> يمكن تطبيق تحليل أرسطو على مفارقات عصرنا في السياسة والإعلام والاقتصاد.
+                            <br><br>
+                            هذا النص يمثل دعوة للانتباه إلى بنية الأسئلة والافتراضات الكامنة خلفها، وعدم التسرع في الإجابة دون تفكيك المنطق المحايث للسؤال.
+                        </p>
+                    </div>
+                </div>
+                
+            </section>
+        </main>
+        
+        <footer class="PhiH-general-footer">
+            <div class="PhiH-general-footer-content">
+                <div class="PhiH-general-footer-column">
+                    <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                    <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+                </div>
+                <div class="PhiH-general-footer-column">
+                    <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                    <p data-i18n="PhiH.general.version">v1.0.0</p>
+                </div>
+                <div class="PhiH-general-footer-column">
+                    <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                    <div class="PhiH-general-footer-links">
+                        <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                        <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <script>
+            // Text Analysis specific translations
+            window.translations_PhiHtextAnalysis = {
+                fr: {
+                    // General translations
+                    "PhiH.general.siteName": "Philosophy Learning Hub",
+                    "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                    "PhiH.general.present": "X",
+                    "PhiH.general.absent": "",
+                    "PhiH.general.developerTitle": "Développeur",
+                    "PhiH.general.developer": "Mejri Ziad",
+                    "PhiH.general.versionTitle": "Version",
+                    "PhiH.general.version": "v1.0.0",
+                    "PhiH.general.linksTitle": "Liens",
+                    "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                    "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                    "PhiH.general.themeToggle": "Mode sombre",
+                    "PhiH.general.authors": "Philosophes",
+                    "PhiH.textAnalysis.aristotleParadox.level": "3ème Secondaire - Philosophie",
+                    
+                    // Windows bar translations
+                    "PhiH.windows.home": "Accueil",
+                    "PhiH.windows.philosophers": "Philosophes",
+                    "PhiH.windows.quotes": "Citations",
+                    "PhiH.windows.resources": "Ressources",
+                    
+                    // Text Analysis specific translations
+                    "PhiH.textAnalysis.aristotleParadox.title": "Analyse du texte: Le Paradoxe - Aristote",
+                    "PhiH.textAnalysis.aristotleParadox.introduction.title": "Introduction",
+                    "PhiH.textAnalysis.aristotleParadox.introduction.content": "Souvent, notre réponse est déterminée, et non sans précipitation, selon le sujet de la question qui nous est posée, mais rarement nous réfléchissons à la logique inhérente à la question, à ses présupposés et à ses objectifs. Peut-être cette précipitation est-elle ce qui peut conduire sans s'en rendre compte à tomber dans la contradiction et les paradoxes.",
+                    "PhiH.textAnalysis.aristotleParadox.text.title": "Le Paradoxe",
+                    "PhiH.textAnalysis.aristotleParadox.text.content": "Certaines questions sont formulées de manière<sup>1</sup> à ce que la réponse mène à un paradoxe, quelle que soit la direction prise, par exemple: Devrait-on obéir aux sages ou<sup>2</sup> obéir à son père? De même: Devrions-nous accomplir les actions utiles ou celles qui sont justes? Et aussi: Lequel est préférable: subir l'injustice ou la commettre? Il faut alors pousser l'interlocuteur vers des affirmations contraires à celles du commun des gens et des sages: s'il parle à la manière des penseurs habiles, nous le tirons<sup>3</sup> vers l'opposition au commun des gens, et s'il parle à la manière du commun des gens, nous le tirons vers l'opposition aux penseurs habiles. En effet, certains vont jusqu'à dire que l'homme heureux est nécessairement juste, tandis que le commun des gens considère paradoxal que le roi ne soit pas heureux<sup>4</sup>. Attirer<sup>5</sup> l'interlocuteur vers de tels paradoxes consiste à le faire tomber dans la violation de la nature et de la loi<sup>6</sup>, car la loi est l'opinion du commun des gens, tandis que les sages parlent selon la nature et selon la vérité.",
+                    "PhiH.textAnalysis.aristotleParadox.text.source": "Aristote, Réfutations sophistiques, traduction du comité de rédaction, Réfutations sophistiques, p 60-61, 173a-",
+                    "PhiH.textAnalysis.aristotleParadox.author.title": "Présentation de l'auteur",
+                    "PhiH.textAnalysis.aristotleParadox.author.alt": "Aristote",
+                    "PhiH.textAnalysis.aristotleParadox.author.content": "Aristote (385 av. J.-C. / 322 av. J.-C.): Philosophe grec qui a rejoint l'Académie pour étudier auprès de Platon, et après la mort de son maître, il s'est consacré à la fondation de son école philosophique privée appelée \"Le Lycée\". Il a critiqué la dialectique platonicienne et l'a remplacée par la logique qui recherche les principes de la pensée et les conditions formelles de la validité du raisonnement qui le protège de l'erreur et de la sophistique. Il a orienté la recherche sur l'être d'un point de vue réaliste fondé sur la corrélation entre la forme et la matière, a fait du monde de la génération et de la corruption un sujet de science, et a fait de l'expérience le point de départ de l'induction des bases de la pratique dans le cadre de l'éthique et de la politique, il était donc un philosophe encyclopédique par excellence, ce qui lui a permis d'être un symbole du Moyen Âge où Thomas d'Aquin en a fait la référence de la pensée scolastique et les Arabes l'ont surnommé \"le premier enseignant\". Parmi ses œuvres les plus importantes: \"L'Organon\", \"Métaphysique\", \"Physique\", \"Du ciel\", \"De l'âme\", \"Les parties des animaux\", \"Éthique à Nicomaque\", \"Politique\".",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.title": "Notes et concepts",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item1": "<strong>\"de manière\":</strong> Aristote a indiqué précédemment que le paradoxe découle de notre manière de formuler les questions.",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item2": "<strong>\"ou\":</strong> Certaines questions formulées de cette manière peuvent nous induire en erreur car elles occultent d'autres alternatives en plus de supposer une opposition entre les deux possibilités.",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item3": "<strong>\"nous le tirons\":</strong> Bien que le questionneur et le répondant partagent les rôles dans la construction de la discussion, le rôle du questionneur reste le plus important comme l'a montré Aristote dans le huitième article du livre \"Les Lieux\". Le questionneur est celui qui dessine par ses questions le mouvement de l'argumentation et c'est lui qui attire le répondant par ses questions vers ses objectifs.",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item4": "<strong>\"heureux\":</strong> C'est-à-dire que le roi, même s'il n'est pas juste, est heureux.",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item5": "<strong>\"Attirer\":</strong> Aristote conseille plus loin dans le livre \"Réfutations sophistiques\" (p.89) de relativiser les réponses pour éviter de tomber dans le paradoxe en montrant que telle ou telle chose, si elle est vraie dans certaines circonstances, ne l'est pas dans d'autres.",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item6": "<strong>\"la nature et la loi\":</strong> La nature renvoie à un système de choses donné dans lequel l'homme n'est pas intervenu pour le déterminer, et en revanche la loi renvoie à tout ce qui est fondé sur une convention sociale et se caractérise donc par la relativité. Aristote évoque cette dualité dans le contexte de la discussion sur l'argumentation sophistique. Il renvoie également (p.59) à une autre dualité: l'opinion déclarée et l'opinion cachée ou exprimant un désir. Cette dualité est utilisée comme suit: si la question était: Lequel est préférable: mourir avec une bonne situation ou vivre avec le mal? Alors si l'interlocuteur répond selon l'opinion déclarée (mourir avec une bonne situation), nous le tirons vers l'opinion cachée (vivre avec le mal), et s'il répond selon l'opinion cachée, nous le tirons vers l'opinion déclarée.",
+                    "PhiH.textAnalysis.aristotleParadox.questions.title": "Tâches",
+                    "PhiH.textAnalysis.aristotleParadox.questions.q1": "Je reviens à un dictionnaire philosophique pour déterminer la signification du paradoxe.",
+                    "PhiH.textAnalysis.aristotleParadox.questions.q2": "Lequel est préférable: être pauvre et juste ou riche et injuste? J'imagine un dialogue sur le sujet où les réponses mènent à un paradoxe. Puis j'explique s'il existe un moyen de le lever.",
+                    "PhiH.textAnalysis.aristotleParadox.questions.q3": "J'évoque de ma vie quotidienne des exemples frappants de paradoxes, et j'explique l'aspect paradoxal de ces exemples.",
+                    "PhiH.textAnalysis.aristotleParadox.answers.title": "Réponses suggérées",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a1.title": "Réponse à la première question:",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a1.content": "<strong>Le Paradoxe (Paradox):</strong> C'est une proposition ou un énoncé qui semble se contredire lui-même ou contredire la logique générale, mais qui peut contenir une vérité cachée. Le paradoxe apparaît lorsqu'il y a un conflit entre ce qui semble vrai en apparence et ce qui est réellement vrai.<br><br>En logique philosophique, le paradoxe est une situation contradictoire où les conclusions tirées d'hypothèses correctes semblent incohérentes ou auto-contradictoires. Les paradoxes sont importants en philosophie car ils révèlent les limites des systèmes logiques et stimulent leur développement.",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a2.title": "Réponse à la deuxième question:",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a2.content": "<strong>Dialogue imaginaire sur: \"Lequel est préférable: être pauvre et juste ou riche et injuste?\"</strong><br><br><strong>Le questionneur:</strong> Lequel est préférable selon vous: être pauvre et juste ou riche et injuste?<br><br><strong>Le répondant:</strong> Certainement être pauvre et juste, car la justice est une grande vertu.<br><br><strong>Le questionneur:</strong> Mais si vous êtes pauvre, ne serez-vous pas incapable d'aider votre famille et de subvenir aux besoins de vos enfants? N'est-ce pas injuste envers eux?<br><br><strong>Le répondant:</strong> Peut-être... mais la richesse injuste apportera malédiction et regret.<br><br><strong>Le questionneur:</strong> Mais beaucoup de riches injustes vivent une vie heureuse et lèguent à leurs enfants la richesse et le pouvoir!<br><br><strong>Aspect paradoxal:</strong> Le répondant est tombé dans un paradoxe: d'une part il défend la justice comme valeur absolue, d'autre part il fait face à une réalité où l'injustice semble utile. C'est ce qu'Aristote appelle \"attirer l'interlocuteur vers un paradoxe\".<br><br><strong>Moyen de lever le paradoxe:</strong><br>1. Relativiser la réponse selon le contexte.<br>2. Rejeter la dualité \"pauvre juste/riche injuste\" et proposer des alternatives tierces.<br>3. Distinguer entre justice personnelle et justice sociale.<br>4. Affirmer que le vrai bonheur ne réside pas seulement dans la richesse matérielle.",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a3.title": "Réponse à la troisième question:",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a3.content": "<strong>Exemples quotidiens de paradoxes:</strong><br><br>1. <strong>Le paradoxe de l'épargne:</strong> \"Plus vous épargnez, moins vous dépensez, et moins vous dépensez, plus l'économie est affectée négativement, ce qui peut finalement affecter vos revenus.\"<br><strong>Aspect paradoxal:</strong> L'action individuelle rationnelle (épargner) peut conduire à un résultat collectif irrationnel (stagnation économique).<br><br>2. <strong>Le paradoxe du choix:</strong> \"Plus nous avons de choix disponibles, plus il est difficile de choisir, et moins nous sommes satisfaits de notre choix final.\"<br><strong>Aspect paradoxal:</strong> Plus de liberté (de choix) conduit à plus d'anxiété et d'insatisfaction.<br><br>3. <strong>Le paradoxe de la technologie:</strong> \"La technologie fait gagner du temps, mais nous avons l'impression d'avoir moins de temps que jamais.\"<br><strong>Aspect paradoxal:</strong> Les moyens conçus pour gagner du temps consomment plus de notre temps.<br><br>4. <strong>Le paradoxe de la démocratie:</strong> \"Dans les élections, chaque vote compte, mais le vote d'un individu ne change généralement pas le résultat.\"<br><strong>Aspect paradoxal:</strong> L'importance théorique de l'individu contraste avec son impact pratique minime.",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.title": "Analyse du texte",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.thesis.title": "Thèse principale:",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.thesis.content": "Aristote explique dans ce texte comment les sophistes exploitent la structure des questions pour créer des paradoxes et faire tomber l'adversaire dans la contradiction. Il affirme que certaines questions sont formulées de manière à ce que toute réponse mène à un paradoxe, que l'interlocuteur choisisse telle ou telle réponse. Le texte révèle les mécanismes de l'argumentation sophistique qui reposent sur la formulation de questions binaires conflictuelles mettant l'interlocuteur dans une impasse logique.",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.mechanisms.title": "Mécanismes de création du paradoxe dans le débat:",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.mechanisms.content": "Aristote identifie plusieurs mécanismes pour créer des paradoxes dans le débat:<br><br>1. <strong>Formulation de questions binaires conflictuelles:</strong> Questions qui ne présentent que deux options conflictuelles (soit/ou) et excluent d'autres possibilités.<br><br>2. <strong>Exploitation de la contradiction entre le commun des gens et le sage:</strong> Pousser l'interlocuteur à s'opposer aux opinions du commun s'il parle comme un sage, ou à s'opposer aux opinions des sages s'il parle comme un commun.<br><br>3. <strong>Manipulation des concepts de nature et de loi:</strong> Exploiter la différence entre ce qui est naturel (constant) et ce qui est légal (relatif et variable).<br><br>4. <strong>Dissimulation des alternatives et des présupposés:</strong> Présenter les questions d'une manière qui cache les autres alternatives et les présupposés sous-jacents.<br><br>5. <strong>Attirer l'interlocuteur:</strong> Orienter les questions d'une manière qui attire l'interlocuteur vers les positions souhaitées par le questionneur.",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.consequences.title": "Conséquences et danger des paradoxes dans le débat:",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.consequences.content": "- <strong>Paralysie de la pensée critique:</strong> Les paradoxes paralysent la capacité de l'interlocuteur à penser logiquement.<br><br>- <strong>Tromperie dans le dialogue:</strong> Transformer le dialogue d'une recherche de vérité en un jeu de mots dont le but est la victoire et non la découverte de la vérité.<br><br>- <strong>Exploitation dans le débat public:</strong> Ces mécanismes peuvent être utilisés dans les débats politiques et religieux pour influencer l'opinion publique.<br><br>- <strong>Menace pour les fondements logiques:</strong> Les paradoxes révèlent les faiblesses des systèmes logiques et des valeurs.<br><br>- <strong>Obstruction de la communication efficace:</strong> Lorsque les interlocuteurs tombent dans des paradoxes, la communication devient perturbée et improductive.",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.significance.title": "Significations et dimensions du concept:",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.significance.content": "L'analyse d'Aristote du paradoxe porte des significations profondes en philosophie, logique et débat:<br><br>1. <strong>Importance de la formulation des questions:</strong> Le texte souligne que la manière dont nous posons les questions peut être plus importante que les réponses elles-mêmes.<br><br>2. <strong>Critique du discours sophistique:</strong> Le texte représente une partie de la critique complète d'Aristote de la sophistique et de ses méthodes de débat.<br><br>3. <strong>Distinction entre débat correct et débat trompeur:</strong> Clarifie la différence entre le débat qui vise à rechercher la vérité et le débat qui vise à gagner à tout prix.<br><br>4. <strong>Relation entre logique et langage:</strong> Révèle comment le langage peut être utilisé pour manipuler la logique et créer des illusions de paradoxe.<br><br>5. <strong>Continuité historique:</strong> Le problème des paradoxes persiste à notre époque dans divers domaines.<br><br>6. <strong>Application contemporaine:</strong> L'analyse d'Aristote peut être appliquée aux paradoxes de notre époque en politique, médias et économie.<br><br>Ce texte représente un appel à prêter attention à la structure des questions et aux présupposés sous-jacents, et à ne pas se précipiter à répondre sans déconstruire la logique inhérente à la question."
+                },
+                en: {
+                    // General translations
+                    "PhiH.general.siteName": "Philosophy Learning Hub",
+                    "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                    "PhiH.general.present": "X",
+                    "PhiH.general.absent": "",
+                    "PhiH.general.developerTitle": "Developer",
+                    "PhiH.general.developer": "Mejri Ziad",
+                    "PhiH.general.versionTitle": "Version",
+                    "PhiH.general.version": "v1.0.0",
+                    "PhiH.general.linksTitle": "Links",
+                    "PhiH.general.termsOfUse": "Terms of Use",
+                    "PhiH.general.privacyPolicy": "Privacy Policy",
+                    "PhiH.general.themeToggle": "Dark mode",
+                    "PhiH.general.authors": "Philosophers",
+                    "PhiH.textAnalysis.aristotleParadox.level": "3rd Secondary - Philosophy",
+                    
+                    // Windows bar translations
+                    "PhiH.windows.home": "Home",
+                    "PhiH.windows.philosophers": "Philosophers",
+                    "PhiH.windows.quotes": "Quotes",
+                    "PhiH.windows.resources": "Resources",
+                    
+                    // Text Analysis specific translations
+                    "PhiH.textAnalysis.aristotleParadox.title": "Text Analysis: Paradox - Aristotle",
+                    "PhiH.textAnalysis.aristotleParadox.introduction.title": "Introduction",
+                    "PhiH.textAnalysis.aristotleParadox.introduction.content": "Often, our answer is determined, and not without haste, according to the subject of the question posed to us, but we rarely reflect on the logic inherent in the question, its assumptions and its objectives. Perhaps this haste is what can lead without realizing it to falling into contradiction and paradoxes.",
+                    "PhiH.textAnalysis.aristotleParadox.text.title": "Paradox",
+                    "PhiH.textAnalysis.aristotleParadox.text.content": "Some questions are formulated in a way<sup>1</sup> that leads the answer to a paradox, whichever direction is taken, for example: Should one obey the wise or<sup>2</sup> obey his father? Likewise: Should we perform actions that are useful or those that are just? And also: Which is better: to endure injustice or to commit it? We must then push the interlocutor towards affirmations contrary to those of the common people and the wise: if he speaks in the manner of skilled thinkers, we draw him<sup>3</sup> towards opposition to the common people, and if he speaks in the manner of the common people, we draw him towards opposition to the skilled thinkers. Indeed, some go so far as to say that the happy man is necessarily just, while the common person considers it paradoxical that the king is not happy<sup>4</sup>. Luring<sup>5</sup> the interlocutor into such paradoxes involves making him violate nature and law<sup>6</sup>, for the law is the opinion of the common people, while the wise speak according to nature and according to truth.",
+                    "PhiH.textAnalysis.aristotleParadox.text.source": "Aristotle, Sophistical Refutations, translation by the editorial committee, Sophistical Refutations, p 60-61, 173a-",
+                    "PhiH.textAnalysis.aristotleParadox.author.title": "Author Presentation",
+                    "PhiH.textAnalysis.aristotleParadox.author.alt": "Aristotle",
+                    "PhiH.textAnalysis.aristotleParadox.author.content": "Aristotle (385 BC / 322 BC): Greek philosopher who joined the Academy to study under Plato, and after his master's death, he devoted himself to founding his private philosophical school called \"The Lyceum\". He criticized Platonic dialectic and replaced it with logic that investigates the principles of thought and the formal conditions of reasoning validity that protect it from error and sophistry. He directed research on being from a realistic perspective rooted in the correlation between form and matter, made the world of generation and corruption a subject of science, and made experience the starting point for inducing the foundations of practice within the framework of ethics and politics, thus he was an encyclopedic philosopher par excellence, which enabled him to be a symbol of the Middle Ages where Thomas Aquinas made him the reference of scholastic thought and the Arabs nicknamed him \"the first teacher\". Among his most important works: \"Organon\", \"Metaphysics\", \"Physics\", \"On the Heavens\", \"On the Soul\", \"Parts of Animals\", \"Nicomachean Ethics\", \"Politics\".",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.title": "Footnotes and Concepts",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item1": "<strong>\"in a way\":</strong> Aristotle indicated earlier that paradox arises from our way of formulating questions.",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item2": "<strong>\"or\":</strong> Some questions formulated in this way may mislead us because they hide other alternatives in addition to assuming an opposition between the two possibilities.",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item3": "<strong>\"we draw him\":</strong> Although the questioner and the respondent share roles in building the discussion, the questioner's role remains the most important as Aristotle showed in the eighth article of the book \"Topics\". The questioner is the one who designs with his questions the movement of argumentation and it is he who lures the respondent with his questions towards his objectives.",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item4": "<strong>\"happy\":</strong> That is, the king, even if he is not just, is happy.",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item5": "<strong>\"Luring\":</strong> Aristotle advises later in the book \"Sophistical Refutations\" (p.89) to relativize answers to avoid falling into paradox by showing that this or that thing, if true in certain circumstances, is not true in others.",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item6": "<strong>\"nature and law\":</strong> Nature refers to a system of given things in which man has not intervened to determine it, and in contrast, law refers to everything founded on social convention and therefore characterized by relativity. Aristotle evokes this duality in the context of discussing sophistic argumentation. He also refers (p.59) to another duality: declared opinion and hidden opinion or opinion expressing desire. This duality is used as follows: if the question was: Which is better: to die with good circumstances or to live with evil? Then if the interlocutor answers according to the declared opinion (to die with good circumstances), we draw him to the hidden opinion (to live with evil), and if he answers according to the hidden opinion, we draw him to the declared opinion.",
+                    "PhiH.textAnalysis.aristotleParadox.questions.title": "Tasks",
+                    "PhiH.textAnalysis.aristotleParadox.questions.q1": "I return to a philosophical dictionary to determine the meaning of paradox.",
+                    "PhiH.textAnalysis.aristotleParadox.questions.q2": "Which is better: to be poor and just or rich and unjust? I imagine a dialogue on the subject where answers lead to a paradox. Then I explain if there is a way to resolve it.",
+                    "PhiH.textAnalysis.aristotleParadox.questions.q3": "I recall from my daily life striking examples of paradoxes, and I explain the paradoxical aspect of these examples.",
+                    "PhiH.textAnalysis.aristotleParadox.answers.title": "Suggested Answers",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a1.title": "Answer to the first question:",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a1.content": "<strong>Paradox:</strong> It is a proposition or statement that seems to contradict itself or contradict general logic, but may contain a hidden truth. Paradox appears when there is a conflict between what seems true on the surface and what is actually true.<br><br>In philosophical logic, paradox is a contradictory situation where conclusions drawn from correct hypotheses seem inconsistent or self-contradictory. Paradoxes are important in philosophy because they reveal the limits of logical systems and stimulate their development.",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a2.title": "Answer to the second question:",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a2.content": "<strong>Imaginary dialogue on: \"Which is better: to be poor and just or rich and unjust?\"</strong><br><br><strong>Questioner:</strong> Which is better in your opinion: to be poor and just or rich and unjust?<br><br><strong>Respondent:</strong> Certainly to be poor and just, because justice is a great virtue.<br><br><strong>Questioner:</strong> But if you are poor, won't you be unable to help your family and support your children? Isn't that unfair to them?<br><br><strong>Respondent:</strong> Perhaps... but unjust wealth will bring curse and regret.<br><br><strong>Questioner:</strong> But many unjust rich people live happy lives and bequeath wealth and power to their children!<br><br><strong>Paradoxical aspect:</strong> The respondent fell into a paradox: on one hand he defends justice as an absolute value, on the other hand he faces a reality where injustice seems useful. This is what Aristotle calls \"luring the interlocutor into a paradox\".<br><br><strong>Way to resolve the paradox:</strong><br>1. Relativize the answer according to context.<br>2. Reject the duality \"poor just/rich unjust\" and propose third alternatives.<br>3. Distinguish between personal justice and social justice.<br>4. Affirm that true happiness does not lie solely in material wealth.",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a3.title": "Answer to the third question:",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a3.content": "<strong>Daily examples of paradoxes:</strong><br><br>1. <strong>The paradox of saving:</strong> \"The more you save, the less you spend, and the less you spend, the more the economy is negatively affected, which may ultimately affect your income.\"<br><strong>Paradoxical aspect:</strong> Individual rational action (saving) may lead to a collective irrational result (economic stagnation).<br><br>2. <strong>The paradox of choice:</strong> \"The more choices we have available, the harder it is to choose, and the less satisfied we are with our final choice.\"<br><strong>Paradoxical aspect:</strong> More freedom (of choice) leads to more anxiety and dissatisfaction.<br><br>3. <strong>The paradox of technology:</strong> \"Technology saves time, but we feel we have less time than ever.\"<br><strong>Paradoxical aspect:</strong> Means designed to save time consume more of our time.<br><br>4. <strong>The paradox of democracy:</strong> \"In elections, every vote counts, but an individual's vote usually doesn't change the result.\"<br><strong>Paradoxical aspect:</strong> The theoretical importance of the individual contrasts with his minimal practical impact.",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.title": "Text Analysis",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.thesis.title": "Main thesis:",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.thesis.content": "Aristotle explains in this text how sophists exploit the structure of questions to create paradoxes and make the opponent fall into contradiction. He affirms that some questions are formulated in such a way that any answer leads to a paradox, whether the interlocutor chooses this or that answer. The text reveals the mechanisms of sophistic argumentation that rely on formulating binary conflicting questions that put the interlocutor in a logical dilemma.",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.mechanisms.title": "Mechanisms of creating paradox in debate:",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.mechanisms.content": "Aristotle identifies several mechanisms for creating paradoxes in debate:<br><br>1. <strong>Formulation of binary conflicting questions:</strong> Questions that present only two conflicting options (either/or) and exclude other possibilities.<br><br>2. <strong>Exploitation of contradiction between common people and wise:</strong> Push the interlocutor to oppose common opinions if he speaks as a wise person, or to oppose wise opinions if he speaks as a common person.<br><br>3. <strong>Manipulation of concepts of nature and law:</strong> Exploit the difference between what is natural (constant) and what is legal (relative and variable).<br><br>4. <strong>Concealment of alternatives and assumptions:</strong> Present questions in a way that hides other alternatives and underlying assumptions.<br><br>5. <strong>Luring the interlocutor:</strong> Direct questions in a way that draws the interlocutor towards positions desired by the questioner.",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.consequences.title": "Consequences and danger of paradoxes in debate:",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.consequences.content": "- <strong>Paralysis of critical thinking:</strong> Paradoxes paralyze the interlocutor's ability to think logically.<br><br>- <strong>Deception in dialogue:</strong> Transform dialogue from a search for truth into a word game aimed at victory rather than discovering truth.<br><br>- <strong>Exploitation in public debate:</strong> These mechanisms can be used in political and religious debates to influence public opinion.<br><br>- <strong>Threat to logical foundations:</strong> Paradoxes reveal weaknesses in logical systems and values.<br><br>- <strong>Obstruction of effective communication:</strong> When interlocutors fall into paradoxes, communication becomes disturbed and unproductive.",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.significance.title": "Significance and dimensions of the concept:",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.significance.content": "Aristotle's analysis of paradox carries deep meanings in philosophy, logic and debate:<br><br>1. <strong>Importance of question formulation:</strong> The text emphasizes that the way we ask questions may be more important than the answers themselves.<br><br>2. <strong>Critique of sophistic discourse:</strong> The text represents part of Aristotle's comprehensive critique of sophistry and its debate methods.<br><br>3. <strong>Distinction between correct and deceptive debate:</strong> Clarifies the difference between debate aimed at seeking truth and debate aimed at winning at any cost.<br><br>4. <strong>Relation between logic and language:</strong> Reveals how language can be used to manipulate logic and create illusions of paradox.<br><br>5. <strong>Historical continuity:</strong> The problem of paradoxes persists in our time in various fields.<br><br>6. <strong>Contemporary application:</strong> Aristotle's analysis can be applied to paradoxes of our time in politics, media and economics.<br><br>This text represents a call to pay attention to the structure of questions and underlying assumptions, and not to rush to answer without deconstructing the logic inherent in the question."
+                },
+                ar: {
+                    // General translations
+                    "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                    "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                    "PhiH.general.present": "X",
+                    "PhiH.general.absent": "",
+                    "PhiH.general.developerTitle": "المطور",
+                    "PhiH.general.developer": "مجرى زياد",
+                    "PhiH.general.versionTitle": "الإصدار",
+                    "PhiH.general.version": "v1.0.0",
+                    "PhiH.general.linksTitle": "الروابط",
+                    "PhiH.general.termsOfUse": "شروط الاستخدام",
+                    "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                    "PhiH.general.themeToggle": "الوضع الداكن",
+                    "PhiH.general.authors": "الفلاسفة",
+                    
+                    // Windows bar translations
+                    "PhiH.windows.home": "الرئيسية",
+                    "PhiH.windows.philosophers": "الفلاسفة",
+                    "PhiH.windows.quotes": "شواهد",
+                    "PhiH.windows.resources": "الموارد",
+                    "PhiH.textAnalysis.aristotleParadox.level": "السنة الثالثة ثانوي - الفلسفة",
+                    "PhiH.textAnalysis.aristotleParadox.title": "تحليل النص: المفارقة - أرسطو",
+                    "PhiH.textAnalysis.aristotleParadox.introduction.title": "التمهيد",
+                    "PhiH.textAnalysis.aristotleParadox.introduction.content": "كثيرا ما يتحدّد جوابنا، وعلى نحو لا يخلو من تسرّع، وفق موضوع السؤال الموجّه إلينا، ولكن نادرا ما نتظّن على المنطق المحايث للسؤال وعلى مفترضاته ومقاصده. ولعلّ هذا التسرّع هو ما قد يقود دونما تفطّن إلى الوقوع في التناقض والمفارقات.",
+                    "PhiH.textAnalysis.aristotleParadox.text.title": "المفارقة",
+                    "PhiH.textAnalysis.aristotleParadox.text.content": "إنّ بعض الأسئلة مصوغة على نحو<sup>1</sup> تؤدّي فيه الإجابة إلى مفارقة، سواء اتّخذت فيه هذا الاتّجاه أو ذاك ، ومثال ذلك: هل ينبغي أن يُطيع المرء الحُكَماء أم<sup>2</sup> أن يُطيع أباه؟، وكذلك: هل ينبغي أن نأتي من الأفعال ما كان نافعا أم ما كان عادلا ؟، وأيضا: أيّهما أفضل: أن نتحمّل الظلم أم أن نرتكبه؟ ينبغي حينئذ أن ندفع المحاور نحو إقرارات مضادّة للعامي وللحكماء: فإذا ما تكلّم على طريقة المفكّرين المهرة نجرّه<sup>3</sup> نحو معارضة العاميّ، وإذا ما تكلّم على طريقة العاميّ نجرّه نحو معارضة المفكّرين المهرة. وبالفعل، يذهب البعض إلى القول بأنّ الإنسان السعيد هو بالضّرورة عادل، في حين يعتبر العامي أنّه من المفارقة أن لا يكون الملك سعيد<sup>4</sup>. إنّ استدراج<sup>5</sup> المحاور نحو مفارقات من هذا القبيل يتمثّل في إيقاعه في مخالفة الطبيعة والقانون<sup>6</sup>، لأنّ القانون هو رأي العاميّ، في حين يتكلّم الحُكَماء وفق الطبيعة ووفق الحقيقة.",
+                    "PhiH.textAnalysis.aristotleParadox.text.source": "أرسطو، الدحوضات السفسطائية، ترجمة لجنة التأليف، Réfutations sophistiques, p 60-61, 173a-",
+                    "PhiH.textAnalysis.aristotleParadox.author.title": "تقديم المؤلف",
+                    "PhiH.textAnalysis.aristotleParadox.author.alt": "أرسطو",
+                    "PhiH.textAnalysis.aristotleParadox.author.content": "أرسطو Aristote (385 ق م / 322 ق م): فيلسوف يونانيّ انتسب إلى الأكاديمية ليتتلمذ على أفلاطون، وبعد وفاة أستاذه تفرّغ لتأسيس مدرسته الفلسفيّة الخاصة المسمّاة بـ \"الليسي\" Lycee. نقد الجدليّة الأفلاطونيّة واستبدلها بالمنطق الذي يبحث في مبادئ الفكر والشروط الصوريّة لصلاحيّة الاستدلال التي تعصمه من الخطأ والمغالطة. وجّه البحث في الوجود من منظور واقعيّ يؤصّله في تضايف بين الصورة والمادة، وجعل من عالم الكون والفساد موضوعا للعلم، كما جعل من التجربة منطلقا لاستقراء أسس الممارسة في إطار الأخلاق والسياسة، فكان فيلسوفا موسوعيّا بامتياز ومكّنه ذلك من أن يكون رمز العصر الوسيط حيث جعله توماس الإكويني مرجع الفكر السكولائيّ ولقبّه العرب \"بالمعلّم الأوّل\". من أهمّ مؤلفاته: \"الارغانون\"، \"الميتافيزيقا\"، \"السماع الطبيعيّ\"، \"في السماء\"، \"في النفس\"، \"أجزاء الحيوان\"، \"أخلاق إلى نيقوماخوس\"، \"السياسات\".",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.title": "الهوامش والمفاهيم",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item1": "<strong>\"على نحو\":</strong> بيّن أرسطو في موضع متقدّم أنّ المفارقة ترتّب عن طريقتنا في صياغة الأسئلة.",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item2": "<strong>\"أم\":</strong> بعض الأسئلة التي تُصاغ على هذا النحو قد تُوقعنا في مغالطة لكونها تُغيّب بدائل أخرى فضلا عن كونها تفترض تقابلا بين الإمكانيتين.",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item3": "<strong>\"نجرّه\":</strong> رغم أنّ السائل والمجيب يتقاسمان الأدوار في بناء المناقشة، إلاّ أنّ دور السائل يبقى الأهمّ كما بيّن ذلك أرسطو في المقالة الثامنة من كتاب \"المواضع\" فالسائل هو الذي يَرسُم بأسئلته حركة الحجاج وهو الذي يستدرج بأسئلته المجيب نحو مراميه.",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item4": "<strong>\"سعيد\":</strong> أي أنّ الملك وإن لم يكن عادلا فهو سعيد.",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item5": "<strong>\"استدراج\":</strong> ينصح أرسطو في موضع متأخّر من كتاب \"الدحوضات السفسطائية\" (ص89) بتنسيب الأجوبة لتجنّب الوقوع في مفارقة وذلك ببيان أنّ هذا الأمر أو ذاك، إن كان يصدق في ظروف معيّنة، فهو لا يصدق في ظروف أخرى.",
+                    "PhiH.textAnalysis.aristotleParadox.lexical.item6": "<strong>\"الطبيعة والقانون\":</strong> تُحيل الطبيعة على نظام أشياء معطى لم يتدخّل الإنسان في تحديده، وفي المقابل يُحيل القانون على كلّ ما يتأسّس على اصطلاح اجتماعي ويتميّز تبعا لذلك بالنسبيّة. يستحضر أرسطو هذه الثنائيّة في سياق الحديث عن الحجاج السفسطائي. كما يُحيل في (ص59) على ثنائيّة أخرى هي الرأي المعلن والرأي المتخفّي أو الُعبِّر عن رغبة. وتُستعمل هذه الثنائية على النحو التالي: لو كان السؤال: أيّهما أفضل الموت مع صلاح الحالِ أم الحياة مع الشرّ؟ فإنّه إذا أجاب المحاور وفق الرأي المعلن (الموت مع صلاح الحال) نجرّه إلى الرأي المتخفّي (الحياة مع الشرّ)، وإذا أجاب وفق الرأي المتخفّي نجرّه إلى الرأي المعلن.",
+                    "PhiH.textAnalysis.aristotleParadox.questions.title": "المهام",
+                    "PhiH.textAnalysis.aristotleParadox.questions.q1": "أعود إلى معجم فلسفيّ لأحدّد دلالة المفارقة.",
+                    "PhiH.textAnalysis.aristotleParadox.questions.q2": "أيّهما أفضل أن تكون فقيرا عادلا أم غنيّا جائرا ؟ أتخيّل حوارا في الغرض تُفضي فيه الأجوبة إلى مفارقة. ثمّ أبيّن إن كان هناك من سبيل لرفعها.",
+                    "PhiH.textAnalysis.aristotleParadox.questions.q3": "أستحضر من معيشي اليومي أمثلة داّة على مفارقات ، وأبيّن وجه المفارقة في هذه الأمثلة.",
+                    "PhiH.textAnalysis.aristotleParadox.answers.title": "إجابات مقترحة",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a1.title": "الإجابة عن السؤال الأول:",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a1.content": "<strong>المفارقة (Paradox):</strong> هي قضية أو بيان يبدو متناقضاً مع نفسه أو مع المنطق العام، لكنه قد يحتوي على حقيقة كامنة. تظهر المفارقة عندما يكون هناك تعارض بين ما يبدو صحيحاً في الظاهر وما هو صحيح فعلياً.<br><br>في المنطق الفلسفي، المفارقة هي موقف تناقضي حيث الاستنتاجات المستخلصة من فرضيات صحيحة تبدو غير متسقة أو متناقضة ذاتياً. تعتبر المفارقات مهمة في الفلسفة لأنها تكشف عن حدود الأنظمة المنطقية وتحفز على تطويرها.",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a2.content": "<strong>حوار تخيلي حول: \"أيهما أفضل أن تكون فقيرا عادلا أم غنيا جائرا؟\"</strong><br><br><strong>السائل:</strong> أيهما أفضل في نظرك: أن تكون فقيرا عادلا أم غنيا جائرا؟<br><br><strong>المجيب:</strong> بالتأكيد أن أكون فقيرا عادلا، لأن العدالة فضيلة عظيمة.<br><br><strong>السائل:</strong> ولكن إذا كنت فقيرا، ألن تكون عاجزا عن مساعدة أسرتك وإعالة أطفالك؟ أليس في ذلك ظلم لهم؟<br><br><strong>المجيب:</strong> ربما... لكن الغنى الظالم سيجلب اللعنة والندامة.<br><br><strong>السائل:</strong> لكن العديد من الأغنياء الجائرين يعيشون حياة سعيدة ويورثون لأبنائهم الثروة والسلطة!<br><br><strong>وجه المفارقة:</strong> المجيب وقع في مفارقة: من جهة يدافع عن العدالة كقيمة مطلقة، ومن جهة أخرى يواجه واقعاً يبدو فيه الظلم مفيداً. وهذا ما يسميه أرسطو \"استدراج المحاور نحو مفارقة\".<br><br><strong>سبيل رفع المفارقة:</strong><br>1. تنسيب الإجابة حسب السياق.<br>2. رفض ثنائية \"فقير عادل/غني جائر\" واقتراح بدائل ثالثة.<br>3. التمييز بين العدالة الشخصية والعدالة الاجتماعية.<br>4. التأكيد على أن السعادة الحقيقية لا تكمن في الغنى المادي وحده.",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                    "PhiH.textAnalysis.aristotleParadox.answers.a3.content": "<strong>أمثلة يومية على المفارقات:</strong><br><br>1. <strong>مفارقة التوفير:</strong> \"كلما ادخرت أكثر، كلما أنفقت أقل، وكلما أنفقت أقل، كلما تأثر الاقتصاد سلباً، مما قد يؤثر على دخلك في النهاية.\"<br><strong>وجه المفارقة:</strong> الفعل الفردي العقلاني (التوفير) قد يؤدي إلى نتيجة جماعية غير عقلانية (ركود اقتصادي).<br><br>2. <strong>مفارقة الاختيار:</strong> \"كلما زادت الخيارات المتاحة أمامنا، كلما صعب علينا الاختيار، وكلما قلّت رضانا عن اختيارنا النهائي.\"<br><strong>وجه المفارقة:</strong> المزيد من الحرية (في الاختيار) يؤدي إلى مزيد من القلق وعدم الرضا.<br><br>3. <strong>مفارقة التكنولوجيا:</strong> \"التكنولوجيا توفر الوقت، لكننا نشعر بأننا نملك وقتاً أقل من أي وقت مضى.\"<br><strong>وجه المفارقة:</strong> الوسائل المصممة لتوفير الوقت تستهلك وقتنا أكثر.<br><br>4. <strong>مفارقة الديمقراطية:</strong> \"في الانتخابات، كل صوت مهم، لكن صوت الفرد الواحد لا يغير النتيجة عادة.\"<br><strong>وجه المفارقة:</strong> الأهمية النظرية للفرد تتعارض مع تأثيره العملي الضئيل.",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.title": "تحليل النص",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.thesis.title": "الأطروحة الأساسية:",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.thesis.content": "يوضح أرسطو في هذا النص كيفية استغلال السفسطائيين لبنية الأسئلة لخلق مفارقات وإيقاع الخصم في التناقض. يؤكد أن بعض الأسئلة مصوغة بطريقة تؤدي أي إجابة عليها إلى مفارقة، سواء اختار المحاور هذا الجواب أو ذاك. النص يكشف عن آليات الجدل السفسطائي التي تعتمد على صياغة أسئلة ثنائية متعارضة تضع المحاور في مأزق منطقي.",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.mechanisms.title": "آليات خلق المفارقة في الجدل:",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.mechanisms.content": "يحدد أرسطو عدة آليات لخلق المفارقات في الجدل:<br><br>1. <strong>صياغة أسئلة ثنائية متعارضة:</strong> أسئلة تضع خيارين متعارضين فقط (إما/أو) وتستبعد إمكانيات أخرى.<br><br>2. <strong>استغلال التناقض بين العامي والحكيم:</strong> دفع المحاور ليعارض آراء العامة إذا تكلم كحكيم، أو يعارض آراء الحكماء إذا تككلم كعامي.<br><br>3. <strong>التلاعب بمفاهيم الطبيعة والقانون:</strong> استغلال الاختلاف بين ما هو طبيعي (ثابت) وما هو قانوني (نسبي متغير).<br><br>4. <strong>إخفاء البدائل والافتراضات:</strong> تقديم الأسئلة بطريقة تخفي البدائل الأخرى والافتراضات الكامنة.<br><br>5. <strong>استدراج المحاور:</strong> توجيه الأسئلة بطريقة تجر المحاور نحو المواقف التي يريدها السائل.",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.consequences.title": "نتائج وخطورة المفارقات في الجدل:",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.consequences.content": "- <strong>تعطيل التفكير النقدي:</strong> المفارقات تشل قدرة المحاور على التفكير المنطقي السليم.<br><br>- <strong>تضليل الحوار:</strong> تحويل الحوار من بحث عن الحقيقة إلى لعبة كلامية هدفها الانتصار وليس الوصول للحقيقة.<br><br>- <strong>استغلال في النقاش العام:</strong> يمكن استخدام هذه الآليات في النقاشات السياسية والدينية للتأثير على الرأي العام.<br><br>- <strong>تهديد الأسس المنطقية:</strong> المفارقات تكشف عن نقاط ضعف في الأنظمة المنطقية والقيمية.<br><br>- <strong>إعاقة التواصل الفعال:</strong> عندما يقع المتحاورون في مفارقات، يصبح التواصل مضطرباً وغير منتج.",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                    "PhiH.textAnalysis.aristotleParadox.analysis.significance.content": "يحمل تحليل أرسطو للمفارقة دلالات عميقة في الفلسفة والمنطق والجدل:<br><br>1. <strong>أهمية صياغة الأسئلة:</strong> يبرز النص أن الطريقة التي نطرح بها الأسئلة قد تكون أهم من الإجابات نفسها.<br><br>2. <strong>نقد الخطاب السفسطائي:</strong> يمثل النص جزءاً من نقد أرسطو الشامل للسفسطائية وأساليبها في الجدل.<br><br>3. <strong>التمييز بين الجدل الصحيح والجدل المموه:</strong> يوضح الفرق بين الجدل الذي يهدف إلى البحث عن الحقيقة والجدل الذي يهدف إلى الانتصار بأي ثمن.<br><br>4. <strong>العلاقة بين المنطق واللغة:</strong> يكشف كيف يمكن استخدام اللغة للتلاعب بالمنطق وخلق أوهام المفارقة.<br><br>5. <strong>الاستمرارية التاريخية:</strong> لا تزال مشكلة المفارقات قائمة في عصرنا الحاضر في مختلف المجالات.<br><br>6. <strong>التطبيق المعاصر:</strong> يمكن تطبيق تحليل أرسطو على مفارقات عصرنا في السياسة والإعلام والاقتصاد.<br><br>هذا النص يمثل دعوة للانتباه إلى بنية الأسئلة والافتراضات الكامنة خلفها، وعدم التسرع في الإجابة دون تفكيك المنطق المحايث للسؤال."
+                }
+            };
+            
+            // Set the current translations for the translation.js file to use
+            window.currentTranslations = window.translations_PhiHtextAnalysis;
+        </script>
+        
+        <!-- Include the external translation file -->
+        <script src="scripts/translation.js"></script>
+        
+        <!-- Include PWA Handler -->
+        <script src="scripts/pwa-handler.js"></script>
+    </body>
+</html>

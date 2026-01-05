@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المغالطات في الخطاب الإيديولوجي والسياسي - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#8B4513">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Saddle Brown + Dark Amber Theme (رتيبة ألوان نادرة: بني السرج + كهرماني داكن) */
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2691E;
+            --accent-color: #A0522D;
+            --light-color: #FFF8DC;
+            --dark-color: #3E2723;
+            --text-color: #4A3520;
+            --heading-color: #5D4037;
+            --background-color: #FDF5E6;
+            --card-bg: #FFFFFF;
+            --definition-bg: #FAF3E0;
+            --border-color: #D7CCC8;
+            --table-even-bg: #F5EFE6;
+            --table-hover-bg: #EDE7DC;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(139, 69, 19, 0.15);
+            --gradient-primary: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            --gradient-secondary: linear-gradient(135deg, #D2691E 0%, #5D4037 100%);
+            --gradient-brown: linear-gradient(135deg, #8B4513 0%, #5D4037 100%);
+            --gradient-amber: linear-gradient(135deg, #D2691E 0%, #A0522D 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #D2691E;
+            --secondary-color: #A0522D;
+            --accent-color: #CD853F;
+            --light-color: #4A3520;
+            --dark-color: #1C120D;
+            --text-color: #E8D9C5;
+            --heading-color: #F5E6D3;
+            --background-color: #2A1F17;
+            --card-bg: #3A2C21;
+            --definition-bg: #4A3520;
+            --border-color: #8B4513;
+            --table-even-bg: #3A2C21;
+            --table-hover-bg: #4A3520;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #D2691E 0%, #A0522D 100%);
+            --gradient-secondary: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
+            --gradient-brown: linear-gradient(135deg, #D2691E 0%, #3A2C21 100%);
+            --gradient-amber: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Definition Cards Layout */
+        .PhiH-definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-definition-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(139, 69, 19, 0.2);
+        }
+        
+        .PhiH-definition-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-definition-card-content ul {
+            padding-left: 1.2rem;
+            margin: 0.8rem 0;
+        }
+        
+        .PhiH-definition-card-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        /* Expand/Collapse Functionality */
+        .PhiH-expandable-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .PhiH-expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .PhiH-expandable-header:hover {
+            background: var(--gradient-brown);
+        }
+        
+        .PhiH-expandable-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        .PhiH-expandable-content {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            border-top: none;
+        }
+        
+        .PhiH-expandable-content.hidden {
+            display: none;
+        }
+        
+        .PhiH-expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-expand-icon.expanded {
+            transform: rotate(180deg);
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Section Styling */
+        .PhiH-quotes-container {
+            margin-top: 1rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(139, 69, 19, 0.2);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        /* RTL support for definition cards */
+        body.rtl .PhiH-definition-card-content ul {
+            padding-left: 0;
+            padding-right: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .PhiH-definitions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-fallacies" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-lesson1-container">
+        <div class="PhiH-lesson1-header">
+            <h1 class="PhiH-lesson1-title" data-i18n="PhiH.lessons.fallacies.title">المغالطات في الخطاب الإيديولوجي والسياسي</h1>
+            <div class="PhiH-lesson1-level" data-i18n="PhiH.lessons.fallacies.level">السنة الثالثة ثانوي - الفلسفة</div>
+        </div>
+        
+        <!-- Introduction Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="introHeader">
+                <h3 data-i18n="PhiH.lessons.fallacies.introduction.title">التمهيد</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="introContent">
+                <p data-i18n="PhiH.lessons.fallacies.introduction.text1">
+                    تزدحم الساحة الفكرية والسياسية بأنماط خطابية تهدف إلى التأثير في المتلقي وإقناعه بمواقف وأفكار محددة. غير أن العديد من هذه الخطابات لا يعتمد على الحجة المنطقية الصحيحة، بل يستخدم مغالطات عقلية تستغل الثغرات في التفكير البشري لتقديم ادعاءات تبدو مقنعة ظاهرياً لكنها تفتقر إلى الأسس العقلانية.
+                </p>
+                <p data-i18n="PhiH.lessons.fallacies.introduction.text2">
+                    تمثل المغالطات المنطقية خطراً مضاعفاً عندما تُستعمل في الخطاب الإيديولوجي والسياسي، حيث تُستخدم لترسيخ آراء مسبقة وتعزيز مواقف عنصرية أو تمييزية تحت ستار الحجج العقلانية. فالمغالطة ليست مجرد خطأ في التفكير، بل هي أداة تستغل ضعف التفكير النقدي لتبرير مواقف غير عادلة.
+                </p>
+                <p data-i18n="PhiH.lessons.fallacies.introduction.text3">
+                    تتنوع أشكال المغالطات بين تلك التي تعتمد على الخلط بين المفاهيم، أو استخدام الحجج الدائرية، أو اللجوء إلى التعميمات غير المبررة. وفي كل حالة، تهدف هذه المغالطات إلى خداع العقل وتضليله بدلاً من إقناعه بالحقيقة. لذلك، يعد فهم هذه المغالطات والتعرف عليها خطوة أساسية في تطوير التفكير النقدي ومقاومة التلاعب الفكري.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Texts Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="textsHeader">
+                <h3 data-i18n="PhiH.lessons.fallacies.texts.title">النصوص</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="textsContent">
+                <div class="PhiH-texts-container">
+                    <ul class="PhiH-texts-list">
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2a_lesson3_text1.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.fallacies.texts.text1">النص 7: المفاضلة بين الأعراق: حقيقة أم مغالطة؟ - هتلر</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2a_lesson3_text2.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.fallacies.texts.text2">النص 8: في شروط القول ببطلان القياس الدوري - الغزالي</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2a_lesson3_text3.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.fallacies.texts.text3">النص 9: الخلط بين المقولات - أرسطو</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quotes Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="quotesHeader">
+                <h3 data-i18n="PhiH.lessons.fallacies.quotes.title">شواهد ونصوص ذات صلة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="quotesContent">
+                <div class="PhiH-quotes-container">
+                    <div class="PhiH-quotes-grid">
+                        <!-- Quote 1 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.fallacies.quotes.quote1">
+                                "إن المتوحّش هو من يعتقد في وجود الوحشية"
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.fallacies.quotes.author1">كلود ليفي ستروس</div>
+                        </div>
+                        
+                        <!-- Quote 2 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.fallacies.quotes.quote2">
+                                "أنخرط في جمعية مكافحة التمييز العنصري شرط أن تأخذ في الاعتبار كلّ أشكال التمييز"
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.fallacies.quotes.author2">بيار ديسبروغ</div>
+                        </div>
+                        
+                        <!-- Quote 3 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.fallacies.quotes.quote3">
+                                "الأفيون ينوّم لأنّ له مفعولا تنويميًا"
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.fallacies.quotes.author3">موليار، طبيب رغم أنفه</div>
+                        </div>
+                        
+                        <!-- Quote 4 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.fallacies.quotes.quote4">
+                                "يمكن أن تكون للمنطق فائدة عظيمة شريطة أن ندخُله ثم نغادره"
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.fallacies.quotes.author4">أمبرتو إيكو</div>
+                        </div>
+                        
+                        <!-- Quote 5 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.fallacies.quotes.quote5">
+                                "إنّ للمنطق هو الآخر أوهامه ولكنّها أشدّ صلابة"
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.fallacies.quotes.author5">أمبرتو إيكو</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Conclusion -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="conclusionHeader">
+                <h3 data-i18n="PhiH.lessons.fallacies.conclusion.title">الخاتمة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="conclusionContent">
+                <p data-i18n="PhiH.lessons.fallacies.conclusion.text1">
+                    تكشف دراسة المغالطات في الخطاب الإيديولوجي والسياسي عن حقيقة خطيرة: فالكثير من الخطابات التي تقدم نفسها على أنها عقلانية ومنطقية تعتمد في الواقع على حجج مغلوطة تهدف إلى التضليل والتأثير العاطفي بدلاً من الإقناع المنطقي. هذه المغالطات ليست مجرد أخطاء عرضية، بل هي أدوات تستخدم عمداً لتبرير مواقف إيديولوجية مسبقة.
+                </p>
+                <p data-i18n="PhiH.lessons.fallacies.conclusion.text2">
+                    إن مقاومة هذه المغالطات تتطلب تطوير حس نقدي حاد ومعرفة عميقة بآليات التفكير المنطقي. فالقدرة على تمييز المغالطة من الحجة الصحيحة تمكن الفرد من تحليل الخطابات الإيديولوجية والسياسية بموضوعية، والتمييز بين ما هو حقيقي وما هو زائف، وبين ما هو عادل وما هو تمييزي.
+                </p>
+                <p data-i18n="PhiH.lessons.fallacies.conclusion.text3">
+                    في عالم تزدحم فيه الخطابات الإيديولوجية وتتنافس فيه الآراء على التأثير في الجماهير، يبقى التفكير النقدي بمثابة السلاح الأقوى لمقاومة التلاعب الفكري. فالفلسفة، بتركيزها على تحليل البنى المنطقية وكشف المغالطات، تقدم أدوات ضرورية لفهم العالم المعقد واتخاذ مواقف مستنيرة تستند إلى الحجة والبرهان بدلاً من الانسياق وراء الخطابات المضللة.
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Page-specific translations for fallacies lesson
+        window.translations_PhiHfallacies = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                
+                // Fallacies lesson specific translations
+                "PhiH.lessons.fallacies.title": "Sophismes dans le Discours Idéologique et Politique",
+                "PhiH.lessons.fallacies.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                
+                "PhiH.lessons.fallacies.introduction.title": "Introduction",
+                "PhiH.lessons.fallacies.introduction.text1": "La scène intellectuelle et politique est encombrée de types de discours visant à influencer le récepteur et à le convaincre de positions et d'idées spécifiques. Cependant, bon nombre de ces discours ne reposent pas sur des arguments logiques corrects, mais utilisent des sophismes mentaux qui exploitent les faiblesses de la pensée humaine pour présenter des affirmations qui semblent convaincantes en apparence mais qui manquent de fondements rationnels.",
+                "PhiH.lessons.fallacies.introduction.text2": "Les sophismes logiques représentent un danger redoublé lorsqu'ils sont utilisés dans le discours idéologique et politique, où ils servent à ancrer des préjugés et à renforcer des positions racistes ou discriminatoires sous couvert d'arguments rationnels. Le sophisme n'est pas simplement une erreur de raisonnement, mais un outil qui exploite la faiblesse de la pensée critique pour justifier des positions injustes.",
+                "PhiH.lessons.fallacies.introduction.text3": "Les formes de sophismes varient entre celles qui reposent sur la confusion des concepts, l'utilisation d'arguments circulaires, ou le recours à des généralisations non justifiées. Dans chaque cas, ces sophismes visent à tromper et à égarer l'esprit plutôt qu'à le convaincre de la vérité. Par conséquent, comprendre ces sophismes et les reconnaître est une étape fondamentale dans le développement de la pensée critique et la résistance à la manipulation intellectuelle.",
+                
+                "PhiH.lessons.fallacies.texts.title": "Textes",
+                "PhiH.lessons.fallacies.texts.text1": "Texte 7: La hiérarchie entre les races: réalité ou sophisme? - Hitler",
+                "PhiH.lessons.fallacies.texts.text2": "Texte 8: Sur les conditions de l'invalidation du syllogisme circulaire - Al-Ghazali",
+                "PhiH.lessons.fallacies.texts.text3": "Texte 9: La confusion entre les catégories - Aristote",
+                
+                // Quotes section translations
+                "PhiH.lessons.fallacies.quotes.title": "Citations et textes connexes",
+                "PhiH.lessons.fallacies.quotes.quote1": "\"Le sauvage est celui qui croit à l'existence de la sauvagerie\"",
+                "PhiH.lessons.fallacies.quotes.quote2": "\"Je m'engage dans une association de lutte contre la discrimination raciale à condition qu'elle prenne en compte toutes les formes de discrimination\"",
+                "PhiH.lessons.fallacies.quotes.quote3": "\"L'opium endort parce qu'il a une vertu dormitive\"",
+                "PhiH.lessons.fallacies.quotes.quote4": "\"La logique peut être d'une grande utilité à condition d'y entrer puis d'en sortir\"",
+                "PhiH.lessons.fallacies.quotes.quote5": "\"La logique a elle aussi ses illusions mais elles sont plus solides\"",
+                "PhiH.lessons.fallacies.quotes.author1": "Claude Lévi-Strauss",
+                "PhiH.lessons.fallacies.quotes.author2": "Pierre Desproges",
+                "PhiH.lessons.fallacies.quotes.author3": "Molière, Le Médecin malgré lui",
+                "PhiH.lessons.fallacies.quotes.author4": "Umberto Eco",
+                "PhiH.lessons.fallacies.quotes.author5": "Umberto Eco",
+                
+                "PhiH.lessons.fallacies.conclusion.title": "Conclusion",
+                "PhiH.lessons.fallacies.conclusion.text1": "L'étude des sophismes dans le discours idéologique et politique révèle une vérité dangereuse: de nombreux discours qui se présentent comme rationnels et logiques reposent en réalité sur des arguments fallacieux visant à tromper et à influencer émotionnellement plutôt qu'à convaincre logiquement. Ces sophismes ne sont pas de simples erreurs accidentelles, mais des outils utilisés délibérément pour justifier des positions idéologiques préconçues.",
+                "PhiH.lessons.fallacies.conclusion.text2": "Résister à ces sophismes nécessite le développement d'un sens critique aigu et d'une connaissance approfondie des mécanismes du raisonnement logique. La capacité à distinguer le sophisme de l'argument valide permet à l'individu d'analyser les discours idéologiques et politiques avec objectivité, de distinguer ce qui est vrai de ce qui est faux, et ce qui est juste de ce qui est discriminatoire.",
+                "PhiH.lessons.fallacies.conclusion.text3": "Dans un monde où les discours idéologiques foisonnent et où les opinions rivalisent pour influencer les masses, la pensée critique reste l'arme la plus puissante pour résister à la manipulation intellectuelle. La philosophie, en se concentrant sur l'analyse des structures logiques et la révélation des sophismes, offre des outils essentiels pour comprendre le monde complexe et adopter des positions éclairées fondées sur l'argument et la preuve plutôt que de se laisser entraîner par des discours trompeurs."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                
+                // Fallacies lesson specific translations
+                "PhiH.lessons.fallacies.title": "Fallacies in Ideological and Political Discourse",
+                "PhiH.lessons.fallacies.level": "3rd Secondary - Philosophy",
+                
+                "PhiH.lessons.fallacies.introduction.title": "Introduction",
+                "PhiH.lessons.fallacies.introduction.text1": "The intellectual and political arena is crowded with discursive patterns aimed at influencing the recipient and convincing them of specific positions and ideas. However, many of these discourses do not rely on correct logical arguments, but use mental fallacies that exploit weaknesses in human thinking to present claims that seem convincing on the surface but lack rational foundations.",
+                "PhiH.lessons.fallacies.introduction.text2": "Logical fallacies represent a doubled danger when used in ideological and political discourse, where they are used to entrench prejudices and reinforce racist or discriminatory positions under the guise of rational arguments. A fallacy is not just an error in thinking, but a tool that exploits the weakness of critical thinking to justify unfair positions.",
+                "PhiH.lessons.fallacies.introduction.text3": "The forms of fallacies vary between those that rely on confusion of concepts, the use of circular arguments, or resorting to unjustified generalizations. In each case, these fallacies aim to deceive and mislead the mind rather than convince it of the truth. Therefore, understanding these fallacies and recognizing them is a fundamental step in developing critical thinking and resisting intellectual manipulation.",
+                
+                "PhiH.lessons.fallacies.texts.title": "Texts",
+                "PhiH.lessons.fallacies.texts.text1": "Text 7: Ranking Between Races: Truth or Fallacy? - Hitler",
+                "PhiH.lessons.fallacies.texts.text2": "Text 8: On the Conditions for Invalidating Circular Reasoning - Al-Ghazali",
+                "PhiH.lessons.fallacies.texts.text3": "Text 9: Confusion Between Categories - Aristotle",
+                
+                // Quotes section translations
+                "PhiH.lessons.fallacies.quotes.title": "Related Quotes and Texts",
+                "PhiH.lessons.fallacies.quotes.quote1": "\"The savage is the one who believes in the existence of savagery\"",
+                "PhiH.lessons.fallacies.quotes.quote2": "\"I join an anti-racial discrimination association provided it takes into account all forms of discrimination\"",
+                "PhiH.lessons.fallacies.quotes.quote3": "\"Opium induces sleep because it has a dormitive virtue\"",
+                "PhiH.lessons.fallacies.quotes.quote4": "\"Logic can be of great use provided we enter it and then leave it\"",
+                "PhiH.lessons.fallacies.quotes.quote5": "\"Logic too has its illusions but they are more solid\"",
+                "PhiH.lessons.fallacies.quotes.author1": "Claude Lévi-Strauss",
+                "PhiH.lessons.fallacies.quotes.author2": "Pierre Desproges",
+                "PhiH.lessons.fallacies.quotes.author3": "Molière, The Doctor in Spite of Himself",
+                "PhiH.lessons.fallacies.quotes.author4": "Umberto Eco",
+                "PhiH.lessons.fallacies.quotes.author5": "Umberto Eco",
+                
+                "PhiH.lessons.fallacies.conclusion.title": "Conclusion",
+                "PhiH.lessons.fallacies.conclusion.text1": "The study of fallacies in ideological and political discourse reveals a dangerous truth: many discourses that present themselves as rational and logical actually rely on fallacious arguments aimed at deception and emotional influence rather than logical persuasion. These fallacies are not mere accidental errors, but tools deliberately used to justify preconceived ideological positions.",
+                "PhiH.lessons.fallacies.conclusion.text2": "Resisting these fallacies requires developing a sharp critical sense and deep knowledge of the mechanisms of logical reasoning. The ability to distinguish fallacy from valid argument enables the individual to analyze ideological and political discourses objectively, to distinguish what is true from what is false, and what is fair from what is discriminatory.",
+                "PhiH.lessons.fallacies.conclusion.text3": "In a world where ideological discourses abound and opinions compete to influence the masses, critical thinking remains the strongest weapon against intellectual manipulation. Philosophy, with its focus on analyzing logical structures and revealing fallacies, provides essential tools for understanding the complex world and adopting informed positions based on argument and evidence rather than being swayed by misleading discourses."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                
+                // Fallacies lesson specific translations
+                "PhiH.lessons.fallacies.title": "المغالطات في الخطاب الإيديولوجي والسياسي",
+                "PhiH.lessons.fallacies.level": "السنة الثالثة ثانوي - الفلسفة",
+                
+                "PhiH.lessons.fallacies.introduction.title": "التمهيد",
+                "PhiH.lessons.fallacies.introduction.text1": "تزدحم الساحة الفكرية والسياسية بأنماط خطابية تهدف إلى التأثير في المتلقي وإقناعه بمواقف وأفكار محددة. غير أن العديد من هذه الخطابات لا يعتمد على الحجة المنطقية الصحيحة، بل يستخدم مغالطات عقلية تستغل الثغرات في التفكير البشري لتقديم ادعاءات تبدو مقنعة ظاهرياً لكنها تفتقر إلى الأسس العقلانية.",
+                "PhiH.lessons.fallacies.introduction.text2": "تمثل المغالطات المنطقية خطراً مضاعفاً عندما تُستعمل في الخطاب الإيديولوجي والسياسي، حيث تُستخدم لترسيخ آراء مسبقة وتعزيز مواقف عنصرية أو تمييزية تحت ستار الحجج العقلانية. فالمغالطة ليست مجرد خطأ في التفكير، بل هي أداة تستغل ضعف التفكير النقدي لتبرير مواقف غير عادلة.",
+                "PhiH.lessons.fallacies.introduction.text3": "تتنوع أشكال المغالطات بين تلك التي تعتمد على الخلط بين المفاهيم، أو استخدام الحجج الدائرية، أو اللجوء إلى التعميمات غير المبررة. وفي كل حالة، تهدف هذه المغالطات إلى خداع العقل وتضليله بدلاً من إقناعه بالحقيقة. لذلك، يعد فهم هذه المغالطات والتعرف عليها خطوة أساسية في تطوير التفكير النقدي ومقاومة التلاعب الفكري.",
+                
+                "PhiH.lessons.fallacies.texts.title": "النصوص",
+                "PhiH.lessons.fallacies.texts.text1": "النص 7: المفاضلة بين الأعراق: حقيقة أم مغالطة؟ - هتلر",
+                "PhiH.lessons.fallacies.texts.text2": "النص 8: في شروط القول ببطلان القياس الدوري - الغزالي",
+                "PhiH.lessons.fallacies.texts.text3": "النص 9: الخلط بين المقولات - أرسطو",
+                
+                // Quotes section translations
+                "PhiH.lessons.fallacies.quotes.title": "شواهد ونصوص ذات صلة",
+                "PhiH.lessons.fallacies.quotes.quote1": "إن المتوحّش هو من يعتقد في وجود الوحشية",
+                "PhiH.lessons.fallacies.quotes.quote2": "أنخرط في جمعية مكافحة التمييز العنصري شرط أن تأخذ في الاعتبار كلّ أشكال التمييز",
+                "PhiH.lessons.fallacies.quotes.quote3": "الأفيون ينوّم لأنّ له مفعولا تنويميًا",
+                "PhiH.lessons.fallacies.quotes.quote4": "يمكن أن تكون للمنطق فائدة عظيمة شريطة أن ندخُله ثم نغادره",
+                "PhiH.lessons.fallacies.quotes.quote5": "إنّ للمنطق هو الآخر أوهامه ولكنّها أشدّ صلابة",
+                "PhiH.lessons.fallacies.quotes.author1": "كلود ليفي ستروس",
+                "PhiH.lessons.fallacies.quotes.author2": "بيار ديسبروغ",
+                "PhiH.lessons.fallacies.quotes.author3": "موليار، طبيب رغم أنفه",
+                "PhiH.lessons.fallacies.quotes.author4": "أمبرتو إيكو",
+                "PhiH.lessons.fallacies.quotes.author5": "أمبرتو إيكو",
+                
+                "PhiH.lessons.fallacies.conclusion.title": "الخاتمة",
+                "PhiH.lessons.fallacies.conclusion.text1": "تكشف دراسة المغالطات في الخطاب الإيديولوجي والسياسي عن حقيقة خطيرة: فالكثير من الخطابات التي تقدم نفسها على أنها عقلانية ومنطقية تعتمد في الواقع على حجج مغلوطة تهدف إلى التضليل والتأثير العاطفي بدلاً من الإقناع المنطقي. هذه المغالطات ليست مجرد أخطاء عرضية، بل هي أدوات تستخدم عمداً لتبرير مواقف إيديولوجية مسبقة.",
+                "PhiH.lessons.fallacies.conclusion.text2": "إن مقاومة هذه المغالطات تتطلب تطوير حس نقدي حاد ومعرفة عميقة بآليات التفكير المنطقي. فالقدرة على تمييز المغالطة من الحجة الصحيحة تمكن الفرد من تحليل الخطابات الإيديولوجية والسياسية بموضوعية، والتمييز بين ما هو حقيقي وما هو زائف، وبين ما هو عادل وما هو تمييزي.",
+                "PhiH.lessons.fallacies.conclusion.text3": "في عالم تزدحم فيه الخطابات الإيديولوجية وتتنافس فيه الآراء على التأثير في الجماهير، يبقى التفكير النقدي بمثابة السلاح الأقوى لمقاومة التلاعب الفكري. فالفلسفة، بتركيزها على تحليل البنى المنطقية وكشف المغالطات، تقدم أدوات ضرورية لفهم العالم المعقد واتخاذ مواقف مستنيرة تستند إلى الحجة والبرهان بدلاً من الانسياق وراء الخطابات المضللة."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHfallacies;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+    
+    <script>
+        // Expand/Collapse functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all expandable headers
+            const expandableHeaders = document.querySelectorAll('.PhiH-expandable-header');
+            
+            // Add click event to each header
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.PhiH-expand-icon');
+                    
+                    // Toggle content visibility
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('expanded');
+                    } else {
+                        content.classList.add('hidden');
+                        icon.classList.remove('expanded');
+                    }
+                });
+            });
+            
+            // Initially hide all expandable content
+            document.querySelectorAll('.PhiH-expandable-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

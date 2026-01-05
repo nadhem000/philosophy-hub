@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="ar">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>تحليل النص: الخلط بين المقولات - أرسطو - Philosophy Learning Hub</title>
+		
+		<!-- PWA Meta Tags -->
+		<meta name="theme-color" content="#7C3AED">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="default">
+		<meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+		<link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+		
+		<!-- Link to external CSS -->
+		<link rel="stylesheet" href="styles/main.css">
+		
+		<!-- Web App Manifest -->
+		<link rel="manifest" href="manifest.json">
+		
+		<style>
+			/* Purple/Violet Color Palette (أرجواني/بنفسجي) */
+			:root {
+            --primary-color: #7C3AED;
+            --primary-light: #8B5CF6;
+            --primary-dark: #6D28D9;
+            --secondary-color: #A78BFA;
+            --secondary-light: #C4B5FD;
+            --secondary-dark: #8B5CF6;
+            --accent-color: #A78BFA;
+            --accent-light: #C4B5FD;
+            --accent-dark: #8B5CF6;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #faf5ff;
+            --card-bg: #ffffff;
+            --definition-bg: #ede9fe;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #ddd6fe;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.1), 0 2px 4px -1px rgba(124, 58, 237, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(124, 58, 237, 0.1), 0 4px 6px -2px rgba(124, 58, 237, 0.05);
+            --gradient-primary: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%);
+            --gradient-secondary: linear-gradient(135deg, #A78BFA 0%, #8B5CF6 100%);
+            --gradient-accent: linear-gradient(135deg, #A78BFA 0%, #7C3AED 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+			}
+			
+			[data-theme="dark"] {
+            --primary-color: #8B5CF6;
+            --primary-light: #A78BFA;
+            --primary-dark: #7C3AED;
+            --secondary-color: #C4B5FD;
+            --secondary-light: #DDD6FE;
+            --secondary-dark: #A78BFA;
+            --accent-color: #C4B5FD;
+            --accent-light: #DDD6FE;
+            --accent-dark: #A78BFA;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #4c1d95;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #5b21b6;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #8B5CF6 0%, #C4B5FD 100%);
+            --gradient-secondary: linear-gradient(135deg, #C4B5FD 0%, #A78BFA 100%);
+            --gradient-accent: linear-gradient(135deg, #C4B5FD 0%, #8B5CF6 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+			}
+			
+			/* Base Typography */
+			body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+			}
+			
+			h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+			}
+			
+			/* Text Analysis Level Styling */
+			.text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(124, 58, 237, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+			}
+			
+			.text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(167, 139, 250, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+			}
+			
+			.text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(167, 139, 250, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+			}
+			
+			.text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+			}
+			
+			.text-analysis-indent {
+            margin-left: 1.5rem;
+			}
+			
+			.text-analysis-indent-2 {
+            margin-left: 3rem;
+			}
+			
+			.text-analysis-indent-3 {
+            margin-left: 4.5rem;
+			}
+			
+			/* Text Card Styling */
+			.PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+			}
+			
+			.PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+			}
+			
+			.PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+			}
+			
+			.PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+			}
+			
+			.PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+			}
+			
+			/* Author Presentation Styling */
+			.PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+			}
+			
+			.PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+			}
+			
+			.PhiH-author-info {
+            flex: 1;
+			}
+			
+			/* Footer Styling */
+			.PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+			}
+			
+			.PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+			}
+			
+			.PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+			}
+			
+			.PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+			}
+			
+			.PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+			}
+			
+			.PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+			}
+			
+			.PhiH-general-footer-links a:hover {
+            color: white;
+			}
+			
+			/* Lists Styling */
+			ul, ol {
+            padding-left: 1.5rem;
+			}
+			
+			li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+			}
+			
+			li strong {
+            color: var(--primary-color);
+			}
+			
+			/* Definition Styling */
+			.PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+			}
+			
+			/* Questions Styling */
+			.PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+			}
+			
+			.PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+			}
+			
+			/* RTL support for indentation */
+			body.rtl .text-analysis-level-1,
+			body.rtl .text-analysis-level-2,
+			body.rtl .text-analysis-level-3,
+			body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(124, 58, 237, 0.05), transparent);
+			}
+			
+			body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+			}
+			
+			body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+			}
+			
+			body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+			}
+			
+			body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+			}
+			
+			body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+			}
+			
+			body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+			}
+			
+			body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+			}
+			
+			body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+			}
+			
+			/* Table Styling */
+			table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+			}
+			
+			th, td {
+            padding: 0.75rem;
+            text-align: right;
+            border: 1px solid var(--border-color);
+			}
+			
+			th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+			}
+			
+			tr:nth-child(even) {
+            background-color: var(--table-even-bg);
+			}
+			
+			tr:hover {
+            background-color: var(--table-hover-bg);
+			}
+			
+			/* Responsive Design */
+			@media (max-width: 768px) {
+            .PhiH-author-card {
+			flex-direction: column;
+			text-align: center;
+            }
+            
+            .PhiH-author-image {
+			align-self: center;
+            }
+            
+            .PhiH-text-analysis-title {
+			font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+			padding: 1.25rem;
+            }
+			}
+			
+			@media (max-width: 480px) {
+            .PhiH-text-analysis-container {
+			padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+			padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+			grid-template-columns: 1fr;
+            }
+			}
+			
+			/* Print Styles */
+			@media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+			display: none;
+            }
+            
+            .PhiH-text-card {
+			box-shadow: none;
+			border: 1px solid #ddd;
+			page-break-inside: avoid;
+            }
+            
+            body {
+			background-color: white;
+			color: black;
+            }
+			}
+			
+			/* Header and controls styles - Same as other files */
+			.PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+			}
+			
+			.PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+			}
+			
+			.PhiH-general-logo-container {
+            flex: 0 0 auto;
+			}
+			
+			.PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+			}
+			
+			.PhiH-general-logo:hover {
+            transform: scale(1.05);
+			}
+			
+			.PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+			}
+			
+			.PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+			}
+			
+			.PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+			}
+			
+			.PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+			}
+			
+			.PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+			}
+			
+			.PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+			}
+			
+			.PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+			}
+			
+			.PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+			}
+			
+			.PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+			}
+			
+			input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+			}
+			
+			input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+			}
+			
+			.PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+			}
+			
+			.PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+			}
+			
+			.PhiH-general-language-selector select option {
+            color: #333;
+			}
+			
+			/* Main Content Styling */
+			.PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+			}
+			
+			.PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+			}
+			
+			.PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+			}
+			
+			.PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+			}
+			
+			/* Windows Bar Styling */
+			.PhiH-windows-bar {
+            display: flex;
+            justify-content: center;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 2rem;
+			}
+			
+			.PhiH-window-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: var(--text-color);
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+            margin: 0 0.25rem;
+			}
+			
+			.PhiH-window-item:hover {
+            background-color: var(--definition-bg);
+            color: var(--primary-color);
+			}
+			
+			.PhiH-window-item.active {
+            background-color: var(--primary-color);
+            color: white;
+			}
+			
+			.PhiH-window-icon {
+            font-size: 1.2rem;
+			}
+		</style>
+	</head>
+	<body class="PhiH-lesson-text-analysis" dir="rtl">
+		<header class="PhiH-general-header">
+			<div class="PhiH-general-header-content">
+				<!-- Column 1: Icon - Now clickable -->
+				<div class="PhiH-general-logo-container">
+					<a href="index.html">
+						<img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+					</a>
+				</div>
+				
+				<!-- Column 2: Title -->
+				<div class="PhiH-general-title-container">
+					<h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+				</div>
+				
+				<!-- Column 3: Options -->
+				<div class="PhiH-general-header-controls">
+					<div class="PhiH-general-theme-toggle">
+						<label class="PhiH-theme-toggle-label">
+							<span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+							<div class="PhiH-theme-toggle-switch">
+								<input type="checkbox" id="themeToggle">
+								<span class="PhiH-theme-toggle-slider"></span>
+							</div>
+						</label>
+					</div>
+					<div class="PhiH-general-language-selector">
+						<select class="PhiH-general-language-dropdown" id="languageSelect">
+							<option value="ar">العربية</option>
+							<option value="fr">Français</option>
+							<option value="en">English</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		<!-- Windows Bar -->
+		<nav class="PhiH-windows-bar">
+			<a href="index.html" class="PhiH-window-item">
+				<span class="PhiH-window-icon">🏠</span>
+				<span data-i18n="PhiH.windows.home">الرئيسية</span>
+			</a>
+			<a href="authors.html" class="PhiH-window-item">
+				<span class="PhiH-window-icon">👥</span>
+				<span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+			</a>
+			<a href="quotes.html" class="PhiH-window-item">
+				<span class="PhiH-window-icon">📚</span>
+				<span data-i18n="PhiH.windows.quotes">شواهد</span>
+			</a>
+			<a href="resources.html" class="PhiH-window-item active">
+				<span class="PhiH-window-icon">🔍</span>
+				<span data-i18n="PhiH.windows.resources">الموارد</span>
+			</a>
+		</nav>
+		
+		<main class="PhiH-text-analysis-container">
+			<div class="PhiH-text-analysis-header">
+				<h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.aristotle.title">تحليل النص: الخلط بين المقولات - أرسطو</h1>
+				<div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.aristotle.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+			</div>
+			
+			<!-- Text Analysis Section -->
+			<section class="PhiH-text-analysis-section">
+				
+				<!-- Text Introduction -->
+				<div class="PhiH-text-card">
+					<h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotle.introduction.title">التمهيد</h4>
+					<p data-i18n="PhiH.textAnalysis.aristotle.introduction.content">
+						لا شكّ أن الاتفاق في اللّسان شرط إمكان التواصل ولكنّه شرط ضروري وغير كاف، فقد نقول ونسمع نفس الشيء دون أن نقصد ونتمثّل نفس المعنى. وقد نعوّل على السياق لرفع ما يتخّل التواصل من سوء تفاهم، ولكن ما العمل عندما تكون المغالطة مقصدا واشتباه الدلالة وسيلة ؟
+					</p>
+				</div>
+				
+				<!-- Text Content -->
+				<div class="PhiH-text-card">
+					<h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotle.text.title">الخلط بين المقولات</h4>
+					<div class="text-analysis-indent">
+						<p data-i18n="PhiH.textAnalysis.aristotle.text.content">
+							أمّا فيما يخص الحجج المتعلّقة بشكل<sup>1</sup> الخطاب، فإنّها تحصل عندما يُعبّر عن أشياء مختلفة بنفس الصورة، مثال ذلك تأنيث المذكّر أو تذكير المؤنّث أو اعتماد أحد هذين الجنسين للتعبير عن المحايد<sup>2</sup>. أو كذلك التعبير عن الكيف كما لو كان كمّا وعن الكمّ كما لو كان كيفا، وعن الفاعل كما لو كان منفعلا وعن المنفعل كما لو كان فاعلا<sup>3</sup>، إلى غير ذلك.
+						</p>
+						<p data-i18n="PhiH.textAnalysis.aristotle.text.content2">
+							لأنّه قد يحدث مثلا أن نعبّر في الخطاب عمّا لا يقع تحت مقولة<sup>4</sup> الفعل كما لو كان يقع تحت مقولة الفعل، وهكذا فإن العبارة: "ينعم بصحّة جيّدة." لهي على مستوى صورة الخطاب تشبه "يُقطع" و"يبني"، ومع ذلك يُعبّر الفعل الأوّل عن كيفيّة ما أي عن حالة ما ويعبّر الفعلان الآخران عن فعل ما. وهكذا الأمر في البقيّة.
+						</p>
+						<p><em data-i18n="PhiH.textAnalysis.aristotle.text.source">أرسطو، الدحوضات السفسطائية. ترجمة لجنة التأليف، Réfutations sophistiques 166b - 167 a, p 13-14</em></p>
+					</div>
+				</div>
+				
+				<!-- Author Presentation -->
+				<div class="PhiH-text-card">
+					<h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotle.author.title">تقديم المؤلف</h4>
+					<div class="PhiH-author-card">
+						<div class="PhiH-author-image-container">
+							<!-- Author image -->
+							<img src="assets/images/aristotle.jpg" alt="أرسطو" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.aristotle.author.alt">
+						</div>
+						<div class="PhiH-author-info">
+							<p data-i18n="PhiH.textAnalysis.aristotle.author.content">
+								أرسطو Aristote (385 ق م / 322 ق م): فيلسوف يونانيّ انتسب إلى الأكاديمية ليتتلمذ على أفلاطون، وبعد وفاة أستاذه تفرّغ لتأسيس مدرسته الفلسفيّة الخاصة المسمّاة بـ "الليسي" Lycee. نقد الجدليّة الأفلاطونيّة واستبدلها بالمنطق الذي يبحث في مبادئ الفكر والشروط الصوريّة لصلاحيّة الاستدلال التي تعصمه من الخطأ والمغالطة. وجّه البحث في الوجود من منظور واقعيّ يؤصّله في تضايف بين الصورة والمادة، وجعل من عالم الكون والفساد موضوعا للعلم، كما جعل من التجربة منطلقا لاستقراء أسس الممارسة في إطار الأخلاق والسياسة، فكان فيلسوفا موسوعيّا بامتياز ومكّنه ذلك من أن يكون رمز العصر الوسيط حيث جعله توماس الإكويني مرجع الفكر السكولائيّ ولقبّه العرب "بالمعلّم الأوّل". من أهمّ مؤلفاته: "الارغانون"، "الميتافيزيقا"، "السماع الطبيعيّ"، "في السماء"، "في النفس"، "أجزاء الحيوان"، "أخلاق إلى نيقوماخوس"، "السياسات".
+							</p>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Lexical -->
+				<div class="PhiH-text-card">
+					<h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotle.lexical.title">الهوامش والمفاهيم</h4>
+					<ul>
+						<li data-i18n="PhiH.textAnalysis.aristotle.lexical.item1"><strong>"شكل":</strong> يتحدّد الشكل من خلال مستوى لغوي ومستوى منطقي وكلاهما يتعلّقان بالمبنى مقارنة بالمعنى. فيمكن للقول أن يكون صائبا من الناحية اللغوية وصالحا من الناحية المنطقية دون أن يكون كذلك من ناحية المضمون.</li>
+						<li data-i18n="PhiH.textAnalysis.aristotle.lexical.item2"><strong>"المحايد":</strong> تُميّز اللّغة الإغريقية في الأجناس بين المؤنّث والمذكّر والمحايد أي ما ليس بمؤَّنّث ولا بمذكّر. فسؤال "ما هذا؟" على سبيل المثال يُحيل في الإغريقية على المذكّر والمؤنّث والمحايد في ذات الوقت، وتبعا لذلك فعندما نفترض أنّ الأمر في سؤال المحاور يتعلّق بالمؤنّث مثلا، يستنتج المحاور أمرا يتعلَّق بالمذكّر أو بالمحايد. وهنا مكمن المغالطة.</li>
+						<li data-i18n="PhiH.textAnalysis.aristotle.lexical.item3"><strong>"كما لو كان فاعلاً":</strong> "لفظ المفعول والفاعل فيما لا يختلف تصريفه كقولك اختار يختار اختياراً فهو مختار، أي يتميّز بالقدرة على الاختيار، وذلك مختار أي وقع عليه الاختيار من بين كثيرين. فالفاعل والمفعول به لهما صيغة واحدة ، بحيث يؤول هذا الالتباس إلى الخلط بين مقولتي الفعل والانفعال." (أورده الغزالي في محك النظر)</li>
+						<li data-i18n="PhiH.textAnalysis.aristotle.lexical.item4"><strong>"مقولة":</strong> (categorie) هي الوجه المنطقي الذي تُبنى به القضيّة في الحديث عن الموجودات، بحيث تُحدّد أجناس وجودها كقولنا عن هذا البيت، من ناحية الكمّ، أنّه ضيّق أو واسع، ومن ناحية الكيف، أنّه أبيض أو أزرق، ومن ناحية المكان، أنّه في المدينة العتيقة. ولقد أحصى أرسطو عشر مقولات.</li>
+					</ul>
+					
+					<h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotle.lexical.tableTitle">جدول المقولات العشر عند أرسطو:</h5>
+					<table>
+						<thead>
+							<tr>
+								<th data-i18n="PhiH.textAnalysis.aristotle.lexical.tableHeader1">المقولة</th>
+								<th data-i18n="PhiH.textAnalysis.aristotle.lexical.tableHeader2">المثال</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>جوهر</td>
+								<td>رجل، حصان، شجرة ...</td>
+							</tr>
+							<tr>
+								<td>كمّ</td>
+								<td>ثلاثة أمتار، خمس درجات ...</td>
+							</tr>
+							<tr>
+								<td>كيف</td>
+								<td>أبيض، لغويّ، منطقيّ ...</td>
+							</tr>
+							<tr>
+								<td>علاقة أو نسبة</td>
+								<td>ضعف، نصف، أكبر من ...</td>
+							</tr>
+							<tr>
+								<td>مكان</td>
+								<td>في المعهد، في الساحة ...</td>
+							</tr>
+							<tr>
+								<td>زمان</td>
+								<td>أمس، السنة الماضية، السنة المقبلة ...</td>
+							</tr>
+							<tr>
+								<td>وضع</td>
+								<td>جالس، نائم، واقف ...</td>
+							</tr>
+							<tr>
+								<td>ملك أو حالة</td>
+								<td>مسلّح، مجهّز، مرتَدٍ ...</td>
+							</tr>
+							<tr>
+								<td>فعل</td>
+								<td>قطع، وصل، سكب ...</td>
+							</tr>
+							<tr>
+								<td>انفعال</td>
+								<td>مقطوع، موصول، مسكوب ...</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+				<!-- Questions -->
+				<div class="PhiH-text-card">
+					<h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotle.questions.title">المهام</h4>
+					<ol>
+						<li data-i18n="PhiH.textAnalysis.aristotle.questions.q1">أنظر في الاستدلالين التاليين وأحدّد مَوْضِعَ الخلط فيهما.<br>
+							<strong>الاستدلال الأوّل:</strong><br>
+							من يفعل يتحمّل مسؤولية فعله.<br>
+							من يمرض يفعل.<br>
+							إذن من مرض يتحمّل مسؤولية مرضه.<br><br>
+							<strong>الاستدلال الثاني:</strong><br>
+							إنّ كل من كان له شيءٍ ولم يُعُدْ له فَقَدْ فَقَدَهُ.<br>
+							زيد له عشرة جياد وفقَدَ واحدا منها.<br>
+							إذن زيد فَقَدَ العشرة جياد.
+						</li>
+						<li data-i18n="PhiH.textAnalysis.aristotle.questions.q2">أقرأ هذا الإشهار الملفوظ وأبحث عن مأتى المغالطة: "مائة في مائة من الفائزين شاركوا في هذا اليانصيب."</li>
+					</ol>
+				</div>
+				
+				<!-- Answers -->
+				<div class="PhiH-text-card">
+					<h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotle.answers.title">إجابات مقترحة</h4>
+					<div class="text-analysis-indent">
+						<h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotle.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+						<p data-i18n="PhiH.textAnalysis.aristotle.answers.a1.content">
+							<strong>تحليل الاستدلال الأول:</strong>
+							<br><br>
+							1. <strong>مقدمة أولى:</strong> "من يفعل يتحمّل مسؤولية فعله" - صحيحة من الناحية المنطقية.
+							<br><br>
+							2. <strong>مقدمة ثانية:</strong> "من يمرض يفعل" - هنا تكمن المغالطة.
+							<br><br>
+							3. <strong>الخلط المقولي:</strong> الفعل "يمرض" لا ينتمي إلى مقولة الفعل بالمعنى الأرسطي بل إلى مقولة الانفعال. المرض ليس فعلاً إرادياً اختيارياً بل هو حالة تحدث للإنسان (انفعال).
+							<br><br>
+							4. <strong>النتيجة الخاطئة:</strong> "إذن من مرض يتحمّل مسؤولية مرضه" - هذه النتيجة غير صحيحة لأنها تعتمد على خلط بين مقولة الفعل (الإرادي) ومقولة الانفعال (غير الإرادي).
+							<br><br>
+							<strong>تحليل الاستدلال الثاني:</strong>
+							<br><br>
+							1. <strong>مقدمة أولى:</strong> "إنّ كل من كان له شيءٍ ولم يُعُدْ له فَقَدْ فَقَدَهُ" - صحيحة منطقياً.
+							<br><br>
+							2. <strong>مقدمة ثانية:</strong> "زيد له عشرة جياد وفقَدَ واحدا منها" - صحيحة واقعياً.
+							<br><br>
+							3. <strong>الخلط المقولي:</strong> الخلط هنا بين "الشيء" كمفهوم كلي يشمل المجموع وأجزائه، و"الشيء" ككل منفرد. فقدان جزء من الشيء لا يعني فقدان الكل.
+							<br><br>
+							4. <strong>النتيجة الخاطئة:</strong> "إذن زيد فَقَدَ العشرة جياد" - هذه النتيجة خاطئة لأنها تعمم فقدان الجزء على فقدان الكل.
+						</p>
+						
+						<h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotle.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+						<p data-i18n="PhiH.textAnalysis.aristotle.answers.a2.content">
+							<strong>تحليل الإشهار:</strong> "مائة في مائة من الفائزين شاركوا في هذا اليانصيب."
+							<br><br>
+							1. <strong>المغالطة الإحصائية:</strong> هذه العبارة صحيحة من الناحية المنطقية ولكنها مضللة.
+							<br><br>
+							2. <strong>الخلط المقولي:</strong> الخلط هنا بين:
+							<br>
+							- <strong>الفائزين:</strong> هم فقط الذين شاركوا وفازوا.
+							<br>
+							- <strong>المشاركين:</strong> هم جميع الذين شاركوا سواء فازوا أم لم يفوزوا.
+							<br><br>
+							3. <strong>التضليل:</strong> العبارة توحي بأن المشاركة في اليانصيب تؤدي حتماً إلى الفوز، بينما الحقيقة أن الفائزين هم جزء فقط من المشاركين.
+							<br><br>
+							4. <strong>المغالطة المنطقية:</strong> هذه العبارة تمثل مغالطة "الاحتكام إلى السلطة الإحصائية" بشكل مضلل، حيث تستخدم إحصائية صحيحة (100% من الفائزين شاركوا) لتوحي باستنتاج خاطئ (المشاركة تؤدي إلى الفوز).
+							<br><br>
+							5. <strong>التحليل المنطقي:</strong> العبارة لا تخبرنا عن نسبة الفوز بين المشاركين، بل تخبرنا فقط أن جميع الفائزين كانوا من المشاركين (وهو أمر بديهي).
+						</p>
+					</div>
+				</div>
+				
+				<!-- Text Analysis -->
+				<div class="PhiH-text-card">
+					<h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotle.analysis.title">تحليل النص</h4>
+					<div class="text-analysis-indent">
+						<h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotle.analysis.thesis.title">الأطروحة الأساسية:</h5>
+						<p data-i18n="PhiH.textAnalysis.aristotle.analysis.thesis.content">
+							يوضح أرسطو في هذا النص أحد أنواع المغالطات المنطقية التي تنشأ عن الخلط بين المقولات المختلفة. يؤكد أن الاتفاق في الشكل اللغوي لا يكفي لضمان صحة الاستدلال، فقد نستخدم نفس الصيغة اللغوية للتعبير عن أمور تنتمي إلى مقولات مختلفة، مما يؤدي إلى استنتاجات خاطئة. النص يسلط الضوء على أهمية التمييز الدقيق بين المقولات العشر لتجنب الوقوع في مغالطات شكلية تبدو صحيحة لغوياً ولكنها فاسدة منطقياً.
+						</p>
+						
+						<h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotle.analysis.mechanisms.title">آليات الخلط بين المقولات:</h5>
+						<p data-i18n="PhiH.textAnalysis.aristotle.analysis.mechanisms.content">
+							يحدد أرسطو عدة آليات للخلط بين المقولات:
+							<br><br>
+							1. <strong>الخلط بين الأجناس النحوية:</strong> كالتأنيث والتذكير والحياد في اللغة الإغريقية.
+							<br><br>
+							2. <strong>الخلط بين الكم والكيف:</strong> التعامل مع الصفات الكمية كما لو كانت كيفية والعكس.
+							<br><br>
+							3. <strong>الخلط بين الفعل والانفعال:</strong> وهو ما يظهر في المثال الذي قدمه أرسطو حول الفعل "ينعم بصحة جيدة" الذي يعبر عن حالة (كيف) وليس عن فعل إرادي.
+							<br><br>
+							4. <strong>الاعتماد على التشابه الشكلي:</strong> استخدام نفس الصيغة اللغوية للتعبير عن مقولات مختلفة.
+							<br><br>
+							5. <strong>الاستغلال السياقي:</strong> استخدام السياق لإخفاء الخلط المقولي والتضليل.
+						</p>
+						
+						<h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotle.analysis.consequences.title">نتائج وخطورة الخلط بين المقولات:</h5>
+						<p data-i18n="PhiH.textAnalysis.aristotle.analysis.consequences.content">
+							- <strong>تشويه الفكر النقدي:</strong> الخلط بين المقولات يعطل القدرة على التفكير النقدي الصحيح.
+							<br><br>
+							- <strong>تضليل الحوار:</strong> يمكن استخدام هذا النوع من المغالطات لتضليل الخصم في الجدال.
+							<br><br>
+							- <strong>تعطيل التواصل الفعال:</strong> عندما لا نميز بين المقولات، يصبح التواصل مضطرباً وغير دقيق.
+							<br><br>
+							- <strong>إعاقة البحث العلمي:</strong> في البحث العلمي، يؤدي الخلط بين المقولات إلى استنتاجات خاطئة وبناء نظريات على أسس واهية.
+							<br><br>
+							- <strong>استغلال في الخطاب السياسي والدعائي:</strong> كثيراً ما تستخدم هذه المغالطات في الخطاب السياسي والدعائي للتأثير على الجمهور.
+						</p>
+						
+						<h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotle.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+						<p data-i18n="PhiH.textAnalysis.aristotle.analysis.significance.content">
+							يحمل تحليل أرسطو للخلط بين المقولات دلالات عميقة في الفلسفة والمنطق واللغة:
+							<br><br>
+							1. <strong>أهمية التصنيف المنطقي:</strong> يبرز النص أهمية التصنيف الدقيق للأفكار والمفاهيم في بناء المعرفة.
+							<br><br>
+							2. <strong>العلاقة بين اللغة والمنطق:</strong> يوضح كيف يمكن للغة أن تكون مصدراً للمغالطات إذا لم ننتبه إلى البنية المنطقية الكامنة وراءها.
+							<br><br>
+							3. <strong>نقد الخطاب السفسطائي:</strong> يمثل النص جزءاً من نقد أرسطو للخطاب السفسطائي الذي يعتمد على المغالطات والتضليل.
+							<br><br>
+							4. <strong>أسس التفكير العلمي:</strong> يؤسس لمنهج التفكير العلمي القائم على التمييز الدقيق بين المفاهيم والمقولات.
+							<br><br>
+							5. <strong>الاستمرارية التاريخية:</strong> لا تزال مشكلة الخلط بين المقولات قائمة في عصرنا الحاضر في مختلف المجالات.
+							<br><br>
+							6. <strong>التطبيق المعاصر:</strong> يمكن تطبيق تحليل أرسطو على مغالطات عصرنا مثل مغالطات الإعلام والدعاية والإشهار.
+							<br><br>
+							هذا النص يمثل دعوة للانتباه إلى البنية المنطقية الكامنة وراء الخطاب، وعدم الاكتفاء بالشكل اللغوي الظاهري في تقييم صحة الاستدلالات.
+						</p>
+					</div>
+				</div>
+				
+			</section>
+		</main>
+		
+		<footer class="PhiH-general-footer">
+			<div class="PhiH-general-footer-content">
+				<div class="PhiH-general-footer-column">
+					<h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+					<p data-i18n="PhiH.general.developer">مجرى زياد</p>
+				</div>
+				<div class="PhiH-general-footer-column">
+					<h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+					<p data-i18n="PhiH.general.version">v1.0.0</p>
+				</div>
+				<div class="PhiH-general-footer-column">
+					<h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+					<div class="PhiH-general-footer-links">
+						<a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+						<a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<script>
+			// Text Analysis specific translations
+			window.translations_PhiHtextAnalysis = {
+				fr: {
+					// General translations
+					"PhiH.general.siteName": "Philosophy Learning Hub",
+					"PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+					"PhiH.general.present": "X",
+					"PhiH.general.absent": "",
+					"PhiH.general.developerTitle": "Développeur",
+					"PhiH.general.developer": "Mejri Ziad",
+					"PhiH.general.versionTitle": "Version",
+					"PhiH.general.version": "v1.0.0",
+					"PhiH.general.linksTitle": "Liens",
+					"PhiH.general.termsOfUse": "Conditions d'utilisation",
+					"PhiH.general.privacyPolicy": "Politique de confidentialité",
+					"PhiH.general.themeToggle": "Mode sombre",
+					"PhiH.general.authors": "Philosophes",
+					"PhiH.textAnalysis.aristotle.level": "3ème Secondaire - Philosophie",
+					
+					// Windows bar translations
+					"PhiH.windows.home": "Accueil",
+					"PhiH.windows.philosophers": "Philosophes",
+					"PhiH.windows.quotes": "Citations",
+					"PhiH.windows.resources": "Ressources",
+					
+					// Text Analysis specific translations
+					"PhiH.textAnalysis.aristotle.title": "Analyse du texte: La confusion entre les catégories - Aristote",
+					"PhiH.textAnalysis.aristotle.introduction.title": "Introduction",
+					"PhiH.textAnalysis.aristotle.introduction.content": "Il est indéniable que l'accord dans la langue est une condition de possibilité de communication mais c'est une condition nécessaire et insuffisante, car nous pouvons dire et entendre la même chose sans vouloir et représenter le même sens. Nous pouvons compter sur le contexte pour lever les malentendus dans la communication, mais que faire lorsque la sophistique est intentionnelle et que l'ambiguïté sémantique est un moyen?",
+					"PhiH.textAnalysis.aristotle.text.title": "La confusion entre les catégories",
+					"PhiH.textAnalysis.aristotle.text.content": "Quant aux arguments concernant la forme du discours, ils se produisent lorsque l'on exprime des choses différentes par la même forme, par exemple féminiser le masculin ou masculiniser le féminin ou adopter l'un de ces deux genres pour exprimer le neutre. Ou encore exprimer la qualité comme si c'était une quantité et la quantité comme si c'était une qualité, et l'agent comme s'il était patient et le patient comme s'il était agent, et ainsi de suite.",
+					"PhiH.textAnalysis.aristotle.text.content2": "Car il peut arriver par exemple que nous exprimions dans le discours ce qui ne relève pas de la catégorie de l'action comme s'il relevait de la catégorie de l'action, et ainsi l'expression: \"Jouit d'une bonne santé\" est au niveau de la forme du discours similaire à \"Coupe\" et \"Construit\", et pourtant le premier verbe exprime une qualité c'est-à-dire un état et les deux autres verbes expriment une action. Et ainsi pour le reste.",
+					"PhiH.textAnalysis.aristotle.text.source": "Aristote, Réfutations sophistiques, traduction du comité de rédaction, Réfutations sophistiques 166b - 167 a, p 13-14",
+					"PhiH.textAnalysis.aristotle.author.title": "Présentation de l'auteur",
+					"PhiH.textAnalysis.aristotle.author.alt": "Aristote",
+					"PhiH.textAnalysis.aristotle.author.content": "Aristote (385 av. J.-C. / 322 av. J.-C.): Philosophe grec qui a rejoint l'Académie pour étudier auprès de Platon, et après la mort de son maître, il s'est consacré à la fondation de son école philosophique privée appelée \"Le Lycée\". Il a critiqué la dialectique platonicienne et l'a remplacée par la logique qui recherche les principes de la pensée et les conditions formelles de la validité du raisonnement qui le protège de l'erreur et de la sophistique. Il a orienté la recherche sur l'être d'un point de vue réaliste fondé sur la corrélation entre la forme et la matière, a fait du monde de la génération et de la corruption un sujet de science, et a fait de l'expérience le point de départ de l'induction des bases de la pratique dans le cadre de l'éthique et de la politique, il était donc un philosophe encyclopédique par excellence, ce qui lui a permis d'être un symbole du Moyen Âge où Thomas d'Aquin en a fait la référence de la pensée scolastique et les Arabes l'ont surnommé \"le premier enseignant\". Parmi ses œuvres les plus importantes: \"L'Organon\", \"Métaphysique\", \"Physique\", \"Du ciel\", \"De l'âme\", \"Les parties des animaux\", \"Éthique à Nicomaque\", \"Politique\".",
+					"PhiH.textAnalysis.aristotle.lexical.title": "Notes et concepts",
+					"PhiH.textAnalysis.aristotle.lexical.item1": "<strong>\"Forme\":</strong> La forme est déterminée par un niveau linguistique et un niveau logique, tous deux concernant la structure par rapport au sens. Un discours peut être correct du point de vue linguistique et valide du point de vue logique sans l'être du point de vue du contenu.",
+					"PhiH.textAnalysis.aristotle.lexical.item2": "<strong>\"Neutre\":</strong> La langue grecque distingue dans les genres entre le féminin, le masculin et le neutre, c'est-à-dire ce qui n'est ni féminin ni masculin. Par exemple, la question \"Qu'est-ce que c'est?\" renvoie en grec au masculin, au féminin et au neutre en même temps, et en conséquence, lorsque nous supposons que la question de l'interlocuteur concerne par exemple le féminin, l'interlocuteur conclut quelque chose concernant le masculin ou le neutre. Et c'est là que réside la sophistique.",
+					"PhiH.textAnalysis.aristotle.lexical.item3": "<strong>\"Comme s'il était agent\":</strong> \"Le terme de l'actif et du passif dans ce qui n'a pas de conjugaison différente comme dire 'choisit', 'il choisit', 'choix', donc il est 'choisi', c'est-à-dire caractérisé par la capacité de choisir, et cela 'choisi' signifie que le choix est tombé sur lui parmi beaucoup. Donc l'agent et le patient ont la même forme, ce qui conduit à cette ambiguïté et à la confusion entre les catégories d'action et de passion.\" (Cité par Al-Ghazali dans Mihakk al-Nazar)",
+					"PhiH.textAnalysis.aristotle.lexical.item4": "<strong>\"Catégorie\":</strong> (categorie) est l'aspect logique selon lequel la proposition est construite en parlant des existants, déterminant ainsi les genres de leur existence, comme lorsque nous disons de cette maison, du point de vue de la quantité, qu'elle est étroite ou large, du point de vue de la qualité, qu'elle est blanche ou bleue, du point de vue du lieu, qu'elle est dans la vieille ville. Aristote a énuméré dix catégories.",
+					"PhiH.textAnalysis.aristotle.lexical.tableTitle": "Tableau des dix catégories d'Aristote:",
+					"PhiH.textAnalysis.aristotle.lexical.tableHeader1": "Catégorie",
+					"PhiH.textAnalysis.aristotle.lexical.tableHeader2": "Exemple",
+					"PhiH.textAnalysis.aristotle.questions.title": "Tâches",
+					"PhiH.textAnalysis.aristotle.questions.q1": "Je considère les deux raisonnements suivants et je détermine le lieu de la confusion en eux.<br><strong>Premier raisonnement:</strong><br>Celui qui agit assume la responsabilité de son action.<br>Celui qui est malade agit.<br>Donc celui qui est malade assume la responsabilité de sa maladie.<br><br><strong>Deuxième raisonnement:</strong><br>Tout celui qui avait quelque chose et ne l'a plus l'a perdu.<br>Zayd a dix chevaux et en a perdu un.<br>Donc Zayd a perdu les dix chevaux.",
+					"PhiH.textAnalysis.aristotle.questions.q2": "Je lis cette publicité orale et je recherche l'origine de la sophistique: \"Cent pour cent des gagnants ont participé à cette loterie.\"",
+					"PhiH.textAnalysis.aristotle.answers.title": "Réponses suggérées",
+					"PhiH.textAnalysis.aristotle.answers.a1.title": "Réponse à la première question:",
+					"PhiH.textAnalysis.aristotle.answers.a1.content": "<strong>Analyse du premier raisonnement:</strong><br><br>1. <strong>Première prémisse:</strong> \"Celui qui agit assume la responsabilité de son action\" - logiquement correcte.<br><br>2. <strong>Deuxième prémisse:</strong> \"Celui qui est malade agit\" - c'est ici que réside la sophistique.<br><br>3. <strong>Confusion catégorielle:</strong> Le verbe \"est malade\" n'appartient pas à la catégorie de l'action au sens aristotélicien mais à la catégorie de la passion. La maladie n'est pas une action volontaire et choisie mais un état qui arrive à l'homme (passion).<br><br>4. <strong>Conclusion erronée:</strong> \"Donc celui qui est malade assume la responsabilité de sa maladie\" - cette conclusion n'est pas correcte car elle repose sur une confusion entre la catégorie de l'action (volontaire) et la catégorie de la passion (involontaire).<br><br><strong>Analyse du deuxième raisonnement:</strong><br><br>1. <strong>Première prémisse:</strong> \"Tout celui qui avait quelque chose et ne l'a plus l'a perdu\" - logiquement correcte.<br><br>2. <strong>Deuxième prémisse:</strong> \"Zayd a dix chevaux et en a perdu un\" - factuellement correcte.<br><br>3. <strong>Confusion catégorielle:</strong> La confusion ici entre \"quelque chose\" comme concept universel incluant la totalité et ses parties, et \"quelque chose\" comme un tout individuel. Perdre une partie de quelque chose ne signifie pas perdre le tout.<br><br>4. <strong>Conclusion erronée:</strong> \"Donc Zayd a perdu les dix chevaux\" - cette conclusion est erronée car elle généralise la perte de la partie à la perte du tout.",
+					"PhiH.textAnalysis.aristotle.answers.a2.title": "Réponse à la deuxième question:",
+					"PhiH.textAnalysis.aristotle.answers.a2.content": "<strong>Analyse de la publicité:</strong> \"Cent pour cent des gagnants ont participé à cette loterie.\"<br><br>1. <strong>Sophistique statistique:</strong> Cette phrase est logiquement correcte mais trompeuse.<br><br>2. <strong>Confusion catégorielle:</strong> La confusion ici entre:<br>- <strong>Les gagnants:</strong> sont seulement ceux qui ont participé et gagné.<br>- <strong>Les participants:</strong> sont tous ceux qui ont participé, qu'ils aient gagné ou non.<br><br>3. <strong>Tromperie:</strong> La phrase suggère que la participation à la loterie mène nécessairement à la victoire, alors qu'en réalité les gagnants ne sont qu'une partie des participants.<br><br>4. <strong>Sophistique logique:</strong> Cette phrase représente la sophistique \"de l'appel à l'autorité statistique\" de manière trompeuse, utilisant une statistique correcte (100% des gagnants ont participé) pour suggérer une conclusion erronée (la participation mène à la victoire).<br><br>5. <strong>Analyse logique:</strong> La phrase ne nous informe pas sur le taux de victoire parmi les participants, mais seulement que tous les gagnants étaient des participants (ce qui est évident).",
+					"PhiH.textAnalysis.aristotle.analysis.title": "Analyse du texte",
+					"PhiH.textAnalysis.aristotle.analysis.thesis.title": "Thèse principale:",
+					"PhiH.textAnalysis.aristotle.analysis.thesis.content": "Aristote clarifie dans ce texte l'un des types de sophismes logiques qui découlent de la confusion entre différentes catégories. Il affirme que l'accord dans la forme linguistique ne suffit pas à garantir la validité du raisonnement, car nous pouvons utiliser la même formule linguistique pour exprimer des choses appartenant à des catégories différentes, conduisant à des conclusions erronées. Le texte met en lumière l'importance de la distinction précise entre les dix catégories pour éviter de tomber dans des sophismes formels qui semblent linguistiquement corrects mais sont logiquement invalides.",
+					"PhiH.textAnalysis.aristotle.analysis.mechanisms.title": "Mécanismes de confusion entre les catégories:",
+					"PhiH.textAnalysis.aristotle.analysis.mechanisms.content": "Aristote identifie plusieurs mécanismes de confusion entre les catégories:<br><br>1. <strong>Confusion entre les genres grammaticaux:</strong> comme la féminisation, la masculinisation et le neutre en grec.<br><br>2. <strong>Confusion entre la quantité et la qualité:</strong> traiter les attributs quantitatifs comme s'ils étaient qualitatifs et vice versa.<br><br>3. <strong>Confusion entre l'action et la passion:</strong> ce qui apparaît dans l'exemple donné par Aristote concernant le verbe \"jouit d'une bonne santé\" qui exprime un état (qualité) et non une action volontaire.<br><br>4. <strong>Dépendance à la similitude formelle:</strong> utiliser la même formule linguistique pour exprimer différentes catégories.<br><br>5. <strong>Exploitation contextuelle:</strong> utiliser le contexte pour cacher la confusion catégorielle et tromper.",
+					"PhiH.textAnalysis.aristotle.analysis.consequences.title": "Conséquences et danger de la confusion entre les catégories:",
+					"PhiH.textAnalysis.aristotle.analysis.consequences.content": "- <strong>Déformation de la pensée critique:</strong> La confusion entre les catégories paralyse la capacité de pensée critique correcte.<br><br>- <strong>Tromperie dans le dialogue:</strong> Ce type de sophismes peut être utilisé pour tromper l'adversaire dans le débat.<br><br>- <strong>Paralysie de la communication efficace:</strong> Lorsque nous ne distinguons pas entre les catégories, la communication devient perturbée et imprécise.<br><br>- <strong>Obstruction de la recherche scientifique:</strong> Dans la recherche scientifique, la confusion entre les catégories conduit à des conclusions erronées et à la construction de théories sur des bases fragiles.<br><br>- <strong>Exploitation dans le discours politique et propagandiste:</strong> Ces sophismes sont souvent utilisés dans le discours politique et propagandiste pour influencer le public.",
+					"PhiH.textAnalysis.aristotle.analysis.significance.title": "Significations et dimensions du concept:",
+					"PhiH.textAnalysis.aristotle.analysis.significance.content": "L'analyse d'Aristote de la confusion entre les catégories porte des significations profondes en philosophie, logique et langue:<br><br>1. <strong>Importance de la classification logique:</strong> Le texte souligne l'importance de la classification précise des idées et concepts dans la construction de la connaissance.<br><br>2. <strong>Relation entre langue et logique:</strong> Il montre comment la langue peut être une source de sophismes si nous ne prêtons pas attention à la structure logique sous-jacente.<br><br>3. <strong>Critique du discours sophistique:</strong> Le texte représente une partie de la critique d'Aristote du discours sophistique qui repose sur des sophismes et la tromperie.<br><br>4. <strong>Fondements de la pensée scientifique:</strong> Il établit la méthode de pensée scientifique basée sur la distinction précise entre concepts et catégories.<br><br>5. <strong>Continuité historique:</strong> Le problème de la confusion entre les catégories persiste à notre époque dans différents domaines.<br><br>6. <strong>Application contemporaine:</strong> L'analyse d'Aristote peut être appliquée aux sophismes de notre époque comme les sophismes des médias, de la propagande et de la publicité.<br><br>Ce texte représente un appel à prêter attention à la structure logique sous-jacente au discours, et à ne pas se contenter de la forme linguistique apparente dans l'évaluation de la validité des raisonnements."
+				},
+				en: {
+					// General translations
+					"PhiH.general.siteName": "Philosophy Learning Hub",
+					"PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+					"PhiH.general.present": "X",
+					"PhiH.general.absent": "",
+					"PhiH.general.developerTitle": "Developer",
+					"PhiH.general.developer": "Mejri Ziad",
+					"PhiH.general.versionTitle": "Version",
+					"PhiH.general.version": "v1.0.0",
+					"PhiH.general.linksTitle": "Links",
+					"PhiH.general.termsOfUse": "Terms of Use",
+					"PhiH.general.privacyPolicy": "Privacy Policy",
+					"PhiH.general.themeToggle": "Dark mode",
+					"PhiH.general.authors": "Philosophers",
+					"PhiH.textAnalysis.aristotle.level": "3rd Secondary - Philosophy",
+					
+					// Windows bar translations
+					"PhiH.windows.home": "Home",
+					"PhiH.windows.philosophers": "Philosophers",
+					"PhiH.windows.quotes": "Quotes",
+					"PhiH.windows.resources": "Resources",
+					
+					// Text Analysis specific translations
+					"PhiH.textAnalysis.aristotle.title": "Text Analysis: Confusion Between Categories - Aristotle",
+					"PhiH.textAnalysis.aristotle.introduction.title": "Introduction",
+					"PhiH.textAnalysis.aristotle.introduction.content": "There is no doubt that agreement in language is a condition for the possibility of communication, but it is a necessary and insufficient condition, for we may say and hear the same thing without intending and representing the same meaning. We may rely on context to remove misunderstandings in communication, but what to do when sophistry is intentional and semantic ambiguity is a means?",
+					"PhiH.textAnalysis.aristotle.text.title": "Confusion Between Categories",
+					"PhiH.textAnalysis.aristotle.text.content": "As for arguments related to the form of discourse, they occur when different things are expressed by the same form, for example feminizing the masculine or masculinizing the feminine or adopting one of these two genders to express the neuter. Or also expressing quality as if it were quantity and quantity as if it were quality, and the agent as if it were patient and the patient as if it were agent, and so on.",
+					"PhiH.textAnalysis.aristotle.text.content2": "For it may happen for example that we express in discourse what does not fall under the category of action as if it fell under the category of action, and thus the expression: \"Enjoys good health\" is at the level of discourse form similar to \"Cuts\" and \"Builds\", and yet the first verb expresses a quality i.e. a state and the other two verbs express an action. And so for the rest.",
+					"PhiH.textAnalysis.aristotle.text.source": "Aristotle, Sophistical Refutations, translation by the editorial committee, Sophistical Refutations 166b - 167 a, p 13-14",
+					"PhiH.textAnalysis.aristotle.author.title": "Author Presentation",
+					"PhiH.textAnalysis.aristotle.author.alt": "Aristotle",
+					"PhiH.textAnalysis.aristotle.author.content": "Aristotle (385 BC / 322 BC): Greek philosopher who joined the Academy to study under Plato, and after his master's death, he devoted himself to founding his private philosophical school called \"The Lyceum\". He criticized Platonic dialectic and replaced it with logic that investigates the principles of thought and the formal conditions of reasoning validity that protect it from error and sophistry. He directed research on being from a realistic perspective rooted in the correlation between form and matter, made the world of generation and corruption a subject of science, and made experience the starting point for inducing the foundations of practice within the framework of ethics and politics, thus he was an encyclopedic philosopher par excellence, which enabled him to be a symbol of the Middle Ages where Thomas Aquinas made him the reference of scholastic thought and the Arabs nicknamed him \"the first teacher\". Among his most important works: \"Organon\", \"Metaphysics\", \"Physics\", \"On the Heavens\", \"On the Soul\", \"Parts of Animals\", \"Nicomachean Ethics\", \"Politics\".",
+					"PhiH.textAnalysis.aristotle.lexical.title": "Footnotes and Concepts",
+					"PhiH.textAnalysis.aristotle.lexical.item1": "<strong>\"Form\":</strong> Form is determined by a linguistic level and a logical level, both concerning structure compared to meaning. A discourse can be correct from a linguistic point of view and valid from a logical point of view without being so from the point of view of content.",
+					"PhiH.textAnalysis.aristotle.lexical.item2": "<strong>\"Neuter\":</strong> The Greek language distinguishes in genders between feminine, masculine and neuter, i.e., what is neither feminine nor masculine. For example, the question \"What is this?\" refers in Greek to masculine, feminine and neuter at the same time, and accordingly, when we assume that the interlocutor's question concerns for example the feminine, the interlocutor concludes something concerning the masculine or neuter. And this is where sophistry lies.",
+					"PhiH.textAnalysis.aristotle.lexical.item3": "<strong>\"As if it were agent\":</strong> \"The term of active and passive in what has no different conjugation like saying 'chooses', 'he chooses', 'choice', so he is 'chosen', i.e., characterized by the ability to choose, and that 'chosen' means that the choice fell on him among many. So the agent and the patient have the same form, which leads to this ambiguity and confusion between the categories of action and passion.\" (Cited by Al-Ghazali in Mihakk al-Nazar)",
+					"PhiH.textAnalysis.aristotle.lexical.item4": "<strong>\"Category\":</strong> (categorie) is the logical aspect by which the proposition is constructed in talking about existents, thus determining the genres of their existence, as when we say of this house, from the point of view of quantity, that it is narrow or wide, from the point of view of quality, that it is white or blue, from the point of view of place, that it is in the old city. Aristotle enumerated ten categories.",
+					"PhiH.textAnalysis.aristotle.lexical.tableTitle": "Table of Aristotle's Ten Categories:",
+					"PhiH.textAnalysis.aristotle.lexical.tableHeader1": "Category",
+					"PhiH.textAnalysis.aristotle.lexical.tableHeader2": "Example",
+					"PhiH.textAnalysis.aristotle.questions.title": "Tasks",
+					"PhiH.textAnalysis.aristotle.questions.q1": "I consider the following two reasonings and determine the place of confusion in them.<br><strong>First reasoning:</strong><br>One who acts assumes responsibility for his action.<br>One who is sick acts.<br>Therefore, one who is sick assumes responsibility for his illness.<br><br><strong>Second reasoning:</strong><br>Everyone who had something and no longer has it has lost it.<br>Zayd has ten horses and lost one of them.<br>Therefore, Zayd lost the ten horses.",
+					"PhiH.textAnalysis.aristotle.questions.q2": "I read this oral advertisement and search for the origin of sophistry: \"One hundred percent of winners participated in this lottery.\"",
+					"PhiH.textAnalysis.aristotle.answers.title": "Suggested Answers",
+					"PhiH.textAnalysis.aristotle.answers.a1.title": "Answer to the first question:",
+					"PhiH.textAnalysis.aristotle.answers.a1.content": "<strong>Analysis of the first reasoning:</strong><br><br>1. <strong>First premise:</strong> \"One who acts assumes responsibility for his action\" - logically correct.<br><br>2. <strong>Second premise:</strong> \"One who is sick acts\" - here lies the sophistry.<br><br>3. <strong>Categorical confusion:</strong> The verb \"is sick\" does not belong to the category of action in the Aristotelian sense but to the category of passion. Sickness is not a voluntary and chosen action but a state that happens to man (passion).<br><br>4. <strong>Erroneous conclusion:</strong> \"Therefore, one who is sick assumes responsibility for his illness\" - this conclusion is not correct because it relies on confusion between the category of action (voluntary) and the category of passion (involuntary).<br><br><strong>Analysis of the second reasoning:</strong><br><br>1. <strong>First premise:</strong> \"Everyone who had something and no longer has it has lost it\" - logically correct.<br><br>2. <strong>Second premise:</strong> \"Zayd has ten horses and lost one of them\" - factually correct.<br><br>3. <strong>Categorical confusion:</strong> The confusion here between \"something\" as a universal concept including the totality and its parts, and \"something\" as an individual whole. Losing a part of something does not mean losing the whole.<br><br>4. <strong>Erroneous conclusion:</strong> \"Therefore, Zayd lost the ten horses\" - this conclusion is erroneous because it generalizes the loss of the part to the loss of the whole.",
+					"PhiH.textAnalysis.aristotle.answers.a2.title": "Answer to the second question:",
+					"PhiH.textAnalysis.aristotle.answers.a2.content": "<strong>Analysis of the advertisement:</strong> \"One hundred percent of winners participated in this lottery.\"<br><br>1. <strong>Statistical sophistry:</strong> This sentence is logically correct but misleading.<br><br>2. <strong>Categorical confusion:</strong> The confusion here between:<br>- <strong>Winners:</strong> are only those who participated and won.<br>- <strong>Participants:</strong> are all those who participated, whether they won or not.<br><br>3. <strong>Deception:</strong> The phrase suggests that participation in the lottery necessarily leads to victory, while in reality winners are only a part of participants.<br><br>4. <strong>Logical sophistry:</strong> This phrase represents the sophistry \"appeal to statistical authority\" in a misleading way, using a correct statistic (100% of winners participated) to suggest an erroneous conclusion (participation leads to victory).<br><br>5. <strong>Logical analysis:</strong> The phrase does not inform us about the winning rate among participants, but only that all winners were participants (which is obvious).",
+					"PhiH.textAnalysis.aristotle.analysis.title": "Text Analysis",
+					"PhiH.textAnalysis.aristotle.analysis.thesis.title": "Main thesis:",
+					"PhiH.textAnalysis.aristotle.analysis.thesis.content": "Aristotle clarifies in this text one of the types of logical fallacies that arise from confusion between different categories. He affirms that agreement in linguistic form is not enough to guarantee the validity of reasoning, for we can use the same linguistic formula to express things belonging to different categories, leading to erroneous conclusions. The text highlights the importance of precise distinction between the ten categories to avoid falling into formal fallacies that seem linguistically correct but are logically invalid.",
+					"PhiH.textAnalysis.aristotle.analysis.mechanisms.title": "Mechanisms of confusion between categories:",
+					"PhiH.textAnalysis.aristotle.analysis.mechanisms.content": "Aristotle identifies several mechanisms of confusion between categories:<br><br>1. <strong>Confusion between grammatical genders:</strong> such as feminization, masculinization and neuter in Greek.<br><br>2. <strong>Confusion between quantity and quality:</strong> treating quantitative attributes as if they were qualitative and vice versa.<br><br>3. <strong>Confusion between action and passion:</strong> which appears in the example given by Aristotle concerning the verb \"enjoys good health\" which expresses a state (quality) and not a voluntary action.<br><br>4. <strong>Dependence on formal similarity:</strong> using the same linguistic formula to express different categories.<br><br>5. <strong>Contextual exploitation:</strong> using context to hide categorical confusion and deceive.",
+					"PhiH.textAnalysis.aristotle.analysis.consequences.title": "Consequences and danger of confusion between categories:",
+					"PhiH.textAnalysis.aristotle.analysis.consequences.content": "- <strong>Distortion of critical thinking:</strong> Confusion between categories paralyzes the ability for correct critical thinking.<br><br>- <strong>Deception in dialogue:</strong> This type of fallacies can be used to deceive the opponent in debate.<br><br>- <strong>Paralysis of effective communication:</strong> When we do not distinguish between categories, communication becomes disturbed and imprecise.<br><br>- <strong>Obstruction of scientific research:</strong> In scientific research, confusion between categories leads to erroneous conclusions and building theories on fragile bases.<br><br>- <strong>Exploitation in political and propagandistic discourse:</strong> These fallacies are often used in political and propagandistic discourse to influence the public.",
+					"PhiH.textAnalysis.aristotle.analysis.significance.title": "Significance and dimensions of the concept:",
+					"PhiH.textAnalysis.aristotle.analysis.significance.content": "Aristotle's analysis of confusion between categories carries deep meanings in philosophy, logic and language:<br><br>1. <strong>Importance of logical classification:</strong> The text emphasizes the importance of precise classification of ideas and concepts in knowledge construction.<br><br>2. <strong>Relation between language and logic:</strong> It shows how language can be a source of fallacies if we do not pay attention to the underlying logical structure.<br><br>3. <strong>Critique of sophistic discourse:</strong> The text represents part of Aristotle's critique of sophistic discourse that relies on fallacies and deception.<br><br>4. <strong>Foundations of scientific thinking:</strong> It establishes the method of scientific thinking based on precise distinction between concepts and categories.<br><br>5. <strong>Historical continuity:</strong> The problem of confusion between categories persists in our time in different fields.<br><br>6. <strong>Contemporary application:</strong> Aristotle's analysis can be applied to fallacies of our time like media, propaganda and advertising fallacies.<br><br>This text represents a call to pay attention to the underlying logical structure of discourse, and not to be satisfied with the apparent linguistic form in evaluating the validity of reasonings."
+				},
+				ar: {
+					// General translations
+					"PhiH.general.siteName": "مركز تعلم الفلسفة",
+					"PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+					"PhiH.general.present": "X",
+					"PhiH.general.absent": "",
+					"PhiH.general.developerTitle": "المطور",
+					"PhiH.general.developer": "مجرى زياد",
+					"PhiH.general.versionTitle": "الإصدار",
+					"PhiH.general.version": "v1.0.0",
+					"PhiH.general.linksTitle": "الروابط",
+					"PhiH.general.termsOfUse": "شروط الاستخدام",
+					"PhiH.general.privacyPolicy": "سياسة الخصوصية",
+					"PhiH.general.themeToggle": "الوضع الداكن",
+					"PhiH.general.authors": "الفلاسفة",
+					
+					// Windows bar translations
+					"PhiH.windows.home": "الرئيسية",
+					"PhiH.windows.philosophers": "الفلاسفة",
+					"PhiH.windows.quotes": "شواهد",
+					"PhiH.windows.resources": "الموارد",
+					"PhiH.textAnalysis.aristotle.level": "السنة الثالثة ثانوي - الفلسفة",
+					"PhiH.textAnalysis.aristotle.title": "تحليل النص: الخلط بين المقولات - أرسطو",
+					"PhiH.textAnalysis.aristotle.introduction.title": "التمهيد",
+					"PhiH.textAnalysis.aristotle.introduction.content": "لا شكّ أن الاتفاق في اللّسان شرط إمكان التواصل ولكنّه شرط ضروري وغير كاف، فقد نقول ونسمع نفس الشيء دون أن نقصد ونتمثّل نفس المعنى. وقد نعوّل على السياق لرفع ما يتخّل التواصل من سوء تفاهم، ولكن ما العمل عندما تكون المغالطة مقصدا واشتباه الدلالة وسيلة ؟",
+					"PhiH.textAnalysis.aristotle.text.title": "الخلط بين المقولات",
+					"PhiH.textAnalysis.aristotle.text.content": "أمّا فيما يخص الحجج المتعلّقة بشكل الخطاب، فإنّها تحصل عندما يُعبّر عن أشياء مختلفة بنفس الصورة، مثال ذلك تأنيث المذكّر أو تذكير المؤنّث أو اعتماد أحد هذين الجنسين للتعبير عن المحايد. أو كذلك التعبير عن الكيف كما لو كان كمّا وعن الكمّ كما لو كان كيفا، وعن الفاعل كما لو كان منفعلا وعن المنفعل كما لو كان فاعلا، إلى غير ذلك.",
+					"PhiH.textAnalysis.aristotle.text.content2": "لأنّه قد يحدث مثلا أن نعبّر في الخطاب عمّا لا يقع تحت مقولة الفعل كما لو كان يقع تحت مقولة الفعل، وهكذا فإن العبارة: \"ينعم بصحّة جيّدة.\" لهي على مستوى صورة الخطاب تشبه \"يُقطع\" و\"يبني\"، ومع ذلك يُعبّر الفعل الأوّل عن كيفيّة ما أي عن حالة ما ويعبّر الفعلان الآخران عن فعل ما. وهكذا الأمر في البقيّة.",
+					"PhiH.textAnalysis.aristotle.text.source": "أرسطو، الدحوضات السفسطائية. ترجمة لجنة التأليف، Réfutations sophistiques 166b - 167 a, p 13-14",
+					"PhiH.textAnalysis.aristotle.author.title": "تقديم المؤلف",
+					"PhiH.textAnalysis.aristotle.author.alt": "أرسطو",
+					"PhiH.textAnalysis.aristotle.author.content": "أرسطو Aristote (385 ق م / 322 ق م): فيلسوف يونانيّ انتسب إلى الأكاديمية ليتتلمذ على أفلاطون، وبعد وفاة أستاذه تفرّغ لتأسيس مدرسته الفلسفيّة الخاصة المسمّاة بـ \"الليسي\" Lycee. نقد الجدليّة الأفلاطونيّة واستبدلها بالمنطق الذي يبحث في مبادئ الفكر والشروط الصوريّة لصلاحيّة الاستدلال التي تعصمه من الخطأ والمغالطة. وجّه البحث في الوجود من منظور واقعيّ يؤصّله في تضايف بين الصورة والمادة، وجعل من عالم الكون والفساد موضوعا للعلم، كما جعل من التجربة منطلقا لاستقراء أسس الممارسة في إطار الأخلاق والسياسة، فكان فيلسوفا موسوعيّا بامتياز ومكّنه ذلك من أن يكون رمز العصر الوسيط حيث جعله توماس الإكويني مرجع الفكر السكولائيّ ولقبّه العرب \"بالمعلّم الأوّل\". من أهمّ مؤلفاته: \"الارغانون\"، \"الميتافيزيقا\"، \"السماع الطبيعيّ\"، \"في السماء\"، \"في النفس\"، \"أجزاء الحيوان\"، \"أخلاق إلى نيقوماخوس\"، \"السياسات\".",
+					"PhiH.textAnalysis.aristotle.lexical.title": "الهوامش والمفاهيم",
+					"PhiH.textAnalysis.aristotle.lexical.item1": "<strong>\"شكل\":</strong> يتحدّد الشكل من خلال مستوى لغوي ومستوى منطقي وكلاهما يتعلّقان بالمبنى مقارنة بالمعنى. فيمكن للقول أن يكون صائبا من الناحية اللغوية وصالحا من الناحية المنطقية دون أن يكون كذلك من ناحية المضمون.",
+					"PhiH.textAnalysis.aristotle.lexical.item2": "<strong>\"المحايد\":</strong> تُميّز اللّغة الإغريقية في الأجناس بين المؤنّث والمذكّر والمحايد أي ما ليس بمؤَّنّث ولا بمذكّر. فسؤال \"ما هذا؟\" على سبيل المثال يُحيل في الإغريقية على المذكّر والمؤنّث والمحايد في ذات الوقت، وتبعا لذلك فعندما نفترض أنّ الأمر في سؤال المحاور يتعلّق بالمؤنّث مثلا، يستنتج المحاور أمرا يتعلَّق بالمذكّر أو بالمحايد. وهنا مكمن المغالطة.",
+					"PhiH.textAnalysis.aristotle.lexical.item3": "<strong>\"كما لو كان فاعلاً\":</strong> \"لفظ المفعول والفاعل فيما لا يختلف تصريفه كقولك اختار يختار اختياراً فهو مختار، أي يتميّز بالقدرة على الاختيار، وذلك مختار أي وقع عليه الاختيار من بين كثيرين. فالفاعل والمفعول به لهما صيغة واحدة ، بحيث يؤول هذا الالتباس إلى الخلط بين مقولتي الفعل والانفعال.\" (أورده الغزالي في محك النظر)",
+					"PhiH.textAnalysis.aristotle.lexical.item4": "<strong>\"مقولة\":</strong> (categorie) هي الوجه المنطقي الذي تُبنى به القضيّة في الحديث عن الموجودات، بحيث تُحدّد أجناس وجودها كقولنا عن هذا البيت، من ناحية الكمّ، أنّه ضيّق أو واسع، ومن ناحية الكيف، أنّه أبيض أو أزرق، ومن ناحية المكان، أنّه في المدينة العتيقة. ولقد أحصى أرسطو عشر مقولات.",
+					"PhiH.textAnalysis.aristotle.lexical.tableTitle": "جدول المقولات العشر عند أرسطو:",
+					"PhiH.textAnalysis.aristotle.lexical.tableHeader1": "المقولة",
+					"PhiH.textAnalysis.aristotle.lexical.tableHeader2": "المثال",
+					"PhiH.textAnalysis.aristotle.questions.title": "المهام",
+					"PhiH.textAnalysis.aristotle.questions.q1": "أنظر في الاستدلالين التاليين وأحدّد مَوْضِعَ الخلط فيهما.<br><strong>الاستدلال الأوّل:</strong><br>من يفعل يتحمّل مسؤولية فعله.<br>من يمرض يفعل.<br>إذن من مرض يتحمّل مسؤولية مرضه.<br><br><strong>الاستدلال الثاني:</strong><br>إنّ كل من كان له شيءٍ ولم يُعُدْ له فَقَدْ فَقَدَهُ.<br>زيد له عشرة جياد وفقَدَ واحدا منها.<br>إذن زيد فَقَدَ العشرة جياد.",
+					"PhiH.textAnalysis.aristotle.questions.q2": "أقرأ هذا الإشهار الملفوظ وأبحث عن مأتى المغالطة: \"مائة في مائة من الفائزين شاركوا في هذا اليانصيب.\"",
+					"PhiH.textAnalysis.aristotle.answers.title": "إجابات مقترحة",
+					"PhiH.textAnalysis.aristotle.answers.a1.title": "الإجابة عن السؤال الأول:",
+					"PhiH.textAnalysis.aristotle.answers.a1.content": "<strong>تحليل الاستدلال الأول:</strong><br><br>1. <strong>مقدمة أولى:</strong> \"من يفعل يتحمّل مسؤولية فعله\" - صحيحة من الناحية المنطقية.<br><br>2. <strong>مقدمة ثانية:</strong> \"من يمرض يفعل\" - هنا تكمن المغالطة.<br><br>3. <strong>الخلط المقولي:</strong> الفعل \"يمرض\" لا ينتمي إلى مقولة الفعل بالمعنى الأرسطي بل إلى مقولة الانفعال. المرض ليس فعلاً إرادياً اختيارياً بل هو حالة تحدث للإنسان (انفعال).<br><br>4. <strong>النتيجة الخاطئة:</strong> \"إذن من مرض يتحمّل مسؤولية مرضه\" - هذه النتيجة غير صحيحة لأنها تعتمد على خلط بين مقولة الفعل (الإرادي) ومقولة الانفعال (غير الإرادي).<br><br><strong>تحليل الاستدلال الثاني:</strong><br><br>1. <strong>مقدمة أولى:</strong> \"إنّ كل من كان له شيءٍ ولم يُعُدْ له فَقَدْ فَقَدَهُ\" - صحيحة منطقياً.<br><br>2. <strong>مقدمة ثانية:</strong> \"زيد له عشرة جياد وفقَدَ واحدا منها\" - صحيحة واقعياً.<br><br>3. <strong>الخلط المقولي:</strong> الخلط هنا بين \"الشيء\" كمفهوم كلي يشمل المجموع وأجزائه، و\"الشيء\" ككل منفرد. فقدان جزء من الشيء لا يعني فقدان الكل.<br><br>4. <strong>النتيجة الخاطئة:</strong> \"إذن زيد فَقَدَ العشرة جياد\" - هذه النتيجة خاطئة لأنها تعمم فقدان الجزء على فقدان الكل.",
+					"PhiH.textAnalysis.aristotle.answers.a2.title": "الإجابة عن السؤال الثاني:",
+					"PhiH.textAnalysis.aristotle.answers.a2.content": "<strong>تحليل الإشهار:</strong> \"مائة في مائة من الفائزين شاركوا في هذا اليانصيب.\"<br><br>1. <strong>المغالطة الإحصائية:</strong> هذه العبارة صحيحة من الناحية المنطقية ولكنها مضللة.<br><br>2. <strong>الخلط المقولي:</strong> الخلط هنا بين:<br>- <strong>الفائزين:</strong> هم فقط الذين شاركوا وفازوا.<br>- <strong>المشاركين:</strong> هم جميع الذين شاركوا سواء فازوا أم لم يفوزوا.<br><br>3. <strong>التضليل:</strong> العبارة توحي بأن المشاركة في اليانصيب تؤدي حتماً إلى الفوز، بينما الحقيقة أن الفائزين هم جزء فقط من المشاركين.<br><br>4. <strong>المغالطة المنطقية:</strong> هذه العبارة تمثل مغالطة \"الاحتكام إلى السلطة الإحصائية\" بشكل مضلل، حيث تستخدم إحصائية صحيحة (100% من الفائزين شاركوا) لتوحي باستنتاج خاطئ (المشاركة تؤدي إلى الفوز).<br><br>5. <strong>التحليل المنطقي:</strong> العبارة لا تخبرنا عن نسبة الفوز بين المشاركين، بل تخبرنا فقط أن جميع الفائزين كانوا من المشاركين (وهو أمر بديهي).",
+					"PhiH.textAnalysis.aristotle.analysis.title": "تحليل النص",
+					"PhiH.textAnalysis.aristotle.analysis.thesis.title": "الأطروحة الأساسية:",
+					"PhiH.textAnalysis.aristotle.analysis.thesis.content": "يوضح أرسطو في هذا النص أحد أنواع المغالطات المنطقية التي تنشأ عن الخلط بين المقولات المختلفة. يؤكد أن الاتفاق في الشكل اللغوي لا يكفي لضمان صحة الاستدلال، فقد نستخدم نفس الصيغة اللغوية للتعبير عن أمور تنتمي إلى مقولات مختلفة، مما يؤدي إلى استنتاجات خاطئة. النص يسلط الضوء على أهمية التمييز الدقيق بين المقولات العشر لتجنب الوقوع في مغالطات شكلية تبدو صحيحة لغوياً ولكنها فاسدة منطقياً.",
+					"PhiH.textAnalysis.aristotle.analysis.mechanisms.title": "آليات الخلط بين المقولات:",
+					"PhiH.textAnalysis.aristotle.analysis.mechanisms.content": "يحدد أرسطو عدة آليات للخلط بين المقولات:<br><br>1. <strong>الخلط بين الأجناس النحوية:</strong> كالتأنيث والتذكير والحياد في اللغة الإغريقية.<br><br>2. <strong>الخلط بين الكم والكيف:</strong> التعامل مع الصفات الكمية كما لو كانت كيفية والعكس.<br><br>3. <strong>الخلط بين الفعل والانفعال:</strong> وهو ما يظهر في المثال الذي قدمه أرسطو حول الفعل \"ينعم بصحة جيدة\" الذي يعبر عن حالة (كيف) وليس عن فعل إرادي.<br><br>4. <strong>الاعتماد على التشابه الشكلي:</strong> استخدام نفس الصيغة اللغوية للتعبير عن مقولات مختلفة.<br><br>5. <strong>الاستغلال السياقي:</strong> استخدام السياق لإخفاء الخلط المقولي والتضليل.",
+					"PhiH.textAnalysis.aristotle.analysis.consequences.title": "نتائج وخطورة الخلط بين المقولات:",
+					"PhiH.textAnalysis.aristotle.analysis.consequences.content": "- <strong>تشويه الفكر النقدي:</strong> الخلط بين المقولات يعطل القدرة على التفكير النقدي الصحيح.<br><br>- <strong>تضليل الحوار:</strong> يمكن استخدام هذا النوع من المغالطات لتضليل الخصم في الجدال.<br><br>- <strong>تعطيل التواصل الفعال:</strong> عندما لا نميز بين المقولات، يصبح التواصل مضطرباً وغير دقيق.<br><br>- <strong>إعاقة البحث العلمي:</strong> في البحث العلمي، يؤدي الخلط بين المقولات إلى استنتاجات خاطئة وبناء نظريات على أسس واهية.<br><br>- <strong>استغلال في الخطاب السياسي والدعائي:</strong> كثيراً ما تستخدم هذه المغالطات في الخطاب السياسي والدعائي للتأثير على الجمهور.",
+					"PhiH.textAnalysis.aristotle.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+					"PhiH.textAnalysis.aristotle.analysis.significance.content": "يحمل تحليل أرسطو للخلط بين المقولات دلالات عميقة في الفلسفة والمنطق واللغة:<br><br>1. <strong>أهمية التصنيف المنطقي:</strong> يبرز النص أهمية التصنيف الدقيق للأفكار والمفاهيم في بناء المعرفة.<br><br>2. <strong>العلاقة بين اللغة والمنطق:</strong> يوضح كيف يمكن للغة أن تكون مصدراً للمغالطات إذا لم ننتبه إلى البنية المنطقية الكامنة وراءها.<br><br>3. <strong>نقد الخطاب السفسطائي:</strong> يمثل النص جزءاً من نقد أرسطو للخطاب السفسطائي الذي يعتمد على المغالطات والتضليل.<br><br>4. <strong>أسس التفكير العلمي:</strong> يؤسس لمنهج التفكير العلمي القائم على التمييز الدقيق بين المفاهيم والمقولات.<br><br>5. <strong>الاستمرارية التاريخية:</strong> لا تزال مشكلة الخلط بين المقولات قائمة في عصرنا الحاضر في مختلف المجالات.<br><br>6. <strong>التطبيق المعاصر:</strong> يمكن تطبيق تحليل أرسطو على مغالطات عصرنا مثل مغالطات الإعلام والدعاية والإشهار.<br><br>هذا النص يمثل دعوة للانتباه إلى البنية المنطقية الكامنة وراء الخطاب، وعدم الاكتفاء بالشكل اللغوي الظاهري في تقييم صحة الاستدلالات."
+				}
+			};
+			
+			// Set the current translations for the translation.js file to use
+			window.currentTranslations = window.translations_PhiHtextAnalysis;
+		</script>
+		
+		<!-- Include the external translation file -->
+		<script src="scripts/translation.js"></script>
+		
+		<!-- Include PWA Handler -->
+		<script src="scripts/pwa-handler.js"></script>
+	</body>
+</html>

@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: مفارقة أخيل والسلحفاة - جون ستوارت ميل - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#0D9488">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Teal/Cyan Color Palette (تركواز/سماوي) */
+        :root {
+            --primary-color: #0D9488;
+            --primary-light: #14B8A6;
+            --primary-dark: #0F766E;
+            --secondary-color: #2DD4BF;
+            --secondary-light: #5EEAD4;
+            --secondary-dark: #14B8A6;
+            --accent-color: #2DD4BF;
+            --accent-light: #5EEAD4;
+            --accent-dark: #14B8A6;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #f0fdfa;
+            --card-bg: #ffffff;
+            --definition-bg: #ccfbf1;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #a7f3d0;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(13, 148, 136, 0.1), 0 2px 4px -1px rgba(13, 148, 136, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(13, 148, 136, 0.1), 0 4px 6px -2px rgba(13, 148, 136, 0.05);
+            --gradient-primary: linear-gradient(135deg, #0D9488 0%, #2DD4BF 100%);
+            --gradient-secondary: linear-gradient(135deg, #2DD4BF 0%, #14B8A6 100%);
+            --gradient-accent: linear-gradient(135deg, #2DD4BF 0%, #0D9488 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #14B8A6;
+            --primary-light: #2DD4BF;
+            --primary-dark: #0D9488;
+            --secondary-color: #5EEAD4;
+            --secondary-light: #99F6E4;
+            --secondary-dark: #2DD4BF;
+            --accent-color: #5EEAD4;
+            --accent-light: #99F6E4;
+            --accent-dark: #2DD4BF;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #134E4A;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #115E59;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #14B8A6 0%, #5EEAD4 100%);
+            --gradient-secondary: linear-gradient(135deg, #5EEAD4 0%, #2DD4BF 100%);
+            --gradient-accent: linear-gradient(135deg, #5EEAD4 0%, #14B8A6 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(13, 148, 136, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(45, 212, 191, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(45, 212, 191, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(13, 148, 136, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+        
+        /* Header and controls styles - Same as other files */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Windows Bar Styling */
+        .PhiH-windows-bar {
+            display: flex;
+            justify-content: center;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-window-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: var(--text-color);
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+            margin: 0 0.25rem;
+        }
+        
+        .PhiH-window-item:hover {
+            background-color: var(--definition-bg);
+            color: var(--primary-color);
+        }
+        
+        .PhiH-window-item.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .PhiH-window-icon {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.achillesParadox.title">تحليل النص: مفارقة أخيل والسلحفاة - جون ستوارت ميل</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.achillesParadox.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.achillesParadox.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.achillesParadox.introduction.content">
+                    يعتقد الأفراد أنّهم حين يتكلّمون إنّما يستعملون علاماتٍ دقيقة الدلالة تُتيح لهم التواصل مع الآخرين والتعبير بوضوح عن مقاصدهم. غير أنّ هذا الاعتقاد لا يصمد كثيرا أمام ما يُعاين من التباس في الألفاظ يقود إلى سوء تفاهم بين المتكلّمين قد يُستغّل لغرض المغالطة. عندئذ يصبح من الضروريّ التخلّي عن الموقف الساذج من الألفاظ والعمل على فحص التباسها لإحباط محاولات استغلالها في المغالطة.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.achillesParadox.text.title">مفارقة أخيل والسلحفاة</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.achillesParadox.text.content">
+                        إنّ التباس <sup>1</sup> عبارة "لا متناه" هو المغالطة الفعلية الحاضرة في المشكل المنطقيّ الطريف لأخيل والسلحفاة <sup>2</sup>. وهو مشكل كاد يُفقد العديد من الفلاسفة صبرهم وفطنتهم، ومن بينهم الدكتور توماس براون <sup>3</sup> الذي يعتبره مشكلا غير قابل للحلّ ويُقدّر أنّه حجّة صالحة رغم كونه يُفضي إلى خطأ بيّن. وهو لم يتفطِّن في الأثناء إلى أنّ التسليم بذلك يَرُدّ العقل ذاته إلى الخلف <sup>4</sup>. إنّ المغالطة ثاوية كما حدس ذلك هوبز <sup>5</sup> في الافتراض الضمنيّ <sup>6</sup> بأنّ ما يقبل القسمة إلى ما لانهاية له هو لا متناه.
+                        <br><br>
+                        لكنّ الحلّ الموالي (والذي لا يعود إليّ فضل اكتشافه) هو أدقّ وأوفى. وإليكم بدءا الحجّة على ذلك: إنّ أخيل يجري بسرعة تفوق السلحفاة بعشر مرّات، ومع ذلك، إذا كان للسلحفاة السبق فلن يُدركها أخيل أبدا. فلنفترض، فعلا، أنّ مسافة ألف قدم تفصل بينهما، فإنّه عندما يكون أخيل قد قطع هذه المسافة، تكون السلحفاة قد قطعت مائة قدم، وعندما يكون أخيل قد قطع مسافة المائة قدم هذه، تكون السلحفاة قد قطعت عشرة أقدام، وهكذا دواليك دائما إلى ما لا نهاية. يُمكن لأخيل، إذن، أن يجري دائما دون أن يُدرك السلحفاة أبدا.
+                        <br><br>
+                        والآن، إنّ عبارة "دائماً" الواردة في النتيجة تعني أيّ قدر من الزمن نريد افتراضه، بينما لا تعني عبارة "دائما" في المقدّمات مقدارا زمنيًا ما، وإنّما تعني أيّ عدد كان من تقسيمات الزمن. إنّها تعني أنّه بإمكاننا أن نقَسِّم ألف قدم على عشرة وأن نقَسِّم كذلك هذا الحاصل على عشرة وهكذا دواليك، قدر ما نريد، كما تعني أنّه لن تكون هنالك أبدا نهاية التقسيمات المسافة ولا لتقسيمات الزمن المستغرق في قطعها. غير أنّه بإمكاننا القيام بعدد من التّقسيمات لما هو في حدّ ذاته محدود. إنّ هذه الحجّة لا تبرهن على لا تناهي زمن غير الزمن المحدود بخمس دقائق. فما لم تنقضِ الدقائق الخمس فإنّ ما يتبقّى منها يكون قابلا للقسمة على عشرة وهذه العشرة على عشرةٍ قدر ما نريد من المرّات، وهو ما يتلاءم جيّدا مع واقع أنّ الكلّ لا يساوي غير خمس دقائق. وإجمالا، فإنّ الحجّة تُثبت، أنّ قطع هذه المسافة المتناهية يقتضي زمنا قابلا للقسمة إلى ما لانهاية وليس زمنا لا متناهيا. وذلك هو الخلط الذي يُمثّل مكمن قوّة هذه المغالطة كما قد تفطّن إلى ذلك هوبز.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.achillesParadox.text.source">جون ستوارت ميل، نسق المنطق الاستنتاجيّ والاستقرائيّ، الكتاب الخامس: في المغالطات، ترجمة لجنة التأليف، Système de logique déductive et inductive, liv5, des sophismes, p 80-81</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.achillesParadox.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/john_stuart_mill.jpg" alt="جون ستوارت ميل" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.achillesParadox.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.achillesParadox.author.content">
+                            جون ستوارت ميل (1806-1873) فيلسوف ورجل اقتصاد إنجليزي ليبرالي النزعة عصامي التكوين، حذق لغات عديدة وبرع في الرياضيات والمنطق منذ حداثة سنه، من منظري النزعة النّفعيّة انتخب نائبا بمجلس العموم البريطاني دافع عن حق المرأة في الانتخاب وكان ذلك من بين أسباب عدم إعادة انتخابه. من بين مؤلفاته: مبادئ الاقتصاد السياسي (1848)، الحرية (1859)، النزعة النفعية (1861)، في استعباد النساء (1869)، نسق المنطق الاستنتاجي والاستقرائي (1869 ط 6).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.achillesParadox.lexical.title">الهوامش والمفاهيم</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.achillesParadox.lexical.item1"><strong>"الالتباس":</strong> هو صفة للألفاظ التي تتعدّد معانيها، وهو تعدّد ينجم عن دلالة اللفظ في حدّ ذاته أو عن ارتباطه بألفاظ أخرى في سياق الجملة أو عن أشكال استعماله في مقامات الكلام فيكون بذلك قابلا لأن يُفهم بأشكالٍ متعدّدة تحدث خلطا وتداخلا وتعارضا. وتُستغلّ هذه الصّفة في التّغليط أو توقع في الغلط بالخلط بين مختلف الدلالات عند استعمال الألفاظ في بناء قضايا الاستدلال.</li>
+                    <li data-i18n="PhiH.textAnalysis.achillesParadox.lexical.item2"><strong>"حجّة أخيل والسلحفاة":</strong> هي حجّة من بين أربع حجج قدّمها الفيلسوف اليوناني زينون الإيليّ (ولد حوالي 490 ق م في مدينة إيلي Elee ولا يُعلم تاريخ وفاته) دفاعا عن نظريّة أستاذه بارمنيدس القائلة إنّ الوجود واحد، ورفضا للقول بالتعدّد والحركة لكونه قولاً يقود إلى مفارقات عديدة تثبت مدى تناقضه العقليّ والفعليّ.</li>
+                    <li data-i18n="PhiH.textAnalysis.achillesParadox.lexical.item3"><strong>"توماس براون":</strong> (1778 - 1820): فيلسوف اسكتلندي ينتمي إلى مدرسة "الحسّ المشترك" common sense الفلسفيّة. عُرف بنقده لموقف هيوم من السببيّة.</li>
+                    <li data-i18n="PhiH.textAnalysis.achillesParadox.lexical.item4"><strong>"يردّ العقل ذاته إلى الخلف":</strong> هنا يُفصح ميل عن الرهان من الكشف عن المغالطة الثاوية في مفارقة أخيل والسلحفاة وهو الدفاع عن العقل نفسه من خطر الوقوع في الخلف إن هو استسلم إلى ما آل إليه موقف توماس براون من تناقض حين رأى في تلك المفارقة حجّة صالحةً من جهة، وخطأ بيّنا من جهة أخرى.</li>
+                    <li data-i18n="PhiH.textAnalysis.achillesParadox.lexical.item5"><strong>"توماس هوبز":</strong> فيلسوف انجليزي (1588 - 1679)، عُرف بموقفه الخبريّ الذي يرى أنّ المعرفة إنّما تجد منطلقها في تأثيرات الواقع الحسيّ في الذات. ومن هذه التأثيرات تتكوّن تصوّرات جزئيّة يعبّر عنها الإنسان بألفاظ تشكّلت اعتباطيا، لذلك أنكر وجود أفكار عامة مؤكّدا موقفه الاسمانيّ (nominaliste).</li>
+                    <li data-i18n="PhiH.textAnalysis.achillesParadox.lexical.item6"><strong>"الافتراض الضمنيّ":</strong> هو ما يسلّم به حكمٌ ما ويعتمده كمنطلق دون الإعلان عنه بشكلٍ صريح. وفي ذلك ما يفيد أنّ المغالطة لا يُكشف خللها إلا بتقصّ لمفترضاتها التي تنطلق منها دون الإعلان عنها في سياق القضايا التي تعتمدها.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.achillesParadox.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.achillesParadox.questions.q1">أعود إلى معجم فلسفيّ لأحدّد دلالة عبارة "لا متناه".</li>
+                    <li data-i18n="PhiH.textAnalysis.achillesParadox.questions.q2">أبّن ما إذا كان كل ما يقبل القسمة إلى ما لا نهاية هو لا متناه ؟</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.achillesParadox.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.achillesParadox.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.achillesParadox.answers.a1.content">
+                        <strong>دلالة عبارة "لا متناه" (Infinite):</strong> هو ما ليس له حدود أو نهاية، سواء في المكان أو الزمان أو العدد. في الفلسفة والرياضيات، اللاّمتناهي هو مفهوم يُشير إلى ما هو غير محدود، غير متناه، لا ينتهي.
+                        <br><br>
+                        هناك نوعان من اللاّمتناهي:
+                        <br>
+                        1. <strong>اللاّمتناهي بالامتداد (Actual Infinite):</strong> وهو وجود كميّة لا نهائية موجودة فعلياً في وقت واحد.
+                        <br>
+                        2. <strong>اللاّمتناهي بالاستمرار (Potential Infinite):</strong> وهو عملية يمكن أن تستمر إلى ما لا نهاية دون أن توجد كلية لا نهائية في وقت واحد.
+                        <br><br>
+                        في نص ميل، المشكلة تكمن في الخلط بين "القابل للقسمة إلى ما لا نهاية" (وهو متناهٍ لكن يمكن تقسيمه إلى عدد لا نهائي من الأجزاء) و"اللاّمتناهي" (الذي لا حدود له).
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.achillesParadox.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.achillesParadox.answers.a2.content">
+                        <strong>التحليل:</strong>
+                        <br><br>
+                        <strong>لا، ليس كل ما يقبل القسمة إلى ما لا نهاية هو لا متناه.</strong> وهذا هو جوهر المغالطة في مفارقة أخيل والسلحفاة كما أوضح جون ستوارت ميل.
+                        <br><br>
+                        <strong>التمييز الأساسي:</strong>
+                        <br><br>
+                        1. <strong>المتناهي القابل للقسمة إلى ما لا نهاية (Divisible Infinitely):</strong>
+                        <br>
+                        - كمية محدودة يمكن تقسيمها إلى عدد لا نهائي من الأجزاء الأصغر.
+                        <br>
+                        - مثال: المسافة بين نقطتين (1000 قدم) يمكن تقسيمها إلى نصفين، ثم ربع، ثم ثمن... إلى ما لا نهاية.
+                        <br>
+                        - الزمن المحدود (5 دقائق) يمكن تقسيمه إلى عدد لا نهائي من الفترات الزمنية الأصغر.
+                        <br><br>
+                        2. <strong>اللاّمتناهي (Infinite):</strong>
+                        <br>
+                        - كمية غير محدودة، ليس لها نهاية.
+                        <br>
+                        - مثال: خط مستقيم بلا بداية ولا نهاية، زمن سرمدي بلا بداية ولا نهاية.
+                        <br><br>
+                        <strong>الخلط في المفارقة:</strong>
+                        <br>
+                        - يخلط زينون بين "المسافة القابلة للقسمة إلى ما لا نهاية" (وهي متناهية) و"المسافة اللاّمتناهية".
+                        <br>
+                        - يخلط بين "الزمن القابل للقسمة إلى ما لا نهاية" (وهو متناه) و"الزمن اللاّمتناهي".
+                        <br><br>
+                        <strong>الاستنتاج:</strong>
+                        قطع مسافة متناهية (1000 قدم) في زمن متناه (5 دقائق) مع أن المسافة والزمن قابلان للتقسيم إلى ما لا نهاية من الأجزاء. القدرة على التقسيم اللامتناهي لا تعني أن الكل نفسه لا متناهٍ.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.achillesParadox.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.achillesParadox.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.achillesParadox.analysis.thesis.content">
+                        يكشف جون ستوارت ميل في هذا النص عن المغالطة المنطقية الكامنة في مفارقة أخيل والسلحفاة لزينون الإيلي، ويؤكد أن جوهر هذه المغالطة يكمن في الخلط بين مفهومين مختلفين: "القابل للقسمة إلى ما لا نهاية" و"اللاّمتناهي". يوضح ميل أن المسافة المتناهية والزمن المتناهي يمكن تقسيمهما إلى عدد لا نهائي من الأجزاء دون أن يعني ذلك أن المسافة نفسها أو الزمن نفسه لا متناهٍ.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.achillesParadox.analysis.mechanisms.title">آليات المغالطة في مفارقة أخيل والسلحفاة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.achillesParadox.analysis.mechanisms.content">
+                        يحدد ميل عدة آليات للمغالطة في هذه المفارقة:
+                        <br><br>
+                        1. <strong>الخلط الدلالي:</strong> الخلط بين "القابل للقسمة إلى ما لا نهاية" و"اللاّمتناهي" كما يشير هوبز.
+                        <br><br>
+                        2. <strong>الافتراض الضمني الخاطئ:</strong> افتراض أن ما يقبل القسمة إلى ما لا نهاية هو بالضرورة لا متناهٍ.
+                        <br><br>
+                        3. <strong>التلاعب باللغة:</strong> استخدام عبارة "دائماً" بمعنيين مختلفين:
+                        <br>
+                        - في المقدمات: تعني أي عدد من التقسيمات.
+                        <br>
+                        - في النتيجة: تعني أي قدر من الزمن.
+                        <br><br>
+                        4. <strong>إغفال التمييز بين المتناهي واللامتناهي:</strong> تجاهل أن الكل المتناهي يمكن أن يحتوي على عدد لا نهائي من الأجزاء المتناهية.
+                        <br><br>
+                        5. <strong>الخلط بين الرياضيات والواقع:</strong> تطبيق العمليات الرياضية المجردة (التقسيم إلى ما لا نهاية) على الواقع الفيزيائي دون مراعاة الفروق.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.achillesParadox.analysis.consequences.title">نتائج وخطورة هذه المغالطة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.achillesParadox.analysis.consequences.content">
+                        - <strong>تشويه الفهم الفلسفي:</strong> قد تؤدي هذه المغالطة إلى استنتاجات خاطئة عن طبيعة الحركة والزمان والمكان.
+                        <br><br>
+                        - <strong>تضليل الفكر النقدي:</strong> كما يوضح ميل، قبول هذه المغالطة "يرد العقل ذاته إلى الخلف".
+                        <br><br>
+                        - <strong>إعاقة التقدم العلمي:</strong]في الماضي، عرقلت هذه المفارقات تطور الفيزياء والرياضيات.
+                        <br><br>
+                        - <strong>خلق تناقضات وهمية:</strong> تقديم تناقضات ظاهرية بين العقل والتجربة.
+                        <br><br>
+                        - <strong>استغلال في الجدل الفلسفي:</strong]يمكن استخدام مثل هذه المغالطات لدعم مواقف فلسفية خاطئة.
+                        <br><br>
+                        - <strong>صعوبة الكشف:</strong]هذه المغالطة معقدة لأنها تعتمد على مفاهيم رياضية وفلسفية عميقة.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.achillesParadox.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.achillesParadox.analysis.significance.content">
+                        يحمل تحليل ميل لمفارقة أخيل والسلحفاة دلالات عميقة في الفلسفة والمنطق والرياضيات:
+                        <br><br>
+                        1. <strong>أهمية الدقة المفاهيمية:</strong> يؤكد النص على ضرورة الدقة في استخدام المفاهيم الفلسفية والرياضية.
+                        <br><br>
+                        2. <strong>العلاقة بين اللغة والمنطق:</strong]يكشف كيف يمكن للالتباس اللغوي أن يؤدي إلى أخطاء منطقية.
+                        <br><br>
+                        3. <strong>التمييز بين المتناهي واللامتناهي:</strong]يقدم تحليلاً دقيقاً للعلاقة بين المتناهي والقابل للتقسيم إلى ما لا نهاية.
+                        <br><br>
+                        4. <strong]نقد الفلسفة اليونانية:</strong> يمثل النص جزءاً من النقد الحديث للفلسفة اليونانية ومفارقاتها.
+                        <br><br>
+                        5. <strong>التقدم في فهم اللامتناهي:</strong]يعكس التطور في الفهم الرياضي والفلسفي لمفهوم اللامتناهي منذ زينون إلى ميل.
+                        <br><br>
+                        6. <strong>أهمية المنهج العلمي:</strong]يؤكد على أهمية الربط بين المنطق الرياضي والملاحظة التجريبية.
+                        <br><br>
+                        7. <strong>الدفاع عن العقل:</strong]كما يصرح ميل، الهدف من كشف المغالطة هو الدفاع عن العقل نفسه من الوقوع في التناقض.
+                        <br><br>
+                        هذا النص يمثل مساهمة مهمة في حل واحدة من أشهر المفارقات في تاريخ الفلسفة، ويكشف عن الآليات الدقيقة للمغالطات المنطقية التي تعتمد على الخلط بين المفاهيم.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.achillesParadox.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.achillesParadox.title": "Analyse du texte: Le paradoxe d'Achille et de la tortue - John Stuart Mill",
+                "PhiH.textAnalysis.achillesParadox.introduction.title": "Introduction",
+                "PhiH.textAnalysis.achillesParadox.introduction.content": "Les individus croient que lorsqu'ils parlent, ils utilisent des signes au sens précis qui leur permettent de communiquer avec les autres et d'exprimer clairement leurs intentions. Cependant, cette croyance ne résiste pas longtemps face à l'ambiguïté observée dans les termes qui conduit à des malentendus entre les locuteurs et peut être exploitée à des fins de sophisme. Il devient alors nécessaire d'abandonner l'attitude naïve envers les termes et de travailler à examiner leur ambiguïté pour contrecarrer les tentatives de les exploiter dans la tromperie.",
+                "PhiH.textAnalysis.achillesParadox.text.title": "Le paradoxe d'Achille et de la tortue",
+                "PhiH.textAnalysis.achillesParadox.text.content": "L'ambiguïté <sup>1</sup> de l'expression \"infini\" est la sophistique réelle présente dans le problème logique amusant d'Achille et de la tortue <sup>2</sup>. C'est un problème qui a failli faire perdre patience et perspicacité à de nombreux philosophes, dont le Dr Thomas Brown <sup>3</sup> qui le considère comme un problème insoluble et estime que c'est un argument valide bien qu'il conduise à une erreur manifeste. Il n'a pas réalisé entre-temps que l'acceptation de cela ramène la raison elle-même en arrière <sup>4</sup>. La sophistique réside comme Hobbes <sup>5</sup> l'a deviné dans l'hypothèse implicite <sup>6</sup> que ce qui est divisible à l'infini est infini.<br><br>Mais la solution suivante (dont je ne revendique pas la découverte) est plus précise et plus complète. Voici d'abord l'argument à ce sujet: Achille court dix fois plus vite que la tortue, et pourtant, si la tortue a une avance, Achille ne la rattrapera jamais. Supposons, en effet, qu'une distance de mille pieds les sépare, alors quand Achille aura parcouru cette distance, la tortue aura parcouru cent pieds, et quand Achille aura parcouru ces cent pieds, la tortue aura parcouru dix pieds, et ainsi de suite à l'infini. Achille peut donc courir toujours sans jamais rattraper la tortue.<br><br>Or, l'expression \"toujours\" dans la conclusion signifie n'importe quelle quantité de temps que nous voulons supposer, tandis que l'expression \"toujours\" dans les prémisses ne signifie pas une quantité temporelle, mais signifie n'importe quel nombre de divisions du temps. Cela signifie que nous pouvons diviser mille pieds par dix et diviser également ce quotient par dix et ainsi de suite, autant que nous le voulons, et cela signifie aussi qu'il n'y aura jamais de fin aux divisions de la distance ni aux divisions du temps pris pour la parcourir. Cependant, nous pouvons effectuer un nombre de divisions de ce qui est en soi limité. Cet argument ne prouve pas l'infinité d'un temps autre que le temps limité à cinq minutes. Tant que les cinq minutes ne sont pas écoulées, ce qui en reste est divisible par dix et ce dix par dix autant de fois que nous le voulons, ce qui correspond bien au fait que le tout n'équivaut qu'à cinq minutes. En résumé, l'argument prouve que parcourir cette distance finie nécessite un temps divisible à l'infini et non un temps infini. Et c'est cette confusion qui représente le point fort de cette sophistique comme Hobbes l'a peut-être réalisé.",
+                "PhiH.textAnalysis.achillesParadox.text.source": "John Stuart Mill, Système de logique déductive et inductive, Livre Cinquième: Des sophismes, traduction du comité de rédaction, Système de logique déductive et inductive, liv5, des sophismes, p 80-81",
+                "PhiH.textAnalysis.achillesParadox.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.achillesParadox.author.alt": "John Stuart Mill",
+                "PhiH.textAnalysis.achillesParadox.author.content": "John Stuart Mill (1806-1873) est un philosophe et économiste anglais de tendance libérale, autodidacte de formation, maîtrisant de nombreuses langues et excellent en mathématiques et en logique depuis son jeune âge, théoricien de l'utilitarisme, élu député à la Chambre des communes britannique, il a défendu le droit de vote des femmes, ce qui fut l'une des raisons de sa non-réélection. Parmi ses œuvres: Principes d'économie politique (1848), De la liberté (1859), L'utilitarisme (1861), De l'assujettissement des femmes (1869), Système de logique déductive et inductive (6e éd. 1869).",
+                "PhiH.textAnalysis.achillesParadox.lexical.title": "Notes et concepts",
+                "PhiH.textAnalysis.achillesParadox.lexical.item1": "<strong>\"Ambiguïté\":</strong> C'est une caractéristique des termes qui ont plusieurs significations, une multiplicité qui résulte de la signification du terme en lui-même ou de son association avec d'autres termes dans le contexte de la phrase ou des formes de son utilisation dans les situations de discours, ce qui le rend susceptible d'être compris de multiples manières créant confusion, mélange et contradiction. Cette caractéristique est exploitée pour tromper ou induire en erreur en mélangeant différentes significations lors de l'utilisation des termes dans la construction de propositions de raisonnement.",
+                "PhiH.textAnalysis.achillesParadox.lexical.item2": "<strong>\"Argument d'Achille et de la tortue\":</strong> C'est l'un des quatre arguments présentés par le philosophe grec Zénon d'Élée (né vers 490 av. J.-C. dans la ville d'Élée Elee et dont la date de décès est inconnue) pour défendre la théorie de son maître Parménide selon laquelle l'être est un, et pour rejeter la pluralité et le mouvement car c'est une affirmation qui conduit à de nombreux paradoxes prouvant son degré de contradiction intellectuelle et pratique.",
+                "PhiH.textAnalysis.achillesParadox.lexical.item3": "<strong>\"Thomas Brown\":</strong> (1778 - 1820): Philosophe écossais appartenant à l'école philosophique du \"sens commun\" common sense. Connu pour sa critique de la position de Hume sur la causalité.",
+                "PhiH.textAnalysis.achillesParadox.lexical.item4": "<strong>\"Ramène la raison elle-même en arrière\":</strong> Ici, Mill révèle l'enjeu de la découverte de la sophistique cachée dans le paradoxe d'Achille et de la tortue qui est la défense de la raison elle-même du danger de recul si elle succombe à la contradiction à laquelle a abouti la position de Thomas Brown quand il a vu dans ce paradoxe un argument valide d'une part, et une erreur manifeste d'autre part.",
+                "PhiH.textAnalysis.achillesParadox.lexical.item5": "<strong>\"Thomas Hobbes\":</strong> Philosophe anglais (1588 - 1679), connu pour sa position empiriste qui considère que la connaissance trouve son point de départ dans les influences de la réalité sensible sur le sujet. De ces influences se forment des conceptions partielles que l'homme exprime par des termes formés arbitrairement, c'est pourquoi il a nié l'existence d'idées générales affirmant sa position nominaliste (nominaliste).",
+                "PhiH.textAnalysis.achillesParadox.lexical.item6": "<strong>\"Hypothèse implicite\":</strong> C'est ce qu'un jugement suppose et adopte comme point de départ sans l'annoncer explicitement. Et cela signifie que la sophistique ne révèle son défaut qu'en examinant ses présuppositions dont elle part sans les annoncer dans le contexte des propositions qu'elle utilise.",
+                "PhiH.textAnalysis.achillesParadox.questions.title": "Tâches",
+                "PhiH.textAnalysis.achillesParadox.questions.q1": "Je reviens à un dictionnaire philosophique pour déterminer la signification de l'expression \"infini\".",
+                "PhiH.textAnalysis.achillesParadox.questions.q2": "J'explique si tout ce qui est divisible à l'infini est infini ?",
+                "PhiH.textAnalysis.achillesParadox.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.achillesParadox.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.achillesParadox.answers.a1.content": "<strong>Signification de l'expression \"infini\" (Infinite):</strong> C'est ce qui n'a pas de limites ou de fin, que ce soit dans l'espace, le temps ou le nombre. En philosophie et en mathématiques, l'infini est un concept qui désigne ce qui est illimité, non fini, qui ne se termine pas.<br><br>Il existe deux types d'infini:<br>1. <strong>L'infini actuel (Actual Infinite):</strong> C'est l'existence d'une quantité infinie existant réellement en même temps.<br>2. <strong>L'infini potentiel (Potential Infinite):</strong> C'est un processus qui peut continuer à l'infini sans qu'une totalité infinie n'existe en même temps.<br><br>Dans le texte de Mill, le problème réside dans la confusion entre \"divisible à l'infini\" (qui est fini mais peut être divisé en un nombre infini de parties) et \"infini\" (qui n'a pas de limites).",
+                "PhiH.textAnalysis.achillesParadox.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.achillesParadox.answers.a2.content": "<strong>Analyse:</strong><br><br><strong>Non, tout ce qui est divisible à l'infini n'est pas infini.</strong> Et c'est l'essence de la sophistique dans le paradoxe d'Achille et de la tortue comme l'a expliqué John Stuart Mill.<br><br><strong>Distinction fondamentale:</strong><br><br>1. <strong>Le fini divisible à l'infini (Divisible Infinitely):</strong><br>- Une quantité limitée qui peut être divisée en un nombre infini de parties plus petites.<br>- Exemple: La distance entre deux points (1000 pieds) peut être divisée en deux, puis en quatre, puis en huit... à l'infini.<br>- Le temps limité (5 minutes) peut être divisé en un nombre infini de périodes temporelles plus petites.<br><br>2. <strong>L'infini (Infinite):</strong><br>- Une quantité illimitée, qui n'a pas de fin.<br>- Exemple: Une ligne droite sans début ni fin, un temps éternel sans début ni fin.<br><br><strong>Confusion dans le paradoxe:</strong><br>- Zénon confond \"distance divisible à l'infini\" (qui est finie) et \"distance infinie\".<br>- Il confond \"temps divisible à l'infini\" (qui est fini) et \"temps infini\".<br><br><strong>Conclusion:</strong> Parcourir une distance finie (1000 pieds) en un temps fini (5 minutes) bien que la distance et le temps soient divisibles à l'infini en parties. La capacité de division infinie ne signifie pas que le tout lui-même est infini.",
+                "PhiH.textAnalysis.achillesParadox.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.achillesParadox.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.achillesParadox.analysis.thesis.content": "John Stuart Mill révèle dans ce texte la sophistique logique cachée dans le paradoxe d'Achille et de la tortue de Zénon d'Élée, et affirme que l'essence de cette sophistique réside dans la confusion entre deux concepts différents: \"divisible à l'infini\" et \"infini\". Mill explique qu'une distance finie et un temps fini peuvent être divisés en un nombre infini de parties sans que cela signifie que la distance elle-même ou le temps lui-même est infini.",
+                "PhiH.textAnalysis.achillesParadox.analysis.mechanisms.title": "Mécanismes de la sophistique dans le paradoxe d'Achille et de la tortue:",
+                "PhiH.textAnalysis.achillesParadox.analysis.mechanisms.content": "Mill identifie plusieurs mécanismes de sophistique dans ce paradoxe:<br><br>1. <strong>Confusion sémantique:</strong> Confusion entre \"divisible à l'infini\" et \"infini\" comme l'indique Hobbes.<br><br>2. <strong>Hypothèse implicite erronée:</strong> Supposer que ce qui est divisible à l'infini est nécessairement infini.<br><br>3. <strong>Manipulation du langage:</strong> Utilisation de l'expression \"toujours\" avec deux significations différentes:<br>- Dans les prémisses: signifie n'importe quel nombre de divisions.<br>- Dans la conclusion: signifie n'importe quelle quantité de temps.<br><br>4. <strong>Omission de la distinction entre fini et infini:</strong> Négliger qu'un tout fini peut contenir un nombre infini de parties finies.<br><br>5. <strong>Confusion entre mathématiques et réalité:</strong> Application d'opérations mathématiques abstraites (division à l'infini) à la réalité physique sans tenir compte des différences.",
+                "PhiH.textAnalysis.achillesParadox.analysis.consequences.title": "Conséquences et danger de cette sophistique:",
+                "PhiH.textAnalysis.achillesParadox.analysis.consequences.content": "- <strong>Déformation de la compréhension philosophique:</strong> Cette sophistique peut conduire à des conclusions erronées sur la nature du mouvement, du temps et de l'espace.<br><br>- <strong>Tromperie de la pensée critique:</strong> Comme l'explique Mill, accepter cette sophistique \"ramène la raison elle-même en arrière\".<br><br>- <strong>Obstruction du progrès scientifique:</strong> Dans le passé, ces paradoxes ont entravé le développement de la physique et des mathématiques.<br><br>- <strong>Création de contradictions illusoires:</strong> Présentation de contradictions apparentes entre la raison et l'expérience.<br><br>- <strong>Exploitation dans le débat philosophique:</strong> De telles sophistiques peuvent être utilisées pour soutenir des positions philosophiques erronées.<br><br>- <strong>Difficulté de détection:</strong> Cette sophistique est complexe car elle s'appuie sur des concepts mathématiques et philosophiques profonds.",
+                "PhiH.textAnalysis.achillesParadox.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.achillesParadox.analysis.significance.content": "L'analyse de Mill du paradoxe d'Achille et de la tortue porte des significations profondes en philosophie, logique et mathématiques:<br><br>1. <strong>Importance de la précision conceptuelle:</strong> Le texte souligne la nécessité de précision dans l'utilisation des concepts philosophiques et mathématiques.<br><br>2. <strong>Relation entre langage et logique:</strong> Révèle comment l'ambiguïté linguistique peut conduire à des erreurs logiques.<br><br>3. <strong>Distinction entre fini et infini:</strong> Présente une analyse précise de la relation entre le fini et le divisible à l'infini.<br><br>4. <strong>Critique de la philosophie grecque:</strong> Représente une partie de la critique moderne de la philosophie grecque et de ses paradoxes.<br><br>5. <strong>Progrès dans la compréhension de l'infini:</strong> Reflète l'évolution dans la compréhension mathématique et philosophique du concept d'infini depuis Zénon jusqu'à Mill.<br><br>6. <strong>Importance de la méthode scientifique:</strong> Souligne l'importance du lien entre la logique mathématique et l'observation empirique.<br><br>7. <strong>Défense de la raison:</strong> Comme Mill le déclare, l'objectif de révéler la sophistique est de défendre la raison elle-même contre la contradiction.<br><br>Ce texte représente une contribution importante à la résolution de l'un des paradoxes les plus célèbres de l'histoire de la philosophie, et révèle les mécanismes précis des sophistiques logiques qui s'appuient sur la confusion entre les concepts."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.achillesParadox.level": "3rd Secondary - Philosophy",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.achillesParadox.title": "Text Analysis: Achilles and the Tortoise Paradox - John Stuart Mill",
+                "PhiH.textAnalysis.achillesParadox.introduction.title": "Introduction",
+                "PhiH.textAnalysis.achillesParadox.introduction.content": "Individuals believe that when they speak, they use signs with precise meanings that allow them to communicate with others and clearly express their intentions. However, this belief does not hold up for long in the face of the observed ambiguity in terms that leads to misunderstandings between speakers and can be exploited for the purpose of sophistry. It then becomes necessary to abandon the naive attitude towards terms and work to examine their ambiguity to thwart attempts to exploit them in deception.",
+                "PhiH.textAnalysis.achillesParadox.text.title": "Achilles and the Tortoise Paradox",
+                "PhiH.textAnalysis.achillesParadox.text.content": "The ambiguity <sup>1</sup> of the expression \"infinite\" is the actual sophistry present in the amusing logical problem of Achilles and the Tortoise <sup>2</sup>. It is a problem that almost made many philosophers lose their patience and insight, including Dr. Thomas Brown <sup>3</sup> who considers it an unsolvable problem and estimates that it is a valid argument although it leads to a manifest error. He did not realize in the meantime that accepting this sets reason itself back <sup>4</sup>. The sophistry lies as Hobbes <sup>5</sup> intuited in the implicit assumption <sup>6</sup> that what is infinitely divisible is infinite.<br><br>But the following solution (which I do not claim to have discovered) is more accurate and complete. Here first is the argument about it: Achilles runs ten times faster than the tortoise, and yet, if the tortoise has a head start, Achilles will never catch it. Suppose, indeed, that a distance of a thousand feet separates them, then when Achilles has covered this distance, the tortoise will have covered a hundred feet, and when Achilles has covered this hundred feet, the tortoise will have covered ten feet, and so on to infinity. Achilles can therefore run forever without ever catching the tortoise.<br><br>Now, the expression \"forever\" in the conclusion means any amount of time we want to assume, while the expression \"forever\" in the premises does not mean a temporal amount, but means any number of divisions of time. It means that we can divide a thousand feet by ten and also divide this quotient by ten and so on, as much as we want, and it also means that there will never be an end to the divisions of the distance nor to the divisions of the time taken to cover it. However, we can perform a number of divisions of what is in itself limited. This argument does not prove the infinity of a time other than the time limited to five minutes. As long as the five minutes are not elapsed, what remains of them is divisible by ten and this ten by ten as many times as we want, which corresponds well to the fact that the whole is only equal to five minutes. In summary, the argument proves that covering this finite distance requires a time divisible to infinity and not an infinite time. And it is this confusion that represents the strength of this sophistry as Hobbes may have realized.",
+                "PhiH.textAnalysis.achillesParadox.text.source": "John Stuart Mill, System of Logic Deductive and Inductive, Book Fifth: On Fallacies, translation by the editorial committee, System of Logic Deductive and Inductive, liv5, on fallacies, p 80-81",
+                "PhiH.textAnalysis.achillesParadox.author.title": "Author Presentation",
+                "PhiH.textAnalysis.achillesParadox.author.alt": "John Stuart Mill",
+                "PhiH.textAnalysis.achillesParadox.author.content": "John Stuart Mill (1806-1873) was an English philosopher and economist of liberal tendency, self-educated, proficient in many languages and excelling in mathematics and logic from a young age, a theorist of utilitarianism, elected as a Member of Parliament to the British House of Commons, he defended women's right to vote, which was among the reasons for his non-reelection. Among his works: Principles of Political Economy (1848), On Liberty (1859), Utilitarianism (1861), The Subjection of Women (1869), System of Logic Deductive and Inductive (6th ed. 1869).",
+                "PhiH.textAnalysis.achillesParadox.lexical.title": "Footnotes and Concepts",
+                "PhiH.textAnalysis.achillesParadox.lexical.item1": "<strong>\"Ambiguity\":</strong> It is a characteristic of terms that have multiple meanings, a multiplicity that results from the meaning of the term itself or from its association with other terms in the context of the sentence or from forms of its use in speech situations, making it susceptible to being understood in multiple ways creating confusion, mixing, and contradiction. This characteristic is exploited to deceive or lead into error by mixing different meanings when using terms in constructing reasoning propositions.",
+                "PhiH.textAnalysis.achillesParadox.lexical.item2": "<strong>\"Achilles and the Tortoise argument\":</strong> It is one of four arguments presented by the Greek philosopher Zeno of Elea (born around 490 BC in the city of Elea and whose date of death is unknown) to defend his teacher Parmenides' theory that being is one, and to reject plurality and motion because it is a statement that leads to many paradoxes proving its degree of intellectual and practical contradiction.",
+                "PhiH.textAnalysis.achillesParadox.lexical.item3": "<strong>\"Thomas Brown\":</strong> (1778 - 1820): Scottish philosopher belonging to the philosophical school of \"common sense\". Known for his criticism of Hume's position on causality.",
+                "PhiH.textAnalysis.achillesParadox.lexical.item4": "<strong>\"Sets reason itself back\":</strong> Here, Mill reveals the stake of discovering the sophistry hidden in the Achilles and the Tortoise paradox which is the defense of reason itself from the danger of regression if it succumbs to the contradiction that Thomas Brown's position reached when he saw in that paradox a valid argument on one hand, and a manifest error on the other.",
+                "PhiH.textAnalysis.achillesParadox.lexical.item5": "<strong>\"Thomas Hobbes\":</strong> English philosopher (1588 - 1679), known for his empiricist position which considers that knowledge finds its starting point in the influences of sensible reality on the subject. From these influences partial conceptions are formed that man expresses by terms formed arbitrarily, therefore he denied the existence of general ideas affirming his nominalist position.",
+                "PhiH.textAnalysis.achillesParadox.lexical.item6": "<strong>\"Implicit assumption\":</strong> It is what a judgment supposes and adopts as a starting point without announcing it explicitly. And this means that the sophistry reveals its defect only by examining its presuppositions from which it starts without announcing them in the context of the propositions it uses.",
+                "PhiH.textAnalysis.achillesParadox.questions.title": "Tasks",
+                "PhiH.textAnalysis.achillesParadox.questions.q1": "I return to a philosophical dictionary to determine the meaning of the expression \"infinite\".",
+                "PhiH.textAnalysis.achillesParadox.questions.q2": "I explain whether everything that is divisible to infinity is infinite?",
+                "PhiH.textAnalysis.achillesParadox.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.achillesParadox.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.achillesParadox.answers.a1.content": "<strong>Meaning of the expression \"infinite\":</strong> That which has no limits or end, whether in space, time, or number. In philosophy and mathematics, infinity is a concept that refers to what is unlimited, non-finite, that does not end.<br><br>There are two types of infinity:<br>1. <strong>Actual Infinite:</strong> The existence of an infinite quantity actually existing at the same time.<br>2. <strong>Potential Infinite:</strong> A process that can continue indefinitely without an infinite totality existing at the same time.<br><br>In Mill's text, the problem lies in the confusion between \"divisible to infinity\" (which is finite but can be divided into an infinite number of parts) and \"infinite\" (which has no limits).",
+                "PhiH.textAnalysis.achillesParadox.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.achillesParadox.answers.a2.content": "<strong>Analysis:</strong><br><br><strong>No, not everything that is divisible to infinity is infinite.</strong> And this is the essence of the sophistry in the Achilles and the Tortoise paradox as explained by John Stuart Mill.<br><br><strong>Fundamental distinction:</strong><br><br>1. <strong>Finite divisible to infinity (Divisible Infinitely):</strong><br>- A limited quantity that can be divided into an infinite number of smaller parts.<br>- Example: The distance between two points (1000 feet) can be divided into halves, then quarters, then eighths... to infinity.<br>- Limited time (5 minutes) can be divided into an infinite number of smaller time periods.<br><br>2. <strong>Infinite:</strong><br>- An unlimited quantity, which has no end.<br>- Example: A straight line with no beginning or end, eternal time with no beginning or end.<br><br><strong>Confusion in the paradox:</strong><br>- Zeno confuses \"distance divisible to infinity\" (which is finite) and \"infinite distance\".<br>- He confuses \"time divisible to infinity\" (which is finite) and \"infinite time\".<br><br><strong>Conclusion:</strong> Covering a finite distance (1000 feet) in a finite time (5 minutes) although the distance and time are divisible to infinity into parts. The ability for infinite division does not mean that the whole itself is infinite.",
+                "PhiH.textAnalysis.achillesParadox.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.achillesParadox.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.achillesParadox.analysis.thesis.content": "John Stuart Mill reveals in this text the logical sophistry hidden in Zeno's Achilles and the Tortoise paradox, and affirms that the essence of this sophistry lies in the confusion between two different concepts: \"divisible to infinity\" and \"infinite\". Mill explains that a finite distance and finite time can be divided into an infinite number of parts without that meaning that the distance itself or the time itself is infinite.",
+                "PhiH.textAnalysis.achillesParadox.analysis.mechanisms.title": "Mechanisms of sophistry in the Achilles and the Tortoise paradox:",
+                "PhiH.textAnalysis.achillesParadox.analysis.mechanisms.content": "Mill identifies several mechanisms of sophistry in this paradox:<br><br>1. <strong>Semantic confusion:</strong> Confusion between \"divisible to infinity\" and \"infinite\" as indicated by Hobbes.<br><br>2. <strong>Erroneous implicit assumption:</strong> Assuming that what is divisible to infinity is necessarily infinite.<br><br>3. <strong>Language manipulation:</strong> Using the expression \"forever\" with two different meanings:<br>- In the premises: means any number of divisions.<br>- In the conclusion: means any amount of time.<br><br>4. <strong>Omission of the distinction between finite and infinite:</strong> Neglecting that a finite whole can contain an infinite number of finite parts.<br><br>5. <strong>Confusion between mathematics and reality:</strong> Applying abstract mathematical operations (division to infinity) to physical reality without considering the differences.",
+                "PhiH.textAnalysis.achillesParadox.analysis.consequences.title": "Consequences and danger of this sophistry:",
+                "PhiH.textAnalysis.achillesParadox.analysis.consequences.content": "- <strong>Distortion of philosophical understanding:</strong> This sophistry can lead to erroneous conclusions about the nature of motion, time, and space.<br><br>- <strong>Deception of critical thinking:</strong> As Mill explains, accepting this sophistry \"sets reason itself back\".<br><br>- <strong>Obstruction of scientific progress:</strong> In the past, these paradoxes hindered the development of physics and mathematics.<br><br>- <strong>Creation of illusory contradictions:</strong> Presentation of apparent contradictions between reason and experience.<br><br>- <strong>Exploitation in philosophical debate:</strong> Such sophistries can be used to support erroneous philosophical positions.<br><br>- <strong>Difficulty of detection:</strong> This sophistry is complex because it relies on deep mathematical and philosophical concepts.",
+                "PhiH.textAnalysis.achillesParadox.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.achillesParadox.analysis.significance.content": "Mill's analysis of the Achilles and the Tortoise paradox carries deep meanings in philosophy, logic, and mathematics:<br><br>1. <strong>Importance of conceptual precision:</strong> The text emphasizes the necessity of precision in using philosophical and mathematical concepts.<br><br>2. <strong>Relation between language and logic:</strong> Reveals how linguistic ambiguity can lead to logical errors.<br><br>3. <strong>Distinction between finite and infinite:</strong> Presents a precise analysis of the relationship between the finite and the infinitely divisible.<br><br>4. <strong>Critique of Greek philosophy:</strong> Represents part of the modern critique of Greek philosophy and its paradoxes.<br><br>5. <strong>Progress in understanding infinity:</strong> Reflects the evolution in mathematical and philosophical understanding of the concept of infinity from Zeno to Mill.<br><br>6. <strong>Importance of scientific method:</strong> Emphasizes the importance of linking mathematical logic with empirical observation.<br><br>7. <strong>Defense of reason:</strong> As Mill declares, the goal of revealing the sophistry is to defend reason itself from contradiction.<br><br>This text represents an important contribution to solving one of the most famous paradoxes in the history of philosophy, and reveals the precise mechanisms of logical sophistries that rely on confusion between concepts."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.achillesParadox.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.achillesParadox.title": "تحليل النص: مفارقة أخيل والسلحفاة - جون ستوارت ميل",
+                "PhiH.textAnalysis.achillesParadox.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.achillesParadox.introduction.content": "يعتقد الأفراد أنّهم حين يتكلّمون إنّما يستعملون علاماتٍ دقيقة الدلالة تُتيح لهم التواصل مع الآخرين والتعبير بوضوح عن مقاصدهم. غير أنّ هذا الاعتقاد لا يصمد كثيرا أمام ما يُعاين من التباس في الألفاظ يقود إلى سوء تفاهم بين المتكلّمين قد يُستغّل لغرض المغالطة. عندئذ يصبح من الضروريّ التخلّي عن الموقف الساذج من الألفاظ والعمل على فحص التباسها لإحباط محاولات استغلالها في المغالطة.",
+                "PhiH.textAnalysis.achillesParadox.text.title": "مفارقة أخيل والسلحفاة",
+                "PhiH.textAnalysis.achillesParadox.text.content": "إنّ التباس <sup>1</sup> عبارة \"لا متناه\" هو المغالطة الفعلية الحاضرة في المشكل المنطقيّ الطريف لأخيل والسلحفاة <sup>2</sup>. وهو مشكل كاد يُفقد العديد من الفلاسفة صبرهم وفطنتهم، ومن بينهم الدكتور توماس براون <sup>3</sup> الذي يعتبره مشكلا غير قابل للحلّ ويُقدّر أنّه حجّة صالحة رغم كونه يُفضي إلى خطأ بيّن. وهو لم يتفطِّن في الأثناء إلى أنّ التسليم بذلك يَرُدّ العقل ذاته إلى الخلف <sup>4</sup>. إنّ المغالطة ثاوية كما حدس ذلك هوبز <sup>5</sup> في الافتراض الضمنيّ <sup>6</sup> بأنّ ما يقبل القسمة إلى ما لانهاية له هو لا متناه.<br><br>لكنّ الحلّ الموالي (والذي لا يعود إليّ فضل اكتشافه) هو أدقّ وأوفى. وإليكم بدءا الحجّة على ذلك: إنّ أخيل يجري بسرعة تفوق السلحفاة بعشر مرّات، ومع ذلك، إذا كان للسلحفاة السبق فلن يُدركها أخيل أبدا. فلنفترض، فعلا، أنّ مسافة ألف قدم تفصل بينهما، فإنّه عندما يكون أخيل قد قطع هذه المسافة، تكون السلحفاة قد قطعت مائة قدم، وعندما يكون أخيل قد قطع مسافة المائة قدم هذه، تكون السلحفاة قد قطعت عشرة أقدام، وهكذا دواليك دائما إلى ما لا نهاية. يُمكن لأخيل، إذن، أن يجري دائما دون أن يُدرك السلحفاة أبدا.<br><br>والآن، إنّ عبارة \"دائماً\" الواردة في النتيجة تعني أيّ قدر من الزمن نريد افتراضه، بينما لا تعني عبارة \"دائما\" في المقدّمات مقدارا زمنيًا ما، وإنّما تعني أيّ عدد كان من تقسيمات الزمن. إنّها تعني أنّه بإمكاننا أن نقَسِّم ألف قدم على عشرة وأن نقَسِّم كذلك هذا الحاصل على عشرة وهكذا دواليك، قدر ما نريد، كما تعني أنّه لن تكون هنالك أبدا نهاية التقسيمات المسافة ولا لتقسيمات الزمن المستغرق في قطعها. غير أنّه بإمكاننا القيام بعدد من التّقسيمات لما هو في حدّ ذاته محدود. إنّ هذه الحجّة لا تبرهن على لا تناهي زمن غير الزمن المحدود بخمس دقائق. فما لم تنقضِ الدقائق الخمس فإنّ ما يتبقّى منها يكون قابلا للقسمة على عشرة وهذه العشرة على عشرةٍ قدر ما نريد من المرّات، وهو ما يتلاءم جيّدا مع واقع أنّ الكلّ لا يساوي غير خمس دقائق. وإجمالا، فإنّ الحجّة تُثبت، أنّ قطع هذه المسافة المتناهية يقتضي زمنا قابلا للقسمة إلى ما لانهاية وليس زمنا لا متناهيا. وذلك هو الخلط الذي يُمثّل مكمن قوّة هذه المغالطة كما قد تفطّن إلى ذلك هوبز.",
+                "PhiH.textAnalysis.achillesParadox.text.source": "جون ستوارت ميل، نسق المنطق الاستنتاجيّ والاستقرائيّ، الكتاب الخامس: في المغالطات، ترجمة لجنة التأليف، Système de logique déductive et inductive, liv5, des sophismes, p 80-81",
+                "PhiH.textAnalysis.achillesParadox.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.achillesParadox.author.alt": "جون ستوارت ميل",
+                "PhiH.textAnalysis.achillesParadox.author.content": "جون ستوارت ميل (1806-1873) فيلسوف ورجل اقتصاد إنجليزي ليبرالي النزعة عصامي التكوين، حذق لغات عديدة وبرع في الرياضيات والمنطق منذ حداثة سنه، من منظري النزعة النّفعيّة انتخب نائبا بمجلس العموم البريطاني دافع عن حق المرأة في الانتخاب وكان ذلك من بين أسباب عدم إعادة انتخابه. من بين مؤلفاته: مبادئ الاقتصاد السياسي (1848)، الحرية (1859)، النزعة النفعية (1861)، في استعباد النساء (1869)، نسق المنطق الاستنتاجي والاستقرائي (1869 ط 6).",
+                "PhiH.textAnalysis.achillesParadox.lexical.title": "الهوامش والمفاهيم",
+                "PhiH.textAnalysis.achillesParadox.lexical.item1": "<strong>\"الالتباس\":</strong> هو صفة للألفاظ التي تتعدّد معانيها، وهو تعدّد ينجم عن دلالة اللفظ في حدّ ذاته أو عن ارتباطه بألفاظ أخرى في سياق الجملة أو عن أشكال استعماله في مقامات الكلام فيكون بذلك قابلا لأن يُفهم بأشكالٍ متعدّدة تحدث خلطا وتداخلا وتعارضا. وتُستغلّ هذه الصّفة في التّغليط أو توقع في الغلط بالخلط بين مختلف الدلالات عند استعمال الألفاظ في بناء قضايا الاستدلال.",
+                "PhiH.textAnalysis.achillesParadox.lexical.item2": "<strong>\"حجّة أخيل والسلحفاة\":</strong> هي حجّة من بين أربع حجج قدّمها الفيلسوف اليوناني زينون الإيليّ (ولد حوالي 490 ق م في مدينة إيلي Elee ولا يُعلم تاريخ وفاته) دفاعا عن نظريّة أستاذه بارمنيدس القائلة إنّ الوجود واحد، ورفضا للقول بالتعدّد والحركة لكونه قولاً يقود إلى مفارقات عديدة تثبت مدى تناقضه العقليّ والفعليّ.",
+                "PhiH.textAnalysis.achillesParadox.lexical.item3": "<strong>\"توماس براون\":</strong> (1778 - 1820): فيلسوف اسكتلندي ينتمي إلى مدرسة \"الحسّ المشترك\" common sense الفلسفيّة. عُرف بنقده لموقف هيوم من السببيّة.",
+                "PhiH.textAnalysis.achillesParadox.lexical.item4": "<strong>\"يردّ العقل ذاته إلى الخلف\":</strong> هنا يُفصح ميل عن الرهان من الكشف عن المغالطة الثاوية في مفارقة أخيل والسلحفاة وهو الدفاع عن العقل نفسه من خطر الوقوع في الخلف إن هو استسلم إلى ما آل إليه موقف توماس براون من تناقض حين رأى في تلك المفارقة حجّة صالحةً من جهة، وخطأ بيّنا من جهة أخرى.",
+                "PhiH.textAnalysis.achillesParadox.lexical.item5": "<strong>\"توماس هوبز\":</strong> فيلسوف انجليزي (1588 - 1679)، عُرف بموقفه الخبريّ الذي يرى أنّ المعرفة إنّما تجد منطلقها في تأثيرات الواقع الحسيّ في الذات. ومن هذه التأثيرات تتكوّن تصوّرات جزئيّة يعبّر عنها الإنسان بألفاظ تشكّلت اعتباطيا، لذلك أنكر وجود أفكار عامة مؤكّدا موقفه الاسمانيّ (nominaliste).",
+                "PhiH.textAnalysis.achillesParadox.lexical.item6": "<strong>\"الافتراض الضمنيّ\":</strong> هو ما يسلّم به حكمٌ ما ويعتمده كمنطلق دون الإعلان عنه بشكلٍ صريح. وفي ذلك ما يفيد أنّ المغالطة لا يُكشف خللها إلا بتقصّ لمفترضاتها التي تنطلق منها دون الإعلان عنها في سياق القضايا التي تعتمدها.",
+                "PhiH.textAnalysis.achillesParadox.questions.title": "المهام",
+                "PhiH.textAnalysis.achillesParadox.questions.q1": "أعود إلى معجم فلسفيّ لأحدّد دلالة عبارة \"لا متناه\".",
+                "PhiH.textAnalysis.achillesParadox.questions.q2": "أبّن ما إذا كان كل ما يقبل القسمة إلى ما لا نهاية هو لا متناه ؟",
+                "PhiH.textAnalysis.achillesParadox.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.achillesParadox.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.achillesParadox.answers.a1.content": "<strong>دلالة عبارة \"لا متناه\" (Infinite):</strong> هو ما ليس له حدود أو نهاية، سواء في المكان أو الزمان أو العدد. في الفلسفة والرياضيات، اللاّمتناهي هو مفهوم يُشير إلى ما هو غير محدود، غير متناه، لا ينتهي.<br><br>هناك نوعان من اللاّمتناهي:<br>1. <strong>اللاّمتناهي بالامتداد (Actual Infinite):</strong> وهو وجود كميّة لا نهائية موجودة فعلياً في وقت واحد.<br>2. <strong>اللاّمتناهي بالاستمرار (Potential Infinite):</strong> وهو عملية يمكن أن تستمر إلى ما لا نهاية دون أن توجد كلية لا نهائية في وقت واحد.<br><br>في نص ميل، المشكلة تكمن في الخلط بين \"القابل للقسمة إلى ما لا نهاية\" (وهو متناهٍ لكن يمكن تقسيمه إلى عدد لا نهائي من الأجزاء) و\"اللاّمتناهي\" (الذي لا حدود له).",
+                "PhiH.textAnalysis.achillesParadox.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.achillesParadox.answers.a2.content": "<strong>التحليل:</strong><br><br><strong>لا، ليس كل ما يقبل القسمة إلى ما لا نهاية هو لا متناه.</strong> وهذا هو جوهر المغالطة في مفارقة أخيل والسلحفاة كما أوضح جون ستوارت ميل.<br><br><strong>التمييز الأساسي:</strong><br><br>1. <strong>المتناهي القابل للقسمة إلى ما لا نهاية (Divisible Infinitely):</strong><br>- كمية محدودة يمكن تقسيمها إلى عدد لا نهائي من الأجزاء الأصغر.<br>- مثال: المسافة بين نقطتين (1000 قدم) يمكن تقسيمها إلى نصفين، ثم ربع، ثم ثمن... إلى ما لا نهاية.<br>- الزمن المحدود (5 دقائق) يمكن تقسيمه إلى عدد لا نهائي من الفترات الزمنية الأصغر.<br><br>2. <strong>اللاّمتناهي (Infinite):</strong><br>- كمية غير محدودة، ليس لها نهاية.<br>- مثال: خط مستقيم بلا بداية ولا نهاية، زمن سرمدي بلا بداية ولا نهاية.<br><br><strong>الخلط في المفارقة:</strong><br>- يخلط زينون بين \"المسافة القابلة للقسمة إلى ما لا نهاية\" (وهي متناهية) و\"المسافة اللاّمتناهية\".<br>- يخلط بين \"الزمن القابل للقسمة إلى ما لا نهاية\" (وهو متناه) و\"الزمن اللاّمتناهي\".<br><br><strong>الاستنتاج:</strong> قطع مسافة متناهية (1000 قدم) في زمن متناه (5 دقائق) مع أن المسافة والزمن قابلان للتقسيم إلى ما لا نهاية من الأجزاء. القدرة على التقسيم اللامتناهي لا تعني أن الكل نفسه لا متناهٍ.",
+                "PhiH.textAnalysis.achillesParadox.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.achillesParadox.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.achillesParadox.analysis.thesis.content": "يكشف جون ستوارت ميل في هذا النص عن المغالطة المنطقية الكامنة في مفارقة أخيل والسلحفاة لزينون الإيلي، ويؤكد أن جوهر هذه المغالطة يكمن في الخلط بين مفهومين مختلفين: \"القابل للقسمة إلى ما لا نهاية\" و\"اللاّمتناهي\". يوضح ميل أن المسافة المتناهية والزمن المتناهي يمكن تقسيمهما إلى عدد لا نهائي من الأجزاء دون أن يعني ذلك أن المسافة نفسها أو الزمن نفسه لا متناهٍ.",
+                "PhiH.textAnalysis.achillesParadox.analysis.mechanisms.title": "آليات المغالطة في مفارقة أخيل والسلحفاة:",
+                "PhiH.textAnalysis.achillesParadox.analysis.mechanisms.content": "يحدد ميل عدة آليات للمغالطة في هذه المفارقة:<br><br>1. <strong>الخلط الدلالي:</strong> الخلط بين \"القابل للقسمة إلى ما لا نهاية\" و\"اللاّمتناهي\" كما يشير هوبز.<br><br>2. <strong>الافتراض الضمني الخاطئ:</strong> افتراض أن ما يقبل القسمة إلى ما لا نهاية هو بالضرورة لا متناهٍ.<br><br>3. <strong>التلاعب باللغة:</strong> استخدام عبارة \"دائماً\" بمعنيين مختلفين:<br>- في المقدمات: تعني أي عدد من التقسيمات.<br>- في النتيجة: تعني أي قدر من الزمن.<br><br>4. <strong>إغفال التمييز بين المتناهي واللامتناهي:</strong> تجاهل أن الكل المتناهي يمكن أن يحتوي على عدد لا نهائي من الأجزاء المتناهية.<br><br>5. <strong>الخلط بين الرياضيات والواقع:</strong> تطبيق العمليات الرياضية المجردة (التقسيم إلى ما لا نهاية) على الواقع الفيزيائي دون مراعاة الفروق.",
+                "PhiH.textAnalysis.achillesParadox.analysis.consequences.title": "نتائج وخطورة هذه المغالطة:",
+                "PhiH.textAnalysis.achillesParadox.analysis.consequences.content": "- <strong>تشويه الفهم الفلسفي:</strong> قد تؤدي هذه المغالطة إلى استنتاجات خاطئة عن طبيعة الحركة والزمان والمكان.<br><br>- <strong>تضليل الفكر النقدي:</strong> كما يوضح ميل، قبول هذه المغالطة \"يرد العقل ذاته إلى الخلف\".<br><br>- <strong>إعاقة التقدم العلمي:</strong> في الماضي، عرقلت هذه المفارقات تطور الفيزياء والرياضيات.<br><br>- <strong>خلق تناقضات وهمية:</strong> تقديم تناقضات ظاهرية بين العقل والتجربة.<br><br>- <strong>استغلال في الجدل الفلسفي:</strong> يمكن استخدام مثل هذه المغالطات لدعم مواقف فلسفية خاطئة.<br><br>- <strong>صعوبة الكشف:</strong> هذه المغالطة معقدة لأنها تعتمد على مفاهيم رياضية وفلسفية عميقة.",
+                "PhiH.textAnalysis.achillesParadox.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.achillesParadox.analysis.significance.content": "يحمل تحليل ميل لمفارقة أخيل والسلحفاة دلالات عميقة في الفلسفة والمنطق والرياضيات:<br><br>1. <strong>أهمية الدقة المفاهيمية:</strong> يؤكد النص على ضرورة الدقة في استخدام المفاهيم الفلسفية والرياضية.<br><br>2. <strong>العلاقة بين اللغة والمنطق:</strong> يكشف كيف يمكن للالتباس اللغوي أن يؤدي إلى أخطاء منطقية.<br><br>3. <strong>التمييز بين المتناهي واللامتناهي:</strong> يقدم تحليلاً دقيقاً للعلاقة بين المتناهي والقابل للتقسيم إلى ما لا نهاية.<br><br>4. <strong>نقد الفلسفة اليونانية:</strong> يمثل النص جزءاً من النقد الحديث للفلسفة اليونانية ومفارقاتها.<br><br>5. <strong>التقدم في فهم اللامتناهي:</strong> يعكس التطور في الفهم الرياضي والفلسفي لمفهوم اللامتناهي منذ زينون إلى ميل.<br><br>6. <strong>أهمية المنهج العلمي:</strong> يؤكد على أهمية الربط بين المنطق الرياضي والملاحظة التجريبية.<br><br>7. <strong>الدفاع عن العقل:</strong> كما يصرح ميل، الهدف من كشف المغالطة هو الدفاع عن العقل نفسه من الوقوع في التناقض.<br><br>هذا النص يمثل مساهمة مهمة في حل واحدة من أشهر المفارقات في تاريخ الفلسفة، ويكشف عن الآليات الدقيقة للمغالطات المنطقية التي تعتمد على الخلط بين المفاهيم."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

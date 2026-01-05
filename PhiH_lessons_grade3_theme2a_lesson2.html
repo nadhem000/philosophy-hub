@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نقد المشكلات الزائفة - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#556b2f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Dark Olive Green Theme for False Problems Critique */
+        :root {
+            --primary-color: #556b2f;
+            --secondary-color: #6b8e23;
+            --accent-color: #9acd32;
+            --light-color: #f5fffa;
+            --dark-color: #2f4f4f;
+            --text-color: #3a4a2a;
+            --heading-color: #2f4f4f;
+            --background-color: #f8fff0;
+            --card-bg: #ffffff;
+            --definition-bg: #f5fffa;
+            --border-color: #b8d6a3;
+            --table-even-bg: #f5fffa;
+            --table-hover-bg: #e8f5e0;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(85, 107, 47, 0.15);
+            --gradient-primary: linear-gradient(135deg, #556b2f 0%, #6b8e23 100%);
+            --gradient-secondary: linear-gradient(135deg, #6b8e23 0%, #2f4f4f 100%);
+            --gradient-olive: linear-gradient(135deg, #556b2f 0%, #2f4f4f 100%);
+            --gradient-green: linear-gradient(135deg, #6b8e23 0%, #9acd32 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #9acd32;
+            --secondary-color: #6b8e23;
+            --accent-color: #b8d6a3;
+            --light-color: #2f4f4f;
+            --dark-color: #1a1f1a;
+            --text-color: #e8f5e0;
+            --heading-color: #f5fffa;
+            --background-color: #2a332a;
+            --card-bg: #3a4a3a;
+            --definition-bg: #2f4f4f;
+            --border-color: #6b8e23;
+            --table-even-bg: #2f4f4f;
+            --table-hover-bg: #3a4a3a;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #9acd32 0%, #6b8e23 100%);
+            --gradient-secondary: linear-gradient(135deg, #6b8e23 0%, #556b2f 100%);
+            --gradient-olive: linear-gradient(135deg, #9acd32 0%, #2f4f4f 100%);
+            --gradient-green: linear-gradient(135deg, #6b8e23 0%, #556b2f 100%);
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Definition Cards Layout */
+        .PhiH-definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-definition-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(85, 107, 47, 0.2);
+        }
+        
+        .PhiH-definition-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-definition-card-content ul {
+            padding-left: 1.2rem;
+            margin: 0.8rem 0;
+        }
+        
+        .PhiH-definition-card-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        /* Expand/Collapse Functionality */
+        .PhiH-expandable-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .PhiH-expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .PhiH-expandable-header:hover {
+            background: var(--gradient-olive);
+        }
+        
+        .PhiH-expandable-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        .PhiH-expandable-content {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            border-top: none;
+        }
+        
+        .PhiH-expandable-content.hidden {
+            display: none;
+        }
+        
+        .PhiH-expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-expand-icon.expanded {
+            transform: rotate(180deg);
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Section Styling */
+        .PhiH-quotes-container {
+            margin-top: 1rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(85, 107, 47, 0.2);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        /* RTL support for definition cards */
+        body.rtl .PhiH-definition-card-content ul {
+            padding-left: 0;
+            padding-right: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .PhiH-definitions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-false-problems" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-lesson1-container">
+        <div class="PhiH-lesson1-header">
+            <h1 class="PhiH-lesson1-title" data-i18n="PhiH.lessons.false-problems.title">نقد المشكلات الزائفة</h1>
+            <div class="PhiH-lesson1-level" data-i18n="PhiH.lessons.false-problems.level">السنة الثالثة ثانوي - الفلسفة</div>
+        </div>
+        
+        <!-- Introduction Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="introHeader">
+                <h3 data-i18n="PhiH.lessons.false-problems.introduction.title">التمهيد</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="introContent">
+                <p data-i18n="PhiH.lessons.false-problems.introduction.text1">
+                    غالباً ما يتبرّم الإنسان ممّا يُشكِلُ عليه من أسئلة هي من الإعضال والاستعصاء بحيث تُورِثه من القلق ما يُفسد عليه متعة الحياة، ولكنّ التفحّص الدقيق لبعض هذه الأسئلة قد يُثبت أنّها ليست سوى أشباه مشاكل. لذلك فإنّ الإنسان مدعوّ إلى إعادة الاعتبار للسؤال وإلى إيلائه من القيمة على جهة الفحص والتثبت ما يمكّنه من التمييز بين المشكل الحقيقي والمشكل الزائف.
+                </p>
+                <p data-i18n="PhiH.lessons.false-problems.introduction.text2">
+                    إن اكتشاف وجود أشباه مشاكل يُحمِّلنا مسؤولية تتجاوز حدود مقاومة الخطأ على صعيدي الفكر والممارسة وذلك بمقاومة خطرٍ أكثر جذريّة ألا وهو مناخ الوهم الذي يُخيِّم على فكرنا والمتمثّل في نزوعنا إلى طرح أصناف من المشاكل لاتَتَبَيَّنُ مباشرة طابَعها المغلوط فَنَبْقَى نَتخبّط فيها.
+                </p>
+                <p data-i18n="PhiH.lessons.false-problems.introduction.text3">
+                    يتضمّن الخطاب اليوميّ، في مختلف فضاءات إنتاجه الاجتماعيّة (الإشهار، السياسة، الإعلام، المحادثات اليوميّة ... ) بعض الإقرارات التي تعتمد التكميم الكليّ أو الجزئيّ، الإثبات أو النفي ... ، فيخالها المستمعون صيغا لغويّة ومنطقيّة محايدة هدفها الحجاج والربط قصد الإقناع. غير أنّ إمعان النظر فيها يكشف أنّها أدوات قد تُعتمد في مغالطة المستمع أو القارئ.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Texts Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="textsHeader">
+                <h3 data-i18n="PhiH.lessons.false-problems.texts.title">النصوص</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="textsContent">
+                <div class="PhiH-texts-container">
+                    <ul class="PhiH-texts-list">
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2a_lesson2_text1.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.false-problems.texts.text1">النص 4: مشكل الهدف من الحياة - فرويد</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2a_lesson2_text2.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.false-problems.texts.text2">النص 5: في المشاكل التي لا وجود لها - برغسون</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2a_lesson2_text3.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.false-problems.texts.text3">النص 6: المغالطة بواسطة العكس الفاسد - جون ستوارت ميل</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quotes Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="quotesHeader">
+                <h3 data-i18n="PhiH.lessons.false-problems.quotes.title">شواهد ونصوص ذات صلة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="quotesContent">
+                <div class="PhiH-quotes-container">
+                    <div class="PhiH-quotes-grid">
+                        <!-- Quote 1 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.false-problems.quotes.quote1">
+                                "ليس للحياة معنى قبليًا."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.false-problems.quotes.author1">سارتر</div>
+                        </div>
+                        
+                        <!-- Quote 2 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.false-problems.quotes.quote2">
+                                "أشرّ ما في الدنيا أنّ الحياة عبث ولا أدري لعلّه خير ما فيها."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.false-problems.quotes.author2">محمود المسعدي</div>
+                        </div>
+                        
+                        <!-- Quote 3 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.false-problems.quotes.quote3">
+                                "مِنِ الناس مَن لا يتساءل عن معنى الحياة، وإني لأغبطهم هذه البراءة."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.false-problems.quotes.author3">لوي آراغون</div>
+                        </div>
+                        
+                        <!-- Quote 4 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.false-problems.quotes.quote4">
+                                "إن للعقل البشري، في قسم من معارفه هذا القدَر الفريد: أن يكون مُرْهَقا بأسئلة لا يمكنه تجنّبها. وبالفعل فإن هذه الأسئلة إنما تُفرَض على العقل بحكم طبيعته ذاتها، ولكن ليس بمستطاعه الإجابة عنها لأنها تتجاوز تماما مستطاعه."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.false-problems.quotes.author4">إيمانويل كانط</div>
+                        </div>
+                        
+                        <!-- Quote 5 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.false-problems.quotes.quote5">
+                                "لا تطرح الإنسانية على نفسها من الأسئلة إلاّ ما هي قادرة على حلّه."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.false-problems.quotes.author5">كارل ماركس</div>
+                        </div>
+                        
+                        <!-- Quote 6 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.false-problems.quotes.quote6">
+                                "إن للمشكل دائما الحلَّ الذي هو به جدير، وذلك بحسب الطريقة التي يُطرح بها."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.false-problems.quotes.author6">جيل دولوز</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Conclusion -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="conclusionHeader">
+                <h3 data-i18n="PhiH.lessons.false-problems.conclusion.title">الخاتمة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="conclusionContent">
+                <p data-i18n="PhiH.lessons.false-problems.conclusion.text1">
+                    يبيّن لنا التحليل الفلسفي للمشكلات الزائفة أن التمييز بين المشكل الحقيقي والمشكل الزائف ليس ترفاً فكرياً، بل هو ضرورة منهجية لتفادي التيه في مسارات لا تؤدي إلى المعرفة الحقيقية. فكما أنّ السؤال الخاطئ لا يمكن أن يقود إلى إجابة صحيحة، فإن المشكلة الزائفة لا يمكن أن تفضي إلى حلٍّ حقيقي.
+                </p>
+                <p data-i18n="PhiH.lessons.false-problems.conclusion.text2">
+                    إن نقد المشكلات الزائفة يندرج ضمن الجهد الفلسفي الأكبر الرامي إلى تنقية الفكر من الأوهام والمسلمات غير المبررة. فالقدرة على تمييز المشكلات الحقيقية من الزائفة تتطلّب تطوير حسّ نقدي حادّ ومعرفة عميقة بآليات التفكير وقواعد المنطق.
+                </p>
+                <p data-i18n="PhiH.lessons.false-problems.conclusion.text3">
+                    وفي النهاية، تبقى الفلسفة بمثابة "صناعة المنطق التي تُعطي بالجملة القوانين التي شأنها أن تقوّم العقل وتسدّد الإنسان نحو طريق الصواب"، كما يقول الفارابي. فمن خلال هذا الجهد النقدي المستمر، يمكن للفكر البشري أن يتجنّب الوقوع في شراك المشكلات الزائفة ويوجه طاقته نحو الأسئلة الحقيقية التي تستحقّ البحث والتفكير.
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Page-specific translations for false-problems lesson
+        window.translations_PhiHfalseProblems = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                
+                // False-problems lesson specific translations
+                "PhiH.lessons.false-problems.title": "Critique des Problèmes Fallacieux",
+                "PhiH.lessons.false-problems.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                
+                "PhiH.lessons.false-problems.introduction.title": "Introduction",
+                "PhiH.lessons.false-problems.introduction.text1": "L'être humain se lasse souvent des questions qui lui semblent si complexes et insolubles qu'elles lui causent une anxiété qui gâche son plaisir de vivre. Cependant, un examen minutieux de certaines de ces questions peut révéler qu'elles ne sont que des pseudo-problèmes. L'homme est donc invité à reconsidérer la question et à lui accorder la valeur nécessaire d'examen et de vérification qui lui permet de distinguer le vrai problème du problème fallacieux.",
+                "PhiH.lessons.false-problems.introduction.text2": "La découverte de l'existence de pseudo-problèmes nous impose une responsabilité qui va au-delà de la simple résistance à l'erreur sur les plans de la pensée et de la pratique, en nous obligeant à résister à un danger plus radical : le climat d'illusion qui plane sur notre pensée et qui se manifeste par notre tendance à poser des types de problèmes dont le caractère fallacieux n'apparaît pas immédiatement, de sorte que nous continuons à nous y débattre.",
+                "PhiH.lessons.false-problems.introduction.text3": "Le discours quotidien, dans les différents espaces de sa production sociale (publicité, politique, médias, conversations quotidiennes, etc.) contient certaines affirmations qui reposent sur la quantification totale ou partielle, l'affirmation ou la négation... que les auditeurs prennent pour des formulations linguistiques et logiques neutres visant l'argumentation et le lien dans le but de convaincre. Cependant, un examen attentif révèle que ce sont des outils qui peuvent être utilisés pour tromper l'auditeur ou le lecteur.",
+                
+                "PhiH.lessons.false-problems.texts.title": "Textes",
+                "PhiH.lessons.false-problems.texts.text1": "Texte 4: Le problème du but de la vie - Freud",
+                "PhiH.lessons.false-problems.texts.text2": "Texte 5: Sur les problèmes qui n'existent pas - Bergson",
+                "PhiH.lessons.false-problems.texts.text3": "Texte 6: La fallace par l'inverse fallacieux - John Stuart Mill",
+                
+                // Quotes section translations
+                "PhiH.lessons.false-problems.quotes.title": "Citations et textes connexes",
+                "PhiH.lessons.false-problems.quotes.quote1": "\"La vie n'a pas de sens a priori.\"",
+                "PhiH.lessons.false-problems.quotes.quote2": "\"Le pire dans ce monde, c'est que la vie est absurde et je ne sais pas, peut-être est-ce la meilleure chose en elle.\"",
+                "PhiH.lessons.false-problems.quotes.quote3": "\"Certaines personnes ne se demandent pas le sens de la vie, et je leur envie cette innocence.\"",
+                "PhiH.lessons.false-problems.quotes.quote4": "\"La raison humaine a, dans l'une de ses connaissances, ce destin unique : d'être accablée par des questions qu'elle ne peut éviter. En effet, ces questions sont imposées à la raison par sa propre nature, mais elle n'est pas capable d'y répondre car elles dépassent complètement sa capacité.\"",
+                "PhiH.lessons.false-problems.quotes.quote5": "\"L'humanité ne se pose que les questions qu'elle est capable de résoudre.\"",
+                "PhiH.lessons.false-problems.quotes.quote6": "\"Le problème a toujours la solution qu'il mérite, selon la manière dont il est posé.\"",
+                "PhiH.lessons.false-problems.quotes.author1": "Sartre",
+                "PhiH.lessons.false-problems.quotes.author2": "Mahmoud Messadi",
+                "PhiH.lessons.false-problems.quotes.author3": "Louis Aragon",
+                "PhiH.lessons.false-problems.quotes.author4": "Emmanuel Kant",
+                "PhiH.lessons.false-problems.quotes.author5": "Karl Marx",
+                "PhiH.lessons.false-problems.quotes.author6": "Gilles Deleuze",
+                
+                "PhiH.lessons.false-problems.conclusion.title": "Conclusion",
+                "PhiH.lessons.false-problems.conclusion.text1": "L'analyse philosophique des problèmes fallacieux nous montre que la distinction entre le vrai problème et le problème fallacieux n'est pas un luxe intellectuel, mais une nécessité méthodologique pour éviter de s'égarer dans des chemins qui ne mènent pas à la vraie connaissance. De même qu'une question erronée ne peut conduire à une réponse correcte, un problème fallacieux ne peut aboutir à une solution véritable.",
+                "PhiH.lessons.false-problems.conclusion.text2": "La critique des problèmes fallacieux s'inscrit dans l'effort philosophique plus large visant à purifier la pensée des illusions et des présupposés non justifiés. La capacité à distinguer les vrais problèmes des problèmes fallacieux nécessite le développement d'un sens critique aigu et d'une connaissance profonde des mécanismes de la pensée et des règles de la logique.",
+                "PhiH.lessons.false-problems.conclusion.text3": "Enfin, la philosophie reste comme \"l'art de la logique qui donne en gros les lois dont le rôle est de redresser la raison et de guider l'homme vers la voie de la vérité\", comme le dit Al-Farabi. À travers cet effort critique continu, la pensée humaine peut éviter de tomber dans les pièges des problèmes fallacieux et orienter son énergie vers les vraies questions qui méritent recherche et réflexion."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                
+                // False-problems lesson specific translations
+                "PhiH.lessons.false-problems.title": "Critique of False Problems",
+                "PhiH.lessons.false-problems.level": "3rd Secondary - Philosophy",
+                
+                "PhiH.lessons.false-problems.introduction.title": "Introduction",
+                "PhiH.lessons.false-problems.introduction.text1": "Humans often become weary of questions that seem so complex and insoluble that they cause anxiety that spoils their enjoyment of life. However, a careful examination of some of these questions may reveal that they are merely pseudo-problems. Therefore, humans are called upon to reconsider the question and give it the value of examination and verification necessary to distinguish between real problems and false ones.",
+                "PhiH.lessons.false-problems.introduction.text2": "The discovery of the existence of pseudo-problems imposes on us a responsibility that goes beyond simply resisting error on the levels of thought and practice, by forcing us to resist a more radical danger: the climate of illusion that hangs over our thinking and manifests itself in our tendency to pose types of problems whose fallacious nature is not immediately apparent, so that we continue to struggle with them.",
+                "PhiH.lessons.false-problems.introduction.text3": "Daily discourse, in the various spaces of its social production (advertising, politics, media, daily conversations, etc.) contains certain statements that rely on total or partial quantification, affirmation or negation... which listeners take to be neutral linguistic and logical formulations aimed at argumentation and linking for the purpose of persuasion. However, close examination reveals that these are tools that can be used to deceive the listener or reader.",
+                
+                "PhiH.lessons.false-problems.texts.title": "Texts",
+                "PhiH.lessons.false-problems.texts.text1": "Text 4: The Problem of Life's Purpose - Freud",
+                "PhiH.lessons.false-problems.texts.text2": "Text 5: On Problems That Do Not Exist - Bergson",
+                "PhiH.lessons.false-problems.texts.text3": "Text 6: Fallacy by False Inverse - John Stuart Mill",
+                
+                // Quotes section translations
+                "PhiH.lessons.false-problems.quotes.title": "Related Quotes and Texts",
+                "PhiH.lessons.false-problems.quotes.quote1": "\"Life has no a priori meaning.\"",
+                "PhiH.lessons.false-problems.quotes.quote2": "\"The worst thing in the world is that life is absurd, and I don't know, perhaps that's the best thing about it.\"",
+                "PhiH.lessons.false-problems.quotes.quote3": "\"Some people do not question the meaning of life, and I envy them this innocence.\"",
+                "PhiH.lessons.false-problems.quotes.quote4": "\"Human reason has, in one of its branches of knowledge, this unique destiny: to be burdened by questions it cannot avoid. Indeed, these questions are imposed on reason by its very nature, but it is not capable of answering them because they completely exceed its capacity.\"",
+                "PhiH.lessons.false-problems.quotes.quote5": "\"Humanity only sets itself problems it is capable of solving.\"",
+                "PhiH.lessons.false-problems.quotes.quote6": "\"The problem always has the solution it deserves, according to how it is posed.\"",
+                "PhiH.lessons.false-problems.quotes.author1": "Sartre",
+                "PhiH.lessons.false-problems.quotes.author2": "Mahmoud Messadi",
+                "PhiH.lessons.false-problems.quotes.author3": "Louis Aragon",
+                "PhiH.lessons.false-problems.quotes.author4": "Immanuel Kant",
+                "PhiH.lessons.false-problems.quotes.author5": "Karl Marx",
+                "PhiH.lessons.false-problems.quotes.author6": "Gilles Deleuze",
+                
+                "PhiH.lessons.false-problems.conclusion.title": "Conclusion",
+                "PhiH.lessons.false-problems.conclusion.text1": "The philosophical analysis of false problems shows us that distinguishing between real problems and false ones is not an intellectual luxury, but a methodological necessity to avoid getting lost in paths that do not lead to true knowledge. Just as a wrong question cannot lead to a correct answer, a false problem cannot lead to a real solution.",
+                "PhiH.lessons.false-problems.conclusion.text2": "The critique of false problems is part of the larger philosophical effort aimed at purifying thought from illusions and unjustified assumptions. The ability to distinguish real problems from false ones requires the development of a sharp critical sense and deep knowledge of the mechanisms of thinking and the rules of logic.",
+                "PhiH.lessons.false-problems.conclusion.text3": "Ultimately, philosophy remains like \"the art of logic that gives in bulk the laws whose role is to correct reason and guide man towards the path of truth,\" as Al-Farabi says. Through this continuous critical effort, human thought can avoid falling into the traps of false problems and direct its energy towards the real questions that deserve research and reflection."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                
+                // False-problems lesson specific translations
+                "PhiH.lessons.false-problems.title": "نقد المشكلات الزائفة",
+                "PhiH.lessons.false-problems.level": "السنة الثالثة ثانوي - الفلسفة",
+                
+                "PhiH.lessons.false-problems.introduction.title": "التمهيد",
+                "PhiH.lessons.false-problems.introduction.text1": "غالباً ما يتبرّم الإنسان ممّا يُشكِلُ عليه من أسئلة هي من الإعضال والاستعصاء بحيث تُورِثه من القلق ما يُفسد عليه متعة الحياة، ولكنّ التفحّص الدقيق لبعض هذه الأسئلة قد يُثبت أنّها ليست سوى أشباه مشاكل. لذلك فإنّ الإنسان مدعوّ إلى إعادة الاعتبار للسؤال وإلى إيلائه من القيمة على جهة الفحص والتثبت ما يمكّنه من التمييز بين المشكل الحقيقي والمشكل الزائف.",
+                "PhiH.lessons.false-problems.introduction.text2": "إن اكتشاف وجود أشباه مشاكل يُحمِّلنا مسؤولية تتجاوز حدود مقاومة الخطأ على صعيدي الفكر والممارسة وذلك بمقاومة خطرٍ أكثر جذريّة ألا وهو مناخ الوهم الذي يُخيِّم على فكرنا والمتمثّل في نزوعنا إلى طرح أصناف من المشاكل لاتَتَبَيَّنُ مباشرة طابَعها المغلوط فَنَبْقَى نَتخبّط فيها.",
+                "PhiH.lessons.false-problems.introduction.text3": "يتضمّن الخطاب اليوميّ، في مختلف فضاءات إنتاجه الاجتماعيّة (الإشهار، السياسة، الإعلام، المحادثات اليوميّة ... ) بعض الإقرارات التي تعتمد التكميم الكليّ أو الجزئيّ، الإثبات أو النفي ... ، فيخالها المستمعون صيغا لغويّة ومنطقيّة محايدة هدفها الحجاج والربط قصد الإقناع. غير أنّ إمعان النظر فيها يكشف أنّها أدوات قد تُعتمد في مغالطة المستمع أو القارئ.",
+                
+                "PhiH.lessons.false-problems.texts.title": "النصوص",
+                "PhiH.lessons.false-problems.texts.text1": "النص 4: مشكل الهدف من الحياة - فرويد",
+                "PhiH.lessons.false-problems.texts.text2": "النص 5: في المشاكل التي لا وجود لها - برغسون",
+                "PhiH.lessons.false-problems.texts.text3": "النص 6: المغالطة بواسطة العكس الفاسد - جون ستوارت ميل",
+                
+                // Quotes section translations
+                "PhiH.lessons.false-problems.quotes.title": "شواهد ونصوص ذات صلة",
+                "PhiH.lessons.false-problems.quotes.quote1": "ليس للحياة معنى قبليًا.",
+                "PhiH.lessons.false-problems.quotes.quote2": "أشرّ ما في الدنيا أنّ الحياة عبث ولا أدري لعلّه خير ما فيها.",
+                "PhiH.lessons.false-problems.quotes.quote3": "مِنِ الناس مَن لا يتساءل عن معنى الحياة، وإني لأغبطهم هذه البراءة.",
+                "PhiH.lessons.false-problems.quotes.quote4": "إن للعقل البشري، في قسم من معارفه هذا القدَر الفريد: أن يكون مُرْهَقا بأسئلة لا يمكنه تجنّبها. وبالفعل فإن هذه الأسئلة إنما تُفرَض على العقل بحكم طبيعته ذاتها، ولكن ليس بمستطاعه الإجابة عنها لأنها تتجاوز تماما مستطاعه.",
+                "PhiH.lessons.false-problems.quotes.quote5": "لا تطرح الإنسانية على نفسها من الأسئلة إلاّ ما هي قادرة على حلّه.",
+                "PhiH.lessons.false-problems.quotes.quote6": "إن للمشكل دائما الحلَّ الذي هو به جدير، وذلك بحسب الطريقة التي يُطرح بها.",
+                "PhiH.lessons.false-problems.quotes.author1": "سارتر",
+                "PhiH.lessons.false-problems.quotes.author2": "محمود المسعدي",
+                "PhiH.lessons.false-problems.quotes.author3": "لوي آراغون",
+                "PhiH.lessons.false-problems.quotes.author4": "إيمانويل كانط",
+                "PhiH.lessons.false-problems.quotes.author5": "كارل ماركس",
+                "PhiH.lessons.false-problems.quotes.author6": "جيل دولوز",
+                
+                "PhiH.lessons.false-problems.conclusion.title": "الخاتمة",
+                "PhiH.lessons.false-problems.conclusion.text1": "يبيّن لنا التحليل الفلسفي للمشكلات الزائفة أن التمييز بين المشكل الحقيقي والمشكل الزائف ليس ترفاً فكرياً، بل هو ضرورة منهجية لتفادي التيه في مسارات لا تؤدي إلى المعرفة الحقيقية. فكما أنّ السؤال الخاطئ لا يمكن أن يقود إلى إجابة صحيحة، فإن المشكلة الزائفة لا يمكن أن تفضي إلى حلٍّ حقيقي.",
+                "PhiH.lessons.false-problems.conclusion.text2": "إن نقد المشكلات الزائفة يندرج ضمن الجهد الفلسفي الأكبر الرامي إلى تنقية الفكر من الأوهام والمسلمات غير المبررة. فالقدرة على تمييز المشكلات الحقيقية من الزائفة تتطلّب تطوير حسّ نقدي حادّ ومعرفة عميقة بآليات التفكير وقواعد المنطق.",
+                "PhiH.lessons.false-problems.conclusion.text3": "وفي النهاية، تبقى الفلسفة بمثابة \"صناعة المنطق التي تُعطي بالجملة القوانين التي شأنها أن تقوّم العقل وتسدّد الإنسان نحو طريق الصواب\"، كما يقول الفارابي. فمن خلال هذا الجهد النقدي المستمر، يمكن للفكر البشري أن يتجنّب الوقوع في شراك المشكلات الزائفة ويوجه طاقته نحو الأسئلة الحقيقية التي تستحقّ البحث والتفكير."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHfalseProblems;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+    
+    <script>
+        // Expand/Collapse functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all expandable headers
+            const expandableHeaders = document.querySelectorAll('.PhiH-expandable-header');
+            
+            // Add click event to each header
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.PhiH-expand-icon');
+                    
+                    // Toggle content visibility
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('expanded');
+                    } else {
+                        content.classList.add('hidden');
+                        icon.classList.remove('expanded');
+                    }
+                });
+            });
+            
+            // Initially hide all expandable content
+            document.querySelectorAll('.PhiH-expandable-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

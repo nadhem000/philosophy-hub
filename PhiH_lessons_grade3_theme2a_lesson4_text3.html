@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: في لعبة المفارقات - أفلاطون - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#EA580C">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Orange/Amber Color Palette (برتقالي/عنبري) */
+        :root {
+            --primary-color: #EA580C;
+            --primary-light: #F97316;
+            --primary-dark: #C2410C;
+            --secondary-color: #FB923C;
+            --secondary-light: #FDBA74;
+            --secondary-dark: #F97316;
+            --accent-color: #FB923C;
+            --accent-light: #FDBA74;
+            --accent-dark: #F97316;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #fff7ed;
+            --card-bg: #ffffff;
+            --definition-bg: #ffedd5;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #fed7aa;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(234, 88, 12, 0.1), 0 2px 4px -1px rgba(234, 88, 12, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(234, 88, 12, 0.1), 0 4px 6px -2px rgba(234, 88, 12, 0.05);
+            --gradient-primary: linear-gradient(135deg, #EA580C 0%, #FB923C 100%);
+            --gradient-secondary: linear-gradient(135deg, #FB923C 0%, #F97316 100%);
+            --gradient-accent: linear-gradient(135deg, #FB923C 0%, #EA580C 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #F97316;
+            --primary-light: #FB923C;
+            --primary-dark: #EA580C;
+            --secondary-color: #FDBA74;
+            --secondary-light: #FED7AA;
+            --secondary-dark: #FB923C;
+            --accent-color: #FDBA74;
+            --accent-light: #FED7AA;
+            --accent-dark: #FB923C;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #7c2d12;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #9a3412;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #F97316 0%, #FDBA74 100%);
+            --gradient-secondary: linear-gradient(135deg, #FDBA74 0%, #FB923C 100%);
+            --gradient-accent: linear-gradient(135deg, #FDBA74 0%, #F97316 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(234, 88, 12, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(251, 146, 60, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(251, 146, 60, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(234, 88, 12, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+        
+        /* Header and controls styles - Same as other files */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Windows Bar Styling */
+        .PhiH-windows-bar {
+            display: flex;
+            justify-content: center;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-window-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: var(--text-color);
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+            margin: 0 0.25rem;
+        }
+        
+        .PhiH-window-item:hover {
+            background-color: var(--definition-bg);
+            color: var(--primary-color);
+        }
+        
+        .PhiH-window-item.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .PhiH-window-icon {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.plato.paradox.title">تحليل النص: في لعبة المفارقات - أفلاطون</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.plato.paradox.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.plato.paradox.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.plato.paradox.introduction.content">
+                    لا يهدف الحوار دائما إلى تحقيق التواصل وإدراك الحقيقة والالتزام بها بل كثيرا ما ينقلب إلى سجال لأسباب مصلحيّة فيعمد فيه المتحاورون إلى استراتيجيّات لا غرض منها غير إيقاع الخصم في الغلط والتناقض والمفارقة.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.plato.paradox.text.title">في لعبة المفارقات</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.plato.paradox.text.content">
+                        - أوتيدام: من هم يا كلينياس<sup>1</sup> الناس الذين يتعلّمون: أهُم العلماء أم الجهلة ؟( ... ) لقد أجاب كلينياس بشكل لم يسمح لي <sup>2</sup> بتحذيره : إنّ العلماء هم الذين يتعلّمون.<sup>3</sup>
+                    </p>
+                    <p data-i18n="PhiH.textAnalysis.plato.paradox.text.content2">
+                        - تابع أوتيدام<sup>4</sup> قائلا: هل يوجد أم لا أناس تسمّيهم معلِّمين؟ - فأقرّ كلينياس بوجودهم.
+                    </p>
+                    <p data-i18n="PhiH.textAnalysis.plato.paradox.text.content3">
+                        - أوتيدام: أوَ ليس المعلِّمون معلِّمين لمن يتعلّمون مثلما هو الأمر بالنسبة لمعلّم العزف على القيثارة والمدرّس اللذَين كانا معلِّمَين لك ولبقيّة الأطفال عندما كنتم تلاميذهما ؟ أليس كذلك ؟ - فأبدی کلینیاس موافقته.
+                    </p>
+                    <p data-i18n="PhiH.textAnalysis.plato.paradox.text.content4">
+                        - أوتيدام: أليس صحيحا أنّه عندما كنتم تتعلّمون، كنتم لا تَعْلَمون بعدُ، ما كنتم تتعلَّمونه؟ - فأجاب كلينياس: إنّنا ما كنّا نعلَم ذلك.
+                    </p>
+                    <p data-i18n="PhiH.textAnalysis.plato.paradox.text.content5">
+                        - أوتيدام: هل كنتم، إذن، علماء حين كنتم لا تَعلَمون ؟ - فأجاب كلينياس: لا بالتأكيد.
+                    </p>
+                    <p data-i18n="PhiH.textAnalysis.plato.paradox.text.content6">
+                        - أوتيدام: إذن، إن لم تكونوا علماء فقد كنتم جهلة. - كلينياس: هذا صحيح.
+                    </p>
+                    <p data-i18n="PhiH.textAnalysis.plato.paradox.text.content7">
+                        - أوتيدام: إذن، عندما كنتم بصدد تَعلُّم ما لا تَعلَمونه كنتم جهلة حينما كنتم تتعلّمونه. - فَأَوَمَأَ الفتى بالموافقة.
+                    </p>
+                    <p data-i18n="PhiH.textAnalysis.plato.paradox.text.content8">
+                        - أوتيدام: إنّما الجهلة، إذن، هم الذين يتعلّمون يا كلينياس وليس العلماء كما تعتقد.<sup>5</sup>
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.plato.paradox.text.source">أفلاطون، محاورة أوتيدام، 275-276 (ترجمة لجنة التأليف Platon, Euthydeme, 275c-276c)</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.plato.paradox.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/plato.jpg" alt="أفلاطون" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.plato.paradox.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.plato.paradox.author.content">
+                            أفلاطون (428 ق م / 348 ق م) فيلسوف يونانيّ، ولد بأثينا حيث تتلمذ في البداية على السوفسطائيين قبل أن يتعلّق بسقراط ويتلمذ عليه. تأثّر بالغ التأثّر بمحاكمة سقراط وبإعدامه حيث رأى في ذلك مؤشّرا على تأزم المدينة ورداءة السياسة فيها معتبرا أنّ الفلسفة - كردّة فعل على هذه الأوضاع - مطالبة بأن تنظر في أسس السياسة العادلة. يُعتبر أفلاطون مُؤسّسا للحوار كجنس في الكتابة الفلسفيّة اختار فيه سقراط كمعبّر عن أهمّ مواقفه الفلسفيّة. من أهمّ محاوراته: ايون، لاكاس، الجمهورية، بارمنيد، تييتات، السوفسطائي، السياسي، القوانين ... وخلالها توضحت تدريجيا نظريته الميتافيزيقيّة القائمة على التمييز بين عالمين: العالم الحسيّ وعالم المثل الّذي هو بمثابة نماذج أصليّة لا تُعَدّ الموضوعات الحسيّة إلا نسخا زائفة منها، ولا تُوجَد إلا بفعل محاكاة أو مشاركة.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.plato.paradox.lexical.title">الهوامش والمفاهيم</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.plato.paradox.lexical.item1"><strong>"كلينياس":</strong> عالم رياضيات فيثاغوري من مدينة Tarente عاش بين القرنين الخامس والرابع ق.م، ربطته علاقة صداقة بأفلاطون. من أهمّ إسهاماته التمييز في الرياضيات بين رياضيات ساكنة تشمل علم العدد والهندسة ورياضيات متحرّكة تشمل الموسيقى وعلم الفلك.</li>
+                    <li data-i18n="PhiH.textAnalysis.plato.paradox.lexical.item2"><strong>"لي":</strong> إحالة على سقراط وهو الذي يروي ما يحدث بين كلينياس وأوتيدام.</li>
+                    <li data-i18n="PhiH.textAnalysis.plato.paradox.lexical.item3"><strong>"يتعلّمون":</strong> تُستعمل هذه العبارة للدّلالة على الجاهل الذي يكتسب معرفة بشيء يجهله وعن العالم بهذا الشيء والذي يستعمل علمه ليفكّر مجدّدا في هذا الشيء لأغراض عمليّة أو نظرية، وأوتيدام يستعمل نفس العبارة للحديث عن وضعيّتين متناقضتين. وهو ما يؤدّي إلى الإيقاع بالمحاور في مفارقة مهما كانت إجابته.</li>
+                    <li data-i18n="PhiH.textAnalysis.plato.paradox.lexical.item4"><strong>"أوتيدام":</strong> سفسطائي إغريقي أصيل مدينة Chios، عُرِف بتعليمه لفنون المبارزة والقتال والخطابة.</li>
+                    <li data-i18n="PhiH.textAnalysis.plato.paradox.lexical.item5"><strong>"تعتقد":</strong> إشارة إلى إجابته الأولى في مقدمة الحوار: "العلماء هم الذين يتعلّمون."</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.plato.paradox.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.plato.paradox.questions.q1">أبيّن ما إذا كان بإمكان ((كلينياس)) تجنّب الوقوع في المفارقة.</li>
+                    <li data-i18n="PhiH.textAnalysis.plato.paradox.questions.q2">أبيّن وجه المفارقة في قول Eubilides المعروف بمفارقة الكذّاب: "أنا كذّاب": إذا كذب في قوله هذا، ماذا أستنتج ؟ وإذا صدق، ماذا أستنتج ؟ أقارن الاستنتاجين معا.</li>
+                    <li data-i18n="PhiH.textAnalysis.plato.paradox.questions.q3">أَنظر في القول السقراطي التالي: "كل ما أعرفه أني لا أعرف شيئا." وأُبّن ما إذا كان يتضمّن مفارقة ؟</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.plato.paradox.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.plato.paradox.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.plato.paradox.answers.a1.content">
+                        <strong>تحليل إمكانية تجنب كلينياس الوقوع في المفارقة:</strong>
+                        <br><br>
+                        1. <strong>طبيعة المفارقة:</strong> تقوم المفارقة في هذا النص على الاستخدام المزدوج لمصطلح "التعلم" بمعنيين مختلفين:
+                        <br>
+                        - <strong>التعلم بمعنى اكتساب المعرفة الجديدة</strong> (للجهلة)
+                        <br>
+                        - <strong>التعلم بمعنى ممارسة المعرفة الموجودة</strong> (للعلماء)
+                        <br><br>
+                        2. <strong>الاستراتيجية السفسطائية:</strong> يستغل أوتيدام غموض مصطلح "التعلم" ليخلط بين المعنيين، مما يؤدي إلى استنتاج متناقض.
+                        <br><br>
+                        3. <strong>إمكانية التجاوز:</strong> كان بإمكان كلينياس تجنب الوقوع في المفارقة لو:
+                        <br>
+                        - <strong>طلب التوضيح:</strong> عن معنى "التعلم" المقصود في السؤال.
+                        <br>
+                        - <strong>قدم إجابة شاملة:</strong> مثل: "التعلم يمكن أن يكون للعلماء (لتحسين معرفتهم) وللجهلة (لاكتساب المعرفة)".
+                        <br>
+                        - <strong>كشف الغموض اللفظي:</strong> بإظهار أن السؤال يستند إلى مصطلح غامض.
+                        <br><br>
+                        4. <strong>الدروس المستفادة:</strong> أهمية تحديد المصطلحات وتوضيح المعاني في الحوار الفلسفي لتجنب المغالطات اللغوية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.plato.paradox.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.plato.paradox.answers.a2.content">
+                        <strong>تحليل مفارقة الكذاب لإيوبوليدس:</strong> "أنا كذاب"
+                        <br><br>
+                        <strong>1. إذا كذب في قوله "أنا كذاب":</strong>
+                        <br>
+                        - إذا كان كاذباً في هذا القول، فهذا يعني أن القول غير صحيح.
+                        <br>
+                        - القول يقول: "أنا كذاب" (أي أنا شخص يَكذب).
+                        <br>
+                        - إذا كان القول غير صحيح، فهذا يعني أنه ليس كاذباً.
+                        <br>
+                        - <strong>الاستنتاج:</strong> إذا كذب، فهذا يعني أنه صادق (لأنه ليس كاذباً كما يقول).
+                        <br><br>
+                        <strong>2. إذا صدق في قوله "أنا كذاب":</strong>
+                        <br>
+                        - إذا كان صادقاً في هذا القول، فهذا يعني أن القول صحيح.
+                        <br>
+                        - القول يقول: "أنا كذاب" (أي أنا شخص يَكذب).
+                        <br>
+                        - إذا كان القول صحيحاً، فهذا يعني أنه كاذب بالفعل.
+                        <br>
+                        - <strong>الاستنتاج:</strong> إذا صدق، فهذا يعني أنه كاذب (لأنه يقول الحقيقة عن كونه كاذباً).
+                        <br><br>
+                        <strong>3. المقارنة والتحليل:</strong>
+                        <br>
+                        - <strong>التناقض:</strong> في الحالتين نصل إلى نتائج متناقضة.
+                        <br>
+                        - <strong>المفارقة:</strong> إذا كذب فهو صادق، وإذا صدق فهو كاذب.
+                        <br>
+                        - <strong>المستوى المنطقي:</strong> هذه المفارقة تظهر مشكلة في المرجعية الذاتية للأقوال (القول الذي يشير إلى نفسه).
+                        <br>
+                        - <strong>الأهمية الفلسفية:</strong> تثير هذه المفارقة أسئلة حول طبيعة الحقيقة والكذب وإمكانية التعبير عن الذات بشكل متناسق منطقياً.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.plato.paradox.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.plato.paradox.answers.a3.content">
+                        <strong>تحليل القول السقراطي:</strong> "كل ما أعرفه أني لا أعرف شيئا"
+                        <br><br>
+                        <strong>1. تحليل المحتوى:</strong>
+                        <br>
+                        - القول يتكون من جزأين:
+                        <br>
+                        1. <strong>"كل ما أعرفه"</strong>: ادعاء بوجود معرفة ما.
+                        <br>
+                        2. <strong>"أني لا أعرف شيئا"</strong>: نفي للمعرفة بشكل كلي.
+                        <br><br>
+                        <strong>2. إمكانية احتواء القول على مفارقة:</strong>
+                        <br>
+                        أ. <strong>من وجهة نظر ظاهرية:</strong>
+                        <br>
+                        - إذا كان "كل ما أعرفه" صحيحاً، فهذا يعني أن لديه معرفة على الأقل بهذه الحقيقة (أنه لا يعرف شيئاً).
+                        <br>
+                        - لكن "أني لا أعرف شيئا" تنفي أي معرفة، بما في ذلك معرفة هذه الحقيقة نفسها.
+                        <br>
+                        - <strong>المفارقة المحتملة:</strong> كيف يمكن أن يعرف أنه لا يعرف شيئاً إذا كان لا يعرف شيئاً أصلاً؟
+                        <br><br>
+                        ب. <strong>من وجهة نظر فلسفية أعمق:</strong>
+                        <br>
+                        - القول يمكن فهمه كتعبير عن <strong>التواضع المعرفي</strong> وليس كإثبات منطقي صارم.
+                        <br>
+                        - سقراط يشير إلى أن "المعرفة الحقيقية" هي معرفة بحدود المعرفة الإنسانية.
+                        <br>
+                        - المعرفة بأننا لا نعرف هي نوع من "المعرفة السلبية" أو "معرفة الجهل".
+                        <br><br>
+                        <strong>3. هل يحتوي القول على مفارقة حقيقية؟</strong>
+                        <br>
+                        - <strong>نعم</strong>، إذا أخذناه حرفياً وبشكل منطقي صارم: فهو يدعي معرفة (أنه لا يعرف) بينما ينفي المعرفة.
+                        <br>
+                        - <strong>لا</strong>، إذا فهمناه في سياقه الفلسفي كتعبير عن الوعي بحدود المعرفة البشرية.
+                        <br><br>
+                        <strong>4. الفرق بينه وبين مفارقة الكذاب:</strong>
+                        <br>
+                        - مفارقة الكذاب: تناقض ذاتي واضح وصارم.
+                        <br>
+                        - قول سقراط: يمكن تفسيره بشكل غير متناقض إذا فهم كتعبير عن موقف فلسفي (التواضع المعرفي).
+                        <br><br>
+                        <strong>5. الخلاصة:</strong>
+                        <br>
+                        القول يحتوي على <strong>مظهر من مظاهر المفارقة</strong> إذا أخذ بشكل حرفي، لكنه <strong>ليس مفارقة منطقية صارمة</strong> كتلك التي في النص الأفلاطوني أو مفارقة الكذاب، بل هو تعبير عن موقف فلسفي عميق تجاه المعرفة.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.plato.paradox.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.plato.paradox.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.plato.paradox.analysis.thesis.content">
+                        يعرض أفلاطون في هذا النص من محاورة "أوتيدام" نموذجاً للمغالطات السفسطائية التي تعتمد على الخلط بين المعاني المختلفة للمصطلحات نفسها. يوضح كيف يمكن تحويل الحوار من سعي نحو الحقيقة إلى لعبة لغوية تهدف إلى إيقاع الخصم في التناقض والمفارقة. النص يكشف عن آليات التفكير السفسطائي الذي يستغل غموض اللغة لخلق تناقضات ظاهرية، ويدعو إلى الحذر من مثل هذه الممارسات في الحوار الفلسفي.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.plato.paradox.analysis.mechanisms.title">آليات خلق المفارقة في النص:</h5>
+                    <p data-i18n="PhiH.textAnalysis.plato.paradox.analysis.mechanisms.content">
+                        يوضح النص عدة آليات لخلق المفارقات:
+                        <br><br>
+                        1. <strong>الاستخدام المزدوج للمصطلحات:</strong> استخدام مصطلح "التعلم" بمعنيين مختلفين: اكتساب المعرفة الجديدة (للجهلة) وممارسة المعرفة الموجودة (للعلماء).
+                        <br><br>
+                        2. <strong>الخلط بين المستويات:</strong> الخلط بين تعلم الشيء (المحتوى) وبين حالة المتعلم (العالم أو الجاهل).
+                        <br><br>
+                        3. <strong>الانتقال التدريجي:</strong> بناء سلسلة من الأسئلة تبدو منطقية كل على حدة، لكنها تؤدي في النهاية إلى نتيجة متناقضة مع البداية.
+                        <br><br>
+                        4. <strong>استغلال الإجابات الجزئية:</strong> أخذ إجابات الخصم في سياقات جزئية ثم تجميعها لخلق تناقض.
+                        <br><br>
+                        5. <strong>التعميم الخاطئ:</strong> تعميم حالة خاصة (تعلم الأطفال من المعلمين) على جميع حالات التعلم.
+                        <br><br>
+                        6. <strong>إخفاء الافتراضات:</strong> افتراض أن "التعلم" يعني دائماً الانتقال من الجهل إلى العلم، وإهمال إمكانية تعلم العالم.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.plato.paradox.analysis.consequences.title">نتائج وخطورة المغالطات السفسطائية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.plato.paradox.analysis.consequences.content">
+                        - <strong>تشويه الحوار الفلسفي:</strong> تحويل النقاش من بحث عن الحقيقة إلى مسابقة للتفوق اللغوي.
+                        <br><br>
+                        - <strong>تعطيل التواصل:</strong> عندما تصبح اللغة أداة للتضليل بدلاً من التوصيل.
+                        <br><br>
+                        - <strong>إضعاف الثقة في العقل:</strong> قد تؤدي هذه المغالطات إلى الشك في قدرة العقل على الوصول إلى الحقيقة.
+                        <br><br>
+                        - <strong>تضليل الشباب:</strong> كما يظهر في النص، حيث يستهدف أوتيدام الشاب كلينياس.
+                        <br><br>
+                        - <strong>إعاقة التقدم المعرفي:</strong> تشتيت الانتباه عن الأسئلة الحقيقية إلى ألعاب لغوية.
+                        <br><br>
+                        - <strong>استغلال في المجال السياسي:</strong> يمكن استخدام هذه التقنيات لتضليل الجماهير في الخطاب السياسي.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.plato.paradox.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.plato.paradox.analysis.significance.content">
+                        يحمل هذا النص من محاورة أفلاطون دلالات عميقة في الفلسفة والمنطق واللغة:
+                        <br><br>
+                        1. <strong>نقد السفسطائية:</strong> يمثل النص جزءاً من نقد أفلاطون للفكر السفسطائي الذي يهتم بالفوز في الجدل أكثر من البحث عن الحقيقة.
+                        <br><br>
+                        2. <strong>أهمية تحديد المصطلحات:</strong> يبرز أهمية الوضوح المفاهيمي وتحديد المعاني في الحوار الفلسفي.
+                        <br><br>
+                        3. <strong>العلاقة بين اللغة والمنطق:</strong> يوضح كيف يمكن أن تكون اللغة مصدراً للمغالطات إذا لم ننتبه إلى البنية المنطقية.
+                        <br><br>
+                        4. <strong>البعد التربوي:</strong> النص يحذر من مخاطر التضليل الفكري على الشباب، ويدعو إلى التربية الفلسفية الصحيحة.
+                        <br><br>
+                        5. <strong>الاستمرارية التاريخية:</strong> لا تزال مشكلة المغالطات اللغوية والمفارقات قائمة في عصرنا في مختلف المجالات.
+                        <br><br>
+                        6. <strong>أساس للفكر النقدي:</strong> يعلمنا النص كيف نكون حذرين من الحجج التي تبدو منطقية ولكنها تخفي تناقضات.
+                        <br><br>
+                        7. <strong>التطبيق المعاصر:</strong> يمكن تطبيق دروس هذا النص على مغالطات الإعلام الحديث وخطاب الدعاية.
+                        <br><br>
+                        8. <strong>قيمة الحوار الصادق:</strong> يؤكد على أن الحوار الحقيقي يجب أن يكون سعياً نحو الحقيقة، وليس مجرد منافسة للفوز.
+                        <br><br>
+                        هذا النص يمثل دعوة للانتباه إلى طبيعة الحوار الفلسفي الحقيقي، والتمييز بين الجدال السفسطائي الذي يهدف إلى الفوز، والبحث الفلسفي الجاد الذي يهدف إلى المعرفة والحقيقة.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.plato.paradox.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.plato.paradox.title": "Analyse du texte: Dans le jeu des paradoxes - Platon",
+                "PhiH.textAnalysis.plato.paradox.introduction.title": "Introduction",
+                "PhiH.textAnalysis.plato.paradox.introduction.content": "Le dialogue ne vise pas toujours à réaliser la communication et à percevoir la vérité et à s'y engager, mais il se transforme souvent en une polémique pour des raisons d'intérêt, de sorte que les interlocuteurs recourent à des stratégies dont le seul but est de faire tomber l'adversaire dans l'erreur, la contradiction et le paradoxe.",
+                "PhiH.textAnalysis.plato.paradox.text.title": "Dans le jeu des paradoxes",
+                "PhiH.textAnalysis.plato.paradox.text.content": "- Euthydème: Qui sont, ô Clinias<sup>1</sup>, les gens qui apprennent: sont-ce les savants ou les ignorants? (...) Clinias a répondu d'une manière qui ne m'a pas permis <sup>2</sup> de le prévenir: Ce sont les savants qui apprennent.<sup>3</sup>",
+                "PhiH.textAnalysis.plato.paradox.text.content2": "- Euthydème<sup>4</sup> a continué en disant: Y a-t-il ou non des gens que vous appelez enseignants? - Clinias a reconnu leur existence.",
+                "PhiH.textAnalysis.plato.paradox.text.content3": "- Euthydème: Les enseignants ne sont-ils pas enseignants pour ceux qui apprennent, comme c'est le cas pour le professeur de lyre et le maître qui étaient vos enseignants et ceux des autres enfants lorsque vous étiez leurs élèves? N'est-ce pas? - Clinias a acquiescé.",
+                "PhiH.textAnalysis.plato.paradox.text.content4": "- Euthydème: N'est-il pas vrai que lorsque vous appreniez, vous ne saviez pas encore ce que vous appreniez? - Clinias a répondu: Nous ne le savions pas.",
+                "PhiH.textAnalysis.plato.paradox.text.content5": "- Euthydème: Étiez-vous donc savants lorsque vous ne saviez pas? - Clinias a répondu: Non, certainement.",
+                "PhiH.textAnalysis.plato.paradox.text.content6": "- Euthydème: Donc, si vous n'étiez pas savants, vous étiez ignorants. - Clinias: C'est vrai.",
+                "PhiH.textAnalysis.plato.paradox.text.content7": "- Euthydème: Donc, lorsque vous étiez en train d'apprendre ce que vous ne saviez pas, vous étiez ignorants lorsque vous l'appreniez. - Le jeune homme a fait signe que oui.",
+                "PhiH.textAnalysis.plato.paradox.text.content8": "- Euthydème: Ce sont donc les ignorants, ô Clinias, qui apprennent et non les savants comme tu le crois.<sup>5</sup>",
+                "PhiH.textAnalysis.plato.paradox.text.source": "Platon, Dialogue Euthydème, 275-276 (traduction du comité de rédaction Platon, Euthydème, 275c-276c)",
+                "PhiH.textAnalysis.plato.paradox.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.plato.paradox.author.alt": "Platon",
+                "PhiH.textAnalysis.plato.paradox.author.content": "Platon (428 av. J.-C. / 348 av. J.-C.) philosophe grec, né à Athènes où il fut d'abord l'élève des sophistes avant de s'attacher à Socrate et de devenir son disciple. Il fut profondément affecté par le procès de Socrate et son exécution, y voyant un indicateur de la crise de la cité et de la médiocrité de la politique, considérant que la philosophie - en réaction à ces conditions - est tenue d'examiner les fondements de la politique juste. Platon est considéré comme le fondateur du dialogue comme genre dans l'écriture philosophique, dans lequel il a choisi Socrate comme exprimant ses positions philosophiques les plus importantes. Parmi ses dialogues les plus importants: Ion, Lachès, La République, Parménide, Théétète, Le Sophiste, Le Politique, Les Lois... À travers eux, sa théorie métaphysique basée sur la distinction entre deux mondes s'est progressivement clarifiée: le monde sensible et le monde des Idées qui est comme des modèles originaux dont les objets sensibles ne sont que des copies fausses, et qui n'existent que par imitation ou participation.",
+                "PhiH.textAnalysis.plato.paradox.lexical.title": "Notes et concepts",
+                "PhiH.textAnalysis.plato.paradox.lexical.item1": "<strong>\"Clinias\":</strong> Mathématicien pythagoricien de la ville de Tarente qui a vécu entre les Ve et IVe siècles av. J.-C., lié d'amitié avec Platon. Parmi ses contributions les plus importantes: la distinction en mathématiques entre les mathématiques statiques comprenant l'arithmétique et la géométrie et les mathématiques dynamiques comprenant la musique et l'astronomie.",
+                "PhiH.textAnalysis.plato.paradox.lexical.item2": "<strong>\"Moi\":</strong> Référence à Socrate qui raconte ce qui se passe entre Clinias et Euthydème.",
+                "PhiH.textAnalysis.plato.paradox.lexical.item3": "<strong>\"Apprennent\":</strong> Cette expression est utilisée pour désigner l'ignorant qui acquiert une connaissance d'une chose qu'il ignore et le savant de cette chose qui utilise sa connaissance pour réfléchir à nouveau à cette chose à des fins pratiques ou théoriques, et Euthydème utilise la même expression pour parler de deux situations contradictoires. C'est ce qui conduit à faire tomber l'interlocuteur dans un paradoxe quelle que soit sa réponse.",
+                "PhiH.textAnalysis.plato.paradox.lexical.item4": "<strong>\"Euthydème\":</strong> Sophiste grec originaire de la ville de Chios, connu pour son enseignement des arts du duel, du combat et de l'éloquence.",
+                "PhiH.textAnalysis.plato.paradox.lexical.item5": "<strong>\"Crois\":</strong> Référence à sa première réponse au début du dialogue: \"Ce sont les savants qui apprennent.\"",
+                "PhiH.textAnalysis.plato.paradox.questions.title": "Tâches",
+                "PhiH.textAnalysis.plato.paradox.questions.q1": "J'explique s'il était possible pour ((Clinias)) d'éviter de tomber dans le paradoxe.",
+                "PhiH.textAnalysis.plato.paradox.questions.q2": "J'explique l'aspect du paradoxe dans la déclaration d'Eubulides connue sous le nom du paradoxe du menteur: \"Je suis un menteur\": s'il ment dans cette déclaration, que puis-je conclure? Et s'il dit la vérité, que puis-je conclure? Je compare les deux conclusions.",
+                "PhiH.textAnalysis.plato.paradox.questions.q3": "J'examine la déclaration socratique suivante: \"Tout ce que je sais, c'est que je ne sais rien.\" Et j'explique si elle contient un paradoxe?",
+                "PhiH.textAnalysis.plato.paradox.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.plato.paradox.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.plato.paradox.answers.a1.content": "<strong>Analyse de la possibilité pour Clinias d'éviter le paradoxe:</strong><br><br>1. <strong>Nature du paradoxe:</strong> Le paradoxe dans ce texte repose sur l'utilisation double du terme \"apprendre\" avec deux significations différentes:<br>- <strong>Apprendre au sens d'acquérir de nouvelles connaissances</strong> (pour les ignorants)<br>- <strong>Apprendre au sens de pratiquer la connaissance existante</strong> (pour les savants)<br><br>2. <strong>Stratégie sophistique:</strong> Euthydème exploite l'ambiguïté du terme \"apprendre\" pour confondre les deux sens, conduisant à une conclusion contradictoire.<br><br>3. <strong>Possibilité de dépassement:</strong> Clinias aurait pu éviter de tomber dans le paradoxe s'il:<br>- <strong>Demandait des clarifications:</strong> sur le sens d'\"apprendre\" dans la question.<br>- <strong>Donnait une réponse complète:</strong> comme: \"L'apprentissage peut être pour les savants (pour améliorer leur connaissance) et pour les ignorants (pour acquérir la connaissance)\".<br>- <strong>Révélait l'ambiguïté verbale:</strong> en montrant que la question repose sur un terme ambigu.<br><br>4. <strong>Leçons apprises:</strong> Importance de définir les termes et de clarifier les significations dans le dialogue philosophique pour éviter les sophismes linguistiques.",
+                "PhiH.textAnalysis.plato.paradox.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.plato.paradox.answers.a2.content": "<strong>Analyse du paradoxe du menteur d'Eubulide:</strong> \"Je suis un menteur\"<br><br><strong>1. S'il ment en disant \"Je suis un menteur\":</strong><br>- S'il ment dans cette déclaration, cela signifie que la déclaration n'est pas vraie.<br>- La déclaration dit: \"Je suis un menteur\" (c'est-à-dire je suis une personne qui ment).<br>- Si la déclaration n'est pas vraie, cela signifie qu'il n'est pas un menteur.<br>- <strong>Conclusion:</strong> S'il ment, cela signifie qu'il dit la vérité (parce qu'il n'est pas un menteur comme il le dit).<br><br><strong>2. S'il dit la vérité en disant \"Je suis un menteur\":</strong><br>- S'il dit la vérité dans cette déclaration, cela signifie que la déclaration est vraie.<br>- La déclaration dit: \"Je suis un menteur\" (c'est-à-dire je suis une personne qui ment).<br>- Si la déclaration est vraie, cela signifie qu'il est effectivement un menteur.<br>- <strong>Conclusion:</strong> S'il dit la vérité, cela signifie qu'il est un menteur (parce qu'il dit la vérité sur le fait d'être un menteur).<br><br><strong>3. Comparaison et analyse:</strong><br>- <strong>Contradiction:</strong> Dans les deux cas, nous arrivons à des résultats contradictoires.<br>- <strong>Paradoxe:</strong> S'il ment, il dit la vérité, et s'il dit la vérité, il ment.<br>- <strong>Niveau logique:</strong> Ce paradoxe montre un problème d'auto-référence des énoncés (l'énoncé qui se réfère à lui-même).<br>- <strong>Importance philosophique:</strong> Ce paradoxe soulève des questions sur la nature de la vérité, du mensonge et la possibilité d'exprimer le soi de manière logiquement cohérente.",
+                "PhiH.textAnalysis.plato.paradox.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.plato.paradox.answers.a3.content": "<strong>Analyse de la déclaration socratique:</strong> \"Tout ce que je sais, c'est que je ne sais rien\"<br><br><strong>1. Analyse du contenu:</strong><br>- La déclaration se compose de deux parties:<br>1. <strong>\"Tout ce que je sais\"</strong>: prétention à une certaine connaissance.<br>2. <strong>\"c'est que je ne sais rien\"</strong>: négation totale de la connaissance.<br><br><strong>2. Possibilité que la déclaration contienne un paradoxe:</strong><br>a. <strong>D'un point de vue apparent:</strong><br>- Si \"tout ce que je sais\" est vrai, cela signifie qu'il a au moins connaissance de cette vérité (qu'il ne sait rien).<br>- Mais \"que je ne sais rien\" nie toute connaissance, y compris la connaissance de cette vérité elle-même.<br>- <strong>Paradoxe possible:</strong> Comment peut-il savoir qu'il ne sait rien s'il ne sait rien du tout?<br><br>b. <strong>D'un point de vue philosophique plus profond:</strong><br>- La déclaration peut être comprise comme une expression d'<strong>humilité épistémique</strong> et non comme une preuve logique rigoureuse.<br>- Socrate fait référence au fait que la \"connaissance réelle\" est la connaissance des limites de la connaissance humaine.<br>- Savoir que nous ne savons pas est une sorte de \"connaissance négative\" ou de \"connaissance de l'ignorance\".<br><br><strong>3. La déclaration contient-elle un vrai paradoxe?</strong><br>- <strong>Oui</strong>, si nous la prenons littéralement et logiquement de manière stricte: elle prétend une connaissance (qu'il ne sait pas) tout en niant la connaissance.<br>- <strong>Non</strong>, si nous la comprenons dans son contexte philosophique comme une expression de la conscience des limites de la connaissance humaine.<br><br><strong>4. Différence avec le paradoxe du menteur:</strong><br>- Paradoxe du menteur: contradiction auto-référentielle claire et stricte.<br>- Déclaration de Socrate: peut être interprétée de manière non contradictoire si elle est comprise comme une expression d'une position philosophique (humilité épistémique).<br><br><strong>5. Conclusion:</strong><br>La déclaration contient une <strong>apparence de paradoxe</strong> si elle est prise littéralement, mais ce <strong>n'est pas un paradoxe logique strict</strong> comme celui du texte platonicien ou du paradoxe du menteur, c'est plutôt une expression d'une position philosophique profonde envers la connaissance.",
+                "PhiH.textAnalysis.plato.paradox.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.plato.paradox.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.plato.paradox.analysis.thesis.content": "Platon expose dans ce texte du dialogue \"Euthydème\" un modèle des sophismes sophistiques qui reposent sur la confusion entre les différentes significations des mêmes termes. Il montre comment le dialogue peut être transformé d'une quête de vérité en un jeu linguistique visant à faire tomber l'adversaire dans la contradiction et le paradoxe. Le texte révèle les mécanismes de la pensée sophistique qui exploite l'ambiguïté du langage pour créer des contradictions apparentes, et appelle à la prudence face à de telles pratiques dans le dialogue philosophique.",
+                "PhiH.textAnalysis.plato.paradox.analysis.mechanisms.title": "Mécanismes de création du paradoxe dans le texte:",
+                "PhiH.textAnalysis.plato.paradox.analysis.mechanisms.content": "Le texte montre plusieurs mécanismes de création de paradoxes:<br><br>1. <strong>Utilisation double des termes:</strong> Utilisation du terme \"apprendre\" avec deux significations différentes: acquisition de nouvelles connaissances (pour les ignorants) et pratique de la connaissance existante (pour les savants).<br><br>2. <strong>Confusion des niveaux:</strong> Confusion entre apprendre la chose (le contenu) et l'état de l'apprenant (savant ou ignorant).<br><br>3. <strong>Transition progressive:</strong> Construction d'une série de questions qui semblent logiques individuellement, mais qui conduisent finalement à une conclusion contradictoire avec le début.<br><br>4. <strong>Exploitation des réponses partielles:</strong> Prendre les réponses de l'adversaire dans des contextes partiels puis les assembler pour créer une contradiction.<br><br>5. <strong>Généralisation erronée:</strong> Généralisation d'un cas particulier (l'apprentissage des enfants par les enseignants) à toutes les situations d'apprentissage.<br><br>6. <strong>Dissimulation des présupposés:</strong> Présupposer que \"apprendre\" signifie toujours passer de l'ignorance à la connaissance, et négliger la possibilité d'apprentissage du savant.",
+                "PhiH.textAnalysis.plato.paradox.analysis.consequences.title": "Conséquences et danger des sophismes sophistiques:",
+                "PhiH.textAnalysis.plato.paradox.analysis.consequences.content": "- <strong>Déformation du dialogue philosophique:</strong> Transformer la discussion d'une recherche de vérité en une compétition de supériorité linguistique.<br><br>- <strong>Paralysie de la communication:</strong> Lorsque le langage devient un outil de tromperie plutôt que de transmission.<br><br>- <strong>Affaiblissement de la confiance en la raison:</strong> Ces sophismes peuvent conduire à douter de la capacité de la raison à atteindre la vérité.<br><br>- <strong>Tromperie des jeunes:</strong> Comme le montre le texte, où Euthydème cible le jeune Clinias.<br><br>- <strong>Obstruction du progrès cognitif:</strong> Distraire l'attention des vraies questions vers des jeux linguistiques.<br><br>- <strong>Exploitation dans le domaine politique:</strong> Ces techniques peuvent être utilisées pour tromper les masses dans le discours politique.",
+                "PhiH.textAnalysis.plato.paradox.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.plato.paradox.analysis.significance.content": "Ce texte du dialogue de Platon porte des significations profondes en philosophie, logique et langage:<br><br>1. <strong>Critique de la sophistique:</strong> Le texte représente une partie de la critique platonicienne de la pensée sophistique qui s'intéresse plus à gagner le débat qu'à chercher la vérité.<br><br>2. <strong>Importance de définir les termes:</strong> Met en évidence l'importance de la clarté conceptuelle et de la définition des significations dans le dialogue philosophique.<br><br>3. <strong>Relation entre langage et logique:</strong> Montre comment le langage peut être une source de sophismes si nous ne prêtons pas attention à la structure logique.<br><br>4. <strong>Dimension éducative:</strong> Le texte met en garde contre les dangers de la tromperie intellectuelle sur les jeunes, et appelle à une éducation philosophique correcte.<br><br>5. <strong>Continuité historique:</strong> Le problème des sophismes linguistiques et des paradoxes persiste à notre époque dans différents domaines.<br><br>6. <strong>Fondement de la pensée critique:</strong> Nous enseigne comment être prudents face aux arguments qui semblent logiques mais cachent des contradictions.<br><br>7. <strong>Application contemporaine:</strong> Les leçons de ce texte peuvent être appliquées aux sophismes des médias modernes et du discours de propagande.<br><br>8. <strong>Valeur du dialogue authentique:</strong> Souligne que le vrai dialogue doit être une quête de vérité, et pas seulement une compétition pour gagner.<br><br>Ce texte représente un appel à prêter attention à la nature du vrai dialogue philosophique, et à distinguer entre la polémique sophistique qui vise à gagner, et la recherche philosophique sérieuse qui vise la connaissance et la vérité."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.plato.paradox.level": "3rd Secondary - Philosophy",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.plato.paradox.title": "Text Analysis: In the Game of Paradoxes - Plato",
+                "PhiH.textAnalysis.plato.paradox.introduction.title": "Introduction",
+                "PhiH.textAnalysis.plato.paradox.introduction.content": "Dialogue does not always aim to achieve communication and perceive truth and commit to it, but often turns into a polemic for reasons of interest, so interlocutors resort to strategies whose only purpose is to trap the opponent in error, contradiction, and paradox.",
+                "PhiH.textAnalysis.plato.paradox.text.title": "In the Game of Paradoxes",
+                "PhiH.textAnalysis.plato.paradox.text.content": "- Euthydemus: Who are, O Clinias<sup>1</sup>, the people who learn: are they the knowledgeable or the ignorant? (...) Clinias answered in a way that did not allow me <sup>2</sup> to warn him: It is the knowledgeable who learn.<sup>3</sup>",
+                "PhiH.textAnalysis.plato.paradox.text.content2": "- Euthydemus<sup>4</sup> continued by saying: Are there or are there not people you call teachers? - Clinias acknowledged their existence.",
+                "PhiH.textAnalysis.plato.paradox.text.content3": "- Euthydemus: Are not teachers teachers for those who learn, as is the case for the lyre teacher and the master who were your teachers and those of the other children when you were their pupils? Is it not so? - Clinias agreed.",
+                "PhiH.textAnalysis.plato.paradox.text.content4": "- Euthydemus: Is it not true that when you were learning, you did not yet know what you were learning? - Clinias answered: We did not know it.",
+                "PhiH.textAnalysis.plato.paradox.text.content5": "- Euthydemus: Were you then knowledgeable when you did not know? - Clinias answered: No, certainly.",
+                "PhiH.textAnalysis.plato.paradox.text.content6": "- Euthydemus: So, if you were not knowledgeable, you were ignorant. - Clinias: That is true.",
+                "PhiH.textAnalysis.plato.paradox.text.content7": "- Euthydemus: So, when you were learning what you did not know, you were ignorant when you were learning it. - The young man nodded in agreement.",
+                "PhiH.textAnalysis.plato.paradox.text.content8": "- Euthydemus: It is therefore the ignorant, O Clinias, who learn and not the knowledgeable as you believe.<sup>5</sup>",
+                "PhiH.textAnalysis.plato.paradox.text.source": "Plato, Dialogue Euthydemus, 275-276 (translation by the editorial committee Plato, Euthydemus, 275c-276c)",
+                "PhiH.textAnalysis.plato.paradox.author.title": "Author Presentation",
+                "PhiH.textAnalysis.plato.paradox.author.alt": "Plato",
+                "PhiH.textAnalysis.plato.paradox.author.content": "Plato (428 BC / 348 BC) Greek philosopher, born in Athens where he was first a student of the sophists before becoming attached to Socrates and becoming his disciple. He was deeply affected by the trial of Socrates and his execution, seeing it as an indicator of the crisis of the city and the mediocrity of politics, considering that philosophy - in reaction to these conditions - is required to examine the foundations of just politics. Plato is considered the founder of dialogue as a genre in philosophical writing, in which he chose Socrates as expressing his most important philosophical positions. Among his most important dialogues: Ion, Laches, The Republic, Parmenides, Theaetetus, The Sophist, The Statesman, The Laws... Through them, his metaphysical theory based on the distinction between two worlds gradually clarified: the sensible world and the world of Ideas which is like original models of which sensible objects are only false copies, and which exist only by imitation or participation.",
+                "PhiH.textAnalysis.plato.paradox.lexical.title": "Footnotes and Concepts",
+                "PhiH.textAnalysis.plato.paradox.lexical.item1": "<strong>\"Clinias\":</strong> Pythagorean mathematician from the city of Tarentum who lived between the 5th and 4th centuries BC, friend of Plato. Among his most important contributions: the distinction in mathematics between static mathematics comprising arithmetic and geometry and dynamic mathematics comprising music and astronomy.",
+                "PhiH.textAnalysis.plato.paradox.lexical.item2": "<strong>\"Me\":</strong> Reference to Socrates who recounts what happens between Clinias and Euthydemus.",
+                "PhiH.textAnalysis.plato.paradox.lexical.item3": "<strong>\"Learn\":</strong> This expression is used to designate the ignorant person who acquires knowledge of something he ignores and the knowledgeable person of this thing who uses his knowledge to rethink this thing for practical or theoretical purposes, and Euthydemus uses the same expression to speak of two contradictory situations. This is what leads to trapping the interlocutor in a paradox whatever his answer.",
+                "PhiH.textAnalysis.plato.paradox.lexical.item4": "<strong>\"Euthydemus\":</strong> Greek sophist native to the city of Chios, known for teaching the arts of dueling, combat, and eloquence.",
+                "PhiH.textAnalysis.plato.paradox.lexical.item5": "<strong>\"Believe\":</strong> Reference to his first answer at the beginning of the dialogue: \"It is the knowledgeable who learn.\"",
+                "PhiH.textAnalysis.plato.paradox.questions.title": "Tasks",
+                "PhiH.textAnalysis.plato.paradox.questions.q1": "I explain whether it was possible for ((Clinias)) to avoid falling into the paradox.",
+                "PhiH.textAnalysis.plato.paradox.questions.q2": "I explain the aspect of the paradox in Eubulides' statement known as the liar paradox: \"I am a liar\": if he lies in this statement, what can I conclude? And if he tells the truth, what can I conclude? I compare the two conclusions.",
+                "PhiH.textAnalysis.plato.paradox.questions.q3": "I examine the following Socratic statement: \"All I know is that I know nothing.\" And I explain whether it contains a paradox?",
+                "PhiH.textAnalysis.plato.paradox.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.plato.paradox.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.plato.paradox.answers.a1.content": "<strong>Analysis of the possibility for Clinias to avoid the paradox:</strong><br><br>1. <strong>Nature of the paradox:</strong> The paradox in this text rests on the double use of the term \"learn\" with two different meanings:<br>- <strong>Learning in the sense of acquiring new knowledge</strong> (for the ignorant)<br>- <strong>Learning in the sense of practicing existing knowledge</strong> (for the knowledgeable)<br><br>2. <strong>Sophistic strategy:</strong> Euthydemus exploits the ambiguity of the term \"learn\" to confuse the two meanings, leading to a contradictory conclusion.<br><br>3. <strong>Possibility of overcoming:</strong> Clinias could have avoided falling into the paradox if he:<br>- <strong>Asked for clarifications:</strong> on the meaning of \"learn\" in the question.<br>- <strong>Gave a complete answer:</strong> like: \"Learning can be for the knowledgeable (to improve their knowledge) and for the ignorant (to acquire knowledge)\".<br>- <strong>Revealed the verbal ambiguity:</strong> by showing that the question rests on an ambiguous term.<br><br>4. <strong>Lessons learned:</strong> Importance of defining terms and clarifying meanings in philosophical dialogue to avoid linguistic sophisms.",
+                "PhiH.textAnalysis.plato.paradox.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.plato.paradox.answers.a2.content": "<strong>Analysis of Eubulides' liar paradox:</strong> \"I am a liar\"<br><br><strong>1. If he lies in saying \"I am a liar\":</strong><br>- If he lies in this statement, this means the statement is not true.<br>- The statement says: \"I am a liar\" (i.e., I am a person who lies).<br>- If the statement is not true, this means he is not a liar.<br>- <strong>Conclusion:</strong> If he lies, this means he tells the truth (because he is not a liar as he says).<br><br><strong>2. If he tells the truth in saying \"I am a liar\":</strong><br>- If he tells the truth in this statement, this means the statement is true.<br>- The statement says: \"I am a liar\" (i.e., I am a person who lies).<br>- If the statement is true, this means he is indeed a liar.<br>- <strong>Conclusion:</strong> If he tells the truth, this means he is a liar (because he tells the truth about being a liar).<br><br><strong>3. Comparison and analysis:</strong><br>- <strong>Contradiction:</strong> In both cases, we arrive at contradictory results.<br>- <strong>Paradox:</strong> If he lies, he tells the truth, and if he tells the truth, he lies.<br>- <strong>Logical level:</strong> This paradox shows a problem of self-reference of statements (the statement that refers to itself).<br>- <strong>Philosophical importance:</strong> This paradox raises questions about the nature of truth, lying, and the possibility of expressing the self in a logically consistent manner.",
+                "PhiH.textAnalysis.plato.paradox.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.plato.paradox.answers.a3.content": "<strong>Analysis of the Socratic statement:</strong> \"All I know is that I know nothing\"<br><br><strong>1. Content analysis:</strong><br>- The statement consists of two parts:<br>1. <strong>\"All I know\"</strong>: claim to some knowledge.<br>2. <strong>\"is that I know nothing\"</strong>: total negation of knowledge.<br><br><strong>2. Possibility that the statement contains a paradox:</strong><br>a. <strong>From an apparent viewpoint:</strong><br>- If \"all I know\" is true, this means he has at least knowledge of this truth (that he knows nothing).<br>- But \"that I know nothing\" denies all knowledge, including knowledge of this truth itself.<br>- <strong>Possible paradox:</strong> How can he know that he knows nothing if he knows nothing at all?<br><br>b. <strong>From a deeper philosophical viewpoint:</strong><br>- The statement can be understood as an expression of <strong>epistemic humility</strong> and not as a rigorous logical proof.<br>- Socrates refers to the fact that \"real knowledge\" is knowledge of the limits of human knowledge.<br>- Knowing that we do not know is a kind of \"negative knowledge\" or \"knowledge of ignorance\".<br><br><strong>3. Does the statement contain a true paradox?</strong><br>- <strong>Yes</strong>, if we take it literally and logically strictly: it claims knowledge (that he does not know) while denying knowledge.<br>- <strong>No</strong>, if we understand it in its philosophical context as an expression of awareness of the limits of human knowledge.<br><br><strong>4. Difference with the liar paradox:</strong><br>- Liar paradox: clear and strict self-referential contradiction.<br>- Socrates' statement: can be interpreted non-contradictorily if understood as an expression of a philosophical position (epistemic humility).<br><br><strong>5. Conclusion:</strong><br>The statement contains an <strong>appearance of paradox</strong> if taken literally, but it is <strong>not a strict logical paradox</strong> like that in the Platonic text or the liar paradox, rather it is an expression of a deep philosophical position toward knowledge.",
+                "PhiH.textAnalysis.plato.paradox.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.plato.paradox.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.plato.paradox.analysis.thesis.content": "Plato presents in this text from the dialogue \"Euthydemus\" a model of sophistic fallacies that rely on confusion between different meanings of the same terms. He shows how dialogue can be transformed from a quest for truth into a linguistic game aimed at trapping the opponent in contradiction and paradox. The text reveals the mechanisms of sophistic thinking that exploits language ambiguity to create apparent contradictions, and calls for caution against such practices in philosophical dialogue.",
+                "PhiH.textAnalysis.plato.paradox.analysis.mechanisms.title": "Mechanisms of creating paradox in the text:",
+                "PhiH.textAnalysis.plato.paradox.analysis.mechanisms.content": "The text shows several mechanisms for creating paradoxes:<br><br>1. <strong>Double use of terms:</strong> Use of the term \"learn\" with two different meanings: acquisition of new knowledge (for the ignorant) and practice of existing knowledge (for the knowledgeable).<br><br>2. <strong>Confusion of levels:</strong> Confusion between learning the thing (the content) and the state of the learner (knowledgeable or ignorant).<br><br>3. <strong>Progressive transition:</strong> Construction of a series of questions that seem logical individually, but ultimately lead to a conclusion contradictory with the beginning.<br><br>4. <strong>Exploitation of partial answers:</strong> Taking the opponent's answers in partial contexts then assembling them to create a contradiction.<br><br>5. <strong>Erroneous generalization:</strong> Generalization of a particular case (children's learning from teachers) to all learning situations.<br><br>6. <strong>Concealment of presuppositions:</strong> Presupposing that \"learn\" always means moving from ignorance to knowledge, and neglecting the possibility of the knowledgeable person learning.",
+                "PhiH.textAnalysis.plato.paradox.analysis.consequences.title": "Consequences and danger of sophistic fallacies:",
+                "PhiH.textAnalysis.plato.paradox.analysis.consequences.content": "- <strong>Deformation of philosophical dialogue:</strong> Transforming discussion from a search for truth into a competition of linguistic superiority.<br><br>- <strong>Paralysis of communication:</strong> When language becomes a tool of deception rather than transmission.<br><br>- <strong>Weakening of trust in reason:</strong> These fallacies can lead to doubting reason's ability to reach truth.<br><br>- <strong>Deception of the young:</strong> As shown in the text, where Euthydemus targets the young Clinias.<br><br>- <strong>Obstruction of cognitive progress:</strong> Distracting attention from real questions to linguistic games.<br><br>- <strong>Exploitation in the political domain:</strong> These techniques can be used to deceive masses in political discourse.",
+                "PhiH.textAnalysis.plato.paradox.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.plato.paradox.analysis.significance.content": "This text from Plato's dialogue carries deep meanings in philosophy, logic, and language:<br><br>1. <strong>Critique of sophistry:</strong> The text represents part of Platonic critique of sophistic thinking that is more interested in winning debate than seeking truth.<br><br>2. <strong>Importance of defining terms:</strong> Highlights the importance of conceptual clarity and definition of meanings in philosophical dialogue.<br><br>3. <strong>Relation between language and logic:</strong> Shows how language can be a source of fallacies if we don't pay attention to logical structure.<br><br>4. <strong>Educational dimension:</strong> The text warns against the dangers of intellectual deception on the young, and calls for proper philosophical education.<br><br>5. <strong>Historical continuity:</strong> The problem of linguistic fallacies and paradoxes persists in our time in different fields.<br><br>6. <strong>Foundation of critical thinking:</strong> Teaches us how to be cautious of arguments that seem logical but hide contradictions.<br><br>7. <strong>Contemporary application:</strong> The lessons of this text can be applied to fallacies of modern media and propaganda discourse.<br><br>8. <strong>Value of authentic dialogue:</strong> Emphasizes that true dialogue should be a quest for truth, and not just a competition to win.<br><br>This text represents a call to pay attention to the nature of true philosophical dialogue, and to distinguish between sophistic polemic that aims to win, and serious philosophical research that aims at knowledge and truth."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.plato.paradox.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.plato.paradox.title": "تحليل النص: في لعبة المفارقات - أفلاطون",
+                "PhiH.textAnalysis.plato.paradox.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.plato.paradox.introduction.content": "لا يهدف الحوار دائما إلى تحقيق التواصل وإدراك الحقيقة والالتزام بها بل كثيرا ما ينقلب إلى سجال لأسباب مصلحيّة فيعمد فيه المتحاورون إلى استراتيجيّات لا غرض منها غير إيقاع الخصم في الغلط والتناقض والمفارقة.",
+                "PhiH.textAnalysis.plato.paradox.text.title": "في لعبة المفارقات",
+                "PhiH.textAnalysis.plato.paradox.text.content": "- أوتيدام: من هم يا كلينياس<sup>1</sup> الناس الذين يتعلّمون: أهُم العلماء أم الجهلة ؟( ... ) لقد أجاب كلينياس بشكل لم يسمح لي <sup>2</sup> بتحذيره : إنّ العلماء هم الذين يتعلّمون.<sup>3</sup>",
+                "PhiH.textAnalysis.plato.paradox.text.content2": "- تابع أوتيدام<sup>4</sup> قائلا: هل يوجد أم لا أناس تسمّيهم معلِّمين؟ - فأقرّ كلينياس بوجودهم.",
+                "PhiH.textAnalysis.plato.paradox.text.content3": "- أوتيدام: أوَ ليس المعلِّمون معلِّمين لمن يتعلّمون مثلما هو الأمر بالنسبة لمعلّم العزف على القيثارة والمدرّس اللذَين كانا معلِّمَين لك ولبقيّة الأطفال عندما كنتم تلاميذهما ؟ أليس كذلك ؟ - فأبدی کلینیاس موافقته.",
+                "PhiH.textAnalysis.plato.paradox.text.content4": "- أوتيدام: أليس صحيحا أنّه عندما كنتم تتعلّمون، كنتم لا تَعْلَمون بعدُ، ما كنتم تتعلَّمونه؟ - فأجاب كلينياس: إنّنا ما كنّا نعلَم ذلك.",
+                "PhiH.textAnalysis.plato.paradox.text.content5": "- أوتيدام: هل كنتم، إذن، علماء حين كنتم لا تَعلَمون ؟ - فأجاب كلينياس: لا بالتأكيد.",
+                "PhiH.textAnalysis.plato.paradox.text.content6": "- أوتيدام: إذن، إن لم تكونوا علماء فقد كنتم جهلة. - كلينياس: هذا صحيح.",
+                "PhiH.textAnalysis.plato.paradox.text.content7": "- أوتيدام: إذن، عندما كنتم بصدد تَعلُّم ما لا تَعلَمونه كنتم جهلة حينما كنتم تتعلّمونه. - فَأَوَمَأَ الفتى بالموافقة.",
+                "PhiH.textAnalysis.plato.paradox.text.content8": "- أوتيدام: إنّما الجهلة، إذن، هم الذين يتعلّمون يا كلينياس وليس العلماء كما تعتقد.<sup>5</sup>",
+                "PhiH.textAnalysis.plato.paradox.text.source": "أفلاطون، محاورة أوتيدام، 275-276 (ترجمة لجنة التأليف Platon, Euthydeme, 275c-276c)",
+                "PhiH.textAnalysis.plato.paradox.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.plato.paradox.author.alt": "أفلاطون",
+                "PhiH.textAnalysis.plato.paradox.author.content": "أفلاطون (428 ق م / 348 ق م) فيلسوف يونانيّ، ولد بأثينا حيث تتلمذ في البداية على السوفسطائيين قبل أن يتعلّق بسقراط ويتلمذ عليه. تأثّر بالغ التأثّر بمحاكمة سقراط وبإعدامه حيث رأى في ذلك مؤشّرا على تأزم المدينة ورداءة السياسة فيها معتبرا أنّ الفلسفة - كردّة فعل على هذه الأوضاع - مطالبة بأن تنظر في أسس السياسة العادلة. يُعتبر أفلاطون مُؤسّسا للحوار كجنس في الكتابة الفلسفيّة اختار فيه سقراط كمعبّر عن أهمّ مواقفه الفلسفيّة. من أهمّ محاوراته: ايون، لاكاس، الجمهورية، بارمنيد، تييتات، السوفسطائي، السياسي، القوانين ... وخلالها توضحت تدريجيا نظريته الميتافيزيقيّة القائمة على التمييز بين عالمين: العالم الحسيّ وعالم المثل الّذي هو بمثابة نماذج أصليّة لا تُعَدّ الموضوعات الحسيّة إلا نسخا زائفة منها، ولا تُوجَد إلا بفعل محاكاة أو مشاركة.",
+                "PhiH.textAnalysis.plato.paradox.lexical.title": "الهوامش والمفاهيم",
+                "PhiH.textAnalysis.plato.paradox.lexical.item1": "<strong>\"كلينياس\":</strong> عالم رياضيات فيثاغوري من مدينة Tarente عاش بين القرنين الخامس والرابع ق.م، ربطته علاقة صداقة بأفلاطون. من أهمّ إسهاماته التمييز في الرياضيات بين رياضيات ساكنة تشمل علم العدد والهندسة ورياضيات متحرّكة تشمل الموسيقى وعلم الفلك.",
+                "PhiH.textAnalysis.plato.paradox.lexical.item2": "<strong>\"لي\":</strong> إحالة على سقراط وهو الذي يروي ما يحدث بين كلينياس وأوتيدام.",
+                "PhiH.textAnalysis.plato.paradox.lexical.item3": "<strong>\"يتعلّمون\":</strong> تُستعمل هذه العبارة للدّلالة على الجاهل الذي يكتسب معرفة بشيء يجهله وعن العالم بهذا الشيء والذي يستعمل علمه ليفكّر مجدّدا في هذا الشيء لأغراض عمليّة أو نظرية، وأوتيدام يستعمل نفس العبارة للحديث عن وضعيّتين متناقضتين. وهو ما يؤدّي إلى الإيقاع بالمحاور في مفارقة مهما كانت إجابته.",
+                "PhiH.textAnalysis.plato.paradox.lexical.item4": "<strong>\"أوتيدام\":</strong> سفسطائي إغريقي أصيل مدينة Chios، عُرِف بتعليمه لفنون المبارزة والقتال والخطابة.",
+                "PhiH.textAnalysis.plato.paradox.lexical.item5": "<strong>\"تعتقد\":</strong> إشارة إلى إجابته الأولى في مقدمة الحوار: \"العلماء هم الذين يتعلّمون.\"",
+                "PhiH.textAnalysis.plato.paradox.questions.title": "المهام",
+                "PhiH.textAnalysis.plato.paradox.questions.q1": "أبيّن ما إذا كان بإمكان ((كلينياس)) تجنّب الوقوع في المفارقة.",
+                "PhiH.textAnalysis.plato.paradox.questions.q2": "أبيّن وجه المفارقة في قول Eubilides المعروف بمفارقة الكذّاب: \"أنا كذّاب\": إذا كذب في قوله هذا، ماذا أستنتج ؟ وإذا صدق، ماذا أستنتج ؟ أقارن الاستنتاجين معا.",
+                "PhiH.textAnalysis.plato.paradox.questions.q3": "أَنظر في القول السقراطي التالي: \"كل ما أعرفه أني لا أعرف شيئا.\" وأُبّن ما إذا كان يتضمّن مفارقة ؟",
+                "PhiH.textAnalysis.plato.paradox.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.plato.paradox.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.plato.paradox.answers.a1.content": "<strong>تحليل إمكانية تجنب كلينياس الوقوع في المفارقة:</strong><br><br>1. <strong>طبيعة المفارقة:</strong> تقوم المفارقة في هذا النص على الاستخدام المزدوج لمصطلح \"التعلم\" بمعنيين مختلفين:<br>- <strong>التعلم بمعنى اكتساب المعرفة الجديدة</strong> (للجهلة)<br>- <strong>التعلم بمعنى ممارسة المعرفة الموجودة</strong> (للعلماء)<br><br>2. <strong>الاستراتيجية السفسطائية:</strong> يستغل أوتيدام غموض مصطلح \"التعلم\" ليخلط بين المعنيين، مما يؤدي إلى استنتاج متناقض.<br><br>3. <strong>إمكانية التجاوز:</strong> كان بإمكان كلينياس تجنب الوقوع في المفارقة لو:<br>- <strong>طلب التوضيح:</strong> عن معنى \"التعلم\" المقصود في السؤال.<br>- <strong>قدم إجابة شاملة:</strong> مثل: \"التعلم يمكن أن يكون للعلماء (لتحسين معرفتهم) وللجهلة (لاكتساب المعرفة)\".<br>- <strong>كشف الغموض اللفظي:</strong> بإظهار أن السؤال يستند إلى مصطلح غامض.<br><br>4. <strong>الدروس المستفادة:</strong> أهمية تحديد المصطلحات وتوضيح المعاني في الحوار الفلسفي لتجنب المغالطات اللغوية.",
+                "PhiH.textAnalysis.plato.paradox.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.plato.paradox.answers.a2.content": "<strong>تحليل مفارقة الكذاب لإيوبوليدس:</strong> \"أنا كذاب\"<br><br><strong>1. إذا كذب في قوله \"أنا كذاب\":</strong><br>- إذا كان كاذباً في هذا القول، فهذا يعني أن القول غير صحيح.<br>- القول يقول: \"أنا كذاب\" (أي أنا شخص يَكذب).<br>- إذا كان القول غير صحيح، فهذا يعني أنه ليس كاذباً.<br>- <strong>الاستنتاج:</strong> إذا كذب، فهذا يعني أنه صادق (لأنه ليس كاذباً كما يقول).<br><br><strong>2. إذا صدق في قوله \"أنا كذاب\":</strong><br>- إذا كان صادقاً في هذا القول، فهذا يعني أن القول صحيح.<br>- القول يقول: \"أنا كذاب\" (أي أنا شخص يَكذب).<br>- إذا كان القول صحيحاً، فهذا يعني أنه كاذب بالفعل.<br>- <strong>الاستنتاج:</strong> إذا صدق، فهذا يعني أنه كاذب (لأنه يقول الحقيقة عن كونه كاذباً).<br><br><strong>3. المقارنة والتحليل:</strong><br>- <strong>التناقض:</strong> في الحالتين نصل إلى نتائج متناقضة.<br>- <strong>المفارقة:</strong> إذا كذب فهو صادق، وإذا صدق فهو كاذب.<br>- <strong>المستوى المنطقي:</strong> هذه المفارقة تظهر مشكلة في المرجعية الذاتية للأقوال (القول الذي يشير إلى نفسه).<br>- <strong>الأهمية الفلسفية:</strong> تثير هذه المفارقة أسئلة حول طبيعة الحقيقة والكذب وإمكانية التعبير عن الذات بشكل متناسق منطقياً.",
+                "PhiH.textAnalysis.plato.paradox.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.plato.paradox.answers.a3.content": "<strong>تحليل القول السقراطي:</strong> \"كل ما أعرفه أني لا أعرف شيئا\"<br><br><strong>1. تحليل المحتوى:</strong><br>- القول يتكون من جزأين:<br>1. <strong>\"كل ما أعرفه\"</strong>: ادعاء بوجود معرفة ما.<br>2. <strong>\"أني لا أعرف شيئا\"</strong>: نفي للمعرفة بشكل كلي.<br><br><strong>2. إمكانية احتواء القول على مفارقة:</strong><br>أ. <strong>من وجهة نظر ظاهرية:</strong><br>- إذا كان \"كل ما أعرفه\" صحيحاً، فهذا يعني أن لديه معرفة على الأقل بهذه الحقيقة (أنه لا يعرف شيئاً).<br>- لكن \"أني لا أعرف شيئا\" تنفي أي معرفة، بما في ذلك معرفة هذه الحقيقة نفسها.<br>- <strong>المفارقة المحتملة:</strong> كيف يمكن أن يعرف أنه لا يعرف شيئاً إذا كان لا يعرف شيئاً أصلاً؟<br><br>ب. <strong>من وجهة نظر فلسفية أعمق:</strong><br>- القول يمكن فهمه كتعبير عن <strong>التواضع المعرفي</strong> وليس كإثبات منطقي صارم.<br>- سقراط يشير إلى أن \"المعرفة الحقيقية\" هي معرفة بحدود المعرفة الإنسانية.<br>- المعرفة بأننا لا نعرف هي نوع من \"المعرفة السلبية\" أو \"معرفة الجهل\".<br><br><strong>3. هل يحتوي القول على مفارقة حقيقية؟</strong><br>- <strong>نعم</strong>، إذا أخذناه حرفياً وبشكل منطقي صارم: فهو يدعي معرفة (أنه لا يعرف) بينما ينفي المعرفة.<br>- <strong>لا</strong>، إذا فهمناه في سياقه الفلسفي كتعبير عن الوعي بحدود المعرفة البشرية.<br><br><strong>4. الفرق بينه وبين مفارقة الكذاب:</strong><br>- مفارقة الكذاب: تناقض ذاتي واضح وصارم.<br>- قول سقراط: يمكن تفسيره بشكل غير متناقض إذا فهم كتعبير عن موقف فلسفي (التواضع المعرفي).<br><br><strong>5. الخلاصة:</strong><br>القول يحتوي على <strong>مظهر من مظاهر المفارقة</strong> إذا أخذ بشكل حرفي، لكنه <strong>ليس مفارقة منطقية صارمة</strong> كتلك التي في النص الأفلاطوني أو مفارقة الكذاب، بل هو تعبير عن موقف فلسفي عميق تجاه المعرفة.",
+                "PhiH.textAnalysis.plato.paradox.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.plato.paradox.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.plato.paradox.analysis.thesis.content": "يعرض أفلاطون في هذا النص من محاورة \"أوتيدام\" نموذجاً للمغالطات السفسطائية التي تعتمد على الخلط بين المعاني المختلفة للمصطلحات نفسها. يوضح كيف يمكن تحويل الحوار من سعي نحو الحقيقة إلى لعبة لغوية تهدف إلى إيقاع الخصم في التناقض والمفارقة. النص يكشف عن آليات التفكير السفسطائي الذي يستغل غموض اللغة لخلق تناقضات ظاهرية، ويدعو إلى الحذر من مثل هذه الممارسات في الحوار الفلسفي.",
+                "PhiH.textAnalysis.plato.paradox.analysis.mechanisms.title": "آليات خلق المفارقة في النص:",
+                "PhiH.textAnalysis.plato.paradox.analysis.mechanisms.content": "يوضح النص عدة آليات لخلق المفارقات:<br><br>1. <strong>الاستخدام المزدوج للمصطلحات:</strong> استخدام مصطلح \"التعلم\" بمعنيين مختلفين: اكتساب المعرفة الجديدة (للجهلة) وممارسة المعرفة الموجودة (للعلماء).<br><br>2. <strong>الخلط بين المستويات:</strong> الخلط بين تعلم الشيء (المحتوى) وبين حالة المتعلم (العالم أو الجاهل).<br><br>3. <strong>الانتقال التدريجي:</strong> بناء سلسلة من الأسئلة تبدو منطقية كل على حدة، لكنها تؤدي في النهاية إلى نتيجة متناقضة مع البداية.<br><br>4. <strong>استغلال الإجابات الجزئية:</strong> أخذ إجابات الخصم في سياقات جزئية ثم تجميعها لخلق تناقض.<br><br>5. <strong>التعميم الخاطئ:</strong> تعميم حالة خاصة (تعلم الأطفال من المعلمين) على جميع حالات التعلم.<br><br>6. <strong>إخفاء الافتراضات:</strong> افتراض أن \"التعلم\" يعني دائماً الانتقال من الجهل إلى العلم، وإهمال إمكانية تعلم العالم.",
+                "PhiH.textAnalysis.plato.paradox.analysis.consequences.title": "نتائج وخطورة المغالطات السفسطائية:",
+                "PhiH.textAnalysis.plato.paradox.analysis.consequences.content": "- <strong>تشويه الحوار الفلسفي:</strong> تحويل النقاش من بحث عن الحقيقة إلى مسابقة للتفوق اللغوي.<br><br>- <strong>تعطيل التواصل:</strong> عندما تصبح اللغة أداة للتضليل بدلاً من التوصيل.<br><br>- <strong>إضعاف الثقة في العقل:</strong> قد تؤدي هذه المغالطات إلى الشك في قدرة العقل على الوصول إلى الحقيقة.<br><br>- <strong>تضليل الشباب:</strong> كما يظهر في النص، حيث يستهدف أوتيدام الشاب كلينياس.<br><br>- <strong>إعاقة التقدم المعرفي:</strong> تشتيت الانتباه عن الأسئلة الحقيقية إلى ألعاب لغوية.<br><br>- <strong>استغلال في المجال السياسي:</strong> يمكن استخدام هذه التقنيات لتضليل الجماهير في الخطاب السياسي.",
+                "PhiH.textAnalysis.plato.paradox.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.plato.paradox.analysis.significance.content": "يحمل هذا النص من محاورة أفلاطون دلالات عميقة في الفلسفة والمنطق واللغة:<br><br>1. <strong>نقد السفسطائية:</strong> يمثل النص جزءاً من نقد أفلاطون للفكر السفسطائي الذي يهتم بالفوز في الجدل أكثر من البحث عن الحقيقة.<br><br>2. <strong>أهمية تحديد المصطلحات:</strong> يبرز أهمية الوضوح المفاهيمي وتحديد المعاني في الحوار الفلسفي.<br><br>3. <strong>العلاقة بين اللغة والمنطق:</strong> يوضح كيف يمكن أن تكون اللغة مصدراً للمغالطات إذا لم ننتبه إلى البنية المنطقية.<br><br>4. <strong>البعد التربوي:</strong> النص يحذر من مخاطر التضليل الفكري على الشباب، ويدعو إلى التربية الفلسفية الصحيحة.<br><br>5. <strong>الاستمرارية التاريخية:</strong> لا تزال مشكلة المغالطات اللغوية والمفارقات قائمة في عصرنا في مختلف المجالات.<br><br>6. <strong>أساس للفكر النقدي:</strong> يعلمنا النص كيف نكون حذرين من الحجج التي تبدو منطقية ولكنها تخفي تناقضات.<br><br>7. <strong>التطبيق المعاصر:</strong> يمكن تطبيق دروس هذا النص على مغالطات الإعلام الحديث وخطاب الدعاية.<br><br>8. <strong>قيمة الحوار الصادق:</strong> يؤكد على أن الحوار الحقيقي يجب أن يكون سعياً نحو الحقيقة، وليس مجرد منافسة للفوز.<br><br>هذا النص يمثل دعوة للانتباه إلى طبيعة الحوار الفلسفي الحقيقي، والتمييز بين الجدال السفسطائي الذي يهدف إلى الفوز، والبحث الفلسفي الجاد الذي يهدف إلى المعرفة والحقيقة."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

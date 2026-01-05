@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: المفاضلة بين الأعراق - حقيقة أم مغالطة؟ - أدولف هتلر - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#8B0000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Dark Red/Burgundy Color Palette (بورجوندي/أحمر داكن) */
+        :root {
+            --primary-color: #8B0000;
+            --primary-light: #B22222;
+            --primary-dark: #660000;
+            --secondary-color: #DC143C;
+            --secondary-light: #FF6347;
+            --secondary-dark: #B22222;
+            --accent-color: #DC143C;
+            --accent-light: #FF6347;
+            --accent-dark: #B22222;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #fff5f5;
+            --card-bg: #ffffff;
+            --definition-bg: #ffeaea;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #ffd7d7;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(139, 0, 0, 0.1), 0 2px 4px -1px rgba(139, 0, 0, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(139, 0, 0, 0.1), 0 4px 6px -2px rgba(139, 0, 0, 0.05);
+            --gradient-primary: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+            --gradient-secondary: linear-gradient(135deg, #DC143C 0%, #B22222 100%);
+            --gradient-accent: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #B22222;
+            --primary-light: #DC143C;
+            --primary-dark: #8B0000;
+            --secondary-color: #FF6347;
+            --secondary-light: #FF7F50;
+            --secondary-dark: #DC143C;
+            --accent-color: #FF6347;
+            --accent-light: #FF7F50;
+            --accent-dark: #DC143C;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #4a0000;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #660000;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #B22222 0%, #FF6347 100%);
+            --gradient-secondary: linear-gradient(135deg, #FF6347 0%, #DC143C 100%);
+            --gradient-accent: linear-gradient(135deg, #FF6347 0%, #B22222 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(139, 0, 0, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(220, 20, 60, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(220, 20, 60, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(139, 0, 0, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+        
+        /* Header and controls styles - Same as other files */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Windows Bar Styling */
+        .PhiH-windows-bar {
+            display: flex;
+            justify-content: center;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-window-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: var(--text-color);
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+            margin: 0 0.25rem;
+        }
+        
+        .PhiH-window-item:hover {
+            background-color: var(--definition-bg);
+            color: var(--primary-color);
+        }
+        
+        .PhiH-window-item.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .PhiH-window-icon {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.hitler.title">تحليل النص: المفاضلة بين الأعراق - حقيقة أم مغالطة؟ - أدولف هتلر</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.hitler.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.hitler.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.hitler.introduction.content">
+                    إنّ دحض العلم لفكرة وجود عرق خالص للمفاضلة بين الأعراق لم يمنع من تمادي حضور المواقف العنصرية، وهو ما يشكّل مفارقة تبعث على التساؤل ويُحفّزُ على تفكيك آليّات اشتغال الفكر الدّاعم لهذه المواقف.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.hitler.text.title">المفاضلة بين الأعراق: حقيقة أم مغالطة؟</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.hitler.text.content">
+                        لعلّه من غير المجدي أن نناقش مسألة معرفة أيّ عرق أو أيّة أعراق كانت في البدءِ موتَمنة على الحضارة الإنسانية ويعود إليها بالتالي فعليّا فضل تأسيس ما نسمّيه اليوم بالإنسانية. وإنّه لمن الأيسر أن نطرح على أنفسنا السؤال في علاقة بالحاضر وعندها سيكون الجواب سهلا وواضحا. إنّ كلّ ما هو ماثل أمامنا اليوم من حضارة إنسانية ومن منتجات الفن والعلم والتقنية هو تقريبا ثمرة النشاط الخلاّق للآريين <sup>1</sup> دون سواهم. وهذا الأمر يسمح لنا بأن نستنتج تبعا لذلك ودون أن تُعوزنا الحجّة، أنّهم كانوا وحدهم المؤسّسين للإنسانية راقية، وهم بالتالي يمثّلون النمط الأوّلي لما نعنيه بـ"الإنسان". إنّ الآري هو بروميثيوس <sup>2</sup> الإنسانية وقد انقدحت شرارة النبوغ الرباني في كلّ الأزمنة من جبينه المنير. إنّه ما انفكّ يُوقد من جديد هذه النار وقد اتّخذت شكل معرفة كانت تُضيءُ الليل الذي ظلّ يكتنف الألغاز المحتفظة بسرّها، وأبانت للإنسان الطريق الذي كان ينبغي عليه أن يصعده حتّى يُصبح سيّدا على باقي الكائنات الحيّة على هذه الأرض. ولو تمّ إفناؤه لحلّت ظُلمة حالكة على الأرض ولتلاشت الحضارة الإنسانية في بضعة قرون ولاستحال العالم قفرا.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.hitler.text.source">أدولف هتلر، كفاحي، ترجمة لجنة التأليف، Hitler, Mon combat, édt numérique, p 151</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.hitler.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/adolf_hitler.jpg" alt="أدولف هتلر" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.hitler.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.hitler.author.content">
+                            أدولف هتلر (1889 - 1945): رجل دولة ألماني، منظّر للإيديولوجيا النازية القائمة على القول بأفضليّة العرق الآري على بقيّة العروق البشرية وعلى حقّها في التوسّع على حساب الشعوب الأخرى واكتساح "الفضاء الحيوي". ترأس حزب العمّال الوطني الاشتراكي سنة 1921. بعث منظّمة عسكرية موازية، "جند الانقضاض". سُجن إثر قيامه بانقلاب فاشل في نوفمبر 1923 ميونيخ، وألّف في السجن كتابه "كفاحي". تمكّن في سنة واحدة من فرض دكتاتورية الحزب الوطني الاشتراكي وأقام النظام الجديد على فكرة الثأر من القوى الغربية، كما نجح في جعل الشعب الألماني بمختلف شرائحه ينخرط في ميثاق وطني شوفيني. قاد بلاده إلى الحرب العالمية الثانية وراقب أكبر جزء من أوروبا أين نظّم محتشدات الإبادة. خسر الحرب وانتحر سنة 1945.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.hitler.lexical.title">الهوامش والمفاهيم</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.hitler.lexical.item1"><strong>"الآريون":</strong> كلمة تعود في أصلها إلى اللغة السنسكريتية، لغة البراهمة في الحضارة الهنديّة- الأوروبية وتعني "النُبل" و"الشرف" arya وتُطلق عبارة الآريين على الشعوب الهنديّة - الأوروبية في إشارة إلى العرق الأبيض "الخالص". ووجد اللفظ رواجه في الايديولوجيا النازية.</li>
+                    <li data-i18n="PhiH.textAnalysis.hitler.lexical.item2"><strong>"بروميثيوس":</strong> نسبة إلى البطل الأسطوري الإغريقي الذي سرق النار من الآلهة وأعطاها للإنسان، فكان أن عُوقب بأن قُيِّدَ في السلاسل على قمّة هضبة أين كان يتردّد عليه نسر ليأكل كبده المتوالد على الدوام. غير أنّه وبعد أن حُرّر من قبل هرقل الذي قتل النسر، أخذ يعلّم الناس أصول الحضارة والمعمار والاشتغال على المعادن ومداواة المرضى إلخ.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.hitler.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.hitler.questions.q1">أنثّت من مدى صدق قول هتلر بأنّ "كل منتجات الحضارة اليوم، هي ثمرة النشاط الخلاّق للآريين دون سواهم".</li>
+                    <li data-i18n="PhiH.textAnalysis.hitler.questions.q2">لو سلّمنا جدلا بأنّ "كل منتجات الحضارة اليوم، هي ثمرة النشاط الخلاّق للآريين دون سواهم"، فهل يحقّ للكاتب أن يستنتج "أنّهم يمثّلون النمط الأوّلي لما نعنيه بالإنسان" ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.hitler.questions.q3">أحرّر فقرة أبّن فيها ما إذا كان تنوّع العروق يُشرّع للمفاضلة بينها ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.hitler.questions.q4">أستخرج من النص الاستعارات التي استعملها الكاتب في دعم موقفه وأُبّن ما إذا كانت وظيفتها حجاجية أم خطابية ؟</li>
+                    <li data-i18n="PhiH.textAnalysis.hitler.questions.q5">أُعدّ ملفًا أُحدّد فيه التعريف العلمي للعرق وأُبرز مبرّرات رفض العلم لفكرة وجود عرق خالص.</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.hitler.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.hitler.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.hitler.answers.a1.content">
+                        قول هتلر بأنّ "كل منتجات الحضارة اليوم، هي ثمرة النشاط الخلاّق للآريين دون سواهم" هو قول غير صحيح علمياً وتاريخياً للأسباب التالية:
+                        <br><br>
+                        1. <strong>التنوع الحضاري:</strong> الحضارة الإنسانية نتاج مساهمات جميع الشعوب والأعراق. حضارات مصر القديمة، بلاد الرافدين، الصين، الهند، الأمريكتين قبل كولومبوس، والحضارات الأفريقية جميعها ساهمت في التراث الإنساني.
+                        <br><br>
+                        2. <strong>التبادل الثقافي:</strong> التاريخ يظهر تبادل المعرفة بين الحضارات. الرياضيات العربية نقلت التراث اليوناني والهندي، والعلوم في عصر النهضة استفادت من التراث الإسلامي.
+                        <br><br>
+                        3. <strong>التعريف الضيق للعرق الآري:</strong> مفهوم "العرق الآري" نفسه مشكوك في صحته علمياً، فالعلم الحديث يرفض فكرة الأعراق "الخالصة".
+                        <br><br>
+                        4. <strong>الانحياز الأيديولوجي:</strong> هتلر يستخدم هذا الادعاء لتبرير أيديولوجيته العنصرية وليس بناءً على حقائق تاريخية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.hitler.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.hitler.answers.a2.content">
+                        حتى لو سلّمنا جدلاً بصحة المقدمة، فإنّ الاستنتاج غير منطقي للأسباب التالية:
+                        <br><br>
+                        1. <strong>مغالطة التعميم:</strong> من الخطأ تعميم خاصية (الإبداع الحضاري) لتصبح تعريفاً للإنسان. الإنسانية تتجاوز الإنتاج الحضاري.
+                        <br><br>
+                        2. <strong>خلط المفاهيم:</strong> الخلط بين "المساهمة في الحضارة" و"تمثيل النمط الأولي للإنسان". النمط الأولي للإنسان يجب أن يعكس جوهر الإنسانية المشترك بين جميع البشر.
+                        <br><br>
+                        3. <strong>المغالطة الجينية:</strong> افتراض أن القدرات الحضارية تورث بيولوجياً، وهو ما ينفيه علم الوراثة الحديث.
+                        <br><br>
+                        4. <strong>التجاهل التاريخي:</strong> تجاهل فترات التخلف الحضاري للشعوب "الآرية" وفترات التقدم للشعوب الأخرى.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.hitler.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.hitler.answers.a3.content">
+                        لا يُشرّع تنوّع العروق للمفاضلة بينها، وذلك للأسباب التالية:
+                        <br><br>
+                        أولاً، التنوع العرقي ظاهرة بيولوجية طبيعية ناتجة عن التكيف مع البيئات المختلفة عبر آلاف السنين، وليس مؤشراً على تفاوت في القيمة الإنسانية. ثانياً، العلم الحديث يؤكد أن الاختلافات الجينية بين الأفراد داخل العرق الواحد أكبر من تلك بين الأعراق المختلفة. ثالثاً، المفاضلة بين الأعراق تقوم على معايير ذاتية وثقافية تختلف باختلاف المجتمعات والأزمنة، وليست حقائق موضوعية. رابعاً، تاريخ الإنسانية يظهر أن الإنجازات الحضارية نتاج عوامل ثقافية واقتصادية واجتماعية، وليست محصورة في عرق معين. أخيراً، الاعتراف بالتنوع العرقي يجب أن يقود إلى احترام الاختلاف والتعددية الثقافية، وليس إلى التراتبية والتمييز.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.hitler.answers.a4.title">الإجابة عن السؤال الرابع:</h5>
+                    <p data-i18n="PhiH.textAnalysis.hitler.answers.a4.content">
+                        <strong>الاستعارات المستخدمة في النص:</strong>
+                        <br><br>
+                        1. <strong>استعارة "بروميثيوس":</strong> يشبّه هتلر الآري ببروميثيوس الذي سرق النار من الآلهة وأعطاها للإنسان، معتبراً أن الآريين هم من وهبوا الحضارة للإنسانية.
+                        <br><br>
+                        2. <strong>استعارة "النار" و"الشرارة":</strong> يستخدم استعارة النار والشرارة للإشارة إلى الإبداع والمعرفة التي ينسبها للآريين.
+                        <br><br>
+                        3. <strong>استعارة "الظلمة" و"القفر":</strong> يصور عالم بدون الآريين كعالم مظلم وقاحل.
+                        <br><br>
+                        <strong>وظيفة هذه الاستعارات:</strong>
+                        <br><br>
+                        هذه الاستعارات لها وظيفة <strong>خطابية</strong> أكثر منها حجاجية:
+                        <br><br>
+                        - <strong>التأثير العاطفي:</strong> تهدف إلى استثارة المشاعر (الإعجاب، الخوف) بدلاً من تقديم حجج عقلية.
+                        <br><br>
+                        - <strong>التضخيم البلاغي:</strong> تضخيم دور الآريين وتصويرهم كمنقذين وحيدين للإنسانية.
+                        <br><br>
+                        - <strong>التبسيط المخل:</strong> تبسيط تعقيد التاريخ الحضاري في صورة أسطورية بسيطة.
+                        <br><br>
+                        - <strong>التبرير الأيديولوجي:</strong> تخدم هدفاً أيديولوجياً هو تبرير تفوق العرق الآري.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.hitler.answers.a5.title">الإجابة عن السؤال الخامس:</h5>
+                    <div data-i18n="PhiH.textAnalysis.hitler.answers.a5.content">
+                        <strong>ملف: التعريف العلمي للعرق ومبررات رفض فكرة العرق الخالص</strong>
+                        <br><br>
+                        <strong>1. التعريف العلمي للعرق:</strong>
+                        <br>
+                        - <strong>علم الأحياء:</strong> العرق مفهوم بيولوجي غير دقيق، فالإنسان الحديث (Homo sapiens) نوع واحد.
+                        <br>
+                        - <strong>علم الوراثة:</strong> الاختلافات الجينية بين الأفراد (85%) أكبر من تلك بين "الأعراق" (15%).
+                        <br>
+                        - <strong>الأنثروبولوجيا:</strong> التصنيف العرقي يعتمد على صفات ظاهرية (لون البشرة، شكل العيون) لا تعكس الاختلافات الجينية الحقيقية.
+                        <br><br>
+                        <strong>2. مبررات رفض العلم لفكرة وجود عرق خالص:</strong>
+                        <br>
+                        - <strong>الهجرة والاختلاط:</strong> تاريخ البشرية مليء بالهجرات والاختلاط بين المجموعات البشرية.
+                        <br>
+                        - <strong>التطور المستمر:</strong> الصفات الجينية في تطور وتغير مستمر، لا توجد "نقاوة" ثابتة.
+                        <br>
+                        - <strong>التكيف البيئي:</strong> الاختلافات الظاهرية نتيجة التكيف مع البيئة (مثل لون البشرة لتكيف مع الأشعة فوق البنفسجية).
+                        <br>
+                        - <strong>استمرارية التباين:</strong> التباين في الصفات البشرية استمراري وليس منفصلاً بين "أعراق" واضحة الحدود.
+                        <br>
+                        - <strong>الأسس الاجتماعية:</strong> التصنيفات العرقية اجتماعية وثقافية أكثر منها بيولوجية.
+                        <br><br>
+                        <strong>الخلاصة:</strong> العلم الحديث يرفض فكرة الأعراق "الخالصة" ويعتبر البشر جميعاً ينتمون إلى النوع الإنساني الواحد مع تنوع طبيعي في الصفات.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.hitler.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.hitler.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.hitler.analysis.thesis.content">
+                        يطرح هتلر أطروحة عنصرية مفادها أن العرق الآري هو العرق الوحيد الخلاق والمبدع في التاريخ الإنساني، وأن جميع إنجازات الحضارة الإنسانية تعود إليه حصرياً. يقدم هتلر هذه الأطروحة كحقيقة تاريخية ويستنتج منها تفوق العرق الآري وتمثيله للنمط الأولي للإنسان، مهدداً بأن انقراض هذا العرق سيؤدي إلى انهيار الحضارة الإنسانية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.hitler.analysis.mechanisms.title">آليات بناء الأطروحة العنصرية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.hitler.analysis.mechanisms.content">
+                        يعتمد هتلر على عدة آليات لبناء أطروحته العنصرية:
+                        <br><br>
+                        1. <strong>الادعاء بالحصريّة:</strong> ينسب جميع إنجازات الحضارة للعرق الآري حصرياً، متجاهلاً مساهمات الحضارات الأخرى.
+                        <br><br>
+                        2. <strong>التعميم الخاطئ:</strong> يعمّم صفة الإبداع الحضاري ليشمل جميع أفراد العرق الآري عبر التاريخ.
+                        <br><br>
+                        3. <strong>الاستدلال المغلوط:</strong> يستنتج تفوقاً بيولوجياً وأخلاقياً من ادعاءات تاريخية غير مثبتة.
+                        <br><br>
+                        4. <strong>الاستعارة الأسطورية:</strong> يستخدم استعارات أسطورية (بروميثيوس) لإضفاء شرعية قدسية على أطروحته.
+                        <br><br>
+                        5. <strong>التخويف والتهديد:</strong> يصور مستقبلاً مظلماً في حال انقراض العرق الآري لتبرير الحفاظ عليه.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.hitler.analysis.consequences.title">نتائج وخطورة الأطروحة العنصرية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.hitler.analysis.consequences.content">
+                        - <strong>تبرير العنف والتمييز:</strong> تستخدم الأطروحة العنصرية لتبرير التمييز والعنف ضد مجموعات بشرية أخرى.
+                        <br><br>
+                        - <strong>تشويه التاريخ:</strong> تشويه التاريخ الحقيقي للإنسانية وإعادة كتابته بشكل انتقائي.
+                        <br><br>
+                        - <strong>تقسيم الإنسانية:</strong> تقسيم البشرية إلى "أعراق متفوقة" و"أعراق دونية" بدلاً من اعتبارها وحدة واحدة.
+                        <br><br>
+                        - <strong>تأسيس الشرعنة الأيديولوجية:</strong> توفير أساس أيديولوجي للسياسات العنصرية كتلك التي اتبعها النظام النازي.
+                        <br><br>
+                        - <strong>تعطيل العقل النقدي:</strong> استبدال التحليل التاريخي العلمي بالخطابة العاطفية والأساطير.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.hitler.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.hitler.analysis.significance.content">
+                        يحمل تحليل هذا النص دلالات عميقة في الفلسفة والعلوم الاجتماعية:
+                        <br><br>
+                        1. <strong>نقد الأيديولوجيا:</strong> يمثل نموذجاً لكيفية استخدام الخطاب الفلسفي والأدبي لخدمة أيديولوجيات سياسية خطيرة.
+                        <br><br>
+                        2. <strong>علاقة العلم بالأيديولوجيا:</strong> يظهر كيف يمكن تجاهل الحقائق العلمية (رفض فكرة الأعراق الخالصة) لخدمة أهداف أيديولوجية.
+                        <br><br>
+                        3. <strong>سوء استخدام التاريخ:</strong> يبين كيف يمكن توظيف التاريخ بشكل انتقائي ومشوه لبناء سرديات عنصرية.
+                        <br><br>
+                        4. <strong>دور اللغة في التشكيل الأيديولوجي:</strong> يكشف كيف تستخدم اللغة (الاستعارات، المبالغات) لتشكيل الواقع وتبرير الممارسات العنصرية.
+                        <br><br>
+                        5. <strong>مسؤولية الفيلسوف والمفكر:</strong> يطرح سؤالاً أخلاقياً حول مسؤولية الفلاسفة والمفكرين في مراجعة وتفكيك الخطابات العنصرية.
+                        <br><br>
+                        6. <strong>المقاومة الفكرية:</strong> يؤكد ضرورة المقاومة الفكرية للخطابات العنصرية من خلال النقد العلمي والمنطقي.
+                        <br><br>
+                        هذا النص يمثل تحذيراً من مخاطر تحويل الاختلافات البيولوجية الظاهرية إلى أساس لتراتبية إنسانية وتمييز عنصري.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.hitler.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.hitler.title": "Analyse du texte: La hiérarchisation des races - vérité ou sophisme? - Adolf Hitler",
+                "PhiH.textAnalysis.hitler.introduction.title": "Introduction",
+                "PhiH.textAnalysis.hitler.introduction.content": "Le démenti scientifique de l'existence d'une race pure pour hiérarchiser les races n'a pas empêché la persistance des attitudes racistes, ce qui constitue un paradoxe qui suscite l'interrogation et stimule le démantèlement des mécanismes de fonctionnement de la pensée soutenant ces attitudes.",
+                "PhiH.textAnalysis.hitler.text.title": "La hiérarchisation des races: vérité ou sophisme?",
+                "PhiH.textAnalysis.hitler.text.content": "Il est peut-être inutile de discuter la question de savoir quelle race ou quelles races furent à l'origine dépositaires de la civilisation humaine et à qui revient donc réellement le mérite d'avoir fondé ce que nous appelons aujourd'hui l'humanité. Il est plus facile de nous poser la question par rapport au présent et alors la réponse sera simple et claire. Tout ce qui se présente à nous aujourd'hui de civilisation humaine et de produits de l'art, de la science et de la technique est presque exclusivement le fruit de l'activité créatrice des Aryens <sup>1</sup> sans les autres. Ceci nous permet de conclure en conséquence et sans manquer d'arguments, qu'ils furent les seuls fondateurs d'une humanité supérieure, et qu'ils représentent donc le type primitif de ce que nous entendons par \"homme\". L'Aryen est le Prométhée <sup>2</sup> de l'humanité et l'étincelle du génie divin a jailli à toutes les époques de son front lumineux. Il n'a cessé de rallumer ce feu qui a pris la forme d'une connaissance qui éclairait la nuit qui enveloppait les mystères gardant leur secret, et a montré à l'homme le chemin qu'il devait gravir pour devenir le maître des autres êtres vivants sur cette terre. S'il venait à être anéanti, des ténèbres profondes s'abattraient sur la terre, la civilisation humaine disparaîtrait en quelques siècles et le monde deviendrait un désert.",
+                "PhiH.textAnalysis.hitler.text.source": "Adolf Hitler, Mein Kampf, traduction du comité de rédaction, Hitler, Mon combat, édt numérique, p 151",
+                "PhiH.textAnalysis.hitler.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.hitler.author.alt": "Adolf Hitler",
+                "PhiH.textAnalysis.hitler.author.content": "Adolf Hitler (1889 - 1945): Homme d'État allemand, théoricien de l'idéologie nazie basée sur l'affirmation de la supériorité de la race aryenne sur les autres races humaines et sur son droit à l'expansion aux dépens des autres peuples et à la conquête de l'\"espace vital\". Il a dirigé le Parti national-socialiste des travailleurs en 1921. Il a créé une organisation militaire parallèle, les \"Sections d'assaut\". Emprisonné après un coup d'État raté à Munich en novembre 1923, il a écrit en prison son livre \"Mein Kampf\". Il a réussi en un an à imposer la dictature du Parti national-socialiste et a établi le nouveau régime sur l'idée de vengeance contre les puissances occidentales, réussissant à faire participer le peuple allemand de toutes ses couches à un pacte national chauvin. Il a conduit son pays à la Seconde Guerre mondiale et a contrôlé la plus grande partie de l'Europe où il a organisé des camps d'extermination. Il a perdu la guerre et s'est suicidé en 1945.",
+                "PhiH.textAnalysis.hitler.lexical.title": "Notes et concepts",
+                "PhiH.textAnalysis.hitler.lexical.item1": "<strong>\"Les Aryens\":</strong> Mot qui remonte à son origine au sanskrit, langue des brahmanes dans la civilisation indo-européenne et signifie \"noblesse\" et \"honneur\" arya, et l'expression Aryens est appliquée aux peuples indo-européens en référence à la race blanche \"pure\". Le terme a trouvé son essor dans l'idéologie nazie.",
+                "PhiH.textAnalysis.hitler.lexical.item2": "<strong>\"Prométhée\":</strong> Référence au héros mythologique grec qui a volé le feu aux dieux et l'a donné à l'homme, ce qui lui a valu d'être puni en étant enchaîné au sommet d'une colline où un aigle venait lui manger le foie qui repoussait constamment. Cependant, après avoir été libéré par Hercule qui a tué l'aigle, il a enseigné aux hommes les fondements de la civilisation, de l'architecture, du travail des métaux, du soin des malades, etc.",
+                "PhiH.textAnalysis.hitler.questions.title": "Tâches",
+                "PhiH.textAnalysis.hitler.questions.q1": "Je vérifie la véracité de l'affirmation de Hitler selon laquelle \"tous les produits de la civilisation aujourd'hui sont le fruit de l'activité créatrice des Aryens sans les autres\".",
+                "PhiH.textAnalysis.hitler.questions.q2": "Si nous admettons hypothétiquement que \"tous les produits de la civilisation aujourd'hui sont le fruit de l'activité créatrice des Aryens sans les autres\", l'auteur a-t-il le droit de conclure \"qu'ils représentent le type primitif de ce que nous entendons par homme\" ?",
+                "PhiH.textAnalysis.hitler.questions.q3": "Je rédige un paragraphe dans lequel j'explique si la diversité des races justifie leur hiérarchisation.",
+                "PhiH.textAnalysis.hitler.questions.q4": "J'extrais du texte les métaphores utilisées par l'auteur pour soutenir sa position et j'explique si leur fonction est argumentative ou rhétorique.",
+                "PhiH.textAnalysis.hitler.questions.q5": "Je prépare un dossier dans lequel je définis la définition scientifique de la race et je mets en évidence les justifications du rejet scientifique de l'idée d'une race pure.",
+                "PhiH.textAnalysis.hitler.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.hitler.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.hitler.answers.a1.content": "L'affirmation de Hitler selon laquelle \"tous les produits de la civilisation aujourd'hui sont le fruit de l'activité créatrice des Aryens sans les autres\" est scientifiquement et historiquement incorrecte pour les raisons suivantes:<br><br>1. <strong>Diversité civilisationnelle:</strong> La civilisation humaine est le produit des contributions de tous les peuples et races. Les civilisations de l'Égypte ancienne, de la Mésopotamie, de la Chine, de l'Inde, des Amériques précolombiennes et des civilisations africaines ont toutes contribué au patrimoine humain.<br><br>2. <strong>Échange culturel:</strong> L'histoire montre l'échange de connaissances entre les civilisations. Les mathématiques arabes ont transmis l'héritage grec et indien, et les sciences de la Renaissance ont bénéficié de l'héritage islamique.<br><br>3. <strong>Définition étroite de la race aryenne:</strong> Le concept de \"race aryenne\" lui-même est douteux scientifiquement, la science moderne rejetant l'idée de races \"pures\".<br><br>4. <strong>Biais idéologique:</strong> Hitler utilise cette affirmation pour justifier son idéologie raciste et non sur la base de faits historiques.",
+                "PhiH.textAnalysis.hitler.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.hitler.answers.a2.content": "Même si nous admettons hypothétiquement la validité de la prémisse, la conclusion n'est pas logique pour les raisons suivantes:<br><br>1. <strong>Sophisme de généralisation:</strong> Il est erroné de généraliser une caractéristique (créativité civilisationnelle) pour en faire une définition de l'homme. L'humanité dépasse la production civilisationnelle.<br><br>2. <strong>Confusion des concepts:</strong> Confusion entre \"contribution à la civilisation\" et \"représentation du type primitif de l'homme\". Le type primitif de l'homme doit refléter l'essence humaine commune à tous les êtres humains.<br><br>3. <strong>Sophisme génétique:</strong> Supposition que les capacités civilisationnelles sont héritées biologiquement, ce que la génétique moderne réfute.<br><br>4. <strong>Ignorance historique:</strong> Ignorance des périodes de retard civilisationnel des peuples \"aryens\" et des périodes de progrès des autres peuples.",
+                "PhiH.textAnalysis.hitler.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.hitler.answers.a3.content": "La diversité des races ne justifie pas leur hiérarchisation, et ce pour les raisons suivantes:<br><br>Premièrement, la diversité raciale est un phénomène biologique naturel résultant de l'adaptation à différents environnements sur des milliers d'années, et non un indicateur d'inégalité de valeur humaine. Deuxièmement, la science moderne confirme que les différences génétiques entre les individus au sein d'une même race sont plus importantes que celles entre différentes races. Troisièmement, la hiérarchisation des races repose sur des critères subjectifs et culturels qui varient selon les sociétés et les époques, et non sur des faits objectifs. Quatrièmement, l'histoire de l'humanité montre que les réalisations civilisationnelles sont le produit de facteurs culturels, économiques et sociaux, et non limitées à une race particulière. Enfin, la reconnaissance de la diversité raciale doit conduire au respect de la différence et du pluralisme culturel, et non à la hiérarchisation et à la discrimination.",
+                "PhiH.textAnalysis.hitler.answers.a4.title": "Réponse à la quatrième question:",
+                "PhiH.textAnalysis.hitler.answers.a4.content": "<strong>Métaphores utilisées dans le texte:</strong><br><br>1. <strong>Métaphore de \"Prométhée\":</strong> Hitler compare l'Aryen à Prométhée qui a volé le feu aux dieux et l'a donné à l'homme, considérant que les Aryens sont ceux qui ont offert la civilisation à l'humanité.<br><br>2. <strong>Métaphore du \"feu\" et de l'\"étincelle\":</strong> Il utilise la métaphore du feu et de l'étincelle pour se référer à la créativité et à la connaissance qu'il attribue aux Aryens.<br><br>3. <strong>Métaphore des \"ténèbres\" et de la \"désolation\":</strong> Il dépeint un monde sans Aryens comme un monde sombre et stérile.<br><br><strong>Fonction de ces métaphores:</strong><br><br>Ces métaphores ont une fonction <strong>rhétorique</strong> plus qu'argumentative:<br><br>- <strong>Impact émotionnel:</strong> Visent à susciter des émotions (admiration, peur) plutôt que de présenter des arguments rationnels.<br><br>- <strong>Amplification rhétorique:</strong> Amplifient le rôle des Aryens et les dépeignent comme les seuls sauveurs de l'humanité.<br><br>- <strong>Simplification réductrice:</strong> Simplifient la complexité de l'histoire civilisationnelle en une image mythique simple.<br><br>- <strong>Justification idéologique:</strong> Servent un objectif idéologique qui est de justifier la supériorité de la race aryenne.",
+                "PhiH.textAnalysis.hitler.answers.a5.title": "Réponse à la cinquième question:",
+                "PhiH.textAnalysis.hitler.answers.a5.content": "<strong>Dossier: Définition scientifique de la race et justifications du rejet de l'idée de race pure</strong><br><br><strong>1. Définition scientifique de la race:</strong><br>- <strong>Biologie:</strong> La race est un concept biologique imprécis, l'homme moderne (Homo sapiens) étant une seule espèce.<br>- <strong>Génétique:</strong> Les différences génétiques entre les individus (85%) sont plus importantes que celles entre les \"races\" (15%).<br>- <strong>Anthropologie:</strong> La classification raciale repose sur des caractéristiques apparentes (couleur de la peau, forme des yeux) qui ne reflètent pas les vraies différences génétiques.<br><br><strong>2. Justifications du rejet scientifique de l'idée d'une race pure:</strong><br>- <strong>Migration et mélange:</strong> L'histoire de l'humanité est remplie de migrations et de mélanges entre groupes humains.<br>- <strong>Évolution continue:</strong> Les caractéristiques génétiques sont en évolution et changement continu, il n'y a pas de \"pureté\" fixe.<br>- <strong>Adaptation environnementale:</strong> Les différences apparentes sont le résultat de l'adaptation à l'environnement (comme la couleur de la peau pour s'adapter aux rayons UV).<br>- <strong>Continuité de la variation:</strong> La variation des caractéristiques humaines est continue et non séparée entre \"races\" aux limites claires.<br>- <strong>Fondements sociaux:</strong> Les classifications raciales sont sociales et culturelles plus que biologiques.<br><br><strong>Conclusion:</strong> La science moderne rejette l'idée de races \"pures\" et considère que tous les humains appartiennent à une seule espèce humaine avec une diversité naturelle de caractéristiques.",
+                "PhiH.textAnalysis.hitler.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.hitler.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.hitler.analysis.thesis.content": "Hitler avance une thèse raciste selon laquelle la race aryenne est la seule race créatrice et innovante de l'histoire humaine, et que toutes les réalisations de la civilisation humaine lui reviennent exclusivement. Hitler présente cette thèse comme un fait historique et en déduit la supériorité de la race aryenne et sa représentation du type primitif de l'homme, menaçant que l'extinction de cette race conduirait à l'effondrement de la civilisation humaine.",
+                "PhiH.textAnalysis.hitler.analysis.mechanisms.title": "Mécanismes de construction de la thèse raciste:",
+                "PhiH.textAnalysis.hitler.analysis.mechanisms.content": "Hitler s'appuie sur plusieurs mécanismes pour construire sa thèse raciste:<br><br>1. <strong>Revendication d'exclusivité:</strong> Attribue toutes les réalisations civilisationnelles exclusivement à la race aryenne, ignorant les contributions d'autres civilisations.<br><br>2. <strong>Généralisation erronée:</strong> Généralise la caractéristique de créativité civilisationnelle pour inclure tous les membres de la race aryenne à travers l'histoire.<br><br>3. <strong>Inférence fallacieuse:</strong> Déduit une supériorité biologique et morale d'allégations historiques non prouvées.<br><br>4. <strong>Métaphore mythique:</strong> Utilise des métaphores mythiques (Prométhée) pour donner une légitimité sacrée à sa thèse.<br><br>5. <strong>Intimidation et menace:</strong> Décrit un avenir sombre en cas d'extinction de la race aryenne pour justifier sa préservation.",
+                "PhiH.textAnalysis.hitler.analysis.consequences.title": "Conséquences et dangerosité de la thèse raciste:",
+                "PhiH.textAnalysis.hitler.analysis.consequences.content": "- <strong>Justification de la violence et de la discrimination:</strong> La thèse raciste est utilisée pour justifier la discrimination et la violence contre d'autres groupes humains.<br><br>- <strong>Déformation de l'histoire:</strong> Déformation de l'histoire réelle de l'humanité et réécriture sélective.<br><br>- <strong>Division de l'humanité:</strong> Division de l'humanité en \"races supérieures\" et \"races inférieures\" au lieu de la considérer comme une unité.<br><br>- <strong>Établissement de légitimation idéologique:</strong> Fournir une base idéologique aux politiques racistes comme celles suivies par le régime nazi.<br><br>- <strong>Paralysie de la pensée critique:</strong> Remplacement de l'analyse historique scientifique par la rhétorique émotionnelle et les mythes.",
+                "PhiH.textAnalysis.hitler.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.hitler.analysis.significance.content": "L'analyse de ce texte porte des significations profondes en philosophie et en sciences sociales:<br><br>1. <strong>Critique de l'idéologie:</strong> Représente un modèle de la façon dont le discours philosophique et littéraire peut servir des idéologies politiques dangereuses.<br><br>2. <strong>Relation entre science et idéologie:</strong> Montre comment les faits scientifiques (rejet de l'idée de races pures) peuvent être ignorés pour servir des objectifs idéologiques.<br><br>3. <strong>Mauvais usage de l'histoire:</strong> Montre comment l'histoire peut être utilisée de manière sélective et déformée pour construire des récits racistes.<br><br>4. <strong>Rôle du langage dans la formation idéologique:</strong> Révèle comment le langage (métaphores, exagérations) est utilisé pour façonner la réalité et justifier les pratiques racistes.<br><br>5. <strong>Responsabilité du philosophe et du penseur:</strong> Pose une question éthique sur la responsabilité des philosophes et penseurs dans la révision et le démantèlement des discours racistes.<br><br>6. <strong>Résistance intellectuelle:</strong> Confirme la nécessité de la résistance intellectuelle aux discours racistes à travers la critique scientifique et logique.<br><br>Ce texte représente un avertissement sur les dangers de transformer les différences biologiques apparentes en une base de hiérarchie humaine et de discrimination raciale."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.hitler.level": "3rd Secondary - Philosophy",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.hitler.title": "Text Analysis: Ranking of Races - Truth or Fallacy? - Adolf Hitler",
+                "PhiH.textAnalysis.hitler.introduction.title": "Introduction",
+                "PhiH.textAnalysis.hitler.introduction.content": "The scientific refutation of the existence of a pure race for ranking races has not prevented the persistence of racist attitudes, which constitutes a paradox that raises questions and stimulates the dismantling of the functioning mechanisms of thought supporting these attitudes.",
+                "PhiH.textAnalysis.hitler.text.title": "Ranking of Races: Truth or Fallacy?",
+                "PhiH.textAnalysis.hitler.text.content": "It may be useless to discuss the question of which race or races were originally entrusted with human civilization and to whom therefore actually belongs the credit of having founded what we call today humanity. It is easier to ask ourselves the question in relation to the present and then the answer will be simple and clear. Everything that presents itself to us today of human civilization and products of art, science and technology is almost exclusively the fruit of the creative activity of the Aryans <sup>1</sup> without the others. This allows us to conclude accordingly and without lack of arguments, that they were the only founders of a superior humanity, and that they therefore represent the primitive type of what we mean by \"man\". The Aryan is the Prometheus <sup>2</sup> of humanity and the spark of divine genius has sprung at all times from his luminous forehead. He has never ceased to rekindle this fire which took the form of knowledge that illuminated the night that enveloped the mysteries keeping their secret, and showed man the path he had to climb to become the master of other living beings on this earth. If he were to be annihilated, deep darkness would fall on the earth, human civilization would disappear in a few centuries and the world would become a desert.",
+                "PhiH.textAnalysis.hitler.text.source": "Adolf Hitler, Mein Kampf, translation by the editorial committee, Hitler, Mon combat, édt numérique, p 151",
+                "PhiH.textAnalysis.hitler.author.title": "Author Presentation",
+                "PhiH.textAnalysis.hitler.author.alt": "Adolf Hitler",
+                "PhiH.textAnalysis.hitler.author.content": "Adolf Hitler (1889 - 1945): German statesman, theorist of Nazi ideology based on the assertion of the superiority of the Aryan race over other human races and its right to expansion at the expense of other peoples and to the conquest of \"living space\". He led the National Socialist Workers' Party in 1921. He created a parallel military organization, the \"Storm Troopers\". Imprisoned after a failed coup in Munich in November 1923, he wrote his book \"Mein Kampf\" in prison. He succeeded in one year in imposing the dictatorship of the National Socialist Party and established the new regime on the idea of revenge against Western powers, succeeding in involving the German people from all its layers in a chauvinistic national pact. He led his country to World War II and controlled most of Europe where he organized extermination camps. He lost the war and committed suicide in 1945.",
+                "PhiH.textAnalysis.hitler.lexical.title": "Footnotes and Concepts",
+                "PhiH.textAnalysis.hitler.lexical.item1": "<strong>\"The Aryans\":</strong> Word that goes back to its origin to Sanskrit, language of the Brahmins in Indo-European civilization and means \"nobility\" and \"honor\" arya, and the expression Aryans is applied to Indo-European peoples in reference to the \"pure\" white race. The term found its boom in Nazi ideology.",
+                "PhiH.textAnalysis.hitler.lexical.item2": "<strong>\"Prometheus\":</strong> Reference to the Greek mythological hero who stole fire from the gods and gave it to man, which earned him being punished by being chained to the top of a hill where an eagle came to eat his liver that constantly regenerated. However, after being freed by Hercules who killed the eagle, he taught men the foundations of civilization, architecture, metalworking, healing the sick, etc.",
+                "PhiH.textAnalysis.hitler.questions.title": "Tasks",
+                "PhiH.textAnalysis.hitler.questions.q1": "I verify the truthfulness of Hitler's statement that \"all products of civilization today are the fruit of the creative activity of the Aryans without the others\".",
+                "PhiH.textAnalysis.hitler.questions.q2": "If we hypothetically admit that \"all products of civilization today are the fruit of the creative activity of the Aryans without the others\", does the author have the right to conclude \"that they represent the primitive type of what we mean by man\"?",
+                "PhiH.textAnalysis.hitler.questions.q3": "I write a paragraph in which I explain whether the diversity of races justifies their ranking.",
+                "PhiH.textAnalysis.hitler.questions.q4": "I extract from the text the metaphors used by the author to support his position and explain whether their function is argumentative or rhetorical.",
+                "PhiH.textAnalysis.hitler.questions.q5": "I prepare a dossier in which I define the scientific definition of race and highlight the justifications for the scientific rejection of the idea of a pure race.",
+                "PhiH.textAnalysis.hitler.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.hitler.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.hitler.answers.a1.content": "Hitler's statement that \"all products of civilization today are the fruit of the creative activity of the Aryans without the others\" is scientifically and historically incorrect for the following reasons:<br><br>1. <strong>Civilizational diversity:</strong> Human civilization is the product of contributions from all peoples and races. The civilizations of ancient Egypt, Mesopotamia, China, India, pre-Columbian Americas, and African civilizations all contributed to human heritage.<br><br>2. <strong>Cultural exchange:</strong> History shows the exchange of knowledge between civilizations. Arab mathematics transmitted Greek and Indian heritage, and Renaissance sciences benefited from Islamic heritage.<br><br>3. <strong>Narrow definition of the Aryan race:</strong> The concept of \"Aryan race\" itself is scientifically questionable, modern science rejecting the idea of \"pure\" races.<br><br>4. <strong>Ideological bias:</strong> Hitler uses this claim to justify his racist ideology and not based on historical facts.",
+                "PhiH.textAnalysis.hitler.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.hitler.answers.a2.content": "Even if we hypothetically admit the validity of the premise, the conclusion is not logical for the following reasons:<br><br>1. <strong>Fallacy of generalization:</strong> It is wrong to generalize a characteristic (civilizational creativity) to make it a definition of man. Humanity goes beyond civilizational production.<br><br>2. <strong>Confusion of concepts:</strong> Confusion between \"contribution to civilization\" and \"representation of the primitive type of man\". The primitive type of man must reflect the human essence common to all human beings.<br><br>3. <strong>Genetic fallacy:</strong> Assumption that civilizational abilities are inherited biologically, which modern genetics refutes.<br><br>4. <strong>Historical ignorance:</strong> Ignorance of periods of civilizational backwardness of \"Aryan\" peoples and periods of progress of other peoples.",
+                "PhiH.textAnalysis.hitler.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.hitler.answers.a3.content": "The diversity of races does not justify their ranking, and this for the following reasons:<br><br>First, racial diversity is a natural biological phenomenon resulting from adaptation to different environments over thousands of years, and not an indicator of inequality of human value. Secondly, modern science confirms that genetic differences between individuals within the same race are greater than those between different races. Thirdly, the ranking of races is based on subjective and cultural criteria that vary according to societies and times, and not on objective facts. Fourthly, the history of humanity shows that civilizational achievements are the product of cultural, economic and social factors, and not limited to a particular race. Finally, the recognition of racial diversity must lead to respect for difference and cultural pluralism, and not to hierarchy and discrimination.",
+                "PhiH.textAnalysis.hitler.answers.a4.title": "Answer to the fourth question:",
+                "PhiH.textAnalysis.hitler.answers.a4.content": "<strong>Metaphors used in the text:</strong><br><br>1. <strong>Metaphor of \"Prometheus\":</strong> Hitler compares the Aryan to Prometheus who stole fire from the gods and gave it to man, considering that the Aryans are those who gave civilization to humanity.<br><br>2. <strong>Metaphor of \"fire\" and \"spark\":</strong> He uses the metaphor of fire and spark to refer to the creativity and knowledge he attributes to the Aryans.<br><br>3. <strong>Metaphor of \"darkness\" and \"desolation\":</strong> He depicts a world without Aryans as a dark and barren world.<br><br><strong>Function of these metaphors:</strong><br><br>These metaphors have a <strong>rhetorical</strong> function more than argumentative:<br><br>- <strong>Emotional impact:</strong> Aim to arouse emotions (admiration, fear) rather than present rational arguments.<br><br>- <strong>Rhetorical amplification:</strong> Amplify the role of the Aryans and portray them as the only saviors of humanity.<br><br>- <strong>Reductive simplification:</strong> Simplify the complexity of civilizational history into a simple mythical image.<br><br>- <strong>Ideological justification:</strong> Serve an ideological objective which is to justify the superiority of the Aryan race.",
+                "PhiH.textAnalysis.hitler.answers.a5.title": "Answer to the fifth question:",
+                "PhiH.textAnalysis.hitler.answers.a5.content": "<strong>Dossier: Scientific definition of race and justifications for the rejection of the idea of a pure race</strong><br><br><strong>1. Scientific definition of race:</strong><br>- <strong>Biology:</strong> Race is an imprecise biological concept, modern man (Homo sapiens) being a single species.<br>- <strong>Genetics:</strong> Genetic differences between individuals (85%) are greater than those between \"races\" (15%).<br>- <strong>Anthropology:</strong> Racial classification is based on apparent characteristics (skin color, eye shape) that do not reflect true genetic differences.<br><br><strong>2. Justifications for the scientific rejection of the idea of a pure race:</strong><br>- <strong>Migration and mixing:</strong> The history of humanity is filled with migrations and mixing between human groups.<br>- <strong>Continuous evolution:</strong> Genetic characteristics are in continuous evolution and change, there is no fixed \"purity\".<br>- <strong>Environmental adaptation:</strong> Apparent differences are the result of adaptation to the environment (like skin color to adapt to UV rays).<br>- <strong>Continuity of variation:</strong> The variation of human characteristics is continuous and not separated between \"races\" with clear boundaries.<br>- <strong>Social foundations:</strong> Racial classifications are social and cultural more than biological.<br><br><strong>Conclusion:</strong> Modern science rejects the idea of \"pure\" races and considers that all humans belong to a single human species with natural diversity of characteristics.",
+                "PhiH.textAnalysis.hitler.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.hitler.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.hitler.analysis.thesis.content": "Hitler puts forward a racist thesis that the Aryan race is the only creative and innovative race in human history, and that all achievements of human civilization are due to it exclusively. Hitler presents this thesis as a historical fact and deduces from it the superiority of the Aryan race and its representation of the primitive type of man, threatening that the extinction of this race would lead to the collapse of human civilization.",
+                "PhiH.textAnalysis.hitler.analysis.mechanisms.title": "Mechanisms of construction of the racist thesis:",
+                "PhiH.textAnalysis.hitler.analysis.mechanisms.content": "Hitler relies on several mechanisms to construct his racist thesis:<br><br>1. <strong>Claim of exclusivity:</strong> Attributes all civilizational achievements exclusively to the Aryan race, ignoring contributions of other civilizations.<br><br>2. <strong>Erroneous generalization:</strong> Generalizes the characteristic of civilizational creativity to include all members of the Aryan race throughout history.<br><br>3. <strong>Fallacious inference:</strong> Deduces biological and moral superiority from unproven historical allegations.<br><br>4. <strong>Mythical metaphor:</strong> Uses mythical metaphors (Prometheus) to give sacred legitimacy to his thesis.<br><br>5. <strong>Intimidation and threat:</strong> Depicts a dark future in case of extinction of the Aryan race to justify its preservation.",
+                "PhiH.textAnalysis.hitler.analysis.consequences.title": "Consequences and danger of the racist thesis:",
+                "PhiH.textAnalysis.hitler.analysis.consequences.content": "- <strong>Justification of violence and discrimination:</strong> The racist thesis is used to justify discrimination and violence against other human groups.<br><br>- <strong>Distortion of history:</strong> Distortion of the real history of humanity and selective rewriting.<br><br>- <strong>Division of humanity:</strong> Division of humanity into \"superior races\" and \"inferior races\" instead of considering it as a unity.<br><br>- <strong>Establishment of ideological legitimization:</strong> Providing an ideological basis for racist policies like those followed by the Nazi regime.<br><br>- <strong>Paralysis of critical thinking:</strong> Replacement of scientific historical analysis by emotional rhetoric and myths.",
+                "PhiH.textAnalysis.hitler.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.hitler.analysis.significance.content": "The analysis of this text carries deep meanings in philosophy and social sciences:<br><br>1. <strong>Critique of ideology:</strong> Represents a model of how philosophical and literary discourse can serve dangerous political ideologies.<br><br>2. <strong>Relationship between science and ideology:</strong> Shows how scientific facts (rejection of the idea of pure races) can be ignored to serve ideological objectives.<br><br>3. <strong>Misuse of history:</strong> Shows how history can be used selectively and distortedly to construct racist narratives.<br><br>4. <strong>Role of language in ideological formation:</strong> Reveals how language (metaphors, exaggerations) is used to shape reality and justify racist practices.<br><br>5. <strong>Responsibility of the philosopher and thinker:</strong> Raises an ethical question about the responsibility of philosophers and thinkers in reviewing and dismantling racist discourses.<br><br>6. <strong>Intellectual resistance:</strong> Confirms the necessity of intellectual resistance to racist discourses through scientific and logical criticism.<br><br>This text represents a warning about the dangers of transforming apparent biological differences into a basis for human hierarchy and racial discrimination."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.hitler.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.hitler.title": "تحليل النص: المفاضلة بين الأعراق - حقيقة أم مغالطة؟ - أدولف هتلر",
+                "PhiH.textAnalysis.hitler.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.hitler.introduction.content": "إنّ دحض العلم لفكرة وجود عرق خالص للمفاضلة بين الأعراق لم يمنع من تمادي حضور المواقف العنصرية، وهو ما يشكّل مفارقة تبعث على التساؤل ويُحفّزُ على تفكيك آليّات اشتغال الفكر الدّاعم لهذه المواقف.",
+                "PhiH.textAnalysis.hitler.text.title": "المفاضلة بين الأعراق: حقيقة أم مغالطة؟",
+                "PhiH.textAnalysis.hitler.text.content": "لعلّه من غير المجدي أن نناقش مسألة معرفة أيّ عرق أو أيّة أعراق كانت في البدءِ موتَمنة على الحضارة الإنسانية ويعود إليها بالتالي فعليّا فضل تأسيس ما نسمّيه اليوم بالإنسانية. وإنّه لمن الأيسر أن نطرح على أنفسنا السؤال في علاقة بالحاضر وعندها سيكون الجواب سهلا وواضحا. إنّ كلّ ما هو ماثل أمامنا اليوم من حضارة إنسانية ومن منتجات الفن والعلم والتقنية هو تقريبا ثمرة النشاط الخلاّق للآريين <sup>1</sup> دون سواهم. وهذا الأمر يسمح لنا بأن نستنتج تبعا لذلك ودون أن تُعوزنا الحجّة، أنّهم كانوا وحدهم المؤسّسين للإنسانية راقية، وهم بالتالي يمثّلون النمط الأوّلي لما نعنيه بـ\"الإنسان\". إنّ الآري هو بروميثيوس <sup>2</sup> الإنسانية وقد انقدحت شرارة النبوغ الرباني في كلّ الأزمنة من جبينه المنير. إنّه ما انفكّ يُوقد من جديد هذه النار وقد اتّخذت شكل معرفة كانت تُضيءُ الليل الذي ظلّ يكتنف الألغاز المحتفظة بسرّها، وأبانت للإنسان الطريق الذي كان ينبغي عليه أن يصعده حتّى يُصبح سيّدا على باقي الكائنات الحيّة على هذه الأرض. ولو تمّ إفناؤه لحلّت ظُلمة حالكة على الأرض ولتلاشت الحضارة الإنسانية في بضعة قرون ولاستحال العالم قفرا.",
+                "PhiH.textAnalysis.hitler.text.source": "أدولف هتلر، كفاحي، ترجمة لجنة التأليف، Hitler, Mon combat, édt numérique, p 151",
+                "PhiH.textAnalysis.hitler.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.hitler.author.alt": "أدولف هتلر",
+                "PhiH.textAnalysis.hitler.author.content": "أدولف هتلر (1889 - 1945): رجل دولة ألماني، منظّر للإيديولوجيا النازية القائمة على القول بأفضليّة العرق الآري على بقيّة العروق البشرية وعلى حقّها في التوسّع على حساب الشعوب الأخرى واكتساح \"الفضاء الحيوي\". ترأس حزب العمّال الوطني الاشتراكي سنة 1921. بعث منظّمة عسكرية موازية، \"جند الانقضاض\". سُجن إثر قيامه بانقلاب فاشل في نوفمبر 1923 ميونيخ، وألّف في السجن كتابه \"كفاحي\". تمكّن في سنة واحدة من فرض دكتاتورية الحزب الوطني الاشتراكي وأقام النظام الجديد على فكرة الثأر من القوى الغربية، كما نجح في جعل الشعب الألماني بمختلف شرائحه ينخرط في ميثاق وطني شوفيني. قاد بلاده إلى الحرب العالمية الثانية وراقب أكبر جزء من أوروبا أين نظّم محتشدات الإبادة. خسر الحرب وانتحر سنة 1945.",
+                "PhiH.textAnalysis.hitler.lexical.title": "الهوامش والمفاهيم",
+                "PhiH.textAnalysis.hitler.lexical.item1": "<strong>\"الآريون\":</strong> كلمة تعود في أصلها إلى اللغة السنسكريتية، لغة البراهمة في الحضارة الهنديّة- الأوروبية وتعني \"النُبل\" و\"الشرف\" arya وتُطلق عبارة الآريين على الشعوب الهنديّة - الأوروبية في إشارة إلى العرق الأبيض \"الخالص\". ووجد اللفظ رواجه في الايديولوجيا النازية.",
+                "PhiH.textAnalysis.hitler.lexical.item2": "<strong>\"بروميثيوس\":</strong> نسبة إلى البطل الأسطوري الإغريقي الذي سرق النار من الآلهة وأعطاها للإنسان، فكان أن عُوقب بأن قُيِّدَ في السلاسل على قمّة هضبة أين كان يتردّد عليه نسر ليأكل كبده المتوالد على الدوام. غير أنّه وبعد أن حُرّر من قبل هرقل الذي قتل النسر، أخذ يعلّم الناس أصول الحضارة والمعمار والاشتغال على المعادن ومداواة المرضى إلخ.",
+                "PhiH.textAnalysis.hitler.questions.title": "المهام",
+                "PhiH.textAnalysis.hitler.questions.q1": "أنثّت من مدى صدق قول هتلر بأنّ \"كل منتجات الحضارة اليوم، هي ثمرة النشاط الخلاّق للآريين دون سواهم\".",
+                "PhiH.textAnalysis.hitler.questions.q2": "لو سلّمنا جدلا بأنّ \"كل منتجات الحضارة اليوم، هي ثمرة النشاط الخلاّق للآريين دون سواهم\"، فهل يحقّ للكاتب أن يستنتج \"أنّهم يمثّلون النمط الأوّلي لما نعنيه بالإنسان\" ؟",
+                "PhiH.textAnalysis.hitler.questions.q3": "أحرّر فقرة أبّن فيها ما إذا كان تنوّع العروق يُشرّع للمفاضلة بينها ؟",
+                "PhiH.textAnalysis.hitler.questions.q4": "أستخرج من النص الاستعارات التي استعملها الكاتب في دعم موقفه وأُبّن ما إذا كانت وظيفتها حجاجية أم خطابية ؟",
+                "PhiH.textAnalysis.hitler.questions.q5": "أُعدّ ملفًا أُحدّد فيه التعريف العلمي للعرق وأُبرز مبرّرات رفض العلم لفكرة وجود عرق خالص.",
+                "PhiH.textAnalysis.hitler.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.hitler.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.hitler.answers.a1.content": "قول هتلر بأنّ \"كل منتجات الحضارة اليوم، هي ثمرة النشاط الخلاّق للآريين دون سواهم\" هو قول غير صحيح علمياً وتاريخياً للأسباب التالية:<br><br>1. <strong>التنوع الحضاري:</strong> الحضارة الإنسانية نتاج مساهمات جميع الشعوب والأعراق. حضارات مصر القديمة، بلاد الرافدين، الصين، الهند، الأمريكتين قبل كولومبوس، والحضارات الأفريقية جميعها ساهمت في التراث الإنساني.<br><br>2. <strong>التبادل الثقافي:</strong> التاريخ يظهر تبادل المعرفة بين الحضارات. الرياضيات العربية نقلت التراث اليوناني والهندي، والعلوم في عصر النهضة استفادت من التراث الإسلامي.<br><br>3. <strong>التعريف الضيق للعرق الآري:</strong> مفهوم \"العرق الآري\" نفسه مشكوك في صحته علمياً، فالعلم الحديث يرفض فكرة الأعراق \"الخالصة\".<br><br>4. <strong>الانحياز الأيديولوجي:</strong> هتلر يستخدم هذا الادعاء لتبرير أيديولوجيته العنصرية وليس بناءً على حقائق تاريخية.",
+                "PhiH.textAnalysis.hitler.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.hitler.answers.a2.content": "حتى لو سلّمنا جدلاً بصحة المقدمة، فإنّ الاستنتاج غير منطقي للأسباب التالية:<br><br>1. <strong>مغالطة التعميم:</strong> من الخطأ تعميم خاصية (الإبداع الحضاري) لتصبح تعريفاً للإنسان. الإنسانية تتجاوز الإنتاج الحضاري.<br><br>2. <strong>خلط المفاهيم:</strong> الخلط بين \"المساهمة في الحضارة\" و\"تمثيل النمط الأولي للإنسان\". النمط الأولي للإنسان يجب أن يعكس جوهر الإنسانية المشترك بين جميع البشر.<br><br>3. <strong>المغالطة الجينية:</strong> افتراض أن القدرات الحضارية تورث بيولوجياً، وهو ما ينفيه علم الوراثة الحديث.<br><br>4. <strong>التجاهل التاريخي:</strong> تجاهل فترات التخلف الحضاري للشعوب \"الآرية\" وفترات التقدم للشعوب الأخرى.",
+                "PhiH.textAnalysis.hitler.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.hitler.answers.a3.content": "لا يُشرّع تنوّع العروق للمفاضلة بينها، وذلك للأسباب التالية:<br><br>أولاً، التنوع العرقي ظاهرة بيولوجية طبيعية ناتجة عن التكيف مع البيئات المختلفة عبر آلاف السنين، وليس مؤشراً على تفاوت في القيمة الإنسانية. ثانياً، العلم الحديث يؤكد أن الاختلافات الجينية بين الأفراد داخل العرق الواحد أكبر من تلك بين الأعراق المختلفة. ثالثاً، المفاضلة بين الأعراق تقوم على معايير ذاتية وثقافية تختلف باختلاف المجتمعات والأزمنة، وليست حقائق موضوعية. رابعاً، تاريخ الإنسانية يظهر أن الإنجازات الحضارية نتاج عوامل ثقافية واقتصادية واجتماعية، وليست محصورة في عرق معين. أخيراً، الاعتراف بالتنوع العرقي يجب أن يقود إلى احترام الاختلاف والتعددية الثقافية، وليس إلى التراتبية والتمييز.",
+                "PhiH.textAnalysis.hitler.answers.a4.title": "الإجابة عن السؤال الرابع:",
+                "PhiH.textAnalysis.hitler.answers.a4.content": "<strong>الاستعارات المستخدمة في النص:</strong><br><br>1. <strong>استعارة \"بروميثيوس\":</strong> يشبّه هتلر الآري ببروميثيوس الذي سرق النار من الآلهة وأعطاها للإنسان، معتبراً أن الآريين هم من وهبوا الحضارة للإنسانية.<br><br>2. <strong>استعارة \"النار\" و\"الشرارة\":</strong> يستخدم استعارة النار والشرارة للإشارة إلى الإبداع والمعرفة التي ينسبها للآريين.<br><br>3. <strong>استعارة \"الظلمة\" و\"القفر\":</strong> يصور عالم بدون الآريين كعالم مظلم وقاحل.<br><br><strong>وظيفة هذه الاستعارات:</strong><br><br>هذه الاستعارات لها وظيفة <strong>خطابية</strong> أكثر منها حجاجية:<br><br>- <strong>التأثير العاطفي:</strong> تهدف إلى استثارة المشاعر (الإعجاب، الخوف) بدلاً من تقديم حجج عقلية.<br><br>- <strong>التضخيم البلاغي:</strong> تضخيم دور الآريين وتصويرهم كمنقذين وحيدين للإنسانية.<br><br>- <strong>التبسيط المخل:</strong> تبسيط تعقيد التاريخ الحضاري في صورة أسطورية بسيطة.<br><br>- <strong>التبرير الأيديولوجي:</strong> تخدم هدفاً أيديولوجياً هو تبرير تفوق العرق الآري.",
+                "PhiH.textAnalysis.hitler.answers.a5.title": "الإجابة عن السؤال الخامس:",
+                "PhiH.textAnalysis.hitler.answers.a5.content": "<strong>ملف: التعريف العلمي للعرق ومبررات رفض فكرة العرق الخالص</strong><br><br><strong>1. التعريف العلمي للعرق:</strong><br>- <strong>علم الأحياء:</strong> العرق مفهوم بيولوجي غير دقيق، فالإنسان الحديث (Homo sapiens) نوع واحد.<br>- <strong>علم الوراثة:</strong> الاختلافات الجينية بين الأفراد (85%) أكبر من تلك بين \"الأعراق\" (15%).<br>- <strong>الأنثروبولوجيا:</strong> التصنيف العرقي يعتمد على صفات ظاهرية (لون البشرة، شكل العيون) لا تعكس الاختلافات الجينية الحقيقية.<br><br><strong>2. مبررات رفض العلم لفكرة وجود عرق خالص:</strong><br>- <strong>الهجرة والاختلاط:</strong> تاريخ البشرية مليء بالهجرات والاختلاط بين المجموعات البشرية.<br>- <strong>التطور المستمر:</strong> الصفات الجينية في تطور وتغير مستمر، لا توجد \"نقاوة\" ثابتة.<br>- <strong>التكيف البيئي:</strong> الاختلافات الظاهرية نتيجة التكيف مع البيئة (مثل لون البشرة لتكيف مع الأشعة فوق البنفسجية).<br>- <strong>استمرارية التباين:</strong> التباين في الصفات البشرية استمراري وليس منفصلاً بين \"أعراق\" واضحة الحدود.<br>- <strong>الأسس الاجتماعية:</strong> التصنيفات العرقية اجتماعية وثقافية أكثر منها بيولوجية.<br><br><strong>الخلاصة:</strong> العلم الحديث يرفض فكرة الأعراق \"الخالصة\" ويعتبر البشر جميعاً ينتمون إلى النوع الإنساني الواحد مع تنوع طبيعي في الصفات.",
+                "PhiH.textAnalysis.hitler.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.hitler.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.hitler.analysis.thesis.content": "يطرح هتلر أطروحة عنصرية مفادها أن العرق الآري هو العرق الوحيد الخلاق والمبدع في التاريخ الإنساني، وأن جميع إنجازات الحضارة الإنسانية تعود إليه حصرياً. يقدم هتلر هذه الأطروحة كحقيقة تاريخية ويستنتج منها تفوق العرق الآري وتمثيله للنمط الأولي للإنسان، مهدداً بأن انقراض هذا العرق سيؤدي إلى انهيار الحضارة الإنسانية.",
+                "PhiH.textAnalysis.hitler.analysis.mechanisms.title": "آليات بناء الأطروحة العنصرية:",
+                "PhiH.textAnalysis.hitler.analysis.mechanisms.content": "يعتمد هتلر على عدة آليات لبناء أطروحته العنصرية:<br><br>1. <strong>الادعاء بالحصريّة:</strong> ينسب جميع إنجازات الحضارة للعرق الآري حصرياً، متجاهلاً مساهمات الحضارات الأخرى.<br><br>2. <strong>التعميم الخاطئ:</strong> يعمّم صفة الإبداع الحضاري ليشمل جميع أفراد العرق الآري عبر التاريخ.<br><br>3. <strong>الاستدلال المغلوط:</strong> يستنتج تفوقاً بيولوجياً وأخلاقياً من ادعاءات تاريخية غير مثبتة.<br><br>4. <strong>الاستعارة الأسطورية:</strong> يستخدم استعارات أسطورية (بروميثيوس) لإضفاء شرعية قدسية على أطروحته.<br><br>5. <strong>التخويف والتهديد:</strong> يصور مستقبلاً مظلماً في حال انقراض العرق الآري لتبرير الحفاظ عليه.",
+                "PhiH.textAnalysis.hitler.analysis.consequences.title": "نتائج وخطورة الأطروحة العنصرية:",
+                "PhiH.textAnalysis.hitler.analysis.consequences.content": "- <strong>تبرير العنف والتمييز:</strong> تستخدم الأطروحة العنصرية لتبرير التمييز والعنف ضد مجموعات بشرية أخرى.<br><br>- <strong>تشويه التاريخ:</strong> تشويه التاريخ الحقيقي للإنسانية وإعادة كتابته بشكل انتقائي.<br><br>- <strong>تقسيم الإنسانية:</strong> تقسيم البشرية إلى \"أعراق متفوقة\" و\"أعراق دونية\" بدلاً من اعتبارها وحدة واحدة.<br><br>- <strong>تأسيس الشرعنة الأيديولوجية:</strong> توفير أساس أيديولوجي للسياسات العنصرية كتلك التي اتبعها النظام النازي.<br><br>- <strong>تعطيل العقل النقدي:</strong> استبدال التحليل التاريخي العلمي بالخطابة العاطفية والأساطير.",
+                "PhiH.textAnalysis.hitler.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.hitler.analysis.significance.content": "يحمل تحليل هذا النص دلالات عميقة في الفلسفة والعلوم الاجتماعية:<br><br>1. <strong>نقد الأيديولوجيا:</strong> يمثل نموذجاً لكيفية استخدام الخطاب الفلسفي والأدبي لخدمة أيديولوجيات سياسية خطيرة.<br><br>2. <strong>علاقة العلم بالأيديولوجيا:</strong> يظهر كيف يمكن تجاهل الحقائق العلمية (رفض فكرة الأعراق الخالصة) لخدمة أهداف أيديولوجية.<br><br>3. <strong>سوء استخدام التاريخ:</strong> يبين كيف يمكن توظيف التاريخ بشكل انتقائي ومشوه لبناء سرديات عنصرية.<br><br>4. <strong>دور اللغة في التشكيل الأيديولوجي:</strong> يكشف كيف تستخدم اللغة (الاستعارات، المبالغات) لتشكيل الواقع وتبرير الممارسات العنصرية.<br><br>5. <strong>مسؤولية الفيلسوف والمفكر:</strong> يطرح سؤالاً أخلاقياً حول مسؤولية الفلاسفة والمفكرين في مراجعة وتفكيك الخطابات العنصرية.<br><br>6. <strong>المقاومة الفكرية:</strong> يؤكد ضرورة المقاومة الفكرية للخطابات العنصرية من خلال النقد العلمي والمنطقي.<br><br>هذا النص يمثل تحذيراً من مخاطر تحويل الاختلافات البيولوجية الظاهرية إلى أساس لتراتبية إنسانية وتمييز عنصري."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

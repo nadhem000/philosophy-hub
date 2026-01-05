@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: المغالطة بواسطة العكس الفاسد - جون ستوارت ميل - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#7c3aed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Purple/Violet Color Palette */
+        :root {
+            --primary-color: #7c3aed;
+            --primary-light: #8b5cf6;
+            --primary-dark: #6d28d9;
+            --secondary-color: #a78bfa;
+            --secondary-light: #c4b5fd;
+            --secondary-dark: #8b5cf6;
+            --accent-color: #a78bfa;
+            --accent-light: #c4b5fd;
+            --accent-dark: #8b5cf6;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #f5f3ff;
+            --card-bg: #ffffff;
+            --definition-bg: #ede9fe;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #ddd6fe;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.1), 0 2px 4px -1px rgba(124, 58, 237, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(124, 58, 237, 0.1), 0 4px 6px -2px rgba(124, 58, 237, 0.05);
+            --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+            --gradient-secondary: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+            --gradient-accent: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #8b5cf6;
+            --primary-light: #a78bfa;
+            --primary-dark: #7c3aed;
+            --secondary-color: #c4b5fd;
+            --secondary-light: #ddd6fe;
+            --secondary-dark: #a78bfa;
+            --accent-color: #c4b5fd;
+            --accent-light: #ddd6fe;
+            --accent-dark: #a78bfa;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #4c1d95;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #5b21b6;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #c4b5fd 100%);
+            --gradient-secondary: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 100%);
+            --gradient-accent: linear-gradient(135deg, #c4b5fd 0%, #8b5cf6 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(124, 58, 237, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(167, 139, 250, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(167, 139, 250, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(124, 58, 237, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.mill.title">تحليل النص: المغالطة بواسطة العكس الفاسد - جون ستوارت ميل</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.mill.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.mill.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.mill.introduction.content">
+                    يتضمّن الخطاب اليوميّ، في مختلف فضاءات إنتاجه الاجتماعيّة (الإشهار، السياسة، الإعلام، المحادثات اليوميّة ... ) بعض الإقرارات التي تعتمد التكميم الكليّ أو الجزئيّ، الإثبات أو النفي ... ، فيخالها المستمعون صيغا لغويّة ومنطقيّة محايدة هدفها الحجاج والربط قصد الإقناع. غير أنّ إمعان النظر فيها يكشف أنّها أدوات قد تُعتمد في مغالطة المستمع أو القارئ. وعندئذ يستحيل على الفرد أن يُحافظ على استقلاله دون أن يمتلك القدرة على تحليل وظيفة هذه الروابط والبنى فيما يصوغه من كلام.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.mill.text.title">المغالطة بواسطة العكس الفاسد</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.mill.text.content">
+                        قد يكون من اللّزم أن نُدرج ضمن المغالطات<sup>1</sup> في الاستدلال الأخطاءَ المرتكبة في العمليّات التي تبدو في الظاهر استنتاجات<sup>2</sup> مستمدّة من مقدّمات ولكنّها في الواقع ليست كذلك، أعني المغالطات المرتبطة بعكس القضايا<sup>3</sup> وبتساويها<sup>4</sup>، وأعتقد أنّ مثل هذه الأخطاء هي بالتأكيد الأكثر تواترا ممّا نفترضه عموما، وهذا أمر على قدر من الوضوح بحيث يبدو من الصعب إنكاره. فالعكس البسيط، مثلا، القضيّة كلّةٍ موجبة<sup>5</sup> (كل أهي ب، إذن كل ب هي أ) هو في اعتقادي من أكثر الأخطاء شيوعا بين النّاس، رغم أنّه يحصل في الغالب ضمنيًا في الفكر أكثر ممّا يُعبّر عنه بصريح العبارة شأنه في ذلك شأن الكثير من المغالطات الأخرى، إذ لا يُمكن أبدا أن يُعلَن بوضوح دون أن يُكشف فورا. ونفس الأمر يَصْدُق على شكل آخر للمغالطة لا يختلف جوهريًا عن المغالطة السابقة وهو العكس الفاسد لقضيّة افتراضيّة<sup>6</sup>. والعكس السليم لقضيّة افتراضيّة هو التالي: إذا كانت النتيجة كاذبة فإنّ المقدّمة كاذبة، في حين أنّ العكس الآتي: إذا كانت النتيجة صادقة فإنّ المقدّمة صادقة هو عكس بلا قيمة. فهو ليس سوى خطأ يتّفق مع العكس البسيط لقضيّة كلّة موجبة. ومع ذلك، لا شيء أكثر شيوعا في مجرى الفكر المألوف من هذا الاستنتاج. ونفس الأمر يَصْدُق على الخطأ الذي لا يقلّ تواترا والمتمثّل في اعتماد النتيجة حجّة على المقدّمات. وأنّه لا يمكن للمقدّمات أن تكون صادقة إذا ما كانت النتيجة خاطئة، ذلك هو الأساس الذي لا يُعترض عليه للنمط المشروع في البرهان المسمّى الإرجاع إلى الخُلف<sup>7</sup>.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.mill.text.source">جون ستوارت ميل، نسق المنطق الاستنتاجيّ والاستقرائيّ، الكتاب الخامس، ترجمة لجنة التأليف، Système de logique déductive et inductive, édt numérique, Livre V, p 69</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.mill.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/john_stuart_mill.jpg" alt="جون ستوارت ميل" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.mill.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.mill.author.content">
+                            جون ستوارت ميل (1806-1873): فيلسوف ورجل اقتصاد انجليزيّ اتّخذ من التجربّة على إثر هيوم وبنثام إحداثّة موجّهة لإسهامه الفلسفيّ سواء في مجال المنطق أو نظريّة المعرفة أو الأخلاق. ففي المنطق لا يكون الاستنتاج مشروعا إلاّ كانتقال من قضيّة جزئيّة إلى أخرى جزئيّة نظرا إلى أنّ كلٍ مقدّمة كليّة في الاستنتاج هي نتاج استقراءٍ منطلقه وقائع جزئيّة، في حين أنّ مشروعيّة الاستقراء لا تتحدّد إلا بمدى احترام قواعد صارمة في التحقيق التجريبيّ. أما نظريّته في المعرفة فتقوم على رفض كل ما هو فطريّ في العقل لتأصيل مختلف عمليّاته بشكلٍ ترابطيّ في التجربة. أمّا نظريّته في الأخلاق فهي نفعيّة ترى في المنفعة الخير الأسمى الذي ينشده كل فرد في إطار اجتماعيّ وسياسيّ مشترك مع الآخرين.
+                        </p>
+                        <p data-i18n="PhiH.textAnalysis.mill.author.works">
+                            من أهمّ مؤلفاته: "نسق المنطق الاستنتاجي والاستقرائي" (1843)، "مبادئ الاقتصاد السياسيّ" (1848)، "في الحريّة" (1859)، "في النفعيّة" (1861)، "في إخضاع النساء" (1869).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.mill.lexical.title">الهوامش والمفاهيم</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.mill.lexical.item1"><strong>المغالطة:</strong> هي الاستدلال المختّل الذي يتعمّد صاحبه إخفاء خلله ليبدو بمظهر الاستدلال السليم والمتماسك قصد تضليل المستمعين وإيقاعهم في الغلط. وتختلف المغالطة Sophisme عن الغلط Paralogisme (أنظر نافذة دعائم للتفكير: تحديدات وتمييزات مفهومية.)</li>
+                    <li data-i18n="PhiH.textAnalysis.mill.lexical.item2"><strong>الاستنتاج:</strong> Tinference هو عمليّة استدلاليّة من خلالها ينطلق الفكر من قضيّة أو قضايا تكون بمثابة المقدّمات الكليّة أو الجزئيّة ليستمد منها قضيّة جديدة هي النتيجة.</li>
+                    <li data-i18n="PhiH.textAnalysis.mill.lexical.item3"><strong>العكس:</strong> La conversion هو شكل من أشكال الاستدلال يتمّ بمقتضاه استنتاج قضيّة جديدة من قضيّة أولى معطاة وذلك بعكس العلاقة المنطقيّة بين الموضوع والمحمول كما وردت في الأولى بحيث يصبح الموضوع محمولا والمحمول موضوعا في الثانية. فالعكس في القضيّة التالية: كلّ القطط لها مخالب، يكون باستنتاج القضيّة: إذن بعض الحيوانات التي لها مخالب هي قطط. وفي مقابل ذلك يتحدّد العكس الفاسد كاستدلال مختّل يعكس العلاقة بين الموضوع والمحمول في المقدّمة الكليّة: كل أهي ب، ليستنتج منها: إذن كل ب هي أ بهدف المغالطة. ويتجلّى هذا الأمر دلاليّا من خلال نفس المثال السابق: كل القطط لها مخالب، إذن كل الحيوانات التي لها مخالب هي قطط.</li>
+                    <li data-i18n="PhiH.textAnalysis.mill.lexical.item4"><strong>التساوي:</strong> L'equipollence هو شكل العلاقة القائمة بين قضيتين تفترض كلاهما الأخرى بحيث تقوم بينهما علاقة تساو منطقيّ. مثال ذلك العلاقة القائمة بين القضيّة: كل مربّع هو مُعَيَّنُ قائم الزاوية، والقضيّة: كل مُعَيَّنٍ قائم الزاوية هو مربّع.</li>
+                    <li data-i18n="PhiH.textAnalysis.mill.lexical.item5"><strong>القضيّة الكليّة الموجبة:</strong> القضيّة المنطقيّة هي الحكم الذي يربط بين موضوع ومحمول على نحوٍ يكتسب من خلاله معنى يجعله يحتمل الصدق والخطأ. وللقضيّة المنطقيّة في الاستدلال أشكال مختلفة من جهة الكمّ (كلّة أو جزئيّة) ومن جهة الكيف (موجبة أو سالبة) وتجدر الملاحظة أنّ كل هذه الأصناف من القضايا قابلة للاستعمال كمقدّمات افتراضيّة في الاستدلال.</li>
+                    <li data-i18n="PhiH.textAnalysis.mill.lexical.item6"><strong>القضيّة الافتراضيّة:</strong> هي القضيّة التي يكون شكلها "إذا... فإن..."، مثل: "إذا كان المطر ينزل فإن الأرض تبتل".</li>
+                    <li data-i18n="PhiH.textAnalysis.mill.lexical.item7"><strong>الإرجاع إلى الخُلف:</strong> Lareduction a l'absurde هو استدلال يقود إلى إثبات خطأ قضيّة ما بإبراز أنّها تقود إلى نتيجة واضحة التناقض.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.mill.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.mill.questions.q1">ألاحظ عمليّة العكس في هذين الاستدلاليْن وأتثّت إن كان العكس مشروعا وأعلّل إجابتي:
+                        <ul>
+                            <li data-i18n="PhiH.textAnalysis.mill.questions.q1a">كل مَن يُمارس الرياضة هو في صحّة جيّدة، إذن كل الذين هم في صحّة جيّدة يُمارسون الرياضة.</li>
+                            <li data-i18n="PhiH.textAnalysis.mill.questions.q1b">كل مَن يُمارس الرياضة هو في صحّة جيّدة، إذن بعض الذين هم في صحّة جيّدة يُمارسون الرياضة.</li>
+                        </ul>
+                    </li>
+                    <li data-i18n="PhiH.textAnalysis.mill.questions.q2">ألاحظ الاستدلال التالي:
+                        <br>هناك اختلاف طبيعيّ في الذكاء بين الرجال والنساء، إذن الاختلاف في الأدوار الاجتماعيّة بين الرجال والنساء طبيعيّ.
+                        <br>وأبيّن:
+                        <ul>
+                            <li data-i18n="PhiH.textAnalysis.mill.questions.q2a">إذا كان من الخطأ القول إنّ الاختلاف في الأدوار الاجتماعيّة بين الرجال والنساء طبيعيّ، فهل تكون مقدّمة هذا الاستدلال بالضرورة خاطئة ؟</li>
+                            <li data-i18n="PhiH.textAnalysis.mill.questions.q2b">إذا كان من الصواب القول إنّ الاختلاف في الأدوار الاجتماعيّة بين الرجال والنساء طبيعيّ، فهل تكون مقدّمة الاستدلال بالضرورة صائبة؟</li>
+                        </ul>
+                    </li>
+                    <li data-i18n="PhiH.textAnalysis.mill.questions.q3">أتخيّل مناقشة بين مجموعة من الشباب حول طبيعة توزيع الشؤون المنزليّة بين الذكور والإناث في الأُسَرِ، حيث يسعى أحد المشاركين إلى استعمال العكس قصد المغالطة، ولكنّ أصدقاءه يكشفون ذلك فاضحين بطلان حجاجه.</li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.mill.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.mill.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.mill.answers.a1.content">
+                        <strong>الاستدلال الأول:</strong> كل مَن يُمارس الرياضة هو في صحّة جيّدة، إذن كل الذين هم في صحّة جيّدة يُمارسون الرياضة.
+                        <br>• <strong>نوع العكس:</strong> هذا عكس فاسد (عكس بسيط لقضيّة كليّة موجبة).
+                        <br>• <strong>التحليل:</strong> العكس غير مشروع لأنه يعكس العلاقة بين الموضوع والمحمول بشكل كلي. الصيغة الأصلية "كل أ هي ب" لا تعني بالضرورة "كل ب هي أ". قد يكون هناك أشخاص في صحة جيدة لأسباب أخرى غير ممارسة الرياضة (وراثة، تغذية، الخ).
+                        <br>• <strong>النتيجة:</strong> الاستدلال خاطئ ومغالطة.
+                        <br><br>
+                        <strong>الاستدلال الثاني:</strong> كل مَن يُمارس الرياضة هو في صحّة جيّدة، إذن بعض الذين هم في صحّة جيّدة يُمارسون الرياضة.
+                        <br>• <strong>نوع العكس:</strong> هذا عكس صحيح (عكس جزئي).
+                        <br>• <strong>التحليل:</strong> العكس مشروع لأنه يحول القضية الكلية الموجبة إلى قضية جزئية موجبة. إذا كان "كل ممارس للرياضة في صحة جيدة"، فمن المنطقي أن "بعض الأصحاء يمارسون الرياضة" على الأقل.
+                        <br>• <strong>النتيجة:</strong> الاستدلال صحيح ومنطقي.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.mill.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.mill.answers.a2.content">
+                        الاستدلال: هناك اختلاف طبيعيّ في الذكاء بين الرجال والنساء، إذن الاختلاف في الأدوار الاجتماعيّة بين الرجال والنساء طبيعيّ.
+                        <br><br>
+                        <strong>الجزء الأول:</strong> إذا كان من الخطأ القول إنّ الاختلاف في الأدوار الاجتماعيّة بين الرجال والنساء طبيعيّ، فهل تكون مقدّمة هذا الاستدلال بالضرورة خاطئة؟
+                        <br>• <strong>التحليل:</strong> نعم، تكون المقدمة بالضرورة خاطئة وفقاً لقاعدة "إذا كانت النتيجة كاذبة فإنّ المقدّمة كاذبة". هذا هو العكس السليم للقضية الافتراضية. إذا كان الاستنتاج (الاختلاف في الأدوار الاجتماعية طبيعي) خاطئاً، فلا يمكن أن تكون المقدمة (الاختلاف الطبيعي في الذكاء) صحيحة، لأن ذلك سيؤدي إلى استنتاج صحيح من مقدمة خاطئة، وهو تناقض.
+                        <br><br>
+                        <strong>الجزء الثاني:</strong> إذا كان من الصواب القول إنّ الاختلاف في الأدوار الاجتماعيّة بين الرجال والنساء طبيعيّ، فهل تكون مقدّمة الاستدلال بالضرورة صائبة؟
+                        <br>• <strong>التحليل:</strong> لا، ليست بالضرورة صائبة. هذا هو العكس الفاسد للقضية الافتراضية الذي يحذر منه ميل. مجرد صحة النتيجة لا تضمن صحة المقدمة. قد تكون النتيجة صحيحة لأسباب أخرى غير تلك المذكورة في المقدمة. مثلاً: قد يكون الاختلاف في الأدوار الاجتماعية طبيعياً لأسباب بيولوجية أو ثقافية مختلفة، وليس بالضرورة بسبب الاختلاف في الذكاء.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.mill.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.mill.answers.a3.content">
+                        <strong>سيناريو المحادثة:</strong>
+                        <br>• <strong>المُغالِط:</strong> "كل النساء يهتممن بالشؤون المنزلية أكثر من الرجال، إذن كل من يهتم بالشؤون المنزلية أكثر هو امرأة."
+                        <br>• <strong>المُناقِض (يكشف المغالطة):</strong> "هذه مغالطة بالعكس الفاسد! أنت تقول 'كل أ هي ب' وتستنتج 'كل ب هي أ'. هذا خطأ منطقي. صحيح أن الكثير من النساء يهتممن بالشؤون المنزلية، ولكن هذا لا يعني أن كل من يهتم بالشؤون المنزلية هو امرأة. هناك رجال أيضاً يهتمون بالشؤون المنزلية، وقد يكونون حتى أكثر اهتماماً من بعض النساء."
+                        <br>• <strong>المُناقِض (يقدم التحليل المنطقي):</strong> "الصيغة الصحيحة للعكس هي: 'كل أ هي ب' → 'بعض ب هي أ'. إذن يمكنك أن تقول: 'بعض الذين يهتمون بالشؤون المنزلية هم نساء'، وهذا صحيح منطقياً. أما قولك 'كل الذين يهتمون بالشؤون المنزلية هم نساء' فهو مغالطة تهدف إلى تعميم خاطئ وتكريس الصورة النمطية."
+                        <br>• <strong>نتيجة النقاش:</strong> يتم كشف المغالطة، ويتعلم المشاركون أهمية التحليل المنطقي للاستدلالات اليومية وتجنب التعميمات الخاطئة.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.mill.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.mill.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.mill.analysis.thesis.content">
+                        يوضح جون ستوارت ميل في هذا النص أحد أكثر أنواع المغالطات المنطقية انتشاراً في التفكير اليومي، وهي المغالطة بواسطة العكس الفاسد. يؤكد ميل أن الأخطاء الناتجة عن عكس القضايا بشكل غير صحيح هي أكثر شيوعاً مما نعتقد، وتحدث غالباً بشكل ضمني في التفكير قبل أن تُعبّر عنها صراحة. يدعو ميل إلى الحذر من هذه المغالطات وضرورة التمييز بين العكس السليم والعكس الفاسد في الاستدلالات اليومية والفلسفية.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.mill.analysis.mechanisms.title">أنواع المغالطات بالعكس الفاسد:</h5>
+                    <p data-i18n="PhiH.textAnalysis.mill.analysis.mechanisms.content">
+                        يحدد ميل عدة أشكال للمغالطة بالعكس الفاسد:
+                        <br><br>
+                        1. <strong>العكس البسيط للقضية الكلية الموجبة:</strong> "كل أ هي ب" → "كل ب هي أ". هذا هو النوع الأكثر شيوعاً، حيث يعكس العلاقة بين الموضوع والمحمول بشكل كلي غير مشروع.
+                        <br><br>
+                        2. <strong>العكس الفاسد للقضية الافتراضية:</strong> "إذا كانت النتيجة صادقة فإن المقدمة صادقة". هذا خطأ لأن صحة النتيجة لا تضمن صحة المقدمة، فقد تكون النتيجة صحيحة لأسباب أخرى.
+                        <br><br>
+                        3. <strong>اعتماد النتيجة حجة على المقدمات:</strong> وهو خطأ شائع حيث يعتقد الناس أن صحة النتيجة تثبت صحة المقدمات التي أدت إليها.
+                        <br><br>
+                        4. <strong>الخلط بين العكس السليم والعكس الفاسد:</strong> حيث أن العكس السليم للقضية الافتراضية هو: "إذا كانت النتيجة كاذبة فإن المقدمة كاذبة"، وهو أساس البرهان بالإرجاع إلى الخلف.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.mill.analysis.consequences.title">نتائج انتشار المغالطات بالعكس الفاسد:</h5>
+                    <p data-i18n="PhiH.textAnalysis.mill.analysis.consequences.content">
+                        - <strong>تشويه الفكر النقدي:</strong> انتشار هذه المغالطات يقوض القدرة على التفكير النقدي والتحليلي.
+                        <br><br>
+                        - <strong>تضليل الرأي العام:</strong> تستخدم هذه المغالطات في الخطاب السياسي والإعلامي لتضليل الجمهور.
+                        <br><br>
+                        - <strong>تعزيز الأحكام المسبقة:</strong> تساهم في تكريس الصور النمطية والأحكام المسبقة من خلال تعميمات خاطئة.
+                        <br><br>
+                        - <strong>عقبة أمام التقدم العلمي:</strong> تعيق التقدم العلمي والفلسفي من خلال استدلالات خاطئة تبدو مقنعة.
+                        <br><br>
+                        - <strong>إضعاف الحوار العقلاني:</strong> تقوض أسس الحوار العقلاني والمناظرات الفكرية السليمة.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.mill.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.mill.analysis.significance.content">
+                        يحمل تحليل ميل للمغالطة بالعكس الفاسد دلالات عميقة تتجاوز المنطق الصوري:
+                        <br><br>
+                        1. <strong>النقد الاجتماعي:</strong> يكشف ميل كيف تستغل المغالطات المنطقية في الخطاب الاجتماعي والسياسي للتأثير على الرأي العام.
+                        <br><br>
+                        2. <strong>التجريبية المنطقية:</strong> يتفق تحليل ميل مع توجهه التجريبي العام، حيث يربط صحة الاستدلالات بإمكانية التحقق التجريبي.
+                        <br><br>
+                        3. <strong>التربية الفكرية:</strong> يدعو ميل ضمناً إلى ضرورة التربية المنطقية كجزء من التربية العامة للفرد.
+                        <br><br>
+                        4. <strong>نقد الفطريات:</strong> يتناغم تحليل المغالطات مع رفض ميل للمعاني الفطرية، حيث يرى أن الأخطاء المنطقية تنتشر بالعادة والتربية لا بالفطرة.
+                        <br><br>
+                        5. <strong>التحرر الفكري:</strong> يمثل كشف المغالطات وسيلة للتحرر من الأفكار الخاطئة والمسلّمات غير المبررة.
+                        <br><br>
+                        6. <strong>الأبعاد الأخلاقية:</strong> من منظور ميل النفعي، تعتبر المغالطات ضارة لأنها تقود إلى قرارات خاطئة تضر بالسعادة العامة.
+                        <br><br>
+                        هذا النص يمثل مساهمة مهمة في تعميم الثقافة المنطقية وتحذير القراء من المخاطر العملية للأخطاء المنطقية في الحياة اليومية.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.mill.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.mill.title": "Analyse du texte: La sophistique par conversion fallacieuse - John Stuart Mill",
+                "PhiH.textAnalysis.mill.introduction.title": "Introduction",
+                "PhiH.textAnalysis.mill.introduction.content": "Le discours quotidien, dans les différents espaces de sa production sociale (publicité, politique, médias, conversations quotidiennes...) comprend certaines affirmations qui reposent sur la quantification totale ou partielle, l'affirmation ou la négation..., que les auditeurs prennent pour des formulations linguistiques et logiques neutres dont le but est l'argumentation et la liaison en vue de persuader. Cependant, un examen approfondi révèle qu'il s'agit d'outils qui peuvent être utilisés pour tromper l'auditeur ou le lecteur. Dès lors, il devient impossible pour l'individu de préserver son autonomie sans posséder la capacité d'analyser la fonction de ces liens et structures dans le discours qu'il formule.",
+                "PhiH.textAnalysis.mill.text.title": "La sophistique par conversion fallacieuse",
+                "PhiH.textAnalysis.mill.text.content": "Il peut être nécessaire d'inclure parmi les sophismes<sup>1</sup> dans le raisonnement les erreurs commises dans les opérations qui apparaissent en surface comme des inférences<sup>2</sup> dérivées de prémisses mais qui en réalité n'en sont pas, je veux dire les sophismes liés à la conversion des propositions<sup>3</sup> et à leur équipollence<sup>4</sup>, et je crois que de telles erreurs sont certainement plus fréquentes que ce que nous supposons généralement, et ce fait est si évident qu'il semble difficile de le nier. La conversion simple, par exemple, de la proposition universelle affirmative<sup>5</sup> (tout A est B, donc tout B est A) est à mon avis l'une des erreurs les plus communes parmi les gens, bien qu'elle se produise le plus souvent implicitement dans la pensée plus qu'elle ne s'exprime explicitement, comme c'est le cas pour beaucoup d'autres sophismes, car elle ne peut jamais être déclarée clairement sans être immédiatement démasquée. La même chose est vraie pour une autre forme de sophisme qui ne diffère pas essentiellement du sophisme précédent, à savoir la conversion fallacieuse d'une proposition hypothétique<sup>6</sup>. La conversion correcte d'une proposition hypothétique est la suivante: si la conclusion est fausse alors la prémisse est fausse, tandis que la conversion suivante: si la conclusion est vraie alors la prémisse est vraie est une conversion sans valeur. Ce n'est qu'une erreur qui s'accorde avec la conversion simple d'une proposition universelle affirmative. Pourtant, rien n'est plus commun dans le cours de la pensée familière que cette inférence. La même chose est vraie pour l'erreur non moins fréquente qui consiste à prendre la conclusion comme preuve des prémisses. Et que les prémisses ne peuvent être vraies si la conclusion est fausse, c'est là le fondement incontestable du mode légitime de preuve appelé réduction à l'absurde<sup>7</sup>.",
+                "PhiH.textAnalysis.mill.text.source": "John Stuart Mill, Système de logique déductive et inductive, Livre V, traduction du comité de rédaction, Système de logique déductive et inductive, édt numérique, Livre V, p 69",
+                "PhiH.textAnalysis.mill.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.mill.author.alt": "John Stuart Mill",
+                "PhiH.textAnalysis.mill.author.content": "John Stuart Mill (1806-1873): philosophe et économiste anglais qui a pris l'expérience, à la suite de Hume et Bentham, comme orientation centrale de sa contribution philosophique, que ce soit dans le domaine de la logique, de la théorie de la connaissance ou de l'éthique. En logique, l'inférence n'est légitime que comme passage d'une proposition particulière à une autre particulière, étant donné que toute prémisse universelle dans l'inférence est le produit d'une induction dont le point de départ est des faits particuliers, tandis que la légitimité de l'induction ne se détermine que par le respect de règles strictes dans l'investigation expérimentale. Sa théorie de la connaissance repose sur le refus de tout ce qui est inné dans l'esprit pour fonder ses différentes opérations de manière associative dans l'expérience. Sa théorie éthique est utilitariste et voit dans l'utilité le bien suprême que recherche chaque individu dans un cadre social et politique partagé avec les autres.",
+                "PhiH.textAnalysis.mill.author.works": "Parmi ses œuvres les plus importantes: \"Système de logique déductive et inductive\" (1843), \"Principes d'économie politique\" (1848), \"De la liberté\" (1859), \"L'utilitarisme\" (1861), \"De l'assujettissement des femmes\" (1869).",
+                "PhiH.textAnalysis.mill.lexical.title": "Notes et concepts",
+                "PhiH.textAnalysis.mill.lexical.item1": "<strong>Sophisme:</strong> C'est le raisonnement défectueux dont l'auteur cache intentionnellement le défaut pour qu'il apparaisse comme un raisonnement valide et cohérent dans le but de tromper les auditeurs et de les induire en erreur. Le sophisme Sophisme diffère de la faute de raisonnement Paralogisme (voir la fenêtre des outils de pensée: définitions et distinctions conceptuelles).",
+                "PhiH.textAnalysis.mill.lexical.item2": "<strong>Inférence:</strong> Tinference est un processus de raisonnement par lequel la pensée part d'une ou plusieurs propositions qui servent de prémisses universelles ou particulières pour en dériver une nouvelle proposition qui est la conclusion.",
+                "PhiH.textAnalysis.mill.lexical.item3": "<strong>Conversion:</strong> La conversion est une forme de raisonnement par lequel on infère une nouvelle proposition d'une première proposition donnée en inversant la relation logique entre le sujet et le prédicat telle qu'elle apparaît dans la première, de sorte que le sujet devient prédicat et le prédicat sujet dans la seconde. La conversion de la proposition suivante: tous les chats ont des griffes, consiste à inférer la proposition: donc certains animaux qui ont des griffes sont des chats. En revanche, la conversion fallacieuse est définie comme un raisonnement défectueux qui inverse la relation entre le sujet et le prédicat dans la prémisse universelle: tout A est B, pour en inférer: donc tout B est A dans le but de sophistiquer. Cela se manifeste sémantiquement à travers le même exemple précédent: tous les chats ont des griffes, donc tous les animaux qui ont des griffes sont des chats.",
+                "PhiH.textAnalysis.mill.lexical.item4": "<strong>Équipollence:</strong> L'equipollence est la forme de relation entre deux propositions dont chacune implique l'autre, de sorte qu'il existe entre elles une relation d'équivalence logique. Exemple: la relation entre la proposition: tout carré est un losange à angle droit, et la proposition: tout losange à angle droit est un carré.",
+                "PhiH.textAnalysis.mill.lexical.item5": "<strong>Proposition universelle affirmative:</strong> La proposition logique est le jugement qui relie un sujet et un prédicat de manière à acquérir un sens qui la rend susceptible d'être vraie ou fausse. La proposition logique dans le raisonnement a différentes formes quant à la quantité (universelle ou particulière) et quant à la qualité (affirmative ou négative) et il convient de noter que toutes ces catégories de propositions peuvent être utilisées comme prémisses hypothétiques dans le raisonnement.",
+                "PhiH.textAnalysis.mill.lexical.item6": "<strong>Proposition hypothétique:</strong> C'est la proposition dont la forme est \"si... alors...\", par exemple: \"s'il pleut, alors le sol est mouillé\".",
+                "PhiH.textAnalysis.mill.lexical.item7": "<strong>Réduction à l'absurde:</strong> Lareduction a l'absurde est un raisonnement qui conduit à prouver la fausseté d'une proposition en montrant qu'elle conduit à une conclusion manifestement contradictoire.",
+                "PhiH.textAnalysis.mill.questions.title": "Tâches",
+                "PhiH.textAnalysis.mill.questions.q1": "J'observe le processus de conversion dans ces deux raisonnements et je vérifie si la conversion est légitime et je justifie ma réponse:",
+                "PhiH.textAnalysis.mill.questions.q1a": "Toute personne qui fait du sport est en bonne santé, donc toutes les personnes en bonne santé font du sport.",
+                "PhiH.textAnalysis.mill.questions.q1b": "Toute personne qui fait du sport est en bonne santé, donc certaines personnes en bonne santé font du sport.",
+                "PhiH.textAnalysis.mill.questions.q2": "J'observe le raisonnement suivant:",
+                "PhiH.textAnalysis.mill.questions.q2a": "S'il est erroné de dire que la différence des rôles sociaux entre hommes et femmes est naturelle, la prémisse de ce raisonnement est-elle nécessairement fausse?",
+                "PhiH.textAnalysis.mill.questions.q2b": "S'il est correct de dire que la différence des rôles sociaux entre hommes et femmes est naturelle, la prémisse du raisonnement est-elle nécessairement correcte?",
+                "PhiH.textAnalysis.mill.questions.q3": "J'imagine une discussion entre un groupe de jeunes sur la nature de la répartition des tâches ménagères entre hommes et femmes dans les familles, où l'un des participants cherche à utiliser la conversion à des fins de sophistique, mais ses amis le démasquent, exposant ainsi la nullité de son argumentation.",
+                "PhiH.textAnalysis.mill.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.mill.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.mill.answers.a1.content": "<strong>Premier raisonnement:</strong> Toute personne qui fait du sport est en bonne santé, donc toutes les personnes en bonne santé font du sport.<br>• <strong>Type de conversion:</strong> C'est une conversion fallacieuse (conversion simple d'une proposition universelle affirmative).<br>• <strong>Analyse:</strong> La conversion n'est pas légitime car elle inverse la relation entre le sujet et le prédicat de manière universelle. La formulation originale \"tout A est B\" ne signifie pas nécessairement \"tout B est A\". Il peut y avoir des personnes en bonne santé pour d'autres raisons que le sport (hérédité, nutrition, etc.).<br>• <strong>Conclusion:</strong> Le raisonnement est erroné et sophistique.<br><br><strong>Deuxième raisonnement:</strong> Toute personne qui fait du sport est en bonne santé, donc certaines personnes en bonne santé font du sport.<br>• <strong>Type de conversion:</strong> C'est une conversion correcte (conversion partielle).<br>• <strong>Analyse:</strong> La conversion est légitime car elle transforme la proposition universelle affirmative en proposition particulière affirmative. Si \"tous les sportifs sont en bonne santé\", il est logique que \"certaines personnes en bonne santé font du sport\" au moins.<br>• <strong>Conclusion:</strong> Le raisonnement est correct et logique.",
+                "PhiH.textAnalysis.mill.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.mill.answers.a2.content": "Raisonnement: Il existe une différence naturelle d'intelligence entre hommes et femmes, donc la différence des rôles sociaux entre hommes et femmes est naturelle.<br><br><strong>Première partie:</strong> S'il est erroné de dire que la différence des rôles sociaux entre hommes et femmes est naturelle, la prémisse de ce raisonnement est-elle nécessairement fausse?<br>• <strong>Analyse:</strong> Oui, la prémisse est nécessairement fausse selon la règle \"si la conclusion est fausse alors la prémisse est fausse\". C'est la conversion correcte de la proposition hypothétique. Si la conclusion (la différence des rôles sociaux est naturelle) est fausse, alors la prémisse (la différence naturelle d'intelligence) ne peut être vraie, car cela conduirait à une conclusion correcte à partir d'une prémisse fausse, ce qui est une contradiction.<br><br><strong>Deuxième partie:</strong> S'il est correct de dire que la différence des rôles sociaux entre hommes et femmes est naturelle, la prémisse du raisonnement est-elle nécessairement correcte?<br>• <strong>Analyse:</strong> Non, pas nécessairement correcte. C'est la conversion fallacieuse de la proposition hypothétique dont Mill met en garde. La simple vérité de la conclusion ne garantit pas la vérité de la prémisse. La conclusion peut être vraie pour d'autres raisons que celles mentionnées dans la prémisse. Par exemple: la différence des rôles sociaux peut être naturelle pour des raisons biologiques ou culturelles différentes, et pas nécessairement à cause de la différence d'intelligence.",
+                "PhiH.textAnalysis.mill.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.mill.answers.a3.content": "<strong>Scénario de la conversation:</strong><br>• <strong>Le sophiste:</strong> \"Toutes les femmes s'occupent plus des tâches ménagères que les hommes, donc toute personne qui s'occupe plus des tâches ménagères est une femme.\"<br>• <strong>Le contradicteur (démasquant la sophistique):</strong> \"C'est une sophistique par conversion fallacieuse! Tu dis 'tout A est B' et tu conclus 'tout B est A'. C'est une erreur logique. Il est vrai que beaucoup de femmes s'occupent des tâches ménagères, mais cela ne signifie pas que toute personne qui s'occupe des tâches ménagères est une femme. Il y a aussi des hommes qui s'occupent des tâches ménagères, et ils peuvent même être plus intéressés que certaines femmes.\"<br>• <strong>Le contradicteur (présentant l'analyse logique):</strong> \"La formulation correcte de la conversion est: 'tout A est B' → 'quelque B est A'. Donc tu peux dire: 'quelques personnes qui s'occupent des tâches ménagères sont des femmes', et c'est logiquement correct. Mais dire 'toutes les personnes qui s'occupent des tâches ménagères sont des femmes' est une sophistique qui vise à une généralisation erronée et à perpétuer le stéréotype.\"<br>• <strong>Résultat de la discussion:</strong> La sophistique est démasquée, et les participants apprennent l'importance de l'analyse logique des raisonnements quotidiens et d'éviter les généralisations erronées.",
+                "PhiH.textAnalysis.mill.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.mill.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.mill.analysis.thesis.content": "John Stuart Mill explique dans ce texte l'un des types de sophismes logiques les plus répandus dans la pensée quotidienne: la sophistique par conversion fallacieuse. Mill affirme que les erreurs résultant de la conversion incorrecte des propositions sont plus fréquentes que nous ne le croyons, et se produisent souvent implicitement dans la pensée avant d'être exprimées explicitement. Mill appelle à la prudence face à ces sophismes et à la nécessité de distinguer entre la conversion correcte et la conversion fallacieuse dans les raisonnements quotidiens et philosophiques.",
+                "PhiH.textAnalysis.mill.analysis.mechanisms.title": "Types de sophismes par conversion fallacieuse:",
+                "PhiH.textAnalysis.mill.analysis.mechanisms.content": "Mill identifie plusieurs formes de sophisme par conversion fallacieuse:<br><br>1. <strong>Conversion simple de la proposition universelle affirmative:</strong> \"tout A est B\" → \"tout B est A\". C'est le type le plus courant, où il inverse la relation entre le sujet et le prédicat de manière universelle non légitime.<br><br>2. <strong>Conversion fallacieuse de la proposition hypothétique:</strong> \"si la conclusion est vraie alors la prémisse est vraie\". C'est une erreur car la vérité de la conclusion ne garantit pas la vérité de la prémisse, la conclusion peut être vraie pour d'autres raisons.<br><br>3. <strong>Prendre la conclusion comme preuve des prémisses:</strong> C'est une erreur courante où les gens croient que la vérité de la conclusion prouve la vérité des prémisses qui y ont conduit.<br><br>4. <strong>Confusion entre conversion correcte et conversion fallacieuse:</strong> où la conversion correcte de la proposition hypothétique est: \"si la conclusion est fausse alors la prémisse est fausse\", qui est la base de la preuve par réduction à l'absurde.",
+                "PhiH.textAnalysis.mill.analysis.consequences.title": "Conséquences de la propagation des sophismes par conversion fallacieuse:",
+                "PhiH.textAnalysis.mill.analysis.consequences.content": "- <strong>Déformation de la pensée critique:</strong> La propagation de ces sophismes sape la capacité de pensée critique et analytique.<br><br>- <strong>Tromperie de l'opinion publique:</strong> Ces sophismes sont utilisés dans le discours politique et médiatique pour tromper le public.<br><br>- <strong>Renforcement des préjugés:</strong> Contribuent à perpétuer les stéréotypes et les préjugés à travers des généralisations erronées.<br><br>- <strong>Obstacle au progrès scientifique:</strong> Entravent le progrès scientifique et philosophique à travers des raisonnements erronés qui semblent convaincants.<br><br>- <strong>Affaiblissement du dialogue rationnel:</strong> Sapent les bases du dialogue rationnel et des débats intellectuels sains.",
+                "PhiH.textAnalysis.mill.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.mill.analysis.significance.content": "L'analyse de Mill du sophisme par conversion fallacieuse porte des significations profondes qui dépassent la logique formelle:<br><br>1. <strong>Critique sociale:</strong> Mill révèle comment les sophismes logiques sont exploités dans le discours social et politique pour influencer l'opinion publique.<br><br>2. <strong>Empirisme logique:</strong> L'analyse de Mill s'accorde avec son orientation empirique générale, reliant la validité des raisonnements à la possibilité de vérification expérimentale.<br><br>3. <strong>Éducation intellectuelle:</strong> Mill appelle implicitement à la nécessité d'une éducation logique comme partie de l'éducation générale de l'individu.<br><br>4. <strong>Critique des idées innées:</strong> L'analyse des sophismes s'harmonise avec le refus par Mill des significations innées, voyant que les erreurs logiques se propagent par l'habitude et l'éducation, non par l'inné.<br><br>5. <strong>Libération intellectuelle:</strong> La démystification des sophismes représente un moyen de se libérer des idées erronées et des présupposés non justifiés.<br><br>6. <strong>Dimensions éthiques:</strong> Du point de vue utilitariste de Mill, les sophismes sont nuisibles car ils conduisent à des décisions erronées qui nuisent au bonheur général.<br><br>Ce texte représente une contribution importante à la généralisation de la culture logique et à l'avertissement des lecteurs sur les risques pratiques des erreurs logiques dans la vie quotidienne."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.textAnalysis.mill.level": "3rd Secondary - Philosophy",
+                "PhiH.textAnalysis.mill.title": "Text Analysis: Sophistry by Fallacious Conversion - John Stuart Mill",
+                "PhiH.textAnalysis.mill.introduction.title": "Introduction",
+                "PhiH.textAnalysis.mill.introduction.content": "Daily discourse, in the various spaces of its social production (advertising, politics, media, daily conversations...) includes some statements that rely on total or partial quantification, affirmation or negation..., which listeners take to be neutral linguistic and logical formulations whose purpose is argumentation and connection for persuasion. However, close examination reveals that they are tools that can be used to deceive the listener or reader. At that point, it becomes impossible for the individual to maintain their autonomy without possessing the ability to analyze the function of these links and structures in the discourse they formulate.",
+                "PhiH.textAnalysis.mill.text.title": "Sophistry by Fallacious Conversion",
+                "PhiH.textAnalysis.mill.text.content": "It may be necessary to include among sophisms<sup>1</sup> in reasoning the errors committed in operations that appear on the surface to be inferences<sup>2</sup> derived from premises but which in reality are not, I mean the sophisms related to the conversion of propositions<sup>3</sup> and their equipollence<sup>4</sup>, and I believe that such errors are certainly more frequent than we generally assume, and this fact is so evident that it seems difficult to deny it. The simple conversion, for example, of the universal affirmative proposition<sup>5</sup> (all A is B, therefore all B is A) is in my opinion one of the most common errors among people, although it occurs most often implicitly in thought more than it is expressed explicitly, as is the case with many other sophisms, for it can never be stated clearly without being immediately unmasked. The same is true for another form of sophism that does not differ essentially from the previous sophism, namely the fallacious conversion of a hypothetical proposition<sup>6</sup>. The correct conversion of a hypothetical proposition is as follows: if the conclusion is false then the premise is false, whereas the following conversion: if the conclusion is true then the premise is true is a worthless conversion. It is merely an error that agrees with the simple conversion of a universal affirmative proposition. Yet nothing is more common in the course of familiar thought than this inference. The same is true for the no less frequent error of taking the conclusion as proof of the premises. And that the premises cannot be true if the conclusion is false, that is the uncontested foundation of the legitimate mode of proof called reduction to absurdity<sup>7</sup>.",
+                "PhiH.textAnalysis.mill.text.source": "John Stuart Mill, System of Logic Deductive and Inductive, Book V, translation by the editorial committee, Système de logique déductive et inductive, édt numérique, Livre V, p 69",
+                "PhiH.textAnalysis.mill.author.title": "Author Presentation",
+                "PhiH.textAnalysis.mill.author.alt": "John Stuart Mill",
+                "PhiH.textAnalysis.mill.author.content": "John Stuart Mill (1806-1873): English philosopher and economist who took experience, following Hume and Bentham, as the central orientation of his philosophical contribution, whether in the field of logic, theory of knowledge, or ethics. In logic, inference is legitimate only as a passage from one particular proposition to another particular, given that any universal premise in inference is the product of an induction whose starting point is particular facts, while the legitimacy of induction is determined only by respect for strict rules in experimental investigation. His theory of knowledge is based on the rejection of everything innate in the mind to ground its different operations in an associative manner in experience. His ethical theory is utilitarian and sees in utility the supreme good that each individual seeks within a social and political framework shared with others.",
+                "PhiH.textAnalysis.mill.author.works": "Among his most important works: \"System of Logic Deductive and Inductive\" (1843), \"Principles of Political Economy\" (1848), \"On Liberty\" (1859), \"Utilitarianism\" (1861), \"The Subjection of Women\" (1869).",
+                "PhiH.textAnalysis.mill.lexical.title": "Footnotes and Concepts",
+                "PhiH.textAnalysis.mill.lexical.item1": "<strong>Sophism:</strong> It is the defective reasoning whose author intentionally hides the defect so that it appears as valid and coherent reasoning with the aim of deceiving listeners and leading them into error. Sophism Sophisme differs from reasoning error Paralogisme (see the thinking tools window: definitions and conceptual distinctions).",
+                "PhiH.textAnalysis.mill.lexical.item2": "<strong>Inference:</strong> Tinference is a reasoning process by which thought starts from one or more propositions that serve as universal or particular premises to derive a new proposition which is the conclusion.",
+                "PhiH.textAnalysis.mill.lexical.item3": "<strong>Conversion:</strong> Conversion is a form of reasoning by which a new proposition is inferred from a given first proposition by reversing the logical relationship between subject and predicate as it appears in the first, so that the subject becomes predicate and the predicate subject in the second. The conversion of the following proposition: all cats have claws, consists in inferring the proposition: therefore some animals that have claws are cats. In contrast, fallacious conversion is defined as defective reasoning that reverses the relationship between subject and predicate in the universal premise: all A is B, to infer: therefore all B is A for sophistic purposes. This manifests semantically through the same previous example: all cats have claws, therefore all animals that have claws are cats.",
+                "PhiH.textAnalysis.mill.lexical.item4": "<strong>Equipollence:</strong> L'equipollence is the form of relationship between two propositions each of which implies the other, so that there exists between them a relation of logical equivalence. Example: the relationship between the proposition: every square is a right-angled rhombus, and the proposition: every right-angled rhombus is a square.",
+                "PhiH.textAnalysis.mill.lexical.item5": "<strong>Universal affirmative proposition:</strong> The logical proposition is the judgment that links a subject and a predicate in such a way as to acquire a meaning that makes it susceptible to being true or false. The logical proposition in reasoning has different forms regarding quantity (universal or particular) and regarding quality (affirmative or negative) and it should be noted that all these categories of propositions can be used as hypothetical premises in reasoning.",
+                "PhiH.textAnalysis.mill.lexical.item6": "<strong>Hypothetical proposition:</strong> It is the proposition whose form is \"if... then...\", for example: \"if it rains, then the ground is wet\".",
+                "PhiH.textAnalysis.mill.lexical.item7": "<strong>Reduction to absurdity:</strong> Lareduction a l'absurde is a reasoning that leads to proving the falsity of a proposition by showing that it leads to a manifestly contradictory conclusion.",
+                "PhiH.textAnalysis.mill.questions.title": "Tasks",
+                "PhiH.textAnalysis.mill.questions.q1": "I observe the conversion process in these two reasonings and verify whether the conversion is legitimate and justify my answer:",
+                "PhiH.textAnalysis.mill.questions.q1a": "Everyone who exercises is in good health, therefore everyone in good health exercises.",
+                "PhiH.textAnalysis.mill.questions.q1b": "Everyone who exercises is in good health, therefore some people in good health exercise.",
+                "PhiH.textAnalysis.mill.questions.q2": "I observe the following reasoning:",
+                "PhiH.textAnalysis.mill.questions.q2a": "If it is wrong to say that the difference in social roles between men and women is natural, is the premise of this reasoning necessarily false?",
+                "PhiH.textAnalysis.mill.questions.q2b": "If it is correct to say that the difference in social roles between men and women is natural, is the premise of the reasoning necessarily correct?",
+                "PhiH.textAnalysis.mill.questions.q3": "I imagine a discussion among a group of young people about the nature of the distribution of household chores between males and females in families, where one participant seeks to use conversion for sophistic purposes, but his friends expose it, thus revealing the nullity of his argumentation.",
+                "PhiH.textAnalysis.mill.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.mill.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.mill.answers.a1.content": "<strong>First reasoning:</strong> Everyone who exercises is in good health, therefore everyone in good health exercises.<br>• <strong>Type of conversion:</strong> This is a fallacious conversion (simple conversion of a universal affirmative proposition).<br>• <strong>Analysis:</strong> The conversion is not legitimate because it reverses the relationship between subject and predicate in a universal manner. The original formulation \"all A is B\" does not necessarily mean \"all B is A\". There may be people in good health for reasons other than exercise (heredity, nutrition, etc.).<br>• <strong>Conclusion:</strong> The reasoning is erroneous and sophistic.<br><br><strong>Second reasoning:</strong> Everyone who exercises is in good health, therefore some people in good health exercise.<br>• <strong>Type of conversion:</strong> This is a correct conversion (partial conversion).<br>• <strong>Analysis:</strong> The conversion is legitimate because it transforms the universal affirmative proposition into a particular affirmative proposition. If \"all exercisers are in good health\", it is logical that \"some people in good health exercise\" at least.<br>• <strong>Conclusion:</strong> The reasoning is correct and logical.",
+                "PhiH.textAnalysis.mill.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.mill.answers.a2.content": "Reasoning: There is a natural difference in intelligence between men and women, therefore the difference in social roles between men and women is natural.<br><br><strong>First part:</strong> If it is wrong to say that the difference in social roles between men and women is natural, is the premise of this reasoning necessarily false?<br>• <strong>Analysis:</strong> Yes, the premise is necessarily false according to the rule \"if the conclusion is false then the premise is false\". This is the correct conversion of the hypothetical proposition. If the conclusion (the difference in social roles is natural) is false, then the premise (the natural difference in intelligence) cannot be true, because that would lead to a correct conclusion from a false premise, which is a contradiction.<br><br><strong>Second part:</strong> If it is correct to say that the difference in social roles between men and women is natural, is the premise of the reasoning necessarily correct?<br>• <strong>Analysis:</strong> No, not necessarily correct. This is the fallacious conversion of the hypothetical proposition that Mill warns against. The mere truth of the conclusion does not guarantee the truth of the premise. The conclusion may be true for reasons other than those mentioned in the premise. For example: the difference in social roles may be natural for different biological or cultural reasons, and not necessarily because of the difference in intelligence.",
+                "PhiH.textAnalysis.mill.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.mill.answers.a3.content": "<strong>Conversation scenario:</strong><br>• <strong>The sophist:</strong> \"All women care more about household chores than men, therefore everyone who cares more about household chores is a woman.\"<br>• <strong>The opponent (exposing the sophistry):</strong> \"This is sophistry by fallacious conversion! You say 'all A is B' and conclude 'all B is A'. This is a logical error. It is true that many women care about household chores, but this does not mean that everyone who cares about household chores is a woman. There are also men who care about household chores, and they may even be more interested than some women.\"<br>• <strong>The opponent (presenting the logical analysis):</strong> \"The correct formulation of conversion is: 'all A is B' → 'some B is A'. So you can say: 'some people who care about household chores are women', and that is logically correct. But saying 'all people who care about household chores are women' is sophistry that aims at an erroneous generalization and perpetuating the stereotype.\"<br>• <strong>Result of the discussion:</strong> The sophistry is exposed, and the participants learn the importance of logical analysis of daily reasonings and avoiding erroneous generalizations.",
+                "PhiH.textAnalysis.mill.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.mill.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.mill.analysis.thesis.content": "John Stuart Mill explains in this text one of the most widespread types of logical fallacies in daily thinking: sophistry by fallacious conversion. Mill affirms that errors resulting from incorrect conversion of propositions are more frequent than we believe, and often occur implicitly in thought before being expressed explicitly. Mill calls for caution against these fallacies and the necessity of distinguishing between correct conversion and fallacious conversion in daily and philosophical reasoning.",
+                "PhiH.textAnalysis.mill.analysis.mechanisms.title": "Types of fallacies by fallacious conversion:",
+                "PhiH.textAnalysis.mill.analysis.mechanisms.content": "Mill identifies several forms of fallacy by fallacious conversion:<br><br>1. <strong>Simple conversion of the universal affirmative proposition:</strong> \"all A is B\" → \"all B is A\". This is the most common type, where it reverses the relationship between subject and predicate in an illegitimate universal manner.<br><br>2. <strong>Fallacious conversion of the hypothetical proposition:</strong> \"if the conclusion is true then the premise is true\". This is an error because the truth of the conclusion does not guarantee the truth of the premise, the conclusion may be true for other reasons.<br><br>3. <strong>Taking the conclusion as proof of the premises:</strong> This is a common error where people believe that the truth of the conclusion proves the truth of the premises that led to it.<br><br>4. <strong>Confusion between correct conversion and fallacious conversion:</strong> where the correct conversion of the hypothetical proposition is: \"if the conclusion is false then the premise is false\", which is the basis of proof by reduction to absurdity.",
+                "PhiH.textAnalysis.mill.analysis.consequences.title": "Consequences of the spread of fallacies by fallacious conversion:",
+                "PhiH.textAnalysis.mill.analysis.consequences.content": "- <strong>Distortion of critical thinking:</strong> The spread of these fallacies undermines the ability for critical and analytical thinking.<br><br>- <strong>Deception of public opinion:</strong> These fallacies are used in political and media discourse to deceive the public.<br><br>- <strong>Reinforcement of prejudices:</strong> Contribute to perpetuating stereotypes and prejudices through erroneous generalizations.<br><br>- <strong>Obstacle to scientific progress:</strong> Hinder scientific and philosophical progress through erroneous reasonings that seem convincing.<br><br>- <strong>Weakening of rational dialogue:</strong> Undermine the foundations of rational dialogue and healthy intellectual debates.",
+                "PhiH.textAnalysis.mill.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.mill.analysis.significance.content": "Mill's analysis of the fallacy by fallacious conversion carries deep meanings that go beyond formal logic:<br><br>1. <strong>Social criticism:</strong> Mill reveals how logical fallacies are exploited in social and political discourse to influence public opinion.<br><br>2. <strong>Logical empiricism:</strong> Mill's analysis agrees with his general empirical orientation, linking the validity of reasonings to the possibility of experimental verification.<br><br>3. <strong>Intellectual education:</strong> Mill implicitly calls for the necessity of logical education as part of the individual's general education.<br><br>4. <strong>Critique of innate ideas:</strong> The analysis of fallacies harmonizes with Mill's rejection of innate meanings, seeing that logical errors spread by habit and education, not by innateness.<br><br>5. <strong>Intellectual liberation:</strong> The demystification of fallacies represents a means of liberation from erroneous ideas and unjustified assumptions.<br><br>6. <strong>Ethical dimensions:</strong> From Mill's utilitarian perspective, fallacies are harmful because they lead to erroneous decisions that harm general happiness.<br><br>This text represents an important contribution to the generalization of logical culture and warning readers about the practical risks of logical errors in daily life."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.mill.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.mill.title": "تحليل النص: المغالطة بواسطة العكس الفاسد - جون ستوارت ميل",
+                "PhiH.textAnalysis.mill.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.mill.introduction.content": "يتضمّن الخطاب اليوميّ، في مختلف فضاءات إنتاجه الاجتماعيّة (الإشهار، السياسة، الإعلام، المحادثات اليوميّة ... ) بعض الإقرارات التي تعتمد التكميم الكليّ أو الجزئيّ، الإثبات أو النفي ... ، فيخالها المستمعون صيغا لغويّة ومنطقيّة محايدة هدفها الحجاج والربط قصد الإقناع. غير أنّ إمعان النظر فيها يكشف أنّها أدوات قد تُعتمد في مغالطة المستمع أو القارئ. وعندئذ يستحيل على الفرد أن يُحافظ على استقلاله دون أن يمتلك القدرة على تحليل وظيفة هذه الروابط والبنى فيما يصوغه من كلام.",
+                "PhiH.textAnalysis.mill.text.title": "المغالطة بواسطة العكس الفاسد",
+                "PhiH.textAnalysis.mill.text.content": "قد يكون من اللّزم أن نُدرج ضمن المغالطات<sup>1</sup> في الاستدلال الأخطاءَ المرتكبة في العمليّات التي تبدو في الظاهر استنتاجات<sup>2</sup> مستمدّة من مقدّمات ولكنّها في الواقع ليست كذلك، أعني المغالطات المرتبطة بعكس القضايا<sup>3</sup> وبتساويها<sup>4</sup>، وأعتقد أنّ مثل هذه الأخطاء هي بالتأكيد الأكثر تواترا ممّا نفترضه عموما، وهذا أمر على قدر من الوضوح بحيث يبدو من الصعب إنكاره. فالعكس البسيط، مثلا، القضيّة كلّةٍ موجبة<sup>5</sup> (كل أهي ب، إذن كل ب هي أ) هو في اعتقادي من أكثر الأخطاء شيوعا بين النّاس، رغم أنّه يحصل في الغالب ضمنيًا في الفكر أكثر ممّا يُعبّر عنه بصريح العبارة شأنه في ذلك شأن الكثير من المغالطات الأخرى، إذ لا يُمكن أبدا أن يُعلَن بوضوح دون أن يُكشف فورا. ونفس الأمر يَصْدُق على شكل آخر للمغالطة لا يختلف جوهريًا عن المغالطة السابقة وهو العكس الفاسد لقضيّة افتراضيّة<sup>6</sup>. والعكس السليم لقضيّة افتراضيّة هو التالي: إذا كانت النتيجة كاذبة فإنّ المقدّمة كاذبة، في حين أنّ العكس الآتي: إذا كانت النتيجة صادقة فإنّ المقدّمة صادقة هو عكس بلا قيمة. فهو ليس سوى خطأ يتّفق مع العكس البسيط لقضيّة كلّة موجبة. ومع ذلك، لا شيء أكثر شيوعا في مجرى الفكر المألوف من هذا الاستنتاج. ونفس الأمر يَصْدُق على الخطأ الذي لا يقلّ تواترا والمتمثّل في اعتماد النتيجة حجّة على المقدّمات. وأنّه لا يمكن للمقدّمات أن تكون صادقة إذا ما كانت النتيجة خاطئة، ذلك هو الأساس الذي لا يُعترض عليه للنمط المشروع في البرهان المسمّى الإرجاع إلى الخُلف<sup>7</sup>.",
+                "PhiH.textAnalysis.mill.text.source": "جون ستوارت ميل، نسق المنطق الاستنتاجيّ والاستقرائيّ، الكتاب الخامس، ترجمة لجنة التأليف، Système de logique déductive et inductive, édt numérique, Livre V, p 69",
+                "PhiH.textAnalysis.mill.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.mill.author.alt": "جون ستوارت ميل",
+                "PhiH.textAnalysis.mill.author.content": "جون ستوارت ميل (1806-1873): فيلسوف ورجل اقتصاد انجليزيّ اتّخذ من التجربّة على إثر هيوم وبنثام إحداثّة موجّهة لإسهامه الفلسفيّ سواء في مجال المنطق أو نظريّة المعرفة أو الأخلاق. ففي المنطق لا يكون الاستنتاج مشروعا إلاّ كانتقال من قضيّة جزئيّة إلى أخرى جزئيّة نظرا إلى أنّ كلٍ مقدّمة كليّة في الاستنتاج هي نتاج استقراءٍ منطلقه وقائع جزئيّة، في حين أنّ مشروعيّة الاستقراء لا تتحدّد إلا بمدى احترام قواعد صارمة في التحقيق التجريبيّ. أما نظريّته في المعرفة فتقوم على رفض كل ما هو فطريّ في العقل لتأصيل مختلف عمليّاته بشكلٍ ترابطيّ في التجربة. أمّا نظريّته في الأخلاق فهي نفعيّة ترى في المنفعة الخير الأسمى الذي ينشده كل فرد في إطار اجتماعيّ وسياسيّ مشترك مع الآخرين.",
+                "PhiH.textAnalysis.mill.author.works": "من أهمّ مؤلفاته: \"نسق المنطق الاستنتاجي والاستقرائي\" (1843)، \"مبادئ الاقتصاد السياسيّ\" (1848)، \"في الحريّة\" (1859)، \"في النفعيّة\" (1861)، \"في إخضاع النساء\" (1869).",
+                "PhiH.textAnalysis.mill.lexical.title": "الهوامش والمفاهيم",
+                "PhiH.textAnalysis.mill.lexical.item1": "<strong>المغالطة:</strong> هي الاستدلال المختّل الذي يتعمّد صاحبه إخفاء خلله ليبدو بمظهر الاستدلال السليم والمتماسك قصد تضليل المستمعين وإيقاعهم في الغلط. وتختلف المغالطة Sophisme عن الغلط Paralogisme (أنظر نافذة دعائم للتفكير: تحديدات وتمييزات مفهومية.)",
+                "PhiH.textAnalysis.mill.lexical.item2": "<strong>الاستنتاج:</strong> Tinference هو عمليّة استدلاليّة من خلالها ينطلق الفكر من قضيّة أو قضايا تكون بمثابة المقدّمات الكليّة أو الجزئيّة ليستمد منها قضيّة جديدة هي النتيجة.",
+                "PhiH.textAnalysis.mill.lexical.item3": "<strong>العكس:</strong> La conversion هو شكل من أشكال الاستدلال يتمّ بمقتضاه استنتاج قضيّة جديدة من قضيّة أولى معطاة وذلك بعكس العلاقة المنطقيّة بين الموضوع والمحمول كما وردت في الأولى بحيث يصبح الموضوع محمولا والمحمول موضوعا في الثانية. فالعكس في القضيّة التالية: كلّ القطط لها مخالب، يكون باستنتاج القضيّة: إذن بعض الحيوانات التي لها مخالب هي قطط. وفي مقابل ذلك يتحدّد العكس الفاسد كاستدلال مختّل يعكس العلاقة بين الموضوع والمحمول في المقدّمة الكليّة: كل أهي ب، ليستنتج منها: إذن كل ب هي أ بهدف المغالطة. ويتجلّى هذا الأمر دلاليّا من خلال نفس المثال السابق: كل القطط لها مخالب، إذن كل الحيوانات التي لها مخالب هي قطط.",
+                "PhiH.textAnalysis.mill.lexical.item4": "<strong>التساوي:</strong> L'equipollence هو شكل العلاقة القائمة بين قضيتين تفترض كلاهما الأخرى بحيث تقوم بينهما علاقة تساو منطقيّ. مثال ذلك العلاقة القائمة بين القضيّة: كل مربّع هو مُعَيَّنُ قائم الزاوية، والقضيّة: كل مُعَيَّنٍ قائم الزاوية هو مربّع.",
+                "PhiH.textAnalysis.mill.lexical.item5": "<strong>القضيّة الكليّة الموجبة:</strong> القضيّة المنطقيّة هي الحكم الذي يربط بين موضوع ومحمول على نحوٍ يكتسب من خلاله معنى يجعله يحتمل الصدق والخطأ. وللقضيّة المنطقيّة في الاستدلال أشكال مختلفة من جهة الكمّ (كلّة أو جزئيّة) ومن جهة الكيف (موجبة أو سالبة) وتجدر الملاحظة أنّ كل هذه الأصناف من القضايا قابلة للاستعمال كمقدّمات افتراضيّة في الاستدلال.",
+                "PhiH.textAnalysis.mill.lexical.item6": "<strong>القضيّة الافتراضيّة:</strong> هي القضيّة التي يكون شكلها \"إذا... فإن...\"، مثل: \"إذا كان المطر ينزل فإن الأرض تبتل\".",
+                "PhiH.textAnalysis.mill.lexical.item7": "<strong>الإرجاع إلى الخُلف:</strong> Lareduction a l'absurde هو استدلال يقود إلى إثبات خطأ قضيّة ما بإبراز أنّها تقود إلى نتيجة واضحة التناقض.",
+                "PhiH.textAnalysis.mill.questions.title": "المهام",
+                "PhiH.textAnalysis.mill.questions.q1": "ألاحظ عمليّة العكس في هذين الاستدلاليْن وأتثّت إن كان العكس مشروعا وأعلّل إجابتي:",
+                "PhiH.textAnalysis.mill.questions.q1a": "كل مَن يُمارس الرياضة هو في صحّة جيّدة، إذن كل الذين هم في صحّة جيّدة يُمارسون الرياضة.",
+                "PhiH.textAnalysis.mill.questions.q1b": "كل مَن يُمارس الرياضة هو في صحّة جيّدة، إذن بعض الذين هم في صحّة جيّدة يُمارسون الرياضة.",
+                "PhiH.textAnalysis.mill.questions.q2": "ألاحظ الاستدلال التالي:",
+                "PhiH.textAnalysis.mill.questions.q2a": "إذا كان من الخطأ القول إنّ الاختلاف في الأدوار الاجتماعيّة بين الرجال والنساء طبيعيّ، فهل تكون مقدّمة هذا الاستدلال بالضرورة خاطئة ؟",
+                "PhiH.textAnalysis.mill.questions.q2b": "إذا كان من الصواب القول إنّ الاختلاف في الأدوار الاجتماعيّة بين الرجال والنساء طبيعيّ، فهل تكون مقدّمة الاستدلال بالضرورة صائبة؟",
+                "PhiH.textAnalysis.mill.questions.q3": "أتخيّل مناقشة بين مجموعة من الشباب حول طبيعة توزيع الشؤون المنزليّة بين الذكور والإناث في الأُسَرِ، حيث يسعى أحد المشاركين إلى استعمال العكس قصد المغالطة، ولكنّ أصدقاءه يكشفون ذلك فاضحين بطلان حجاجه.",
+                "PhiH.textAnalysis.mill.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.mill.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.mill.answers.a1.content": "<strong>الاستدلال الأول:</strong> كل مَن يُمارس الرياضة هو في صحّة جيّدة، إذن كل الذين هم في صحّة جيّدة يُمارسون الرياضة.<br>• <strong>نوع العكس:</strong> هذا عكس فاسد (عكس بسيط لقضيّة كليّة موجبة).<br>• <strong>التحليل:</strong> العكس غير مشروع لأنه يعكس العلاقة بين الموضوع والمحمول بشكل كلي. الصيغة الأصلية \"كل أ هي ب\" لا تعني بالضرورة \"كل ب هي أ\". قد يكون هناك أشخاص في صحة جيدة لأسباب أخرى غير ممارسة الرياضة (وراثة، تغذية، الخ).<br>• <strong>النتيجة:</strong> الاستدلال خاطئ ومغالطة.<br><br><strong>الاستدلال الثاني:</strong> كل مَن يُمارس الرياضة هو في صحّة جيّدة، إذن بعض الذين هم في صحّة جيّدة يُمارسون الرياضة.<br>• <strong>نوع العكس:</strong> هذا عكس صحيح (عكس جزئي).<br>• <strong>التحليل:</strong> العكس مشروع لأنه يحول القضية الكلية الموجبة إلى قضية جزئية موجبة. إذا كان \"كل ممارس للرياضة في صحة جيدة\"، فمن المنطقي أن \"بعض الأصحاء يمارسون الرياضة\" على الأقل.<br>• <strong>النتيجة:</strong> الاستدلال صحيح ومنطقي.",
+                "PhiH.textAnalysis.mill.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.mill.answers.a2.content": "الاستدلال: هناك اختلاف طبيعيّ في الذكاء بين الرجال والنساء، إذن الاختلاف في الأدوار الاجتماعيّة بين الرجال والنساء طبيعيّ.<br><br><strong>الجزء الأول:</strong> إذا كان من الخطأ القول إنّ الاختلاف في الأدوار الاجتماعيّة بين الرجال والنساء طبيعيّ، فهل تكون مقدّمة هذا الاستدلال بالضرورة خاطئة؟<br>• <strong>التحليل:</strong> نعم، تكون المقدمة بالضرورة خاطئة وفقاً لقاعدة \"إذا كانت النتيجة كاذبة فإنّ المقدّمة كاذبة\". هذا هو العكس السليم للقضية الافتراضية. إذا كان الاستنتاج (الاختلاف في الأدوار الاجتماعية طبيعي) خاطئاً، فلا يمكن أن تكون المقدمة (الاختلاف الطبيعي في الذكاء) صحيحة، لأن ذلك سيؤدي إلى استنتاج صحيح من مقدمة خاطئة، وهو تناقض.<br><br><strong>الجزء الثاني:</strong> إذا كان من الصواب القول إنّ الاختلاف في الأدوار الاجتماعيّة بين الرجال والنساء طبيعيّ، فهل تكون مقدّمة الاستدلال بالضرورة صائبة؟<br>• <strong>التحليل:</strong> لا، ليست بالضرورة صائبة. هذا هو العكس الفاسد للقضية الافتراضية الذي يحذر منه ميل. مجرد صحة النتيجة لا تضمن صحة المقدمة. قد تكون النتيجة صحيحة لأسباب أخرى غير تلك المذكورة في المقدمة. مثلاً: قد يكون الاختلاف في الأدوار الاجتماعية طبيعياً لأسباب بيولوجية أو ثقافية مختلفة، وليس بالضرورة بسبب الاختلاف في الذكاء.",
+                "PhiH.textAnalysis.mill.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.mill.answers.a3.content": "<strong>سيناريو المحادثة:</strong><br>• <strong>المُغالِط:</strong> \"كل النساء يهتممن بالشؤون المنزلية أكثر من الرجال، إذن كل من يهتم بالشؤون المنزلية أكثر هو امرأة.\"<br>• <strong>المُناقِض (يكشف المغالطة):</strong> \"هذه مغالطة بالعكس الفاسد! أنت تقول 'كل أ هي ب' وتستنتج 'كل ب هي أ'. هذا خطأ منطقي. صحيح أن الكثير من النساء يهتممن بالشؤون المنزلية، ولكن هذا لا يعني أن كل من يهتم بالشؤون المنزلية هو امرأة. هناك رجال أيضاً يهتمون بالشؤون المنزلية، وقد يكونون حتى أكثر اهتماماً من بعض النساء.\"<br>• <strong>المُناقِض (يقدم التحليل المنطقي):</strong> \"الصيغة الصحيحة للعكس هي: 'كل أ هي ب' → 'بعض ب هي أ'. إذن يمكنك أن تقول: 'بعض الذين يهتمون بالشؤون المنزلية هم نساء'، وهذا صحيح منطقياً. أما قولك 'كل الذين يهتمون بالشؤون المنزلية هم نساء' فهو مغالطة تهدف إلى تعميم خاطئ وتكريس الصورة النمطية.\"<br>• <strong>نتيجة النقاش:</strong> يتم كشف المغالطة، ويتعلم المشاركون أهمية التحليل المنطقي للاستدلالات اليومية وتجنب التعميمات الخاطئة.",
+                "PhiH.textAnalysis.mill.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.mill.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.mill.analysis.thesis.content": "يوضح جون ستوارت ميل في هذا النص أحد أكثر أنواع المغالطات المنطقية انتشاراً في التفكير اليومي، وهي المغالطة بواسطة العكس الفاسد. يؤكد ميل أن الأخطاء الناتجة عن عكس القضايا بشكل غير صحيح هي أكثر شيوعاً مما نعتقد، وتحدث غالباً بشكل ضمني في التفكير قبل أن تُعبّر عنها صراحة. يدعو ميل إلى الحذر من هذه المغالطات وضرورة التمييز بين العكس السليم والعكس الفاسد في الاستدلالات اليومية والفلسفية.",
+                "PhiH.textAnalysis.mill.analysis.mechanisms.title": "أنواع المغالطات بالعكس الفاسد:",
+                "PhiH.textAnalysis.mill.analysis.mechanisms.content": "يحدد ميل عدة أشكال للمغالطة بالعكس الفاسد:<br><br>1. <strong>العكس البسيط للقضية الكلية الموجبة:</strong> \"كل أ هي ب\" → \"كل ب هي أ\". هذا هو النوع الأكثر شيوعاً، حيث يعكس العلاقة بين الموضوع والمحمول بشكل كلي غير مشروع.<br><br>2. <strong>العكس الفاسد للقضية الافتراضية:</strong> \"إذا كانت النتيجة صادقة فإن المقدمة صادقة\". هذا خطأ لأن صحة النتيجة لا تضمن صحة المقدمة، قد تكون النتيجة صحيحة لأسباب أخرى.<br><br>3. <strong>اعتماد النتيجة حجة على المقدمات:</strong> وهو خطأ شائع حيث يعتقد الناس أن صحة النتيجة تثبت صحة المقدمات التي أدت إليها.<br><br>4. <strong>الخلط بين العكس السليم والعكس الفاسد:</strong> حيث أن العكس السليم للقضية الافتراضية هو: \"إذا كانت النتيجة كاذبة فإن المقدمة كاذبة\"، وهو أساس البرهان بالإرجاع إلى الخلف.",
+                "PhiH.textAnalysis.mill.analysis.consequences.title": "نتائج انتشار المغالطات بالعكس الفاسد:",
+                "PhiH.textAnalysis.mill.analysis.consequences.content": "- <strong>تشويه الفكر النقدي:</strong> انتشار هذه المغالطات يقوض القدرة على التفكير النقدي والتحليلي.<br><br>- <strong>تضليل الرأي العام:</strong> تستخدم هذه المغالطات في الخطاب السياسي والإعلامي لتضليل الجمهور.<br><br>- <strong>تعزيز الأحكام المسبقة:</strong> تساهم في تكريس الصور النمطية والأحكام المسبقة من خلال تعميمات خاطئة.<br><br>- <strong>عقبة أمام التقدم العلمي:</strong> تعيق التقدم العلمي والفلسفي من خلال استدلالات خاطئة تبدو مقنعة.<br><br>- <strong>إضعاف الحوار العقلاني:</strong> تقوض أسس الحوار العقلاني والمناظرات الفكرية السليمة.",
+                "PhiH.textAnalysis.mill.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.mill.analysis.significance.content": "يحمل تحليل ميل للمغالطة بالعكس الفاسد دلالات عميقة تتجاوز المنطق الصوري:<br><br>1. <strong>النقد الاجتماعي:</strong> يكشف ميل كيف تستغل المغالطات المنطقية في الخطاب الاجتماعي والسياسي للتأثير على الرأي العام.<br><br>2. <strong>التجريبية المنطقية:</strong> يتفق تحليل ميل مع توجهه التجريبي العام، حيث يربط صحة الاستدلالات بإمكانية التحقق التجريبي.<br><br>3. <strong>التربية الفكرية:</strong> يدعو ميل ضمناً إلى ضرورة التربية المنطقية كجزء من التربية العامة للفرد.<br><br>4. <strong>نقد الفطريات:</strong> يتناغم تحليل المغالطات مع رفض ميل للمعاني الفطرية، حيث يرى أن الأخطاء المنطقية تنتشر بالعادة والتربية لا بالفطرة.<br><br>5. <strong>التحرر الفكري:</strong> يمثل كشف المغالطات وسيلة للتحرر من الأفكار الخاطئة والمسلّمات غير المبررة.<br><br>6. <strong>الأبعاد الأخلاقية:</strong> من منظور ميل النفعي، تعتبر المغالطات ضارة لأنها تقود إلى قرارات خاطئة تضر بالسعادة العامة.<br><br>هذا النص يمثل مساهمة مهمة في تعميم الثقافة المنطقية وتحذير القراء من المخاطر العملية للأخطاء المنطقية في الحياة اليومية."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

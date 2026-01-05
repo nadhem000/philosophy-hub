@@ -81,7 +81,7 @@
         
         .PhiH-authors-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
         
         .PhiH-authors-title {
@@ -95,6 +95,32 @@
             color: var(--text-color);
             max-width: 600px;
             margin: 0 auto;
+        }
+        
+        /* Info Note */
+        .PhiH-authors-note {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .PhiH-authors-note-content {
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 1rem;
+            margin: 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .PhiH-authors-note-icon {
+            font-size: 1.2rem;
+            margin-right: 10px;
+            color: var(--primary-color);
         }
         
         /* Filter Navigation */
@@ -450,6 +476,11 @@
             right: auto;
             left: 1rem;
         }
+        
+        [dir="rtl"] .PhiH-authors-note-icon {
+            margin-right: 0;
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body class="PhiH-authors-page">
@@ -518,6 +549,14 @@
         <div class="PhiH-authors-header">
             <h1 class="PhiH-authors-title" data-i18n="PhiH.authors.title">Philosophers</h1>
             <p class="PhiH-authors-subtitle" data-i18n="PhiH.authors.subtitle">Discover great thinkers and their contributions to philosophy</p>
+        </div>
+        
+        <!-- Info Note -->
+        <div class="PhiH-authors-note">
+            <p class="PhiH-authors-note-content">
+                <span class="PhiH-authors-note-icon">📝</span>
+                <span data-i18n="PhiH.authors.note">Note: This page includes not only philosophers but also various writers and thinkers you may encounter in different philosophical contexts.</span>
+            </p>
         </div>
         
         <!-- Names Filter Navigation -->
@@ -625,6 +664,7 @@
                 // Authors page translations
                 "PhiH.authors.title": "Philosophes",
                 "PhiH.authors.subtitle": "Découvrez les grands penseurs et leurs contributions à la philosophie",
+                "PhiH.authors.note": "Note : Cette page inclut non seulement des philosophes, mais aussi divers écrivains et penseurs que vous pourrez rencontrer dans différents contextes philosophiques.",
                 "PhiH.authors.namesFilter": "Parcourir par nom",
                 "PhiH.authors.centuryFilter": "Parcourir par siècle",
                 "PhiH.authors.themeFilter": "Parcourir par thème/école",
@@ -660,6 +700,7 @@
                 // Authors page translations
                 "PhiH.authors.title": "Philosophers",
                 "PhiH.authors.subtitle": "Discover great thinkers and their contributions to philosophy",
+                "PhiH.authors.note": "Note: This page includes not only philosophers but also various writers and thinkers you may encounter in different philosophical contexts.",
                 "PhiH.authors.namesFilter": "Browse by Name",
                 "PhiH.authors.centuryFilter": "Browse by Century",
                 "PhiH.authors.themeFilter": "Browse by Theme/School",
@@ -695,6 +736,7 @@
                 // Authors page translations
                 "PhiH.authors.title": "الفلاسفة",
                 "PhiH.authors.subtitle": "اكتشف المفكرين العظماء ومساهماتهم في الفلسفة",
+                "PhiH.authors.note": "ملاحظة: تتضمن هذه الصفحة ليس فقط الفلاسفة، بل أيضاً كتاب ومفكرين مختلفين قد تلتقيهم في سياقات فلسفية متنوعة.",
                 "PhiH.authors.namesFilter": "تصفح حسب الاسم",
                 "PhiH.authors.centuryFilter": "تصفح حسب القرن",
                 "PhiH.authors.themeFilter": "تصفح حسب الموضوع/المدرسة",

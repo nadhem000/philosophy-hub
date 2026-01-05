@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الالتباس اللفظي والمفارقات الجدلية - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#4b0082">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Deep Indigo and Violet Theme for Verbal Ambiguity and Paradoxes */
+        :root {
+            --primary-color: #4b0082;
+            --secondary-color: #6a0dad;
+            --accent-color: #9400d3;
+            --light-color: #f5f0ff;
+            --dark-color: #2d0047;
+            --text-color: #3a0066;
+            --heading-color: #2d0047;
+            --background-color: #f8f5ff;
+            --card-bg: #ffffff;
+            --definition-bg: #f5f0ff;
+            --border-color: #d8c3ff;
+            --table-even-bg: #f5f0ff;
+            --table-hover-bg: #ede5ff;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(75, 0, 130, 0.15);
+            --gradient-primary: linear-gradient(135deg, #4b0082 0%, #6a0dad 100%);
+            --gradient-secondary: linear-gradient(135deg, #6a0dad 0%, #2d0047 100%);
+            --gradient-indigo: linear-gradient(135deg, #4b0082 0%, #2d0047 100%);
+            --gradient-violet: linear-gradient(135deg, #6a0dad 0%, #9400d3 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #9d4edd;
+            --secondary-color: #7b2cbf;
+            --accent-color: #c77dff;
+            --light-color: #2d0047;
+            --dark-color: #1a0029;
+            --text-color: #e6d4ff;
+            --heading-color: #f5f0ff;
+            --background-color: #2a0047;
+            --card-bg: #3a0066;
+            --definition-bg: #2d0047;
+            --border-color: #6a0dad;
+            --table-even-bg: #2d0047;
+            --table-hover-bg: #3a0066;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #9d4edd 0%, #7b2cbf 100%);
+            --gradient-secondary: linear-gradient(135deg, #7b2cbf 0%, #4b0082 100%);
+            --gradient-indigo: linear-gradient(135deg, #9d4edd 0%, #2d0047 100%);
+            --gradient-violet: linear-gradient(135deg, #7b2cbf 0%, #4b0082 100%);
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Definition Cards Layout */
+        .PhiH-definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .PhiH-definition-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(75, 0, 130, 0.2);
+        }
+        
+        .PhiH-definition-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-definition-card-content ul {
+            padding-left: 1.2rem;
+            margin: 0.8rem 0;
+        }
+        
+        .PhiH-definition-card-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        /* Expand/Collapse Functionality */
+        .PhiH-expandable-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .PhiH-expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .PhiH-expandable-header:hover {
+            background: var(--gradient-indigo);
+        }
+        
+        .PhiH-expandable-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        .PhiH-expandable-content {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            border-top: none;
+        }
+        
+        .PhiH-expandable-content.hidden {
+            display: none;
+        }
+        
+        .PhiH-expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-expand-icon.expanded {
+            transform: rotate(180deg);
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Quotes Section Styling */
+        .PhiH-quotes-container {
+            margin-top: 1rem;
+        }
+        
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(75, 0, 130, 0.2);
+        }
+        
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        /* RTL support for definition cards */
+        body.rtl .PhiH-definition-card-content ul {
+            padding-left: 0;
+            padding-right: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .PhiH-definitions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-ambiguity" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <!-- Removed Authors Button from here -->
+                
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-lesson1-container">
+        <div class="PhiH-lesson1-header">
+            <h1 class="PhiH-lesson1-title" data-i18n="PhiH.lessons.ambiguity.title">الالتباس اللفظي والمفارقات الجدلية</h1>
+            <div class="PhiH-lesson1-level" data-i18n="PhiH.lessons.ambiguity.level">السنة الثالثة ثانوي - الفلسفة</div>
+        </div>
+        
+        <!-- Introduction Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="introHeader">
+                <h3 data-i18n="PhiH.lessons.ambiguity.introduction.title">التمهيد</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="introContent">
+                <p data-i18n="PhiH.lessons.ambiguity.introduction.text1">
+                    غالباً ما يُثمّن تنوّع معاني الألفاظ باعتباره عنوان ثراء اللغة وعلامة قدرتها على التلاؤم مع تنوّع الواقع واستجابتها لمقتضيات التعبير الإنساني، غير أنّ هذه الميزة كثيراً ما تتحوّل إلى مخزون دلاليّ يُستثمر من أجل التغليط ممّا يدعونا إلى الحذر والعمل على كشف الآليّات المعتمدة في هذا التغليط.
+                </p>
+                <p data-i18n="PhiH.lessons.ambiguity.introduction.text2">
+                    كثيراً ما يتحدّد جوابنا، وعلى نحو لا يخلو من تسرّع، وفق موضوع السؤال الموجّه إلينا، ولكن نادراً ما نتظّن على المنطق المحايث للسؤال وعلى مفترضاته ومقاصده. ولعلّ هذا التسرّع هو ما قد يقود دونما تفطّن إلى الوقوع في التناقض والمفارقات.
+                </p>
+                <p data-i18n="PhiH.lessons.ambiguity.introduction.text3">
+                    لا يهدف الحوار دائماً إلى تحقيق التواصل وإدراك الحقيقة والالتزام بها بل كثيراً ما ينقلب إلى سجال لأسباب مصلحيّة فيعمد فيه المتحاورون إلى استراتيجيّات لا غرض منها غير إيقاع الخصم في الغلط والتناقض والمفارقة.
+                </p>
+                <p data-i18n="PhiH.lessons.ambiguity.introduction.text4">
+                    يعتقد الأفراد أنّهم حين يتكلّمون إنّما يستعملون علاماتٍ دقيقة الدلالة تُتيح لهم التواصل مع الآخرين والتعبير بوضوح عن مقاصدهم. غير أنّ هذا الاعتقاد لا يصمد كثيراً أمام ما يُعاين من التباس في الألفاظ يقود إلى سوء تفاهم بين المتكلّمين قد يُستغّل لغرض المغالطة. عندئذ يصبح من الضروريّ التخلّي عن الموقف الساذج من الألفاظ والعمل على فحص التباسها لإحباط محاولات استغلالها في المغالطة.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Texts Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="textsHeader">
+                <h3 data-i18n="PhiH.lessons.ambiguity.texts.title">النصوص</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="textsContent">
+                <div class="PhiH-texts-container">
+                    <ul class="PhiH-texts-list">
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2a_lesson4_text1.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.ambiguity.texts.text1">النص 10: في الخلط بين معاني الألفاظ - ابن رشد</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2a_lesson4_text2.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.ambiguity.texts.text2">النص 11: المفارقة - أرسطو</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2a_lesson4_text3.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.ambiguity.texts.text3">النص 12: في لعبة المفارقات - أفلاطون</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2a_lesson4_text4.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.ambiguity.texts.text4">النص 13: مفارقة أخيل والسلحفاة - جون ستوارت ميل</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quotes Section -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="quotesHeader">
+                <h3 data-i18n="PhiH.lessons.ambiguity.quotes.title">شواهد ونصوص ذات صلة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="quotesContent">
+                <div class="PhiH-quotes-container">
+                    <div class="PhiH-quotes-grid">
+                        <!-- Quote 1 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.ambiguity.quotes.quote1">
+                                "إنّ الاستنتاجات الفاسدة وما يتولّد عنها من أخطاء في مستوى السّلوك هي بكلّ أسف متواترة عند أغلب النّاس مهما تكن درجة ثقافتهم."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.ambiguity.quotes.author1">جون ستيوارت ميل</div>
+                        </div>
+                        
+                        <!-- Quote 2 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.ambiguity.quotes.quote2">
+                                "أن نحلم بسيادة العدل حيث أصبحت الغلبة بعدُ للمال فليس ذلك أقلّ مفارقاتنا."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.ambiguity.quotes.author2">ألفريد كابيس</div>
+                        </div>
+                        
+                        <!-- Quote 3 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.ambiguity.quotes.quote3">
+                                "لديّ أسئلة على جميع أجوبتكم."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.ambiguity.quotes.author3">وودي آلين</div>
+                        </div>
+                        
+                        <!-- Quote 4 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.ambiguity.quotes.quote4">
+                                "لا أبحث عن معرفة الأجوبة وإنّما عن فهم الأسئلة."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.ambiguity.quotes.author4">كونفشيوس</div>
+                        </div>
+                        
+                        <!-- Quote 5 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.ambiguity.quotes.quote5">
+                                "إن حسن طرح الأسئلة فنّ قائم بذاته يتوقّف فيه كلّ شيء بطبيعة الحال، على الإجابة التي نريد الحصول عليها."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.ambiguity.quotes.author5">أندري فروسار</div>
+                        </div>
+                        
+                        <!-- Quote 6 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.ambiguity.quotes.quote6">
+                                "إنّ طريق المفارقة هو طريق الحقيقة."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.ambiguity.quotes.author6">أوسكار وايلد</div>
+                        </div>
+                        
+                        <!-- Quote 7 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.ambiguity.quotes.quote7">
+                                "السفسطائيّ هو الّذي يتراءى بالحكمة ويدّعي أنّه مبرهن ولا يكون كذلك بل أكثر ما يناله أن يُظنّ به ذلك."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.ambiguity.quotes.author7">ابن سينا</div>
+                        </div>
+                        
+                        <!-- Quote 8 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.ambiguity.quotes.quote8">
+                                "إنّ ما يحيّرنا في علاقتنا بالكذّابين هو أنّنا لا يمكن أن نكون أبدا على يقين من أنّهم سوف لن يقولوا الحقيقة."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.ambiguity.quotes.author8">أندري فروسار</div>
+                        </div>
+                        
+                        <!-- Quote 9 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.ambiguity.quotes.quote9">
+                                "أُفضِّل أن أكون إنسان مفارقات على أن أكون إنسان أحكام مسبقة."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.ambiguity.quotes.author9">ج.ج. روسو</div>
+                        </div>
+                        
+                        <!-- Quote 10 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.ambiguity.quotes.quote10">
+                                "كل لفظ هو حكم مسبق، وفي ذلك يكمن خطر اللّغة على الفكر."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.ambiguity.quotes.author10">نيتشه</div>
+                        </div>
+                        
+                        <!-- Quote 11 -->
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.ambiguity.quotes.quote11">
+                                "المفارقة رأي يعيش من إغراءاته على حساب الحقيقة."
+                            </div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.ambiguity.quotes.author11">روني أوبلديا</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Conclusion -->
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="conclusionHeader">
+                <h3 data-i18n="PhiH.lessons.ambiguity.conclusion.title">الخاتمة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="conclusionContent">
+                <p data-i18n="PhiH.lessons.ambiguity.conclusion.text1">
+                    يوضح درس الالتباس اللفظي والمفارقات الجدلية أن اللغة، رغم كونها أداة التواصل الأساسية بين البشر، يمكن أن تصبح مصدراً للتضليل والخلط عندما يُستغل تعدد معاني الألفاظ والتراكيب لخلق مفارقات تبدو منطقية في الظاهر ولكنها خادعة في جوهرها. إن تنوع المعاني الذي يُعتبر عادةً ميزةً للغة يصبح نقطة ضعف عندما يُستخدم للتضليل.
+                </p>
+                <p data-i18n="PhiH.lessons.ambiguity.conclusion.text2">
+                    تظهر المفارقات الجدلية كيف يمكن للتفكير البشري أن يقع في حبائل التناقض عندما لا ينتبه إلى الافتراضات الخفية والتباسات الألفاظ. وتكمن خطورة هذه المفارقات في أنها تقدم نفسها كاستدلالات منطقية سليمة، مما يجعل كشف زيفها يتطلب تحليلاً دقيقاً ومعرفة عميقة بآليات التفكير وقواعد المنطق.
+                </p>
+                <p data-i18n="PhiH.lessons.ambiguity.conclusion.text3">
+                    إن دراسة الالتباس اللفظي والمفارقات ليست مجرد تمرين فكري نظري، بل هي تدريب عملي على التفكير النقدي الذي يمكننا من تمييز الحجج الصحيحة من المغلوطة، والاستدلالات السليمة من الخادعة. وهذا التدريب ضروري في عصرنا الحالي حيث تنتشر المغالطات المنطقية في الخطاب العام بكل أشكاله.
+                </p>
+                <p data-i18n="PhiH.lessons.ambiguity.conclusion.text4">
+                    وفي النهاية، فإن الفكر الفلسفي يبقى الحصن المنيع ضد التضليل اللغوي والمفارقات الجدلية، فهو يزودنا بالأدوات المنهجية اللازمة لفحص الألفاظ وتحليل الحجج والكشف عن الافتراضات الخفية، مما يمكننا من بناء خطاب عقلاني واضح وخالٍ من الالتباسات والمفارقات الخادعة.
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Page-specific translations for ambiguity lesson
+        window.translations_PhiHambiguity = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                
+                // Ambiguity lesson specific translations
+                "PhiH.lessons.ambiguity.title": "Ambiguïté Verbale et Paradoxes Dialectiques",
+                "PhiH.lessons.ambiguity.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                
+                "PhiH.lessons.ambiguity.introduction.title": "Introduction",
+                "PhiH.lessons.ambiguity.introduction.text1": "La diversité des significations des mots est souvent valorisée comme un signe de la richesse de la langue et de sa capacité à s'adapter à la diversité de la réalité et à répondre aux exigences de l'expression humaine. Cependant, cette caractéristique se transforme souvent en un stock sémantique exploité pour tromper, ce qui nous appelle à la prudence et à travailler à découvrir les mécanismes utilisés dans cette tromperie.",
+                "PhiH.lessons.ambiguity.introduction.text2": "Notre réponse est souvent déterminée, de manière hâtive, selon le sujet de la question qui nous est posée, mais nous prêtons rarement attention à la logique inhérente à la question, à ses présupposés et à ses objectifs. C'est peut-être cette hâte qui peut conduire, sans s'en rendre compte, à tomber dans la contradiction et les paradoxes.",
+                "PhiH.lessons.ambiguity.introduction.text3": "Le dialogue ne vise pas toujours à réaliser la communication et à percevoir la vérité et à s'y engager, mais il se transforme souvent en une polémique pour des raisons intéressées, dans laquelle les interlocuteurs recourent à des stratégies qui n'ont d'autre but que de faire tomber l'adversaire dans l'erreur, la contradiction et le paradoxe.",
+                "PhiH.lessons.ambiguity.introduction.text4": "Les individus croient que lorsqu'ils parlent, ils utilisent des signes aux significations précises qui leur permettent de communiquer avec les autres et d'exprimer clairement leurs intentions. Cependant, cette croyance ne résiste pas longtemps à ce que l'on observe de l'ambiguïté dans les mots qui conduit à des malentendus entre les locuteurs et qui peut être exploité à des fins de tromperie. Il devient alors nécessaire d'abandonner l'attitude naïve envers les mots et de travailler à examiner leur ambiguïté pour contrecarrer les tentatives de les exploiter dans la tromperie.",
+                
+                "PhiH.lessons.ambiguity.texts.title": "Textes",
+                "PhiH.lessons.ambiguity.texts.text1": "Texte 10: Sur la confusion des significations des mots - Averroès",
+                "PhiH.lessons.ambiguity.texts.text2": "Texte 11: Le Paradoxe - Aristote",
+                "PhiH.lessons.ambiguity.texts.text3": "Texte 12: Sur le jeu des paradoxes - Platon",
+                "PhiH.lessons.ambiguity.texts.text4": "Texte 13: Le paradoxe d'Achille et de la tortue - John Stuart Mill",
+                
+                // Quotes section translations
+                "PhiH.lessons.ambiguity.quotes.title": "Citations et textes connexes",
+                "PhiH.lessons.ambiguity.quotes.quote1": "\"Les conclusions erronées et les erreurs qui en découlent au niveau du comportement sont malheureusement fréquentes chez la plupart des gens, quel que soit leur niveau de culture.\"",
+                "PhiH.lessons.ambiguity.quotes.quote2": "\"Rêver de la suprématie de la justice alors que la prédominance est déjà à l'argent, ce n'est pas là le moindre de nos paradoxes.\"",
+                "PhiH.lessons.ambiguity.quotes.quote3": "\"J'ai des questions pour toutes vos réponses.\"",
+                "PhiH.lessons.ambiguity.quotes.quote4": "\"Je ne cherche pas à connaître les réponses mais à comprendre les questions.\"",
+                "PhiH.lessons.ambiguity.quotes.quote5": "\"L'art de poser des questions est un art à part entière où tout dépend, bien sûr, de la réponse que l'on veut obtenir.\"",
+                "PhiH.lessons.ambiguity.quotes.quote6": "\"La voie du paradoxe est la voie de la vérité.\"",
+                "PhiH.lessons.ambiguity.quotes.quote7": "\"Le sophiste est celui qui paraît sage et prétend démontrer sans l'être, mais ce qu'il obtient le plus est qu'on le pense tel.\"",
+                "PhiH.lessons.ambiguity.quotes.quote8": "\"Ce qui nous déconcerte dans nos relations avec les menteurs est que nous ne pouvons jamais être certains qu'ils ne diront pas la vérité.\"",
+                "PhiH.lessons.ambiguity.quotes.quote9": "\"Je préfère être un homme de paradoxes qu'un homme de préjugés.\"",
+                "PhiH.lessons.ambiguity.quotes.quote10": "\"Tout mot est un préjugé, et c'est là que réside le danger du langage pour la pensée.\"",
+                "PhiH.lessons.ambiguity.quotes.quote11": "\"Le paradoxe est une opinion qui vit de ses séductions aux dépens de la vérité.\"",
+                "PhiH.lessons.ambiguity.quotes.author1": "John Stuart Mill",
+                "PhiH.lessons.ambiguity.quotes.author2": "Alfred Capus",
+                "PhiH.lessons.ambiguity.quotes.author3": "Woody Allen",
+                "PhiH.lessons.ambiguity.quotes.author4": "Confucius",
+                "PhiH.lessons.ambiguity.quotes.author5": "André Frossard",
+                "PhiH.lessons.ambiguity.quotes.author6": "Oscar Wilde",
+                "PhiH.lessons.ambiguity.quotes.author7": "Avicenne",
+                "PhiH.lessons.ambiguity.quotes.author8": "André Frossard",
+                "PhiH.lessons.ambiguity.quotes.author9": "J.J. Rousseau",
+                "PhiH.lessons.ambiguity.quotes.author10": "Nietzsche",
+                "PhiH.lessons.ambiguity.quotes.author11": "René de Obaldia",
+                
+                "PhiH.lessons.ambiguity.conclusion.title": "Conclusion",
+                "PhiH.lessons.ambiguity.conclusion.text1": "La leçon sur l'ambiguïté verbale et les paradoxes dialectiques montre que le langage, bien qu'étant l'outil de communication fondamental entre les humains, peut devenir une source de tromperie et de confusion lorsque la multiplicité des significations des mots et des structures est exploitée pour créer des paradoxes qui semblent logiques en apparence mais qui sont trompeurs dans leur essence. La diversité des significations, généralement considérée comme un avantage du langage, devient un point faible lorsqu'elle est utilisée pour tromper.",
+                "PhiH.lessons.ambiguity.conclusion.text2": "Les paradoxes dialectiques montrent comment la pensée humaine peut tomber dans les pièges de la contradiction lorsqu'elle ne prête pas attention aux présupposés cachés et aux ambiguïtés des mots. Le danger de ces paradoxes réside dans le fait qu'ils se présentent comme des raisonnements logiques valides, ce qui rend nécessaire une analyse minutieuse et une connaissance approfondie des mécanismes de la pensée et des règles de la logique pour révéler leur fausseté.",
+                "PhiH.lessons.ambiguity.conclusion.text3": "L'étude de l'ambiguïté verbale et des paradoxes n'est pas seulement un exercice intellectuel théorique, mais un entraînement pratique à la pensée critique qui nous permet de distinguer les arguments corrects des erronés, les raisonnements valides des trompeurs. Cet entraînement est nécessaire à notre époque où les sophismes logiques se répandent dans le discours public sous toutes ses formes.",
+                "PhiH.lessons.ambiguity.conclusion.text4": "Enfin, la pensée philosophique reste la forteresse imprenable contre la tromperie linguistique et les paradoxes dialectiques. Elle nous fournit les outils méthodologiques nécessaires pour examiner les mots, analyser les arguments et découvrir les présupposés cachés, ce qui nous permet de construire un discours rationnel, clair et exempt d'ambiguïtés et de paradoxes trompeurs."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                
+                // Ambiguity lesson specific translations
+                "PhiH.lessons.ambiguity.title": "Verbal Ambiguity and Dialectical Paradoxes",
+                "PhiH.lessons.ambiguity.level": "3rd Secondary - Philosophy",
+                
+                "PhiH.lessons.ambiguity.introduction.title": "Introduction",
+                "PhiH.lessons.ambiguity.introduction.text1": "The diversity of word meanings is often valued as a sign of the richness of language and its ability to adapt to the diversity of reality and respond to the requirements of human expression. However, this feature often turns into a semantic reservoir exploited for deception, which calls us to caution and to work on uncovering the mechanisms used in this deception.",
+                "PhiH.lessons.ambiguity.introduction.text2": "Our answer is often determined, in a hasty manner, according to the subject of the question posed to us, but we rarely pay attention to the logic inherent in the question, its assumptions and its objectives. Perhaps this haste is what can lead, without realizing it, to falling into contradiction and paradoxes.",
+                "PhiH.lessons.ambiguity.introduction.text3": "Dialogue does not always aim to achieve communication and perceive truth and commit to it, but often turns into a polemic for self-interested reasons, in which interlocutors resort to strategies that have no other purpose than to make the opponent fall into error, contradiction and paradox.",
+                "PhiH.lessons.ambiguity.introduction.text4": "Individuals believe that when they speak, they use signs with precise meanings that allow them to communicate with others and express their intentions clearly. However, this belief does not hold up for long against what is observed of ambiguity in words that leads to misunderstandings between speakers and that can be exploited for deceptive purposes. It then becomes necessary to abandon the naive attitude towards words and work to examine their ambiguity to thwart attempts to exploit them in deception.",
+                
+                "PhiH.lessons.ambiguity.texts.title": "Texts",
+                "PhiH.lessons.ambiguity.texts.text1": "Text 10: On the Confusion of Word Meanings - Averroes",
+                "PhiH.lessons.ambiguity.texts.text2": "Text 11: The Paradox - Aristotle",
+                "PhiH.lessons.ambiguity.texts.text3": "Text 12: On the Game of Paradoxes - Plato",
+                "PhiH.lessons.ambiguity.texts.text4": "Text 13: The Paradox of Achilles and the Tortoise - John Stuart Mill",
+                
+                // Quotes section translations
+                "PhiH.lessons.ambiguity.quotes.title": "Related Quotes and Texts",
+                "PhiH.lessons.ambiguity.quotes.quote1": "\"Erroneous conclusions and the errors that result from them at the behavioral level are unfortunately frequent among most people, regardless of their level of education.\"",
+                "PhiH.lessons.ambiguity.quotes.quote2": "\"To dream of the supremacy of justice when predominance is already to money, that is not the least of our paradoxes.\"",
+                "PhiH.lessons.ambiguity.quotes.quote3": "\"I have questions for all your answers.\"",
+                "PhiH.lessons.ambiguity.quotes.quote4": "\"I do not seek to know the answers but to understand the questions.\"",
+                "PhiH.lessons.ambiguity.quotes.quote5": "\"The art of asking questions is an art in itself where everything depends, of course, on the answer one wants to obtain.\"",
+                "PhiH.lessons.ambiguity.quotes.quote6": "\"The way of paradox is the way of truth.\"",
+                "PhiH.lessons.ambiguity.quotes.quote7": "\"The sophist is one who appears wise and claims to demonstrate without being so, but what he obtains most is that he is thought to be such.\"",
+                "PhiH.lessons.ambiguity.quotes.quote8": "\"What puzzles us in our relations with liars is that we can never be sure that they will not tell the truth.\"",
+                "PhiH.lessons.ambiguity.quotes.quote9": "\"I would rather be a man of paradoxes than a man of prejudices.\"",
+                "PhiH.lessons.ambiguity.quotes.quote10": "\"Every word is a prejudice, and therein lies the danger of language for thought.\"",
+                "PhiH.lessons.ambiguity.quotes.quote11": "\"Paradox is an opinion that lives from its seductions at the expense of truth.\"",
+                "PhiH.lessons.ambiguity.quotes.author1": "John Stuart Mill",
+                "PhiH.lessons.ambiguity.quotes.author2": "Alfred Capus",
+                "PhiH.lessons.ambiguity.quotes.author3": "Woody Allen",
+                "PhiH.lessons.ambiguity.quotes.author4": "Confucius",
+                "PhiH.lessons.ambiguity.quotes.author5": "André Frossard",
+                "PhiH.lessons.ambiguity.quotes.author6": "Oscar Wilde",
+                "PhiH.lessons.ambiguity.quotes.author7": "Avicenna",
+                "PhiH.lessons.ambiguity.quotes.author8": "André Frossard",
+                "PhiH.lessons.ambiguity.quotes.author9": "J.J. Rousseau",
+                "PhiH.lessons.ambiguity.quotes.author10": "Nietzsche",
+                "PhiH.lessons.ambiguity.quotes.author11": "René de Obaldia",
+                
+                "PhiH.lessons.ambiguity.conclusion.title": "Conclusion",
+                "PhiH.lessons.ambiguity.conclusion.text1": "The lesson on verbal ambiguity and dialectical paradoxes shows that language, although being the fundamental communication tool between humans, can become a source of deception and confusion when the multiplicity of word meanings and structures is exploited to create paradoxes that appear logical on the surface but are deceptive in essence. The diversity of meanings, usually considered an advantage of language, becomes a weakness when used for deception.",
+                "PhiH.lessons.ambiguity.conclusion.text2": "Dialectical paradoxes show how human thought can fall into the traps of contradiction when it does not pay attention to hidden assumptions and ambiguities of words. The danger of these paradoxes lies in the fact that they present themselves as valid logical reasonings, which requires careful analysis and deep knowledge of the mechanisms of thinking and the rules of logic to reveal their falsity.",
+                "PhiH.lessons.ambiguity.conclusion.text3": "The study of verbal ambiguity and paradoxes is not just a theoretical intellectual exercise, but a practical training in critical thinking that allows us to distinguish correct arguments from erroneous ones, valid reasoning from deceptive ones. This training is necessary in our current era where logical fallacies spread in public discourse in all its forms.",
+                "PhiH.lessons.ambiguity.conclusion.text4": "Ultimately, philosophical thought remains the impregnable fortress against linguistic deception and dialectical paradoxes. It provides us with the necessary methodological tools to examine words, analyze arguments, and discover hidden assumptions, enabling us to build rational, clear discourse free from ambiguities and deceptive paradoxes."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                
+                // Ambiguity lesson specific translations
+                "PhiH.lessons.ambiguity.title": "الالتباس اللفظي والمفارقات الجدلية",
+                "PhiH.lessons.ambiguity.level": "السنة الثالثة ثانوي - الفلسفة",
+                
+                "PhiH.lessons.ambiguity.introduction.title": "التمهيد",
+                "PhiH.lessons.ambiguity.introduction.text1": "غالباً ما يُثمّن تنوّع معاني الألفاظ باعتباره عنوان ثراء اللغة وعلامة قدرتها على التلاؤم مع تنوّع الواقع واستجابتها لمقتضيات التعبير الإنساني، غير أنّ هذه الميزة كثيراً ما تتحوّل إلى مخزون دلاليّ يُستثمر من أجل التغليط ممّا يدعونا إلى الحذر والعمل على كشف الآليّات المعتمدة في هذا التغليط.",
+                "PhiH.lessons.ambiguity.introduction.text2": "كثيراً ما يتحدّد جوابنا، وعلى نحو لا يخلو من تسرّع، وفق موضوع السؤال الموجّه إلينا، ولكن نادراً ما نتظّن على المنطق المحايث للسؤال وعلى مفترضاته ومقاصده. ولعلّ هذا التسرّع هو ما قد يقود دونما تفطّن إلى الوقوع في التناقض والمفارقات.",
+                "PhiH.lessons.ambiguity.introduction.text3": "لا يهدف الحوار دائماً إلى تحقيق التواصل وإدراك الحقيقة والالتزام بها بل كثيراً ما ينقلب إلى سجال لأسباب مصلحيّة فيعمد فيه المتحاورون إلى استراتيجيّات لا غرض منها غير إيقاع الخصم في الغلط والتناقض والمفارقة.",
+                "PhiH.lessons.ambiguity.introduction.text4": "يعتقد الأفراد أنّهم حين يتكلّمون إنّما يستعملون علاماتٍ دقيقة الدلالة تُتيح لهم التواصل مع الآخرين والتعبير بوضوح عن مقاصدهم. غير أنّ هذا الاعتقاد لا يصمد كثيراً أمام ما يُعاين من التباس في الألفاظ يقود إلى سوء تفاهم بين المتكلّمين قد يُستغّل لغرض المغالطة. عندئذ يصبح من الضروريّ التخلّي عن الموقف الساذج من الألفاظ والعمل على فحص التباسها لإحباط محاولات استغلالها في المغالطة.",
+                
+                "PhiH.lessons.ambiguity.texts.title": "النصوص",
+                "PhiH.lessons.ambiguity.texts.text1": "النص 10: في الخلط بين معاني الألفاظ - ابن رشد",
+                "PhiH.lessons.ambiguity.texts.text2": "النص 11: المفارقة - أرسطو",
+                "PhiH.lessons.ambiguity.texts.text3": "النص 12: في لعبة المفارقات - أفلاطون",
+                "PhiH.lessons.ambiguity.texts.text4": "النص 13: مفارقة أخيل والسلحفاة - جون ستوارت ميل",
+                
+                // Quotes section translations
+                "PhiH.lessons.ambiguity.quotes.title": "شواهد ونصوص ذات صلة",
+                "PhiH.lessons.ambiguity.quotes.quote1": "إنّ الاستنتاجات الفاسدة وما يتولّد عنها من أخطاء في مستوى السّلوك هي بكلّ أسف متواترة عند أغلب النّاس مهما تكن درجة ثقافتهم.",
+                "PhiH.lessons.ambiguity.quotes.quote2": "أن نحلم بسيادة العدل حيث أصبحت الغلبة بعدُ للمال فليس ذلك أقلّ مفارقاتنا.",
+                "PhiH.lessons.ambiguity.quotes.quote3": "لديّ أسئلة على جميع أجوبتكم.",
+                "PhiH.lessons.ambiguity.quotes.quote4": "لا أبحث عن معرفة الأجوبة وإنّما عن فهم الأسئلة.",
+                "PhiH.lessons.ambiguity.quotes.quote5": "إن حسن طرح الأسئلة فنّ قائم بذاته يتوقّف فيه كلّ شيء بطبيعة الحال، على الإجابة التي نريد الحصول عليها.",
+                "PhiH.lessons.ambiguity.quotes.quote6": "إنّ طريق المفارقة هو طريق الحقيقة.",
+                "PhiH.lessons.ambiguity.quotes.quote7": "السفسطائيّ هو الّذي يتراءى بالحكمة ويدّعي أنّه مبرهن ولا يكون كذلك بل أكثر ما يناله أن يُظنّ به ذلك.",
+                "PhiH.lessons.ambiguity.quotes.quote8": "إنّ ما يحيّرنا في علاقتنا بالكذّابين هو أنّنا لا يمكن أن نكون أبدا على يقين من أنّهم سوف لن يقولوا الحقيقة.",
+                "PhiH.lessons.ambiguity.quotes.quote9": "أُفضِّل أن أكون إنسان مفارقات على أن أكون إنسان أحكام مسبقة.",
+                "PhiH.lessons.ambiguity.quotes.quote10": "كل لفظ هو حكم مسبق، وفي ذلك يكمن خطر اللّغة على الفكر.",
+                "PhiH.lessons.ambiguity.quotes.quote11": "المفارقة رأي يعيش من إغراءاته على حساب الحقيقة.",
+                "PhiH.lessons.ambiguity.quotes.author1": "جون ستيوارت ميل",
+                "PhiH.lessons.ambiguity.quotes.author2": "ألفريد كابيس",
+                "PhiH.lessons.ambiguity.quotes.author3": "وودي آلين",
+                "PhiH.lessons.ambiguity.quotes.author4": "كونفشيوس",
+                "PhiH.lessons.ambiguity.quotes.author5": "أندري فروسار",
+                "PhiH.lessons.ambiguity.quotes.author6": "أوسكار وايلد",
+                "PhiH.lessons.ambiguity.quotes.author7": "ابن سينا",
+                "PhiH.lessons.ambiguity.quotes.author8": "أندري فروسار",
+                "PhiH.lessons.ambiguity.quotes.author9": "ج.ج. روسو",
+                "PhiH.lessons.ambiguity.quotes.author10": "نيتشه",
+                "PhiH.lessons.ambiguity.quotes.author11": "روني أوبلديا",
+                
+                "PhiH.lessons.ambiguity.conclusion.title": "الخاتمة",
+                "PhiH.lessons.ambiguity.conclusion.text1": "يوضح درس الالتباس اللفظي والمفارقات الجدلية أن اللغة، رغم كونها أداة التواصل الأساسية بين البشر، يمكن أن تصبح مصدراً للتضليل والخلط عندما يُستغل تعدد معاني الألفاظ والتراكيب لخلق مفارقات تبدو منطقية في الظاهر ولكنها خادعة في جوهرها. إن تنوع المعاني الذي يُعتبر عادةً ميزةً للغة يصبح نقطة ضعف عندما يُستخدم للتضليل.",
+                "PhiH.lessons.ambiguity.conclusion.text2": "تظهر المفارقات الجدلية كيف يمكن للتفكير البشري أن يقع في حبائل التناقض عندما لا ينتبه إلى الافتراضات الخفية والتباسات الألفاظ. وتكمن خطورة هذه المفارقات في أنها تقدم نفسها كاستدلالات منطقية سليمة، مما يجعل كشف زيفها يتطلب تحليلاً دقيقاً ومعرفة عميقة بآليات التفكير وقواعد المنطق.",
+                "PhiH.lessons.ambiguity.conclusion.text3": "إن دراسة الالتباس اللفظي والمفارقات ليست مجرد تمرين فكري نظري، بل هي تدريب عملي على التفكير النقدي الذي يمكننا من تمييز الحجج الصحيحة من المغلوطة، والاستدلالات السليمة من الخادعة. وهذا التدريب ضروري في عصرنا الحالي حيث تنتشر المغالطات المنطقية في الخطاب العام بكل أشكاله.",
+                "PhiH.lessons.ambiguity.conclusion.text4": "وفي النهاية، فإن الفكر الفلسفي يبقى الحصن المنيع ضد التضليل اللغوي والمفارقات الجدلية، فهو يزودنا بالأدوات المنهجية اللازمة لفحص الألفاظ وتحليل الحجج والكشف عن الافتراضات الخفية، مما يمكننا من بناء خطاب عقلاني واضح وخالٍ من الالتباسات والمفارقات الخادعة."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHambiguity;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+    
+    <script>
+        // Expand/Collapse functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all expandable headers
+            const expandableHeaders = document.querySelectorAll('.PhiH-expandable-header');
+            
+            // Add click event to each header
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.PhiH-expand-icon');
+                    
+                    // Toggle content visibility
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('expanded');
+                    } else {
+                        content.classList.add('hidden');
+                        icon.classList.remove('expanded');
+                    }
+                });
+            });
+            
+            // Initially hide all expandable content
+            document.querySelectorAll('.PhiH-expandable-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

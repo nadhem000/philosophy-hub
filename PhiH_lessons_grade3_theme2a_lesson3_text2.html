@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: في شروط القول ببطلان القياس الدوري - أبو حامد الغزالي - Philosophy Learning Hub</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#059669">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        /* Teal/Emerald Green Color Palette (أخضر فيروزي/زمردي) */
+        :root {
+            --primary-color: #059669;
+            --primary-light: #10b981;
+            --primary-dark: #047857;
+            --secondary-color: #34d399;
+            --secondary-light: #6ee7b7;
+            --secondary-dark: #10b981;
+            --accent-color: #34d399;
+            --accent-light: #6ee7b7;
+            --accent-dark: #10b981;
+            --light-color: #f8fafc;
+            --dark-color: #0f172a;
+            --text-color: #334155;
+            --heading-color: #1e293b;
+            --background-color: #f0fdfa;
+            --card-bg: #ffffff;
+            --definition-bg: #d1fae5;
+            --border-color: #cbd5e1;
+            --table-even-bg: #f8fafc;
+            --table-hover-bg: #a7f3d0;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.1), 0 2px 4px -1px rgba(5, 150, 105, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(5, 150, 105, 0.1), 0 4px 6px -2px rgba(5, 150, 105, 0.05);
+            --gradient-primary: linear-gradient(135deg, #059669 0%, #34d399 100%);
+            --gradient-secondary: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+            --gradient-accent: linear-gradient(135deg, #34d399 0%, #059669 100%);
+            --gradient-gray: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #10b981;
+            --primary-light: #34d399;
+            --primary-dark: #059669;
+            --secondary-color: #6ee7b7;
+            --secondary-light: #a7f3d0;
+            --secondary-dark: #34d399;
+            --accent-color: #6ee7b7;
+            --accent-light: #a7f3d0;
+            --accent-dark: #34d399;
+            --light-color: #1e293b;
+            --dark-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --background-color: #0f172a;
+            --card-bg: #1e293b;
+            --definition-bg: #064e3b;
+            --border-color: #334155;
+            --table-even-bg: #1e293b;
+            --table-hover-bg: #065f46;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #6ee7b7 100%);
+            --gradient-secondary: linear-gradient(135deg, #6ee7b7 0%, #34d399 100%);
+            --gradient-accent: linear-gradient(135deg, #6ee7b7 0%, #10b981 100%);
+            --gradient-gray: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+        }
+        
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(5, 150, 105, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(52, 211, 153, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(52, 211, 153, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        
+        .text-analysis-indent-2 {
+            margin-left: 3rem;
+        }
+        
+        .text-analysis-indent-3 {
+            margin-left: 4.5rem;
+        }
+        
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-author-info {
+            flex: 1;
+        }
+        
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--primary-color);
+        }
+        
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(5, 150, 105, 0.05), transparent);
+        }
+        
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .PhiH-author-image {
+                align-self: center;
+            }
+            
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+        
+        /* Header and controls styles - Same as other files */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        /* Windows Bar Styling */
+        .PhiH-windows-bar {
+            display: flex;
+            justify-content: center;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .PhiH-window-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: var(--text-color);
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+            margin: 0 0.25rem;
+        }
+        
+        .PhiH-window-item:hover {
+            background-color: var(--definition-bg);
+            color: var(--primary-color);
+        }
+        
+        .PhiH-window-item.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .PhiH-window-icon {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <!-- Column 1: Icon - Now clickable -->
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            
+            <!-- Column 2: Title -->
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            
+            <!-- Column 3: Options -->
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Windows Bar -->
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.ghazali.title">تحليل النص: في شروط القول ببطلان القياس الدوري - أبو حامد الغزالي</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.ghazali.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        
+        <!-- Text Analysis Section -->
+        <section class="PhiH-text-analysis-section">
+            
+            <!-- Text Introduction -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazali.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.ghazali.introduction.content">
+                    يحدث للإنسان أن يفسّر الطبيعي بالطبيعي والنفسي بالنفسي، والاجتماعي بالاجتماعي، لكن رغم وجاهة هذا الاختيار من الناحية المنهجية، فإنّه قد يؤول بنا من الناحية المنطقية إلى الوقوع في مغالطة عُرفت بالدور، وهذا ما يقتضي الوعي بخصائص هذه المغالطة.
+                </p>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazali.text.title">في شروط القول ببطلان القياس الدوري</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.ghazali.text.content">
+                        إن قال قائل: فلِمَ قضيتم ببطلان البرهان الدوري ؟
+                        ومعلوم أنه إذا سأل الإنسان عن الأسباب والمسبّبات على ما أجرى الله سنّته بارتباط البعض منها بالبعض، ففيها ما يرجع بالدور إلى الأول، إذ يقال: لِمَ كان السحاب؟
+                        فيقال: لأنه كان بخارا فكتُف وانعقد.
+                        فقيل: لِمَ كان البخار ؟
+                        فيقال: لأن الأرض كانت نَديّة، فأثّر الحرّ فيها، فتبخّرت أجزاء الرطوبة، وتصعّدت.
+                        فقيل: ولِمَ كانت الأرض نديّة ؟
+                        فيقال: لأنه كان مطر.
+                        فقيل: ولِمَ كان المطر ؟
+                        فيقال: لأنه كان سحاب.
+                        فرجع بالدور إلى السحاب، فكأنّه قيل: لِمَ كان السحاب ؟ فقلت لأنه كان السحاب.
+                        والدوري باطل، سواء كان الحدّ المتكرّر تخلّله واسطة، أو وسائط أو لم يتخلّل.
+                        فنقول: ليس هذا هو الدوري الباطل<sup>1</sup>. إنّما الباطل أن يؤخذ الشيء في بيان نفسه بعَينِهِ. بأن يقال:
+                        لِمَ كان هذا السحاب ؟
+                        فيعلّل بما يرجع بالآخرة إلى التعليل بهذا السحاب بعَينِهِ.
+                        فأما أن يرجع إلى التعليل بسحاب آخر، فالعلّة غير المعلول بالعدد <sup>2</sup>، إلاّ أنّه مساو له في النوع. ولا يبعد أن يكون سحاب بعينه علّة لسحاب آخر بواسطة ترطيب الأرض ثمّ تصعّد البخار، ثمّ انعقاده سحابا آخر.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.ghazali.text.source">أبو حامد الغزالي، معيار العلم في المنطق، ص 254، دار المعارف بمصر</em></p>
+                </div>
+            </div>
+            
+            <!-- Author Presentation -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazali.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <!-- Author image -->
+                        <img src="assets/images/al_ghazali.jpg" alt="أبو حامد الغزالي" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.ghazali.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.ghazali.author.content">
+                            الغزالي (1058-1111) هو أبو حامد محمد بن أحمد الغزالي الطوسي ولد في مدينة طوس في خراسان. اشتغل بالتدريس في المدرسة النظامية ببغداد بتكليف من نظام الملك. يُعدّ من كبار المفكرين في مجال علم الأخلاق والفلسفة والعقيدة والمنطق. من أشهر كتبه: إحياء علوم الدين، المنقذ من الضلال، مقاصد الفلاسفة، تهافت الفلاسفة، معيار العلم، محك النظر (منطق)، ميزان العمل، الاقتصاد في الاعتقاد، فضائح الباطنية، القسطاس المستقيم، فيصل التفرقة بين الإسلام والزندقة، التبر المسبوك في نصيحة الملوك، أيها الولد المحب، كيمياء السعادة.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lexical -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazali.lexical.title">الهوامش والمفاهيم</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.lexical.item1"><strong>"ليس هذا هو الدوري الباطل":</strong> يرفع الغزالي شُبهة حول المعايير التي يتحدّد بمقتضاها القول بالقياس الدوري.</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.lexical.item2"><strong>"العلّة غير المعلول بالعدد":</strong> يقصد بذلك أنّ السّحاب الأول غير السّحاب الثاني، رغم مماثلته له في النوع أي في كونهما سحاباً. وبالتالي لا يكون هناك دور في تفسير الشيء بنفسه.</li>
+                </ul>
+            </div>
+            
+            <!-- Questions -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazali.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.questions.q1">أعرّف دلالة القياس الدوري بالرجوع إلى أحد المعاجم الفلسفية.</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.questions.q2">أحدّد طبيعة القياس الدوري ومكوّناته المنطقية من خلال المثال الوارد في النص.</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.questions.q3">أبيّن الأسباب التي تقضي بفساد القياس الدوري وبطلانه منطقيا.</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazali.questions.q4">أعيّن ما يُعتبر قياسا دوريا من بين هذه الاستدلالات:
+                        <ul>
+                            <li>کل مجتهد ناجح - زید مجتهد - زيد ناجح.</li>
+                            <li>كل عاقل ذكيّ - الإنسان عاقل - الإنسان ذكيّ.</li>
+                            <li>كل المحبين للخير أثرياء - كل السّعداء يحبون الخير - كل السعداء أثرياء.</li>
+                            <li>كل إله غير فان - كل أزلي إله - كل أزلي غير فان.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <!-- Answers -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazali.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazali.answers.a1.title">الإجابة عن السؤال الأول:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazali.answers.a1.content">
+                        <strong>القياس الدوري (Circular Reasoning):</strong> هو نوع من المغالطات المنطقية يحدث عندما يستخدم الاستدلال نتيجته الخاصة كمقدمة لإثبات تلك النتيجة. بمعنى آخر، يكون الاستنتاج معتمداً على مقدمة تفترض صحة ذلك الاستنتاج ذاته. يسمى أيضاً "الدور" أو "المصادرة على المطلوب" (Begging the Question).
+                        <br><br>
+                        في المنطق الفلسفي، يعتبر القياس الدوري قياساً فاسداً لأنه لا يقدم أي تقدم في المعرفة أو الإثبات، بل يعيد صياغة الفرضية نفسها بشكل مختلف.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazali.answers.a2.title">الإجابة عن السؤال الثاني:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazali.answers.a2.content">
+                        <strong>طبيعة القياس الدوري في مثال النص:</strong>
+                        <br><br>
+                        يقدم الغزالي مثالاً توضيحياً لدورة تفسيرية:
+                        <br>
+                        1. <strong>السؤال الأول:</strong> لِمَ كان السحاب؟
+                        <br>
+                        <strong>الجواب:</strong> لأنه كان بخاراً فكتف وانعقد.
+                        <br><br>
+                        2. <strong>السؤال الثاني:</strong> لِمَ كان البخار؟
+                        <br>
+                        <strong>الجواب:</strong> لأن الأرض كانت ندية، فأثر الحر فيها فتبخرت أجزاء الرطوبة وتصعدت.
+                        <br><br>
+                        3. <strong>السؤال الثالث:</strong> لِمَ كانت الأرض ندية؟
+                        <br>
+                        <strong>الجواب:</strong> لأنه كان مطر.
+                        <br><br>
+                        4. <strong>السؤال الرابع:</strong> لِمَ كان المطر؟
+                        <br>
+                        <strong>الجواب:</strong> لأنه كان سحاب.
+                        <br><br>
+                        <strong>التحليل:</strong> هنا نعود إلى النقطة الأولى (السحاب) مما يشكل دورة تفسيرية. <strong>مكوناته المنطقية:</strong>
+                        <br>
+                        - <strong>العلاقة السببية:</strong> سلسلة من العلاقات السببية المترابطة.
+                        <br>
+                        - <strong>الدورية:</strong> العودة إلى نقطة البداية في السلسلة السببية.
+                        <br>
+                        - <strong>الافتقار إلى أساس مستقل:</strong> كل حلقة في السلسلة تعتمد على الحلقة التالية دون وجود أساس ثابت.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazali.answers.a3.title">الإجابة عن السؤال الثالث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazali.answers.a3.content">
+                        <strong>أسباب فساد القياس الدوري وبطلانه منطقياً:</strong>
+                        <br><br>
+                        1. <strong>عدم تقديم إثبات حقيقي:</strong> القياس الدوري لا يثبت شيئاً جديداً، بل يعيد صياغة الفرضية نفسها بشكل مختلف.
+                        <br><br>
+                        2. <strong>الافتقار إلى الأساس المستقل:</strong> في القياس الصحيح، يجب أن تكون المقدمات مستقلة عن النتيجة ومقدمة سابقة عليها في المعرفة.
+                        <br><br>
+                        3. <strong>خرق قاعدة عدم التناقض:</strong> عندما يكون الشيء هو علة نفسه، فهذا يتناقض مع مفهوم العلة الذي يفترض تمايزاً بين العلة والمعلول.
+                        <br><br>
+                        4. <strong>انعدام التقدم المعرفي:</strong> القياس الدوري لا يضيف أي معرفة جديدة، بل يدور في حلقة مفرغة.
+                        <br><br>
+                        5. <strong>التعارض مع مبدأ العلية:</strong> مبدأ العلية يفترض أن العلة تسبق المعلول وتختلف عنه، وهذا ما ينتهكه القياس الدوري.
+                        <br><br>
+                        6. <strong>عدم إمكانية التحقق التجريبي:</strong> يصعب التحقق من صحة القياسات الدورية لأنها تعتمد على افتراضات داخلية لا يمكن اختبارها خارج إطارها الدائري.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazali.answers.a4.title">الإجابة عن السؤال الرابع:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazali.answers.a4.content">
+                        <strong>الاستدلالات ومدى كونها قياساً دورياً:</strong>
+                        <br><br>
+                        1. <strong>کل مجتهد ناجح - زید مجتهد - زيد ناجح.</strong>
+                        <br>
+                        • <strong>النوع:</strong> قياس استثنائي صحيح.
+                        <br>
+                        • <strong>التحليل:</strong> هذا قياس منطقي سليم من الشكل الأول، لا يوجد فيه دور.
+                        <br><br>
+                        2. <strong>كل عاقل ذكيّ - الإنسان عاقل - الإنسان ذكيّ.</strong>
+                        <br>
+                        • <strong>النوع:</strong> قياس حملي صحيح.
+                        <br>
+                        • <strong>التحليل:</strong> قياس سليم لا يحتوي على دور.
+                        <br><br>
+                        3. <strong>كل المحبين للخير أثرياء - كل السّعداء يحبون الخير - كل السعداء أثرياء.</strong>
+                        <br>
+                        • <strong>النوع:</strong> قياس شرطي متصل.
+                        <br>
+                        • <strong>التحليل:</strong> هذا قياس صحيح منطقياً، ولا يعتبر دورياً.
+                        <br><br>
+                        4. <strong>كل إله غير فان - كل أزلي إله - كل أزلي غير فان.</strong>
+                        <br>
+                        • <strong>النوع:</strong> <strong>قياس دوري محتمل.</strong>
+                        <br>
+                        • <strong>التحليل:</strong> هذا القياس يحتاج إلى تحليل أعمق. إذا كان تعريف "الإله" مرتبطاً بصفة "الأزلية"، وصفة "الأزلية" مرتبطة بصفة "عدم الفناء"، وصفة "عدم الفناء" تعود لتعريف "الإله"، فقد نكون أمام قياس دوري. ولكن بشكل عام، هذا القياس يبدو ظاهرياً كقياس شرطي متصل سليم.
+                        <br><br>
+                        <strong>الخلاصة:</strong> لا يوجد قياس دوري واضح في الأمثلة المقدمة. القياس الدوري الحقيقي يكون عندما يستخدم الاستدلال نتيجته كإحدى مقدماته بشكل واضح.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Text Analysis -->
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazali.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazali.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazali.analysis.thesis.content">
+                        يوضح الغزالي في هذا النص مفهوم القياس الدوري ويقدم تمييزاً دقيقاً بين الدورية الباطلة والدورية الظاهرية. يؤكد أن القياس الدوري الباطل هو الذي يعود لتعليل الشيء بنفسه بعينه، وليس مجرد وجود سلسلة من العلل والمعلولات تعود إلى نقطة بداية مماثلة في النوع ولكن مختلفة في العدد. يقدم الغزالي هذا التمييز رداً على شبهة حول معايير تحديد القياس الدوري الباطل.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazali.analysis.mechanisms.title">آليات التمييز بين الدورية الباطلة والظاهرية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazali.analysis.mechanisms.content">
+                        يعتمد الغزالي على عدة آليات للتمييز بين الدورية الباطلة والظاهرية:
+                        <br><br>
+                        1. <strong>تمييز الهوية العددية عن الهوية النوعية:</strong> يؤكد أن تعليل الشيء بنفسه بعينه (الهوية العددية) هو ما يشكل الدور الباطل، أما تعليله بشيء آخر من نفس النوع (الهوية النوعية) فلا يعتبر دوراً باطلاً.
+                        <br><br>
+                        2. <strong>فهم طبيعة السلسلة السببية:</strong> يوضح أن السلاسل السببية الطبيعية قد تعود إلى نقطة بداية مماثلة دون أن تكون دورية باطلة، لأن كل حلقة في السلسلة تختلف عن الأخرى رغم تشابهها النوعي.
+                        <br><br>
+                        3. <strong>التمييز بين التعليل الذاتي والتعليل بعلة خارجية:</strong> يرفض التعليل الذاتي (أن يكون الشيء علة لنفسه) ويقبل التعليل بعلة خارجية حتى لو كانت من نفس النوع.
+                        <br><br>
+                        4. <strong>الأخذ بعين الاعتبار الوسائط:</strong> يؤكد أن وجود وسائط في السلسلة السببية لا يغير من طبيعة الدور إذا كان هناك تعليل للشيء بنفسه.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazali.analysis.consequences.title">نتائج وخطورة القياس الدوري الباطل:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazali.analysis.consequences.content">
+                        - <strong>تعطيل المعرفة:</strong> القياس الدوري الباطل يعطل تقدم المعرفة لأنه لا يقدم أي إثبات جديد.
+                        <br><br>
+                        - <strong>تضليل الفكر:</strong> قد يوهم القياس الدوري بأنه يقدم تفسيراً أو إثباتاً بينما هو مجرد إعادة صياغة للفرضية.
+                        <br><br>
+                        - <strong>انهيار المنطق الاستدلالي:</strong> إذا قبلنا القياس الدوري، فإنه ينهي إمكانية البرهان المنطقي لأن أي قضية يمكن "إثباتها" بدائرة مغلقة.
+                        <br><br>
+                        - <strong>إعاقة البحث العلمي:</strong> في البحث العلمي، يؤدي القبول بالقياس الدوري إلى إعاقة التقدم لأن الباحثين قد يقبلون تفسيرات لا تضيف معرفة جديدة.
+                        <br><br>
+                        - <strong>تأسيس المعتقدات على أساس واه:</strong> يمكن استخدام القياس الدوري لتأسيس معتقدات دون تقديم أدلة حقيقية عليها.
+                    </p>
+                    
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazali.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazali.analysis.significance.content">
+                        يحمل تحليل الغزالي للقياس الدوري دلالات عميقة في الفلسفة والمنطق:
+                        <br><br>
+                        1. <strong>تطور الفكر المنطقي الإسلامي:</strong> يمثل النص تطوراً مهماً في الفكر المنطقي الإسلامي من خلال التحليل الدقيق للمغالطات المنطقية.
+                        <br><br>
+                        2. <strong>الجمع بين المنطق واللاهوت:</strong> يظهر كيف طبق المناطقة المسلمون المنطق الأرسطي على القضايا اللاهوتية والفلسفية.
+                        <br><br>
+                        3. <strong>التمييز بين الظاهر والجوهر:</strong> يؤكد على أهمية التمييز بين الظاهر المنطقي (السلسلة التي تعود إلى نقطة البداية) والجوهر المنطقي (تعليل الشيء بنفسه).
+                        <br><br>
+                        4. <strong>الأهمية المنهجية:</strong> يسلط الضوء على أهمية المنهج في البحث الفلسفي والعلمي، وضرورة تجنب المغالطات المنطقية.
+                        <br><br>
+                        5. <strong>العلاقة بين المنطق والعلوم الطبيعية:</strong> يوضح كيف يمكن تطبيق القواعد المنطقية على تفسير الظواهر الطبيعية.
+                        <br><br>
+                        6. <strong>الدروس المعاصرة:</strong> لا تزال مشكلة القياس الدوري ذات أهمية معاصرة في مختلف المجالات بما في ذلك العلوم الاجتماعية والنقاشات العامة.
+                        <br><br>
+                        هذا النص يمثل مساهمة مهمة في فهم أحد أهم أنواع المغالطات المنطقية وتوضيح شروط تحديدها بدقة.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.ghazali.level": "3ème Secondaire - Philosophie",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.ghazali.title": "Analyse du texte: Des conditions pour dire l'invalidité du raisonnement circulaire - Abu Hamid Al-Ghazali",
+                "PhiH.textAnalysis.ghazali.introduction.title": "Introduction",
+                "PhiH.textAnalysis.ghazali.introduction.content": "Il arrive à l'homme d'expliquer le naturel par le naturel, le psychique par le psychique, et le social par le social, mais malgré la pertinence de ce choix du point de vue méthodologique, cela peut nous conduire du point de vue logique à tomber dans un sophisme connu sous le nom de circularité, ce qui exige une conscience des caractéristiques de ce sophisme.",
+                "PhiH.textAnalysis.ghazali.text.title": "Des conditions pour dire l'invalidité du raisonnement circulaire",
+                "PhiH.textAnalysis.ghazali.text.content": "Si quelqu'un dit: Pourquoi avez-vous jugé invalide la preuve circulaire? Et il est connu que lorsque l'homme interroge sur les causes et les effets selon la manière dont Dieu a établi leur connexion, il y a parmi eux ce qui revient circulairement au premier, car on dit: Pourquoi y avait-il des nuages? On répond: Parce que c'était de la vapeur qui s'est condensée et solidifiée. On dit: Pourquoi y avait-il de la vapeur? On répond: Parce que la terre était humide, la chaleur y a agi, les parties de l'humidité se sont évaporées et sont montées. On dit: Et pourquoi la terre était-elle humide? On répond: Parce qu'il y avait de la pluie. On dit: Et pourquoi y avait-il de la pluie? On répond: Parce qu'il y avait des nuages. Donc cela revient circulairement aux nuages, comme si on disait: Pourquoi y avait-il des nuages? Et je répondais parce qu'il y avait des nuages. Et le circulaire est invalide, que le terme répété ait eu un intermédiaire, ou des intermédiaires, ou n'en ait pas eu. Alors nous disons: Ce n'est pas ce circulaire invalide<sup>1</sup>. L'invalide est que l'on prenne la chose dans l'explication d'elle-même en son identité même. En disant: Pourquoi y avait-il ces nuages? Et on l'explique par ce qui revient finalement à l'explication par ces nuages mêmes en leur identité. Quant au fait qu'il revienne à l'explication par d'autres nuages, la cause est différente de l'effet par le nombre <sup>2</sup>, sauf qu'elle lui est égale en type. Et il n'est pas impossible qu'un nuage particulier soit cause d'un autre nuage par l'intermédiaire de l'humidification de la terre puis de la montée de la vapeur, puis de sa solidification en un autre nuage.",
+                "PhiH.textAnalysis.ghazali.text.source": "Abu Hamid Al-Ghazali, Mi'yâr al-'Ilm fi al-Mantiq, p 254, Dar al-Ma'arif, Egypte",
+                "PhiH.textAnalysis.ghazali.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.ghazali.author.alt": "Abu Hamid Al-Ghazali",
+                "PhiH.textAnalysis.ghazali.author.content": "Al-Ghazali (1058-1111) est Abu Hamid Muhammad ibn Ahmad Al-Ghazali Al-Tusi, né dans la ville de Tus au Khorasan. Il a enseigné à l'école Nizamiyya de Bagdad sur ordre de Nizam al-Mulk. Il est considéré comme l'un des grands penseurs dans le domaine de l'éthique, de la philosophie, de la croyance et de la logique. Parmi ses livres les plus célèbres: Ihya' 'Ulum al-Din, Al-Munqidh min al-Dalal, Maqasid al-Falasifa, Tahafut al-Falasifa, Mi'yâr al-'Ilm, Mihakk al-Nazar (logique), Mizan al-'Amal, Al-Iqtisad fi al-I'tiqad, Fada'ih al-Batiniyya, Al-Qistas al-Mustaqim, Faysal al-Tafriqa bayna al-Islam wa al-Zandaqa, Al-Tibr al-Masbuk fi Nasihat al-Muluk, Ayyuha al-Walad al-Muhibb, Kimiya' al-Sa'ada.",
+                "PhiH.textAnalysis.ghazali.lexical.title": "Notes et concepts",
+                "PhiH.textAnalysis.ghazali.lexical.item1": "<strong>\"Ce n'est pas ce circulaire invalide\":</strong> Al-Ghazali lève une ambiguïté concernant les critères par lesquels on détermine le raisonnement circulaire.",
+                "PhiH.textAnalysis.ghazali.lexical.item2": "<strong>\"La cause est différente de l'effet par le nombre\":</strong> Il signifie par cela que le premier nuage n'est pas le deuxième nuage, malgré sa similitude avec lui en type, c'est-à-dire dans le fait qu'ils sont tous deux des nuages. Ainsi, il n'y a pas de circularité dans l'explication de la chose par elle-même.",
+                "PhiH.textAnalysis.ghazali.questions.title": "Tâches",
+                "PhiH.textAnalysis.ghazali.questions.q1": "Je définis la signification du raisonnement circulaire en me référant à un dictionnaire philosophique.",
+                "PhiH.textAnalysis.ghazali.questions.q2": "Je détermine la nature du raisonnement circulaire et ses composantes logiques à travers l'exemple présent dans le texte.",
+                "PhiH.textAnalysis.ghazali.questions.q3": "J'explique les raisons qui exigent la corruption et l'invalidité logique du raisonnement circulaire.",
+                "PhiH.textAnalysis.ghazali.questions.q4": "J'identifie ce qui est considéré comme un raisonnement circulaire parmi ces inférences:",
+                "PhiH.textAnalysis.ghazali.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.ghazali.answers.a1.title": "Réponse à la première question:",
+                "PhiH.textAnalysis.ghazali.answers.a1.content": "<strong>Le raisonnement circulaire (Circular Reasoning):</strong> C'est un type de sophisme logique qui se produit lorsque le raisonnement utilise sa propre conclusion comme prémisse pour prouver cette conclusion. En d'autres termes, la conclusion dépend d'une prémisse qui suppose la vérité de cette même conclusion. Appelé aussi \"cercle vicieux\" ou \"pétition de principe\" (Begging the Question).<br><br>En logique philosophique, le raisonnement circulaire est considéré comme un raisonnement invalide parce qu'il ne fait progresser ni la connaissance ni la preuve, mais reformule l'hypothèse elle-même différemment.",
+                "PhiH.textAnalysis.ghazali.answers.a2.title": "Réponse à la deuxième question:",
+                "PhiH.textAnalysis.ghazali.answers.a2.content": "<strong>Nature du raisonnement circulaire dans l'exemple du texte:</strong><br><br>Al-Ghazali présente un exemple illustratif d'une circularité explicative:<br>1. <strong>Première question:</strong> Pourquoi y avait-il des nuages?<br><strong>Réponse:</strong> Parce que c'était de la vapeur qui s'est condensée et solidifiée.<br><br>2. <strong>Deuxième question:</strong> Pourquoi y avait-il de la vapeur?<br><strong>Réponse:</strong> Parce que la terre était humide, la chaleur y a agi, les parties de l'humidité se sont évaporées et sont montées.<br><br>3. <strong>Troisième question:</strong> Pourquoi la terre était-elle humide?<br><strong>Réponse:</strong> Parce qu'il y avait de la pluie.<br><br>4. <strong>Quatrième question:</strong> Pourquoi y avait-il de la pluie?<br><strong>Réponse:</strong> Parce qu'il y avait des nuages.<br><br><strong>Analyse:</strong> Ici, nous revenons au premier point (les nuages) ce qui forme une circularité explicative. <strong>Ses composantes logiques:</strong><br>- <strong>Relation causale:</strong> une série de relations causales interconnectées.<br>- <strong>Circularité:</strong> retour au point de départ dans la chaîne causale.<br>- <strong>Manque de fondement indépendant:</strong> chaque maillon de la chaîne dépend du suivant sans fondement stable.",
+                "PhiH.textAnalysis.ghazali.answers.a3.title": "Réponse à la troisième question:",
+                "PhiH.textAnalysis.ghazali.answers.a3.content": "<strong>Raisons de la corruption et de l'invalidité logique du raisonnement circulaire:</strong><br><br>1. <strong>Absence de preuve réelle:</strong> Le raisonnement circulaire ne prouve rien de nouveau, il reformule simplement l'hypothèse elle-même différemment.<br><br>2. <strong>Manque de fondement indépendant:</strong> Dans un raisonnement correct, les prémisses doivent être indépendantes de la conclusion et antérieures à elle dans la connaissance.<br><br>3. <strong>Violation du principe de non-contradiction:</strong> Lorsque la chose est cause d'elle-même, cela contredit le concept de cause qui suppose une distinction entre la cause et l'effet.<br><br>4. <strong>Absence de progrès cognitif:</strong> Le raisonnement circulaire n'ajoute aucune nouvelle connaissance, il tourne en rond.<br><br>5. <strong>Contradiction avec le principe de causalité:</strong> Le principe de causalité suppose que la cause précède l'effet et en diffère, ce que viole le raisonnement circulaire.<br><br>6. <strong>Impossibilité de vérification empirique:</strong> Il est difficile de vérifier la validité des raisonnements circulaires car ils dépendent d'hypothèses internes qui ne peuvent être testées en dehors de leur cadre circulaire.",
+                "PhiH.textAnalysis.ghazali.answers.a4.title": "Réponse à la quatrième question:",
+                "PhiH.textAnalysis.ghazali.answers.a4.content": "<strong>Les inférences et leur caractère circulaire:</strong><br><br>1. <strong>Tout diligent réussit - Zayd est diligent - Zayd réussit.</strong><br>• <strong>Type:</strong> Syllogisme hypothétique correct.<br>• <strong>Analyse:</strong> C'est un raisonnement logique valide de la première figure, il n'y a pas de circularité.<br><br>2. <strong>Tout rationnel est intelligent - L'homme est rationnel - L'homme est intelligent.</strong><br>• <strong>Type:</strong> Syllogisme catégorique correct.<br>• <strong>Analyse:</strong> Raisonnement valide ne contenant pas de circularité.<br><br>3. <strong>Tous les amoureux du bien sont riches - Tous les heureux aiment le bien - Tous les heureux sont riches.</strong><br>• <strong>Type:</strong> Syllogisme conditionnel connecté.<br>• <strong>Analyse:</strong> Ce raisonnement est logiquement valide, et n'est pas considéré comme circulaire.<br><br>4. <strong>Tout dieu n'est pas périssable - Tout éternel est dieu - Tout éternel n'est pas périssable.</strong><br>• <strong>Type:</strong> <strong>Syllogisme potentiellement circulaire.</strong><br>• <strong>Analyse:</strong> Ce syllogisme nécessite une analyse plus approfondie. Si la définition de \"dieu\" est liée à l'attribut d'\"éternité\", et l'attribut d'\"éternité\" est lié à l'attribut de \"non-périssabilité\", et l'attribut de \"non-périssabilité\" revient à la définition de \"dieu\", nous pourrions être face à un syllogisme circulaire. Mais en général, ce syllogisme apparaît superficiellement comme un syllogisme conditionnel connecté valide.<br><br><strong>Conclusion:</strong> Il n'y a pas de syllogisme circulaire clair dans les exemples présentés. Le vrai syllogisme circulaire se produit lorsque le raisonnement utilise clairement sa conclusion comme l'une de ses prémisses.",
+                "PhiH.textAnalysis.ghazali.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.ghazali.analysis.thesis.title": "Thèse principale:",
+                "PhiH.textAnalysis.ghazali.analysis.thesis.content": "Al-Ghazali clarifie dans ce texte le concept de raisonnement circulaire et présente une distinction précise entre la circularité invalide et la circularité apparente. Il affirme que le raisonnement circulaire invalide est celui qui revient à expliquer la chose par elle-même en son identité même, et non pas simplement l'existence d'une chaîne de causes et d'effets qui revient à un point de départ similaire en type mais différent en nombre. Al-Ghazali présente cette distinction en réponse à une ambiguïté concernant les critères de détermination du raisonnement circulaire invalide.",
+                "PhiH.textAnalysis.ghazali.analysis.mechanisms.title": "Mécanismes de distinction entre la circularité invalide et apparente:",
+                "PhiH.textAnalysis.ghazali.analysis.mechanisms.content": "Al-Ghazali s'appuie sur plusieurs mécanismes pour distinguer entre la circularité invalide et apparente:<br><br>1. <strong>Distinction entre l'identité numérique et l'identité typologique:</strong> Il affirme qu'expliquer la chose par elle-même en son identité même (identité numérique) est ce qui constitue la circularité invalide, tandis que l'expliquer par une autre chose du même type (identité typologique) n'est pas considéré comme une circularité invalide.<br><br>2. <strong>Compréhension de la nature de la chaîne causale:</strong> Il explique que les chaînes causales naturelles peuvent revenir à un point de départ similaire sans être des circularités invalides, car chaque maillon de la chaîne diffère des autres malgré leur similarité typologique.<br><br>3. <strong>Distinction entre l'explication par soi-même et l'explication par une cause externe:</strong> Il rejette l'explication par soi-même (que la chose soit cause d'elle-même) et accepte l'explication par une cause externe même si elle est du même type.<br><br>4. <strong>Prise en compte des intermédiaires:</strong> Il affirme que la présence d'intermédiaires dans la chaîne causale ne change pas la nature de la circularité s'il y a explication de la chose par elle-même.",
+                "PhiH.textAnalysis.ghazali.analysis.consequences.title": "Conséquences et danger du raisonnement circulaire invalide:",
+                "PhiH.textAnalysis.ghazali.analysis.consequences.content": "- <strong>Paralysie de la connaissance:</strong> Le raisonnement circulaire invalide paralyse le progrès de la connaissance car il ne présente aucune nouvelle preuve.<br><br>- <strong>Tromperie de la pensée:</strong> Le raisonnement circulaire peut donner l'impression qu'il offre une explication ou une preuve alors qu'il ne fait que reformuler l'hypothèse.<br><br>- <strong>Effondrement de la logique déductive:</strong> Si nous acceptons le raisonnement circulaire, cela met fin à la possibilité de preuve logique car toute proposition peut être \"prouvée\" par un cercle fermé.<br><br>- <strong>Obstruction de la recherche scientifique:</strong> Dans la recherche scientifique, l'acceptation du raisonnement circulaire entrave le progrès car les chercheurs pourraient accepter des explications qui n'ajoutent pas de nouvelle connaissance.<br><br>- <strong>Établissement de croyances sur des bases fragiles:</strong> Le raisonnement circulaire peut être utilisé pour établir des croyances sans fournir de véritables preuves.",
+                "PhiH.textAnalysis.ghazali.analysis.significance.title": "Significations et dimensions du concept:",
+                "PhiH.textAnalysis.ghazali.analysis.significance.content": "L'analyse d'Al-Ghazali du raisonnement circulaire porte des significations profondes en philosophie et logique:<br><br>1. <strong>Développement de la pensée logique islamique:</strong> Le texte représente un développement important de la pensée logique islamique à travers l'analyse précise des sophismes logiques.<br><br>2. <strong>Combinaison de logique et théologie:</strong> Il montre comment les logiciens musulmans ont appliqué la logique aristotélicienne aux questions théologiques et philosophiques.<br><br>3. <strong>Distinction entre apparence et essence:</strong> Il insiste sur l'importance de distinguer entre l'apparence logique (la chaîne qui revient au point de départ) et l'essence logique (explication de la chose par elle-même).<br><br>4. <strong>Importance méthodologique:</strong> Il met en lumière l'importance de la méthode dans la recherche philosophique et scientifique, et la nécessité d'éviter les sophismes logiques.<br><br>5. <strong>Relation entre logique et sciences naturelles:</strong> Il montre comment les règles logiques peuvent être appliquées à l'explication des phénomènes naturels.<br><br>6. <strong>Leçons contemporaines:</strong> Le problème du raisonnement circulaire reste d'importance contemporaine dans divers domaines, y compris les sciences sociales et les débats publics.<br><br>Ce texte représente une contribution importante à la compréhension de l'un des types les plus importants de sophismes logiques et à la clarification des conditions de leur détermination précise."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.ghazali.level": "3rd Secondary - Philosophy",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.ghazali.title": "Text Analysis: On Conditions for Invalidity of Circular Reasoning - Abu Hamid Al-Ghazali",
+                "PhiH.textAnalysis.ghazali.introduction.title": "Introduction",
+                "PhiH.textAnalysis.ghazali.introduction.content": "It happens that a person explains the natural by the natural, the psychological by the psychological, and the social by the social, but despite the soundness of this choice from a methodological standpoint, it may lead us from a logical standpoint to fall into a fallacy known as circularity, which requires awareness of the characteristics of this fallacy.",
+                "PhiH.textAnalysis.ghazali.text.title": "On Conditions for Invalidity of Circular Reasoning",
+                "PhiH.textAnalysis.ghazali.text.content": "If someone says: Why did you judge circular proof invalid? And it is known that when a person asks about causes and effects according to how God established their connection, there are among them those that return circularly to the first, for it is said: Why were there clouds? It is answered: Because it was vapor that condensed and solidified. It is said: Why was there vapor? It is answered: Because the earth was damp, heat acted upon it, parts of moisture evaporated and rose. It is said: And why was the earth damp? It is answered: Because there was rain. It is said: And why was there rain? It is answered: Because there were clouds. So it returns circularly to the clouds, as if it were said: Why were there clouds? And I said because there were clouds. And the circular is invalid, whether the repeated term had an intermediary, or intermediaries, or had none. Then we say: This is not that invalid circular<sup>1</sup>. The invalid is that the thing is taken in explaining itself in its very identity. By saying: Why were there these clouds? And it is explained by what ultimately returns to the explanation by these very clouds in their identity. As for it returning to explanation by other clouds, the cause is different from the effect in number <sup>2</sup>, except that it is equal to it in type. And it is not far-fetched that a particular cloud be a cause for another cloud through the intermediary of moistening the earth then the rising of vapor, then its solidification into another cloud.",
+                "PhiH.textAnalysis.ghazali.text.source": "Abu Hamid Al-Ghazali, Mi'yâr al-'Ilm fi al-Mantiq, p 254, Dar al-Ma'arif, Egypt",
+                "PhiH.textAnalysis.ghazali.author.title": "Author Presentation",
+                "PhiH.textAnalysis.ghazali.author.alt": "Abu Hamid Al-Ghazali",
+                "PhiH.textAnalysis.ghazali.author.content": "Al-Ghazali (1058-1111) is Abu Hamid Muhammad ibn Ahmad Al-Ghazali Al-Tusi, born in the city of Tus in Khorasan. He taught at the Nizamiyya school in Baghdad by order of Nizam al-Mulk. He is considered one of the great thinkers in the field of ethics, philosophy, creed, and logic. Among his most famous books: Ihya' 'Ulum al-Din, Al-Munqidh min al-Dalal, Maqasid al-Falasifa, Tahafut al-Falasifa, Mi'yâr al-'Ilm, Mihakk al-Nazar (logic), Mizan al-'Amal, Al-Iqtisad fi al-I'tiqad, Fada'ih al-Batiniyya, Al-Qistas al-Mustaqim, Faysal al-Tafriqa bayna al-Islam wa al-Zandaqa, Al-Tibr al-Masbuk fi Nasihat al-Muluk, Ayyuha al-Walad al-Muhibb, Kimiya' al-Sa'ada.",
+                "PhiH.textAnalysis.ghazali.lexical.title": "Footnotes and Concepts",
+                "PhiH.textAnalysis.ghazali.lexical.item1": "<strong>\"This is not that invalid circular\":</strong> Al-Ghazali removes an ambiguity concerning the criteria by which circular reasoning is determined.",
+                "PhiH.textAnalysis.ghazali.lexical.item2": "<strong>\"The cause is different from the effect in number\":</strong> He means by this that the first cloud is not the second cloud, despite its similarity to it in type, i.e., in both being clouds. Thus, there is no circularity in explaining the thing by itself.",
+                "PhiH.textAnalysis.ghazali.questions.title": "Tasks",
+                "PhiH.textAnalysis.ghazali.questions.q1": "I define the meaning of circular reasoning by referring to a philosophical dictionary.",
+                "PhiH.textAnalysis.ghazali.questions.q2": "I determine the nature of circular reasoning and its logical components through the example in the text.",
+                "PhiH.textAnalysis.ghazali.questions.q3": "I explain the reasons that require the corruption and logical invalidity of circular reasoning.",
+                "PhiH.textAnalysis.ghazali.questions.q4": "I identify what is considered circular reasoning among these inferences:",
+                "PhiH.textAnalysis.ghazali.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.ghazali.answers.a1.title": "Answer to the first question:",
+                "PhiH.textAnalysis.ghazali.answers.a1.content": "<strong>Circular Reasoning:</strong> It is a type of logical fallacy that occurs when reasoning uses its own conclusion as a premise to prove that conclusion. In other words, the conclusion depends on a premise that assumes the truth of that same conclusion. Also called \"circular argument\" or \"begging the question.\"<br><br>In philosophical logic, circular reasoning is considered invalid because it makes no progress in knowledge or proof, but reformulates the hypothesis itself differently.",
+                "PhiH.textAnalysis.ghazali.answers.a2.title": "Answer to the second question:",
+                "PhiH.textAnalysis.ghazali.answers.a2.content": "<strong>Nature of circular reasoning in the text example:</strong><br><br>Al-Ghazali presents an illustrative example of explanatory circularity:<br>1. <strong>First question:</strong> Why were there clouds?<br><strong>Answer:</strong> Because it was vapor that condensed and solidified.<br><br>2. <strong>Second question:</strong> Why was there vapor?<br><strong>Answer:</strong> Because the earth was damp, heat acted upon it, parts of moisture evaporated and rose.<br><br>3. <strong>Third question:</strong> Why was the earth damp?<br><strong>Answer:</strong> Because there was rain.<br><br>4. <strong>Fourth question:</strong> Why was there rain?<br><strong>Answer:</strong> Because there were clouds.<br><br><strong>Analysis:</strong> Here we return to the first point (clouds) which forms explanatory circularity. <strong>Its logical components:</strong><br>- <strong>Causal relation:</strong> a series of interconnected causal relationships.<br>- <strong>Circularity:</strong> return to the starting point in the causal chain.<br>- <strong>Lack of independent foundation:</strong> each link in the chain depends on the next without a stable foundation.",
+                "PhiH.textAnalysis.ghazali.answers.a3.title": "Answer to the third question:",
+                "PhiH.textAnalysis.ghazali.answers.a3.content": "<strong>Reasons for corruption and logical invalidity of circular reasoning:</strong><br><br>1. <strong>Absence of real proof:</strong> Circular reasoning proves nothing new, it simply reformulates the hypothesis itself differently.<br><br>2. <strong>Lack of independent foundation:</strong> In correct reasoning, premises must be independent of the conclusion and prior to it in knowledge.<br><br>3. <strong>Violation of the principle of non-contradiction:</strong> When the thing is cause of itself, this contradicts the concept of cause which assumes a distinction between cause and effect.<br><br>4. <strong>Absence of cognitive progress:</strong> Circular reasoning adds no new knowledge, it goes in circles.<br><br>5. <strong>Contradiction with the principle of causality:</strong> The principle of causality assumes that the cause precedes the effect and differs from it, which circular reasoning violates.<br><br>6. <strong>Impossibility of empirical verification:</strong> It is difficult to verify the validity of circular reasoning because it depends on internal assumptions that cannot be tested outside their circular framework.",
+                "PhiH.textAnalysis.ghazali.answers.a4.title": "Answer to the fourth question:",
+                "PhiH.textAnalysis.ghazali.answers.a4.content": "<strong>The inferences and their circular character:</strong><br><br>1. <strong>Every diligent person succeeds - Zayd is diligent - Zayd succeeds.</strong><br>• <strong>Type:</strong> Correct hypothetical syllogism.<br>• <strong>Analysis:</strong> This is a valid logical reasoning of the first figure, there is no circularity.<br><br>2. <strong>Every rational being is intelligent - Man is rational - Man is intelligent.</strong><br>• <strong>Type:</strong> Correct categorical syllogism.<br>• <strong>Analysis:</strong> Valid reasoning containing no circularity.<br><br>3. <strong>All lovers of good are rich - All happy people love good - All happy people are rich.</strong><br>• <strong>Type:</strong> Connected conditional syllogism.<br>• <strong>Analysis:</strong> This reasoning is logically valid, and is not considered circular.<br><br>4. <strong>Every god is not perishable - Every eternal being is god - Every eternal being is not perishable.</strong><br>• <strong>Type:</strong> <strong>Potentially circular syllogism.</strong><br>• <strong>Analysis:</strong> This syllogism requires deeper analysis. If the definition of \"god\" is linked to the attribute of \"eternity\", and the attribute of \"eternity\" is linked to the attribute of \"non-perishability\", and the attribute of \"non-perishability\" returns to the definition of \"god\", we might be facing a circular syllogism. But generally, this syllogism appears superficially as a valid connected conditional syllogism.<br><br><strong>Conclusion:</strong> There is no clear circular syllogism in the presented examples. The true circular syllogism occurs when reasoning clearly uses its conclusion as one of its premises.",
+                "PhiH.textAnalysis.ghazali.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.ghazali.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.ghazali.analysis.thesis.content": "Al-Ghazali clarifies in this text the concept of circular reasoning and presents a precise distinction between invalid circularity and apparent circularity. He affirms that invalid circular reasoning is that which returns to explaining the thing by itself in its very identity, and not merely the existence of a chain of causes and effects that returns to a starting point similar in type but different in number. Al-Ghazali presents this distinction in response to an ambiguity concerning the criteria for determining invalid circular reasoning.",
+                "PhiH.textAnalysis.ghazali.analysis.mechanisms.title": "Mechanisms of distinction between invalid and apparent circularity:",
+                "PhiH.textAnalysis.ghazali.analysis.mechanisms.content": "Al-Ghazali relies on several mechanisms to distinguish between invalid and apparent circularity:<br><br>1. <strong>Distinction between numerical identity and typological identity:</strong> He affirms that explaining the thing by itself in its very identity (numerical identity) is what constitutes invalid circularity, while explaining it by another thing of the same type (typological identity) is not considered invalid circularity.<br><br>2. <strong>Understanding the nature of the causal chain:</strong> He explains that natural causal chains may return to a similar starting point without being invalid circularities, because each link in the chain differs from the others despite their typological similarity.<br><br>3. <strong>Distinction between explanation by itself and explanation by an external cause:</strong> He rejects explanation by itself (the thing being cause of itself) and accepts explanation by an external cause even if it is of the same type.<br><br>4. <strong>Consideration of intermediaries:</strong> He affirms that the presence of intermediaries in the causal chain does not change the nature of circularity if there is explanation of the thing by itself.",
+                "PhiH.textAnalysis.ghazali.analysis.consequences.title": "Consequences and danger of invalid circular reasoning:",
+                "PhiH.textAnalysis.ghazali.analysis.consequences.content": "- <strong>Paralysis of knowledge:</strong> Invalid circular reasoning paralyzes the progress of knowledge because it presents no new proof.<br><br>- <strong>Deception of thought:</strong> Circular reasoning may give the impression that it offers an explanation or proof while it merely reformulates the hypothesis.<br><br>- <strong>Collapse of deductive logic:</strong> If we accept circular reasoning, it ends the possibility of logical proof because any proposition can be \"proved\" by a closed circle.<br><br>- <strong>Obstruction of scientific research:</strong> In scientific research, acceptance of circular reasoning hinders progress because researchers might accept explanations that add no new knowledge.<br><br>- <strong>Establishment of beliefs on fragile bases:</strong> Circular reasoning can be used to establish beliefs without providing real evidence.",
+                "PhiH.textAnalysis.ghazali.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.ghazali.analysis.significance.content": "Al-Ghazali's analysis of circular reasoning carries deep meanings in philosophy and logic:<br><br>1. <strong>Development of Islamic logical thought:</strong> The text represents an important development in Islamic logical thought through precise analysis of logical fallacies.<br><br>2. <strong>Combination of logic and theology:</strong> It shows how Muslim logicians applied Aristotelian logic to theological and philosophical questions.<br><br>3. <strong>Distinction between appearance and essence:</strong> It insists on the importance of distinguishing between logical appearance (the chain that returns to the starting point) and logical essence (explanation of the thing by itself).<br><br>4. <strong>Methodological importance:</strong> It highlights the importance of method in philosophical and scientific research, and the necessity of avoiding logical fallacies.<br><br>5. <strong>Relation between logic and natural sciences:</strong> It shows how logical rules can be applied to the explanation of natural phenomena.<br><br>6. <strong>Contemporary lessons:</strong> The problem of circular reasoning remains of contemporary importance in various fields, including social sciences and public debates.<br><br>This text represents an important contribution to understanding one of the most important types of logical fallacies and clarifying the conditions for their precise determination."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.ghazali.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.ghazali.title": "تحليل النص: في شروط القول ببطلان القياس الدوري - أبو حامد الغزالي",
+                "PhiH.textAnalysis.ghazali.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.ghazali.introduction.content": "يحدث للإنسان أن يفسّر الطبيعي بالطبيعي والنفسي بالنفسي، والاجتماعي بالاجتماعي، لكن رغم وجاهة هذا الاختيار من الناحية المنهجية، فإنّه قد يؤول بنا من الناحية المنطقية إلى الوقوع في مغالطة عُرفت بالدور، وهذا ما يقتضي الوعي بخصائص هذه المغالطة.",
+                "PhiH.textAnalysis.ghazali.text.title": "في شروط القول ببطلان القياس الدوري",
+                "PhiH.textAnalysis.ghazali.text.content": "إن قال قائل: فلِمَ قضيتم ببطلان البرهان الدوري؟ ومعلوم أنه إذا سأل الإنسان عن الأسباب والمسبّبات على ما أجرى الله سنّته بارتباط البعض منها بالبعض، ففيها ما يرجع بالدور إلى الأول، إذ يقال: لِمَ كان السحاب؟ فيقال: لأنه كان بخارا فكتُف وانعقد. فقيل: لِمَ كان البخار؟ فيقال: لأن الأرض كانت نَديّة، فأثّر الحرّ فيها، فتبخّرت أجزاء الرطوبة، وتصعّدت. فقيل: ولِمَ كانت الأرض نديّة؟ فيقال: لأنه كان مطر. فقيل: ولِمَ كان المطر؟ فيقال: لأنه كان سحاب. فرجع بالدور إلى السحاب، فكأنّه قيل: لِمَ كان السحاب؟ فقلت لأنه كان السحاب. والدوري باطل، سواء كان الحدّ المتكرّر تخلّله واسطة، أو وسائط أو لم يتخلّل. فنقول: ليس هذا هو الدوري الباطل<sup>1</sup>. إنّما الباطل أن يؤخذ الشيء في بيان نفسه بعَينِهِ. بأن يقال: لِمَ كان هذا السحاب؟ فيعلّل بما يرجع بالآخرة إلى التعليل بهذا السحاب بعَينِهِ. فأما أن يرجع إلى التعليل بسحاب آخر، فالعلّة غير المعلول بالعدد<sup>2</sup>، إلاّ أنّه مساو له في النوع. ولا يبعد أن يكون سحاب بعينه علّة لسحاب آخر بواسطة ترطيب الأرض ثمّ تصعّد البخار، ثمّ انعقاده سحابا آخر.",
+                "PhiH.textAnalysis.ghazali.text.source": "أبو حامد الغزالي، معيار العلم في المنطق، ص 254، دار المعارف بمصر",
+                "PhiH.textAnalysis.ghazali.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.ghazali.author.alt": "أبو حامد الغزالي",
+                "PhiH.textAnalysis.ghazali.author.content": "الغزالي (1058-1111) هو أبو حامد محمد بن أحمد الغزالي الطوسي ولد في مدينة طوس في خراسان. اشتغل بالتدريس في المدرسة النظامية ببغداد بتكليف من نظام الملك. يُعدّ من كبار المفكرين في مجال علم الأخلاق والفلسفة والعقيدة والمنطق. من أشهر كتبه: إحياء علوم الدين، المنقذ من الضلال، مقاصد الفلاسفة، تهافت الفلاسفة، معيار العلم، محك النظر (منطق)، ميزان العمل، الاقتصاد في الاعتقاد، فضائح الباطنية، القسطاس المستقيم، فيصل التفرقة بين الإسلام والزندقة، التبر المسبوك في نصيحة الملوك، أيها الولد المحب، كيمياء السعادة.",
+                "PhiH.textAnalysis.ghazali.lexical.title": "الهوامش والمفاهيم",
+                "PhiH.textAnalysis.ghazali.lexical.item1": "<strong>\"ليس هذا هو الدوري الباطل\":</strong> يرفع الغزالي شُبهة حول المعايير التي يتحدّد بمقتضاها القول بالقياس الدوري.",
+                "PhiH.textAnalysis.ghazali.lexical.item2": "<strong>\"العلّة غير المعلول بالعدد\":</strong> يقصد بذلك أنّ السّحاب الأول غير السّحاب الثاني، رغم مماثلته له في النوع أي في كونهما سحاباً. وبالتالي لا يكون هناك دور في تفسير الشيء بنفسه.",
+                "PhiH.textAnalysis.ghazali.questions.title": "المهام",
+                "PhiH.textAnalysis.ghazali.questions.q1": "أعرّف دلالة القياس الدوري بالرجوع إلى أحد المعاجم الفلسفية.",
+                "PhiH.textAnalysis.ghazali.questions.q2": "أحدّد طبيعة القياس الدوري ومكوّناته المنطقية من خلال المثال الوارد في النص.",
+                "PhiH.textAnalysis.ghazali.questions.q3": "أبيّن الأسباب التي تقضي بفساد القياس الدوري وبطلانه منطقيا.",
+                "PhiH.textAnalysis.ghazali.questions.q4": "أعيّن ما يُعتبر قياسا دوريا من بين هذه الاستدلالات:",
+                "PhiH.textAnalysis.ghazali.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.ghazali.answers.a1.title": "الإجابة عن السؤال الأول:",
+                "PhiH.textAnalysis.ghazali.answers.a1.content": "<strong>القياس الدوري (Circular Reasoning):</strong> هو نوع من المغالطات المنطقية يحدث عندما يستخدم الاستدلال نتيجته الخاصة كمقدمة لإثبات تلك النتيجة. بمعنى آخر، يكون الاستنتاج معتمداً على مقدمة تفترض صحة ذلك الاستنتاج ذاته. يسمى أيضاً \"الدور\" أو \"المصادرة على المطلوب\" (Begging the Question).<br><br>في المنطق الفلسفي، يعتبر القياس الدوري قياساً فاسداً لأنه لا يقدم أي تقدم في المعرفة أو الإثبات، بل يعيد صياغة الفرضية نفسها بشكل مختلف.",
+                "PhiH.textAnalysis.ghazali.answers.a2.title": "الإجابة عن السؤال الثاني:",
+                "PhiH.textAnalysis.ghazali.answers.a2.content": "<strong>طبيعة القياس الدوري في مثال النص:</strong><br><br>يقدم الغزالي مثالاً توضيحياً لدورة تفسيرية:<br>1. <strong>السؤال الأول:</strong> لِمَ كان السحاب؟<br><strong>الجواب:</strong> لأنه كان بخاراً فكتف وانعقد.<br><br>2. <strong>السؤال الثاني:</strong> لِمَ كان البخار؟<br><strong>الجواب:</strong> لأن الأرض كانت ندية، فأثر الحر فيها فتبخرت أجزاء الرطوبة وتصعدت.<br><br>3. <strong>السؤال الثالث:</strong> لِمَ كانت الأرض ندية؟<br><strong>الجواب:</strong> لأنه كان مطر.<br><br>4. <strong>السؤال الرابع:</strong> لِمَ كان المطر؟<br><strong>الجواب:</strong> لأنه كان سحاب.<br><br><strong>التحليل:</strong> هنا نعود إلى النقطة الأولى (السحاب) مما يشكل دورة تفسيرية. <strong>مكوناته المنطقية:</strong><br>- <strong>العلاقة السببية:</strong> سلسلة من العلاقات السببية المترابطة.<br>- <strong>الدورية:</strong> العودة إلى نقطة البداية في السلسلة السببية.<br>- <strong>الافتقار إلى أساس مستقل:</strong> كل حلقة في السلسلة تعتمد على الحلقة التالية دون وجود أساس ثابت.",
+                "PhiH.textAnalysis.ghazali.answers.a3.title": "الإجابة عن السؤال الثالث:",
+                "PhiH.textAnalysis.ghazali.answers.a3.content": "<strong>أسباب فساد القياس الدوري وبطلانه منطقياً:</strong><br><br>1. <strong>عدم تقديم إثبات حقيقي:</strong> القياس الدوري لا يثبت شيئاً جديداً، بل يعيد صياغة الفرضية نفسها بشكل مختلف.<br><br>2. <strong>الافتقار إلى الأساس المستقل:</strong> في القياس الصحيح، يجب أن تكون المقدمات مستقلة عن النتيجة ومقدمة سابقة عليها في المعرفة.<br><br>3. <strong>خرق قاعدة عدم التناقض:</strong> عندما يكون الشيء هو علة نفسه، فهذا يتناقض مع مفهوم العلة الذي يفترض تمايزاً بين العلة والمعلول.<br><br>4. <strong>انعدام التقدم المعرفي:</strong> القياس الدوري لا يضيف أي معرفة جديدة، بل يدور في حلقة مفرغة.<br><br>5. <strong>التعارض مع مبدأ العلية:</strong> مبدأ العلية يفترض أن العلة تسبق المعلول وتختلف عنه، وهذا ما ينتهكه القياس الدوري.<br><br>6. <strong>عدم إمكانية التحقق التجريبي:</strong> يصعب التحقق من صحة القياسات الدورية لأنها تعتمد على افتراضات داخلية لا يمكن اختبارها خارج إطارها الدائري.",
+                "PhiH.textAnalysis.ghazali.answers.a4.title": "الإجابة عن السؤال الرابع:",
+                "PhiH.textAnalysis.ghazali.answers.a4.content": "<strong>الاستدلالات ومدى كونها قياساً دورياً:</strong><br><br>1. <strong>کل مجتهد ناجح - زید مجتهد - زيد ناجح.</strong><br>• <strong>النوع:</strong> قياس استثنائي صحيح.<br>• <strong>التحليل:</strong> هذا قياس منطقي سليم من الشكل الأول، لا يوجد فيه دور.<br><br>2. <strong>كل عاقل ذكيّ - الإنسان عاقل - الإنسان ذكيّ.</strong><br>• <strong>النوع:</strong> قياس حملي صحيح.<br>• <strong>التحليل:</strong> قياس سليم لا يحتوي على دور.<br><br>3. <strong>كل المحبين للخير أثرياء - كل السّعداء يحبون الخير - كل السعداء أثرياء.</strong><br>• <strong>النوع:</strong> قياس شرطي متصل.<br>• <strong>التحليل:</strong> هذا قياس صحيح منطقياً، ولا يعتبر دورياً.<br><br>4. <strong>كل إله غير فان - كل أزلي إله - كل أزلي غير فان.</strong><br>• <strong>النوع:</strong> <strong>قياس دوري محتمل.</strong><br>• <strong>التحليل:</strong> هذا القياس يحتاج إلى تحليل أعمق. إذا كان تعريف \"الإله\" مرتبطاً بصفة \"الأزلية\"، وصفة \"الأزلية\" مرتبطة بصفة \"عدم الفناء\"، وصفة \"عدم الفناء\" تعود لتعريف \"الإله\"، فقد نكون أمام قياس دوري. ولكن بشكل عام، هذا القياس يبدو ظاهرياً كقياس شرطي متصل سليم.<br><br><strong>الخلاصة:</strong> لا يوجد قياس دوري واضح في الأمثلة المقدمة. القياس الدوري الحقيقي يكون عندما يستخدم الاستدلال نتيجته كإحدى مقدماته بشكل واضح.",
+                "PhiH.textAnalysis.ghazali.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.ghazali.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.ghazali.analysis.thesis.content": "يوضح الغزالي في هذا النص مفهوم القياس الدوري ويقدم تمييزاً دقيقاً بين الدورية الباطلة والدورية الظاهرية. يؤكد أن القياس الدوري الباطل هو الذي يعود لتعليل الشيء بنفسه بعينه، وليس مجرد وجود سلسلة من العلل والمعلولات تعود إلى نقطة بداية مماثلة في النوع ولكن مختلفة في العدد. يقدم الغزالي هذا التمييز رداً على شبهة حول معايير تحديد القياس الدوري الباطل.",
+                "PhiH.textAnalysis.ghazali.analysis.mechanisms.title": "آليات التمييز بين الدورية الباطلة والظاهرية:",
+                "PhiH.textAnalysis.ghazali.analysis.mechanisms.content": "يعتمد الغزالي على عدة آليات للتمييز بين الدورية الباطلة والظاهرية:<br><br>1. <strong>تمييز الهوية العددية عن الهوية النوعية:</strong> يؤكد أن تعليل الشيء بنفسه بعينه (الهوية العددية) هو ما يشكل الدور الباطل، أما تعليله بشيء آخر من نفس النوع (الهوية النوعية) فلا يعتبر دوراً باطلاً.<br><br>2. <strong>فهم طبيعة السلسلة السببية:</strong> يوضح أن السلاسل السببية الطبيعية قد تعود إلى نقطة بداية مماثلة دون أن تكون دورية باطلة، لأن كل حلقة في السلسلة تختلف عن الأخرى رغم تشابهها النوعي.<br><br>3. <strong>التمييز بين التعليل الذاتي والتعليل بعلة خارجية:</strong> يرفض التعليل الذاتي (أن يكون الشيء علة لنفسه) ويقبل التعليل بعلة خارجية حتى لو كانت من نفس النوع.<br><br>4. <strong>الأخذ بعين الاعتبار الوسائط:</strong> يؤكد أن وجود وسائط في السلسلة السببية لا يغير من طبيعة الدور إذا كان هناك تعليل للشيء بنفسه.",
+                "PhiH.textAnalysis.ghazali.analysis.consequences.title": "نتائج وخطورة القياس الدوري الباطل:",
+                "PhiH.textAnalysis.ghazali.analysis.consequences.content": "- <strong>تعطيل المعرفة:</strong> القياس الدوري الباطل يعطل تقدم المعرفة لأنه لا يقدم أي إثبات جديد.<br><br>- <strong>تضليل الفكر:</strong> قد يوهم القياس الدوري بأنه يقدم تفسيراً أو إثباتاً بينما هو مجرد إعادة صياغة للفرضية.<br><br>- <strong>انهيار المنطق الاستدلالي:</strong> إذا قبلنا القياس الدوري، فإنه ينهي إمكانية البرهان المنطقي لأن أي قضية يمكن \"إثباتها\" بدائرة مغلقة.<br><br>- <strong>إعاقة البحث العلمي:</strong> في البحث العلمي، يؤدي القبول بالقياس الدوري إلى إعاقة التقدم لأن الباحثين قد يقبلون تفسيرات لا تضيف معرفة جديدة.<br><br>- <strong>تأسيس المعتقدات على أساس واه:</strong> يمكن استخدام القياس الدوري لتأسيس معتقدات دون تقديم أدلة حقيقية عليها.",
+                "PhiH.textAnalysis.ghazali.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.ghazali.analysis.significance.content": "يحمل تحليل الغزالي للقياس الدوري دلالات عميقة في الفلسفة والمنطق:<br><br>1. <strong>تطور الفكر المنطقي الإسلامي:</strong> يمثل النص تطوراً مهماً في الفكر المنطقي الإسلامي من خلال التحليل الدقيق للمغالطات المنطقية.<br><br>2. <strong>الجمع بين المنطق واللاهوت:</strong> يظهر كيف طبق المناطقة المسلمون المنطق الأرسطي على القضايا اللاهوتية والفلسفية.<br><br>3. <strong>التمييز بين الظاهر والجوهر:</strong> يؤكد على أهمية التمييز بين الظاهر المنطقي (السلسلة التي تعود إلى نقطة البداية) والجوهر المنطقي (تعليل الشيء بنفسه).<br><br>4. <strong>الأهمية المنهجية:</strong> يسلط الضوء على أهمية المنهج في البحث الفلسفي والعلمي، وضرورة تجنب المغالطات المنطقية.<br><br>5. <strong>العلاقة بين المنطق والعلوم الطبيعية:</strong> يوضح كيف يمكن تطبيق القواعد المنطقية على تفسير الظواهر الطبيعية.<br><br>6. <strong>الدروس المعاصرة:</strong> لا تزال مشكلة القياس الدوري ذات أهمية معاصرة في مختلف المجالات بما في ذلك العلوم الاجتماعية والنقاشات العامة.<br><br>هذا النص يمثل مساهمة مهمة في فهم أحد أهم أنواع المغالطات المنطقية وتوضيح شروط تحديدها بدقة."
+            }
+        };
+        
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    
+    <!-- Include the external translation file -->
+    <script src="scripts/translation.js"></script>
+    
+    <!-- Include PWA Handler -->
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

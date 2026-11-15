@@ -1082,527 +1082,1103 @@ const PhiH_Quotes = {
 			}
 		},
 		{
-    "id": "quote61",
-    "ar": {
-        "text": "\"المنطق هو أخلاق الفكر\"",
-        "author": "هنريش ريكرت",
-        "source": ""
-    },
-    "fr": {
-        "text": "\"La logique est la morale de la pensée\"",
-        "author": "Heinrich Rickert",
-        "source": ""
-    },
-    "en": {
-        "text": "\"Logic is the morality of thought\"",
-        "author": "Heinrich Rickert",
-        "source": ""
-    }
-},
-{
-    "id": "quote62",
-    "ar": {
-        "text": "\"لا يُمكن للاستدلال أن يكون صالحا إذا لم يوجد من البداية معيار حقيقيّ، ولا يُمكن للمعيار أن يكون حقيقيّا إذا لم يتمكّن الاستدلال من الفوز باقتناع الآخرين. وهكذا يسقط كلّ من الاستدلال والمعيار في الحلقة المفرغة.\"",
-        "author": "سكستوس أمبريكوس",
-        "source": ""
-    },
-    "fr": {
-        "text": "\"Le raisonnement ne peut être valide s'il n'existe pas de critère vrai dès le départ, et le critère ne peut être vrai si le raisonnement ne parvient pas à convaincre les autres. Ainsi, le raisonnement et le critère tombent dans un cercle vicieux.\"",
-        "author": "Sextus Empiricus",
-        "source": ""
-    },
-    "en": {
-        "text": "\"Reasoning cannot be valid if there is no true criterion from the start, and the criterion cannot be true if reasoning fails to win the conviction of others. Thus, both reasoning and criterion fall into a vicious circle.\"",
-        "author": "Sextus Empiricus",
-        "source": ""
-    }
-},
-{
-    "id": "quote63",
-    "ar": {
-        "text": "\"من لم تكن عنده معرفة بطبائع الألفاظ فهو جدير أن يغلِط إن هو تكلّم بشيء وإن هو أيضا سمعه.\"",
-        "author": "ابن رشد",
-        "source": ""
-    },
-    "fr": {
-        "text": "\"Celui qui ne connaît pas la nature des mots est susceptible de se tromper s'il parle de quelque chose et s'il l'entend.\"",
-        "author": "Averroès",
-        "source": ""
-    },
-    "en": {
-        "text": "\"He who does not know the nature of words is likely to err if he speaks about something and if he hears it.\"",
-        "author": "Averroes",
-        "source": ""
-    }
-},
-{
-    "id": "quote64",
-    "ar": {
-        "text": "\"لا ينبغي لنا أن نتسرّع بدعوى حبّ المعرفة الكونيّة إلى طرح أسئلة على أنفسنا وعلى الآخرين يغلب عليها السجال والتردّد بشأن مواضيع لا نَقدِر على تكوين أيّة فكرة واضحة ومتميّزة عنها في أذهاننا.\"",
-        "author": "جون لوك",
-        "source": ""
-    },
-    "fr": {
-        "text": "\"Nous ne devrions pas, sous prétexte d'aimer la connaissance universelle, nous précipiter à poser à nous-mêmes et aux autres des questions marquées par la dispute et l'hésitation sur des sujets dont nous ne pouvons former aucune idée claire et distincte dans nos esprits.\"",
-        "author": "John Locke",
-        "source": ""
-    },
-    "en": {
-        "text": "\"We should not, under the pretext of loving universal knowledge, rush to ask ourselves and others questions marked by dispute and hesitation about subjects of which we cannot form any clear and distinct idea in our minds.\"",
-        "author": "John Locke",
-        "source": ""
-    }
-},
-{
-    "id": "quote65",
-    "ar": {
-        "text": "\"ما من شيء إلاّ وهو موضوع نقاشات، وما من شيء إلا وتضاربت حوله آراء العارفين. وأبسط الأسئلة لا تُفلت من مجادلاتنا، ونحن عاجزون عن تقديم إجابة يقينية عن أكثر الأشياء أهميّة.\"",
-        "author": "دافيد هيوم",
-        "source": ""
-    },
-    "fr": {
-        "text": "\"Il n'y a rien qui ne soit sujet à des discussions, et rien sur quoi les opinions des connaisseurs n'aient divergé. Les questions les plus simples n'échappent pas à nos débats, et nous sommes incapables de fournir une réponse certaine sur les choses les plus importantes.\"",
-        "author": "David Hume",
-        "source": ""
-    },
-    "en": {
-        "text": "\"There is nothing that is not subject to discussions, and nothing about which the opinions of the knowledgeable have not clashed. The simplest questions do not escape our debates, and we are unable to provide a certain answer on the most important things.\"",
-        "author": "David Hume",
-        "source": ""
-    }
-},
-{
-    "id": "quote66",
-    "ar": {
-        "text": "\"إنّ المشاكل الحقيقيّة مُرّة المذاق في البداية، ولكنّ اللذّة إنّما يفوز بها من يقهر المرارة.\"",
-        "author": "آلان",
-        "source": ""
-    },
-    "fr": {
-        "text": "\"Les vrais problèmes sont amers au début, mais le plaisir est gagné par celui qui vainc l'amertume.\"",
-        "author": "Alain",
-        "source": ""
-    },
-    "en": {
-        "text": "\"True problems are bitter at first, but pleasure is won by the one who overcomes the bitterness.\"",
-        "author": "Alain",
-        "source": ""
-    }
-},
+			"id": "quote61",
+			"ar": {
+				"text": "\"المنطق هو أخلاق الفكر\"",
+				"author": "هنريش ريكرت",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"La logique est la morale de la pensée\"",
+				"author": "Heinrich Rickert",
+				"source": ""
+			},
+			"en": {
+				"text": "\"Logic is the morality of thought\"",
+				"author": "Heinrich Rickert",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote62",
+			"ar": {
+				"text": "\"لا يُمكن للاستدلال أن يكون صالحا إذا لم يوجد من البداية معيار حقيقيّ، ولا يُمكن للمعيار أن يكون حقيقيّا إذا لم يتمكّن الاستدلال من الفوز باقتناع الآخرين. وهكذا يسقط كلّ من الاستدلال والمعيار في الحلقة المفرغة.\"",
+				"author": "سكستوس أمبريكوس",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Le raisonnement ne peut être valide s'il n'existe pas de critère vrai dès le départ, et le critère ne peut être vrai si le raisonnement ne parvient pas à convaincre les autres. Ainsi, le raisonnement et le critère tombent dans un cercle vicieux.\"",
+				"author": "Sextus Empiricus",
+				"source": ""
+			},
+			"en": {
+				"text": "\"Reasoning cannot be valid if there is no true criterion from the start, and the criterion cannot be true if reasoning fails to win the conviction of others. Thus, both reasoning and criterion fall into a vicious circle.\"",
+				"author": "Sextus Empiricus",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote63",
+			"ar": {
+				"text": "\"من لم تكن عنده معرفة بطبائع الألفاظ فهو جدير أن يغلِط إن هو تكلّم بشيء وإن هو أيضا سمعه.\"",
+				"author": "ابن رشد",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Celui qui ne connaît pas la nature des mots est susceptible de se tromper s'il parle de quelque chose et s'il l'entend.\"",
+				"author": "Averroès",
+				"source": ""
+			},
+			"en": {
+				"text": "\"He who does not know the nature of words is likely to err if he speaks about something and if he hears it.\"",
+				"author": "Averroes",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote64",
+			"ar": {
+				"text": "\"لا ينبغي لنا أن نتسرّع بدعوى حبّ المعرفة الكونيّة إلى طرح أسئلة على أنفسنا وعلى الآخرين يغلب عليها السجال والتردّد بشأن مواضيع لا نَقدِر على تكوين أيّة فكرة واضحة ومتميّزة عنها في أذهاننا.\"",
+				"author": "جون لوك",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Nous ne devrions pas, sous prétexte d'aimer la connaissance universelle, nous précipiter à poser à nous-mêmes et aux autres des questions marquées par la dispute et l'hésitation sur des sujets dont nous ne pouvons former aucune idée claire et distincte dans nos esprits.\"",
+				"author": "John Locke",
+				"source": ""
+			},
+			"en": {
+				"text": "\"We should not, under the pretext of loving universal knowledge, rush to ask ourselves and others questions marked by dispute and hesitation about subjects of which we cannot form any clear and distinct idea in our minds.\"",
+				"author": "John Locke",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote65",
+			"ar": {
+				"text": "\"ما من شيء إلاّ وهو موضوع نقاشات، وما من شيء إلا وتضاربت حوله آراء العارفين. وأبسط الأسئلة لا تُفلت من مجادلاتنا، ونحن عاجزون عن تقديم إجابة يقينية عن أكثر الأشياء أهميّة.\"",
+				"author": "دافيد هيوم",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Il n'y a rien qui ne soit sujet à des discussions, et rien sur quoi les opinions des connaisseurs n'aient divergé. Les questions les plus simples n'échappent pas à nos débats, et nous sommes incapables de fournir une réponse certaine sur les choses les plus importantes.\"",
+				"author": "David Hume",
+				"source": ""
+			},
+			"en": {
+				"text": "\"There is nothing that is not subject to discussions, and nothing about which the opinions of the knowledgeable have not clashed. The simplest questions do not escape our debates, and we are unable to provide a certain answer on the most important things.\"",
+				"author": "David Hume",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote66",
+			"ar": {
+				"text": "\"إنّ المشاكل الحقيقيّة مُرّة المذاق في البداية، ولكنّ اللذّة إنّما يفوز بها من يقهر المرارة.\"",
+				"author": "آلان",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Les vrais problèmes sont amers au début, mais le plaisir est gagné par celui qui vainc l'amertume.\"",
+				"author": "Alain",
+				"source": ""
+			},
+			"en": {
+				"text": "\"True problems are bitter at first, but pleasure is won by the one who overcomes the bitterness.\"",
+				"author": "Alain",
+				"source": ""
+			}
+		},
         {
             "id": "quote67",
             "ar": {
                 "text": "\"ليس للحياة معنى قبليًا.\"",
                 "author": "جون بول سارتر",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"La vie n'a pas de sens a priori.\"",
                 "author": "Jean-Paul Sartre",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"Life has no meaning a priori.\"",
                 "author": "Jean-Paul Sartre",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote68",
             "ar": {
                 "text": "\"أشرّ ما في الدنيا أنّ الحياة عبث ولا أدري لعلّه خير ما فيها.\"",
                 "author": "محمود المسعدي",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"Le pire dans ce monde est que la vie est absurde, et je ne sais pas si c'est peut-être ce qu'il y a de meilleur.\"",
                 "author": "Mahmoud Messadi",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"The worst thing in the world is that life is absurd, and I don't know if that might be the best thing about it.\"",
                 "author": "Mahmoud Messadi",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote69",
             "ar": {
                 "text": "\"مِنِ الناس مَن لا يتساءل عن معنى الحياة، وإني لأغبطهم هذه البراءة.\"",
                 "author": "لوي آراغون",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"Il y a des gens qui ne s'interrogent pas sur le sens de la vie, et je les envie pour cette innocence.\"",
                 "author": "Louis Aragon",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"There are people who do not question the meaning of life, and I envy them for this innocence.\"",
                 "author": "Louis Aragon",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote70",
             "ar": {
                 "text": "\"إن للعقل البشري، في قسم من معارفه هذا القدر الفريد: أن يكون مُرْهَقا بأسئلة لا يمكنه تجنّبها. وبالفعل فإن هذه الأسئلة إنما تُفرَض على العقل بحكم طبيعته ذاتها، ولكن ليس بمستطاعه الإجابة عنها لأنها تتجاوز تماما مستطاعه.\"",
                 "author": "إمانويل كانط",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"La raison humaine a, dans une partie de ses connaissances, ce destin unique : être accablée de questions qu'elle ne peut éviter. En effet, ces questions lui sont imposées par sa propre nature, mais elle ne peut y répondre car elles dépassent complètement ses capacités.\"",
                 "author": "Emmanuel Kant",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"Human reason has, in one of its branches of knowledge, this unique destiny: to be burdened with questions it cannot avoid. Indeed, these questions are imposed upon it by its very nature, but it cannot answer them because they completely exceed its capacity.\"",
                 "author": "Immanuel Kant",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote71",
             "ar": {
                 "text": "\"لا تطرح الإنسانية على نفسها من الأسئلة إلاّ ما هي قادرة على حلّه.\"",
                 "author": "كارل ماركس",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"L'humanité ne se pose que les questions qu'elle est capable de résoudre.\"",
                 "author": "Karl Marx",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"Humanity only sets itself the problems it is capable of solving.\"",
                 "author": "Karl Marx",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote72",
             "ar": {
                 "text": "\"إن للمشكل دائما الحلَّ الذي هو به جدير، وذلك بحسب الطريقة التي يُطرح بها.\"",
                 "author": "جيل دولوز",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"Un problème a toujours la solution qu'il mérite, selon la manière dont il est posé.\"",
                 "author": "Gilles Deleuze",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"A problem always has the solution it deserves, according to the way it is posed.\"",
                 "author": "Gilles Deleuze",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote73",
             "ar": {
                 "text": "\"صناعة المنطق تُعْطي بالجملة القوانين الّتي شأنها أن تقوّم العقل وتسدّد الأنسان نحو طريق الصّواب.\"",
                 "author": "الفارابي",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"L'art de la logique donne en gros les lois qui servent à corriger la raison et à guider l'homme sur la voie de la vérité.\"",
                 "author": "Al-Farabi",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"The art of logic provides in general the laws that serve to correct reason and guide man on the path of truth.\"",
                 "author": "Al-Farabi",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote74",
             "ar": {
                 "text": "\"إن المتوحّش هو من يعتقد في وجود الوحشية\"",
                 "author": "كلود ليفي ستروس",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"Le sauvage est celui qui croit à la sauvagerie\"",
                 "author": "Claude Lévi-Strauss",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"The savage is the one who believes in savagery\"",
                 "author": "Claude Lévi-Strauss",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote75",
             "ar": {
                 "text": "\"أنخرط في جمعية مكافحة التمييز العنصري شرط أن تأخذ في الاعتبار كلّ أشكال التمييز\"",
                 "author": "بيار ديسبروغ",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"J'adhère à une association de lutte contre la discrimination raciale à condition qu'elle prenne en compte toutes les formes de discrimination\"",
                 "author": "Pierre Desproges",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"I join an anti-racial discrimination association provided that it takes into account all forms of discrimination\"",
                 "author": "Pierre Desproges",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote76",
             "ar": {
                 "text": "\"الأفيون ينوّم لأنّ له مفعولا تنويميًا\"",
                 "author": "موليار",
                 "source": "طبيب رغم أنفه"
-            },
+			},
             "fr": {
                 "text": "\"L'opium endort parce qu'il a une vertu soporifique\"",
                 "author": "Molière",
                 "source": "Le Médecin malgré lui"
-            },
+			},
             "en": {
                 "text": "\"Opium induces sleep because it has a soporific virtue\"",
                 "author": "Molière",
                 "source": "The Doctor in Spite of Himself"
-            }
-        },
+			}
+		},
         {
             "id": "quote77",
             "ar": {
                 "text": "\"يمكن أن تكون للمنطق فائدة عظيمة شريطة أن ندخُله ثم نغادره\"",
                 "author": "أمبرتو إيكو",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"La logique peut être d'une grande utilité à condition d'y entrer puis d'en sortir\"",
                 "author": "Umberto Eco",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"Logic can be of great use provided we enter it and then leave it\"",
                 "author": "Umberto Eco",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote78",
             "ar": {
                 "text": "\"إنّ للمنطق هو الآخر أوهامه ولكنّها أشدّ صلابة\"",
                 "author": "أمبرتو إيكو",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"La logique a elle aussi ses illusions mais elles sont plus solides\"",
                 "author": "Umberto Eco",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"Logic too has its illusions but they are more solid\"",
                 "author": "Umberto Eco",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote79",
             "ar": {
                 "text": "\"إنّ الاستنتاجات الفاسدة وما يتولّد عنها من أخطاء في مستوى السّلوك هي بكلّ أسف متواترة عند أغلب النّاس مهما تكن درجة ثقافتهم\"",
                 "author": "جون ستيوارت ميل",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"Les conclusions erronées et les erreurs comportementales qui en découlent sont malheureusement fréquentes chez la plupart des gens, quel que soit leur niveau d'instruction\"",
                 "author": "John Stuart Mill",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"Erroneous conclusions and the resulting behavioral errors are unfortunately frequent among most people, regardless of their level of education\"",
                 "author": "John Stuart Mill",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote80",
             "ar": {
                 "text": "\"أن نحلم بسيادة العدل حيث أصبحت الغلبة بعدُ للمال فليس ذلك أقلّ مفارقاتنا.\"",
                 "author": "ألفرید کابیس",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"Rêver de la souveraineté de la justice là où l'argent est désormais dominant n'est pas la moindre de nos contradictions.\"",
                 "author": "Alfred Capus",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"To dream of the sovereignty of justice where money has now become dominant is not the least of our paradoxes.\"",
                 "author": "Alfred Capus",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote81",
             "ar": {
                 "text": "\"لديّ أسئلة على جميع أجوبتكم\"",
                 "author": "وودي آلين",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"J'ai des questions sur toutes vos réponses\"",
                 "author": "Woody Allen",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"I have questions about all your answers\"",
                 "author": "Woody Allen",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote82",
             "ar": {
                 "text": "\"لا أبحث عن معرفة الأجوبة وإنّما عن فهم الأسئلة\"",
                 "author": "كونفشيوس",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"Je ne cherche pas à connaître les réponses, mais à comprendre les questions\"",
                 "author": "Confucius",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"I do not seek to know the answers, but to understand the questions\"",
                 "author": "Confucius",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote83",
             "ar": {
                 "text": "\"إن حسن طرح الأسئلة فنّ قائم بذاته يتوقّف فيه كلّ شيء بطبيعة الحال، على الإجابة التي نريد الحصول عليها\"",
                 "author": "أندري فروسار",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"L'art de bien poser les questions est un art en soi où tout dépend naturellement de la réponse que l'on veut obtenir\"",
                 "author": "André Frossard",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"The art of asking good questions is an art in itself where everything naturally depends on the answer we want to obtain\"",
                 "author": "André Frossard",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote84",
             "ar": {
                 "text": "\"إنّ طريق المفارقة هو طريق الحقيقة.\"",
                 "author": "أوسكار وايلد",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"Le chemin de la paradoxe est le chemin de la vérité.\"",
                 "author": "Oscar Wilde",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"The way of paradox is the way of truth.\"",
                 "author": "Oscar Wilde",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote85",
             "ar": {
                 "text": "\"السفسطائيّ هو الّذي يتراءى بالحكمة ويدّعي أنّه مبرهن ولا يكون كذلك بل أكثر ما يناله أن يُظنّ به ذلك.\"",
                 "author": "ابن سينا",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"Le sophiste est celui qui paraît sage et prétend être démontré sans l'être, et au mieux, on le soupçonne de l'être.\"",
                 "author": "Avicenne",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"The sophist is the one who appears wise and claims to be proven without being so, and at best, he is suspected of being so.\"",
                 "author": "Avicenna",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote86",
             "ar": {
                 "text": "\"إنّ ما يحيّرنا في علاقتنا بالكذّابين هو أنّنا لا يمكن أن نكون أبدا على يقين من أنّهم سوف لن يقولوا الحقيقة.\"",
                 "author": "أندري فروسار",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"Ce qui nous déroute dans notre relation avec les menteurs, c'est que nous ne pouvons jamais être sûrs qu'ils ne diront pas la vérité.\"",
                 "author": "André Frossard",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"What baffles us in our relationship with liars is that we can never be sure that they will not tell the truth.\"",
                 "author": "André Frossard",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote87",
             "ar": {
                 "text": "\"أُفضِّل أن أكون إنسان مفارقات على أن أكون إنسان أحكام مسبقة.\"",
                 "author": "جون جاك روسو",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"Je préfère être un homme de paradoxes qu'un homme de préjugés.\"",
                 "author": "Jean-Jacques Rousseau",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"I prefer to be a man of paradoxes than a man of prejudices.\"",
                 "author": "Jean-Jacques Rousseau",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote88",
             "ar": {
                 "text": "\"كل لفظ هو حكم مسبق، وفي ذلك يكمن خطر اللّغة على الفكر.\"",
                 "author": "نيتشه",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"Chaque mot est un préjugé, et là réside le danger du langage pour la pensée.\"",
                 "author": "Nietzsche",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"Every word is a prejudice, and therein lies the danger of language for thought.\"",
                 "author": "Nietzsche",
                 "source": ""
-            }
-        },
+			}
+		},
         {
             "id": "quote89",
             "ar": {
                 "text": "\"المفارقة رأي يعيش من إغراءاته على حساب الحقيقة.\"",
                 "author": "روني أوبلديا",
                 "source": ""
-            },
+			},
             "fr": {
                 "text": "\"Le paradoxe est une opinion qui vit de ses séductions aux dépens de la vérité.\"",
                 "author": "René Obélédia",
                 "source": ""
-            },
+			},
             "en": {
                 "text": "\"Paradox is an opinion that lives off its seductions at the expense of truth.\"",
                 "author": "René Obélédia",
                 "source": ""
-            }
-        }
+			}
+		},
+		{
+			"id": "quote90",
+			"ar": {
+				"text": "\"للحلَّ دوماً الحقيقة الجديدة به طبقاً للمشكل الذي يُجيبُ عنه، وللمشكل الحلَّ الجديد به طبقاً لحقيقته الخاصة أي طبقاً لمناه.\"",
+				"author": "جيل دولوز",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Une solution a toujours la vérité qu’elle mérite d’après le problème auquel elle répond, et un problème a toujours la solution qu’il mérite d’après sa vérité propre, c’est-à-dire d’après son sens.\"",
+				"author": "Gilles Deleuze",
+				"source": ""
+			},
+			"en": {
+				"text": "\"A solution always has the truth it deserves according to the problem to which it responds, and a problem always has the solution it deserves according to its own truth—that is, according to its sense.\"",
+				"author": "Gilles Deleuze",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote91",
+			"ar": {
+				"text": "\"إنَّ الأسئلة في الفلسفة أهمَّ من الأجوبة وكل جواب يتحوَّل إلى سؤال جديد.\"",
+				"author": "كارل يسبرز",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Les questions, en philosophie, sont plus importantes que les réponses, et toute réponse se transforme en une nouvelle question.\"",
+				"author": "Karl Jaspers",
+				"source": ""
+			},
+			"en": {
+				"text": "\"Questions in philosophy are more important than answers, and every answer turns into a new question.\"",
+				"author": "Karl Jaspers",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote92",
+			"ar": {
+				"text": "\"إنَّ الفلسفة هي علم المشكلات التي تمَّ حلها.\"",
+				"author": "ليون برونشفيك",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"La philosophie est la science des problèmes résolus.\"",
+				"author": "Léon Brunschvicg",
+				"source": ""
+			},
+			"en": {
+				"text": "\"Philosophy is the science of problems that have been solved.\"",
+				"author": "Léon Brunschvicg",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote93",
+			"ar": {
+				"text": "\"إن الحيرة هي حياة الروح.\"",
+				"author": "هيغل",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"La perplexité est la vie de l’esprit.\"",
+				"author": "Hegel",
+				"source": ""
+			},
+			"en": {
+				"text": "\"Perplexity is the life of the spirit.\"",
+				"author": "Hegel",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote94",
+			"ar": {
+				"text": "\"يجعل الغباء من ترسانه حقائقه نظام وقاية ضد نهشات الحقيقة.\"",
+				"author": "هـ. قرونيه",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"La bêtise fait de ses vérités un arsenal, un système de protection contre les morsures de la vérité.\"",
+				"author": "H. Gournier",
+				"source": ""
+			},
+			"en": {
+				"text": "\"Stupidity makes its truths into an arsenal, a system of protection against the bites of truth.\"",
+				"author": "H. Gournier",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote95",
+			"ar": {
+				"text": "\"إن المسألة هي مبدأ التفكير ذاته، مبدؤه الفلسفي بامتياز.\"",
+				"author": "م. ميار",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Le problème est le principe même de la pensée, son principe philosophique par excellence.\"",
+				"author": "M. Mayyār",
+				"source": ""
+			},
+			"en": {
+				"text": "\"The problem is the very principle of thought, its philosophical principle par excellence.\"",
+				"author": "M. Mayyār",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote96",
+			"ar": {
+				"text": "\"إن الجهد الذي يبذله المرء للحفاظ على بقائه هو الأساس الأوّل والأوحد للفضيلة. لأنه لا يوجد مبدأ آخر يمكن اعتباره سابقا عليه.\"",
+				"author": "سينوزا",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"L’effort que l’homme fait pour conserver son être est le premier et l’unique fondement de la vertu. Car aucun autre principe ne peut être considéré comme antérieur à celui-là.\"",
+				"author": "Spinoza",
+				"source": ""
+			},
+			"en": {
+				"text": "\"The effort a person makes to preserve his being is the first and only foundation of virtue. For no other principle can be considered prior to it.\"",
+				"author": "Spinoza",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote97",
+			"ar": {
+				"text": "\"يمكننا أن نتحدث عن تأسيس للتفكير الفردي انطلاقا من كوجيتو ديكارت غير أن هذا التأسيس لا يخرج عن سلطة الآخر.\"",
+				"author": "ميشال فوكو",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"On peut parler d’un fondement de la pensée individuelle à partir du cogito de Descartes, mais ce fondement ne sort pas de la puissance de l’Autre.\"",
+				"author": "Michel Foucault",
+				"source": ""
+			},
+			"en": {
+				"text": "\"We can speak of a foundation of individual thought starting from Descartes’ cogito, but this foundation does not escape the power of the Other.\"",
+				"author": "Michel Foucault",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote98",
+			"ar": {
+				"text": "\"الحدّ عنوان للذات وبيان لها فيجب أن يقوم في النفس صورة معقولة مساوية للصورة الموجودة بتمامها.\"",
+				"author": "الشهرستاني",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"La définition (ḥadd) est un titre de l’essence et une exposition de celle-ci ; il faut donc qu’il se forme dans l’âme une image intelligible égale à l’image existante dans sa totalité.\"",
+				"author": "Al-Shahrastānī",
+				"source": ""
+			},
+			"en": {
+				"text": "\"Definition (ḥadd) is a title of the essence and an exposition of it; therefore there must arise in the soul a rational image equal to the image existing in its entirety.\"",
+				"author": "Al-Shahrastānī",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote99",
+			"ar": {
+				"text": "\"التعريف الدقيق مفيد كي يفهمنا الآخرون، وعدم التعريف ضروري لمواصلة الكلام دون مضابقة.\"",
+				"author": "ريمي دي قورمون",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"La définition précise est utile pour que les autres nous comprennent ; l’absence de définition est nécessaire pour continuer à parler sans gêne.\"",
+				"author": "Remy de Gourmont",
+				"source": ""
+			},
+			"en": {
+				"text": "\"Precise definition is useful so that others understand us; not defining is necessary in order to continue speaking without embarrassment.\"",
+				"author": "Remy de Gourmont",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote100",
+			"ar": {
+				"text": "\"أما الرسم، فالرسم التام هو قول مؤلف من جنس شيء وأعراضه اللازمة له حتى يساويه، والرسم مطلقا هو قول يعرف الشيء تعريفا غير ذاتي ولكنه خاص أو قول مميّز للشيء عما سواه لا بالذات.\"",
+				"author": "ابن سينا",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Quant à la description (rasm), la description parfaite est un énoncé composé du genre d’une chose et de ses accidents nécessaires, jusqu’à l’égaler ; et la description en général est un énoncé qui fait connaître la chose par une définition non essentielle, mais par une propriété, ou un énoncé qui distingue la chose de ce qui est autre qu’elle, non par l’essence.\"",
+				"author": "Avicenne",
+				"source": ""
+			},
+			"en": {
+				"text": "\"As for description (rasm), the complete description is a statement composed of the genus of a thing and its necessary accidents so as to equal it; and description absolutely is a statement that makes a thing known by a non-essential definition, but by a property, or a statement distinguishing the thing from others not by essence.\"",
+				"author": "Avicenna",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote101",
+			"ar": {
+				"text": "\"إن العلم إما تصوّر وسبيل معرفته الحد، وإما تصديق وسبيل معرفته البرهان.\"",
+				"author": "الغزالي",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"La science est soit conception (taṣawwur), et sa voie est la définition, soit assentiment (taṣdīq), et sa voie est la démonstration.\"",
+				"author": "Al-Ghazālī",
+				"source": ""
+			},
+			"en": {
+				"text": "\"Knowledge is either conception (taṣawwur), and its path is definition, or assent (taṣdīq), and its path is demonstration.\"",
+				"author": "Al-Ghazālī",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote102",
+			"ar": {
+				"text": "\"أن نعرف هو أن نحد.\"",
+				"author": "أوسكار وايلد",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Connaître, c’est définir.\"",
+				"author": "Oscar Wilde",
+				"source": ""
+			},
+			"en": {
+				"text": "\"To know is to define.\"",
+				"author": "Oscar Wilde",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote103",
+			"ar": {
+				"text": "\"إنَّ ما يعلَّمه لنا المفهوم هو ما يكشف التاريخ عنه بنفس الضرورة.\"",
+				"author": "هيغل",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Ce que le concept nous enseigne est ce que l’histoire révèle avec la même nécessité.\"",
+				"author": "Hegel",
+				"source": ""
+			},
+			"en": {
+				"text": "\"What the concept teaches us is what history reveals with the same necessity.\"",
+				"author": "Hegel",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote104",
+			"ar": {
+				"text": "\"إنَّ فكرة الدائرة ليست مستديرة.\"",
+				"author": "سينوزا",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"L’idée du cercle n’est pas ronde.\"",
+				"author": "Spinoza",
+				"source": ""
+			},
+			"en": {
+				"text": "\"The idea of a circle is not round.\"",
+				"author": "Spinoza",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote105",
+			"ar": {
+				"text": "\"لا يوجد مفهوم بسيط، لكل مفهوم مكوناته التي يعرف بها.\"",
+				"author": "جيل دولوز",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Il n’y a pas de concept simple ; tout concept a ses composantes par lesquelles il se connaît.\"",
+				"author": "Gilles Deleuze",
+				"source": ""
+			},
+			"en": {
+				"text": "\"There is no simple concept; every concept has its components by which it is known.\"",
+				"author": "Gilles Deleuze",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote106",
+			"ar": {
+				"text": "\"العقل ليس معطى كاملا والمعقولية ليست معزولة عمّا في التجربة من تنوّع.\"",
+				"author": "مرلوبونتي",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"La raison n’est pas donnée toute faite, et la rationalité n’est pas isolée de la diversité de l’expérience.\"",
+				"author": "Merleau-Ponty",
+				"source": ""
+			},
+			"en": {
+				"text": "\"Reason is not given complete, and rationality is not isolated from the diversity in experience.\"",
+				"author": "Merleau-Ponty",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote107",
+			"ar": {
+				"text": "\"يكمن فن التأثير في القبول بقدر ما يكمن في الإقناع.\"",
+				"author": "بسكال",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"L’art d’influencer réside autant dans l’acceptation que dans la persuasion.\"",
+				"author": "Pascal",
+				"source": ""
+			},
+			"en": {
+				"text": "\"The art of influence lies as much in acceptance as in persuasion.\"",
+				"author": "Pascal",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote108",
+			"ar": {
+				"text": "\"لا داعي للمناقشة في غياب مبادئ مشتركة.\"",
+				"author": "كونفشيوس",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Il ne sert à rien de discuter en l’absence de principes communs.\"",
+				"author": "Confucius",
+				"source": ""
+			},
+			"en": {
+				"text": "\"There is no point in discussing in the absence of shared principles.\"",
+				"author": "Confucius",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote109",
+			"ar": {
+				"text": "\"إذا بدأ لأي منكم أنَّ النتائج التي أصلُ إليها غير صحيحة يجب عليه التدخل ليدحض قولٍ لأني لا أتحدث عن معرفة مسبقة وإنما أنا باحث مثلكم.\"",
+				"author": "أفلاطون",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Si l’un de vous estime que les conclusions auxquelles j’arrive sont fausses, il doit intervenir pour réfuter une affirmation, car je ne parle pas à partir d’un savoir préalable ; je suis un chercheur comme vous.\"",
+				"author": "Platon",
+				"source": ""
+			},
+			"en": {
+				"text": "\"If any of you thinks that the conclusions I reach are incorrect, he must intervene to refute a statement, for I do not speak from prior knowledge; I am a researcher like you.\"",
+				"author": "Plato",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote110",
+			"ar": {
+				"text": "\"يقول الفكر لنفسه لا.\"",
+				"author": "آلان",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"La pensée se dit non à elle-même.\"",
+				"author": "Alain",
+				"source": ""
+			},
+			"en": {
+				"text": "\"Thought says no to itself.\"",
+				"author": "Alain",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote111",
+			"ar": {
+				"text": "\"هذه دفعة على الحساب قبل أن أقرأ الكتاب.\"",
+				"author": "أحد شيوخ الزيتونة",
+				"source": "رد على كتاب «امرأنا في الشريعة والمجتمع» للطاهر الحداد"
+			},
+			"fr": {
+				"text": "\"« Ceci est un acompte avant que je lise le livre. »\"",
+				"author": "Un des cheikhs de la Zitouna",
+				"source": "Réponse au livre « Notre femme dans la charia et la société » de Tahar Haddad"
+			},
+			"en": {
+				"text": "\"“This is an advance payment before I read the book.”\"",
+				"author": "One of the Sheikhs of Zitouna",
+				"source": "Response to the book “Our Woman in Sharia and Society” by al-Tahir al-Haddad"
+			}
+		},
+		{
+			"id": "quote112",
+			"ar": {
+				"text": "\"لا شك أن الحوار يستوجب لا فقط أن نجيب عما هو حق بل فضلا عن ذلك ألا نؤسس جوابنا إلا على ما يعترف مخاطبنا بأنه حق.\"",
+				"author": "أفلاطون",
+				"source": "مينون، 75 cd"
+			},
+			"fr": {
+				"text": "\"Assurément, le dialogue exige non seulement que nous répondions ce qui est vrai, mais encore que nous n’appuyions notre réponse que sur ce que notre interlocuteur reconnaît comme vrai.\"",
+				"author": "Platon",
+				"source": "Ménon, 75c–d"
+			},
+			"en": {
+				"text": "\"There is no doubt that dialogue requires not only that we answer what is true, but moreover that we base our answer only on what our interlocutor acknowledges as true.\"",
+				"author": "Plato",
+				"source": "Meno, 75c–d"
+			}
+		},
+		{
+			"id": "quote113",
+			"ar": {
+				"text": "\"ينبغي أن يكون للمبادئ شرطان: الأول هو أن تكون من الوضوح والتمييز بحيث لا يمكن للفكر البشري أن يشلَّ في حقيقتها... والثاني هو أن تتوقف عليها معرفة الأشياء الأخرى.\"",
+				"author": "ديكارت",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Les principes doivent avoir deux conditions : la première, qu’ils soient si clairs et si distincts que l’esprit humain ne puisse douter de leur vérité… et la seconde, que la connaissance des autres choses en dépende.\"",
+				"author": "Descartes",
+				"source": ""
+			},
+			"en": {
+				"text": "\"Principles must have two conditions: the first is that they be so clear and distinct that the human mind cannot be in doubt about their truth… and the second is that the knowledge of other things depend on them.\"",
+				"author": "Descartes",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote114",
+			"ar": {
+				"text": "\"ليس هناك عنصر أوَّل ينبغي تأويله وينطلق منه التأويل، لأن العناصر كلها تكون في الحقيقة تأويلاً.\"",
+				"author": "فوكو",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Il n’y a pas d’élément premier à interpréter dont partirait l’interprétation, car tous les éléments sont en réalité déjà des interprétations.\"",
+				"author": "Foucault",
+				"source": ""
+			},
+			"en": {
+				"text": "\"There is no first element to be interpreted from which interpretation starts, because all elements are in fact already interpretations.\"",
+				"author": "Foucault",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote115",
+			"ar": {
+				"text": "\"ليس لي إلا أن أستشير نفسي حول ما أريد فعله: فكل ما أشعر أنه خير فهو خير، وكل ما أشعر أنه شرّ فهو شرّ.\"",
+				"author": "روسو",
+				"source": "إميل"
+			},
+			"fr": {
+				"text": "\"Je n’ai qu’à me consulter sur ce que je veux faire : tout ce que je sens être bien est bien, et tout ce que je sens être mal est mal.\"",
+				"author": "Rousseau",
+				"source": "Émile"
+			},
+			"en": {
+				"text": "\"I have only to consult myself about what I want to do: whatever I feel to be good is good, and whatever I feel to be evil is evil.\"",
+				"author": "Rousseau",
+				"source": "Emile"
+			}
+		},
+		{
+			"id": "quote116",
+			"ar": {
+				"text": "\"... لا ينبغي البحث عن مبدأ الواجب، هنا، في طبيعة الإنسان، ولا في الظروف التي أحاطت بوجوده في هذا العالم، وإنما ينبغي البحث عنه قبلياً في مفاهيم العقل المحض.\"",
+				"author": "كانط",
+				"source": "أسس ميتافيزيقا الأخلاق"
+			},
+			"fr": {
+				"text": "\"… il ne faut pas chercher ici le principe du devoir dans la nature humaine, ni dans les circonstances où l’homme se trouve placé dans ce monde, mais a priori dans les concepts de la raison pure.\"",
+				"author": "Kant",
+				"source": "Fondements de la métaphysique des mœurs"
+			},
+			"en": {
+				"text": "\"… the principle of duty should not be sought here in human nature, nor in the circumstances surrounding man’s existence in this world, but should be sought a priori in the concepts of pure reason.\"",
+				"author": "Kant",
+				"source": "Groundwork of the Metaphysics of Morals"
+			}
+		},
+		{
+			"id": "quote117",
+			"ar": {
+				"text": "\"أن يكون حكم ما خاطنا فليس ذلك في رأينا حجة ضده... الأهم من ذلك هو أن نعرف إلى أي حد يخدم الحياة.\"",
+				"author": "نيتشه",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Qu’un jugement nous soit hostile n’est pas, à nos yeux, un argument contre lui… Le plus important est de savoir dans quelle mesure il sert la vie.\"",
+				"author": "Nietzsche",
+				"source": ""
+			},
+			"en": {
+				"text": "\"That a judgment is hostile to us is not, in our view, an argument against it… More important is to know to what extent it serves life.\"",
+				"author": "Nietzsche",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote118",
+			"ar": {
+				"text": "\"أن نؤسس هو أن نردَّ ما نعرفه إلى ما نجهله.\"",
+				"author": "هيبار غروني",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Fonder, c’est ramener ce que nous savons à ce que nous ignorons.\"",
+				"author": "Hypparque Gournier",
+				"source": ""
+			},
+			"en": {
+				"text": "\"To found is to reduce what we know to what we do not know.\"",
+				"author": "Hypparque Gournier",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote119",
+			"ar": {
+				"text": "\"على الجميع أي يتفقوا أن القانون كي تكون له قيمة اخلاقية أي كي يوسَّس الواجب لا بدَّ أن يؤدَّي إلى ضرورة مطلقة.\"",
+				"author": "إ. كانط",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Tous doivent convenir que la loi, pour avoir une valeur morale, c’est-à-dire pour fonder le devoir, doit conduire à une nécessité absolue.\"",
+				"author": "Kant",
+				"source": ""
+			},
+			"en": {
+				"text": "\"Everyone must agree that law, in order to have moral value—that is, in order to ground duty—must lead to an absolute necessity.\"",
+				"author": "Kant",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote120",
+			"ar": {
+				"text": "\"إن ما يسميه الفلاسفة «تأسيس الأخلاق»... لم يكن في الحقيقة إلا شكلا متحذلقا من الاعتقاد الساذج في الأخلاق السائدة.\"",
+				"author": "نيتشه",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"Ce que les philosophes appellent « le fondement de la morale »… n’était en réalité qu’une forme pédante de la croyance naïve à la morale dominante.\"",
+				"author": "Nietzsche",
+				"source": ""
+			},
+			"en": {
+				"text": "\"What philosophers call “the foundation of morality”… was in reality only a pedantic form of naive belief in the prevailing morality.\"",
+				"author": "Nietzsche",
+				"source": ""
+			}
+		},
+		{
+			"id": "quote121",
+			"ar": {
+				"text": "\"لا تهتم الفلسفة بالحقائق الجزئية بل بأساسها.\"",
+				"author": "جان لاكروا",
+				"source": ""
+			},
+			"fr": {
+				"text": "\"La philosophie ne s’intéresse pas aux faits particuliers, mais à leur fondement.\"",
+				"author": "Jean Lacroix",
+				"source": ""
+			},
+			"en": {
+				"text": "\"Philosophy is not concerned with particular facts but with their foundation.\"",
+				"author": "Jean Lacroix",
+				"source": ""
+			}
+		}
 	],
     "section_title": {
         "ar": "شواهد ونصوص ذات صلة",

@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Philosophy Learning Hub</title>
-    
-    <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#6c5ce7">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
-    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
-    
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles/main.css">
-    
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="manifest.json">
-    
-    <style>
-        /* Purple-Gold Philosophy Theme */
-        :root {
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Philosophy Learning Hub</title>
+		
+		<!-- PWA Meta Tags -->
+		<meta name="theme-color" content="#6c5ce7">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="default">
+		<meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+		<link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+		
+		<!-- Link to external CSS -->
+		<link rel="stylesheet" href="styles/main.css">
+		
+		<!-- Web App Manifest -->
+		<link rel="manifest" href="manifest.json">
+		
+		<style>
+			/* Purple-Gold Philosophy Theme */
+			:root {
             --primary-color: #6c5ce7;
             --secondary-color: #fdcb6e;
             --accent-color: #a29bfe;
@@ -40,9 +40,9 @@
             --gradient-secondary: linear-gradient(135deg, #fdcb6e 0%, #f9c74f 100%);
             --gradient-purple: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
             --gradient-gold: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
-        }
-        
-        [data-theme="dark"] {
+			}
+			
+			[data-theme="dark"] {
             --primary-color: #7c6ef7;
             --secondary-color: #ffd700;
             --accent-color: #b8b3ff;
@@ -61,17 +61,17 @@
             --gradient-secondary: linear-gradient(135deg, #ffd700 0%, #fdcb6e 100%);
             --gradient-purple: linear-gradient(135deg, #b8b3ff 0%, #7c6ef7 100%);
             --gradient-gold: linear-gradient(135deg, #ffeaa7 0%, #ffd700 100%);
-        }
-
-        /* Homepage specific styles */
-        .PhiH-homepage {
+			}
+			
+			/* Homepage specific styles */
+			.PhiH-homepage {
             min-height: 100vh;
             background: var(--background-color);
             display: flex;
             flex-direction: column;
-        }
-
-        .PhiH-homepage-main {
+			}
+			
+			.PhiH-homepage-main {
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -79,9 +79,9 @@
             align-items: center;
             padding: 2rem;
             text-align: center;
-        }
-
-        .PhiH-homepage-title {
+			}
+			
+			.PhiH-homepage-title {
             font-size: 3.5rem;
             margin-bottom: 0.5rem;
             color: var(--heading-color);
@@ -90,24 +90,24 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-
-        .PhiH-homepage-subtitle {
+			}
+			
+			.PhiH-homepage-subtitle {
             font-size: 1.5rem;
             margin-bottom: 3rem;
             color: var(--text-color);
             max-width: 600px;
-        }
-
-        .PhiH-homepage-cards {
+			}
+			
+			.PhiH-homepage-cards {
             display: flex;
             gap: 2rem;
             flex-wrap: wrap;
             justify-content: center;
             margin-bottom: 3rem;
-        }
-
-        .PhiH-homepage-card {
+			}
+			
+			.PhiH-homepage-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
@@ -123,9 +123,9 @@
             border: 1px solid var(--border-color);
             position: relative;
             overflow: hidden;
-        }
-
-        .PhiH-homepage-card::before {
+			}
+			
+			.PhiH-homepage-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -133,48 +133,48 @@
             right: 0;
             height: 6px;
             background: var(--gradient-primary);
-        }
-
-        .PhiH-homepage-card.secondary::before {
+			}
+			
+			.PhiH-homepage-card.secondary::before {
             background: var(--gradient-secondary);
-        }
-
-        .PhiH-homepage-card.purple::before {
+			}
+			
+			.PhiH-homepage-card.purple::before {
             background: var(--gradient-purple);
-        }
-
-        .PhiH-homepage-card:hover {
+			}
+			
+			.PhiH-homepage-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-
-        .PhiH-homepage-card-icon {
+			}
+			
+			.PhiH-homepage-card-icon {
             font-size: 4rem;
             margin-bottom: 1.5rem;
             color: var(--primary-color);
-        }
-
-        .PhiH-homepage-card.secondary .PhiH-homepage-card-icon {
+			}
+			
+			.PhiH-homepage-card.secondary .PhiH-homepage-card-icon {
             color: var(--secondary-color);
-        }
-
-        .PhiH-homepage-card.purple .PhiH-homepage-card-icon {
+			}
+			
+			.PhiH-homepage-card.purple .PhiH-homepage-card-icon {
             color: #a29bfe;
-        }
-
-        .PhiH-homepage-card-title {
+			}
+			
+			.PhiH-homepage-card-title {
             font-size: 1.8rem;
             margin-bottom: 1rem;
             color: var(--heading-color);
-        }
-
-        .PhiH-homepage-card-description {
+			}
+			
+			.PhiH-homepage-card-description {
             color: var(--text-color);
             line-height: 1.6;
-        }
-
-        /* Modal styles for homepage */
-        .PhiH-homepage-modal {
+			}
+			
+			/* Modal styles for homepage */
+			.PhiH-homepage-modal {
             display: none;
             position: fixed;
             z-index: 1000;
@@ -185,9 +185,9 @@
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.8);
             animation: fadeIn 0.3s ease;
-        }
-
-        .PhiH-homepage-modal-content {
+			}
+			
+			.PhiH-homepage-modal-content {
             background-color: var(--card-bg);
             margin: 5% auto;
             padding: 2rem;
@@ -199,17 +199,17 @@
             border-top: 6px solid var(--primary-color);
             max-height: 80vh;
             overflow-y: auto;
-        }
-
-        .PhiH-homepage-modal.secondary .PhiH-homepage-modal-content {
+			}
+			
+			.PhiH-homepage-modal.secondary .PhiH-homepage-modal-content {
             border-top-color: var(--secondary-color);
-        }
-
-        .PhiH-homepage-modal.purple .PhiH-homepage-modal-content {
+			}
+			
+			.PhiH-homepage-modal.purple .PhiH-homepage-modal-content {
             border-top-color: #a29bfe;
-        }
-
-        .PhiH-homepage-modal-close {
+			}
+			
+			.PhiH-homepage-modal-close {
             position: absolute;
             top: 15px;
             right: 20px;
@@ -218,950 +218,950 @@
             font-weight: bold;
             cursor: pointer;
             transition: color 0.2s ease;
-        }
-
-        .PhiH-homepage-modal-close:hover {
+			}
+			
+			.PhiH-homepage-modal-close:hover {
             color: var(--accent-color);
-        }
-
-        .PhiH-homepage-modal-title {
+			}
+			
+			.PhiH-homepage-modal-title {
             color: var(--heading-color);
             margin-bottom: 1.5rem;
             padding-bottom: 0.8rem;
             border-bottom: 2px solid var(--border-color);
             font-size: 2rem;
-        }
-
-        .PhiH-homepage-lesson-list {
+			}
+			
+			.PhiH-homepage-lesson-list {
             list-style-type: none;
             padding: 0;
-        }
-
-        .PhiH-homepage-theme {
+			}
+			
+			.PhiH-homepage-theme {
             margin-bottom: 2rem;
             background: var(--definition-bg);
             padding: 1.5rem;
             border-radius: var(--border-radius);
-        }
-
-        .PhiH-homepage-theme-title {
+			}
+			
+			.PhiH-homepage-theme-title {
             color: var(--primary-color);
             margin-bottom: 1rem;
             font-size: 1.5rem;
             display: flex;
             align-items: center;
-        }
-
-        .PhiH-homepage-modal.purple .PhiH-homepage-theme-title {
+			}
+			
+			.PhiH-homepage-modal.purple .PhiH-homepage-theme-title {
             color: #a29bfe;
-        }
-
-        .PhiH-homepage-theme-title::before {
+			}
+			
+			.PhiH-homepage-theme-title::before {
             content: "📚";
             margin-right: 10px;
             font-size: 1.2rem;
-        }
-
-        .PhiH-homepage-chapter {
+			}
+			
+			.PhiH-homepage-chapter {
             margin-bottom: 1.5rem;
             padding-left: 1rem;
             border-left: 3px solid var(--secondary-color);
-        }
-
-        .PhiH-homepage-modal.purple .PhiH-homepage-chapter {
+			}
+			
+			.PhiH-homepage-modal.purple .PhiH-homepage-chapter {
             border-left-color: #fdcb6e;
-        }
-
-        .PhiH-homepage-chapter-title {
+			}
+			
+			.PhiH-homepage-chapter-title {
             color: var(--secondary-color);
             margin-bottom: 0.8rem;
             font-size: 1.2rem;
             display: flex;
             align-items: center;
-        }
-
-        .PhiH-homepage-modal.purple .PhiH-homepage-chapter-title {
+			}
+			
+			.PhiH-homepage-modal.purple .PhiH-homepage-chapter-title {
             color: #fdcb6e;
-        }
-
-        .PhiH-homepage-chapter-title::before {
+			}
+			
+			.PhiH-homepage-chapter-title::before {
             content: "📖";
             margin-right: 8px;
             font-size: 1rem;
-        }
-
-        .PhiH-homepage-lesson {
+			}
+			
+			.PhiH-homepage-lesson {
             margin-bottom: 0.5rem;
             padding: 0.5rem 0.5rem 0.5rem 1.5rem;
             border-radius: 8px;
             transition: background-color 0.2s ease;
-        }
-
-        .PhiH-homepage-lesson:hover {
+			}
+			
+			.PhiH-homepage-lesson:hover {
             background-color: var(--table-hover-bg);
-        }
-
-        .PhiH-homepage-lesson a {
+			}
+			
+			.PhiH-homepage-lesson a {
             color: var(--text-color);
             text-decoration: none;
             display: flex;
             align-items: center;
             transition: color 0.2s ease;
-        }
-
-        .PhiH-homepage-lesson a:hover {
+			}
+			
+			.PhiH-homepage-lesson a:hover {
             color: var(--primary-color);
-        }
-
-        .PhiH-homepage-modal.purple .PhiH-homepage-lesson a:hover {
+			}
+			
+			.PhiH-homepage-modal.purple .PhiH-homepage-lesson a:hover {
             color: #a29bfe;
-        }
-
-        .PhiH-homepage-lesson a::before {
+			}
+			
+			.PhiH-homepage-lesson a::before {
             content: "📄";
             margin-right: 8px;
             font-size: 0.9rem;
-        }
-
-        .PhiH-homepage-lesson.coming-soon a {
+			}
+			
+			.PhiH-homepage-lesson.coming-soon a {
             color: var(--text-color);
             opacity: 0.7;
             cursor: not-allowed;
-        }
-
-        .PhiH-homepage-lesson.coming-soon a::before {
+			}
+			
+			.PhiH-homepage-lesson.coming-soon a::before {
             content: "⏳";
-        }
-    </style>
-</head>
-<body class="PhiH-homepage">
-    <header class="PhiH-general-header">
-        <div class="PhiH-general-header-content">
-            <!-- Column 1: Icon - Now clickable -->
-            <div class="PhiH-general-logo-container">
-                <a href="index.html">
-                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
-                </a>
-            </div>
-            
-            <!-- Column 2: Title -->
-            <div class="PhiH-general-title-container">
-                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
-            </div>
-            
-            <!-- Column 3: Options -->
-            <div class="PhiH-general-header-controls">
-                <!-- Removed Authors Button from here -->
-                
-                <div class="PhiH-general-theme-toggle">
-                    <label class="PhiH-theme-toggle-label">
-                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
-                        <div class="PhiH-theme-toggle-switch">
-                            <input type="checkbox" id="themeToggle">
-                            <span class="PhiH-theme-toggle-slider"></span>
-                        </div>
-                    </label>
-                </div>
-                <div class="PhiH-general-language-selector">
-                    <select class="PhiH-general-language-dropdown" id="languageSelect">
-                        <option value="en">English</option>
-                        <option value="fr">Français</option>
-                        <option value="ar">العربية</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <!-- Manual Install Button (Fallback) -->
-        <button id="manual-install-btn" class="PhiH-pwa-install-btn" style="display: none;">
-            <span class="PhiH-pwa-install-icon">📱</span>
-            <span data-i18n="PhiH.pwa.install">Install App</span>
-        </button>
-    </header>
-    
-    <!-- Windows Bar -->
-    <nav class="PhiH-windows-bar">
-        <a href="index.html" class="PhiH-window-item active">
-            <span class="PhiH-window-icon">🏠</span>
-            <span data-i18n="PhiH.windows.home">Home</span>
-        </a>
-        <a href="authors.html" class="PhiH-window-item">
-            <span class="PhiH-window-icon">👥</span>
-            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
-        </a>
-        <a href="quotes.html" class="PhiH-window-item">
-            <span class="PhiH-window-icon">📚</span>
-            <span data-i18n="PhiH.windows.quotes">Quotes</span>
-        </a>
-        <a href="resources.html" class="PhiH-window-item">
-            <span class="PhiH-window-icon">🔍</span>
-            <span data-i18n="PhiH.windows.resources">Resources</span>
-        </a>
-    </nav>
-    
-    <main class="PhiH-homepage-main">
-        <h1 class="PhiH-homepage-title" data-i18n="PhiH.index.title">Philosophy Learning Hub</h1>
-        <p class="PhiH-homepage-subtitle" data-i18n="PhiH.index.subtitle">Explore the world of philosophy with interactive lessons, critical thinking exercises, and philosophical resources</p>
-        
-        <div class="PhiH-homepage-cards">
-            <!-- General Philosophy Card -->
-            <div class="PhiH-homepage-card" id="generalCard">
-                <div class="PhiH-homepage-card-icon">🧠</div>
-                <h2 class="PhiH-homepage-card-title" data-i18n="PhiH.index.general">General Philosophy</h2>
-                <p class="PhiH-homepage-card-description" data-i18n="PhiH.index.generalDesc">Foundational concepts and introduction to philosophical thinking</p>
-            </div>
-            
-            <!-- 3rd Year Secondary Card -->
-            <div class="PhiH-homepage-card purple" id="secondary3Card">
-                <div class="PhiH-homepage-card-icon">3️⃣</div>
-                <h2 class="PhiH-homepage-card-title" data-i18n="PhiH.index.grade3">السنة الثالثة ثانوي</h2>
-                <p class="PhiH-homepage-card-description" data-i18n="PhiH.index.grade3Desc">Philosophy curriculum for third year secondary students</p>
-            </div>
-            
-            <!-- 4th Year Secondary Card -->
-            <div class="PhiH-homepage-card secondary" id="secondary4Card">
-                <div class="PhiH-homepage-card-icon">4️⃣</div>
-                <h2 class="PhiH-homepage-card-title" data-i18n="PhiH.index.grade4">السنة الرابعة ثانوي</h2>
-                <p class="PhiH-homepage-card-description" data-i18n="PhiH.index.grade4Desc">Advanced philosophical concepts and examination preparation</p>
-            </div>
-        </div>
-    </main>
-    
-    <footer class="PhiH-general-footer">
-        <div class="PhiH-general-footer-content">
-            <div class="PhiH-general-footer-column">
-                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
-                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
-            </div>
-            <div class="PhiH-general-footer-column">
-                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
-                <p data-i18n="PhiH.general.version">v1.0.0</p>
-            </div>
-            <div class="PhiH-general-footer-column">
-                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
-                <div class="PhiH-general-footer-links">
-                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
-                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-    <!-- Modals -->
-    <div id="generalModal" class="PhiH-homepage-modal">
-        <div class="PhiH-homepage-modal-content">
-            <span class="PhiH-homepage-modal-close">&times;</span>
-            <h2 class="PhiH-homepage-modal-title" data-i18n="PhiH.index.modalGeneralTitle">General Philosophy Lessons</h2>
-            
-            <ul class="PhiH-homepage-lesson-list">
-                <!-- Content will be added later -->
-                <li class="PhiH-homepage-theme">
-                    <h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.generalContentComing">Content Coming Soon</h3>
-                    <p data-i18n="PhiH.index.generalContentDescription">General philosophy lessons and resources will be available in future updates.</p>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="secondary3Modal" class="PhiH-homepage-modal purple">
-        <div class="PhiH-homepage-modal-content">
-            <span class="PhiH-homepage-modal-close">&times;</span>
-            <h2 class="PhiH-homepage-modal-title" data-i18n="PhiH.index.modalGrade3Title">دروس السنة الثالثة ثانوي</h2>
-            
-            <ul class="PhiH-homepage-lesson-list">
-                <li class="PhiH-homepage-theme">
-    <h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.grade3.part1">I- اليومي</h3>
-    
-    <!-- Subtheme 1: اليومي من المعيش الى المفهوم: دلالة اليومي -->
-    <div class="PhiH-homepage-chapter">
-        <h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade3.part1.sub1">اليومي من المعيش الى المفهوم: دلالة اليومي</h4>
-        <div class="PhiH-homepage-lesson">
-            <a href="PhiH_lessons_grade3_theme1_lesson1.html" data-i18n="PhiH.index.grade3.part1.sub1.lesson1">اليومي</a>
-        </div>
-        <div class="PhiH-homepage-lesson">
-            <a href="PhiH_lessons_grade3_theme1_lesson2.html" data-i18n="PhiH.index.grade3.part1.sub1.lesson2">الرأي السائد</a>
-        </div>
-    </div>
-    
-    <!-- Subtheme 2: تجليات اليومي -->
-    <div class="PhiH-homepage-chapter">
-        <h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade3.part1.sub2">تجليات اليومي</h4>
-        <div class="PhiH-homepage-lesson">
-            <a href="PhiH_lessons_grade3_theme1_lesson3.html" data-i18n="PhiH.index.grade3.part1.sub2.lesson">الوثوقية</a>
-        </div>
-    </div>
-    
-    <!-- Subtheme 3: آليات اشتغال اليومي -->
-    <div class="PhiH-homepage-chapter">
-        <h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade3.part1.sub3">آليات اشتغال اليومي</h4>
-        <div class="PhiH-homepage-lesson">
-            <a href="PhiH_lessons_grade3_theme1_lesson4.html" data-i18n="PhiH.index.grade3.part1.sub3.lesson">الوهم</a>
-        </div>
-    </div>
-    
-    <!-- Subtheme 4: مخاطر اليومي ودور الفلسفة في تجاوزها -->
-<div class="PhiH-homepage-chapter">
-    <h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade3.part1.sub4">مخاطر اليومي ودور الفلسفة في تجاوزها</h4>
-    <div class="PhiH-homepage-lesson">
-        <a href="PhiH_lessons_grade3_theme1_lesson5.html" data-i18n="PhiH.index.grade3.part1.sub4.lesson">الدعاية</a>
-    </div>
-    <div class="PhiH-homepage-lesson">
-        <a href="PhiH_lessons_grade3_theme1_lesson6.html" data-i18n="PhiH.index.grade3.part1.sub4.lesson2">الاغتراب</a>
-    </div>
-    <div class="PhiH-homepage-lesson">
-        <a href="PhiH_lessons_grade3_theme1_lesson7.html" data-i18n="PhiH.index.grade3.part1.sub4.lesson3">التعصب</a>
-    </div>
-    <div class="PhiH-homepage-lesson">
-        <a href="PhiH_lessons_grade3_theme1_lesson8.html" data-i18n="PhiH.index.grade3.part1.sub4.lesson4">القيم</a>
-    </div>
-</div>
-</li>
-                
-                <li class="PhiH-homepage-theme">
-                    <h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.grade3.part2">II- مقتضيات التفكير</h3>
-                    
-                    <div class="PhiH-homepage-chapter">
-    <h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade3.part2.sub1">1- الوعي بالمغالطات</h4>
-    <div class="PhiH-homepage-lesson">
-        <a href="PhiH_lessons_grade3_theme2a_lesson1.html" data-i18n="PhiH.index.grade3.part2.sub1.lesson1">مدخل إلى الاستدلال والمغالطة</a>
-    </div>
-    <div class="PhiH-homepage-lesson">
-        <a href="PhiH_lessons_grade3_theme2a_lesson2.html" data-i18n="PhiH.index.grade3.part2.sub1.lesson2">المشكلات الزائفة</a>
-    </div>
-    <div class="PhiH-homepage-lesson">
-        <a href="PhiH_lessons_grade3_theme2a_lesson3.html" data-i18n="PhiH.index.grade3.part2.sub1.lesson3">المغالطات في الخطاب</a>
-    </div>
-    <div class="PhiH-homepage-lesson">
-        <a href="PhiH_lessons_grade3_theme2a_lesson4.html" data-i18n="PhiH.index.grade3.part2.sub1.lesson4">الالتباس اللفظي والمفارقات الجدلية</a>
-    </div>
-</div>
-                    
-                    <div class="PhiH-homepage-chapter">
-                        <h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade3.part2.sub2">2- إجرائيات التفكير</h4>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade3-problematization.html" data-i18n="PhiH.index.grade3.part2.sub2.lesson1">الأشكلة</a>
-                        </div>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade3-foundation.html" data-i18n="PhiH.index.grade3.part2.sub2.lesson2">التأسيس</a>
-                        </div>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade3-definition.html" data-i18n="PhiH.index.grade3.part2.sub2.lesson3">التعريف</a>
-                        </div>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade3-argumentation.html" data-i18n="PhiH.index.grade3.part2.sub2.lesson4">الحجاج</a>
-                        </div>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade3-analysis.html" data-i18n="PhiH.index.grade3.part2.sub2.lesson5">التحليل</a>
-                        </div>
-                    </div>
-                    
-                    <div class="PhiH-homepage-chapter">
-                        <h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade3.part2.sub3">3- إيقاف التفكير</h4>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade3-reasoning.html" data-i18n="PhiH.index.grade3.part2.sub3.lesson1">التعقل</a>
-                        </div>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade3-dialogue.html" data-i18n="PhiH.index.grade3.part2.sub3.lesson2">الحوار</a>
-                        </div>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade3-criticism.html" data-i18n="PhiH.index.grade3.part2.sub3.lesson3">النقد</a>
-                        </div>
-                    </div>
-                </li>
-                
-                <li class="PhiH-homepage-theme">
-                    <h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.grade3.part3">III- تجربة الالتزام: شخصيات فكرية</h3>
-                    <div class="PhiH-homepage-chapter">
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade3-autonomy.html" data-i18n="PhiH.index.grade3.part3.lesson1">الاستقلالية</a>
-                        </div>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade3-ideology.html" data-i18n="PhiH.index.grade3.part3.lesson2">الإيديولوجيا</a>
-                        </div>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade3-courage.html" data-i18n="PhiH.index.grade3.part3.lesson3">الشجاعة</a>
-                        </div>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade3-responsibility.html" data-i18n="PhiH.index.grade3.part3.lesson4">المسؤولية</a>
-                        </div>
-                    </div>
-                </li>
-                
-                <li class="PhiH-homepage-theme">
-                    <h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.grade3.part4">VI- دراسة مسترسلة لأثر فلسفي</h3>
-                    <div class="PhiH-homepage-chapter">
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade3-philosophical-work.html" data-i18n="PhiH.index.grade3.part4.lesson">دراسة مسترسلة لأثر فلسفي</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    
-    <div id="secondary4Modal" class="PhiH-homepage-modal secondary">
-        <div class="PhiH-homepage-modal-content">
-            <span class="PhiH-homepage-modal-close">&times;</span>
-            <h2 class="PhiH-homepage-modal-title" data-i18n="PhiH.index.modalGrade4Title">دروس السنة الرابعة ثانوي</h2>
-            
-            <ul class="PhiH-homepage-lesson-list">
-                <li class="PhiH-homepage-theme">
-                    <h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.grade4.part1">I- الإنساني بين الكثرة والوحدة</h3>
-                    
-                    <div class="PhiH-homepage-chapter">
-                        <h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part1.sub1">1- الاتصال بين الكثرة والوحدة</h4>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade4-multiplicity-unity.html" data-i18n="PhiH.index.grade4.part1.sub1.lesson">الاتصال بين الكثرة والوحدة</a>
-                        </div>
-                    </div>
-                    
-                    <div class="PhiH-homepage-chapter">
-                        <h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part1.sub2">2- التواصل والأنظمة الرمزية</h4>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade4-communication-symbolic.html" data-i18n="PhiH.index.grade4.part1.sub2.lesson">التواصل والأنظمة الرمزية</a>
-                        </div>
-                    </div>
-                    
-                    <div class="PhiH-homepage-chapter">
-                        <h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part1.sub3">3- الخصوصية والكونية</h4>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade4-particularity-universality.html" data-i18n="PhiH.index.grade4.part1.sub3.lesson">الخصوصية والكونية</a>
-                        </div>
-                    </div>
-                </li>
-                
-                <li class="PhiH-homepage-theme">
-                    <h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.grade4.part2">II- العلم بين الحقيقة والنمذجة</h3>
-                    
-                    <div class="PhiH-homepage-chapter">
-                        <h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part2.sub1">1- أبعاد النمذجة</h4>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade4-syntactic-dimension.html" data-i18n="PhiH.index.grade4.part2.sub1.lesson1">البعد التركيبي</a>
-                        </div>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade4-semantic-dimension.html" data-i18n="PhiH.index.grade4.part2.sub1.lesson2">البعد الدلالي</a>
-                        </div>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade4-pragmatic-dimension.html" data-i18n="PhiH.index.grade4.part2.sub1.lesson3">البعد التداولي</a>
-                        </div>
-                    </div>
-                    
-                    <div class="PhiH-homepage-chapter">
-                        <h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part2.sub2">2- النمذجة ومطلب الحقيقة</h4>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade4-modeling-truth.html" data-i18n="PhiH.index.grade4.part2.sub2.lesson">النمذجة ومطلب الحقيقة</a>
-                        </div>
-                    </div>
-                    
-                    <div class="PhiH-homepage-chapter">
-                        <h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part2.sub3">3- الحدود</h4>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade4-epistemological-limits.html" data-i18n="PhiH.index.grade4.part2.sub3.lesson1">الحدود الإبستمولوجية</a>
-                        </div>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade4-philosophical-limits.html" data-i18n="PhiH.index.grade4.part2.sub3.lesson2">الحدود الفلسفية</a>
-                        </div>
-                    </div>
-                </li>
-                
-                <li class="PhiH-homepage-theme">
-                    <h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.grade4.part3">III- القيم بين النسبي والمطلق</h3>
-                    
-                    <div class="PhiH-homepage-chapter">
-                        <h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part3.sub1">1- العمل: النجاعة والعدالة</h4>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade4-work-efficiency-justice.html" data-i18n="PhiH.index.grade4.part3.sub1.lesson">العمل: النجاعة والعدالة</a>
-                        </div>
-                    </div>
-                    
-                    <div class="PhiH-homepage-chapter">
-                        <h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part3.sub2">2- الدولة: السيادة والمواطنة</h4>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade4-state-sovereignty-citizenship.html" data-i18n="PhiH.index.grade4.part3.sub2.lesson">الدولة: السيادة والمواطنة</a>
-                        </div>
-                    </div>
-                    
-                    <div class="PhiH-homepage-chapter">
-                        <h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part3.sub3">3- الأخلاق: الخير والسعادة</h4>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade4-ethics-good-happiness.html" data-i18n="PhiH.index.grade4.part3.sub3.lesson">الأخلاق: الخير والسعادة</a>
-                        </div>
-                    </div>
-                    
-                    <div class="PhiH-homepage-chapter">
-                        <h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part3.sub4">4- الفن: الجمال والحقيقة</h4>
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade4-art-beauty-truth.html" data-i18n="PhiH.index.grade4.part3.sub4.lesson">الفن: الجمال والحقيقة</a>
-                        </div>
-                    </div>
-                </li>
-                
-                <li class="PhiH-homepage-theme">
-                    <h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.grade4.part4">VI- دراسة مسترسلة لأثر فلسفي</h3>
-                    <div class="PhiH-homepage-chapter">
-                        <div class="PhiH-homepage-lesson">
-                            <a href="PhiH-lessons-grade4-philosophical-work.html" data-i18n="PhiH.index.grade4.part4.lesson">دراسة مسترسلة لأثر فلسفي</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    
-    <script>
-        // Page-specific translations for index page
-        window.translations_PhiHindex = {
-            fr: {
-                // General translations
-                "PhiH.general.siteName": "Philosophy Learning Hub",
-                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
-                "PhiH.general.present": "X",
-                "PhiH.general.absent": "",
-                "PhiH.general.developerTitle": "Développeur",
-                "PhiH.general.developer": "Mejri Ziad",
-                "PhiH.general.versionTitle": "Version",
-                "PhiH.general.version": "v1.0.0",
-                "PhiH.general.linksTitle": "Liens",
-                "PhiH.general.termsOfUse": "Conditions d'utilisation",
-                "PhiH.general.privacyPolicy": "Politique de confidentialité",
-                "PhiH.general.themeToggle": "Mode sombre",
-                "PhiH.general.authors": "Philosophes",
-                
-                // Windows bar translations
-                "PhiH.windows.home": "Accueil",
-                "PhiH.windows.philosophers": "Philosophes",
-                "PhiH.windows.quotes": "Quotes",
-                "PhiH.windows.resources": "Ressources",
-                
-                // Index specific translations
-                "PhiH.index.title": "Philosophy Learning Hub",
-                "PhiH.index.subtitle": "Explorez le monde de la philosophie avec des leçons interactives, des exercices de pensée critique et des ressources philosophiques",
-                "PhiH.index.general": "Philosophie Générale",
-                "PhiH.index.generalDesc": "Concepts fondamentaux et introduction à la pensée philosophique",
-                "PhiH.index.grade3": "3ème Secondaire",
-                "PhiH.index.grade3Desc": "Programme de philosophie pour les élèves de troisième secondaire",
-                "PhiH.index.grade4": "4ème Secondaire",
-                "PhiH.index.grade4Desc": "Concepts philosophiques avancés et préparation aux examens",
-                "PhiH.index.modalGeneralTitle": "Leçons de Philosophie Générale",
-                "PhiH.index.modalGrade3Title": "Leçons de 3ème Secondaire",
-                "PhiH.index.modalGrade4Title": "Leçons de 4ème Secondaire",
-                "PhiH.index.comingSoon": "Bientôt disponible",
-                
-                "PhiH.index.generalContentComing": "Contenu à venir",
-                "PhiH.index.generalContentDescription": "Les leçons et ressources de philosophie générale seront disponibles dans les prochaines mises à jour.",
-                
-                // 3rd Year Program Translations
-                "PhiH.index.grade3.part1": "I- Le Quotidien",
-"PhiH.index.grade3.part1.sub1": "Le Quotidien du vécu au concept: Signification du quotidien",
-"PhiH.index.grade3.part1.sub1.lesson1": "Le Quotidien",
-"PhiH.index.grade3.part1.sub1.lesson2": "Opinion courante",
-"PhiH.index.grade3.part1.sub2": "Manifestations du quotidien",
-"PhiH.index.grade3.part1.sub2.lesson": "Certitude",
-"PhiH.index.grade3.part1.sub3": "Mécanismes de fonctionnement du quotidien",
-"PhiH.index.grade3.part1.sub3.lesson": "Illusion",
-"PhiH.index.grade3.part1.sub4": "Risques du quotidien et rôle de la philosophie dans leur dépassement",
-"PhiH.index.grade3.part1.sub4.lesson": "Propagande",
-                "PhiH.index.grade3.part1.sub4.lesson2": "Aliénation",
-"PhiH.index.grade3.part1.sub4.lesson3": "Fanatisme",
-"PhiH.index.grade3.part1.sub4.lesson4": "Valeurs",
-                "PhiH.index.grade3.part2": "II- Les Exigences de la pensée",
-                "PhiH.index.grade3.part2.sub1": "1- Conscience des sophismes",
-"PhiH.index.grade3.part2.sub1.lesson1": "Introduction au raisonnement et à la sophistique",
-"PhiH.index.grade3.part2.sub1.lesson2": "Problèmes fallacieux",
-"PhiH.index.grade3.part2.sub1.lesson3": "Sophismes dans le discours",
-"PhiH.index.grade3.part2.sub1.lesson4": "Ambiguïté verbale et paradoxes dialectiques",
-                "PhiH.index.grade3.part2.sub2": "2- Procédures de la pensée",
-                "PhiH.index.grade3.part2.sub2.lesson1": "Problématisation",
-                "PhiH.index.grade3.part2.sub2.lesson2": "Fondation",
-                "PhiH.index.grade3.part2.sub2.lesson3": "Définition",
-                "PhiH.index.grade3.part2.sub2.lesson4": "Argumentation",
-                "PhiH.index.grade3.part2.sub2.lesson5": "Analyse",
-                "PhiH.index.grade3.part2.sub3": "3- Les Fins de la pensée",
-                "PhiH.index.grade3.part2.sub3.lesson1": "Raisonnement",
-                "PhiH.index.grade3.part2.sub3.lesson2": "Dialogue",
-                "PhiH.index.grade3.part2.sub3.lesson3": "Critique",
-                
-                "PhiH.index.grade3.part3": "III- L'Expérience de l'engagement : Figures intellectuelles",
-                "PhiH.index.grade3.part3.lesson1": "Autonomie",
-                "PhiH.index.grade3.part3.lesson2": "Idéologie",
-                "PhiH.index.grade3.part3.lesson3": "Courage",
-                "PhiH.index.grade3.part3.lesson4": "Responsabilité",
-                
-                "PhiH.index.grade3.part4": "VI- Étude suivie d'une œuvre philosophique",
-                "PhiH.index.grade3.part4.lesson": "Étude suivie d'une œuvre philosophique",
-                
-                // 4th Year Program Translations
-                "PhiH.index.grade4.part1": "I- L'Humain entre multiplicité et unité",
-                "PhiH.index.grade4.part1.sub1": "1- La Liaison entre multiplicité et unité",
-                "PhiH.index.grade4.part1.sub1.lesson": "La Liaison entre multiplicité et unité",
-                "PhiH.index.grade4.part1.sub2": "2- Communication et systèmes symboliques",
-                "PhiH.index.grade4.part1.sub2.lesson": "Communication et systèmes symboliques",
-                "PhiH.index.grade4.part1.sub3": "3- Particularité et universalité",
-                "PhiH.index.grade4.part1.sub3.lesson": "Particularité et universalité",
-                
-                "PhiH.index.grade4.part2": "II- La Science entre vérité et modélisation",
-                "PhiH.index.grade4.part2.sub1": "1- Dimensions de la modélisation",
-                "PhiH.index.grade4.part2.sub1.lesson1": "Dimension syntaxique",
-                "PhiH.index.grade4.part2.sub1.lesson2": "Dimension sémantique",
-                "PhiH.index.grade4.part2.sub1.lesson3": "Dimension pragmatique",
-                "PhiH.index.grade4.part2.sub2": "2- Modélisation et exigence de vérité",
-                "PhiH.index.grade4.part2.sub2.lesson": "Modélisation et exigence de vérité",
-                "PhiH.index.grade4.part2.sub3": "3- Limites",
-                "PhiH.index.grade4.part2.sub3.lesson1": "Limites épistémologiques",
-                "PhiH.index.grade4.part2.sub3.lesson2": "Limites philosophiques",
-                
-                "PhiH.index.grade4.part3": "III- Les Valeurs entre relatif et absolu",
-                "PhiH.index.grade4.part3.sub1": "1- Le Travail : Efficacité et justice",
-                "PhiH.index.grade4.part3.sub1.lesson": "Le Travail : Efficacité et justice",
-                "PhiH.index.grade4.part3.sub2": "2- L'État : Souveraineté et citoyenneté",
-                "PhiH.index.grade4.part3.sub2.lesson": "L'État : Souveraineté et citoyenneté",
-                "PhiH.index.grade4.part3.sub3": "3- L'Éthique : Le Bien et le bonheur",
-                "PhiH.index.grade4.part3.sub3.lesson": "L'Éthique : Le Bien et le bonheur",
-                "PhiH.index.grade4.part3.sub4": "4- L'Art : Beauté et vérité",
-                "PhiH.index.grade4.part3.sub4.lesson": "L'Art : Beauté et vérité",
-                
-                "PhiH.index.grade4.part4": "VI- Étude suivie d'une œuvre philosophique",
-                "PhiH.index.grade4.part4.lesson": "Étude suivie d'une œuvre philosophique"
-            },
-            en: {
-                // General translations
-                "PhiH.general.siteName": "Philosophy Learning Hub",
-                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
-                "PhiH.general.present": "X",
-                "PhiH.general.absent": "",
-                "PhiH.general.developerTitle": "Developer",
-                "PhiH.general.developer": "Mejri Ziad",
-                "PhiH.general.versionTitle": "Version",
-                "PhiH.general.version": "v1.0.0",
-                "PhiH.general.linksTitle": "Links",
-                "PhiH.general.termsOfUse": "Terms of Use",
-                "PhiH.general.privacyPolicy": "Privacy Policy",
-                "PhiH.general.themeToggle": "Dark mode",
-                "PhiH.general.authors": "Philosophers",
-                
-                // Windows bar translations
-                "PhiH.windows.home": "Home",
-                "PhiH.windows.philosophers": "Philosophers",
-                "PhiH.windows.quotes": "Quotes",
-                "PhiH.windows.resources": "Resources",
-                
-                // Index specific translations
-                "PhiH.index.title": "Philosophy Learning Hub",
-                "PhiH.index.subtitle": "Explore the world of philosophy with interactive lessons, critical thinking exercises, and philosophical resources",
-                "PhiH.index.general": "General Philosophy",
-                "PhiH.index.generalDesc": "Foundational concepts and introduction to philosophical thinking",
-                "PhiH.index.grade3": "3rd Secondary",
-                "PhiH.index.grade3Desc": "Philosophy curriculum for third year secondary students",
-                "PhiH.index.grade4": "4th Secondary",
-                "PhiH.index.grade4Desc": "Advanced philosophical concepts and examination preparation",
-                "PhiH.index.modalGeneralTitle": "General Philosophy Lessons",
-                "PhiH.index.modalGrade3Title": "3rd Secondary Lessons",
-                "PhiH.index.modalGrade4Title": "4th Secondary Lessons",
-                "PhiH.index.comingSoon": "Coming Soon",
-                
-                "PhiH.index.generalContentComing": "Content Coming Soon",
-                "PhiH.index.generalContentDescription": "General philosophy lessons and resources will be available in future updates.",
-                
-                // 3rd Year Program Translations
-                "PhiH.index.grade3.part1": "I- The Everyday",
-"PhiH.index.grade3.part1.sub1": "The Everyday from lived experience to concept: Meaning of the everyday",
-"PhiH.index.grade3.part1.sub1.lesson1": "The Everyday",
-"PhiH.index.grade3.part1.sub1.lesson2": "Prevailing Opinion",
-"PhiH.index.grade3.part1.sub2": "Manifestations of the everyday",
-"PhiH.index.grade3.part1.sub2.lesson": "Certitude",
-"PhiH.index.grade3.part1.sub3": "Mechanisms of everyday functioning",
-"PhiH.index.grade3.part1.sub3.lesson": "Illusion",
-"PhiH.index.grade3.part1.sub4": "Risks of the everyday and philosophy's role in overcoming them",
-"PhiH.index.grade3.part1.sub4.lesson": "Propaganda",
-                "PhiH.index.grade3.part1.sub4.lesson2": "Alienation",
-"PhiH.index.grade3.part1.sub4.lesson3": "Fanaticism",
-"PhiH.index.grade3.part1.sub4.lesson4": "Values",
-                "PhiH.index.grade3.part2": "II- The Requirements of Thinking",
-                "PhiH.index.grade3.part2.sub1": "1- Awareness of Fallacies",
-"PhiH.index.grade3.part2.sub1.lesson1": "Introduction to Reasoning and Fallacy",
-"PhiH.index.grade3.part2.sub1.lesson2": "Pseudo-Problems",
-"PhiH.index.grade3.part2.sub1.lesson3": "Fallacies in Discourse",
-"PhiH.index.grade3.part2.sub1.lesson4": "Verbal Ambiguity and Dialectical Paradoxes",
-                "PhiH.index.grade3.part2.sub2": "2- Procedures of Thinking",
-                "PhiH.index.grade3.part2.sub2.lesson1": "Problematization",
-                "PhiH.index.grade3.part2.sub2.lesson2": "Foundation",
-                "PhiH.index.grade3.part2.sub2.lesson3": "Definition",
-                "PhiH.index.grade3.part2.sub2.lesson4": "Argumentation",
-                "PhiH.index.grade3.part2.sub2.lesson5": "Analysis",
-                "PhiH.index.grade3.part2.sub3": "3- The Ends of Thinking",
-                "PhiH.index.grade3.part2.sub3.lesson1": "Reasoning",
-                "PhiH.index.grade3.part2.sub3.lesson2": "Dialogue",
-                "PhiH.index.grade3.part2.sub3.lesson3": "Criticism",
-                
-                "PhiH.index.grade3.part3": "III- The Experience of Commitment: Intellectual Figures",
-                "PhiH.index.grade3.part3.lesson1": "Autonomy",
-                "PhiH.index.grade3.part3.lesson2": "Ideology",
-                "PhiH.index.grade3.part3.lesson3": "Courage",
-                "PhiH.index.grade3.part3.lesson4": "Responsibility",
-                
-                "PhiH.index.grade3.part4": "VI- Continuous Study of a Philosophical Work",
-                "PhiH.index.grade3.part4.lesson": "Continuous Study of a Philosophical Work",
-                
-                // 4th Year Program Translations
-                "PhiH.index.grade4.part1": "I- The Human between Multiplicity and Unity",
-                "PhiH.index.grade4.part1.sub1": "1- The Connection between Multiplicity and Unity",
-                "PhiH.index.grade4.part1.sub1.lesson": "The Connection between Multiplicity and Unity",
-                "PhiH.index.grade4.part1.sub2": "2- Communication and Symbolic Systems",
-                "PhiH.index.grade4.part1.sub2.lesson": "Communication and Symbolic Systems",
-                "PhiH.index.grade4.part1.sub3": "3- Particularity and Universality",
-                "PhiH.index.grade4.part1.sub3.lesson": "Particularity and Universality",
-                
-                "PhiH.index.grade4.part2": "II- Science between Truth and Modeling",
-                "PhiH.index.grade4.part2.sub1": "1- Dimensions of Modeling",
-                "PhiH.index.grade4.part2.sub1.lesson1": "Syntactic Dimension",
-                "PhiH.index.grade4.part2.sub1.lesson2": "Semantic Dimension",
-                "PhiH.index.grade4.part2.sub1.lesson3": "Pragmatic Dimension",
-                "PhiH.index.grade4.part2.sub2": "2- Modeling and the Requirement of Truth",
-                "PhiH.index.grade4.part2.sub2.lesson": "Modeling and the Requirement of Truth",
-                "PhiH.index.grade4.part2.sub3": "3- Limits",
-                "PhiH.index.grade4.part2.sub3.lesson1": "Epistemological Limits",
-                "PhiH.index.grade4.part2.sub3.lesson2": "Philosophical Limits",
-                
-                "PhiH.index.grade4.part3": "III- Values between the Relative and the Absolute",
-                "PhiH.index.grade4.part3.sub1": "1- Work: Efficiency and Justice",
-                "PhiH.index.grade4.part3.sub1.lesson": "Work: Efficiency and Justice",
-                "PhiH.index.grade4.part3.sub2": "2- The State: Sovereignty and Citizenship",
-                "PhiH.index.grade4.part3.sub2.lesson": "The State: Sovereignty and Citizenship",
-                "PhiH.index.grade4.part3.sub3": "3- Ethics: The Good and Happiness",
-                "PhiH.index.grade4.part3.sub3.lesson": "Ethics: The Good and Happiness",
-                "PhiH.index.grade4.part3.sub4": "4- Art: Beauty and Truth",
-                "PhiH.index.grade4.part3.sub4.lesson": "Art: Beauty and Truth",
-                
-                "PhiH.index.grade4.part4": "VI- Continuous Study of a Philosophical Work",
-                "PhiH.index.grade4.part4.lesson": "Continuous Study of a Philosophical Work"
-            },
-            ar: {
-                // General translations
-                "PhiH.general.siteName": "مركز تعلم الفلسفة",
-                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
-                "PhiH.general.present": "X",
-                "PhiH.general.absent": "",
-                "PhiH.general.developerTitle": "المطور",
-                "PhiH.general.developer": "مجرى زياد",
-                "PhiH.general.versionTitle": "الإصدار",
-                "PhiH.general.version": "v1.0.0",
-                "PhiH.general.linksTitle": "الروابط",
-                "PhiH.general.termsOfUse": "شروط الاستخدام",
-                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
-                "PhiH.general.themeToggle": "الوضع الداكن",
-                "PhiH.general.authors": "الفلاسفة",
-                
-                // Windows bar translations
-                "PhiH.windows.home": "الرئيسية",
-                "PhiH.windows.philosophers": "الفلاسفة",
-                "PhiH.windows.quotes": "شواهد",
-                "PhiH.windows.resources": "الموارد",
-                
-                // Index specific translations
-                "PhiH.index.title": "مركز تعلم الفلسفة",
-                "PhiH.index.subtitle": "استكشف عالم الفلسفة مع دروس تفاعلية وتمارين في التفكير النقدي وموارد فلسفية",
-                "PhiH.index.general": "الفلسفة العامة",
-                "PhiH.index.generalDesc": "المفاهيم الأساسية ومقدمة في التفكير الفلسفي",
-                "PhiH.index.grade3": "السنة الثالثة ثانوي",
-                "PhiH.index.grade3Desc": "منهج الفلسفة لطلاب السنة الثالثة ثانوي",
-                "PhiH.index.grade4": "السنة الرابعة ثانوي",
-                "PhiH.index.grade4Desc": "مفاهيم فلسفية متقدمة والتحضير للامتحانات",
-                "PhiH.index.modalGeneralTitle": "دروس الفلسفة العامة",
-                "PhiH.index.modalGrade3Title": "دروس السنة الثالثة ثانوي",
-                "PhiH.index.modalGrade4Title": "دروس السنة الرابعة ثانوي",
-                "PhiH.index.comingSoon": "قريباً",
-                
-                "PhiH.index.generalContentComing": "المحتوى قريباً",
-                "PhiH.index.generalContentDescription": "ستكون دروس وموارد الفلسفة العامة متاحة في التحديثات القادمة.",
-                
-                // 3rd Year Program Translations
-                "PhiH.index.grade3.part1": "I- اليومي",
-"PhiH.index.grade3.part1.sub1": "اليومي من المعيش الى المفهوم: دلالة اليومي",
-"PhiH.index.grade3.part1.sub1.lesson1": "اليومي",
-"PhiH.index.grade3.part1.sub1.lesson2": "الرأي السائد",
-"PhiH.index.grade3.part1.sub2": "تجليات اليومي",
-"PhiH.index.grade3.part1.sub2.lesson": "الوثوقية",
-"PhiH.index.grade3.part1.sub3": "آليات اشتغال اليومي",
-"PhiH.index.grade3.part1.sub3.lesson": "الوهم",
-"PhiH.index.grade3.part1.sub4": "مخاطر اليومي ودور الفلسفة في تجاوزها",
-"PhiH.index.grade3.part1.sub4.lesson": "الدعاية",
-                "PhiH.index.grade3.part1.sub4.lesson2": "الاغتراب",
-"PhiH.index.grade3.part1.sub4.lesson3": "التعصب",
-"PhiH.index.grade3.part1.sub4.lesson4": "القيم",
-                "PhiH.index.grade3.part2": "II- مقتضيات التفكير",
-                "PhiH.index.grade3.part2.sub1": "1- الوعي بالمغالطات",
-"PhiH.index.grade3.part2.sub1.lesson1": "مدخل إلى الاستدلال والمغالطة",
-"PhiH.index.grade3.part2.sub1.lesson2": "المشكلات الزائفة",
-"PhiH.index.grade3.part2.sub1.lesson3": "المغالطات في الخطاب",
-"PhiH.index.grade3.part2.sub1.lesson4": "الالتباس اللفظي والمفارقات الجدلية",
-                "PhiH.index.grade3.part2.sub2": "2- إجرائيات التفكير",
-                "PhiH.index.grade3.part2.sub2.lesson1": "الأشكلة",
-                "PhiH.index.grade3.part2.sub2.lesson2": "التأسيس",
-                "PhiH.index.grade3.part2.sub2.lesson3": "التعريف",
-                "PhiH.index.grade3.part2.sub2.lesson4": "الحجاج",
-                "PhiH.index.grade3.part2.sub2.lesson5": "التحليل",
-                "PhiH.index.grade3.part2.sub3": "3- إيقاف التفكير",
-                "PhiH.index.grade3.part2.sub3.lesson1": "التعقل",
-                "PhiH.index.grade3.part2.sub3.lesson2": "الحوار",
-                "PhiH.index.grade3.part2.sub3.lesson3": "النقد",
-                
-                "PhiH.index.grade3.part3": "III- تجربة الالتزام: شخصيات فكرية",
-                "PhiH.index.grade3.part3.lesson1": "الاستقلالية",
-                "PhiH.index.grade3.part3.lesson2": "الإيديولوجيا",
-                "PhiH.index.grade3.part3.lesson3": "الشجاعة",
-                "PhiH.index.grade3.part3.lesson4": "المسؤولية",
-                
-                "PhiH.index.grade3.part4": "VI- دراسة مسترسلة لأثر فلسفي",
-                "PhiH.index.grade3.part4.lesson": "دراسة مسترسلة لأثر فلسفي",
-                
-                // 4th Year Program Translations
-                "PhiH.index.grade4.part1": "I- الإنساني بين الكثرة والوحدة",
-                "PhiH.index.grade4.part1.sub1": "1- الاتصال بين الكثرة والوحدة",
-                "PhiH.index.grade4.part1.sub1.lesson": "الاتصال بين الكثرة والوحدة",
-                "PhiH.index.grade4.part1.sub2": "2- التواصل والأنظمة الرمزية",
-                "PhiH.index.grade4.part1.sub2.lesson": "التواصل والأنظمة الرمزية",
-                "PhiH.index.grade4.part1.sub3": "3- الخصوصية والكونية",
-                "PhiH.index.grade4.part1.sub3.lesson": "الخصوصية والكونية",
-                
-                "PhiH.index.grade4.part2": "II- العلم بين الحقيقة والنمذجة",
-                "PhiH.index.grade4.part2.sub1": "1- أبعاد النمذجة",
-                "PhiH.index.grade4.part2.sub1.lesson1": "البعد التركيبي",
-                "PhiH.index.grade4.part2.sub1.lesson2": "البعد الدلالي",
-                "PhiH.index.grade4.part2.sub1.lesson3": "البعد التداولي",
-                "PhiH.index.grade4.part2.sub2": "2- النمذجة ومطلب الحقيقة",
-                "PhiH.index.grade4.part2.sub2.lesson": "النمذجة ومطلب الحقيقة",
-                "PhiH.index.grade4.part2.sub3": "3- الحدود",
-                "PhiH.index.grade4.part2.sub3.lesson1": "الحدود الإبستمولوجية",
-                "PhiH.index.grade4.part2.sub3.lesson2": "الحدود الفلسفية",
-                
-                "PhiH.index.grade4.part3": "III- القيم بين النسبي والمطلق",
-                "PhiH.index.grade4.part3.sub1": "1- العمل: النجاعة والعدالة",
-                "PhiH.index.grade4.part3.sub1.lesson": "العمل: النجاعة والعدالة",
-                "PhiH.index.grade4.part3.sub2": "2- الدولة: السيادة والمواطنة",
-                "PhiH.index.grade4.part3.sub2.lesson": "الدولة: السيادة والمواطنة",
-                "PhiH.index.grade4.part3.sub3": "3- الأخلاق: الخير والسعادة",
-                "PhiH.index.grade4.part3.sub3.lesson": "الأخلاق: الخير والسعادة",
-                "PhiH.index.grade4.part3.sub4": "4- الفن: الجمال والحقيقة",
-                "PhiH.index.grade4.part3.sub4.lesson": "الفن: الجمال والحقيقة",
-                
-                "PhiH.index.grade4.part4": "VI- دراسة مسترسلة لأثر فلسفي",
-                "PhiH.index.grade4.part4.lesson": "دراسة مسترسلة لأثر فلسفي"
-            }
-        };
-        
-        // Set the current translations for the translation.js file to use
-        window.currentTranslations = window.translations_PhiHindex;
-    </script>
-    
-    <!-- Include the external translation file -->
-    <script src="scripts/translation.js"></script>
-    
-    <!-- Include PWA Handler -->
-    <script src="scripts/pwa-handler.js"></script>
-    <script>
-// Manual service worker registration as backup
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
-                console.log('SW registered: ', registration);
-            })
-            .catch(function(registrationError) {
-                console.log('SW registration failed: ', registrationError);
-            });
-    });
-}
-
-        // Homepage specific functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Modal functionality
-            const generalCard = document.getElementById('generalCard');
-            const secondary3Card = document.getElementById('secondary3Card');
-            const secondary4Card = document.getElementById('secondary4Card');
-            const generalModal = document.getElementById('generalModal');
-            const secondary3Modal = document.getElementById('secondary3Modal');
-            const secondary4Modal = document.getElementById('secondary4Modal');
-            const closeButtons = document.querySelectorAll('.PhiH-homepage-modal-close');
-            
-            // Open modals when cards are clicked
-            if (generalCard && generalModal) {
-                generalCard.addEventListener('click', function() {
-                    generalModal.style.display = 'block';
-                });
-            }
-            
-            if (secondary3Card && secondary3Modal) {
-                secondary3Card.addEventListener('click', function() {
-                    secondary3Modal.style.display = 'block';
-                });
-            }
-            
-            if (secondary4Card && secondary4Modal) {
-                secondary4Card.addEventListener('click', function() {
-                    secondary4Modal.style.display = 'block';
-                });
-            }
-            
-            // Close modals when close button is clicked
-            closeButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const modal = this.closest('.PhiH-homepage-modal');
-                    if (modal) {
-                        modal.style.display = 'none';
-                    }
-                });
-            });
-            
-            // Close modals when clicking outside the modal content
-            window.addEventListener('click', function(event) {
-                if (event.target.classList.contains('PhiH-homepage-modal')) {
-                    event.target.style.display = 'none';
-                }
-            });
-            
-            // Prevent clicks inside modal content from closing the modal
-            document.querySelectorAll('.PhiH-homepage-modal-content').forEach(content => {
-                content.addEventListener('click', function(event) {
-                    event.stopPropagation();
-                });
-            });
-            
-            // Windows bar active state management
-            const currentPage = window.location.pathname.split('/').pop();
-            const windowItems = document.querySelectorAll('.PhiH-window-item');
-            
-            windowItems.forEach(item => {
-                if (item.getAttribute('href') === currentPage) {
-                    item.classList.add('active');
-                } else {
-                    item.classList.remove('active');
-                }
-            });
-        });
-// Manual install button handler
-document.addEventListener('DOMContentLoaded', function() {
-    const manualInstallBtn = document.getElementById('manual-install-btn');
-    let deferredPrompt;
-    
-    window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        manualInstallBtn.style.display = 'flex';
-    });
-    
-    if (manualInstallBtn) {
-        manualInstallBtn.addEventListener('click', async () => {
-            if (!deferredPrompt) return;
-            
-            deferredPrompt.prompt();
-            const { outcome } = await deferredPrompt.userChoice;
-            
-            if (outcome === 'accepted') {
-                manualInstallBtn.style.display = 'none';
-                deferredPrompt = null;
-            }
-        });
-    }
-});
-</script>
-</body>
+			}
+		</style>
+	</head>
+	<body class="PhiH-homepage">
+		<header class="PhiH-general-header">
+			<div class="PhiH-general-header-content">
+				<!-- Column 1: Icon - Now clickable -->
+				<div class="PhiH-general-logo-container">
+					<a href="index.html">
+						<img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+					</a>
+				</div>
+				
+				<!-- Column 2: Title -->
+				<div class="PhiH-general-title-container">
+					<h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+				</div>
+				
+				<!-- Column 3: Options -->
+				<div class="PhiH-general-header-controls">
+					<!-- Removed Authors Button from here -->
+					
+					<div class="PhiH-general-theme-toggle">
+						<label class="PhiH-theme-toggle-label">
+							<span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+							<div class="PhiH-theme-toggle-switch">
+								<input type="checkbox" id="themeToggle">
+								<span class="PhiH-theme-toggle-slider"></span>
+							</div>
+						</label>
+					</div>
+					<div class="PhiH-general-language-selector">
+						<select class="PhiH-general-language-dropdown" id="languageSelect">
+							<option value="en">English</option>
+							<option value="fr">Français</option>
+							<option value="ar">العربية</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<!-- Manual Install Button (Fallback) -->
+			<button id="manual-install-btn" class="PhiH-pwa-install-btn" style="display: none;">
+				<span class="PhiH-pwa-install-icon">📱</span>
+				<span data-i18n="PhiH.pwa.install">Install App</span>
+			</button>
+		</header>
+		
+		<!-- Windows Bar -->
+		<nav class="PhiH-windows-bar">
+			<a href="index.html" class="PhiH-window-item active">
+				<span class="PhiH-window-icon">🏠</span>
+				<span data-i18n="PhiH.windows.home">Home</span>
+			</a>
+			<a href="authors.html" class="PhiH-window-item">
+				<span class="PhiH-window-icon">👥</span>
+				<span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+			</a>
+			<a href="quotes.html" class="PhiH-window-item">
+				<span class="PhiH-window-icon">📚</span>
+				<span data-i18n="PhiH.windows.quotes">Quotes</span>
+			</a>
+			<a href="resources.html" class="PhiH-window-item">
+				<span class="PhiH-window-icon">🔍</span>
+				<span data-i18n="PhiH.windows.resources">Resources</span>
+			</a>
+		</nav>
+		
+		<main class="PhiH-homepage-main">
+			<h1 class="PhiH-homepage-title" data-i18n="PhiH.index.title">Philosophy Learning Hub</h1>
+			<p class="PhiH-homepage-subtitle" data-i18n="PhiH.index.subtitle">Explore the world of philosophy with interactive lessons, critical thinking exercises, and philosophical resources</p>
+			
+			<div class="PhiH-homepage-cards">
+				<!-- General Philosophy Card -->
+				<div class="PhiH-homepage-card" id="generalCard">
+					<div class="PhiH-homepage-card-icon">🧠</div>
+					<h2 class="PhiH-homepage-card-title" data-i18n="PhiH.index.general">General Philosophy</h2>
+					<p class="PhiH-homepage-card-description" data-i18n="PhiH.index.generalDesc">Foundational concepts and introduction to philosophical thinking</p>
+				</div>
+				
+				<!-- 3rd Year Secondary Card -->
+				<div class="PhiH-homepage-card purple" id="secondary3Card">
+					<div class="PhiH-homepage-card-icon">3️⃣</div>
+					<h2 class="PhiH-homepage-card-title" data-i18n="PhiH.index.grade3">السنة الثالثة ثانوي</h2>
+					<p class="PhiH-homepage-card-description" data-i18n="PhiH.index.grade3Desc">Philosophy curriculum for third year secondary students</p>
+				</div>
+				
+				<!-- 4th Year Secondary Card -->
+				<div class="PhiH-homepage-card secondary" id="secondary4Card">
+					<div class="PhiH-homepage-card-icon">4️⃣</div>
+					<h2 class="PhiH-homepage-card-title" data-i18n="PhiH.index.grade4">السنة الرابعة ثانوي</h2>
+					<p class="PhiH-homepage-card-description" data-i18n="PhiH.index.grade4Desc">Advanced philosophical concepts and examination preparation</p>
+				</div>
+			</div>
+		</main>
+		
+		<footer class="PhiH-general-footer">
+			<div class="PhiH-general-footer-content">
+				<div class="PhiH-general-footer-column">
+					<h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+					<p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+				</div>
+				<div class="PhiH-general-footer-column">
+					<h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+					<p data-i18n="PhiH.general.version">v1.0.0</p>
+				</div>
+				<div class="PhiH-general-footer-column">
+					<h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+					<div class="PhiH-general-footer-links">
+						<a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+						<a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<!-- Modals -->
+		<div id="generalModal" class="PhiH-homepage-modal">
+			<div class="PhiH-homepage-modal-content">
+				<span class="PhiH-homepage-modal-close">&times;</span>
+				<h2 class="PhiH-homepage-modal-title" data-i18n="PhiH.index.modalGeneralTitle">General Philosophy Lessons</h2>
+				
+				<ul class="PhiH-homepage-lesson-list">
+					<!-- Content will be added later -->
+					<li class="PhiH-homepage-theme">
+						<h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.generalContentComing">Content Coming Soon</h3>
+						<p data-i18n="PhiH.index.generalContentDescription">General philosophy lessons and resources will be available in future updates.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="secondary3Modal" class="PhiH-homepage-modal purple">
+			<div class="PhiH-homepage-modal-content">
+				<span class="PhiH-homepage-modal-close">&times;</span>
+				<h2 class="PhiH-homepage-modal-title" data-i18n="PhiH.index.modalGrade3Title">دروس السنة الثالثة ثانوي</h2>
+				
+				<ul class="PhiH-homepage-lesson-list">
+					<li class="PhiH-homepage-theme">
+						<h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.grade3.part1">I- اليومي</h3>
+						
+						<!-- Subtheme 1: اليومي من المعيش الى المفهوم: دلالة اليومي -->
+						<div class="PhiH-homepage-chapter">
+							<h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade3.part1.sub1">اليومي من المعيش الى المفهوم: دلالة اليومي</h4>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH_lessons_grade3_theme1_lesson1.html" data-i18n="PhiH.index.grade3.part1.sub1.lesson1">اليومي</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH_lessons_grade3_theme1_lesson2.html" data-i18n="PhiH.index.grade3.part1.sub1.lesson2">الرأي السائد</a>
+							</div>
+						</div>
+						
+						<!-- Subtheme 2: تجليات اليومي -->
+						<div class="PhiH-homepage-chapter">
+							<h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade3.part1.sub2">تجليات اليومي</h4>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH_lessons_grade3_theme1_lesson3.html" data-i18n="PhiH.index.grade3.part1.sub2.lesson">الوثوقية</a>
+							</div>
+						</div>
+						
+						<!-- Subtheme 3: آليات اشتغال اليومي -->
+						<div class="PhiH-homepage-chapter">
+							<h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade3.part1.sub3">آليات اشتغال اليومي</h4>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH_lessons_grade3_theme1_lesson4.html" data-i18n="PhiH.index.grade3.part1.sub3.lesson">الوهم</a>
+							</div>
+						</div>
+						
+						<!-- Subtheme 4: مخاطر اليومي ودور الفلسفة في تجاوزها -->
+						<div class="PhiH-homepage-chapter">
+							<h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade3.part1.sub4">مخاطر اليومي ودور الفلسفة في تجاوزها</h4>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH_lessons_grade3_theme1_lesson5.html" data-i18n="PhiH.index.grade3.part1.sub4.lesson">الدعاية</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH_lessons_grade3_theme1_lesson6.html" data-i18n="PhiH.index.grade3.part1.sub4.lesson2">الاغتراب</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH_lessons_grade3_theme1_lesson7.html" data-i18n="PhiH.index.grade3.part1.sub4.lesson3">التعصب</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH_lessons_grade3_theme1_lesson8.html" data-i18n="PhiH.index.grade3.part1.sub4.lesson4">القيم</a>
+							</div>
+						</div>
+					</li>
+					
+					<li class="PhiH-homepage-theme">
+						<h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.grade3.part2">II- مقتضيات التفكير</h3>
+						
+						<div class="PhiH-homepage-chapter">
+							<h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade3.part2.sub1">1- الوعي بالمغالطات</h4>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH_lessons_grade3_theme2a_lesson1.html" data-i18n="PhiH.index.grade3.part2.sub1.lesson1">مدخل إلى الاستدلال والمغالطة</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH_lessons_grade3_theme2a_lesson2.html" data-i18n="PhiH.index.grade3.part2.sub1.lesson2">المشكلات الزائفة</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH_lessons_grade3_theme2a_lesson3.html" data-i18n="PhiH.index.grade3.part2.sub1.lesson3">المغالطات في الخطاب</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH_lessons_grade3_theme2a_lesson4.html" data-i18n="PhiH.index.grade3.part2.sub1.lesson4">الالتباس اللفظي والمفارقات الجدلية</a>
+							</div>
+						</div>
+						
+						<div class="PhiH-homepage-chapter">
+							<h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade3.part2.sub2">2- إجرائيات التفكير</h4>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH_lessons_grade3_theme2b_lesson1.html" data-i18n="PhiH.index.grade3.part2.sub2.lesson1">الأشكلة</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH_lessons_grade3_theme2b_lesson2.html" data-i18n="PhiH.index.grade3.part2.sub2.lesson2">التعريف</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH_lessons_grade3_theme2b_lesson3.html" data-i18n="PhiH.index.grade3.part2.sub2.lesson3">الحجاج</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH_lessons_grade3_theme2b_lesson4.html" data-i18n="PhiH.index.grade3.part2.sub2.lesson4">التحليل</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH_lessons_grade3_theme2b_lesson5.html" data-i18n="PhiH.index.grade3.part2.sub2.lesson5">التأسيس</a>
+							</div>
+						</div>
+						
+						<div class="PhiH-homepage-chapter">
+							<h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade3.part2.sub3">3- إيقاف التفكير</h4>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade3-reasoning.html" data-i18n="PhiH.index.grade3.part2.sub3.lesson1">التعقل</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade3-dialogue.html" data-i18n="PhiH.index.grade3.part2.sub3.lesson2">الحوار</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade3-criticism.html" data-i18n="PhiH.index.grade3.part2.sub3.lesson3">النقد</a>
+							</div>
+						</div>
+					</li>
+					
+					<li class="PhiH-homepage-theme">
+						<h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.grade3.part3">III- تجربة الالتزام: شخصيات فكرية</h3>
+						<div class="PhiH-homepage-chapter">
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade3-autonomy.html" data-i18n="PhiH.index.grade3.part3.lesson1">الاستقلالية</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade3-ideology.html" data-i18n="PhiH.index.grade3.part3.lesson2">الإيديولوجيا</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade3-courage.html" data-i18n="PhiH.index.grade3.part3.lesson3">الشجاعة</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade3-responsibility.html" data-i18n="PhiH.index.grade3.part3.lesson4">المسؤولية</a>
+							</div>
+						</div>
+					</li>
+					
+					<li class="PhiH-homepage-theme">
+						<h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.grade3.part4">VI- دراسة مسترسلة لأثر فلسفي</h3>
+						<div class="PhiH-homepage-chapter">
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade3-philosophical-work.html" data-i18n="PhiH.index.grade3.part4.lesson">دراسة مسترسلة لأثر فلسفي</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="secondary4Modal" class="PhiH-homepage-modal secondary">
+			<div class="PhiH-homepage-modal-content">
+				<span class="PhiH-homepage-modal-close">&times;</span>
+				<h2 class="PhiH-homepage-modal-title" data-i18n="PhiH.index.modalGrade4Title">دروس السنة الرابعة ثانوي</h2>
+				
+				<ul class="PhiH-homepage-lesson-list">
+					<li class="PhiH-homepage-theme">
+						<h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.grade4.part1">I- الإنساني بين الكثرة والوحدة</h3>
+						
+						<div class="PhiH-homepage-chapter">
+							<h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part1.sub1">1- الاتصال بين الكثرة والوحدة</h4>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade4-multiplicity-unity.html" data-i18n="PhiH.index.grade4.part1.sub1.lesson">الاتصال بين الكثرة والوحدة</a>
+							</div>
+						</div>
+						
+						<div class="PhiH-homepage-chapter">
+							<h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part1.sub2">2- التواصل والأنظمة الرمزية</h4>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade4-communication-symbolic.html" data-i18n="PhiH.index.grade4.part1.sub2.lesson">التواصل والأنظمة الرمزية</a>
+							</div>
+						</div>
+						
+						<div class="PhiH-homepage-chapter">
+							<h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part1.sub3">3- الخصوصية والكونية</h4>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade4-particularity-universality.html" data-i18n="PhiH.index.grade4.part1.sub3.lesson">الخصوصية والكونية</a>
+							</div>
+						</div>
+					</li>
+					
+					<li class="PhiH-homepage-theme">
+						<h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.grade4.part2">II- العلم بين الحقيقة والنمذجة</h3>
+						
+						<div class="PhiH-homepage-chapter">
+							<h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part2.sub1">1- أبعاد النمذجة</h4>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade4-syntactic-dimension.html" data-i18n="PhiH.index.grade4.part2.sub1.lesson1">البعد التركيبي</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade4-semantic-dimension.html" data-i18n="PhiH.index.grade4.part2.sub1.lesson2">البعد الدلالي</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade4-pragmatic-dimension.html" data-i18n="PhiH.index.grade4.part2.sub1.lesson3">البعد التداولي</a>
+							</div>
+						</div>
+						
+						<div class="PhiH-homepage-chapter">
+							<h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part2.sub2">2- النمذجة ومطلب الحقيقة</h4>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade4-modeling-truth.html" data-i18n="PhiH.index.grade4.part2.sub2.lesson">النمذجة ومطلب الحقيقة</a>
+							</div>
+						</div>
+						
+						<div class="PhiH-homepage-chapter">
+							<h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part2.sub3">3- الحدود</h4>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade4-epistemological-limits.html" data-i18n="PhiH.index.grade4.part2.sub3.lesson1">الحدود الإبستمولوجية</a>
+							</div>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade4-philosophical-limits.html" data-i18n="PhiH.index.grade4.part2.sub3.lesson2">الحدود الفلسفية</a>
+							</div>
+						</div>
+					</li>
+					
+					<li class="PhiH-homepage-theme">
+						<h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.grade4.part3">III- القيم بين النسبي والمطلق</h3>
+						
+						<div class="PhiH-homepage-chapter">
+							<h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part3.sub1">1- العمل: النجاعة والعدالة</h4>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade4-work-efficiency-justice.html" data-i18n="PhiH.index.grade4.part3.sub1.lesson">العمل: النجاعة والعدالة</a>
+							</div>
+						</div>
+						
+						<div class="PhiH-homepage-chapter">
+							<h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part3.sub2">2- الدولة: السيادة والمواطنة</h4>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade4-state-sovereignty-citizenship.html" data-i18n="PhiH.index.grade4.part3.sub2.lesson">الدولة: السيادة والمواطنة</a>
+							</div>
+						</div>
+						
+						<div class="PhiH-homepage-chapter">
+							<h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part3.sub3">3- الأخلاق: الخير والسعادة</h4>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade4-ethics-good-happiness.html" data-i18n="PhiH.index.grade4.part3.sub3.lesson">الأخلاق: الخير والسعادة</a>
+							</div>
+						</div>
+						
+						<div class="PhiH-homepage-chapter">
+							<h4 class="PhiH-homepage-chapter-title" data-i18n="PhiH.index.grade4.part3.sub4">4- الفن: الجمال والحقيقة</h4>
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade4-art-beauty-truth.html" data-i18n="PhiH.index.grade4.part3.sub4.lesson">الفن: الجمال والحقيقة</a>
+							</div>
+						</div>
+					</li>
+					
+					<li class="PhiH-homepage-theme">
+						<h3 class="PhiH-homepage-theme-title" data-i18n="PhiH.index.grade4.part4">VI- دراسة مسترسلة لأثر فلسفي</h3>
+						<div class="PhiH-homepage-chapter">
+							<div class="PhiH-homepage-lesson">
+								<a href="PhiH-lessons-grade4-philosophical-work.html" data-i18n="PhiH.index.grade4.part4.lesson">دراسة مسترسلة لأثر فلسفي</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<script>
+			// Page-specific translations for index page
+			window.translations_PhiHindex = {
+				fr: {
+					// General translations
+					"PhiH.general.siteName": "Philosophy Learning Hub",
+					"PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+					"PhiH.general.present": "X",
+					"PhiH.general.absent": "",
+					"PhiH.general.developerTitle": "Développeur",
+					"PhiH.general.developer": "Mejri Ziad",
+					"PhiH.general.versionTitle": "Version",
+					"PhiH.general.version": "v1.0.0",
+					"PhiH.general.linksTitle": "Liens",
+					"PhiH.general.termsOfUse": "Conditions d'utilisation",
+					"PhiH.general.privacyPolicy": "Politique de confidentialité",
+					"PhiH.general.themeToggle": "Mode sombre",
+					"PhiH.general.authors": "Philosophes",
+					
+					// Windows bar translations
+					"PhiH.windows.home": "Accueil",
+					"PhiH.windows.philosophers": "Philosophes",
+					"PhiH.windows.quotes": "Quotes",
+					"PhiH.windows.resources": "Ressources",
+					
+					// Index specific translations
+					"PhiH.index.title": "Philosophy Learning Hub",
+					"PhiH.index.subtitle": "Explorez le monde de la philosophie avec des leçons interactives, des exercices de pensée critique et des ressources philosophiques",
+					"PhiH.index.general": "Philosophie Générale",
+					"PhiH.index.generalDesc": "Concepts fondamentaux et introduction à la pensée philosophique",
+					"PhiH.index.grade3": "3ème Secondaire",
+					"PhiH.index.grade3Desc": "Programme de philosophie pour les élèves de troisième secondaire",
+					"PhiH.index.grade4": "4ème Secondaire",
+					"PhiH.index.grade4Desc": "Concepts philosophiques avancés et préparation aux examens",
+					"PhiH.index.modalGeneralTitle": "Leçons de Philosophie Générale",
+					"PhiH.index.modalGrade3Title": "Leçons de 3ème Secondaire",
+					"PhiH.index.modalGrade4Title": "Leçons de 4ème Secondaire",
+					"PhiH.index.comingSoon": "Bientôt disponible",
+					
+					"PhiH.index.generalContentComing": "Contenu à venir",
+					"PhiH.index.generalContentDescription": "Les leçons et ressources de philosophie générale seront disponibles dans les prochaines mises à jour.",
+					
+					// 3rd Year Program Translations
+					"PhiH.index.grade3.part1": "I- Le Quotidien",
+					"PhiH.index.grade3.part1.sub1": "Le Quotidien du vécu au concept: Signification du quotidien",
+					"PhiH.index.grade3.part1.sub1.lesson1": "Le Quotidien",
+					"PhiH.index.grade3.part1.sub1.lesson2": "Opinion courante",
+					"PhiH.index.grade3.part1.sub2": "Manifestations du quotidien",
+					"PhiH.index.grade3.part1.sub2.lesson": "Certitude",
+					"PhiH.index.grade3.part1.sub3": "Mécanismes de fonctionnement du quotidien",
+					"PhiH.index.grade3.part1.sub3.lesson": "Illusion",
+					"PhiH.index.grade3.part1.sub4": "Risques du quotidien et rôle de la philosophie dans leur dépassement",
+					"PhiH.index.grade3.part1.sub4.lesson": "Propagande",
+					"PhiH.index.grade3.part1.sub4.lesson2": "Aliénation",
+					"PhiH.index.grade3.part1.sub4.lesson3": "Fanatisme",
+					"PhiH.index.grade3.part1.sub4.lesson4": "Valeurs",
+					"PhiH.index.grade3.part2": "II- Les Exigences de la pensée",
+					"PhiH.index.grade3.part2.sub1": "1- Conscience des sophismes",
+					"PhiH.index.grade3.part2.sub1.lesson1": "Introduction au raisonnement et à la sophistique",
+					"PhiH.index.grade3.part2.sub1.lesson2": "Problèmes fallacieux",
+					"PhiH.index.grade3.part2.sub1.lesson3": "Sophismes dans le discours",
+					"PhiH.index.grade3.part2.sub1.lesson4": "Ambiguïté verbale et paradoxes dialectiques",
+					"PhiH.index.grade3.part2.sub2": "2- Procédures de la pensée",
+					"PhiH.index.grade3.part2.sub2.lesson1": "Problématisation",
+					"PhiH.index.grade3.part2.sub2.lesson2": "Définition",
+					"PhiH.index.grade3.part2.sub2.lesson3": "Argumentation",
+					"PhiH.index.grade3.part2.sub2.lesson4": "Analyse",
+					"PhiH.index.grade3.part2.sub2.lesson5": "Fondation",
+					"PhiH.index.grade3.part2.sub3": "3- Les Fins de la pensée",
+					"PhiH.index.grade3.part2.sub3.lesson1": "Raisonnement",
+					"PhiH.index.grade3.part2.sub3.lesson2": "Dialogue",
+					"PhiH.index.grade3.part2.sub3.lesson3": "Critique",
+					
+					"PhiH.index.grade3.part3": "III- L'Expérience de l'engagement : Figures intellectuelles",
+					"PhiH.index.grade3.part3.lesson1": "Autonomie",
+					"PhiH.index.grade3.part3.lesson2": "Idéologie",
+					"PhiH.index.grade3.part3.lesson3": "Courage",
+					"PhiH.index.grade3.part3.lesson4": "Responsabilité",
+					
+					"PhiH.index.grade3.part4": "VI- Étude suivie d'une œuvre philosophique",
+					"PhiH.index.grade3.part4.lesson": "Étude suivie d'une œuvre philosophique",
+					
+					// 4th Year Program Translations
+					"PhiH.index.grade4.part1": "I- L'Humain entre multiplicité et unité",
+					"PhiH.index.grade4.part1.sub1": "1- La Liaison entre multiplicité et unité",
+					"PhiH.index.grade4.part1.sub1.lesson": "La Liaison entre multiplicité et unité",
+					"PhiH.index.grade4.part1.sub2": "2- Communication et systèmes symboliques",
+					"PhiH.index.grade4.part1.sub2.lesson": "Communication et systèmes symboliques",
+					"PhiH.index.grade4.part1.sub3": "3- Particularité et universalité",
+					"PhiH.index.grade4.part1.sub3.lesson": "Particularité et universalité",
+					
+					"PhiH.index.grade4.part2": "II- La Science entre vérité et modélisation",
+					"PhiH.index.grade4.part2.sub1": "1- Dimensions de la modélisation",
+					"PhiH.index.grade4.part2.sub1.lesson1": "Dimension syntaxique",
+					"PhiH.index.grade4.part2.sub1.lesson2": "Dimension sémantique",
+					"PhiH.index.grade4.part2.sub1.lesson3": "Dimension pragmatique",
+					"PhiH.index.grade4.part2.sub2": "2- Modélisation et exigence de vérité",
+					"PhiH.index.grade4.part2.sub2.lesson": "Modélisation et exigence de vérité",
+					"PhiH.index.grade4.part2.sub3": "3- Limites",
+					"PhiH.index.grade4.part2.sub3.lesson1": "Limites épistémologiques",
+					"PhiH.index.grade4.part2.sub3.lesson2": "Limites philosophiques",
+					
+					"PhiH.index.grade4.part3": "III- Les Valeurs entre relatif et absolu",
+					"PhiH.index.grade4.part3.sub1": "1- Le Travail : Efficacité et justice",
+					"PhiH.index.grade4.part3.sub1.lesson": "Le Travail : Efficacité et justice",
+					"PhiH.index.grade4.part3.sub2": "2- L'État : Souveraineté et citoyenneté",
+					"PhiH.index.grade4.part3.sub2.lesson": "L'État : Souveraineté et citoyenneté",
+					"PhiH.index.grade4.part3.sub3": "3- L'Éthique : Le Bien et le bonheur",
+					"PhiH.index.grade4.part3.sub3.lesson": "L'Éthique : Le Bien et le bonheur",
+					"PhiH.index.grade4.part3.sub4": "4- L'Art : Beauté et vérité",
+					"PhiH.index.grade4.part3.sub4.lesson": "L'Art : Beauté et vérité",
+					
+					"PhiH.index.grade4.part4": "VI- Étude suivie d'une œuvre philosophique",
+					"PhiH.index.grade4.part4.lesson": "Étude suivie d'une œuvre philosophique"
+				},
+				en: {
+					// General translations
+					"PhiH.general.siteName": "Philosophy Learning Hub",
+					"PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+					"PhiH.general.present": "X",
+					"PhiH.general.absent": "",
+					"PhiH.general.developerTitle": "Developer",
+					"PhiH.general.developer": "Mejri Ziad",
+					"PhiH.general.versionTitle": "Version",
+					"PhiH.general.version": "v1.0.0",
+					"PhiH.general.linksTitle": "Links",
+					"PhiH.general.termsOfUse": "Terms of Use",
+					"PhiH.general.privacyPolicy": "Privacy Policy",
+					"PhiH.general.themeToggle": "Dark mode",
+					"PhiH.general.authors": "Philosophers",
+					
+					// Windows bar translations
+					"PhiH.windows.home": "Home",
+					"PhiH.windows.philosophers": "Philosophers",
+					"PhiH.windows.quotes": "Quotes",
+					"PhiH.windows.resources": "Resources",
+					
+					// Index specific translations
+					"PhiH.index.title": "Philosophy Learning Hub",
+					"PhiH.index.subtitle": "Explore the world of philosophy with interactive lessons, critical thinking exercises, and philosophical resources",
+					"PhiH.index.general": "General Philosophy",
+					"PhiH.index.generalDesc": "Foundational concepts and introduction to philosophical thinking",
+					"PhiH.index.grade3": "3rd Secondary",
+					"PhiH.index.grade3Desc": "Philosophy curriculum for third year secondary students",
+					"PhiH.index.grade4": "4th Secondary",
+					"PhiH.index.grade4Desc": "Advanced philosophical concepts and examination preparation",
+					"PhiH.index.modalGeneralTitle": "General Philosophy Lessons",
+					"PhiH.index.modalGrade3Title": "3rd Secondary Lessons",
+					"PhiH.index.modalGrade4Title": "4th Secondary Lessons",
+					"PhiH.index.comingSoon": "Coming Soon",
+					
+					"PhiH.index.generalContentComing": "Content Coming Soon",
+					"PhiH.index.generalContentDescription": "General philosophy lessons and resources will be available in future updates.",
+					
+					// 3rd Year Program Translations
+					"PhiH.index.grade3.part1": "I- The Everyday",
+					"PhiH.index.grade3.part1.sub1": "The Everyday from lived experience to concept: Meaning of the everyday",
+					"PhiH.index.grade3.part1.sub1.lesson1": "The Everyday",
+					"PhiH.index.grade3.part1.sub1.lesson2": "Prevailing Opinion",
+					"PhiH.index.grade3.part1.sub2": "Manifestations of the everyday",
+					"PhiH.index.grade3.part1.sub2.lesson": "Certitude",
+					"PhiH.index.grade3.part1.sub3": "Mechanisms of everyday functioning",
+					"PhiH.index.grade3.part1.sub3.lesson": "Illusion",
+					"PhiH.index.grade3.part1.sub4": "Risks of the everyday and philosophy's role in overcoming them",
+					"PhiH.index.grade3.part1.sub4.lesson": "Propaganda",
+					"PhiH.index.grade3.part1.sub4.lesson2": "Alienation",
+					"PhiH.index.grade3.part1.sub4.lesson3": "Fanaticism",
+					"PhiH.index.grade3.part1.sub4.lesson4": "Values",
+					"PhiH.index.grade3.part2": "II- The Requirements of Thinking",
+					"PhiH.index.grade3.part2.sub1": "1- Awareness of Fallacies",
+					"PhiH.index.grade3.part2.sub1.lesson1": "Introduction to Reasoning and Fallacy",
+					"PhiH.index.grade3.part2.sub1.lesson2": "Pseudo-Problems",
+					"PhiH.index.grade3.part2.sub1.lesson3": "Fallacies in Discourse",
+					"PhiH.index.grade3.part2.sub1.lesson4": "Verbal Ambiguity and Dialectical Paradoxes",
+					"PhiH.index.grade3.part2.sub2": "2- Procedures of Thinking",
+					"PhiH.index.grade3.part2.sub2.lesson1": "Problematization",
+					"PhiH.index.grade3.part2.sub2.lesson2": "Definition",
+					"PhiH.index.grade3.part2.sub2.lesson3": "Argumentation",
+					"PhiH.index.grade3.part2.sub2.lesson4": "Analysis",
+					"PhiH.index.grade3.part2.sub2.lesson5": "Foundation",
+					"PhiH.index.grade3.part2.sub3": "3- The Ends of Thinking",
+					"PhiH.index.grade3.part2.sub3.lesson1": "Reasoning",
+					"PhiH.index.grade3.part2.sub3.lesson2": "Dialogue",
+					"PhiH.index.grade3.part2.sub3.lesson3": "Criticism",
+					
+					"PhiH.index.grade3.part3": "III- The Experience of Commitment: Intellectual Figures",
+					"PhiH.index.grade3.part3.lesson1": "Autonomy",
+					"PhiH.index.grade3.part3.lesson2": "Ideology",
+					"PhiH.index.grade3.part3.lesson3": "Courage",
+					"PhiH.index.grade3.part3.lesson4": "Responsibility",
+					
+					"PhiH.index.grade3.part4": "VI- Continuous Study of a Philosophical Work",
+					"PhiH.index.grade3.part4.lesson": "Continuous Study of a Philosophical Work",
+					
+					// 4th Year Program Translations
+					"PhiH.index.grade4.part1": "I- The Human between Multiplicity and Unity",
+					"PhiH.index.grade4.part1.sub1": "1- The Connection between Multiplicity and Unity",
+					"PhiH.index.grade4.part1.sub1.lesson": "The Connection between Multiplicity and Unity",
+					"PhiH.index.grade4.part1.sub2": "2- Communication and Symbolic Systems",
+					"PhiH.index.grade4.part1.sub2.lesson": "Communication and Symbolic Systems",
+					"PhiH.index.grade4.part1.sub3": "3- Particularity and Universality",
+					"PhiH.index.grade4.part1.sub3.lesson": "Particularity and Universality",
+					
+					"PhiH.index.grade4.part2": "II- Science between Truth and Modeling",
+					"PhiH.index.grade4.part2.sub1": "1- Dimensions of Modeling",
+					"PhiH.index.grade4.part2.sub1.lesson1": "Syntactic Dimension",
+					"PhiH.index.grade4.part2.sub1.lesson2": "Semantic Dimension",
+					"PhiH.index.grade4.part2.sub1.lesson3": "Pragmatic Dimension",
+					"PhiH.index.grade4.part2.sub2": "2- Modeling and the Requirement of Truth",
+					"PhiH.index.grade4.part2.sub2.lesson": "Modeling and the Requirement of Truth",
+					"PhiH.index.grade4.part2.sub3": "3- Limits",
+					"PhiH.index.grade4.part2.sub3.lesson1": "Epistemological Limits",
+					"PhiH.index.grade4.part2.sub3.lesson2": "Philosophical Limits",
+					
+					"PhiH.index.grade4.part3": "III- Values between the Relative and the Absolute",
+					"PhiH.index.grade4.part3.sub1": "1- Work: Efficiency and Justice",
+					"PhiH.index.grade4.part3.sub1.lesson": "Work: Efficiency and Justice",
+					"PhiH.index.grade4.part3.sub2": "2- The State: Sovereignty and Citizenship",
+					"PhiH.index.grade4.part3.sub2.lesson": "The State: Sovereignty and Citizenship",
+					"PhiH.index.grade4.part3.sub3": "3- Ethics: The Good and Happiness",
+					"PhiH.index.grade4.part3.sub3.lesson": "Ethics: The Good and Happiness",
+					"PhiH.index.grade4.part3.sub4": "4- Art: Beauty and Truth",
+					"PhiH.index.grade4.part3.sub4.lesson": "Art: Beauty and Truth",
+					
+					"PhiH.index.grade4.part4": "VI- Continuous Study of a Philosophical Work",
+					"PhiH.index.grade4.part4.lesson": "Continuous Study of a Philosophical Work"
+				},
+				ar: {
+					// General translations
+					"PhiH.general.siteName": "مركز تعلم الفلسفة",
+					"PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+					"PhiH.general.present": "X",
+					"PhiH.general.absent": "",
+					"PhiH.general.developerTitle": "المطور",
+					"PhiH.general.developer": "مجرى زياد",
+					"PhiH.general.versionTitle": "الإصدار",
+					"PhiH.general.version": "v1.0.0",
+					"PhiH.general.linksTitle": "الروابط",
+					"PhiH.general.termsOfUse": "شروط الاستخدام",
+					"PhiH.general.privacyPolicy": "سياسة الخصوصية",
+					"PhiH.general.themeToggle": "الوضع الداكن",
+					"PhiH.general.authors": "الفلاسفة",
+					
+					// Windows bar translations
+					"PhiH.windows.home": "الرئيسية",
+					"PhiH.windows.philosophers": "الفلاسفة",
+					"PhiH.windows.quotes": "شواهد",
+					"PhiH.windows.resources": "الموارد",
+					
+					// Index specific translations
+					"PhiH.index.title": "مركز تعلم الفلسفة",
+					"PhiH.index.subtitle": "استكشف عالم الفلسفة مع دروس تفاعلية وتمارين في التفكير النقدي وموارد فلسفية",
+					"PhiH.index.general": "الفلسفة العامة",
+					"PhiH.index.generalDesc": "المفاهيم الأساسية ومقدمة في التفكير الفلسفي",
+					"PhiH.index.grade3": "السنة الثالثة ثانوي",
+					"PhiH.index.grade3Desc": "منهج الفلسفة لطلاب السنة الثالثة ثانوي",
+					"PhiH.index.grade4": "السنة الرابعة ثانوي",
+					"PhiH.index.grade4Desc": "مفاهيم فلسفية متقدمة والتحضير للامتحانات",
+					"PhiH.index.modalGeneralTitle": "دروس الفلسفة العامة",
+					"PhiH.index.modalGrade3Title": "دروس السنة الثالثة ثانوي",
+					"PhiH.index.modalGrade4Title": "دروس السنة الرابعة ثانوي",
+					"PhiH.index.comingSoon": "قريباً",
+					
+					"PhiH.index.generalContentComing": "المحتوى قريباً",
+					"PhiH.index.generalContentDescription": "ستكون دروس وموارد الفلسفة العامة متاحة في التحديثات القادمة.",
+					
+					// 3rd Year Program Translations
+					"PhiH.index.grade3.part1": "I- اليومي",
+					"PhiH.index.grade3.part1.sub1": "اليومي من المعيش الى المفهوم: دلالة اليومي",
+					"PhiH.index.grade3.part1.sub1.lesson1": "اليومي",
+					"PhiH.index.grade3.part1.sub1.lesson2": "الرأي السائد",
+					"PhiH.index.grade3.part1.sub2": "تجليات اليومي",
+					"PhiH.index.grade3.part1.sub2.lesson": "الوثوقية",
+					"PhiH.index.grade3.part1.sub3": "آليات اشتغال اليومي",
+					"PhiH.index.grade3.part1.sub3.lesson": "الوهم",
+					"PhiH.index.grade3.part1.sub4": "مخاطر اليومي ودور الفلسفة في تجاوزها",
+					"PhiH.index.grade3.part1.sub4.lesson": "الدعاية",
+					"PhiH.index.grade3.part1.sub4.lesson2": "الاغتراب",
+					"PhiH.index.grade3.part1.sub4.lesson3": "التعصب",
+					"PhiH.index.grade3.part1.sub4.lesson4": "القيم",
+					"PhiH.index.grade3.part2": "II- مقتضيات التفكير",
+					"PhiH.index.grade3.part2.sub1": "1- الوعي بالمغالطات",
+					"PhiH.index.grade3.part2.sub1.lesson1": "مدخل إلى الاستدلال والمغالطة",
+					"PhiH.index.grade3.part2.sub1.lesson2": "المشكلات الزائفة",
+					"PhiH.index.grade3.part2.sub1.lesson3": "المغالطات في الخطاب",
+					"PhiH.index.grade3.part2.sub1.lesson4": "الالتباس اللفظي والمفارقات الجدلية",
+					"PhiH.index.grade3.part2.sub2": "2- إجرائيات التفكير",
+					"PhiH.index.grade3.part2.sub2.lesson1": "الأشكلة",
+					"PhiH.index.grade3.part2.sub2.lesson2": "التعريف",
+					"PhiH.index.grade3.part2.sub2.lesson3": "الحجاج",
+					"PhiH.index.grade3.part2.sub2.lesson4": "التحليل",
+					"PhiH.index.grade3.part2.sub2.lesson5": "التأسيس",
+					"PhiH.index.grade3.part2.sub3": "3- إيقاف التفكير",
+					"PhiH.index.grade3.part2.sub3.lesson1": "التعقل",
+					"PhiH.index.grade3.part2.sub3.lesson2": "الحوار",
+					"PhiH.index.grade3.part2.sub3.lesson3": "النقد",
+					
+					"PhiH.index.grade3.part3": "III- تجربة الالتزام: شخصيات فكرية",
+					"PhiH.index.grade3.part3.lesson1": "الاستقلالية",
+					"PhiH.index.grade3.part3.lesson2": "الإيديولوجيا",
+					"PhiH.index.grade3.part3.lesson3": "الشجاعة",
+					"PhiH.index.grade3.part3.lesson4": "المسؤولية",
+					
+					"PhiH.index.grade3.part4": "VI- دراسة مسترسلة لأثر فلسفي",
+					"PhiH.index.grade3.part4.lesson": "دراسة مسترسلة لأثر فلسفي",
+					
+					// 4th Year Program Translations
+					"PhiH.index.grade4.part1": "I- الإنساني بين الكثرة والوحدة",
+					"PhiH.index.grade4.part1.sub1": "1- الاتصال بين الكثرة والوحدة",
+					"PhiH.index.grade4.part1.sub1.lesson": "الاتصال بين الكثرة والوحدة",
+					"PhiH.index.grade4.part1.sub2": "2- التواصل والأنظمة الرمزية",
+					"PhiH.index.grade4.part1.sub2.lesson": "التواصل والأنظمة الرمزية",
+					"PhiH.index.grade4.part1.sub3": "3- الخصوصية والكونية",
+					"PhiH.index.grade4.part1.sub3.lesson": "الخصوصية والكونية",
+					
+					"PhiH.index.grade4.part2": "II- العلم بين الحقيقة والنمذجة",
+					"PhiH.index.grade4.part2.sub1": "1- أبعاد النمذجة",
+					"PhiH.index.grade4.part2.sub1.lesson1": "البعد التركيبي",
+					"PhiH.index.grade4.part2.sub1.lesson2": "البعد الدلالي",
+					"PhiH.index.grade4.part2.sub1.lesson3": "البعد التداولي",
+					"PhiH.index.grade4.part2.sub2": "2- النمذجة ومطلب الحقيقة",
+					"PhiH.index.grade4.part2.sub2.lesson": "النمذجة ومطلب الحقيقة",
+					"PhiH.index.grade4.part2.sub3": "3- الحدود",
+					"PhiH.index.grade4.part2.sub3.lesson1": "الحدود الإبستمولوجية",
+					"PhiH.index.grade4.part2.sub3.lesson2": "الحدود الفلسفية",
+					
+					"PhiH.index.grade4.part3": "III- القيم بين النسبي والمطلق",
+					"PhiH.index.grade4.part3.sub1": "1- العمل: النجاعة والعدالة",
+					"PhiH.index.grade4.part3.sub1.lesson": "العمل: النجاعة والعدالة",
+					"PhiH.index.grade4.part3.sub2": "2- الدولة: السيادة والمواطنة",
+					"PhiH.index.grade4.part3.sub2.lesson": "الدولة: السيادة والمواطنة",
+					"PhiH.index.grade4.part3.sub3": "3- الأخلاق: الخير والسعادة",
+					"PhiH.index.grade4.part3.sub3.lesson": "الأخلاق: الخير والسعادة",
+					"PhiH.index.grade4.part3.sub4": "4- الفن: الجمال والحقيقة",
+					"PhiH.index.grade4.part3.sub4.lesson": "الفن: الجمال والحقيقة",
+					
+					"PhiH.index.grade4.part4": "VI- دراسة مسترسلة لأثر فلسفي",
+					"PhiH.index.grade4.part4.lesson": "دراسة مسترسلة لأثر فلسفي"
+				}
+			};
+			
+			// Set the current translations for the translation.js file to use
+			window.currentTranslations = window.translations_PhiHindex;
+		</script>
+		
+		<!-- Include the external translation file -->
+		<script src="scripts/translation.js"></script>
+		
+		<!-- Include PWA Handler -->
+		<script src="scripts/pwa-handler.js"></script>
+		<script>
+			// Manual service worker registration as backup
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', function() {
+					navigator.serviceWorker.register('/sw.js')
+					.then(function(registration) {
+						console.log('SW registered: ', registration);
+					})
+					.catch(function(registrationError) {
+						console.log('SW registration failed: ', registrationError);
+					});
+				});
+			}
+			
+			// Homepage specific functionality
+			document.addEventListener('DOMContentLoaded', function() {
+				// Modal functionality
+				const generalCard = document.getElementById('generalCard');
+				const secondary3Card = document.getElementById('secondary3Card');
+				const secondary4Card = document.getElementById('secondary4Card');
+				const generalModal = document.getElementById('generalModal');
+				const secondary3Modal = document.getElementById('secondary3Modal');
+				const secondary4Modal = document.getElementById('secondary4Modal');
+				const closeButtons = document.querySelectorAll('.PhiH-homepage-modal-close');
+				
+				// Open modals when cards are clicked
+				if (generalCard && generalModal) {
+					generalCard.addEventListener('click', function() {
+						generalModal.style.display = 'block';
+					});
+				}
+				
+				if (secondary3Card && secondary3Modal) {
+					secondary3Card.addEventListener('click', function() {
+						secondary3Modal.style.display = 'block';
+					});
+				}
+				
+				if (secondary4Card && secondary4Modal) {
+					secondary4Card.addEventListener('click', function() {
+						secondary4Modal.style.display = 'block';
+					});
+				}
+				
+				// Close modals when close button is clicked
+				closeButtons.forEach(button => {
+					button.addEventListener('click', function() {
+						const modal = this.closest('.PhiH-homepage-modal');
+						if (modal) {
+							modal.style.display = 'none';
+						}
+					});
+				});
+				
+				// Close modals when clicking outside the modal content
+				window.addEventListener('click', function(event) {
+					if (event.target.classList.contains('PhiH-homepage-modal')) {
+						event.target.style.display = 'none';
+					}
+				});
+				
+				// Prevent clicks inside modal content from closing the modal
+				document.querySelectorAll('.PhiH-homepage-modal-content').forEach(content => {
+					content.addEventListener('click', function(event) {
+						event.stopPropagation();
+					});
+				});
+				
+				// Windows bar active state management
+				const currentPage = window.location.pathname.split('/').pop();
+				const windowItems = document.querySelectorAll('.PhiH-window-item');
+				
+				windowItems.forEach(item => {
+					if (item.getAttribute('href') === currentPage) {
+						item.classList.add('active');
+						} else {
+						item.classList.remove('active');
+					}
+				});
+			});
+			// Manual install button handler
+			document.addEventListener('DOMContentLoaded', function() {
+				const manualInstallBtn = document.getElementById('manual-install-btn');
+				let deferredPrompt;
+				
+				window.addEventListener('beforeinstallprompt', (e) => {
+					e.preventDefault();
+					deferredPrompt = e;
+					manualInstallBtn.style.display = 'flex';
+				});
+				
+				if (manualInstallBtn) {
+					manualInstallBtn.addEventListener('click', async () => {
+						if (!deferredPrompt) return;
+						
+						deferredPrompt.prompt();
+						const { outcome } = await deferredPrompt.userChoice;
+						
+						if (outcome === 'accepted') {
+							manualInstallBtn.style.display = 'none';
+							deferredPrompt = null;
+						}
+					});
+				}
+			});
+		</script>
+	</body>
 </html>

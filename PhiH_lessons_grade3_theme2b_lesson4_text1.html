@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: الدحض تَطْهَرْ - هوبير غرونيي - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#4a3423">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Dark Walnut / Antique Brown Color Palette */
+        :root {
+            --primary-color: #4a3423;
+            --primary-light: #6b4c33;
+            --primary-dark: #2d1f14;
+            --secondary-color: #6b4c33;
+            --secondary-light: #8b6f47;
+            --secondary-dark: #3d2a1a;
+            --accent-color: #8b6f47;
+            --accent-light: #a88a5f;
+            --accent-dark: #6b4c33;
+            --light-color: #f5f0e8;
+            --dark-color: #1a1108;
+            --text-color: #3d2a1a;
+            --heading-color: #1a1108;
+            --background-color: #faf7f2;
+            --card-bg: #ffffff;
+            --definition-bg: #ede4d3;
+            --border-color: #d4c4a8;
+            --table-even-bg: #f5f0e8;
+            --table-hover-bg: #e8dcc4;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(74, 52, 35, 0.1), 0 2px 4px -1px rgba(74, 52, 35, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(74, 52, 35, 0.1), 0 4px 6px -2px rgba(74, 52, 35, 0.05);
+            --gradient-primary: linear-gradient(135deg, #4a3423 0%, #6b4c33 100%);
+            --gradient-secondary: linear-gradient(135deg, #2d1f14 0%, #6b4c33 100%);
+            --gradient-accent: linear-gradient(135deg, #8b6f47 0%, #4a3423 100%);
+            --gradient-gray: linear-gradient(135deg, #8b6f47 0%, #6b4c33 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #a88a5f;
+            --primary-light: #c4a878;
+            --primary-dark: #8b6f47;
+            --secondary-color: #8b6f47;
+            --secondary-light: #a88a5f;
+            --secondary-dark: #6b4c33;
+            --accent-color: #c4a878;
+            --accent-light: #d8c098;
+            --accent-dark: #a88a5f;
+            --light-color: #3d2a1a;
+            --dark-color: #1a1108;
+            --text-color: #e8dcc4;
+            --heading-color: #f5f0e8;
+            --background-color: #1a1108;
+            --card-bg: #2d1f14;
+            --definition-bg: #3d2a1a;
+            --border-color: #6b4c33;
+            --table-even-bg: #2d1f14;
+            --table-hover-bg: #3d2a1a;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #6b4c33 0%, #a88a5f 100%);
+            --gradient-secondary: linear-gradient(135deg: #3d2a1a 0%, #8b6f47 100%);
+            --gradient-accent: linear-gradient(135deg: #8b6f47 0%, #4a3423 100%);
+            --gradient-gray: linear-gradient(135deg: #c4a878 0%, #8b6f47 100%);
+        }
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(74, 52, 35, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(107, 76, 51, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(139, 111, 71, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-author-info {
+            flex: 1;
+        }
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        li strong {
+            color: var(--primary-color);
+        }
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-text-card ol li ul {
+            margin-top: 0.6rem;
+            padding-right: 1.5rem;
+            padding-left: 0;
+        }
+        .PhiH-text-card ol li ul li {
+            background-color: var(--definition-bg);
+            padding: 0.6rem 0.9rem;
+            font-size: 0.95rem;
+        }
+        /* Table Styling */
+        .PhiH-text-card table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        .PhiH-text-card th {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.85rem 1rem;
+            text-align: right;
+            font-weight: 600;
+            border: 1px solid var(--primary-dark);
+        }
+        .PhiH-text-card td {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+        .PhiH-text-card tbody tr:nth-child(even) {
+            background-color: var(--table-even-bg);
+        }
+        .PhiH-text-card tbody tr:hover {
+            background-color: var(--table-hover-bg);
+        }
+        body.rtl .PhiH-text-card th,
+        body.rtl .PhiH-text-card td {
+            text-align: right;
+        }
+        body.ltr .PhiH-text-card th,
+        body.ltr .PhiH-text-card td {
+            text-align: left;
+        }
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(74, 52, 35, 0.05), transparent);
+        }
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        body.rtl .PhiH-text-card ul li {
+            border-left: none;
+            border-right: 3px solid var(--primary-color);
+        }
+        body.rtl .PhiH-text-card ol li ul {
+            padding-right: 0;
+            padding-left: 0;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .PhiH-author-image {
+                align-self: center;
+            }
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+            .PhiH-text-card table {
+                font-size: 0.9rem;
+            }
+            .PhiH-text-card th,
+            .PhiH-text-card td {
+                padding: 0.5rem 0.6rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-text-card table {
+                font-size: 0.85rem;
+            }
+        }
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.grenier.title">تحليل النص: الدحض تَطْهَرْ - هوبير غرونيي</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.grenier.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        <section class="PhiH-text-analysis-section">
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.grenier.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.grenier.introduction.content">
+                    إنَّ الانطباع الراسخ لدى كثير من الذين اطَّلعوا على قدر من تاريخ الفلسفة، يتمثل في أنَّ الفلاسفة لا يفعلون سوى معارضة بعضهم البعض، بحيث لا يفضي ذلك، في نهاية الأمر، إلا لعدم الأنساق وضيع الحقيقة بين أنقاضها. ولكنَّ هذا الفهم للنقد الفلسفي الذي ينتهي إلى المطابقة بينه وبين الريبية قد يعكس نظرة اختزالية مشوهة، لذا يحسن بنا أن ننظر إلى النقد من زاوية أخرى تجعل منه فعلاً نقدياً يعيد بعث الأفكار في صورة جديدة.
+                </p>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.grenier.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.grenier.text.content">
+                        (...) ما من دحض إلا في الفلسفة. وعلى عكس ما يعتقده أصحاب الفكر المنبهر بحقائق العلم[1] الحالية من العمق والحركة والنفي والحياة، فإن دحض الفلسفات لا يؤدي بتاتاً إلى دحض الفلسفة.
+                        <br><br>
+                        والأكيد أنَّ الفلسفة الحقيقية يشرَّفها أن تواجه الدحض، خلافاً للإيديولوجية[2] وللاعتقاد اللذين يعملان على تجنبه. وبشكل أكثر حسمًا فإن فلسفة ما لا توطد حقيقتها بإقصاء الدحض وصدَّه إلى خارجها كالعدوّ المطارَد، بل باحتضانه وتمكينه من أداء عمله التَطْهَرْي، لتبعث بعد الدحض في صورة جديدة. إنَّ الدحض بالنسبة إلى فلسفة ما هو تَطْهَرْ. وهكذا فإنه عندما ترفض العناصر المرتبطة بمرحلة معينة من مراحل العلم في فلسفة ما بسبب تقدَّم المعرفة، فإنَّ هذه الفلسفة لا تنهار بسقوط تلك العناصر، بل إنَّ حقيقتها، بما هي مستقلة عن العلم الذي ارتبطت به، تكتسب بريقاً جديداً.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.grenier.text.source">هوبير غرونيي، المعرفة الفلسفية، ترجمة لجنة التأليف - Hubert Grenier, La connaissance philosophique, éd. Masson, 1973, pp. 22-23</em></p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.grenier.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <img src="assets/images/hubert_grenier.jpg" alt="هوبير غرونيي" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.grenier.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.grenier.author.content">
+                            هوبير غرونيي: فيلسوف فرنسي معاصر، درس في قسنطينة وتونس وبواتيي قبل أن يلتحق بمعهد لويس لو غران. جعل من تدريس الفلسفة موضوع اشتغاله الأساسي، حيث حرص على أن يجعل منه إطاراً للتأمل والكتابة. عمل على أن يكون المدرس معلماً يجسّم مقتضيات التفكير بما يقدّمه من دروس لتلاميذه، فيحرص في آن على وضوح الفكرة وجمال العبارة ودقتها، متأثراً في ذلك بآلان. علّق أحد تلاميذه على مسيرته بالقول: "لقد سخّر حياته للكتابة والتدريس، فلا يكتب إلا ليدرس". من أهم مؤلفاته: "المعرفة الفلسفية" (1973)، "المذاهب الأخلاقية الكبرى" (1994)، و"الحرية المرحة" (نُشر بعد وفاته 2003).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.grenier.footnotes.title">الهوامش</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.grenier.footnotes.item1"><strong>(1) "أصحاب الفكر المنبهر بحقائق العلم":</strong> إن في ذلك إشارة إلى التيار الوضعي في أعمّ دلالاته، والذي يرى في دحض الفلسفات بعضها لبعض ما يدلّ على أن الأفكار الفلسفية ليست سوى آراء ذاتية لا يمكنها أن ترقى إلى مستوى الحقيقة التي ينفرد العلم وحده بإنتاجها، كقضية يثبت صلاحيتها باستدلالات رياضية وتحقيقات تجريبية فتنتمي بالموضوعية.</li>
+                    <li data-i18n="PhiH.textAnalysis.grenier.footnotes.item2"><strong>(2) "الإيديولوجية":</strong> هي نسق من التصوّرات يمثل رؤية متكاملة للعالم، من خلالها يفهم الأفراد ظروف وجودهم الفعلية. وللإيديولوجية وظيفة عملية بالأساس تكمن في تحديد العلاقات فيما بين الأفراد وأدوارهم الاجتماعية من خلال قيم تبررها. وتتسم الإيديولوجية بطابعها الوثوقي المغلق الذي يحتوي الواقع ويفسره دون أن ينفتح على تحوّلات الواقع ودون أن يقبل النقد. لذلك تسعى الإيديولوجية إلى دحض إيديولوجيات أخرى، ولكنها لا تقبل الدحض.</li>
+                </ul>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.grenier.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.grenier.questions.q1">أبيّن انطلاقاً من النص المعنى الممكن للتَطْهَرْ كما قصده الكاتب.</li>
+                    <li data-i18n="PhiH.textAnalysis.grenier.questions.q2">
+                        أصنّف هذه الإقرارات بحسب طبيعتها إذا ما كانت فلسفية أو إيديولوجية، وأحدّد أيّها أقدر على مواجهة الدحض معلّلاً إجاباتي:
+                        <ul>
+                            <li data-i18n="PhiH.textAnalysis.grenier.questions.q2.item1">هناك تفاوت طبيعي بين الأعراق.</li>
+                            <li data-i18n="PhiH.textAnalysis.grenier.questions.q2.item2">اللذة الحسية قوام السعادة.</li>
+                            <li data-i18n="PhiH.textAnalysis.grenier.questions.q2.item3">المرأة أقل ذكاءً من الرجل.</li>
+                            <li data-i18n="PhiH.textAnalysis.grenier.questions.q2.item4">قيمة كل حضارة تتحدّد طبقاً لدرجة تقدّمها التقني.</li>
+                            <li data-i18n="PhiH.textAnalysis.grenier.questions.q2.item5">العقل أعدل الأشياء توزّعاً بين البشر.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.grenier.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.grenier.answers.a1.title">الإجابة عن المهمة الأولى:</h5>
+                    <p data-i18n="PhiH.textAnalysis.grenier.answers.a1.content">
+                        يستعمل غرونيي لفظ "التَطْهَرْ" لوصف ما يحدث للفلسفة عند تعرّضها للدحض. ويمكن تحديد المعنى الممكن لهذا التَطْهَرْ في النقاط التالية:
+                        <br><br>
+                        <strong>1. التَطْهَرْ ليس هدماً:</strong> الدحض لا يقضي على الفلسفة، بل "لا يؤدي بتاتاً إلى دحض الفلسفة". فالتَطْهَرْ هنا ليس إزالة للشيء نفسه، بل إزالة لما علق به.
+                        <br><br>
+                        <strong>2. التَطْهَرْ كإزالة للعناصر الميتة:</strong> الدحض يزيل من الفلسفة "العناصر المرتبطة بمرحلة معينة من مراحل العلم"، أي العناصر التي تجاوزها تقدّم المعرفة. فالعلم يتقدّم، والفلسفة تحتفظ بعناصر مرتبطة بعلم صار متجاوزاً.
+                        <br><br>
+                        <strong>3. التَطْهَرْ كحفاظ على الجوهر:</strong> رغم إزالة تلك العناصر، "فإن هذه الفلسفة لا تنهار بسقوط تلك العناصر". فالتَطْهَرْ يفصل بين الجوهر (حقيقة الفلسفة) والعرض (العناصر المرتبطة بالعلم المتجاوز).
+                        <br><br>
+                        <strong>4. التَطْهَرْ كتجديد للبريق:</strong> "إن حقيقتها، بما هي مستقلة عن العلم الذي ارتبطت به، تكتسب بريقاً جديداً". فالتَطْهَرْ لا يُنقص الفلسفة، بل يزيدها صفاءً وتألقاً.
+                        <br><br>
+                        <strong>5. التَطْهَرْ كعملية موجعة لكنها ضرورية:</strong> "باحتضانه وتمكينه من أداء عمله التَطْهَرْي" – فالفلسفة لا تكتفي بقبول الدحض، بل "تحتضنه" وتمكّنه من العمل. وهذا يفترض تواضعاً وشجاعة.
+                        <br><br>
+                        <strong>6. التَطْهَرْ كعملية مستمرة:</strong> "لتبعث بعد الدحض في صورة جديدة". فالتَطْهَرْ ليس حدثاً واحداً نهائياً، بل هو عملية متجددة، كلما تقدّمت المعرفة وطرأت دحوض جديدة.
+                        <br><br>
+                        <strong>الخلاصة:</strong> التَطْهَرْ عند غرونيي هو عملية إزالة للعناصر التاريخية الميتة في الفلسفة (تلك المرتبطة بعلم متجاوز)، مع الحفاظ على جوهرها وحقيقتها المستقلة، فتبعث الفلسفة بعد كل عملية تَطْهَرْ "في صورة جديدة". وهو ما يجعل الدحض ليس تهديداً للفلسفة، بل شرطاً لحيويتها وتجدّدها.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.grenier.answers.a2.title">الإجابة عن المهمة الثانية:</h5>
+                    <div data-i18n="PhiH.textAnalysis.grenier.answers.a2.content">
+                        <p>أصنّف الإقرارات المطروحة بحسب طبيعتها، وأحدّد أقدرها على مواجهة الدحض، وفقاً للجدول التالي:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>الإقرار</th>
+                                    <th>التصنيف</th>
+                                    <th>التعليل</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>"هناك تفاوت طبيعي بين الأعراق"</td>
+                                    <td><strong>إيديولوجي</strong></td>
+                                    <td>إقرار عنصري مغلق، يستند إلى مسلّمات غير مبرَّرة علمياً، ولا يقبل النقد أو الدحض، بل يعمل على تجنبه.</td>
+                                </tr>
+                                <tr>
+                                    <td>"اللذة الحسية قوام السعادة"</td>
+                                    <td><strong>فلسفي</strong></td>
+                                    <td>أطروحة فلسفية (الأبيقورية / اللذانية)، قابلة للمناقشة والدحض، وتستند إلى حجج عقلية.</td>
+                                </tr>
+                                <tr>
+                                    <td>"المرأة أقل ذكاءً من الرجل"</td>
+                                    <td><strong>إيديولوجي</strong></td>
+                                    <td>تحيّز جنسي مغلق، يرفضه العلم الحديث، ولا يقبل النقد بل يعمل على تجنبه.</td>
+                                </tr>
+                                <tr>
+                                    <td>"قيمة كل حضارة تتحدّد طبقاً لدرجة تقدّمها التقني"</td>
+                                    <td><strong>إيديولوجي</strong> (وضعي)</td>
+                                    <td>إقرار اختزالي مغلق، يختزل قيمة الحضارة في بعد واحد (التقنية)، ويُقصي أبعاداً أخرى (أخلاقية، فنية، روحية). وهو إقرار وضعي (على النحو المذكور في الهامش 1)، لا يقبل النقد.</td>
+                                </tr>
+                                <tr>
+                                    <td>"العقل أعدل الأشياء توزّعاً بين البشر"</td>
+                                    <td><strong>فلسفي</strong></td>
+                                    <td>أطروحة ديكارتية فلسفية، قابلة للمناقشة والدحض، وتستند إلى حجج عقلية.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><strong>أيّها أقدر على مواجهة الدحض؟</strong></p>
+                        <p>الإقرارات <strong>الفلسفية</strong> هي الأقدر على مواجهة الدحض، لأنّ:</p>
+                        <ul>
+                            <li>الفلسفة <em>تواجه</em> الدحض ولا تتجنبه (خلافاً للإيديولوجية والاعتقاد).</li>
+                            <li>الفلسفة تنطلق من حجج معلنة قابلة للمناقشة، لا من مسلّمات مغلقة.</li>
+                            <li>الفلسفة تقبل إعادة النظر في أسسها، وتعتبر الدحض "تَطْهَرْاً" لا تهديداً.</li>
+                            <li>الفلسفة تفصل بين جوهرها والعناصر التاريخية المرتبطة بها، فلا تنهار بدحض تلك العناصر.</li>
+                        </ul>
+                        <p>وفي المقابل، الإيديولوجية <em>تتجنّب</em> الدحض، وتغلق نفسها أمامه، وتسعى إلى دحض غيرها دون أن تقبل أن تُدحض. فالإقرارات الإيديولوجية (التفاوت العرقي، التحيز الجنسي، الاختزال التقني) تعجز عن مواجهة الدحض، لأنها لا تنطلق من حجج بل من مسلّمات مغلقة.</p>
+                        <p><strong>أقدر الإقرارات الفلسفية على مواجهة الدحض:</strong> هي تلك التي تصوغ نفسها <em>كأطروحة معلنة قابلة للمناقشة</em>، أكثر من تلك التي تبقى غامضة أو مختلطة بمسلّمات. وبهذا المعيار، فإنّ "اللذة الحسية قوام السعادة" و"العقل أعدل الأشياء توزّعاً" كلتاهما فلسفية، وكلتاهما قادرة على مواجهة الدحض، لكن الأقدر هي التي تحدد أطروحتها بدقة وتقدم لها حججاً صريحة.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.grenier.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.grenier.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.grenier.analysis.thesis.content">
+                        يرى غرونيي أنّ الدحض ليس دحضاً للفلسفة، بل هو تَطْهَرْ لها. فالفلسفة الحقيقية، خلافاً للإيديولوجية والاعتقاد، تواجه الدحض وتحتضنه وتمكّنه من عمله التَطْهَرْي، لأنّ الدحض يزيل منها العناصر المرتبطة بمراحل علمية متجاوزة، ويحفظ جوهرها المستقل عن العلم، فتبعث بعد الدحض في صورة جديدة. وبهذا فإنّ الدحض شرط لحيوية الفلسفة وتجدّدها، لا تهديد لوجودها.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.grenier.analysis.mechanisms.title">آليات عمل الدحض كتَطْهَرْ:</h5>
+                    <p data-i18n="PhiH.textAnalysis.grenier.analysis.mechanisms.content">
+                        - <strong>المواجهة لا التجنّب:</strong> الفلسفة "يوشرّفها أن تواجه الدحض"، خلافاً للإيديولوجية والاعتقاد.
+                        <br>- <strong>الاحتضان لا الإقصاء:</strong> الفلسفة لا "تطارد" الدحض كعدو، بل "تحتضنه وتمكّنه من أداء عمله التَطْهَرْي".
+                        <br>- <strong>التفريق بين الجوهر والعرض:</strong> الدحض يزيل "العناصر المرتبطة بمرحلة معينة من مراحل العلم"، ويحفظ "حقيقتها بما هي مستقلة عن العلم".
+                        <br>- <strong>البعث في صورة جديدة:</strong> بعد كل عملية تَطْهَرْ، "تبعث الفلسفة في صورة جديدة".
+                        <br>- <strong>التمييز بين الفلسفة والإيديولوجية:</strong> الفلسفة تقبل الدحض وتحتضنه، والإيديولوجية تتجنبه وتدحض غيرها دون أن تقبل أن تُدحض.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.grenier.analysis.consequences.title">النتائج المترتبة على هذه الأطروحة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.grenier.analysis.consequences.content">
+                        - <strong>تجاوز النظرة الاختزالية للفلسفة:</strong> الفلسفة ليست مجرد "معارضة بعضها لبعض" ينتهي إلى "عدم الأنساق وضيع الحقيقة"، بل هي بناء يتجدّد بالدحض.
+                        <br>- <strong>تحديد معيار التمييز بين الفلسفة والإيديولوجية:</strong> المعيار هو قابلية الدحض: الفلسفة تقبله، والإيديولوجية تتجنبه.
+                        <br>- <strong>تأسيس علاقة صحية بين الفلسفة والعلم:</strong> الفلسفة تستقل عن العلم في جوهرها، وتقبل إزالة ما يرتبط منها بعلم متجاوز.
+                        <br>- <strong>تفسير استمرارية تاريخ الفلسفة:</strong> تاريخ الفلسفة ليس "مقبرة أنساق"، بل سلسلة من عمليات التَطْهَرْ والبعث.
+                        <br>- <strong>توجيه الموقف من الدحض:</strong> بدل أن نخشى الدحض، يجب أن نعتبره فرصة للتَطْهَرْ والتجدّد.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.grenier.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.grenier.analysis.significance.content">
+                        يحمل هذا النص دلالة منهجية عميقة في فلسفة المعرفة وفي تحديد طبيعة الفلسفة:
+                        <br><br>
+                        <strong>1. دلالة إبستمولوجية:</strong> النص يقدّم تصوراً جديداً لطبيعة المعرفة الفلسفية، بوصفها معرفة تتجدّد بالدحض، لا معرفة تُبنى مرة واحدة وللأبد. وهذا يتجاوز التصور الدوغمائي للفلسفة (فلسفة كنسق مغلق) والتصور الشكّي (فلسفة كآراء متناقضة).
+                        <br><br>
+                        <strong>2. دلالة نقدية:</strong> النص يوجّه نقداً للتيار الوضعي ("أصحاب الفكر المنبهر بحقائق العلم") الذي يرى في دحض الفلسفات دليلاً على عدم علميتها. فالنص يبيّن أن هذا الدحض ليس عيباً في الفلسفة، بل هو خاصيتها المميزة.
+                        <br><br>
+                        <strong>3. دلالة تمييزية:</strong> النص يقدّم معياراً واضحاً للتمييز بين الفلسفة والإيديولوجية: قابلية الدحض. فالفلسفة تقبل الدحض، والإيديولوجية تتجنبه. وهذا المعيار بالغ الأهمية في تحليل الخطابات.
+                        <br><br>
+                        <strong>4. دلالة تربوية-أخلاقية:</strong> النص يدعو إلى فضيلة فكرية: احتضان الدحض لا تجنّبه. وهذه الفضيلة أساسية في التربية على التفكير النقدي.
+                        <br><br>
+                        <strong>5. صلة النص بالدرس (التحليل):</strong> النص يقدّم الدحض بوصفه إجراءً تحليلياً أساسياً في الفلسفة. فهو يكشف عن العلاقة بين الدحض والتحليل: الدحض هو التحليل الذي يُظهر العناصر الميتة ويحفظ الجوهر الحي. وهو ما يمهد لنصوص ميل وبايل التي ستعرض شروط الدحض وإجراءاته العملية.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.grenier.level": "3ème Secondaire - Philosophie",
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.grenier.title": "Analyse du texte : La réfutation purifie - Hubert Grenier",
+                "PhiH.textAnalysis.grenier.introduction.title": "Introduction",
+                "PhiH.textAnalysis.grenier.introduction.content": "L'impression solidement ancrée chez beaucoup de ceux qui ont parcouru une partie de l'histoire de la philosophie est que les philosophes ne font que s'opposer les uns aux autres, de sorte que cela n'aboutit finalement qu'à l'incohérence des systèmes et à la perte de la vérité parmi ses décombres. Mais cette compréhension de la critique philosophique, qui aboutit à l'assimiler au scepticisme, peut refléter une vision réductrice et déformée ; il convient donc de considérer la critique sous un autre angle, qui en fait un acte critique faisant renaître les idées sous une forme nouvelle.",
+                "PhiH.textAnalysis.grenier.text.title": "Le texte",
+                "PhiH.textAnalysis.grenier.text.content": "(...) Il n'y a de réfutation qu'en philosophie. Et contrairement à ce que pensent les tenants de la pensée éblouie par les vérités scientifiques [1] actuelles, faites de profondeur, de mouvement, de négation et de vie, la réfutation des philosophies ne conduit nullement à la réfutation de la philosophie.<br><br>Et il est certain que la vraie philosophie s'honore d'affronter la réfutation, contrairement à l'idéologie [2] et à la croyance qui s'emploient à l'éviter. Plus catégoriquement encore, une philosophie n'affermit pas sa vérité en écartant la réfutation et en la repoussant hors d'elle comme un ennemi pourchassé, mais en l'accueillant et en la rendant capable d'accomplir son œuvre purificatrice, afin de renaître après la réfutation sous une forme nouvelle. La réfutation, pour une philosophie, est une purification. Ainsi, lorsque les éléments liés à une étape déterminée des étapes de la science sont rejetés dans une philosophie en raison du progrès de la connaissance, cette philosophie ne s'effondre pas avec la chute de ces éléments, mais sa vérité, en tant qu'indépendante de la science à laquelle elle s'est liée, acquiert un nouvel éclat.",
+                "PhiH.textAnalysis.grenier.text.source": "Hubert Grenier, La connaissance philosophique, éd. Masson, 1973, pp. 22-23",
+                "PhiH.textAnalysis.grenier.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.grenier.author.alt": "Hubert Grenier",
+                "PhiH.textAnalysis.grenier.author.content": "Hubert Grenier : philosophe français contemporain, il a enseigné à Constantine, Tunis et Poitiers avant de rejoindre l'Institut Louis-le-Grand. Il a fait de l'enseignement de la philosophie son objet de travail principal, s'efforçant d'en faire un cadre de réflexion et d'écriture. Il a œuvré à ce que l'enseignant soit un maître qui incarne les exigences de la pensée par les leçons qu'il offre à ses élèves, veillant tout à la fois à la clarté de l'idée et à la beauté et à la précision de l'expression, influencé en cela par Alain. Un de ses élèves a commenté sa trajectoire en disant : « Il a sacrifié sa vie à l'écriture et à l'enseignement ; il n'écrit que pour enseigner. » Parmi ses œuvres majeures : « La connaissance philosophique » (1973), « Les grandes doctrines morales » (1994), et « La liberté heureuse » (publié après sa mort, 2003).",
+                "PhiH.textAnalysis.grenier.footnotes.title": "Notes de bas de page",
+                "PhiH.textAnalysis.grenier.footnotes.item1": "<strong>(1) « Les tenants de la pensée éblouie par les vérités scientifiques » :</strong> il y a là une allusion au courant positiviste dans ses acceptions les plus larges, qui voit dans la réfutation des philosophies les unes par les autres la preuve que les idées philosophiques ne sont que des opinions subjectives incapables de s'élever au niveau de la vérité que seule la science produit, comme une proposition dont elle prouve la validité par des démonstrations mathématiques et des vérifications expérimentales, ce qui les fait relever de l'objectivité.",
+                "PhiH.textAnalysis.grenier.footnotes.item2": "<strong>(2) « L'idéologie » :</strong> c'est un ensemble de représentations qui constitue une vision intégrale du monde, à travers laquelle les individus comprennent les conditions effectives de leur existence. L'idéologie a essentiellement une fonction pratique, qui consiste à déterminer les relations entre les individus et leurs rôles sociaux à travers des valeurs qu'elle justifie. L'idéologie se caractérise par son caractère dogmatique fermé, qui englobe le réel et l'interprète sans s'ouvrir aux transformations du réel et sans accepter la critique. C'est pourquoi l'idéologie cherche à réfuter d'autres idéologies, mais n'accepte pas la réfutation.",
+                "PhiH.textAnalysis.grenier.questions.title": "Tâches",
+                "PhiH.textAnalysis.grenier.questions.q1": "Je montre, à partir du texte, le sens possible de la purification telle que l'a voulue l'auteur.",
+                "PhiH.textAnalysis.grenier.questions.q2": "Je classe ces affirmations selon leur nature, philosophique ou idéologique, et je détermine lesquelles sont les plus capables d'affronter la réfutation, en justifiant mes réponses :",
+                "PhiH.textAnalysis.grenier.questions.q2.item1": "Il y a une inégalité naturelle entre les races.",
+                "PhiH.textAnalysis.grenier.questions.q2.item2": "Le plaisir sensible est le fondement du bonheur.",
+                "PhiH.textAnalysis.grenier.questions.q2.item3": "La femme est moins intelligente que l'homme.",
+                "PhiH.textAnalysis.grenier.questions.q2.item4": "La valeur de chaque civilisation se détermine selon le degré de son progrès technique.",
+                "PhiH.textAnalysis.grenier.questions.q2.item5": "La raison est la chose la mieux partagée entre les hommes.",
+                "PhiH.textAnalysis.grenier.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.grenier.answers.a1.title": "Réponse à la première tâche :",
+                "PhiH.textAnalysis.grenier.answers.a1.content": "Grenier emploie le terme « purification » pour décrire ce qui arrive à la philosophie lorsqu'elle est soumise à la réfutation. On peut déterminer le sens possible de cette purification dans les points suivants :<br><br><strong>1. La purification n'est pas une destruction :</strong> la réfutation n'élimine pas la philosophie, mais « ne conduit nullement à la réfutation de la philosophie ». La purification n'est donc pas l'élimination de la chose elle-même, mais de ce qui s'y est attaché.<br><br><strong>2. La purification comme élimination des éléments morts :</strong> la réfutation élimine de la philosophie « les éléments liés à une étape déterminée des étapes de la science », c'est-à-dire les éléments dépassés par le progrès de la connaissance. La science progresse, et la philosophie conserve des éléments liés à une science devenue dépassée.<br><br><strong>3. La purification comme préservation de l'essence :</strong> malgré l'élimination de ces éléments, « cette philosophie ne s'effondre pas avec la chute de ces éléments ». La purification sépare l'essence (la vérité de la philosophie) de l'accident (les éléments liés à la science dépassée).<br><br><strong>4. La purification comme renouvellement de l'éclat :</strong> « sa vérité, en tant qu'indépendante de la science à laquelle elle s'est liée, acquiert un nouvel éclat ». La purification ne diminue pas la philosophie, mais la rend plus pure et plus éclatante.<br><br><strong>5. La purification comme opération douloureuse mais nécessaire :</strong> « en l'accueillant et en la rendant capable d'accomplir son œuvre purificatrice » – la philosophie ne se contente pas d'accepter la réfutation, elle l'« accueille » et la rend capable d'agir. Cela suppose humilité et courage.<br><br><strong>6. La purification comme processus continu :</strong> « afin de renaître après la réfutation sous une forme nouvelle ». La purification n'est pas un événement unique et définitif, mais un processus renouvelé, à chaque progrès de la connaissance et à chaque nouvelle réfutation.<br><br><strong>Conclusion :</strong> la purification chez Grenier est une opération d'élimination des éléments historiques morts de la philosophie (ceux liés à une science dépassée), tout en préservant son essence et sa vérité indépendante ; la philosophie renaît ainsi après chaque purification « sous une forme nouvelle ». C'est ce qui fait de la réfutation non une menace pour la philosophie, mais une condition de sa vitalité et de son renouvellement.",
+                "PhiH.textAnalysis.grenier.answers.a2.title": "Réponse à la deuxième tâche :",
+                "PhiH.textAnalysis.grenier.answers.a2.content": "<p>Je classe les affirmations proposées selon leur nature, et je détermine celles qui sont les plus capables d'affronter la réfutation, selon le tableau suivant :</p><table><thead><tr><th>L'affirmation</th><th>La classification</th><th>La justification</th></tr></thead><tbody><tr><td>« Il y a une inégalité naturelle entre les races »</td><td><strong>Idéologique</strong></td><td>Affirmation raciste fermée, fondée sur des postulats non justifiés scientifiquement, qui n'accepte pas la critique ni la réfutation, mais s'emploie à l'éviter.</td></tr><tr><td>« Le plaisir sensible est le fondement du bonheur »</td><td><strong>Philosophique</strong></td><td>Thèse philosophique (épicurienne / hédoniste), discutable et réfutable, fondée sur des arguments rationnels.</td></tr><tr><td>« La femme est moins intelligente que l'homme »</td><td><strong>Idéologique</strong></td><td>Préjugé sexiste fermé, réfuté par la science moderne, qui n'accepte pas la critique mais s'emploie à l'éviter.</td></tr><tr><td>« La valeur de chaque civilisation se détermine selon le degré de son progrès technique »</td><td><strong>Idéologique</strong> (positiviste)</td><td>Affirmation réductrice fermée, qui réduit la valeur de la civilisation à une seule dimension (la technique) et écarte d'autres dimensions (éthique, artistique, spirituelle). C'est une affirmation positiviste (selon la note 1), qui n'accepte pas la critique.</td></tr><tr><td>« La raison est la chose la mieux partagée entre les hommes »</td><td><strong>Philosophique</strong></td><td>Thèse cartésienne philosophique, discutable et réfutable, fondée sur des arguments rationnels.</td></tr></tbody></table><p><strong>Lesquelles sont les plus capables d'affronter la réfutation ?</strong></p><p>Les affirmations <strong>philosophiques</strong> sont les plus capables d'affronter la réfutation, parce que :</p><ul><li>La philosophie <em>affronte</em> la réfutation et ne l'évite pas (contrairement à l'idéologie et à la croyance).</li><li>La philosophie part d'arguments déclarés et discutables, non de postulats fermés.</li><li>La philosophie accepte la remise en question de ses fondements, et considère la réfutation comme une « purification » et non une menace.</li><li>La philosophie sépare son essence des éléments historiques qui y sont liés, et ne s'effondre donc pas par la réfutation de ces éléments.</li></ul><p>En revanche, l'idéologie <em>évite</em> la réfutation, se ferme devant elle, et cherche à réfuter les autres sans accepter d'être réfutée. Les affirmations idéologiques (l'inégalité raciale, le préjugé sexiste, le réductionnisme technique) sont incapables d'affronter la réfutation, parce qu'elles ne partent pas d'arguments mais de postulats fermés.</p><p><strong>Les affirmations philosophiques les plus capables d'affronter la réfutation :</strong> ce sont celles qui se formulent <em>comme une thèse déclarée discutable</em>, plus que celles qui restent vagues ou mêlées à des postulats. Selon ce critère, « le plaisir sensible est le fondement du bonheur » et « la raison est la chose la mieux partagée entre les hommes » sont toutes deux philosophiques, et toutes deux capables d'affronter la réfutation ; mais les plus capables sont celles qui déterminent précisément leur thèse et en donnent des arguments explicites.",
+                "PhiH.textAnalysis.grenier.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.grenier.analysis.thesis.title": "Thèse principale :",
+                "PhiH.textAnalysis.grenier.analysis.thesis.content": "Grenier considère que la réfutation n'est pas une réfutation de la philosophie, mais une purification de celle-ci. La vraie philosophie, contrairement à l'idéologie et à la croyance, affronte la réfutation, l'accueille et la rend capable de son œuvre purificatrice, parce que la réfutation élimine d'elle les éléments liés à des étapes scientifiques dépassées, et préserve son essence indépendante de la science ; la philosophie renaît ainsi après la réfutation sous une forme nouvelle. La réfutation est donc une condition de la vitalité et du renouvellement de la philosophie, non une menace pour son existence.",
+                "PhiH.textAnalysis.grenier.analysis.mechanisms.title": "Mécanismes du fonctionnement de la réfutation comme purification :",
+                "PhiH.textAnalysis.grenier.analysis.mechanisms.content": "- <strong>L'affrontement et non l'évitement :</strong> la philosophie « s'honore d'affronter la réfutation », contrairement à l'idéologie et à la croyance.<br>- <strong>L'accueil et non l'exclusion :</strong> la philosophie ne « pourchasse » pas la réfutation comme un ennemi, mais « l'accueille et la rend capable d'accomplir son œuvre purificatrice ».<br>- <strong>La distinction entre essence et accident :</strong> la réfutation élimine « les éléments liés à une étape déterminée des étapes de la science », et préserve « sa vérité en tant qu'indépendante de la science ».<br>- <strong>La renaissance sous une forme nouvelle :</strong> après chaque purification, « la philosophie renaît sous une forme nouvelle ».<br>- <strong>La distinction entre philosophie et idéologie :</strong> la philosophie accepte la réfutation et l'accueille, l'idéologie l'évite et réfute les autres sans accepter d'être réfutée.",
+                "PhiH.textAnalysis.grenier.analysis.consequences.title": "Conséquences de cette thèse :",
+                "PhiH.textAnalysis.grenier.analysis.consequences.content": "- <strong>Dépassement de la vision réductrice de la philosophie :</strong> la philosophie n'est pas une simple « opposition des philosophies les unes aux autres » aboutissant à « l'incohérence et à la perte de la vérité », mais une construction qui se renouvelle par la réfutation.<br>- <strong>Détermination du critère de distinction entre philosophie et idéologie :</strong> le critère est la réfutabilité : la philosophie l'accepte, l'idéologie l'évite.<br>- <strong>Fondation d'un rapport sain entre philosophie et science :</strong> la philosophie est indépendante de la science dans son essence, et accepte l'élimination de ce qui, en elle, est lié à une science dépassée.<br>- <strong>Explication de la continuité de l'histoire de la philosophie :</strong> l'histoire de la philosophie n'est pas un « cimetière de systèmes », mais une série d'opérations de purification et de renaissance.<br>- <strong>Orientation du rapport à la réfutation :</strong> au lieu de craindre la réfutation, il faut la considérer comme une occasion de purification et de renouvellement.",
+                "PhiH.textAnalysis.grenier.analysis.significance.title": "Significations et dimensions du concept :",
+                "PhiH.textAnalysis.grenier.analysis.significance.content": "Ce texte porte une signification méthodologique profonde dans la philosophie de la connaissance et dans la détermination de la nature de la philosophie :<br><br><strong>1. Signification épistémologique :</strong> le texte présente une nouvelle conception de la nature de la connaissance philosophique, comme connaissance qui se renouvelle par la réfutation, et non comme connaissance construite une fois pour toutes. Cela dépasse la conception dogmatique de la philosophie (philosophie comme système fermé) et la conception sceptique (philosophie comme opinions contradictoires).<br><br><strong>2. Signification critique :</strong> le texte critique le courant positiviste (« les tenants de la pensée éblouie par les vérités scientifiques ») qui voit dans la réfutation des philosophies la preuve de leur non-scientificité. Le texte montre que cette réfutation n'est pas un défaut de la philosophie, mais sa propriété distinctive.<br><br><strong>3. Signification distinctive :</strong> le texte offre un critère clair pour distinguer la philosophie de l'idéologie : la réfutabilité. La philosophie accepte la réfutation, l'idéologie l'évite. Ce critère est d'une importance capitale dans l'analyse des discours.<br><br><strong>4. Signification éducative-éthique :</strong> le texte appelle à une vertu intellectuelle : accueillir la réfutation plutôt que l'éviter. Cette vertu est essentielle dans l'éducation à la pensée critique.<br><br><strong>5. Lien du texte avec la leçon (l'analyse) :</strong> le texte présente la réfutation comme une procédure analytique fondamentale en philosophie. Il révèle le rapport entre réfutation et analyse : la réfutation est l'analyse qui fait apparaître les éléments morts et préserve l'essence vivante. Cela prépare les textes de Mill et de Bayle, qui exposeront les conditions et les procédures pratiques de la réfutation."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.grenier.level": "3rd Secondary - Philosophy",
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.grenier.title": "Text Analysis: Refutation Purifies - Hubert Grenier",
+                "PhiH.textAnalysis.grenier.introduction.title": "Introduction",
+                "PhiH.textAnalysis.grenier.introduction.content": "The impression firmly anchored in many of those who have read a portion of the history of philosophy is that philosophers do nothing but oppose one another, so that this ultimately leads only to the incoherence of systems and the loss of truth among its ruins. But this understanding of philosophical criticism, which ends up identifying it with skepticism, may reflect a reductive and distorted view; it is therefore fitting to look at criticism from another angle that makes it a critical act reviving ideas in a new form.",
+                "PhiH.textAnalysis.grenier.text.title": "The Text",
+                "PhiH.textAnalysis.grenier.text.content": "(...) There is no refutation except in philosophy. And contrary to what the proponents of thought dazzled by current scientific truths [1] – truths of depth, movement, negation and life – believe, the refutation of philosophies does not at all lead to the refutation of philosophy.<br><br>And it is certain that true philosophy is honored to confront refutation, unlike ideology [2] and belief which work to avoid it. More decisively, a philosophy does not consolidate its truth by excluding refutation and pushing it outside itself like a hunted enemy, but by embracing it and enabling it to perform its purifying work, so as to be reborn after refutation in a new form. Refutation, for a philosophy, is purification. Thus, when the elements linked to a determined stage of the stages of science are rejected in a philosophy due to the progress of knowledge, this philosophy does not collapse with the fall of those elements, but its truth, insofar as it is independent of the science to which it was linked, acquires a new brilliance.",
+                "PhiH.textAnalysis.grenier.text.source": "Hubert Grenier, La connaissance philosophique, éd. Masson, 1973, pp. 22-23",
+                "PhiH.textAnalysis.grenier.author.title": "Author Presentation",
+                "PhiH.textAnalysis.grenier.author.alt": "Hubert Grenier",
+                "PhiH.textAnalysis.grenier.author.content": "Hubert Grenier: contemporary French philosopher, he taught in Constantine, Tunis and Poitiers before joining the Institut Louis-le-Grand. He made the teaching of philosophy his main work, striving to make it a framework for reflection and writing. He worked to ensure that the teacher would be a master embodying the requirements of thought through the lessons he offered his students, while attending to the clarity of the idea and the beauty and precision of expression, influenced in this by Alain. One of his students commented on his career: \"He sacrificed his life to writing and teaching; he writes only to teach.\" Among his major works: \"La connaissance philosophique\" (1973), \"Les grandes doctrines morales\" (1994), and \"La liberté heureuse\" (published posthumously, 2003).",
+                "PhiH.textAnalysis.grenier.footnotes.title": "Footnotes",
+                "PhiH.textAnalysis.grenier.footnotes.item1": "<strong>(1) \"The proponents of thought dazzled by scientific truths\":</strong> this is an allusion to the positivist current in its broadest senses, which sees in the refutation of philosophies by one another proof that philosophical ideas are nothing but subjective opinions incapable of rising to the level of truth that science alone produces, as a proposition whose validity it proves by mathematical demonstrations and experimental verifications, thereby making them belong to objectivity.",
+                "PhiH.textAnalysis.grenier.footnotes.item2": "<strong>(2) \"Ideology\":</strong> it is a set of representations constituting an integral vision of the world, through which individuals understand the actual conditions of their existence. Ideology has essentially a practical function, which consists in determining the relations among individuals and their social roles through values it justifies. Ideology is characterized by its closed dogmatic character, which encompasses reality and interprets it without opening up to the transformations of reality and without accepting criticism. That is why ideology seeks to refute other ideologies, but does not accept refutation.",
+                "PhiH.textAnalysis.grenier.questions.title": "Tasks",
+                "PhiH.textAnalysis.grenier.questions.q1": "I show, from the text, the possible meaning of purification as the author intended it.",
+                "PhiH.textAnalysis.grenier.questions.q2": "I classify these statements according to their nature, philosophical or ideological, and I determine which are most capable of confronting refutation, justifying my answers:",
+                "PhiH.textAnalysis.grenier.questions.q2.item1": "There is a natural inequality between races.",
+                "PhiH.textAnalysis.grenier.questions.q2.item2": "Sensible pleasure is the foundation of happiness.",
+                "PhiH.textAnalysis.grenier.questions.q2.item3": "Woman is less intelligent than man.",
+                "PhiH.textAnalysis.grenier.questions.q2.item4": "The value of each civilization is determined by the degree of its technical progress.",
+                "PhiH.textAnalysis.grenier.questions.q2.item5": "Reason is the thing best shared among humans.",
+                "PhiH.textAnalysis.grenier.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.grenier.answers.a1.title": "Answer to the first task:",
+                "PhiH.textAnalysis.grenier.answers.a1.content": "Grenier uses the term \"purification\" to describe what happens to philosophy when it is subjected to refutation. The possible meaning of this purification can be determined in the following points:<br><br><strong>1. Purification is not destruction:</strong> refutation does not eliminate philosophy, but \"does not at all lead to the refutation of philosophy\". Purification is therefore not the elimination of the thing itself, but of what has attached itself to it.<br><br><strong>2. Purification as elimination of dead elements:</strong> refutation eliminates from philosophy \"the elements linked to a determined stage of the stages of science\", that is, the elements superseded by the progress of knowledge. Science progresses, and philosophy retains elements linked to a science that has become superseded.<br><br><strong>3. Purification as preservation of the essence:</strong> despite the elimination of those elements, \"this philosophy does not collapse with the fall of those elements\". Purification separates the essence (the truth of philosophy) from the accident (the elements linked to the superseded science).<br><br><strong>4. Purification as renewal of brilliance:</strong> \"its truth, insofar as it is independent of the science to which it was linked, acquires a new brilliance\". Purification does not diminish philosophy, but makes it purer and more brilliant.<br><br><strong>5. Purification as a painful but necessary operation:</strong> \"by embracing it and enabling it to perform its purifying work\" – philosophy does not content itself with accepting refutation, it \"embraces\" it and enables it to act. This presupposes humility and courage.<br><br><strong>6. Purification as a continuous process:</strong> \"so as to be reborn after refutation in a new form\". Purification is not a single and definitive event, but a renewed process, with each progress of knowledge and each new refutation.<br><br><strong>Conclusion:</strong> purification for Grenier is an operation of eliminating the historical dead elements of philosophy (those linked to a superseded science), while preserving its essence and its independent truth; philosophy thus is reborn after each purification \"in a new form\". This is what makes refutation not a threat to philosophy, but a condition of its vitality and renewal.",
+                "PhiH.textAnalysis.grenier.answers.a2.title": "Answer to the second task:",
+                "PhiH.textAnalysis.grenier.answers.a2.content": "<p>I classify the proposed statements according to their nature, and I determine those most capable of confronting refutation, according to the following table:</p><table><thead><tr><th>The statement</th><th>The classification</th><th>The justification</th></tr></thead><tbody><tr><td>\"There is a natural inequality between races\"</td><td><strong>Ideological</strong></td><td>Closed racist statement, founded on postulates not scientifically justified, which does not accept criticism or refutation, but works to avoid it.</td></tr><tr><td>\"Sensible pleasure is the foundation of happiness\"</td><td><strong>Philosophical</strong></td><td>Philosophical thesis (Epicurean / hedonist), discussable and refutable, founded on rational arguments.</td></tr><tr><td>\"Woman is less intelligent than man\"</td><td><strong>Ideological</strong></td><td>Closed sexist prejudice, refuted by modern science, which does not accept criticism but works to avoid it.</td></tr><tr><td>\"The value of each civilization is determined by the degree of its technical progress\"</td><td><strong>Ideological</strong> (positivist)</td><td>Reductive closed statement, which reduces the value of civilization to a single dimension (technique) and sets aside other dimensions (ethical, artistic, spiritual). It is a positivist statement (according to note 1), which does not accept criticism.</td></tr><tr><td>\"Reason is the thing best shared among humans\"</td><td><strong>Philosophical</strong></td><td>Cartesian philosophical thesis, discussable and refutable, founded on rational arguments.</td></tr></tbody></table><p><strong>Which are most capable of confronting refutation?</strong></p><p>The <strong>philosophical</strong> statements are the most capable of confronting refutation, because:</p><ul><li>Philosophy <em>confronts</em> refutation and does not avoid it (unlike ideology and belief).</li><li>Philosophy starts from declared and discussable arguments, not from closed postulates.</li><li>Philosophy accepts the questioning of its foundations, and considers refutation as a \"purification\" and not a threat.</li><li>Philosophy separates its essence from the historical elements attached to it, and therefore does not collapse by the refutation of those elements.</li></ul><p>In contrast, ideology <em>avoids</em> refutation, closes itself before it, and seeks to refute others without accepting to be refuted. The ideological statements (racial inequality, sexist prejudice, technical reductionism) are incapable of confronting refutation, because they do not start from arguments but from closed postulates.</p><p><strong>The philosophical statements most capable of confronting refutation:</strong> they are those that formulate themselves <em>as a declared discussable thesis</em>, more than those that remain vague or mixed with postulates. According to this criterion, \"sensible pleasure is the foundation of happiness\" and \"reason is the thing best shared among humans\" are both philosophical, and both capable of confronting refutation; but the most capable are those that determine their thesis precisely and provide explicit arguments for it.",
+                "PhiH.textAnalysis.grenier.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.grenier.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.grenier.analysis.thesis.content": "Grenier considers that refutation is not a refutation of philosophy, but a purification of it. True philosophy, unlike ideology and belief, confronts refutation, embraces it, and enables it to accomplish its purifying work, because refutation eliminates from it the elements linked to superseded scientific stages, and preserves its essence independent of science; philosophy thus is reborn after refutation in a new form. Refutation is therefore a condition of the vitality and renewal of philosophy, not a threat to its existence.",
+                "PhiH.textAnalysis.grenier.analysis.mechanisms.title": "Mechanisms of the functioning of refutation as purification:",
+                "PhiH.textAnalysis.grenier.analysis.mechanisms.content": "- <strong>Confrontation and not avoidance:</strong> philosophy \"is honored to confront refutation\", unlike ideology and belief.<br>- <strong>Embrace and not exclusion:</strong> philosophy does not \"hunt\" refutation like an enemy, but \"embraces it and enables it to accomplish its purifying work\".<br>- <strong>Distinction between essence and accident:</strong> refutation eliminates \"the elements linked to a determined stage of the stages of science\", and preserves \"its truth insofar as it is independent of science\".<br>- <strong>Renaissance in a new form:</strong> after each purification, \"philosophy is reborn in a new form\".<br>- <strong>Distinction between philosophy and ideology:</strong> philosophy accepts refutation and embraces it; ideology avoids it and refutes others without accepting to be refuted.",
+                "PhiH.textAnalysis.grenier.analysis.consequences.title": "Consequences of this thesis:",
+                "PhiH.textAnalysis.grenier.analysis.consequences.content": "- <strong>Going beyond the reductive view of philosophy:</strong> philosophy is not a simple \"opposition of philosophies to one another\" leading to \"incoherence and loss of truth\", but a construction renewed by refutation.<br>- <strong>Determination of the criterion of distinction between philosophy and ideology:</strong> the criterion is refutability: philosophy accepts it, ideology avoids it.<br>- <strong>Foundation of a healthy relationship between philosophy and science:</strong> philosophy is independent of science in its essence, and accepts the elimination of what, in it, is linked to a superseded science.<br>- <strong>Explanation of the continuity of the history of philosophy:</strong> the history of philosophy is not a \"cemetery of systems\", but a series of operations of purification and renaissance.<br>- <strong>Orientation of the relationship to refutation:</strong> instead of fearing refutation, it should be considered an occasion for purification and renewal.",
+                "PhiH.textAnalysis.grenier.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.grenier.analysis.significance.content": "This text carries a profound methodological significance in the philosophy of knowledge and in the determination of the nature of philosophy:<br><br><strong>1. Epistemological significance:</strong> the text presents a new conception of the nature of philosophical knowledge, as knowledge that renews itself by refutation, and not as knowledge built once and for all. This goes beyond the dogmatic conception of philosophy (philosophy as closed system) and the skeptical conception (philosophy as contradictory opinions).<br><br><strong>2. Critical significance:</strong> the text criticizes the positivist current (\"the proponents of thought dazzled by scientific truths\") which sees in the refutation of philosophies proof of their non-scientificity. The text shows that this refutation is not a defect of philosophy, but its distinctive property.<br><br><strong>3. Distinctive significance:</strong> the text offers a clear criterion to distinguish philosophy from ideology: refutability. Philosophy accepts refutation, ideology avoids it. This criterion is of capital importance in the analysis of discourses.<br><br><strong>4. Educational-ethical significance:</strong> the text calls for an intellectual virtue: embracing refutation rather than avoiding it. This virtue is essential in education for critical thinking.<br><br><strong>5. Link of the text with the lesson (analysis):</strong> the text presents refutation as a fundamental analytical procedure in philosophy. It reveals the relationship between refutation and analysis: refutation is the analysis that brings out the dead elements and preserves the living essence. This prepares the texts of Mill and Bayle, which will expose the conditions and practical procedures of refutation."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.grenier.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.grenier.title": "تحليل النص: الدحض تَطْهَرْ - هوبير غرونيي",
+                "PhiH.textAnalysis.grenier.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.grenier.introduction.content": "إنَّ الانطباع الراسخ لدى كثير من الذين اطَّلعوا على قدر من تاريخ الفلسفة، يتمثل في أنَّ الفلاسفة لا يفعلون سوى معارضة بعضهم البعض، بحيث لا يفضي ذلك، في نهاية الأمر، إلا لعدم الأنساق وضيع الحقيقة بين أنقاضها. ولكنَّ هذا الفهم للنقد الفلسفي الذي ينتهي إلى المطابقة بينه وبين الريبية قد يعكس نظرة اختزالية مشوهة، لذا يحسن بنا أن ننظر إلى النقد من زاوية أخرى تجعل منه فعلاً نقدياً يعيد بعث الأفكار في صورة جديدة.",
+                "PhiH.textAnalysis.grenier.text.title": "النص",
+                "PhiH.textAnalysis.grenier.text.content": "(...) ما من دحض إلا في الفلسفة. وعلى عكس ما يعتقده أصحاب الفكر المنبهر بحقائق العلم[1] الحالية من العمق والحركة والنفي والحياة، فإن دحض الفلسفات لا يؤدي بتاتاً إلى دحض الفلسفة.<br><br>والأكيد أنَّ الفلسفة الحقيقية يشرَّفها أن تواجه الدحض، خلافاً للإيديولوجية[2] وللاعتقاد اللذين يعملان على تجنبه. وبشكل أكثر حسمًا فإن فلسفة ما لا توطد حقيقتها بإقصاء الدحض وصدَّه إلى خارجها كالعدوّ المطارَد، بل باحتضانه وتمكينه من أداء عمله التَطْهَرْي، لتبعث بعد الدحض في صورة جديدة. إنَّ الدحض بالنسبة إلى فلسفة ما هو تَطْهَرْ. وهكذا فإنه عندما ترفض العناصر المرتبطة بمرحلة معينة من مراحل العلم في فلسفة ما بسبب تقدَّم المعرفة، فإنَّ هذه الفلسفة لا تنهار بسقوط تلك العناصر، بل إنَّ حقيقتها، بما هي مستقلة عن العلم الذي ارتبطت به، تكتسب بريقاً جديداً.",
+                "PhiH.textAnalysis.grenier.text.source": "هوبير غرونيي، المعرفة الفلسفية، ترجمة لجنة التأليف - Hubert Grenier, La connaissance philosophique, éd. Masson, 1973, pp. 22-23",
+                "PhiH.textAnalysis.grenier.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.grenier.author.alt": "هوبير غرونيي",
+                "PhiH.textAnalysis.grenier.author.content": "هوبير غرونيي: فيلسوف فرنسي معاصر، درس في قسنطينة وتونس وبواتيي قبل أن يلتحق بمعهد لويس لو غران. جعل من تدريس الفلسفة موضوع اشتغاله الأساسي، حيث حرص على أن يجعل منه إطاراً للتأمل والكتابة. عمل على أن يكون المدرس معلماً يجسّم مقتضيات التفكير بما يقدّمه من دروس لتلاميذه، فيحرص في آن على وضوح الفكرة وجمال العبارة ودقتها، متأثراً في ذلك بآلان. علّق أحد تلاميذه على مسيرته بالقول: \"لقد سخّر حياته للكتابة والتدريس، فلا يكتب إلا ليدرس\". من أهم مؤلفاته: \"المعرفة الفلسفية\" (1973)، \"المذاهب الأخلاقية الكبرى\" (1994)، و\"الحرية المرحة\" (نُشر بعد وفاته 2003).",
+                "PhiH.textAnalysis.grenier.footnotes.title": "الهوامش",
+                "PhiH.textAnalysis.grenier.footnotes.item1": "<strong>(1) \"أصحاب الفكر المنبهر بحقائق العلم\":</strong> إن في ذلك إشارة إلى التيار الوضعي في أعمّ دلالاته، والذي يرى في دحض الفلسفات بعضها لبعض ما يدلّ على أن الأفكار الفلسفية ليست سوى آراء ذاتية لا يمكنها أن ترقى إلى مستوى الحقيقة التي ينفرد العلم وحده بإنتاجها، كقضية يثبت صلاحيتها باستدلالات رياضية وتحقيقات تجريبية فتنتمي بالموضوعية.",
+                "PhiH.textAnalysis.grenier.footnotes.item2": "<strong>(2) \"الإيديولوجية\":</strong> هي نسق من التصوّرات يمثل رؤية متكاملة للعالم، من خلالها يفهم الأفراد ظروف وجودهم الفعلية. وللإيديولوجية وظيفة عملية بالأساس تكمن في تحديد العلاقات فيما بين الأفراد وأدوارهم الاجتماعية من خلال قيم تبررها. وتتسم الإيديولوجية بطابعها الوثوقي المغلق الذي يحتوي الواقع ويفسره دون أن ينفتح على تحوّلات الواقع ودون أن يقبل النقد. لذلك تسعى الإيديولوجية إلى دحض إيديولوجيات أخرى، ولكنها لا تقبل الدحض.",
+                "PhiH.textAnalysis.grenier.questions.title": "المهام",
+                "PhiH.textAnalysis.grenier.questions.q1": "أبيّن انطلاقاً من النص المعنى الممكن للتَطْهَرْ كما قصده الكاتب.",
+                "PhiH.textAnalysis.grenier.questions.q2": "أصنّف هذه الإقرارات بحسب طبيعتها إذا ما كانت فلسفية أو إيديولوجية، وأحدّد أيّها أقدر على مواجهة الدحض معلّلاً إجاباتي:",
+                "PhiH.textAnalysis.grenier.questions.q2.item1": "هناك تفاوت طبيعي بين الأعراق.",
+                "PhiH.textAnalysis.grenier.questions.q2.item2": "اللذة الحسية قوام السعادة.",
+                "PhiH.textAnalysis.grenier.questions.q2.item3": "المرأة أقل ذكاءً من الرجل.",
+                "PhiH.textAnalysis.grenier.questions.q2.item4": "قيمة كل حضارة تتحدّد طبقاً لدرجة تقدّمها التقني.",
+                "PhiH.textAnalysis.grenier.questions.q2.item5": "العقل أعدل الأشياء توزّعاً بين البشر.",
+                "PhiH.textAnalysis.grenier.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.grenier.answers.a1.title": "الإجابة عن المهمة الأولى:",
+                "PhiH.textAnalysis.grenier.answers.a1.content": "يستعمل غرونيي لفظ \"التَطْهَرْ\" لوصف ما يحدث للفلسفة عند تعرّضها للدحض. ويمكن تحديد المعنى الممكن لهذا التَطْهَرْ في النقاط التالية:<br><br><strong>1. التَطْهَرْ ليس هدماً:</strong> الدحض لا يقضي على الفلسفة، بل \"لا يؤدي بتاتاً إلى دحض الفلسفة\". فالتَطْهَرْ هنا ليس إزالة للشيء نفسه، بل إزالة لما علق به.<br><br><strong>2. التَطْهَرْ كإزالة للعناصر الميتة:</strong> الدحض يزيل من الفلسفة \"العناصر المرتبطة بمرحلة معينة من مراحل العلم\"، أي العناصر التي تجاوزها تقدّم المعرفة. فالعلم يتقدّم، والفلسفة تحتفظ بعناصر مرتبطة بعلم صار متجاوزاً.<br><br><strong>3. التَطْهَرْ كحفاظ على الجوهر:</strong> رغم إزالة تلك العناصر، \"فإن هذه الفلسفة لا تنهار بسقوط تلك العناصر\". فالتَطْهَرْ يفصل بين الجوهر (حقيقة الفلسفة) والعرض (العناصر المرتبطة بالعلم المتجاوز).<br><br><strong>4. التَطْهَرْ كتجديد للبريق:</strong> \"إن حقيقتها، بما هي مستقلة عن العلم الذي ارتبطت به، تكتسب بريقاً جديداً\". فالتَطْهَرْ لا يُنقص الفلسفة، بل يزيدها صفاءً وتألقاً.<br><br><strong>5. التَطْهَرْ كعملية موجعة لكنها ضرورية:</strong> \"باحتضانه وتمكينه من أداء عمله التَطْهَرْي\" – فالفلسفة لا تكتفي بقبول الدحض، بل \"تحتضنه\" وتمكّنه من العمل. وهذا يفترض تواضعاً وشجاعة.<br><br><strong>6. التَطْهَرْ كعملية مستمرة:</strong> \"لتبعث بعد الدحض في صورة جديدة\". فالتَطْهَرْ ليس حدثاً واحداً نهائياً، بل هو عملية متجددة، كلما تقدّمت المعرفة وطرأت دحوض جديدة.<br><br><strong>الخلاصة:</strong> التَطْهَرْ عند غرونيي هو عملية إزالة للعناصر التاريخية الميتة في الفلسفة (تلك المرتبطة بعلم متجاوز)، مع الحفاظ على جوهرها وحقيقتها المستقلة، فتبعث الفلسفة بعد كل عملية تَطْهَرْ \"في صورة جديدة\". وهو ما يجعل الدحض ليس تهديداً للفلسفة، بل شرطاً لحيويتها وتجدّدها.",
+                "PhiH.textAnalysis.grenier.answers.a2.title": "الإجابة عن المهمة الثانية:",
+                "PhiH.textAnalysis.grenier.answers.a2.content": "<p>أصنّف الإقرارات المطروحة بحسب طبيعتها، وأحدّد أقدرها على مواجهة الدحض، وفقاً للجدول التالي:</p><table><thead><tr><th>الإقرار</th><th>التصنيف</th><th>التعليل</th></tr></thead><tbody><tr><td>\"هناك تفاوت طبيعي بين الأعراق\"</td><td><strong>إيديولوجي</strong></td><td>إقرار عنصري مغلق، يستند إلى مسلّمات غير مبرَّرة علمياً، ولا يقبل النقد أو الدحض، بل يعمل على تجنبه.</td></tr><tr><td>\"اللذة الحسية قوام السعادة\"</td><td><strong>فلسفي</strong></td><td>أطروحة فلسفية (الأبيقورية / اللذانية)، قابلة للمناقشة والدحض، وتستند إلى حجج عقلية.</td></tr><tr><td>\"المرأة أقل ذكاءً من الرجل\"</td><td><strong>إيديولوجي</strong></td><td>تحيّز جنسي مغلق، يرفضه العلم الحديث، ولا يقبل النقد بل يعمل على تجنبه.</td></tr><tr><td>\"قيمة كل حضارة تتحدّد طبقاً لدرجة تقدّمها التقني\"</td><td><strong>إيديولوجي</strong> (وضعي)</td><td>إقرار اختزالي مغلق، يختزل قيمة الحضارة في بعد واحد (التقنية)، ويُقصي أبعاداً أخرى (أخلاقية، فنية، روحية). وهو إقرار وضعي (على النحو المذكور في الهامش 1)، لا يقبل النقد.</td></tr><tr><td>\"العقل أعدل الأشياء توزّعاً بين البشر\"</td><td><strong>فلسفي</strong></td><td>أطروحة ديكارتية فلسفية، قابلة للمناقشة والدحض، وتستند إلى حجج عقلية.</td></tr></tbody></table><p><strong>أيّها أقدر على مواجهة الدحض؟</strong></p><p>الإقرارات <strong>الفلسفية</strong> هي الأقدر على مواجهة الدحض، لأنّ:</p><ul><li>الفلسفة <em>تواجه</em> الدحض ولا تتجنبه (خلافاً للإيديولوجية والاعتقاد).</li><li>الفلسفة تنطلق من حجج معلنة قابلة للمناقشة، لا من مسلّمات مغلقة.</li><li>الفلسفة تقبل إعادة النظر في أسسها، وتعتبر الدحض \"تَطْهَرْاً\" لا تهديداً.</li><li>الفلسفة تفصل بين جوهرها والعناصر التاريخية المرتبطة بها، فلا تنهار بدحض تلك العناصر.</li></ul><p>وفي المقابل، الإيديولوجية <em>تتجنّب</em> الدحض، وتغلق نفسها أمامه، وتسعى إلى دحض غيرها دون أن تقبل أن تُدحض. فالإقرارات الإيديولوجية (التفاوت العرقي، التحيز الجنسي، الاختزال التقني) تعجز عن مواجهة الدحض، لأنها لا تنطلق من حجج بل من مسلّمات مغلقة.</p><p><strong>أقدر الإقرارات الفلسفية على مواجهة الدحض:</strong> هي تلك التي تصوغ نفسها <em>كأطروحة معلنة قابلة للمناقشة</em>، أكثر من تلك التي تبقى غامضة أو مختلطة بمسلّمات. وبهذا المعيار، فإنّ \"اللذة الحسية قوام السعادة\" و\"العقل أعدل الأشياء توزّعاً\" كلتاهما فلسفية، وكلتاهما قادرة على مواجهة الدحض، لكن الأقدر هي التي تحدد أطروحتها بدقة وتقدم لها حججاً صريحة.</p>",
+                "PhiH.textAnalysis.grenier.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.grenier.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.grenier.analysis.thesis.content": "يرى غرونيي أنّ الدحض ليس دحضاً للفلسفة، بل هو تَطْهَرْ لها. فالفلسفة الحقيقية، خلافاً للإيديولوجية والاعتقاد، تواجه الدحض وتحتضنه وتمكّنه من عمله التَطْهَرْي، لأنّ الدحض يزيل منها العناصر المرتبطة بمراحل علمية متجاوزة، ويحفظ جوهرها المستقل عن العلم، فتبعث بعد الدحض في صورة جديدة. وبهذا فإنّ الدحض شرط لحيوية الفلسفة وتجدّدها، لا تهديد لوجودها.",
+                "PhiH.textAnalysis.grenier.analysis.mechanisms.title": "آليات عمل الدحض كتَطْهَرْ:",
+                "PhiH.textAnalysis.grenier.analysis.mechanisms.content": "- <strong>المواجهة لا التجنّب:</strong> الفلسفة \"يشرّفها أن تواجه الدحض\"، خلافاً للإيديولوجية والاعتقاد.<br>- <strong>الاحتضان لا الإقصاء:</strong> الفلسفة لا \"تطارد\" الدحض كعدو، بل \"تحتضنه وتمكّنه من أداء عمله التَطْهَرْي\".<br>- <strong>التفريق بين الجوهر والعرض:</strong> الدحض يزيل \"العناصر المرتبطة بمرحلة معينة من مراحل العلم\"، ويحفظ \"حقيقتها بما هي مستقلة عن العلم\".<br>- <strong>البعث في صورة جديدة:</strong> بعد كل عملية تَطْهَرْ، \"تبعث الفلسفة في صورة جديدة\".<br>- <strong>التمييز بين الفلسفة والإيديولوجية:</strong> الفلسفة تقبل الدحض وتحتضنه، والإيديولوجية تتجنبه وتدحض غيرها دون أن تقبل أن تُدحض.",
+                "PhiH.textAnalysis.grenier.analysis.consequences.title": "النتائج المترتبة على هذه الأطروحة:",
+                "PhiH.textAnalysis.grenier.analysis.consequences.content": "- <strong>تجاوز النظرة الاختزالية للفلسفة:</strong> الفلسفة ليست مجرد \"معارضة بعضها لبعض\" ينتهي إلى \"عدم الأنساق وضيع الحقيقة\"، بل هي بناء يتجدّد بالدحض.<br>- <strong>تحديد معيار التمييز بين الفلسفة والإيديولوجية:</strong> المعيار هو قابلية الدحض: الفلسفة تقبله، والإيديولوجية تتجنبه.<br>- <strong>تأسيس علاقة صحية بين الفلسفة والعلم:</strong> الفلسفة تستقل عن العلم في جوهرها، وتقبل إزالة ما يرتبط منها بعلم متجاوز.<br>- <strong>تفسير استمرارية تاريخ الفلسفة:</strong> تاريخ الفلسفة ليس \"مقبرة أنساق\"، بل سلسلة من عمليات التَطْهَرْ والبعث.<br>- <strong>توجيه الموقف من الدحض:</strong> بدل أن نخشى الدحض، يجب أن نعتبره فرصة للتَطْهَرْ والتجدّد.",
+                "PhiH.textAnalysis.grenier.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.grenier.analysis.significance.content": "يحمل هذا النص دلالة منهجية عميقة في فلسفة المعرفة وفي تحديد طبيعة الفلسفة:<br><br><strong>1. دلالة إبستمولوجية:</strong> النص يقدّم تصوراً جديداً لطبيعة المعرفة الفلسفية، بوصفها معرفة تتجدّد بالدحض، لا معرفة تُبنى مرة واحدة وللأبد. وهذا يتجاوز التصور الدوغمائي للفلسفة (فلسفة كنسق مغلق) والتصور الشكّي (فلسفة كآراء متناقضة).<br><br><strong>2. دلالة نقدية:</strong> النص يوجّه نقداً للتيار الوضعي (\"أصحاب الفكر المنبهر بحقائق العلم\") الذي يرى في دحض الفلسفات دليلاً على عدم علميتها. فالنص يبيّن أن هذا الدحض ليس عيباً في الفلسفة، بل هو خاصيتها المميزة.<br><br><strong>3. دلالة تمييزية:</strong> النص يقدّم معياراً واضحاً للتمييز بين الفلسفة والإيديولوجية: قابلية الدحض. فالفلسفة تقبل الدحض، والإيديولوجية تتجنبه. وهذا المعيار بالغ الأهمية في تحليل الخطابات.<br><br><strong>4. دلالة تربوية-أخلاقية:</strong> النص يدعو إلى فضيلة فكرية: احتضان الدحض لا تجنّبه. وهذه الفضيلة أساسية في التربية على التفكير النقدي.<br><br><strong>5. صلة النص بالدرس (التحليل):</strong> النص يقدّم الدحض بوصفه إجراءً تحليلياً أساسياً في الفلسفة. فهو يكشف عن العلاقة بين الدحض والتحليل: الدحض هو التحليل الذي يُظهر العناصر الميتة ويحفظ الجوهر الحي. وهو ما يمهد لنصوص ميل وبايل التي ستعرض شروط الدحض وإجراءاته العملية."
+            }
+        };
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

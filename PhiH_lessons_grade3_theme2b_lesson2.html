@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التعريف - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#1a237e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Deep Indigo / Royal Blue Theme for definition lesson */
+        :root {
+            --primary-color: #1a237e;
+            --primary-light: #283593;
+            --primary-dark: #0d1452;
+            --secondary-color: #283593;
+            --secondary-light: #3949ab;
+            --secondary-dark: #1a237e;
+            --accent-color: #3949ab;
+            --accent-light: #5c6bc0;
+            --accent-dark: #283593;
+            --light-color: #e8eaf6;
+            --dark-color: #0a0d29;
+            --text-color: #2a2e4a;
+            --heading-color: #12163d;
+            --background-color: #f5f6fc;
+            --card-bg: #ffffff;
+            --definition-bg: #c5cae9;
+            --border-color: #9fa8da;
+            --table-even-bg: #e8eaf6;
+            --table-hover-bg: #c5cae9;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(26, 35, 126, 0.15);
+            --gradient-primary: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            --gradient-secondary: linear-gradient(135deg, #0d1452 0%, #283593 100%);
+            --gradient-indigo: linear-gradient(135deg, #1a237e 0%, #0d1452 100%);
+            --gradient-blue: linear-gradient(135deg, #283593 0%, #3949ab 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #5c6bc0;
+            --primary-light: #7986cb;
+            --primary-dark: #3949ab;
+            --secondary-color: #3949ab;
+            --secondary-light: #5c6bc0;
+            --secondary-dark: #283593;
+            --accent-color: #7986cb;
+            --accent-light: #9fa8da;
+            --accent-dark: #5c6bc0;
+            --light-color: #1f2456;
+            --dark-color: #0a0d29;
+            --text-color: #c5cae9;
+            --heading-color: #e8eaf6;
+            --background-color: #0d1452;
+            --card-bg: #1f2456;
+            --definition-bg: #1a237e;
+            --border-color: #3949ab;
+            --table-even-bg: #1f2456;
+            --table-hover-bg: #1a237e;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #283593 0%, #5c6bc0 100%);
+            --gradient-secondary: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+            --gradient-indigo: linear-gradient(135deg, #5c6bc0 0%, #0d1452 100%);
+            --gradient-blue: linear-gradient(135deg, #7986cb 0%, #3949ab 100%);
+        }
+        /* Definition Cards Layout */
+        .PhiH-definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .PhiH-definition-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(26, 35, 126, 0.2);
+        }
+        .PhiH-definition-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        /* Expand/Collapse Functionality */
+        .PhiH-expandable-section {
+            margin-bottom: 1.5rem;
+        }
+        .PhiH-expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .PhiH-expandable-header:hover {
+            background: var(--gradient-indigo);
+        }
+        .PhiH-expandable-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        .PhiH-expandable-content {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            border-top: none;
+        }
+        .PhiH-expandable-content.hidden {
+            display: none;
+        }
+        .PhiH-expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        .PhiH-expand-icon.expanded {
+            transform: rotate(180deg);
+        }
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        .PhiH-author-info {
+            flex: 1;
+        }
+        /* Quotes Section Styling */
+        .PhiH-quotes-container {
+            margin-top: 1rem;
+        }
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(26, 35, 126, 0.2);
+        }
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        /* RTL support for definition cards */
+        body.rtl .PhiH-definition-card-content ul {
+            padding-left: 0;
+            padding-right: 1.2rem;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .PhiH-definitions-grid {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .PhiH-author-image {
+                align-self: center;
+            }
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-definition" dir="ltr">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
+    <main class="PhiH-lesson1-container">
+        <div class="PhiH-lesson1-header">
+            <h1 class="PhiH-lesson1-title" data-i18n="PhiH.lessons.definition.title">التعريف</h1>
+            <div class="PhiH-lesson1-level" data-i18n="PhiH.lessons.definition.level">السنة الثالثة ثانوي - الفلسفة</div>
+        </div>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="introHeader">
+                <h3 data-i18n="PhiH.lessons.definition.introduction.title">التمهيد</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="introContent">
+                <p data-i18n="PhiH.lessons.definition.introduction.text">تشكو اللغة من التباس في الألفاظ يوقع المتواصلين في سوء التفاهم، ويدفع بالبعض إلى الاعتقاد بأنّ التعريف كفيلٌ بوضع حدّ لهذا الالتباس بضبط دلالة دقيقة لكلّ لفظ. غير أنّ الاضطلاع بهذه المهمة عن كثب يكشف عن صعوبتها: فالتعريف ليس عملية واحدة، بل هو مستويات متعدّدة (لفظي، رسمي، حقيقي) تختلف بحسب ما يطلبه السائل. كما أنّ التعريف ليس مجرّد كشف لماهية جاهزة، بل هو بناء لمفهوم يصنعه العقل في التاريخ. وسننظر في الدرس في نصّ الغزالي الذي يفكّك أوجه الحدّ ومستوياته، ثمّ في نصّ روسو الذي يعرّف التفاوت ويصنّفه إلى طبيعي ووضعي، وأخيراً في نصّ نيتشه الذي يبيّن أنّ المفاهيم ليست معطيات بل تكوّنات تاريخية.</p>
+            </div>
+        </section>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="textsHeader">
+                <h3 data-i18n="PhiH.lessons.definition.texts.title">النصوص</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="textsContent">
+                <div class="PhiH-texts-container">
+                    <ul class="PhiH-texts-list">
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2b_lesson2_text1.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.definition.texts.text1">في أوجه الحدّ - الغزالي</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2b_lesson2_text2.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.definition.texts.text2">في تعريف التفاوت - جون جاك روسو</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2b_lesson2_text3.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.definition.texts.text3">تكوّن المفاهيم - فريديريك نيتشه</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="quotesHeader">
+                <h3 data-i18n="PhiH.lessons.definition.quotes.title">شواهد ونصوص ذات صلة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="quotesContent">
+                <div class="PhiH-quotes-container">
+                    <div class="PhiH-quotes-grid">
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.definition.quotes.quote1">"الحدّ عنوان للذات وبيان لها، فيجب أن يقوم في النفس صورة معقولة مساوية للصورة الموجودة بتمامها."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.definition.quotes.author1">الشهرستاني</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.definition.quotes.quote2">"التعريف الدقيق مفيد كي يفهمنا الآخرون، وعدم التعريف ضروري لمواصلة الكلام دون مضابقة."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.definition.quotes.author2">ريمي دي قورمون</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.definition.quotes.quote3">"أما الرسم، فالرسم التام هو قول مؤلَّف من جنس شيء وأعراضه اللازمة له حتى يساويه، والرسم مطلقاً هو قول يعرّف الشيء تعريفاً غير ذاتي ولكنه خاص أو قول مميِّز للشيء عما سواه لا بالذات."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.definition.quotes.author3">ابن سينا</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.definition.quotes.quote4">"إنّ العلم إمّا تصوّر وسبيل معرفته الحدّ، وإمّا تصديق وسبيل معرفته البرهان."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.definition.quotes.author4">الغزالي</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.definition.quotes.quote5">"أن نعرف هو أن نحدّ."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.definition.quotes.author5">أوسكار وايلد</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.definition.quotes.quote6">"إنَّ ما يعلِّمه لنا المفهوم هو ما يكشف التاريخ عنه بنفس الضرورة."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.definition.quotes.author6">هيغل</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.definition.quotes.quote7">"إنَّ فكرة الدائرة ليست مستديرة."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.definition.quotes.author7">سبينوزا</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.definition.quotes.quote8">"لا يوجد مفهوم بسيط، لكل مفهوم مكوناته التي يُعرف بها."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.definition.quotes.author8">جيل دولوز</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="conclusionHeader">
+                <h3 data-i18n="PhiH.lessons.definition.conclusion.title">الخاتمة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="conclusionContent">
+                <p data-i18n="PhiH.lessons.definition.conclusion.text">يتبيّن من الدرس أنّ التعريف إجراء مركّب: فهو لغوي من حيث إنّه يشرح اللفظ، ومنطقي من حيث إنّه يحدّد الجنس والفصل أو اللوازم، وتاريخي من حيث إنّه يبني المفهوم في سياقه. وبهذا المعنى، فإنّ التعريف ليس مجرّد كشفٍ سلبي لماهية جاهزة، بل هو فعل إيجابي يضبط الحدود ويميّز ويصنّف. غير أنّ التعريف مهما كان دقيقاً لا يكفي وحده لبناء المعرفة؛ إذ لا بدّ من ربط المفاهيم بعضها ببعض داخل خطاب حجاجي يبرّر اختياراتنا، وهو ما يستدعي الانتقال من التعريف إلى الحجاج.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Page-specific translations for definition lesson
+        window.translations_PhiHdefinition = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                // Lesson specific translations
+                "PhiH.lessons.definition.title": "La Définition",
+                "PhiH.lessons.definition.level": "3ème Secondaire - Philosophie",
+                "PhiH.lessons.definition.introduction.title": "Introduction",
+                "PhiH.lessons.definition.introduction.text": "La langue souffre de l'ambiguïté des mots qui jette les interlocuteurs dans le malentendu, et pousse certains à croire que la définition suffirait à mettre fin à cette ambiguïté en fixant pour chaque mot une signification précise. Mais l'examen attentif de cette tâche révèle sa difficulté : la définition n'est pas une opération unique, mais comporte plusieurs niveaux (verbal, formel, réel) qui varient selon ce que demande celui qui interroge. En outre, définir n'est pas simplement révéler une essence toute faite, mais construire un concept que l'esprit élabore dans l'histoire. La leçon examinera le texte d'Al-Ghazali qui décompose les aspects de la définition et ses niveaux, puis le texte de Rousseau qui définit l'inégalité et la classe en naturelle et instituée, enfin le texte de Nietzsche qui montre que les concepts ne sont pas des données mais des formations historiques.",
+                "PhiH.lessons.definition.texts.title": "Textes",
+                "PhiH.lessons.definition.texts.text1": "Des aspects de la définition - Al-Ghazali",
+                "PhiH.lessons.definition.texts.text2": "De la définition de l'inégalité - Jean-Jacques Rousseau",
+                "PhiH.lessons.definition.texts.text3": "La formation des concepts - Friedrich Nietzsche",
+                "PhiH.lessons.definition.quotes.title": "Citations et textes connexes",
+                "PhiH.lessons.definition.quotes.quote1": "« La définition est un titre pour l'essence et une manifestation pour elle ; il faut donc qu'une représentation rationnelle égale à la représentation existante dans sa totalité se forme dans l'âme. »",
+                "PhiH.lessons.definition.quotes.quote2": "« La définition précise est utile pour nous faire comprendre des autres, et l'absence de définition est nécessaire pour poursuivre le discours sans embarras. »",
+                "PhiH.lessons.definition.quotes.quote3": "« Quant à la description, la description complète est un propos composé du genre d'une chose et de ses accidents nécessaires jusqu'à l'égaler ; et la description absolue est un propos qui définit la chose d'une définition non essentielle, mais particulière, ou un propos qui distingue la chose d'autre qu'elle, non par l'essence. »",
+                "PhiH.lessons.definition.quotes.quote4": "« La science est soit conception, et sa voie de connaissance est la définition ; soit assentiment, et sa voie de connaissance est la démonstration. »",
+                "PhiH.lessons.definition.quotes.quote5": "« Connaître, c'est définir. »",
+                "PhiH.lessons.definition.quotes.quote6": "« Ce que le concept nous enseigne est ce que l'histoire révèle par la même nécessité. »",
+                "PhiH.lessons.definition.quotes.quote7": "« L'idée du cercle n'est pas ronde. »",
+                "PhiH.lessons.definition.quotes.quote8": "« Il n'y a pas de concept simple ; chaque concept a ses composantes par lesquelles il est connu. »",
+                "PhiH.lessons.definition.quotes.author1": "Al-Shahrastani",
+                "PhiH.lessons.definition.quotes.author2": "Rémi de Gourmont",
+                "PhiH.lessons.definition.quotes.author3": "Ibn Sina (Avicenne)",
+                "PhiH.lessons.definition.quotes.author4": "Al-Ghazali",
+                "PhiH.lessons.definition.quotes.author5": "Oscar Wilde",
+                "PhiH.lessons.definition.quotes.author6": "Hegel",
+                "PhiH.lessons.definition.quotes.author7": "Spinoza",
+                "PhiH.lessons.definition.quotes.author8": "Gilles Deleuze",
+                "PhiH.lessons.definition.conclusion.title": "Conclusion",
+                "PhiH.lessons.definition.conclusion.text": "Il ressort de la leçon que la définition est une opération complexe : linguistique en tant qu'elle explique le mot, logique en tant qu'elle détermine le genre et la différence ou les propriétés, historique en tant qu'elle construit le concept dans son contexte. En ce sens, définir n'est pas une simple révélation passive d'une essence toute faite, mais un acte positif qui fixe les limites, distingue et classe. Cependant, la définition, si précise soit-elle, ne suffit pas à elle seule à construire la connaissance ; il faut encore relier les concepts les uns aux autres dans un discours argumentatif qui justifie nos choix, ce qui appelle le passage de la définition à l'argumentation."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                // Lesson specific translations
+                "PhiH.lessons.definition.title": "Definition",
+                "PhiH.lessons.definition.level": "3rd Secondary - Philosophy",
+                "PhiH.lessons.definition.introduction.title": "Introduction",
+                "PhiH.lessons.definition.introduction.text": "Language suffers from the ambiguity of words that throws interlocutors into misunderstanding, and leads some to believe that definition would suffice to put an end to this ambiguity by fixing a precise meaning for each word. But a close examination of this task reveals its difficulty: definition is not a single operation, but involves several levels (verbal, formal, real) that vary according to what the questioner demands. Moreover, to define is not simply to reveal a ready-made essence, but to construct a concept that the mind elaborates in history. The lesson will examine Al-Ghazali's text which decomposes the aspects of definition and its levels, then Rousseau's text which defines inequality and classifies it into natural and instituted, and finally Nietzsche's text which shows that concepts are not data but historical formations.",
+                "PhiH.lessons.definition.texts.title": "Texts",
+                "PhiH.lessons.definition.texts.text1": "On the Aspects of Definition - Al-Ghazali",
+                "PhiH.lessons.definition.texts.text2": "On the Definition of Inequality - Jean-Jacques Rousseau",
+                "PhiH.lessons.definition.texts.text3": "The Formation of Concepts - Friedrich Nietzsche",
+                "PhiH.lessons.definition.quotes.title": "Related Quotes and Texts",
+                "PhiH.lessons.definition.quotes.quote1": "\"Definition is a title for the essence and a manifestation for it; a rational representation equal to the existing representation in its entirety must therefore be formed in the soul.\"",
+                "PhiH.lessons.definition.quotes.quote2": "\"Precise definition is useful for making others understand us, and the absence of definition is necessary for continuing the discourse without embarrassment.\"",
+                "PhiH.lessons.definition.quotes.quote3": "\"As for description, complete description is a statement composed of the genus of a thing and its necessary accidents until it equals it; and absolute description is a statement that defines the thing with a non-essential definition, but particular, or a statement that distinguishes the thing from other than it, not by essence.\"",
+                "PhiH.lessons.definition.quotes.quote4": "\"Science is either conception, and its path of knowledge is definition; or assent, and its path of knowledge is demonstration.\"",
+                "PhiH.lessons.definition.quotes.quote5": "\"To know is to define.\"",
+                "PhiH.lessons.definition.quotes.quote6": "\"What the concept teaches us is what history reveals by the same necessity.\"",
+                "PhiH.lessons.definition.quotes.quote7": "\"The idea of the circle is not round.\"",
+                "PhiH.lessons.definition.quotes.quote8": "\"There is no simple concept; every concept has its components by which it is known.\"",
+                "PhiH.lessons.definition.quotes.author1": "Al-Shahrastani",
+                "PhiH.lessons.definition.quotes.author2": "Rémi de Gourmont",
+                "PhiH.lessons.definition.quotes.author3": "Ibn Sina (Avicenna)",
+                "PhiH.lessons.definition.quotes.author4": "Al-Ghazali",
+                "PhiH.lessons.definition.quotes.author5": "Oscar Wilde",
+                "PhiH.lessons.definition.quotes.author6": "Hegel",
+                "PhiH.lessons.definition.quotes.author7": "Spinoza",
+                "PhiH.lessons.definition.quotes.author8": "Gilles Deleuze",
+                "PhiH.lessons.definition.conclusion.title": "Conclusion",
+                "PhiH.lessons.definition.conclusion.text": "It emerges from the lesson that definition is a complex operation: linguistic in that it explains the word, logical in that it determines the genus and the difference or the properties, historical in that it constructs the concept in its context. In this sense, to define is not a mere passive revelation of a ready-made essence, but a positive act that fixes limits, distinguishes and classifies. However, definition, however precise, is not enough by itself to build knowledge; concepts must still be linked to one another within an argumentative discourse that justifies our choices, which calls for the passage from definition to argumentation."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                // Lesson specific translations
+                "PhiH.lessons.definition.title": "التعريف",
+                "PhiH.lessons.definition.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.lessons.definition.introduction.title": "التمهيد",
+                "PhiH.lessons.definition.introduction.text": "تشكو اللغة من التباس في الألفاظ يوقع المتواصلين في سوء التفاهم، ويدفع بالبعض إلى الاعتقاد بأنّ التعريف كفيلٌ بوضع حدّ لهذا الالتباس بضبط دلالة دقيقة لكلّ لفظ. غير أنّ الاضطلاع بهذه المهمة عن كثب يكشف عن صعوبتها: فالتعريف ليس عملية واحدة، بل هو مستويات متعدّدة (لفظي، رسمي، حقيقي) تختلف بحسب ما يطلبه السائل. كما أنّ التعريف ليس مجرّد كشف لماهية جاهزة، بل هو بناء لمفهوم يصنعه العقل في التاريخ. وسننظر في الدرس في نصّ الغزالي الذي يفكّك أوجه الحدّ ومستوياته، ثمّ في نصّ روسو الذي يعرّف التفاوت ويصنّفه إلى طبيعي ووضعي، وأخيراً في نصّ نيتشه الذي يبيّن أنّ المفاهيم ليست معطيات بل تكوّنات تاريخية.",
+                "PhiH.lessons.definition.texts.title": "النصوص",
+                "PhiH.lessons.definition.texts.text1": "في أوجه الحدّ - الغزالي",
+                "PhiH.lessons.definition.texts.text2": "في تعريف التفاوت - جون جاك روسو",
+                "PhiH.lessons.definition.texts.text3": "تكوّن المفاهيم - فريديريك نيتشه",
+                "PhiH.lessons.definition.quotes.title": "شواهد ونصوص ذات صلة",
+                "PhiH.lessons.definition.quotes.quote1": "\"الحدّ عنوان للذات وبيان لها، فيجب أن يقوم في النفس صورة معقولة مساوية للصورة الموجودة بتمامها.\"",
+                "PhiH.lessons.definition.quotes.quote2": "\"التعريف الدقيق مفيد كي يفهمنا الآخرون، وعدم التعريف ضروري لمواصلة الكلام دون مضابقة.\"",
+                "PhiH.lessons.definition.quotes.quote3": "\"أما الرسم، فالرسم التام هو قول مؤلَّف من جنس شيء وأعراضه اللازمة له حتى يساويه، والرسم مطلقاً هو قول يعرّف الشيء تعريفاً غير ذاتي ولكنه خاص أو قول مميِّز للشيء عما سواه لا بالذات.\"",
+                "PhiH.lessons.definition.quotes.quote4": "\"إنّ العلم إمّا تصوّر وسبيل معرفته الحدّ، وإمّا تصديق وسبيل معرفته البرهان.\"",
+                "PhiH.lessons.definition.quotes.quote5": "\"أن نعرف هو أن نحدّ.\"",
+                "PhiH.lessons.definition.quotes.quote6": "\"إنَّ ما يعلِّمه لنا المفهوم هو ما يكشف التاريخ عنه بنفس الضرورة.\"",
+                "PhiH.lessons.definition.quotes.quote7": "\"إنَّ فكرة الدائرة ليست مستديرة.\"",
+                "PhiH.lessons.definition.quotes.quote8": "\"لا يوجد مفهوم بسيط، لكل مفهوم مكوناته التي يُعرف بها.\"",
+                "PhiH.lessons.definition.quotes.author1": "الشهرستاني",
+                "PhiH.lessons.definition.quotes.author2": "ريمي دي قورمون",
+                "PhiH.lessons.definition.quotes.author3": "ابن سينا",
+                "PhiH.lessons.definition.quotes.author4": "الغزالي",
+                "PhiH.lessons.definition.quotes.author5": "أوسكار وايلد",
+                "PhiH.lessons.definition.quotes.author6": "هيغل",
+                "PhiH.lessons.definition.quotes.author7": "سبينوزا",
+                "PhiH.lessons.definition.quotes.author8": "جيل دولوز",
+                "PhiH.lessons.definition.conclusion.title": "الخاتمة",
+                "PhiH.lessons.definition.conclusion.text": "يتبيّن من الدرس أنّ التعريف إجراء مركّب: فهو لغوي من حيث إنّه يشرح اللفظ، ومنطقي من حيث إنّه يحدّد الجنس والفصل أو اللوازم، وتاريخي من حيث إنّه يبني المفهوم في سياقه. وبهذا المعنى، فإنّ التعريف ليس مجرّد كشفٍ سلبي لماهية جاهزة، بل هو فعل إيجابي يضبط الحدود ويميّز ويصنّف. غير أنّ التعريف مهما كان دقيقاً لا يكفي وحده لبناء المعرفة؛ إذ لا بدّ من ربط المفاهيم بعضها ببعض داخل خطاب حجاجي يبرّر اختياراتنا، وهو ما يستدعي الانتقال من التعريف إلى الحجاج."
+            }
+        };
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHdefinition;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+    <script>
+        // Expand/Collapse functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const expandableHeaders = document.querySelectorAll('.PhiH-expandable-header');
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.PhiH-expand-icon');
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('expanded');
+                    } else {
+                        content.classList.add('hidden');
+                        icon.classList.remove('expanded');
+                    }
+                });
+            });
+            // Initially hide all expandable content
+            document.querySelectorAll('.PhiH-expandable-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

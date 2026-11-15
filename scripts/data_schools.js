@@ -234,6 +234,45 @@ const PhiH_Schools = {
         "equivalent_terms": "Formal logic, Traditional logic, Aristotle's logic",
         "other": "Aristotle divided knowledge into three degrees according to the level of certainty: demonstration (certain), dialectic (probable), rhetoric (persuasive). He also distinguished between necessary, possible, and actual in types of propositions."
     }
+},
+{
+    "id": "school7",
+    "ar": {
+        "name": "الخطابة الجديدة",
+        "first_letter": "خ",
+        "name_and_origin": "مدرسة في الحجاج أسسها شايم بريلمان (Ch. Perelman) وأولبراخت تيتيكا (L. Olbrechts-Tyteca) انطلاقًا من مؤلفهما «رسالة في الحجاج – الخطابة الجديدة». صار مفهوم الخطابة الجديدة من المفاهيم المتداولة لفهم ما جدّ في عالم الحجاج من تطورات في مستوى معقوليات الخطاب.",
+        "pioneers_and_reference_texts": "شايم بريلمان، أولبراخت تيتيكا. النص المرجعي الأساسي: «رسالة في الحجاج – الخطابة الجديدة». وترتبط المدرسة أيضًا بمراجعة الحجج التي اعتبرها أرسطو في «المواضع الجدلية» ذات قيمة دنيا لانطلاقها من مقدمات غير يقينية.",
+        "central_thesis_and_key_concepts": "إعادة تأسيس أحكام القيمة وإعادة النظر في الحجاج ووظيفته ضمن «خطابة جديدة» أساسها الحوار. هدف الحجاج هو الظفر باتفاق العقول عبر التأثير في السامع أو المحاور. تقوم على معقولية احتمالية وتنفتح على الرأي والثقافة والفضاء العمومي، وتنتقد العقلانية الديكارتية التي تربط الاختلاف بالخطأ وتستبعد المعارف الاحتمالية.",
+        "method_and_domain": "التحليل الحجاجي والخطابي في مجالات الرأي والثقافة والفضاء العمومي، وفي المجالات الفلسفية والسياسية والحقوقية. دراسة الحجج المنطلقة من مقدمات غير يقينية، والحوار والتأثير في الجمهور أو المحاور.",
+        "relations_and_critique": "تحوّل عن الفهم الديكارتي للعقل والتعقّل ومنهج التفكير الفلسفي؛ نقد العقلانية الديكارتية وفتح «المعقول» على الإمكان والتنوع بعد أن كان رهين مجال الضرورة. ترتبط بمنازلة الحجج الأرسطية في «المواضع الجدلية»، وقد قدر النقاد أنها مثلت منعرجًا في علمي اللغة والخطابة.",
+        "impact_and_applications": "أثرت في دراسة الحجاج في الرأي والثقافة والفضاء العمومي، وفي المجالات الفلسفية والسياسية والحقوقية. فتحت المعقول على الإمكان والتنوع، ويُعدّها النقاد منعرجًا في علمي اللغة والخطابة فضلًا عن العلوم الأخرى.",
+        "equivalent_terms": "الخطابة الجديدة، الحجاج الجديد، مدرسة بيرلمان وتيتيكا",
+        "other": "«هدف الحجاج هو الظفر باتفاق العقول وذلك من خلال التأثير في السامع أو المحاور». وقد ميّزت المدرسة بين المعقول والضروري، وجعلت الحوار أساسًا للخطابة الجديدة."
+    },
+    "fr": {
+        "name": "Nouvelle Rhétorique",
+        "first_letter": "R",
+        "name_and_origin": "École d’argumentation fondée par Chaïm Perelman et Lucie Olbrechts-Tyteca à partir de leur ouvrage « Traité de l’argumentation – La nouvelle rhétorique ». Le concept de Nouvelle Rhétorique est devenu un concept courant pour comprendre les évolutions de l’argumentation au niveau des éléments raisonnables du discours.",
+        "pioneers_and_reference_texts": "Chaïm Perelman, Lucie Olbrechts-Tyteca. Texte de référence principal : « Traité de l’argumentation – La nouvelle rhétorique ». L’école revisite aussi les arguments qu’Aristote, dans les « Topiques », considère de faible valeur parce qu’ils partent de prémisses non certaines.",
+        "central_thesis_and_key_concepts": "Refonder les jugements de valeur et reconsidérer l’argumentation et sa fonction essentielle dans une « nouvelle rhétorique » fondée sur le dialogue. Le but de l’argumentation est d’obtenir l’adhésion des esprits en influençant l’auditeur ou l’interlocuteur. Elle repose sur une rationalité probable, ouvre le raisonnable à l’opinion, à la culture et à l’espace public, et critique la rationalité cartésienne qui assimile la différence à l’erreur et exclut les connaissances probables.",
+        "method_and_domain": "Analyse argumentative et rhétorique dans les domaines de l’opinion, de la culture et de l’espace public, ainsi que dans les champs philosophique, politique et juridique. Étude des arguments partant de prémisses non certaines, du dialogue et de l’influence sur l’auditoire ou l’interlocuteur.",
+        "relations_and_critique": "Déplacement par rapport à la conception cartésienne de la raison, de la rationalité et de la méthode philosophique ; critique du rationalisme cartésien et ouverture du raisonnable à la possibilité et à la diversité, après qu’il fut lié au domaine de la nécessité. Elle dialogue avec les arguments aristotéliciens des « Topiques » ; les critiques y ont vu un tournant dans les sciences du langage et de la rhétorique.",
+        "impact_and_applications": "A influencé l’étude de l’argumentation dans l’opinion, la culture et l’espace public, ainsi que dans les champs philosophique, politique et juridique. A ouvert le raisonnable à la possibilité et à la diversité ; les critiques la considèrent comme un tournant dans les sciences du langage et de la rhétorique, et dans d’autres sciences.",
+        "equivalent_terms": "Nouvelle Rhétorique, nouvelle argumentation, école de Perelman et Olbrechts-Tyteca",
+        "other": "« Le but de l’argumentation est d’obtenir l’adhésion des esprits en influençant l’auditeur ou l’interlocuteur. » L’école distingue le raisonnable du nécessaire et fait du dialogue le fondement de la nouvelle rhétorique."
+    },
+    "en": {
+        "name": "New Rhetoric",
+        "first_letter": "R",
+        "name_and_origin": "A school of argumentation founded by Chaïm Perelman and Lucie Olbrechts-Tyteca, starting from their work “Treatise on Argumentation: The New Rhetoric.” The concept of the New Rhetoric has become a common concept for understanding developments in argumentation at the level of the reasonableness of discourse.",
+        "pioneers_and_reference_texts": "Chaïm Perelman, Lucie Olbrechts-Tyteca. Main reference text: “Treatise on Argumentation: The New Rhetoric.” The school also revisits the arguments that Aristotle, in the “Topics,” considers of low value because they start from non-certain premises.",
+        "central_thesis_and_key_concepts": "Re-establishing value judgments and reconsidering argumentation and its essential function within a “new rhetoric” based on dialogue. The aim of argumentation is to win the adherence of minds by influencing the listener or interlocutor. It relies on probable reasonableness, opens the reasonable to opinion, culture, and the public sphere, and critiques Cartesian rationality, which equates difference with error and excludes probabilistic knowledge.",
+        "method_and_domain": "Argumentative and rhetorical analysis in the fields of opinion, culture, and the public sphere, as well as in philosophical, political, and legal fields. Study of arguments starting from non-certain premises, dialogue, and influence on the audience or interlocutor.",
+        "relations_and_critique": "A shift away from the Cartesian understanding of reason, rationality, and philosophical method; a critique of Cartesian rationalism and an opening of the reasonable to possibility and diversity after it had been bound to necessity. It engages Aristotle’s arguments in the “Topics”; critics have seen it as a turning point in linguistics and rhetoric.",
+        "impact_and_applications": "Influenced the study of argumentation in opinion, culture, and the public sphere, and in philosophical, political, and legal fields. Opened the reasonable to possibility and diversity; critics regard it as a turning point in linguistics and rhetoric, as well as in other sciences.",
+        "equivalent_terms": "New Rhetoric, New Argumentation, Perelman–Olbrechts-Tyteca school",
+        "other": "“The aim of argumentation is to win the adherence of minds by influencing the listener or interlocutor.” The school distinguishes the reasonable from the necessary and makes dialogue the foundation of the new rhetoric."
+    }
 }
     ],
     "section_title": {

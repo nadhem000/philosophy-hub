@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: في العلم بالمبادئ الأولى - أرسطو - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#004d40">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Deep Teal / Dark Turquoise Color Palette */
+        :root {
+            --primary-color: #004d40;
+            --primary-light: #00695c;
+            --primary-dark: #00251a;
+            --secondary-color: #00695c;
+            --secondary-light: #00796b;
+            --secondary-dark: #003d33;
+            --accent-color: #00796b;
+            --accent-light: #009688;
+            --accent-dark: #00695c;
+            --light-color: #e0f2f1;
+            --dark-color: #001a14;
+            --text-color: #2a3d38;
+            --heading-color: #00251a;
+            --background-color: #f5faf9;
+            --card-bg: #ffffff;
+            --definition-bg: #d4ece9;
+            --border-color: #a8cdc8;
+            --table-even-bg: #e0f2f1;
+            --table-hover-bg: #c4e4e0;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(0, 77, 64, 0.1), 0 2px 4px -1px rgba(0, 77, 64, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 77, 64, 0.1), 0 4px 6px -2px rgba(0, 77, 64, 0.05);
+            --gradient-primary: linear-gradient(135deg, #004d40 0%, #00695c 100%);
+            --gradient-secondary: linear-gradient(135deg, #00251a 0%, #00695c 100%);
+            --gradient-accent: linear-gradient(135deg, #00796b 0%, #004d40 100%);
+            --gradient-gray: linear-gradient(135deg, #009688 0%, #00695c 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #009688;
+            --primary-light: #26a69a;
+            --primary-dark: #00796b;
+            --secondary-color: #00796b;
+            --secondary-light: #26a69a;
+            --secondary-dark: #00695c;
+            --accent-color: #26a69a;
+            --accent-light: #4db6ac;
+            --accent-dark: #009688;
+            --light-color: #1a2e2a;
+            --dark-color: #00120e;
+            --text-color: #c4d8d4;
+            --heading-color: #e0f2f1;
+            --background-color: #001f18;
+            --card-bg: #0a2820;
+            --definition-bg: #003d33;
+            --border-color: #00695c;
+            --table-even-bg: #0a2820;
+            --table-hover-bg: #003d33;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #00695c 0%, #009688 100%);
+            --gradient-secondary: linear-gradient(135deg, #003d33 0%, #00796b 100%);
+            --gradient-accent: linear-gradient(135deg: #00796b 0%, #004d40 100%);
+            --gradient-gray: linear-gradient(135deg: #26a69a 0%, #00796b 100%);
+        }
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(0, 77, 64, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(0, 105, 92, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(0, 121, 107, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+            flex-shrink: 0;
+        }
+        .PhiH-author-info {
+            flex: 1;
+        }
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* Two-column comparison for Task 4 */
+        .PhiH-two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .PhiH-column {
+            background: linear-gradient(135deg, var(--definition-bg) 0%, var(--light-color) 100%);
+            border-radius: var(--border-radius);
+            padding: 1rem 1.25rem;
+            border-top: 4px solid var(--primary-color);
+        }
+        .PhiH-column:nth-child(2) {
+            border-top-color: var(--accent-color);
+        }
+        .PhiH-column-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
+        }
+        .PhiH-column:nth-child(2) .PhiH-column-title {
+            color: var(--accent-color);
+        }
+        .PhiH-column-quote {
+            font-style: italic;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            padding-left: 0.75rem;
+            border-left: 3px solid var(--border-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-column-source {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            text-align: left;
+            font-weight: 600;
+        }
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        li strong {
+            color: var(--primary-color);
+        }
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(0, 77, 64, 0.05), transparent);
+        }
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        body.rtl .PhiH-text-card ul li {
+            border-left: none;
+            border-right: 3px solid var(--primary-color);
+        }
+        body.rtl .PhiH-column-quote {
+            padding-left: 0;
+            padding-right: 0.75rem;
+            border-left: none;
+            border-right: 3px solid var(--border-color);
+        }
+        body.rtl .PhiH-column-source {
+            text-align: right;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .PhiH-author-image {
+                align-self: center;
+            }
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-two-columns {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.aristotlePrinciples.title">تحليل النص: في العلم بالمبادئ الأولى - أرسطو</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.aristotlePrinciples.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        <section class="PhiH-text-analysis-section">
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotlePrinciples.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.aristotlePrinciples.introduction.content">
+                    يبدو أنَّ الإنسانَ، عندما يسعى إلى التخلَّص من النقل والخضوع لسلطة السائد في بناء أحكامه بشكل شخصي من القضايا المطروحة، يكون قد تحرَّر فعلاً من التبعية وتقدَّم نحو التفكير بنفسه. غير أنَّ ما يُلاحَظ هو أنَّ هذا التفكير لا يبلغ الدقة المنشودة ما لم يفحص نقدياً "المبادئ الأولى" التي تستمد منها الأحكام وجودها ومشروعيتها.
+                </p>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotlePrinciples.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.aristotlePrinciples.text.content">
+                        إنَّ المعارف الأكثر دقة هي التي تتوجَّه، قبل كل المعارف الأخرى[1]، وعلى النحو الأكثر مباشرة، صوب المبادئ الأولى[2]، وذلك لأنها تستطيع، بحكم قلة عناصرها، أن تكون أكثر دقة من المعارف التي تتراكم عناصرها: فالارتميطيقا، مثلاً، أكثر دقة من علم الهندسة. أضاف إلى ذلك، أنَّ العلم الذي يدرسُ العلل يمكن تعليمه أفضل من أي علم آخر، لأن التعليم الحقَّ يكمن في عرض علل كل شيء بالتفصيل. أما عن تعلَّم الأشياء ومعرفتها لذاتها لا غير، فهو السمة الرفيعة للعلم الذي يهتم بما يكون قابلاً للمعرفة على أكمل وجه ممكن، لأنه حينما لا نطلب المعرفة إلا من أجل المعرفة، فإننا نتعلق خاصَّةً بالعلم الأكثر كمالاً من بين سائر العلوم الأخرى، وهو، بالتحديد، العلم الذي يمكن معرفته على النحو الأكثر كمالاً... (...) وأخيراً، فإنَّ العلم، الذي هو بحق علم بالمبادئ، ويمكن من فهم تلك المبادئ بشكل أفضل مما يقدَّمه أي علم تابع وتطبيقي، هو العلم المدرك للهدف من كل شيء ينبغي فعله. والحال أنَّ الهدف الأقصى لكل شيء هو ما يكون خيراً[3] بالنسبة إليه، وهو على نحو كلي، أكبر خير ممكن في الطبيعة بأسرها.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.aristotlePrinciples.text.source">أرسطو، ما بعد الطبيعة، كتاب الألف الكبرى، الفصل الثاني، ترجمة لجنة التأليف - Aristote, Métaphysique, A, chap. II, 982 à 983</em></p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotlePrinciples.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <img src="assets/images/aristotle.jpg" alt="أرسطو" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.aristotlePrinciples.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.aristotlePrinciples.author.content">
+                            أرسطو (385 ق م - 322 ق م) فيلسوف يونانيّ انتسب إلى الأكاديمية ليتتلمذ على أفلاطون، وبعد وفاة أستاذه تفرّغ لتأسيس مدرسته الفلسفيّة الخاصة المسمّاة بـ "الليسي" Lycée. نقد الجدليّة الأفلاطونيّة واستبدلها بالمنطق الذي يبحث في مبادئ الفكر والشروط الصوريّة لصلاحيّة الاستدلال التي تعصمه من الخطأ والمغالطة. وجّه البحث في الوجود من منظور واقعيّ يؤصّله في تضايف بين الصورة والمادة، وجعل من عالم الكون والفساد موضوعاً للعلم، كما جعل من التجربة منطلقاً لاستقراء أسس الممارسة في إطار الأخلاق والسياسة، فكان فيلسوفاً موسوعيّاً بامتياز، ومكّنه ذلك من أن يكون رمز العصر الوسيط حيث جعله توماس الإكويني مرجع الفكر السكولائيّ ولقّبه العرب "بالمعلّم الأوّل". من أهمّ مؤلفاته: "الأرغانون"، "الميتافيزيقا"، "السماع الطبيعيّ"، "في السماء"، "في النفس"، "أجزاء الحيوان"، "أخلاق إلى نيقوماخوس"، "السياسات".
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotlePrinciples.footnotes.title">الهوامش</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.aristotlePrinciples.footnotes.item1"><strong>(1) "المعارف الأخرى":</strong> في هذا إحالة إلى المعارف الجزئية التي وإن كانت تتجاوز حدود التجربة الحسية وحالاتها الخاصة لتفسر طبقاً لمبادئ وتحقق نتائج عملية على منوال الطب والمعمار وصناعة السفن... فإنها تظل فنوناً مرتبطة بموضوعات جزئية وبمبادئ فرعية وبأهداف عملية، ولا ترقى إلى درجة العلم بالمبادئ الأولى.</li>
+                    <li data-i18n="PhiH.textAnalysis.aristotlePrinciples.footnotes.item2"><strong>(2) "المبادئ الأولى":</strong> الأساس والأصل. والمبادئ الأولى هي المبادئ التي لا تُستمد من غيرها، بل منها تُستمد سائر المعارف. وهي في تصور أرسطو أعلى أنواع المعرفة، لأنها معرفة بالعلل الأولى والأسباب القصوى.</li>
+                    <li data-i18n="PhiH.textAnalysis.aristotlePrinciples.footnotes.item3"><strong>(3) "الخير":</strong> هو الكمال الأمثل الذي يتجه الكائن إلى تحقيقه بحكم استعداداته الطبيعية الكامنة فيه، كأن تكون غاية الإنسان من الوجود هي الحقيقة والفضيلة في إطار المدينة بحكم خاصية العقل التي ينفرد بها.</li>
+                </ul>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotlePrinciples.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.aristotlePrinciples.questions.q1">أرصد الحجج الأربع التي قدّمها أرسطو دفاعاً عن قيمة المعرفة التي تهتم بالمبادئ الأولى.</li>
+                    <li data-i18n="PhiH.textAnalysis.aristotlePrinciples.questions.q2">أبيّن وظيفة "المبادئ الأولى" في المعرفة.</li>
+                    <li data-i18n="PhiH.textAnalysis.aristotlePrinciples.questions.q3">أقرأ هذه الجملة من النص: "إن العلم، الذي هو بحق علم بالمبادئ... هو العلم المدرك للهدف من كل شيء ينبغي فعله"، وأحدّد دلالة التأسيس في ضوء الترابط بين المبدأ والهدف.</li>
+                    <li data-i18n="PhiH.textAnalysis.aristotlePrinciples.questions.q4">أقرأ النصين التاليين وأحدّد طبيعة "المبدأ الأول" الذي يحيل إليه كل واحد منهما ووظيفته.</li>
+                </ol>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotlePrinciples.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotlePrinciples.answers.a1.title">الإجابة عن المهمة الأولى:</h5>
+                    <p data-i18n="PhiH.textAnalysis.aristotlePrinciples.answers.a1.content">
+                        يقدّم أرسطو أربع حجج دفاعاً عن قيمة المعرفة التي تهتم بالمبادئ الأولى:
+                        <br><br>
+                        <strong>1. حجة الدقة:</strong> "إن المعارف الأكثر دقة هي التي تتوجّه، قبل كل المعارف الأخرى، وعلى النحو الأكثر مباشرة، صوب المبادئ الأولى". فالعلم بالمبادئ الأولى هو الأكثر دقة، لأنه يتعامل مع عناصر قليلة، والدقة تتناسب عكسياً مع كثرة العناصر (كالارتميطيقا أكثر دقة من الهندسة).
+                        <br><br>
+                        <strong>2. حجة التعليم:</strong> "العلم الذي يدرسُ العلل يمكن تعليمه أفضل من أي علم آخر، لأن التعليم الحقَّ يكمن في عرض علل كل شيء بالتفصيل". فالعلم بالمبادئ الأولى، لأنه علم بالعلل الأولى، هو الأقدر على التعليم الحقيقي، لأن التعليم الحق هو تعليم العلل لا مجرد نقل المعلومات.
+                        <br><br>
+                        <strong>3. حجة المعرفة لذاتها:</strong> "أما عن تعلَّم الأشياء ومعرفتها لذاتها لا غير، فهو السمة الرفيعة للعلم الذي يهتم بما يكون قابلاً للمعرفة على أكمل وجه ممكن". فالعلم بالمبادئ الأولى هو العلم الذي يُطلب لذاته، لا لغرض خارجي، وهو بذلك أعلى أنواع المعرفة وأكملها.
+                        <br><br>
+                        <strong>4. حجة الخير والغاية:</strong> "العلم، الذي هو بحق علم بالمبادئ... هو العلم المدرك للهدف من كل شيء ينبغي فعله. والحال أنَّ الهدف الأقصى لكل شيء هو ما يكون خيراً بالنسبة إليه". فالعلم بالمبادئ الأولى هو العلم الذي يدرك الغايات والخيرات القصوى، وهو بذلك العلم الذي يُوجّه سائر العلوم والممارسات.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotlePrinciples.answers.a2.title">الإجابة عن المهمة الثانية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.aristotlePrinciples.answers.a2.content">
+                        وظيفة "المبادئ الأولى" في المعرفة وظيفة تأسيسية مزدوجة:
+                        <br><br>
+                        <strong>1. وظيفة معرفية-تأسيسية:</strong> المبادئ الأولى هي الأساس الذي تُبنى عليه سائر المعارف. فهي لا تُستمد من غيرها، بل منها تُستمد المعارف الأخرى. وبهذا المعنى، فهي شرط إمكان أي معرفة، وأساس مشروعيتها.
+                        <br><br>
+                        <strong>2. وظيفة توجيهية:</strong> المبادئ الأولى هي ما يُوجّه البحث في سائر العلوم. فهي تُحدّد ما يُبحث عنه، وما يُعتبر مقبولاً، وما يُعتبر مرفوضاً. وبهذا المعنى، فهي بوصلة المعرفة.
+                        <br><br>
+                        <strong>3. وظيفة توحيدية:</strong> المبادئ الأولى هي ما يوحّد المعارف المتناثرة تحت مبادئ جامعة. فهي تربط بين العلوم المختلفة، وتمنحها وحدة نسقية. وبهذا المعنى، فهي شرط إمكان العلم الكلي (الفلسفة الأولى).
+                        <br><br>
+                        <strong>4. وظيفة غائية:</strong> المبادئ الأولى هي ما يربط المعرفة بالخير والغاية. فهي تُبيّن ما ينبغي فعله، وما هو الهدف الأقصى. وبهذا المعنى، فهي شرط إمكان المعرفة ذات القيمة العملية والأخلاقية.
+                        <br><br>
+                        <strong>الخلاصة:</strong> "المبادئ الأولى" هي الشرط الأخير والأعلى لكل معرفة، وهي التي تمنح المعرفة أسسها ووحدتها واتجاهها وغايتها.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotlePrinciples.answers.a3.title">الإجابة عن المهمة الثالثة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.aristotlePrinciples.answers.a3.content">
+                        يقول أرسطو: "إن العلم، الذي هو بحق علم بالمبادئ... هو العلم المدرك للهدف من كل شيء ينبغي فعله". ويمكن تحديد دلالة التأسيس في ضوء الترابط بين المبدأ والهدف كما يلي:
+                        <br><br>
+                        <strong>1. المبدأ والهدف وجهان لحقيقة واحدة:</strong> في تصور أرسطو، المبادئ الأولى ليست مجرد بدايات نظرية، بل هي أيضاً غايات عملية. فالعلم بالمبادئ الأولى هو نفسه العلم بالغايات القصوى. وبهذا المعنى، فإنّ التأسيس بالمبادئ هو في الوقت نفسه توجيه نحو الهدف.
+                        <br><br>
+                        <strong>2. المبدأ يمنح الهدف مشروعيته:</strong> الهدف لا يكون مشروعاً إلا إذا كان متأسساً على مبادئ سليمة. فإذا كانت المبادئ الأولى هي "الخير الأقصى"، فإنّ الهدف الأقصى لكل شيء هو تحقيق هذا الخير. وبهذا، فإنّ التأسيس هو ما يُعطي الهدف معناه.
+                        <br><br>
+                        <strong>3. الهدف يمنح المبدأ اتجاهه:</strong> المبادئ الأولى لا تكون مبادئ حقاً إلا إذا كانت موجِّهة نحو غاية. فالمبدأ الذي لا يُفضي إلى هدف عملي هو مبدأ فارغ. وبهذا، فإنّ الهدف هو ما يمنح المبدأ معناه العملي.
+                        <br><br>
+                        <strong>4. التأسيس هو وحدة المبدأ والهدف:</strong> الفكر الأرسطي لا يفصل بين النظري والعملي، بل يوحّدهما في "العلم بالمبادئ الأولى". فهذا العلم هو في آن واحد:
+                        <br>– تأسيساً نظرياً (معرفة العلل الأولى).
+                        <br>– توجيهاً عملياً (معرفة الغايات القصوى).
+                        <br>وهذا هو معنى "التأسيس" في أعمق دلالاته: إنه ليس مجرد وضع أسس نظرية، بل هو ربط المبدأ بالهدف، وتوحيد النظر والعمل.
+                        <br><br>
+                        <strong>الخلاصة:</strong> دلالة التأسيس في ضوء الترابط بين المبدأ والهدف هي دلالة <em>تكاملية</em>، لا فصلية. فالمبدأ بلا هدف فارغ، والهدف بلا مبدأ اعتباطي. والتأسيس الحق هو ما يوحّدهما: مبدأ يُفضي إلى هدف، وهدف متأسس على مبدأ. وهذا هو ما يميز "العلم بالمبادئ الأولى" عند أرسطو عن سائر العلوم.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotlePrinciples.answers.a4.title">الإجابة عن المهمة الرابعة:</h5>
+                    <div data-i18n="PhiH.textAnalysis.aristotlePrinciples.answers.a4.content">
+                        <p>أحدّد طبيعة "المبدأ الأول" في كل من النصين، ووظيفته، وفقاً للجدول التالي:</p>
+                        <div class="PhiH-two-columns">
+                            <div class="PhiH-column">
+                                <div class="PhiH-column-title">النص الأول: روسو – إميل</div>
+                                <div class="PhiH-column-quote">"ليس لي إلا أن أستشير نفسي حول ما أريد فعله: فكل ما أشعر أنه خير فهو خير، وكل ما أشعر أنه شرّ فهو شرّ".</div>
+                                <div class="PhiH-column-source">روسو، إميل</div>
+                            </div>
+                            <div class="PhiH-column">
+                                <div class="PhiH-column-title">النص الثاني: كانط – أسس ميتافيزيقا الأخلاق</div>
+                                <div class="PhiH-column-quote">"... لا ينبغي البحث عن مبدأ الواجب، هنا، في طبيعة الإنسان، ولا في الظروف التي أحاطت بوجوده في هذا العالم، وإنما ينبغي البحث عنه قبلياً في مفاهيم العقل المحض".</div>
+                                <div class="PhiH-column-source">كانط، أسس ميتافيزيقا الأخلاق</div>
+                            </div>
+                        </div>
+                        <p><strong>1. طبيعة "المبدأ الأول" عند روسو:</strong></p>
+                        <p>المبدأ الأول عند روسو هو <strong>الشعور الداخلي (الوجدان)</strong>، لا العقل المجرّد. فالمعيار الذي يستند إليه روسو في تحديد الخير والشر هو "ما أشعر"، أي الحدس الوجداني المباشر. وبهذا، فالمبدأ الأول عند روسو <em>ذاتي-وجداني</em>، لا عقلي-كلي.</p>
+                        <p><strong>2. طبيعة "المبدأ الأول" عند كانط:</strong></p>
+                        <p>المبدأ الأول عند كانط هو <strong>مفهوم العقل المحض القبلي</strong>، لا الطبيعة ولا الظروف. فالمعيار الذي يستند إليه كانط في تحديد الواجب هو مفهوم قبلي في العقل، لا معطى تجريبي أو نفسي. وبهذا، فالمبدأ الأول عند كانط <em>عقلي-قبلي-كلي</em>، لا وجداني-ذاتي.</p>
+                        <p><strong>3. وظيفة "المبدأ الأول" عند روسو:</strong></p>
+                        <p>– <em>الوظيفة:</em> توجيه الفعل الأخلاقي انطلاقاً من الصدق مع الذات. فالإنسان عليه أن يستشير "نفسه" لا غيره، وأن يتبع ما يشعر أنه خير.</p>
+                        <p>– <em>الأساس:</em> الوجدان الطبيعي الخيِّر، الذي لم يفسده المجتمع.</p>
+                        <p>– <em>النتيجة:</em> أخلاقية فردية-طبيعية، تُعلي من شأن الصدق مع الذات.</p>
+                        <p><strong>4. وظيفة "المبدأ الأول" عند كانط:</strong></p>
+                        <p>– <em>الوظيفة:</em> تأسيس الواجب على أساس كلي-عقلي، لا على أساس تجريبي-نفسي. فالإنسان عليه أن يتجاوز دوافعه الطبيعية والظروف الخارجية، وأن يتبع ما يقتضيه العقل المحض.</p>
+                        <p>– <em>الأساس:</em> العقل المحض، ومفهوم الواجب القبلي.</p>
+                        <p>– <em>النتيجة:</em> أخلاقية عقلية-كونية، تُعلي من شأن الواجب والكونية.</p>
+                        <p><strong>الخلاصة المقارنة:</strong></p>
+                        <ul>
+                            <li>المبدأ الأول عند روسو <strong>وجداني-ذاتي</strong>، والمبدأ الأول عند كانط <strong>عقلي-قبلي</strong>.</li>
+                            <li>المبدأ الأول عند روسو <strong>طبيعي-فردي</strong>، والمبدأ الأول عند كانط <strong>عقلي-كوني</strong>.</li>
+                            <li>المبدأ الأول عند روسو يهدف إلى <strong>الصدق مع الذات</strong>، والمبدأ الأول عند كانط يهدف إلى <strong>الواجب الكوني</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotlePrinciples.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotlePrinciples.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.aristotlePrinciples.analysis.thesis.content">
+                        يرى أرسطو أن "العلم بالمبادئ الأولى" هو أعلى أنواع المعرفة وأكملها، لأنه يجمع بين أربع خصائص: الدقة (لقلة عناصره)، والتعليمية (لأنه علم بالعلل)، والاكتمال (لأنه معرفة تُطلب لذاتها)، والغائية (لأنه علم بالخير الأقصى والغايات القصوى). وبهذا، فإنّ المعرفة التي تهتم بالمبادئ الأولى ليست مجرد معرفة نظرية مجرّدة، بل هي معرفة تُوجّه سائر المعارف وتُعطيها أسسها ومشروعيتها وغايتها.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotlePrinciples.analysis.mechanisms.title">آليات التأسيس بالمبادئ الأولى:</h5>
+                    <p data-i18n="PhiH.textAnalysis.aristotlePrinciples.analysis.mechanisms.content">
+                        - <strong>التأسيس بالدقة:</strong> قلة العناصر تُنتج دقة أعلى، فالمعرفة بالمبادئ الأولى أكثر دقة من المعارف المركبة.
+                        <br>- <strong>التأسيس بالعلية:</strong> العلم بالعلل الأولى يُتيح تعليماً حقيقياً، لأن التعليم الحق هو تعليم العلل.
+                        <br>- <strong>التأسيس بالاكتمال:</strong> المعرفة لذاتها هي أعلى من المعرفة لأغراض خارجية، والعلم بالمبادئ هو أعلى أنواع المعرفة لذاته.
+                        <br>- <strong>التأسيس بالغائية:</strong> العلم بالمبادئ هو العلم بالغايات والخيرات القصوى، وبهذا يُوجّه سائر العلوم والممارسات.
+                        <br>- <strong>التأسيس بالوحدة:</strong> العلم بالمبادئ الأولى هو ما يوحّد المعارف المتناثرة تحت مبادئ جامعة.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotlePrinciples.analysis.consequences.title">النتائج المترتبة على هذه الأطروحة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.aristotlePrinciples.analysis.consequences.content">
+                        - <strong>تأسيس الفلسفة الأولى:</strong> العلم بالمبادئ الأولى (الميتافيزيقا) هو أساس الفلسفة، وشرط إمكان أي فلسفة أخرى.
+                        <br>- <strong>وحدة المعارف:</strong> العلم بالمبادئ الأولى يوحّد المعارف تحت مبادئ جامعة، ويتجاوز التشتت والانفصال بين العلوم.
+                        <br>- <strong>ربط النظر بالعمل:</strong> العلم بالمبادئ الأولى يربط المعرفة بالغايات والخيرات، ويُوجّه الفعل الإنساني.
+                        <br>- <strong>تأسيس العلوم الجزئية:</strong> كل علم جزئي يستمد مشروعيته من المبادئ الأولى، ولو لم يعها بشكل صريح.
+                        <br>- <strong>تجاوز النقل:</strong> العلم بالمبادئ الأولى هو ما يُتيح تجاوز النقل والتبعية، لأنه يُتيح فهم الأسس لا مجرد قبولها.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotlePrinciples.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.aristotlePrinciples.analysis.significance.content">
+                        يحمل هذا النص دلالة فلسفية عميقة في تاريخ الفلسفة:
+                        <br><br>
+                        <strong>1. دلالة إبستمولوجية:</strong> النص يؤسّس لتصور هرمي للمعرفة، تكون فيه المبادئ الأولى في القمة، وسائر المعارف تستمد منها مشروعيتها. وهو تصور سيؤثر بعمق في تاريخ الفلسفة الإسلامية والمسيحية (ابن سينا، ابن رشد، توما الأكويني).
+                        <br><br>
+                        <strong>2. دلالة أنطولوجية:</strong> النص يربط المعرفة بالوجود، فالخلية الأولى للوجود (الأسباب الأولى) هي موضوع العلم الأول. وبهذا، فإنّ المعرفة الفلسفية ليست مجرد تصورات ذهنية، بل هي كشف للبنية العميقة للواقع.
+                        <br><br>
+                        <strong>3. دلالة أكسيولوجية:</strong> النص يربط المعرفة بالخير، فالعلم بالمبادئ الأولى هو العلم بالخير الأقصى. وبهذا، فإنّ الفلسفة ليست مجرد بحث نظري، بل هي بحث عن الحياة الطيبة.
+                        <br><br>
+                        <strong>4. دلالة تربوية:</strong> النص يربط المعرفة بالتعليم، فالعلم بالمبادئ الأولى هو الأقدر على التعليم الحق. وبهذا، فإنّ الفلسفة ليست مجرد معرفة خاصة، بل هي معرفة قابلة للتعليم والمشاركة.
+                        <br><br>
+                        <strong>5. صلة النص بالدرس (التأسيس):</strong> النص يمثّل النموذج الكلاسيكي للتأسيس الفلسفي، حيث تُردّ المعارف إلى مبادئها الأولى. وهو بذلك يُمهّد لنصوص ديكارت وكانط التي ستقدّم تصورات مختلفة للتأسيس: ديكارت سيؤسّس على "الأنا المفكرة"، وكانط سيؤسّس على "مفاهيم العقل المحض القبلية". فكل فيلسوف يُقدّم تصوره الخاص لـ"المبدأ الأول"، وبهذا يكتمل درس التأسيس.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.aristotlePrinciples.level": "3ème Secondaire - Philosophie",
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.aristotlePrinciples.title": "Analyse du texte : De la science des premiers principes - Aristote",
+                "PhiH.textAnalysis.aristotlePrinciples.introduction.title": "Introduction",
+                "PhiH.textAnalysis.aristotlePrinciples.introduction.content": "Il semble que l'homme, lorsqu'il cherche à se libérer de la transmission et de la soumission à l'autorité du dominant dans la construction personnelle de ses jugements sur les questions posées, se soit effectivement libéré de la dépendance et ait avancé vers la pensée par lui-même. Cependant, ce qui est observé, c'est que cette pensée n'atteint pas la précision souhaitée tant qu'elle n'examine pas critiquement les « premiers principes » dont les jugements tirent leur existence et leur légitimité.",
+                "PhiH.textAnalysis.aristotlePrinciples.text.title": "Le texte",
+                "PhiH.textAnalysis.aristotlePrinciples.text.content": "Les connaissances les plus précises sont celles qui se tournent, avant toutes les autres connaissances [1], et de la manière la plus directe, vers les premiers principes [2], et cela parce qu'elles peuvent, en raison du petit nombre de leurs éléments, être plus précises que les connaissances dont les éléments s'accumulent : l'arithmétique, par exemple, est plus précise que la géométrie. Il ajoute à cela que la science qui étudie les causes peut être enseignée mieux que toute autre science, car le véritable enseignement réside dans l'exposition détaillée des causes de chaque chose. Quant à l'apprentissage des choses et à leur connaissance pour elles-mêmes uniquement, c'est la marque éminente de la science qui s'intéresse à ce qui est connaissable de la manière la plus parfaite possible, car lorsque nous ne cherchons la connaissance que pour la connaissance, nous nous attachons particulièrement à la science la plus parfaite parmi toutes les autres sciences, à savoir, précisément, la science qui peut être connue de la manière la plus parfaite... (...) Et enfin, la science, qui est à proprement parler science des principes, et qui permet de comprendre ces principes mieux que ne le ferait toute science subordonnée et appliquée, est la science qui saisit la fin de toute chose à faire. Or la fin ultime de chaque chose est ce qui est un bien [3] pour elle, et d'une manière universelle, le plus grand bien possible dans la nature entière.",
+                "PhiH.textAnalysis.aristotlePrinciples.text.source": "Aristote, Métaphysique, livre Alpha, chap. II, 982 à 983, traduction du comité de rédaction",
+                "PhiH.textAnalysis.aristotlePrinciples.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.aristotlePrinciples.author.alt": "Aristote",
+                "PhiH.textAnalysis.aristotlePrinciples.author.content": "Aristote (385 av. J.-C. - 322 av. J.-C.) philosophe grec qui a rejoint l'Académie pour étudier sous Platon, et après la mort de son maître, il a fondé sa propre école philosophique appelée le Lycée. Il a critiqué la dialectique platonicienne et l'a remplacée par la logique qui examine les principes de la pensée et les conditions formelles de la validité du raisonnement, le protégeant ainsi de l'erreur et de la sophistique. Il a orienté la recherche sur l'être d'un point de vue réaliste, l'ancrant dans la corrélation entre la forme et la matière, et a fait du monde de la génération et de la corruption un objet de science, tout en faisant de l'expérience le point de départ de l'induction des fondements de la pratique dans le cadre de l'éthique et de la politique. C'était un philosophe encyclopédique par excellence, ce qui lui a permis d'être un symbole du Moyen Âge, où Thomas d'Aquin l'a établi comme référence de la pensée scolastique et les Arabes l'ont surnommé « le Premier Enseignant ». Parmi ses œuvres majeures : « Organon », « Métaphysique », « Physique », « Du Ciel », « De l'Âme », « Les Parties des Animaux », « Éthique à Nicomaque », « Politique ».",
+                "PhiH.textAnalysis.aristotlePrinciples.footnotes.title": "Notes de bas de page",
+                "PhiH.textAnalysis.aristotlePrinciples.footnotes.item1": "<strong>(1) « Les autres connaissances » :</strong> il y a là une allusion aux connaissances partielles qui, bien qu'elles dépassent les limites de l'expérience sensible et de ses cas particuliers pour expliquer selon des principes et obtenir des résultats pratiques à la manière de la médecine, de l'architecture et de la construction navale..., restent des arts liés à des sujets partiels, à des principes subordonnés et à des fins pratiques, et ne s'élèvent pas au rang de science des premiers principes.",
+                "PhiH.textAnalysis.aristotlePrinciples.footnotes.item2": "<strong>(2) « Les premiers principes » :</strong> le fondement et l'origine. Les premiers principes sont les principes qui ne sont pas dérivés d'autres, mais dont dérivent les autres connaissances. Dans la conception d'Aristote, ils constituent le plus haut type de connaissance, parce qu'ils sont connaissance des causes premières et des raisons ultimes.",
+                "PhiH.textAnalysis.aristotlePrinciples.footnotes.item3": "<strong>(3) « Le bien » :</strong> c'est la perfection idéale que l'être tend à réaliser en vertu de ses dispositions naturelles latentes, comme la fin de l'homme dans l'existence est la vérité et la vertu dans le cadre de la cité, en vertu de la propriété de la raison qui lui est propre.",
+                "PhiH.textAnalysis.aristotlePrinciples.questions.title": "Tâches",
+                "PhiH.textAnalysis.aristotlePrinciples.questions.q1": "Je repère les quatre arguments qu'Aristote a avancés pour défendre la valeur de la connaissance qui s'intéresse aux premiers principes.",
+                "PhiH.textAnalysis.aristotlePrinciples.questions.q2": "Je montre la fonction des « premiers principes » dans la connaissance.",
+                "PhiH.textAnalysis.aristotlePrinciples.questions.q3": "Je lis cette phrase du texte : « La science, qui est à proprement parler science des principes... est la science qui saisit la fin de toute chose à faire », et je détermine la signification de la fondation à la lumière de la corrélation entre le principe et la fin.",
+                "PhiH.textAnalysis.aristotlePrinciples.questions.q4": "Je lis les deux textes suivants et je détermine la nature du « premier principe » auquel renvoie chacun d'eux et sa fonction.",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a1.title": "Réponse à la première tâche :",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a1.content": "Aristote avance quatre arguments pour défendre la valeur de la connaissance qui s'intéresse aux premiers principes :<br><br><strong>1. L'argument de la précision :</strong> « Les connaissances les plus précises sont celles qui se tournent, avant toutes les autres connaissances, et de la manière la plus directe, vers les premiers principes. » La science des premiers principes est la plus précise, parce qu'elle traite de peu d'éléments, et la précision est inversement proportionnelle au nombre d'éléments (comme l'arithmétique est plus précise que la géométrie).<br><br><strong>2. L'argument de l'enseignement :</strong> « La science qui étudie les causes peut être enseignée mieux que toute autre science, car le véritable enseignement réside dans l'exposition détaillée des causes de chaque chose. » La science des premiers principes, parce qu'elle est science des causes premières, est la plus capable de l'enseignement véritable, car l'enseignement véritable est enseignement des causes, non simple transmission d'informations.<br><br><strong>3. L'argument de la connaissance pour elle-même :</strong> « Quant à l'apprentissage des choses et à leur connaissance pour elles-mêmes uniquement, c'est la marque éminente de la science qui s'intéresse à ce qui est connaissable de la manière la plus parfaite possible. » La science des premiers principes est la science qui est recherchée pour elle-même, non pour une fin extérieure, et elle est à ce titre le plus haut et le plus parfait des types de connaissance.<br><br><strong>4. L'argument du bien et de la fin :</strong> « La science, qui est à proprement parler science des principes... est la science qui saisit la fin de toute chose à faire. Or la fin ultime de chaque chose est ce qui est un bien pour elle. » La science des premiers principes est la science qui saisit les fins et les biens ultimes, et elle est à ce titre la science qui oriente les autres sciences et les pratiques.",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a2.title": "Réponse à la deuxième tâche :",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a2.content": "La fonction des « premiers principes » dans la connaissance est une fonction fondationnelle double :<br><br><strong>1. Fonction cognitivo-fondationnelle :</strong> les premiers principes sont le fondement sur lequel se construisent les autres connaissances. Ils ne sont pas dérivés d'autres, mais d'eux dérivent les autres connaissances. En ce sens, ils sont la condition de possibilité de toute connaissance, et le fondement de sa légitimité.<br><br><strong>2. Fonction directive :</strong> les premiers principes sont ce qui oriente la recherche dans les autres sciences. Ils déterminent ce que l'on cherche, ce qui est accepté, et ce qui est rejeté. En ce sens, ils sont la boussole de la connaissance.<br><br><strong>3. Fonction unificatrice :</strong> les premiers principes sont ce qui unifie les connaissances dispersées sous des principes englobants. Ils relient les différentes sciences et leur donnent une unité systématique. En ce sens, ils sont la condition de possibilité de la science totale (la philosophie première).<br><br><strong>4. Fonction téléologique :</strong> les premiers principes sont ce qui relie la connaissance au bien et à la fin. Ils montrent ce qu'il faut faire, et quelle est la fin ultime. En ce sens, ils sont la condition de possibilité de la connaissance ayant une valeur pratique et éthique.<br><br><strong>Conclusion :</strong> les « premiers principes » sont la condition dernière et suprême de toute connaissance, et c'est eux qui donnent à la connaissance ses fondements, son unité, son orientation et sa fin.",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a3.title": "Réponse à la troisième tâche :",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a3.content": "Aristote dit : « La science, qui est à proprement parler science des principes... est la science qui saisit la fin de toute chose à faire. » On peut déterminer la signification de la fondation à la lumière de la corrélation entre le principe et la fin comme suit :<br><br><strong>1. Le principe et la fin sont deux faces d'une même réalité :</strong> dans la conception d'Aristote, les premiers principes ne sont pas de simples commencements théoriques, mais aussi des fins pratiques. La science des premiers principes est la même que la science des fins ultimes. En ce sens, la fondation par les principes est en même temps orientation vers la fin.<br><br><strong>2. Le principe donne à la fin sa légitimité :</strong> la fin n'est légitime que si elle est fondée sur des principes sains. Si les premiers principes sont le « bien suprême », alors la fin ultime de chaque chose est la réalisation de ce bien. Ainsi, la fondation est ce qui donne à la fin son sens.<br><br><strong>3. La fin donne au principe son orientation :</strong> les premiers principes ne sont de vrais principes que s'ils orientent vers une fin. Un principe qui n'aboutit pas à une fin pratique est un principe vide. Ainsi, la fin est ce qui donne au principe son sens pratique.<br><br><strong>4. La fondation est l'unité du principe et de la fin :</strong> la pensée aristotélicienne ne sépare pas le théorique et le pratique, mais les unit dans la « science des premiers principes ». Cette science est à la fois :<br>– une fondation théorique (connaissance des causes premières) ;<br>– une orientation pratique (connaissance des fins ultimes).<br>Et c'est là le sens de la « fondation » dans ses acceptions les plus profondes : elle n'est pas un simple établissement de fondements théoriques, mais une liaison du principe à la fin, et une unification du théorique et du pratique.<br><br><strong>Conclusion :</strong> la signification de la fondation à la lumière de la corrélation entre le principe et la fin est une signification <em>intégrative</em>, non séparative. Le principe sans fin est vide, et la fin sans principe est arbitraire. La vraie fondation est ce qui les unit : un principe qui aboutit à une fin, et une fin fondée sur un principe. C'est là ce qui distingue la « science des premiers principes » chez Aristote des autres sciences.",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a4.title": "Réponse à la quatrième tâche :",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a4.content": "<p>Je détermine la nature du « premier principe » dans chacun des deux textes, et sa fonction, selon le tableau suivant :</p><div class=\"PhiH-two-columns\"><div class=\"PhiH-column\"><div class=\"PhiH-column-title\">Texte 1 : Rousseau – Émile</div><div class=\"PhiH-column-quote\">« Je n'ai qu'à me consulter sur ce que je veux faire : tout ce que je sens être bien est bien, tout ce que je sens être mal est mal. »</div><div class=\"PhiH-column-source\">Rousseau, Émile</div></div><div class=\"PhiH-column\"><div class=\"PhiH-column-title\">Texte 2 : Kant – Fondements de la métaphysique des mœurs</div><div class=\"PhiH-column-quote\">« ... il ne faut pas chercher le principe du devoir dans la nature de l'homme, ni dans les circonstances où il est placé dans ce monde, mais le chercher a priori dans les concepts de la raison pure. »</div><div class=\"PhiH-column-source\">Kant, Fondements de la métaphysique des mœurs</div></div></div><p><strong>1. Nature du « premier principe » chez Rousseau :</strong></p><p>Le premier principe chez Rousseau est le <strong>sentiment intérieur (la conscience)</strong>, non la raison pure. Le critère auquel Rousseau se réfère pour déterminer le bien et le mal est « ce que je sens », c'est-à-dire l'intuition morale immédiate. Ainsi, le premier principe chez Rousseau est <em>subjectif-conscientiel</em>, non rationnel-universel.</p><p><strong>2. Nature du « premier principe » chez Kant :</strong></p><p>Le premier principe chez Kant est le <strong>concept de la raison pure a priori</strong>, ni la nature ni les circonstances. Le critère auquel Kant se réfère pour déterminer le devoir est un concept a priori dans la raison, non une donnée empirique ou psychologique. Ainsi, le premier principe chez Kant est <em>rationnel-a priori-universel</em>, non conscientiel-subjectif.</p><p><strong>3. Fonction du « premier principe » chez Rousseau :</strong></p><p>– <em>Fonction :</em> orientation de l'acte moral à partir de la sincérité envers soi-même. L'homme doit se consulter « lui-même » et non les autres, et suivre ce qu'il sent être bien.</p><p>– <em>Fondement :</em> la conscience naturelle bonne, que la société n'a pas corrompue.</p><p>– <em>Résultat :</em> une éthique individuelle-naturelle, qui valorise la sincérité envers soi-même.</p><p><strong>4. Fonction du « premier principe » chez Kant :</strong></p><p>– <em>Fonction :</em> fonder le devoir sur une base universelle-rationnelle, non sur une base empirique-psychologique. L'homme doit dépasser ses mobiles naturels et les circonstances extérieures, et suivre ce qu'exige la raison pure.</p><p>– <em>Fondement :</em> la raison pure, et le concept a priori du devoir.</p><p>– <em>Résultat :</em> une éthique rationnelle-universelle, qui valorise le devoir et l'universalité.</p><p><strong>Conclusion comparative :</strong></p><ul><li>Le premier principe chez Rousseau est <strong>conscientiel-subjectif</strong>, et chez Kant <strong>rationnel-a priori</strong>.</li><li>Le premier principe chez Rousseau est <strong>naturel-individuel</strong>, et chez Kant <strong>rationnel-universel</strong>.</li><li>Le premier principe chez Rousseau vise la <strong>sincérité envers soi-même</strong>, et chez Kant vise le <strong>devoir universel</strong>.</li></ul>",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.thesis.title": "Thèse principale :",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.thesis.content": "Aristote considère que la « science des premiers principes » est le plus haut et le plus parfait des types de connaissance, parce qu'elle réunit quatre propriétés : la précision (par le petit nombre de ses éléments), l'enseignement (parce qu'elle est science des causes), la perfection (parce qu'elle est connaissance recherchée pour elle-même), et la téléologie (parce qu'elle est science du bien suprême et des fins ultimes). Ainsi, la connaissance qui s'intéresse aux premiers principes n'est pas une simple connaissance théorique abstraite, mais une connaissance qui oriente les autres connaissances et leur donne leurs fondements, leur légitimité et leur fin.",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.mechanisms.title": "Mécanismes de la fondation par les premiers principes :",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.mechanisms.content": "- <strong>Fondation par la précision :</strong> le petit nombre d'éléments produit une précision supérieure, la connaissance des premiers principes est plus précise que les connaissances composées.<br>- <strong>Fondation par la causalité :</strong> la science des causes premières permet un enseignement véritable, car le véritable enseignement est enseignement des causes.<br>- <strong>Fondation par la perfection :</strong> la connaissance pour elle-même est supérieure à la connaissance pour des fins extérieures, et la science des principes est le plus haut type de connaissance pour elle-même.<br>- <strong>Fondation par la téléologie :</strong> la science des principes est la science des fins et des biens ultimes, et elle oriente à ce titre les autres sciences et les pratiques.<br>- <strong>Fondation par l'unité :</strong> la science des premiers principes est ce qui unifie les connaissances dispersées sous des principes englobants.",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.consequences.title": "Conséquences de cette thèse :",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.consequences.content": "- <strong>Fondation de la philosophie première :</strong> la science des premiers principes (la métaphysique) est le fondement de la philosophie, et la condition de possibilité de toute autre philosophie.<br>- <strong>Unité des connaissances :</strong> la science des premiers principes unifie les connaissances sous des principes englobants, et dépasse la dispersion et la séparation entre les sciences.<br>- <strong>Liaison du théorique et du pratique :</strong> la science des premiers principes relie la connaissance aux fins et aux biens, et oriente l'acte humain.<br>- <strong>Fondation des sciences partielles :</strong> toute science partielle tire sa légitimité des premiers principes, même si elle ne les saisit pas explicitement.<br>- <strong>Dépassement de la transmission :</strong> la science des premiers principes est ce qui permet de dépasser la transmission et la dépendance, parce qu'elle permet de comprendre les fondements plutôt que de simplement les accepter.",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.significance.title": "Significations et dimensions du concept :",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.significance.content": "Ce texte porte une signification philosophique profonde dans l'histoire de la philosophie :<br><br><strong>1. Signification épistémologique :</strong> le texte fonde une conception hiérarchique de la connaissance, où les premiers principes sont au sommet, et où les autres connaissances tirent d'eux leur légitimité. Cette conception influencera profondément l'histoire de la philosophie islamique et chrétienne (Ibn Sina, Ibn Rushd, Thomas d'Aquin).<br><br><strong>2. Signification ontologique :</strong> le texte relie la connaissance à l'être, car la première cellule de l'être (les causes premières) est l'objet de la science première. Ainsi, la connaissance philosophique n'est pas de simples représentations mentales, mais une révélation de la structure profonde du réel.<br><br><strong>3. Signification axiologique :</strong> le texte relie la connaissance au bien, car la science des premiers principes est la science du bien suprême. Ainsi, la philosophie n'est pas une simple recherche théorique, mais une recherche de la vie bonne.<br><br><strong>4. Signification éducative :</strong> le texte relie la connaissance à l'enseignement, car la science des premiers principes est la plus capable de l'enseignement véritable. Ainsi, la philosophie n'est pas une connaissance privée, mais une connaissance enseignable et partageable.<br><br><strong>5. Lien du texte avec la leçon (la fondation) :</strong> le texte représente le modèle classique de la fondation philosophique, où les connaissances sont ramenées à leurs premiers principes. Il prépare ainsi les textes de Descartes et de Kant, qui présenteront des conceptions différentes de la fondation : Descartes fondera sur le « moi pensant », et Kant fondera sur les « concepts a priori de la raison pure ». Chaque philosophe présente sa propre conception du « premier principe », et ainsi s'achève la leçon sur la fondation."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.aristotlePrinciples.level": "3rd Secondary - Philosophy",
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.aristotlePrinciples.title": "Text Analysis: On the Science of First Principles - Aristotle",
+                "PhiH.textAnalysis.aristotlePrinciples.introduction.title": "Introduction",
+                "PhiH.textAnalysis.aristotlePrinciples.introduction.content": "It seems that man, when he seeks to free himself from transmission and submission to the authority of the dominant in the personal construction of his judgments on the questions posed, has effectively freed himself from dependence and advanced toward thinking for himself. However, what is observed is that this thinking does not reach the desired precision as long as it does not critically examine the \"first principles\" from which judgments draw their existence and their legitimacy.",
+                "PhiH.textAnalysis.aristotlePrinciples.text.title": "The Text",
+                "PhiH.textAnalysis.aristotlePrinciples.text.content": "The most precise knowledges are those that turn, before all other knowledges [1], and in the most direct manner, toward the first principles [2], and this because they can, by reason of the small number of their elements, be more precise than the knowledges whose elements accumulate: arithmetic, for example, is more precise than geometry. He adds to this that the science that studies causes can be taught better than any other science, because true teaching lies in the detailed exposition of the causes of each thing. As for learning things and knowing them for themselves only, that is the eminent mark of the science that is concerned with what is knowable in the most perfect possible manner, because when we seek knowledge only for the sake of knowledge, we attach ourselves particularly to the most perfect science among all other sciences, namely, precisely, the science that can be known in the most perfect manner... (...) And finally, the science, which is properly speaking science of principles, and which allows understanding these principles better than any subordinate and applied science would, is the science that grasps the end of every thing to be done. Now the ultimate end of each thing is what is a good [3] for it, and in a universal manner, the greatest good possible in the whole of nature.",
+                "PhiH.textAnalysis.aristotlePrinciples.text.source": "Aristotle, Metaphysics, Book Alpha, chap. II, 982 to 983, translation by the writing committee",
+                "PhiH.textAnalysis.aristotlePrinciples.author.title": "Author Presentation",
+                "PhiH.textAnalysis.aristotlePrinciples.author.alt": "Aristotle",
+                "PhiH.textAnalysis.aristotlePrinciples.author.content": "Aristotle (385 BC – 322 BC) was a Greek philosopher who joined the Academy to study under Plato, and after his teacher's death, he founded his own philosophical school called the Lyceum. He criticized Platonic dialectic and replaced it with logic, which examines the principles of thought and the formal conditions for the validity of reasoning, thus protecting it from error and sophistry. He directed the inquiry into being from a realistic perspective, grounding it in the correlation between form and matter, and made the world of generation and corruption an object of science, while making experience the starting point for inducing the foundations of practice within the framework of ethics and politics. He was an encyclopedic philosopher par excellence, which allowed him to become a symbol of the Middle Ages, where Thomas Aquinas established him as a reference for scholastic thought and the Arabs nicknamed him 'the First Teacher'. Among his major works: \"Organon\", \"Metaphysics\", \"Physics\", \"On the Heavens\", \"On the Soul\", \"Parts of Animals\", \"Nicomachean Ethics\", \"Politics\".",
+                "PhiH.textAnalysis.aristotlePrinciples.footnotes.title": "Footnotes",
+                "PhiH.textAnalysis.aristotlePrinciples.footnotes.item1": "<strong>(1) \"The other knowledges\":</strong> there is here an allusion to partial knowledges which, although they go beyond the limits of sensory experience and its particular cases to explain according to principles and obtain practical results in the manner of medicine, architecture and shipbuilding..., remain arts linked to partial subjects, to subordinate principles and to practical ends, and do not rise to the rank of science of first principles.",
+                "PhiH.textAnalysis.aristotlePrinciples.footnotes.item2": "<strong>(2) \"The first principles\":</strong> the foundation and the origin. The first principles are the principles that are not derived from others, but from which the other knowledges are derived. In Aristotle's conception, they constitute the highest type of knowledge, because they are knowledge of first causes and ultimate reasons.",
+                "PhiH.textAnalysis.aristotlePrinciples.footnotes.item3": "<strong>(3) \"The good\":</strong> it is the ideal perfection that the being tends to realize by virtue of its latent natural dispositions, as the end of man in existence is truth and virtue within the framework of the city, by virtue of the property of reason that is proper to him.",
+                "PhiH.textAnalysis.aristotlePrinciples.questions.title": "Tasks",
+                "PhiH.textAnalysis.aristotlePrinciples.questions.q1": "I identify the four arguments Aristotle advanced to defend the value of the knowledge that is concerned with first principles.",
+                "PhiH.textAnalysis.aristotlePrinciples.questions.q2": "I show the function of the \"first principles\" in knowledge.",
+                "PhiH.textAnalysis.aristotlePrinciples.questions.q3": "I read this sentence from the text: \"The science, which is properly speaking science of principles... is the science that grasps the end of every thing to be done\", and I determine the significance of foundation in the light of the correlation between the principle and the end.",
+                "PhiH.textAnalysis.aristotlePrinciples.questions.q4": "I read the following two texts and I determine the nature of the \"first principle\" to which each of them refers and its function.",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a1.title": "Answer to the first task:",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a1.content": "Aristotle advances four arguments to defend the value of the knowledge that is concerned with first principles:<br><br><strong>1. The argument of precision:</strong> \"The most precise knowledges are those that turn, before all other knowledges, and in the most direct manner, toward the first principles.\" The science of first principles is the most precise, because it deals with few elements, and precision is inversely proportional to the number of elements (as arithmetic is more precise than geometry).<br><br><strong>2. The argument of teaching:</strong> \"The science that studies causes can be taught better than any other science, because true teaching lies in the detailed exposition of the causes of each thing.\" The science of first principles, because it is science of first causes, is the most capable of true teaching, because true teaching is teaching of causes, not mere transmission of information.<br><br><strong>3. The argument of knowledge for itself:</strong> \"As for learning things and knowing them for themselves only, that is the eminent mark of the science that is concerned with what is knowable in the most perfect possible manner.\" The science of first principles is the science that is sought for itself, not for an external end, and it is in this respect the highest and most perfect of the types of knowledge.<br><br><strong>4. The argument of the good and the end:</strong> \"The science, which is properly speaking science of principles... is the science that grasps the end of every thing to be done. Now the ultimate end of each thing is what is a good for it.\" The science of first principles is the science that grasps the ultimate ends and goods, and it is in this respect the science that orients the other sciences and the practices.",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a2.title": "Answer to the second task:",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a2.content": "The function of the \"first principles\" in knowledge is a double foundational function:<br><br><strong>1. Cognitive-foundational function:</strong> the first principles are the foundation on which the other knowledges are built. They are not derived from others, but from them the other knowledges are derived. In this sense, they are the condition of possibility of all knowledge, and the foundation of its legitimacy.<br><br><strong>2. Directive function:</strong> the first principles are what orients research in the other sciences. They determine what one seeks, what is accepted, and what is rejected. In this sense, they are the compass of knowledge.<br><br><strong>3. Unifying function:</strong> the first principles are what unifies the knowledges dispersed under encompassing principles. They link the different sciences and give them a systematic unity. In this sense, they are the condition of possibility of total science (first philosophy).<br><br><strong>4. Teleological function:</strong> the first principles are what links knowledge to the good and to the end. They show what must be done, and what is the ultimate end. In this sense, they are the condition of possibility of knowledge having a practical and ethical value.<br><br><strong>Conclusion:</strong> the \"first principles\" are the last and supreme condition of all knowledge, and it is they that give to knowledge its foundations, its unity, its orientation and its end.",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a3.title": "Answer to the third task:",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a3.content": "Aristotle says: \"The science, which is properly speaking science of principles... is the science that grasps the end of every thing to be done.\" The significance of foundation in the light of the correlation between the principle and the end can be determined as follows:<br><br><strong>1. The principle and the end are two faces of the same reality:</strong> in Aristotle's conception, the first principles are not simple theoretical beginnings, but also practical ends. The science of first principles is the same as the science of ultimate ends. In this sense, the foundation by principles is at the same time orientation toward the end.<br><br><strong>2. The principle gives the end its legitimacy:</strong> the end is legitimate only if it is founded on sound principles. If the first principles are the \"supreme good\", then the ultimate end of each thing is the realization of this good. Thus, foundation is what gives the end its meaning.<br><br><strong>3. The end gives the principle its orientation:</strong> the first principles are only true principles if they orient toward an end. A principle that does not lead to a practical end is an empty principle. Thus, the end is what gives the principle its practical meaning.<br><br><strong>4. Foundation is the unity of principle and end:</strong> Aristotelian thought does not separate the theoretical and the practical, but unites them in the \"science of first principles\". This science is at once:<br>– a theoretical foundation (knowledge of first causes);<br>– a practical orientation (knowledge of ultimate ends).<br>And this is the meaning of \"foundation\" in its deepest acceptations: it is not a simple establishment of theoretical foundations, but a linking of principle to end, and a unification of theoretical and practical.<br><br><strong>Conclusion:</strong> the significance of foundation in the light of the correlation between principle and end is an <em>integrative</em> significance, not a separative one. The principle without end is empty, and the end without principle is arbitrary. True foundation is what unites them: a principle that leads to an end, and an end founded on a principle. This is what distinguishes the \"science of first principles\" in Aristotle from the other sciences.",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a4.title": "Answer to the fourth task:",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a4.content": "<p>I determine the nature of the \"first principle\" in each of the two texts, and its function, according to the following table:</p><div class=\"PhiH-two-columns\"><div class=\"PhiH-column\"><div class=\"PhiH-column-title\">Text 1: Rousseau – Emile</div><div class=\"PhiH-column-quote\">\"I have only to consult myself about what I want to do: everything I feel to be good is good, everything I feel to be evil is evil.\"</div><div class=\"PhiH-column-source\">Rousseau, Emile</div></div><div class=\"PhiH-column\"><div class=\"PhiH-column-title\">Text 2: Kant – Groundwork of the Metaphysics of Morals</div><div class=\"PhiH-column-quote\">\"... one must not seek the principle of duty in the nature of man, nor in the circumstances in which he is placed in this world, but seek it a priori in the concepts of pure reason.\"</div><div class=\"PhiH-column-source\">Kant, Groundwork of the Metaphysics of Morals</div></div></div><p><strong>1. Nature of the \"first principle\" in Rousseau:</strong></p><p>The first principle in Rousseau is the <strong>inner feeling (conscience)</strong>, not pure reason. The criterion to which Rousseau refers for determining good and evil is \"what I feel\", that is, immediate moral intuition. Thus, the first principle in Rousseau is <em>subjective-consciential</em>, not rational-universal.</p><p><strong>2. Nature of the \"first principle\" in Kant:</strong></p><p>The first principle in Kant is the <strong>concept of pure reason a priori</strong>, neither nature nor circumstances. The criterion to which Kant refers for determining duty is an a priori concept in reason, not an empirical or psychological given. Thus, the first principle in Kant is <em>rational-a priori-universal</em>, not consciential-subjective.</p><p><strong>3. Function of the \"first principle\" in Rousseau:</strong></p><p>– <em>Function:</em> orientation of the moral act from sincerity toward oneself. Man must consult \"himself\" and not others, and follow what he feels to be good.</p><p>– <em>Foundation:</em> the good natural conscience, which society has not corrupted.</p><p>– <em>Result:</em> an individual-natural ethics, which values sincerity toward oneself.</p><p><strong>4. Function of the \"first principle\" in Kant:</strong></p><p>– <em>Function:</em> found duty on a universal-rational basis, not on an empirical-psychological basis. Man must surpass his natural motives and external circumstances, and follow what pure reason requires.</p><p>– <em>Foundation:</em> pure reason, and the a priori concept of duty.</p><p>– <em>Result:</em> a rational-universal ethics, which values duty and universality.</p><p><strong>Comparative conclusion:</strong></p><ul><li>The first principle in Rousseau is <strong>consciential-subjective</strong>, and in Kant <strong>rational-a priori</strong>.</li><li>The first principle in Rousseau is <strong>natural-individual</strong>, and in Kant <strong>rational-universal</strong>.</li><li>The first principle in Rousseau aims at <strong>sincerity toward oneself</strong>, and in Kant aims at <strong>universal duty</strong>.</li></ul>",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.thesis.content": "Aristotle considers that the \"science of first principles\" is the highest and most perfect of the types of knowledge, because it unites four properties: precision (by the small number of its elements), teaching (because it is science of causes), perfection (because it is knowledge sought for itself), and teleology (because it is science of the supreme good and of ultimate ends). Thus, the knowledge that is concerned with first principles is not a simple abstract theoretical knowledge, but a knowledge that orients the other knowledges and gives them their foundations, their legitimacy and their end.",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.mechanisms.title": "Mechanisms of foundation by first principles:",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.mechanisms.content": "- <strong>Foundation by precision:</strong> the small number of elements produces a superior precision, the knowledge of first principles is more precise than composed knowledges.<br>- <strong>Foundation by causality:</strong> the science of first causes allows a true teaching, because true teaching is teaching of causes.<br>- <strong>Foundation by perfection:</strong> knowledge for itself is superior to knowledge for external ends, and the science of principles is the highest type of knowledge for itself.<br>- <strong>Foundation by teleology:</strong> the science of principles is the science of ultimate ends and goods, and it orients in this respect the other sciences and the practices.<br>- <strong>Foundation by unity:</strong> the science of first principles is what unifies the knowledges dispersed under encompassing principles.",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.consequences.title": "Consequences of this thesis:",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.consequences.content": "- <strong>Foundation of first philosophy:</strong> the science of first principles (metaphysics) is the foundation of philosophy, and the condition of possibility of all other philosophy.<br>- <strong>Unity of knowledges:</strong> the science of first principles unifies the knowledges under encompassing principles, and surpasses dispersion and separation between the sciences.<br>- <strong>Link between theoretical and practical:</strong> the science of first principles links knowledge to ends and to goods, and orients human action.<br>- <strong>Foundation of partial sciences:</strong> every partial science draws its legitimacy from the first principles, even if it does not grasp them explicitly.<br>- <strong>Surpassing transmission:</strong> the science of first principles is what allows surpassing transmission and dependence, because it allows understanding the foundations rather than simply accepting them.",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.significance.content": "This text carries a profound philosophical significance in the history of philosophy:<br><br><strong>1. Epistemological significance:</strong> the text founds a hierarchical conception of knowledge, where the first principles are at the summit, and where the other knowledges draw from them their legitimacy. This conception will profoundly influence the history of Islamic and Christian philosophy (Ibn Sina, Ibn Rushd, Thomas Aquinas).<br><br><strong>2. Ontological significance:</strong> the text links knowledge to being, for the first cell of being (the first causes) is the object of the first science. Thus, philosophical knowledge is not simple mental representations, but a revelation of the profound structure of the real.<br><br><strong>3. Axiological significance:</strong> the text links knowledge to the good, for the science of first principles is the science of the supreme good. Thus, philosophy is not a simple theoretical research, but a research of the good life.<br><br><strong>4. Educational significance:</strong> the text links knowledge to teaching, for the science of first principles is the most capable of true teaching. Thus, philosophy is not a private knowledge, but a teachable and shareable knowledge.<br><br><strong>5. Link of the text with the lesson (foundation):</strong> the text represents the classic model of philosophical foundation, where knowledges are reduced to their first principles. It thus prepares the texts of Descartes and Kant, which will present different conceptions of foundation: Descartes will found on the \"thinking self\", and Kant will found on the \"a priori concepts of pure reason\". Each philosopher presents his own conception of the \"first principle\", and thus the lesson on foundation is completed."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.aristotlePrinciples.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.aristotlePrinciples.title": "تحليل النص: في العلم بالمبادئ الأولى - أرسطو",
+                "PhiH.textAnalysis.aristotlePrinciples.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.aristotlePrinciples.introduction.content": "يبدو أنَّ الإنسانَ، عندما يسعى إلى التخلَّص من النقل والخضوع لسلطة السائد في بناء أحكامه بشكل شخصي من القضايا المطروحة، يكون قد تحرَّر فعلاً من التبعية وتقدَّم نحو التفكير بنفسه. غير أنَّ ما يُلاحَظ هو أنَّ هذا التفكير لا يبلغ الدقة المنشودة ما لم يفحص نقدياً \"المبادئ الأولى\" التي تستمد منها الأحكام وجودها ومشروعيتها.",
+                "PhiH.textAnalysis.aristotlePrinciples.text.title": "النص",
+                "PhiH.textAnalysis.aristotlePrinciples.text.content": "إنَّ المعارف الأكثر دقة هي التي تتوجَّه، قبل كل المعارف الأخرى[1]، وعلى النحو الأكثر مباشرة، صوب المبادئ الأولى[2]، وذلك لأنها تستطيع، بحكم قلة عناصرها، أن تكون أكثر دقة من المعارف التي تتراكم عناصرها: فالارتميطيقا، مثلاً، أكثر دقة من علم الهندسة. أضاف إلى ذلك، أنَّ العلم الذي يدرسُ العلل يمكن تعليمه أفضل من أي علم آخر، لأن التعليم الحقَّ يكمن في عرض علل كل شيء بالتفصيل. أما عن تعلَّم الأشياء ومعرفتها لذاتها لا غير، فهو السمة الرفيعة للعلم الذي يهتم بما يكون قابلاً للمعرفة على أكمل وجه ممكن، لأنه حينما لا نطلب المعرفة إلا من أجل المعرفة، فإننا نتعلق خاصَّةً بالعلم الأكثر كمالاً من بين سائر العلوم الأخرى، وهو، بالتحديد، العلم الذي يمكن معرفته على النحو الأكثر كمالاً... (...) وأخيراً، فإنَّ العلم، الذي هو بحق علم بالمبادئ، ويمكن من فهم تلك المبادئ بشكل أفضل مما يقدَّمه أي علم تابع وتطبيقي، هو العلم المدرك للهدف من كل شيء ينبغي فعله. والحال أنَّ الهدف الأقصى لكل شيء هو ما يكون خيراً[3] بالنسبة إليه، وهو على نحو كلي، أكبر خير ممكن في الطبيعة بأسرها.",
+                "PhiH.textAnalysis.aristotlePrinciples.text.source": "أرسطو، ما بعد الطبيعة، كتاب الألف الكبرى، الفصل الثاني، ترجمة لجنة التأليف - Aristote, Métaphysique, A, chap. II, 982 à 983",
+                "PhiH.textAnalysis.aristotlePrinciples.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.aristotlePrinciples.author.alt": "أرسطو",
+                "PhiH.textAnalysis.aristotlePrinciples.author.content": "أرسطو (385 ق م - 322 ق م) فيلسوف يونانيّ انتسب إلى الأكاديمية ليتتلمذ على أفلاطون، وبعد وفاة أستاذه تفرّغ لتأسيس مدرسته الفلسفيّة الخاصة المسمّاة بـ \"الليسي\" Lycée. نقد الجدليّة الأفلاطونيّة واستبدلها بالمنطق الذي يبحث في مبادئ الفكر والشروط الصوريّة لصلاحيّة الاستدلال التي تعصمه من الخطأ والمغالطة. وجّه البحث في الوجود من منظور واقعيّ يؤصّله في تضايف بين الصورة والمادة، وجعل من عالم الكون والفساد موضوعاً للعلم، كما جعل من التجربة منطلقاً لاستقراء أسس الممارسة في إطار الأخلاق والسياسة، فكان فيلسوفاً موسوعيّاً بامتياز، ومكّنه ذلك من أن يكون رمز العصر الوسيط حيث جعله توماس الإكويني مرجع الفكر السكولائيّ ولقّبه العرب \"بالمعلّم الأوّل\". من أهمّ مؤلفاته: \"الأرغانون\"، \"الميتافيزيقا\"، \"السماع الطبيعيّ\"، \"في السماء\"، \"في النفس\"، \"أجزاء الحيوان\"، \"أخلاق إلى نيقوماخوس\"، \"السياسات\".",
+                "PhiH.textAnalysis.aristotlePrinciples.footnotes.title": "الهوامش",
+                "PhiH.textAnalysis.aristotlePrinciples.footnotes.item1": "<strong>(1) \"المعارف الأخرى\":</strong> في هذا إحالة إلى المعارف الجزئية التي وإن كانت تتجاوز حدود التجربة الحسية وحالاتها الخاصة لتفسر طبقاً لمبادئ وتحقق نتائج عملية على منوال الطب والمعمار وصناعة السفن... فإنها تظل فنوناً مرتبطة بموضوعات جزئية وبمبادئ فرعية وبأهداف عملية، ولا ترقى إلى درجة العلم بالمبادئ الأولى.",
+                "PhiH.textAnalysis.aristotlePrinciples.footnotes.item2": "<strong>(2) \"المبادئ الأولى\":</strong> الأساس والأصل. والمبادئ الأولى هي المبادئ التي لا تُستمد من غيرها، بل منها تُستمد سائر المعارف. وهي في تصور أرسطو أعلى أنواع المعرفة، لأنها معرفة بالعلل الأولى والأسباب القصوى.",
+                "PhiH.textAnalysis.aristotlePrinciples.footnotes.item3": "<strong>(3) \"الخير\":</strong> هو الكمال الأمثل الذي يتجه الكائن إلى تحقيقه بحكم استعداداته الطبيعية الكامنة فيه، كأن تكون غاية الإنسان من الوجود هي الحقيقة والفضيلة في إطار المدينة بحكم خاصية العقل التي ينفرد بها.",
+                "PhiH.textAnalysis.aristotlePrinciples.questions.title": "المهام",
+                "PhiH.textAnalysis.aristotlePrinciples.questions.q1": "أرصد الحجج الأربع التي قدّمها أرسطو دفاعاً عن قيمة المعرفة التي تهتم بالمبادئ الأولى.",
+                "PhiH.textAnalysis.aristotlePrinciples.questions.q2": "أبيّن وظيفة \"المبادئ الأولى\" في المعرفة.",
+                "PhiH.textAnalysis.aristotlePrinciples.questions.q3": "أقرأ هذه الجملة من النص: \"إن العلم، الذي هو بحق علم بالمبادئ... هو العلم المدرك للهدف من كل شيء ينبغي فعله\"، وأحدّد دلالة التأسيس في ضوء الترابط بين المبدأ والهدف.",
+                "PhiH.textAnalysis.aristotlePrinciples.questions.q4": "أقرأ النصين التاليين وأحدّد طبيعة \"المبدأ الأول\" الذي يحيل إليه كل واحد منهما ووظيفته.",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a1.title": "الإجابة عن المهمة الأولى:",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a1.content": "يقدّم أرسطو أربع حجج دفاعاً عن قيمة المعرفة التي تهتم بالمبادئ الأولى:<br><br><strong>1. حجة الدقة:</strong> \"إن المعارف الأكثر دقة هي التي تتوجّه، قبل كل المعارف الأخرى، وعلى النحو الأكثر مباشرة، صوب المبادئ الأولى\". فالعلم بالمبادئ الأولى هو الأكثر دقة، لأنه يتعامل مع عناصر قليلة، والدقة تتناسب عكسياً مع كثرة العناصر (كالارتميطيقا أكثر دقة من الهندسة).<br><br><strong>2. حجة التعليم:</strong> \"العلم الذي يدرسُ العلل يمكن تعليمه أفضل من أي علم آخر، لأن التعليم الحقَّ يكمن في عرض علل كل شيء بالتفصيل\". فالعلم بالمبادئ الأولى، لأنه علم بالعلل الأولى، هو الأقدر على التعليم الحقيقي، لأن التعليم الحق هو تعليم العلل لا مجرد نقل المعلومات.<br><br><strong>3. حجة المعرفة لذاتها:</strong> \"أما عن تعلَّم الأشياء ومعرفتها لذاتها لا غير، فهو السمة الرفيعة للعلم الذي يهتم بما يكون قابلاً للمعرفة على أكمل وجه ممكن\". فالعلم بالمبادئ الأولى هو العلم الذي يُطلب لذاته، لا لغرض خارجي، وهو بذلك أعلى أنواع المعرفة وأكملها.<br><br><strong>4. حجة الخير والغاية:</strong> \"العلم، الذي هو بحق علم بالمبادئ... هو العلم المدرك للهدف من كل شيء ينبغي فعله. والحال أنَّ الهدف الأقصى لكل شيء هو ما يكون خيراً بالنسبة إليه\". فالعلم بالمبادئ الأولى هو العلم الذي يدرك الغايات والخيرات القصوى، وهو بذلك العلم الذي يُوجّه سائر العلوم والممارسات.",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a2.title": "الإجابة عن المهمة الثانية:",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a2.content": "وظيفة \"المبادئ الأولى\" في المعرفة وظيفة تأسيسية مزدوجة:<br><br><strong>1. وظيفة معرفية-تأسيسية:</strong> المبادئ الأولى هي الأساس الذي تُبنى عليه سائر المعارف. فهي لا تُستمد من غيرها، بل منها تُستمد المعارف الأخرى. وبهذا المعنى، فهي شرط إمكان أي معرفة، وأساس مشروعيتها.<br><br><strong>2. وظيفة توجيهية:</strong> المبادئ الأولى هي ما يُوجّه البحث في سائر العلوم. فهي تُحدّد ما يُبحث عنه، وما يُعتبر مقبولاً، وما يُعتبر مرفوضاً. وبهذا المعنى، فهي بوصلة المعرفة.<br><br><strong>3. وظيفة توحيدية:</strong> المبادئ الأولى هي ما يوحّد المعارف المتناثرة تحت مبادئ جامعة. فهي تربط بين العلوم المختلفة، وتمنحها وحدة نسقية. وبهذا المعنى، فهي شرط إمكان العلم الكلي (الفلسفة الأولى).<br><br><strong>4. وظيفة غائية:</strong> المبادئ الأولى هي ما يربط المعرفة بالخير والغاية. فهي تُبيّن ما ينبغي فعله، وما هو الهدف الأقصى. وبهذا المعنى، فهي شرط إمكان المعرفة ذات القيمة العملية والأخلاقية.<br><br><strong>الخلاصة:</strong> \"المبادئ الأولى\" هي الشرط الأخير والأعلى لكل معرفة، وهي التي تمنح المعرفة أسسها ووحدتها واتجاهها وغايتها.",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a3.title": "الإجابة عن المهمة الثالثة:",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a3.content": "يقول أرسطو: \"إن العلم، الذي هو بحق علم بالمبادئ... هو العلم المدرك للهدف من كل شيء ينبغي فعله\". ويمكن تحديد دلالة التأسيس في ضوء الترابط بين المبدأ والهدف كما يلي:<br><br><strong>1. المبدأ والهدف وجهان لحقيقة واحدة:</strong> في تصور أرسطو، المبادئ الأولى ليست مجرد بدايات نظرية، بل هي أيضاً غايات عملية. فالعلم بالمبادئ الأولى هو نفسه العلم بالغايات القصوى. وبهذا المعنى، فإنّ التأسيس بالمبادئ هو في الوقت نفسه توجيه نحو الهدف.<br><br><strong>2. المبدأ يمنح الهدف مشروعيته:</strong> الهدف لا يكون مشروعاً إلا إذا كان متأسساً على مبادئ سليمة. فإذا كانت المبادئ الأولى هي \"الخير الأقصى\"، فإنّ الهدف الأقصى لكل شيء هو تحقيق هذا الخير. وبهذا، فإنّ التأسيس هو ما يُعطي الهدف معناه.<br><br><strong>3. الهدف يمنح المبدأ اتجاهه:</strong> المبادئ الأولى لا تكون مبادئ حقاً إلا إذا كانت موجِّهة نحو غاية. فالمبدأ الذي لا يُفضي إلى هدف عملي هو مبدأ فارغ. وبهذا، فإنّ الهدف هو ما يمنح المبدأ معناه العملي.<br><br><strong>4. التأسيس هو وحدة المبدأ والهدف:</strong> الفكر الأرسطي لا يفصل بين النظري والعملي، بل يوحّدهما في \"العلم بالمبادئ الأولى\". فهذا العلم هو في آن واحد:<br>– تأسيساً نظرياً (معرفة العلل الأولى).<br>– توجيهاً عملياً (معرفة الغايات القصوى).<br>وهذا هو معنى \"التأسيس\" في أعمق دلالاته: إنه ليس مجرد وضع أسس نظرية، بل هو ربط المبدأ بالهدف، وتوحيد النظر والعمل.<br><br><strong>الخلاصة:</strong> دلالة التأسيس في ضوء الترابط بين المبدأ والهدف هي دلالة <em>تكاملية</em>، لا فصلية. فالمبدأ بلا هدف فارغ، والهدف بلا مبدأ اعتباطي. والتأسيس الحق هو ما يوحّدهما: مبدأ يُفضي إلى هدف، وهدف متأسس على مبدأ. وهذا هو ما يميز \"العلم بالمبادئ الأولى\" عند أرسطو عن سائر العلوم.",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a4.title": "الإجابة عن المهمة الرابعة:",
+                "PhiH.textAnalysis.aristotlePrinciples.answers.a4.content": "<p>أحدّد طبيعة \"المبدأ الأول\" في كل من النصين، ووظيفته، وفقاً للجدول التالي:</p><div class=\"PhiH-two-columns\"><div class=\"PhiH-column\"><div class=\"PhiH-column-title\">النص الأول: روسو – إميل</div><div class=\"PhiH-column-quote\">\"ليس لي إلا أن أستشير نفسي حول ما أريد فعله: فكل ما أشعر أنه خير فهو خير، وكل ما أشعر أنه شرّ فهو شرّ\".</div><div class=\"PhiH-column-source\">روسو، إميل</div></div><div class=\"PhiH-column\"><div class=\"PhiH-column-title\">النص الثاني: كانط – أسس ميتافيزيقا الأخلاق</div><div class=\"PhiH-column-quote\">\"... لا ينبغي البحث عن مبدأ الواجب، هنا، في طبيعة الإنسان، ولا في الظروف التي أحاطت بوجوده في هذا العالم، وإنما ينبغي البحث عنه قبلياً في مفاهيم العقل المحض\".</div><div class=\"PhiH-column-source\">كانط، أسس ميتافيزيقا الأخلاق</div></div></div><p><strong>1. طبيعة \"المبدأ الأول\" عند روسو:</strong></p><p>المبدأ الأول عند روسو هو <strong>الشعور الداخلي (الوجدان)</strong>، لا العقل المجرّد. فالمعيار الذي يستند إليه روسو في تحديد الخير والشر هو \"ما أشعر\"، أي الحدس الوجداني المباشر. وبهذا، فالمبدأ الأول عند روسو <em>ذاتي-وجداني</em>، لا عقلي-كلي.</p><p><strong>2. طبيعة \"المبدأ الأول\" عند كانط:</strong></p><p>المبدأ الأول عند كانط هو <strong>مفهوم العقل المحض القبلي</strong>، لا الطبيعة ولا الظروف. فالمعيار الذي يستند إليه كانط في تحديد الواجب هو مفهوم قبلي في العقل، لا معطى تجريبي أو نفسي. وبهذا، فالمبدأ الأول عند كانط <em>عقلي-قبلي-كلي</em>، لا وجداني-ذاتي.</p><p><strong>3. وظيفة \"المبدأ الأول\" عند روسو:</strong></p><p>– <em>الوظيفة:</em> توجيه الفعل الأخلاقي انطلاقاً من الصدق مع الذات. فالإنسان عليه أن يستشير \"نفسه\" لا غيره، وأن يتبع ما يشعر أنه خير.</p><p>– <em>الأساس:</em> الوجدان الطبيعي الخيِّر، الذي لم يفسده المجتمع.</p><p>– <em>النتيجة:</em> أخلاقية فردية-طبيعية، تُعلي من شأن الصدق مع الذات.</p><p><strong>4. وظيفة \"المبدأ الأول\" عند كانط:</strong></p><p>– <em>الوظيفة:</em> تأسيس الواجب على أساس كلي-عقلي، لا على أساس تجريبي-نفسي. فالإنسان عليه أن يتجاوز دوافعه الطبيعية والظروف الخارجية، وأن يتبع ما يقتضيه العقل المحض.</p><p>– <em>الأساس:</em> العقل المحض، ومفهوم الواجب القبلي.</p><p>– <em>النتيجة:</em> أخلاقية عقلية-كونية، تُعلي من شأن الواجب والكونية.</p><p><strong>الخلاصة المقارنة:</strong></p><ul><li>المبدأ الأول عند روسو <strong>وجداني-ذاتي</strong>، والمبدأ الأول عند كانط <strong>عقلي-قبلي</strong>.</li><li>المبدأ الأول عند روسو <strong>طبيعي-فردي</strong>، والمبدأ الأول عند كانط <strong>عقلي-كوني</strong>.</li><li>المبدأ الأول عند روسو يهدف إلى <strong>الصدق مع الذات</strong>، والمبدأ الأول عند كانط يهدف إلى <strong>الواجب الكوني</strong>.</li></ul>",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.thesis.content": "يرى أرسطو أن \"العلم بالمبادئ الأولى\" هو أعلى أنواع المعرفة وأكملها، لأنه يجمع بين أربع خصائص: الدقة (لقلة عناصره)، والتعليمية (لأنه علم بالعلل)، والاكتمال (لأنه معرفة تُطلب لذاتها)، والغائية (لأنه علم بالخير الأقصى والغايات القصوى). وبهذا، فإنّ المعرفة التي تهتم بالمبادئ الأولى ليست مجرد معرفة نظرية مجرّدة، بل هي معرفة تُوجّه سائر المعارف وتُعطيها أسسها ومشروعيتها وغايتها.",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.mechanisms.title": "آليات التأسيس بالمبادئ الأولى:",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.mechanisms.content": "- <strong>التأسيس بالدقة:</strong> قلة العناصر تُنتج دقة أعلى، فالمعرفة بالمبادئ الأولى أكثر دقة من المعارف المركبة.<br>- <strong>التأسيس بالعلية:</strong> العلم بالعلل الأولى يُتيح تعليماً حقيقياً، لأن التعليم الحق هو تعليم العلل.<br>- <strong>التأسيس بالاكتمال:</strong> المعرفة لذاتها هي أعلى من المعرفة لأغراض خارجية، والعلم بالمبادئ هو أعلى أنواع المعرفة لذاته.<br>- <strong>التأسيس بالغائية:</strong> العلم بالمبادئ هو العلم بالغايات والخيرات القصوى، وبهذا يُوجّه سائر العلوم والممارسات.<br>- <strong>التأسيس بالوحدة:</strong> العلم بالمبادئ الأولى هو ما يوحّد المعارف المتناثرة تحت مبادئ جامعة.",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.consequences.title": "النتائج المترتبة على هذه الأطروحة:",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.consequences.content": "- <strong>تأسيس الفلسفة الأولى:</strong> العلم بالمبادئ الأولى (الميتافيزيقا) هو أساس الفلسفة، وشرط إمكان أي فلسفة أخرى.<br>- <strong>وحدة المعارف:</strong> العلم بالمبادئ الأولى يوحّد المعارف تحت مبادئ جامعة، ويتجاوز التشتت والانفصال بين العلوم.<br>- <strong>ربط النظر بالعمل:</strong> العلم بالمبادئ الأولى يربط المعرفة بالغايات والخيرات، ويُوجّه الفعل الإنساني.<br>- <strong>تأسيس العلوم الجزئية:</strong> كل علم جزئي يستمد مشروعيته من المبادئ الأولى، ولو لم يعها بشكل صريح.<br>- <strong>تجاوز النقل:</strong> العلم بالمبادئ الأولى هو ما يُتيح تجاوز النقل والتبعية، لأنه يُتيح فهم الأسس لا مجرد قبولها.",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.aristotlePrinciples.analysis.significance.content": "يحمل هذا النص دلالة فلسفية عميقة في تاريخ الفلسفة:<br><br><strong>1. دلالة إبستمولوجية:</strong> النص يؤسّس لتصور هرمي للمعرفة، تكون فيه المبادئ الأولى في القمة، وسائر المعارف تستمد منها مشروعيتها. وهو تصور سيؤثر بعمق في تاريخ الفلسفة الإسلامية والمسيحية (ابن سينا، ابن رشد، توما الأكويني).<br><br><strong>2. دلالة أنطولوجية:</strong> النص يربط المعرفة بالوجود، فالخلية الأولى للوجود (الأسباب الأولى) هي موضوع العلم الأول. وبهذا، فإنّ المعرفة الفلسفية ليست مجرد تصورات ذهنية، بل هي كشف للبنية العميقة للواقع.<br><br><strong>3. دلالة أكسيولوجية:</strong> النص يربط المعرفة بالخير، فالعلم بالمبادئ الأولى هو العلم بالخير الأقصى. وبهذا، فإنّ الفلسفة ليست مجرد بحث نظري، بل هي بحث عن الحياة الطيبة.<br><br><strong>4. دلالة تربوية:</strong> النص يربط المعرفة بالتعليم، فالعلم بالمبادئ الأولى هو الأقدر على التعليم الحق. وبهذا، فإنّ الفلسفة ليست مجرد معرفة خاصة، بل هي معرفة قابلة للتعليم والمشاركة.<br><br><strong>5. صلة النص بالدرس (التأسيس):</strong> النص يمثّل النموذج الكلاسيكي للتأسيس الفلسفي، حيث تُردّ المعارف إلى مبادئها الأولى. وهو بذلك يُمهّد لنصوص ديكارت وكانط التي ستقدّم تصورات مختلفة للتأسيس: ديكارت سيؤسّس على \"الأنا المفكرة\"، وكانط سيؤسّس على \"مفاهيم العقل المحض القبلية\". فكل فيلسوف يُقدّم تصوره الخاص لـ\"المبدأ الأول\"، وبهذا يكتمل درس التأسيس."
+            }
+        };
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

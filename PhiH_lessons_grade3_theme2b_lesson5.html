@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التأسيس - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#0b3d2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Deep Bottle Green / Dark Pine Theme for foundation lesson */
+        :root {
+            --primary-color: #0b3d2e;
+            --primary-light: #145a3e;
+            --primary-dark: #052620;
+            --secondary-color: #145a3e;
+            --secondary-light: #1e7a52;
+            --secondary-dark: #0b3d2e;
+            --accent-color: #1e7a52;
+            --accent-light: #2ea876;
+            --accent-dark: #145a3e;
+            --light-color: #e6f4ee;
+            --dark-color: #041c15;
+            --text-color: #2a3f36;
+            --heading-color: #0d2519;
+            --background-color: #f3faf7;
+            --card-bg: #ffffff;
+            --definition-bg: #c8e6d5;
+            --border-color: #7ab8a0;
+            --table-even-bg: #e6f4ee;
+            --table-hover-bg: #c8e6d5;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(11, 61, 46, 0.15);
+            --gradient-primary: linear-gradient(135deg, #0b3d2e 0%, #145a3e 100%);
+            --gradient-secondary: linear-gradient(135deg, #052620 0%, #145a3e 100%);
+            --gradient-pine: linear-gradient(135deg, #0b3d2e 0%, #052620 100%);
+            --gradient-emerald: linear-gradient(135deg, #145a3e 0%, #1e7a52 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #2ea876;
+            --primary-light: #4ac495;
+            --primary-dark: #1e7a52;
+            --secondary-color: #1e7a52;
+            --secondary-light: #2ea876;
+            --secondary-dark: #145a3e;
+            --accent-color: #4ac495;
+            --accent-light: #6ed4ab;
+            --accent-dark: #2ea876;
+            --light-color: #0d2a20;
+            --dark-color: #041c15;
+            --text-color: #c8e6d5;
+            --heading-color: #e6f4ee;
+            --background-color: #052620;
+            --card-bg: #0d2a20;
+            --definition-bg: #145a3e;
+            --border-color: #1e7a52;
+            --table-even-bg: #0d2a20;
+            --table-hover-bg: #145a3e;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #145a3e 0%, #2ea876 100%);
+            --gradient-secondary: linear-gradient(135deg, #0b3d2e 0%, #1e7a52 100%);
+            --gradient-pine: linear-gradient(135deg, #2ea876 0%, #052620 100%);
+            --gradient-emerald: linear-gradient(135deg, #4ac495 0%, #1e7a52 100%);
+        }
+        /* Definition Cards Layout */
+        .PhiH-definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .PhiH-definition-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(11, 61, 46, 0.2);
+        }
+        .PhiH-definition-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        /* Expand/Collapse Functionality */
+        .PhiH-expandable-section {
+            margin-bottom: 1.5rem;
+        }
+        .PhiH-expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .PhiH-expandable-header:hover {
+            background: var(--gradient-pine);
+        }
+        .PhiH-expandable-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        .PhiH-expandable-content {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            border-top: none;
+        }
+        .PhiH-expandable-content.hidden {
+            display: none;
+        }
+        .PhiH-expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        .PhiH-expand-icon.expanded {
+            transform: rotate(180deg);
+        }
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        .PhiH-author-info {
+            flex: 1;
+        }
+        /* Quotes Section Styling */
+        .PhiH-quotes-container {
+            margin-top: 1rem;
+        }
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(11, 61, 46, 0.2);
+        }
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        /* RTL support for definition cards */
+        body.rtl .PhiH-definition-card-content ul {
+            padding-left: 0;
+            padding-right: 1.2rem;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .PhiH-definitions-grid {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .PhiH-author-image {
+                align-self: center;
+            }
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-foundation" dir="ltr">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
+    <main class="PhiH-lesson1-container">
+        <div class="PhiH-lesson1-header">
+            <h1 class="PhiH-lesson1-title" data-i18n="PhiH.lessons.foundation.title">التأسيس</h1>
+            <div class="PhiH-lesson1-level" data-i18n="PhiH.lessons.foundation.level">السنة الثالثة ثانوي - الفلسفة</div>
+        </div>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="introHeader">
+                <h3 data-i18n="PhiH.lessons.foundation.introduction.title">التمهيد</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="introContent">
+                <p data-i18n="PhiH.lessons.foundation.introduction.text">كلّما شهد تاريخ الفكر البشري فترات تحوّل نوعي تأتي على النظريات والمناهج والمبادئ، طرح على المفكّرين مهمة قديمة جديدة هي مهمة إعادة البناء والتأسيس. فالتأسيس هو ردّ المعارف والأحكام إلى مبادئ أولى تُبرّر مشروعيّتها وتضمن صلاحيتها. غير أنّ هذا الفعل يطرح أسئلة دقيقة: ما المبادئ الأولى؟ وكيف نبلغها؟ وهل التأسيس فعل معرفي خالص أم أنّه يشمل مجال الأخلاق أيضاً؟ وهل يمكن التأسيس في زمن يسمّه النسبية والعرضية؟ سينظر الدرس في نصّ أرسطو الذي يبيّن منزلة العلم بالمبادئ الأولى وقيمته، ثمّ في نصّ ديكارت الذي يجسّم ضرورة التأسيس وقطيعته مع الأسس القديمة، وأخيراً في نصّ كانط الذي يبيّن أنّ الثقافة الأخلاقية تتأسّس على القواعد لا على الانضباط.</p>
+            </div>
+        </section>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="textsHeader">
+                <h3 data-i18n="PhiH.lessons.foundation.texts.title">النصوص</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="textsContent">
+                <div class="PhiH-texts-container">
+                    <ul class="PhiH-texts-list">
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2b_lesson5_text1.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.foundation.texts.text1">في العلم بالمبادئ الأولى - أرسطو</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2b_lesson5_text2.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.foundation.texts.text2">ضرورة التأسيس - ديكارت</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2b_lesson5_text3.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.foundation.texts.text3">القاعدة والانضباط - كانط</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="quotesHeader">
+                <h3 data-i18n="PhiH.lessons.foundation.quotes.title">شواهد ونصوص ذات صلة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="quotesContent">
+                <div class="PhiH-quotes-container">
+                    <div class="PhiH-quotes-grid">
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.foundation.quotes.quote1">"ينبغي أن يكون للمبادئ شرطان: الأوّل هو أن تكون من الوضوح والتمييز بحيث لا يمكن للفكر البشري أن يشلَّ في حقيقتها... والثاني هو أن تتوقّف عليها معرفة الأشياء الأخرى."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.foundation.quotes.author1">ديكارت</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.foundation.quotes.quote2">"ليس هناك عنصر أوَّل ينبغي تأويله وينطلق منه التأويل، لأن العناصر كلها تكون في الحقيقة تأويلاً."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.foundation.quotes.author2">فوكو</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.foundation.quotes.quote3">"ليس لي إلا أن أستشير نفسي حول ما أريد فعله: فكل ما أشعر أنه خير فهو خير، وكل ما أشعر أنه شرّ فهو شرّ."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.foundation.quotes.author3">روسو، إميل</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.foundation.quotes.quote4">"... لا ينبغي البحث عن مبدأ الواجب، هنا، في طبيعة الإنسان، ولا في الظروف التي أحاطت بوجوده في هذا العالم، وإنما ينبغي البحث عنه قبلياً في مفاهيم العقل المحض."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.foundation.quotes.author4">كانط، أسس ميتافيزيقا الأخلاق</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.foundation.quotes.quote5">"أن يكون حكم ما خاطئاً فليس ذلك في رأينا حجة ضده... الأهم من ذلك هو أن نعرف إلى أي حد يخدم الحياة."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.foundation.quotes.author5">نيتشه</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.foundation.quotes.quote6">"أن نؤسِّس هو أن نردَّ ما نعرفه إلى ما نجهله."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.foundation.quotes.author6">هوبير غرونيي</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.foundation.quotes.quote7">"على الجميع أن يتفقوا أن القانون كي تكون له قيمة أخلاقية، أي كي يُؤسَّس الواجب، لا بدَّ أن يؤدِّي إلى ضرورة مطلقة."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.foundation.quotes.author7">إ. كانط</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.foundation.quotes.quote8">"إن ما يسميه الفلاسفة «تأسيس الأخلاق»... لم يكن في الحقيقة إلا شكلاً متحذلقاً من الاعتقاد الساذج في الأخلاق السائدة."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.foundation.quotes.author8">نيتشه</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.foundation.quotes.quote9">"لا تهتم الفلسفة بالحقائق الجزئية، بل بأساسها."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.foundation.quotes.author9">جان لاكروا</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="conclusionHeader">
+                <h3 data-i18n="PhiH.lessons.foundation.conclusion.title">الخاتمة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="conclusionContent">
+                <p data-i18n="PhiH.lessons.foundation.conclusion.text">يتّضح من الدرس أنّ التأسيس ليس فعلاً دوغمائياً يفرض مبادئه فرضاً، بل هو فعل نقدي يعيد النظر في الأسس ويختبرها ويبرّرها. فالتأسيس عند أرسطو ردّ إلى المبادئ الأولى، وعند ديكارت قطيعة مع الأسس القديمة وإعادة بناء، وعند كانط تأسيس للأخلاق على القواعد الكونية لا على الانضباط. وبهذا المعنى، فإنّ التأسيس هو ما يمنح المعرفة والأخلاق صلابة ووجاهة في زمن تسوده النسبية والعرضية. وهكذا تكتمل إجرائيات التفكير: من الأشكلة التي تفتح البحث، إلى التعريف الذي يضبط حدوده، إلى الحجاج الذي يبرّر اختياراته، إلى التحليل والدحض الذي ينقّيها، وأخيراً إلى التأسيس الذي يمنحها صلابة ومشروعية.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Page-specific translations for foundation lesson
+        window.translations_PhiHfoundation = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                // Lesson specific translations
+                "PhiH.lessons.foundation.title": "La Fondation",
+                "PhiH.lessons.foundation.level": "3ème Secondaire - Philosophie",
+                "PhiH.lessons.foundation.introduction.title": "Introduction",
+                "PhiH.lessons.foundation.introduction.text": "Chaque fois que l'histoire de la pensée humaine connaît des périodes de transformation qualitative qui emportent les théories, les méthodes et les principes, se pose aux penseurs une tâche ancienne et toujours nouvelle : celle de la reconstruction et de la fondation. Fonder, c'est ramener les connaissances et les jugements à des principes premiers qui justifient leur légitimité et garantissent leur validité. Mais cet acte soulève des questions précises : que sont les principes premiers ? Comment y accédons-nous ? La fondation est-elle un acte purement cognitif, ou inclut-elle aussi le domaine de l'éthique ? Peut-on fonder à une époque marquée par le relativisme et la contingence ? La leçon examinera le texte d'Aristote montrant le statut et la valeur de la science des premiers principes, puis le texte de Descartes qui incarne la nécessité de la fondation et sa rupture avec les anciens fondements, enfin le texte de Kant qui montre que la culture morale se fonde sur des règles et non sur la discipline.",
+                "PhiH.lessons.foundation.texts.title": "Textes",
+                "PhiH.lessons.foundation.texts.text1": "De la science des premiers principes - Aristote",
+                "PhiH.lessons.foundation.texts.text2": "La nécessité de la fondation - Descartes",
+                "PhiH.lessons.foundation.texts.text3": "La règle et la discipline - Kant",
+                "PhiH.lessons.foundation.quotes.title": "Citations et textes connexes",
+                "PhiH.lessons.foundation.quotes.quote1": "« Les principes doivent avoir deux conditions : la première est qu'ils soient si clairs et si distincts que l'esprit humain ne puisse douter de leur vérité... et la seconde est que la connaissance des autres choses dépende d'eux. »",
+                "PhiH.lessons.foundation.quotes.quote2": "« Il n'y a pas d'élément premier à interpréter dont l'interprétation partirait, car tous les éléments sont en réalité déjà interprétation. »",
+                "PhiH.lessons.foundation.quotes.quote3": "« Je n'ai qu'à me consulter sur ce que je veux faire : tout ce que je sens être bien est bien, tout ce que je sens être mal est mal. »",
+                "PhiH.lessons.foundation.quotes.quote4": "« ... il ne faut pas chercher le principe du devoir dans la nature de l'homme, ni dans les circonstances où il est placé dans ce monde, mais le chercher a priori dans les concepts de la raison pure. »",
+                "PhiH.lessons.foundation.quotes.quote5": "« Qu'un jugement soit faux n'est pas à notre avis un argument contre lui... L'important est de savoir dans quelle mesure il sert la vie. »",
+                "PhiH.lessons.foundation.quotes.quote6": "« Fonder, c'est ramener ce que nous savons à ce que nous ignorons. »",
+                "PhiH.lessons.foundation.quotes.quote7": "« Tous doivent convenir que la loi, pour avoir une valeur morale, c'est-à-dire pour que le devoir soit fondé, doit conduire à une nécessité absolue. »",
+                "PhiH.lessons.foundation.quotes.quote8": "« Ce que les philosophes appellent la “fondation de la morale”... n'était en réalité qu'une forme pédante de la croyance naïve en la morale dominante. »",
+                "PhiH.lessons.foundation.quotes.quote9": "« La philosophie ne s'intéresse pas aux faits particuliers, mais à leur fondement. »",
+                "PhiH.lessons.foundation.quotes.author1": "Descartes",
+                "PhiH.lessons.foundation.quotes.author2": "Foucault",
+                "PhiH.lessons.foundation.quotes.author3": "Rousseau, Émile",
+                "PhiH.lessons.foundation.quotes.author4": "Kant, Fondements de la métaphysique des mœurs",
+                "PhiH.lessons.foundation.quotes.author5": "Nietzsche",
+                "PhiH.lessons.foundation.quotes.author6": "Hubert Grenier",
+                "PhiH.lessons.foundation.quotes.author7": "E. Kant",
+                "PhiH.lessons.foundation.quotes.author8": "Nietzsche",
+                "PhiH.lessons.foundation.quotes.author9": "Jean Lacroix",
+                "PhiH.lessons.foundation.conclusion.title": "Conclusion",
+                "PhiH.lessons.foundation.conclusion.text": "Il ressort de la leçon que la fondation n'est pas un acte dogmatique qui impose ses principes, mais un acte critique qui révise les fondements, les met à l'épreuve et les justifie. La fondation, chez Aristote, est retour aux principes premiers ; chez Descartes, rupture avec les anciens fondements et reconstruction ; chez Kant, fondation de la morale sur des règles universelles et non sur la discipline. En ce sens, la fondation est ce qui donne à la connaissance et à la morale leur solidité et leur pertinence à une époque dominée par le relativisme et la contingence. Ainsi s'achèvent les procédures de la pensée : de la problématisation qui ouvre la recherche, à la définition qui en fixe les limites, à l'argumentation qui en justifie les choix, à l'analyse et à la réfutation qui la purifient, enfin à la fondation qui lui donne solidité et légitimité."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                // Lesson specific translations
+                "PhiH.lessons.foundation.title": "Foundation",
+                "PhiH.lessons.foundation.level": "3rd Secondary - Philosophy",
+                "PhiH.lessons.foundation.introduction.title": "Introduction",
+                "PhiH.lessons.foundation.introduction.text": "Whenever the history of human thought undergoes periods of qualitative transformation that sweep away theories, methods and principles, thinkers face an old and ever-renewed task: that of reconstruction and foundation. To found is to reduce knowledge and judgments to first principles that justify their legitimacy and guarantee their validity. But this act raises precise questions: what are first principles? How do we reach them? Is foundation a purely cognitive act, or does it also include the field of ethics? Can one found in an age marked by relativism and contingency? The lesson will examine Aristotle's text showing the status and value of the science of first principles, then Descartes's text which embodies the necessity of foundation and its break with old foundations, and finally Kant's text which shows that moral culture is founded on rules and not on discipline.",
+                "PhiH.lessons.foundation.texts.title": "Texts",
+                "PhiH.lessons.foundation.texts.text1": "On the Science of First Principles - Aristotle",
+                "PhiH.lessons.foundation.texts.text2": "The Necessity of Foundation - Descartes",
+                "PhiH.lessons.foundation.texts.text3": "The Rule and Discipline - Kant",
+                "PhiH.lessons.foundation.quotes.title": "Related Quotes and Texts",
+                "PhiH.lessons.foundation.quotes.quote1": "\"Principles must have two conditions: the first is that they be so clear and distinct that the human mind cannot doubt their truth... and the second is that the knowledge of other things depend on them.\"",
+                "PhiH.lessons.foundation.quotes.quote2": "\"There is no first element to interpret from which interpretation would start, for all elements are in reality already interpretation.\"",
+                "PhiH.lessons.foundation.quotes.quote3": "\"I have only to consult myself about what I want to do: everything I feel to be good is good, everything I feel to be evil is evil.\"",
+                "PhiH.lessons.foundation.quotes.quote4": "\"... one must not seek the principle of duty in the nature of man, nor in the circumstances in which he is placed in this world, but seek it a priori in the concepts of pure reason.\"",
+                "PhiH.lessons.foundation.quotes.quote5": "\"That a judgment is false is not, in our view, an argument against it... What matters is to know to what extent it serves life.\"",
+                "PhiH.lessons.foundation.quotes.quote6": "\"To found is to reduce what we know to what we do not know.\"",
+                "PhiH.lessons.foundation.quotes.quote7": "\"Everyone must agree that the law, in order to have moral value, that is, in order for duty to be founded, must lead to an absolute necessity.\"",
+                "PhiH.lessons.foundation.quotes.quote8": "\"What philosophers call the 'foundation of morality'... was in reality only a pedantic form of naive belief in the dominant morality.\"",
+                "PhiH.lessons.foundation.quotes.quote9": "\"Philosophy is not concerned with particular facts, but with their foundation.\"",
+                "PhiH.lessons.foundation.quotes.author1": "Descartes",
+                "PhiH.lessons.foundation.quotes.author2": "Foucault",
+                "PhiH.lessons.foundation.quotes.author3": "Rousseau, Emile",
+                "PhiH.lessons.foundation.quotes.author4": "Kant, Groundwork of the Metaphysics of Morals",
+                "PhiH.lessons.foundation.quotes.author5": "Nietzsche",
+                "PhiH.lessons.foundation.quotes.author6": "Hubert Grenier",
+                "PhiH.lessons.foundation.quotes.author7": "E. Kant",
+                "PhiH.lessons.foundation.quotes.author8": "Nietzsche",
+                "PhiH.lessons.foundation.quotes.author9": "Jean Lacroix",
+                "PhiH.lessons.foundation.conclusion.title": "Conclusion",
+                "PhiH.lessons.foundation.conclusion.text": "It emerges from the lesson that foundation is not a dogmatic act imposing its principles, but a critical act that revises the foundations, tests them and justifies them. Foundation, for Aristotle, is a return to first principles; for Descartes, a break with the old foundations and a reconstruction; for Kant, a grounding of morality on universal rules and not on discipline. In this sense, foundation is what gives knowledge and morality their solidity and their relevance in an age dominated by relativism and contingency. Thus the procedures of thought are completed: from problematization which opens research, to definition which fixes its limits, to argumentation which justifies its choices, to analysis and refutation which purify it, and finally to foundation which gives it solidity and legitimacy."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                // Lesson specific translations
+                "PhiH.lessons.foundation.title": "التأسيس",
+                "PhiH.lessons.foundation.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.lessons.foundation.introduction.title": "التمهيد",
+                "PhiH.lessons.foundation.introduction.text": "كلّما شهد تاريخ الفكر البشري فترات تحوّل نوعي تأتي على النظريات والمناهج والمبادئ، طرح على المفكّرين مهمة قديمة جديدة هي مهمة إعادة البناء والتأسيس. فالتأسيس هو ردّ المعارف والأحكام إلى مبادئ أولى تُبرّر مشروعيّتها وتضمن صلاحيتها. غير أنّ هذا الفعل يطرح أسئلة دقيقة: ما المبادئ الأولى؟ وكيف نبلغها؟ وهل التأسيس فعل معرفي خالص أم أنّه يشمل مجال الأخلاق أيضاً؟ وهل يمكن التأسيس في زمن يسمّه النسبية والعرضية؟ سينظر الدرس في نصّ أرسطو الذي يبيّن منزلة العلم بالمبادئ الأولى وقيمته، ثمّ في نصّ ديكارت الذي يجسّم ضرورة التأسيس وقطيعته مع الأسس القديمة، وأخيراً في نصّ كانط الذي يبيّن أنّ الثقافة الأخلاقية تتأسّس على القواعد لا على الانضباط.",
+                "PhiH.lessons.foundation.texts.title": "النصوص",
+                "PhiH.lessons.foundation.texts.text1": "في العلم بالمبادئ الأولى - أرسطو",
+                "PhiH.lessons.foundation.texts.text2": "ضرورة التأسيس - ديكارت",
+                "PhiH.lessons.foundation.texts.text3": "القاعدة والانضباط - كانط",
+                "PhiH.lessons.foundation.quotes.title": "شواهد ونصوص ذات صلة",
+                "PhiH.lessons.foundation.quotes.quote1": "\"ينبغي أن يكون للمبادئ شرطان: الأوّل هو أن تكون من الوضوح والتمييز بحيث لا يمكن للفكر البشري أن يشلَّ في حقيقتها... والثاني هو أن تتوقّف عليها معرفة الأشياء الأخرى.\"",
+                "PhiH.lessons.foundation.quotes.quote2": "\"ليس هناك عنصر أوَّل ينبغي تأويله وينطلق منه التأويل، لأن العناصر كلها تكون في الحقيقة تأويلاً.\"",
+                "PhiH.lessons.foundation.quotes.quote3": "\"ليس لي إلا أن أستشير نفسي حول ما أريد فعله: فكل ما أشعر أنه خير فهو خير، وكل ما أشعر أنه شرّ فهو شرّ.\"",
+                "PhiH.lessons.foundation.quotes.quote4": "\"... لا ينبغي البحث عن مبدأ الواجب، هنا، في طبيعة الإنسان، ولا في الظروف التي أحاطت بوجوده في هذا العالم، وإنما ينبغي البحث عنه قبلياً في مفاهيم العقل المحض.\"",
+                "PhiH.lessons.foundation.quotes.quote5": "\"أن يكون حكم ما خاطئاً فليس ذلك في رأينا حجة ضده... الأهم من ذلك هو أن نعرف إلى أي حد يخدم الحياة.\"",
+                "PhiH.lessons.foundation.quotes.quote6": "\"أن نؤسِّس هو أن نردَّ ما نعرفه إلى ما نجهله.\"",
+                "PhiH.lessons.foundation.quotes.quote7": "\"على الجميع أن يتفقوا أن القانون كي تكون له قيمة أخلاقية، أي كي يُؤسَّس الواجب، لا بدَّ أن يؤدِّي إلى ضرورة مطلقة.\"",
+                "PhiH.lessons.foundation.quotes.quote8": "\"إن ما يسميه الفلاسفة «تأسيس الأخلاق»... لم يكن في الحقيقة إلا شكلاً متحذلقاً من الاعتقاد الساذج في الأخلاق السائدة.\"",
+                "PhiH.lessons.foundation.quotes.quote9": "\"لا تهتم الفلسفة بالحقائق الجزئية، بل بأساسها.\"",
+                "PhiH.lessons.foundation.quotes.author1": "ديكارت",
+                "PhiH.lessons.foundation.quotes.author2": "فوكو",
+                "PhiH.lessons.foundation.quotes.author3": "روسو، إميل",
+                "PhiH.lessons.foundation.quotes.author4": "كانط، أسس ميتافيزيقا الأخلاق",
+                "PhiH.lessons.foundation.quotes.author5": "نيتشه",
+                "PhiH.lessons.foundation.quotes.author6": "هوبير غرونيي",
+                "PhiH.lessons.foundation.quotes.author7": "إ. كانط",
+                "PhiH.lessons.foundation.quotes.author8": "نيتشه",
+                "PhiH.lessons.foundation.quotes.author9": "جان لاكروا",
+                "PhiH.lessons.foundation.conclusion.title": "الخاتمة",
+                "PhiH.lessons.foundation.conclusion.text": "يتّضح من الدرس أنّ التأسيس ليس فعلاً دوغمائياً يفرض مبادئه فرضاً، بل هو فعل نقدي يعيد النظر في الأسس ويختبرها ويبرّرها. فالتأسيس عند أرسطو ردّ إلى المبادئ الأولى، وعند ديكارت قطيعة مع الأسس القديمة وإعادة بناء، وعند كانط تأسيس للأخلاق على القواعد الكونية لا على الانضباط. وبهذا المعنى، فإنّ التأسيس هو ما يمنح المعرفة والأخلاق صلابة ووجاهة في زمن تسوده النسبية والعرضية. وهكذا تكتمل إجرائيات التفكير: من الأشكلة التي تفتح البحث، إلى التعريف الذي يضبط حدوده، إلى الحجاج الذي يبرّر اختياراته، إلى التحليل والدحض الذي ينقّيها، وأخيراً إلى التأسيس الذي يمنحها صلابة ومشروعية."
+            }
+        };
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHfoundation;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+    <script>
+        // Expand/Collapse functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const expandableHeaders = document.querySelectorAll('.PhiH-expandable-header');
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.PhiH-expand-icon');
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('expanded');
+                    } else {
+                        content.classList.add('hidden');
+                        icon.classList.remove('expanded');
+                    }
+                });
+            });
+            // Initially hide all expandable content
+            document.querySelectorAll('.PhiH-expandable-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

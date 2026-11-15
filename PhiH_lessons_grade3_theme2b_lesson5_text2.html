@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: ضرورة التأسيس - روني ديكارت - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#37474f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Charcoal / Graphite Color Palette */
+        :root {
+            --primary-color: #37474f;
+            --primary-light: #546e7a;
+            --primary-dark: #1c2529;
+            --secondary-color: #455a64;
+            --secondary-light: #607d8b;
+            --secondary-dark: #263238;
+            --accent-color: #607d8b;
+            --accent-light: #90a4ae;
+            --accent-dark: #455a64;
+            --light-color: #eceff1;
+            --dark-color: #0d1315;
+            --text-color: #2e3a40;
+            --heading-color: #1c2529;
+            --background-color: #f5f7f8;
+            --card-bg: #ffffff;
+            --definition-bg: #dde4e7;
+            --border-color: #b0bec5;
+            --table-even-bg: #eceff1;
+            --table-hover-bg: #cfd8dc;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(55, 71, 79, 0.1), 0 2px 4px -1px rgba(55, 71, 79, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(55, 71, 79, 0.1), 0 4px 6px -2px rgba(55, 71, 79, 0.05);
+            --gradient-primary: linear-gradient(135deg, #37474f 0%, #546e7a 100%);
+            --gradient-secondary: linear-gradient(135deg, #1c2529 0%, #546e7a 100%);
+            --gradient-accent: linear-gradient(135deg, #607d8b 0%, #37474f 100%);
+            --gradient-gray: linear-gradient(135deg, #90a4ae 0%, #546e7a 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #90a4ae;
+            --primary-light: #b0bec5;
+            --primary-dark: #607d8b;
+            --secondary-color: #607d8b;
+            --secondary-light: #90a4ae;
+            --secondary-dark: #455a64;
+            --accent-color: #b0bec5;
+            --accent-light: #cfd8dc;
+            --accent-dark: #90a4ae;
+            --light-color: #2e3a40;
+            --dark-color: #0d1315;
+            --text-color: #cfd8dc;
+            --heading-color: #eceff1;
+            --background-color: #1c2529;
+            --card-bg: #263238;
+            --definition-bg: #37474f;
+            --border-color: #455a64;
+            --table-even-bg: #263238;
+            --table-hover-bg: #37474f;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #546e7a 0%, #90a4ae 100%);
+            --gradient-secondary: linear-gradient(135deg, #263238 0%, #607d8b 100%);
+            --gradient-accent: linear-gradient(135deg, #607d8b 0%, #37474f 100%);
+            --gradient-gray: linear-gradient(135deg, #b0bec5 0%, #607d8b 100%);
+        }
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(55, 71, 79, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(69, 90, 100, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(96, 125, 139, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+            flex-shrink: 0;
+        }
+        .PhiH-author-info {
+            flex: 1;
+        }
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        li strong {
+            color: var(--primary-color);
+        }
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-text-card ol li ul {
+            margin-top: 0.6rem;
+            padding-right: 1.5rem;
+            padding-left: 0;
+        }
+        .PhiH-text-card ol li ul li {
+            background-color: var(--definition-bg);
+            padding: 0.5rem 0.9rem;
+            font-size: 0.95rem;
+        }
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(55, 71, 79, 0.05), transparent);
+        }
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        body.rtl .PhiH-text-card ul li {
+            border-left: none;
+            border-right: 3px solid var(--primary-color);
+        }
+        body.rtl .PhiH-text-card ol li ul {
+            padding-right: 0;
+            padding-left: 0;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .PhiH-author-image {
+                align-self: center;
+            }
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.descartes.title">تحليل النص: ضرورة التأسيس - روني ديكارت</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.descartes.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        <section class="PhiH-text-analysis-section">
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.descartes.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.descartes.introduction.content">
+                    كلَّما شهد تاريخ الفكر البشري فترات تحوُّل نوعي تأتي على النظريات والمناهج والمبادئ، إلاَّ وطرح على المفكرين مهمة قديمة جديدة هي مهمة إعادة البناء. وبات من الضروري أن نتبيّن على أي نحو يمكن الاضطلاع بمهمة التأسيس، وتحديد المجالات التي ينبغي أن يمتدَّ إليها.
+                </p>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.descartes.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.descartes.text.content">
+                        من المؤكد أننا لا نرى الناس يهدمون كلَّ بيوت مدينة لمجرَّد إعادة بنائها على نحو مخالف، وجعل طرقها أكثر جمالاً، ولكننا نرى أنَّ الكثيرين يهدمون منازلهم لإعادة بنائها، وربما أُجبروا أحياناً على ذلك عندما تأذن بالانهيار، وعندما تكون غير ثابتة الأسس. وعلى ذلك المنوال اقتنعت أنه من غير المعقول أن يضع أحد الأفراد لنفسه مشروعاً لإصلاح دولة بتغيير كلَّ ما فيها من الأسس، وقلبها قلباً حتى تُقوَّم، أو حتى لإصلاح كلَّ العلوم[1] أو نظام تدريسها السائد بالمدارس. ولكن بخصوص كلَّ الآراء التي تلقَّيتها إلى ذلك الحدَّ في اعتقادي، فإنَّ أحسن ما كنت أستطيعه بشأنها هو السعي إلى انتزاعها[2] دفعة واحدة، كي أضع مكانها فيما بعد ما هو أحسن منها، أو أستعيدها بذاتها عندما أكون قد سوَّيتها وفق العقل. واعتقدت راسخاً أنني سأنجح بذلك في توجيه حياتي[3] أحسن مما لو أنني لم أبنِ إلاَّ على أسس قديمة[4]، ولم أستند إلاَّ إلى المبادئ التي تركت نفسي تقتنع بها في شبابي، دون أن أنظر البتة في ما إذا كانت صحيحة.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.descartes.text.source">ديكارت، مقالة الطريقة - R. Descartes, Discours de la méthode, éd. Vrin, pp. 61-62</em></p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.descartes.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <img src="assets/images/rene_descartes.jpg" alt="روني ديكارت" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.descartes.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.descartes.author.content">
+                            روني ديكارت (1596-1650) فيلسوف وعالم فرنسي، يُعدّ مؤسّس العقلانية الحديثة. فالعقل لديه "أعدل الأشياء توزعاً بين البشر"، غير أنّ استعماله لا يكون سديداً في الحكم، وقادراً على تحرير الإنسان من الأخطاء والأوهام وسلطة القدامى، إلا بمنهج ينبغي استلهام قواعده من معقولية الرياضيات، نظراً لما تتميّز به من يقين وبداهة. لذلك يتعيّن ممارسة شك منهجيّ في كل المعارف المكتسبة، مما يهيئ لاكتشاف أنّ "الأنا أفكر" هو اليقين الذي يُمثّل شرط إمكان كل يقين. من مؤلفاته: "قواعد في توجيه الذهن" (1628)، "حديث الطريقة" (1637)، "تأمّلات ميتافيزيقية" (1641)، "مبادئ الفلسفة" (1644).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.descartes.footnotes.title">الهوامش</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.descartes.footnotes.item1"><strong>(1) "كلّ العلوم":</strong> تُعتبر العلوم عند ديكارت كلاً لا يتجزأ، ولعلّ مجاز الشجرة الديكارتي أفضل تعبير عن وحدة المعارف: "فكلّ الفلسفة بمثابة شجرة، جذورها الميتافيزيقا، وجذعها الفيزياء، وفروعها الطب والميكانيكا والأخلاق".</li>
+                    <li data-i18n="PhiH.textAnalysis.descartes.footnotes.item2"><strong>(2) "انتزاعها":</strong> إشارة إلى الطابع الجذري للشكّ الديكارتي الذي سيُعتمد كمنهج.</li>
+                    <li data-i18n="PhiH.textAnalysis.descartes.footnotes.item3"><strong>(3) "توجيه حياتي":</strong> إشارة إلى أنّ التأسيس لا يقتصر على المجال المعرفي، وإنما يمتدّ ليشمل المجال الأخلاقي.</li>
+                    <li data-i18n="PhiH.textAnalysis.descartes.footnotes.item4"><strong>(4) "أسس قديمة":</strong> إشارة إلى فقدان الثقة في العلم الأرسطي الذي اعتُمد في القرون الوسطى كمرجع معرفي مطلق، وانتهى إلى تكليس الفكر وعقمه.</li>
+                </ul>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.descartes.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.descartes.questions.q1">أحدّد عناصر المماثلة التي اعتمدها الكاتب.</li>
+                    <li data-i18n="PhiH.textAnalysis.descartes.questions.q2">أستثمر مكتسباتي من العنصر الخاص "باليومي" وأبيّن لماذا قرّر ديكارت "انتزاع آرائه دفعة واحدة".</li>
+                    <li data-i18n="PhiH.textAnalysis.descartes.questions.q3">أستحضر من تاريخ الفكر مثالاً عن كلّ اختيار من الاختيارين التاليين اللذين أوردهما الكاتب:
+                        <ul>
+                            <li data-i18n="PhiH.textAnalysis.descartes.questions.q3.item1">"أضع مكانها ما هو أحسن منها".</li>
+                            <li data-i18n="PhiH.textAnalysis.descartes.questions.q3.item2">"أستعيدها بذاتها عندما أكون قد صقلتها بالعقل".</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.descartes.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.descartes.answers.a1.title">الإجابة عن المهمة الأولى:</h5>
+                    <p data-i18n="PhiH.textAnalysis.descartes.answers.a1.content">
+                        اعتمد ديكارت مماثلةً بين مجاليْن، لإقناع القارئ بضرورة التأسيس الفردي للآراء. ويمكن تحديد عناصرها في الجدول التالي:
+                        <br><br>
+                        <strong>1. الطرف الأول من المماثلة (مجال العمران):</strong>
+                        <br>– <strong>البيوت والمدينة:</strong> يرمزان إلى المؤسسات والأنظمة الجماعية (الدولة، العلوم، نظام التدريس).
+                        <br>– <strong>المنزل الواحد:</strong> يرمز إلى الآراء الشخصية للفرد.
+                        <br>– <strong>إعادة البناء:</strong> ترمز إلى مهمة الإصلاح والتأسيس.
+                        <br>– <strong>الأسس غير الثابتة:</strong> ترمز إلى فقدان المشروعية والصلابة.
+                        <br><br>
+                        <strong>2. الطرف الثاني من المماثلة (مجال المعرفة):</strong>
+                        <br>– <strong>الدولة:</strong> ترمز إلى النظام السياسي.
+                        <br>– <strong>العلوم ونظام تدريسها:</strong> يرمزان إلى المنظومة المعرفية والتربوية.
+                        <br>– <strong>الآراء الشخصية:</strong> ترمز إلى المعارف المكتسبة في الطفولة والشباب.
+                        <br><br>
+                        <strong>3. عناصر الافتراق (ما لا يصحّ فيه التماثل):</strong>
+                        <br>– <strong>لا يصحّ للفرد أن يهدم الدولة:</strong> "من غير المعقول أن يضع أحد الأفراد لنفسه مشروعاً لإصلاح دولة بتغيير كلَّ ما فيها من الأسس".
+                        <br>– <strong>لا يصحّ للفرد أن يهدم كلَّ العلوم:</strong> "أو حتى لإصلاح كلَّ العلوم أو نظام تدريسها السائد بالمدارس".
+                        <br><br>
+                        <strong>4. عناصر التماثل الصحيحة (ما يصحّ فيه التأسيس):</strong>
+                        <br>– <strong>يحقّ للفرد أن يهدم آراءه الخاصة:</strong> "ولكن بخصوص كلَّ الآراء التي تلقَّيتها إلى ذلك الحدَّ في اعتقادي، فإنَّ أحسن ما كنت أستطيعه بشأنها هو السعي إلى انتزاعها دفعة واحدة".
+                        <br>– <strong>لأنّ الآراء الشخصية هي "منزله" الذي يحقّ له إعادة بنائه:</strong> كما يهدم المرء منزله لإعادة بنائه.
+                        <br><br>
+                        <strong>الخلاصة:</strong> المماثلة الديكارتية تقوم على التمييز بين:
+                        <br>– ما هو <em>جماعي</em> (الدولة، العلوم، نظام التدريس) → لا يحقّ للفرد أن يهدمه.
+                        <br>– ما هو <em>فردي</em> (آراء الفرد الخاصة) → يحقّ للفرد، بل يجب عليه، أن يهدمه ويعيد بناءه.
+                        <br>وبهذه المماثلة، يبرّر ديكارت مشروعه الشخصي في التأسيس، دون أن يدّعي إصلاح المجتمع أو العلوم جملةً.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.descartes.answers.a2.title">الإجابة عن المهمة الثانية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.descartes.answers.a2.content">
+                        لبيان لماذا قرّر ديكارت "انتزاع آرائه دفعة واحدة"، يمكن استثمار مكتسباتنا من عنصر "اليومي":
+                        <br><br>
+                        <strong>1. "اليومي" مجال التلقّي غير النقدي:</strong> يتميّز اليومي بأنّ آراءه متلقّاة لا مبنية، وموروثة لا مكتسبة، ومفروضة من السلطة التربوية والاجتماعية لا مُصاغة بالعقل. وآراء ديكارت التي تلقّاها في شبابه هي من هذا القبيل: آراء تلقّاها من الأساتذة والكتب دون أن ينظر في صحّتها.
+                        <br><br>
+                        <strong>2. "اليومي" مجال الأسس غير الثابتة:</strong> آراء اليومي ليست مبنية على أسس راسخة، بل على العادة والتقليد والسلطة. فأسسها "غير ثابتة" – على حدّ تعبير ديكارت نفسه عن المنازل التي "تأذن بالانهيار".
+                        <br><br>
+                        <strong>3. استحالة الإصلاح الجزئي لآراء اليومي:</strong> لا يمكن إصلاح آراء اليومي واحدةً واحدة، لأنّ كلّ رأي منها مرتبط بغيره، ولأنّ أساسها المشترك (السلطة والتقليد) فاسد. فإصلاح البعض دون البعض الآخر يُبقي الأساس الفاسد قائماً.
+                        <br><br>
+                        <strong>4. ضرورة "الانتزاع الدفعي" (الشك المنهجي):</strong> لذلك، فالحلّ الوحيد هو "انتزاع" الآراء كلها دفعة واحدة – أي تعليق الحكم فيها جميعاً – كما يهدم المرء منزله بكامله حين تكون أسسه غير ثابتة. وهذا هو الشكّ المنهجي الديكارتي: شكّ جذري، شامل، دفعي، لا استثناء فيه.
+                        <br><br>
+                        <strong>5. وظيفة "الانتزاع الدفعي":</strong> هذا الانتزاع ليس غاية في نفسه، بل هو وسيلة:
+                        <br>– إمّا لوضع "ما هو أحسن" مكان الآراء المنتزعة.
+                        <br>– وإمّا لاستعادة الآراء نفسها "بعد أن تُصفّى بالعقل".
+                        <br>فالانتزاع الدفعي هو شرط إمكان التأسيس، لأنّه يخلق الفراغ الذي يمكن أن يُبنى فيه على أسس راسخة.
+                        <br><br>
+                        <strong>الخلاصة:</strong> قرّر ديكارت "انتزاع آرائه دفعة واحدة" لأنّ آراءه – بحكم كونها من "اليومي" – متلقّاة لا مبنية، وأسسها غير ثابتة، ولا يمكن إصلاحها جزئياً. فكان الانتزاع الدفعي (الشك المنهجي) هو الطريق الوحيد لإعادة البناء على أسس راسخة.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.descartes.answers.a3.title">الإجابة عن المهمة الثالثة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.descartes.answers.a3.content">
+                        <strong>أ. مثال عن "أضع مكانها ما هو أحسن منها" (الاستبدال الكامل):</strong>
+                        <br><br>
+                        <strong>1. مثال علمي: نظرية النسبية لأينشتاين محلّ الفيزياء النيوتنية:</strong> لم يستطع أينشتاين إصلاح فيزياء نيوتن جزئياً، بل اضطرّ إلى استبدال مفاهيمها الأساسية (المكان المطلق، الزمان المطلق، الجاذبية كقوة) بمفاهيم جديدة (الزمكان المنحني، الجاذبية كانحناء). فاستبدل الأطروحة القديمة بأطروحة جديدة "هي أحسن منها" في تفسير الظواهر.
+                        <br><br>
+                        <strong>2. مثال كيميائي: نظرية الأكسجين للافوازييه محلّ نظرية الفلوجستون:</strong> لم يستطع لافوازييه إصلاح نظرية الفلوجستون، بل استبدلها بنظرية الأكسجين، فكان استبدالاً كاملاً بأطروحة "هي أحسن منها".
+                        <br><br>
+                        <strong>3. مثال رياضي: الهندسة التحليلية لديكارت محلّ الهندسة الإقليدية:</strong> لم يكتفِ ديكارت بإصلاح الهندسة الإقليدية، بل استبدلها بالهندسة التحليلية، التي تدمج الجبر والهندسة في منهج جديد.
+                        <br><br>
+                        <strong>ب. مثال عن "أستعيدها بذاتها عندما أكون قد صقلتها بالعقل" (الاستعادة بعد التصفية):</strong>
+                        <br><br>
+                        <strong>1. مثال ديكارتي: "الأنا أفكر" (الكوجيتو):</strong> شكّ ديكارت في كلّ شيء، لكنه لم يستطع الشكّ في أنه يفكّر. فاستعاد هذه القضية – "أنا أفكر، إذن أنا موجود" – بعد أن صقلها بالعقل، بعد أن اختبرها الشكّ فقاومته. فهي آراء لم تُستبدل، بل صُقلت واستُعيدت.
+                        <br><br>
+                        <strong>2. مثال فلسفي: مفهوم الجوهر عند سبينوزا ولايبنتز:</strong> لم يستبدل سبينوزا ولايبنتز مفهوم الجوهر الديكارتي، بل صقلاه بالعقل وأعادا صياغته (الجوهر الواحد عند سبينوزا، الجواهر المتعددة عند لايبنتز).
+                        <br><br>
+                        <strong>3. مثال أخلاقي: قيمة العدالة عند رولز:</strong> لم يستبدل رولز قيمة العدالة، بل صقلها بالعقل عبر مفهوم "العدالة كإنصاف"، فأعاد استعادتها بذاتها – كقيمة – بعد أن صقلها بمفهوم العقد الاجتماعي.
+                        <br><br>
+                        <strong>4. مثال منطقي: المنطق الأرسطي في المنطق الحديث:</strong> لم يُستبدل المنطق الأرسطي كلياً، بل صُقل وأُعيدت صياغته في المنطق الرمزي الحديث، فاستعيد بذاته – كمنطق – بعد أن صُقل بأدوات رياضية جديدة.
+                        <br><br>
+                        <strong>الخلاصة المقارنة:</strong>
+                        <br>– "أضع مكانها ما هو أحسن منها": <em>استبدال كامل</em>، حيث تُرفض الأطروحة القديمة كلياً وتُستبدل بأخرى.
+                        <br>– "أستعيدها بذاتها بعد أن أصقلها بالعقل": <em>استعادة بعد تصفية</em>، حيث تُحفظ الأطروحة في جوهرها، لكنها تُصقل وتُعاد صياغتها.
+                        <br>وهذان الاختياران يعبّران عن استراتيجيتين متكاملتين في تاريخ الفكر: استراتيجية القطيعة (الاستبدال)، واستراتيجية الاستمرارية (الاستعادة). وكلتاهما مشروعتان في مسار التأسيس، بحسب ما يقتضيه المقام.
+                    </p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.descartes.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.descartes.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.descartes.analysis.thesis.content">
+                        يرى ديكارت أنّ إصلاح المعرفة لا يكون إلا بتأسيس جذري، لا بإصلاح جزئي. وكما أنّ المرء لا يهدم مدينة كاملة، بل يهدم منزله إذا كانت أسسه غير ثابتة، فكذلك لا يحقّ للفرد أن يهدم الدولة أو العلوم أو نظام التدريس، بل يحقّ له – بل يجب عليه – أن ينتزع آراءه الخاصة دفعة واحدة، ليعيد بناءها على أسس راسخة. فالتأسيس الديكارتي يبدأ من الذات الفردية، ومن الشكّ المنهجي الشامل، لا من الإصلاحات الجزئية.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.descartes.analysis.mechanisms.title">آليات التأسيس الديكارتي:</h5>
+                    <p data-i18n="PhiH.textAnalysis.descartes.analysis.mechanisms.content">
+                        - <strong>المماثلة التمييزية:</strong> التمييز بين مجال الفرد (الآراء الشخصية) ومجال الجماعة (الدولة، العلوم)، لإقناع القارئ بحدود مشروعه.
+                        <br>- <strong>الشكّ المنهجي الدفعي:</strong> "انتزاع الآراء دفعة واحدة"، كشرط لتأسيس المعرفة على أسس راسخة.
+                        <br>- <strong>إعادة البناء المزدوجة:</strong> إما بوضع ما هو أحسن مكان الآراء المنتزعة، أو باستعادة الآراء نفسها بعد صقلها بالعقل.
+                        <br>- <strong>الغاية العملية للتأسيس:</strong> "توجيه حياتي أحسن" – فالتأسيس ليس نظرياً مجرّداً، بل يهدف إلى تحسين الحياة العملية والأخلاقية.
+                        <br>- <strong>القطيعة مع أسس الطفولة:</strong> "لم أستند إلاَّ إلى المبادئ التي تركت نفسي تقتنع بها في شبابي، دون أن أنظر البتة في ما إذا كانت صحيحة" – فالقطيعة مع الماضي شرط التأسيس.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.descartes.analysis.consequences.title">النتائج المترتبة على هذه الأطروحة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.descartes.analysis.consequences.content">
+                        - <strong>تأسيس العقلانية الحديثة:</strong> ديكارت يُعلن أولوية العقل الفردي على السلطة والتقليد، ويؤسّس للفلسفة الحديثة القائمة على الذات المفكرة.
+                        <br>- <strong>تأسيس الشكّ المنهجي:</strong> الشكّ يصبح منهجاً، لا موقفاً نهائياً؛ فهو وسيلة للوصول إلى اليقين، لا غاية في نفسه.
+                        <br>- <strong>القطيعة مع العلم الأرسطي:</strong> ديكارت يقطع مع العلم السكولائي الذي كان سائداً في القرون الوسطى، ويؤسّس لعلم جديد قائم على الرياضيات والملاحظة.
+                        <br>- <strong>توسيع مجال التأسيس:</strong> التأسيس لا يقتصر على المعرفة، بل يمتدّ إلى الأخلاق وإلى "توجيه الحياة"، فيصبح مشروعاً وجودياً شاملاً.
+                        <br>- <strong>تأسيس الفردية المنهجية:</strong> الفرد – لا الجماعة – هو من يبني المعرفة على أسس راسخة، وهذا ما يميز الحداثة الفلسفية عن الفلسفة الكلاسيكية.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.descartes.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.descartes.analysis.significance.content">
+                        يحمل هذا النص دلالة فلسفية عميقة في تاريخ الفلسفة:
+                        <br><br>
+                        <strong>1. دلالة إبستمولوجية:</strong> النص يؤسّس لمنهج جديد في المعرفة، يقوم على الشكّ المنهجي وإعادة البناء. وهذا المنهج سيصبح نموذجاً للفلسفة الحديثة كلها.
+                        <br><br>
+                        <strong>2. دلالة منهجية:</strong> النص يقدّم نموذجاً للتأسيس يقوم على:
+                        <br>– التمييز بين مجال الفرد ومجال الجماعة.
+                        <br>– الانتزاع الدفعي للآراء (الشكّ المنهجي).
+                        <br>– إعادة البناء على أسس راسخة.
+                        <br>– الغاية العملية (توجيه الحياة).
+                        <br><br>
+                        <strong>3. دلالة أخلاقية:</strong> النص يُبيّن أنّ التأسيس ليس مجرّد عملية نظرية، بل هو مشروع أخلاقي ووجودي، يهدف إلى "توجيه حياتي أحسن". فالفلسفة ليست بحثاً نظرياً فحسب، بل هي فنّ العيش.
+                        <br><br>
+                        <strong>4. دلالة تربوية:</strong> النص يُوجّه نقداً للتربية التقليدية التي تلقّن الآراء دون فحصها، ويؤسّس لتربية جديدة تقوم على الشكّ والفحص وإعادة البناء.
+                        <br><br>
+                        <strong>5. صلة النص بالدرس (التأسيس):</strong> النص يمثّل لحظة تأسيسية في تاريخ الفلسفة، حيث يُعاد تعريف التأسيس بوصفه:
+                        <br>– قطيعة مع الأسس القديمة (فقدان الثقة في العلم الأرسطي).
+                        <br>– انتزاعاً دفعياً للآراء (الشكّ المنهجي).
+                        <br>– بناءً على أسس راسخة (الذات المفكرة، البداهة، اليقين).
+                        <br>وهو بذلك يُمهّد لنص كانط الذي سيقدّم تصوراً مختلفاً للتأسيس: التأسيس على "المفاهيم القبلية للعقل المحض"، لا على "الأنا المفكرة".
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.descartes.level": "3ème Secondaire - Philosophie",
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.descartes.title": "Analyse du texte : La nécessité de la fondation - René Descartes",
+                "PhiH.textAnalysis.descartes.introduction.title": "Introduction",
+                "PhiH.textAnalysis.descartes.introduction.content": "Chaque fois que l'histoire de la pensée humaine connaît des périodes de transformation qualitative qui emportent les théories, les méthodes et les principes, se pose aux penseurs une tâche ancienne et toujours nouvelle : celle de la reconstruction. Et il devient nécessaire de discerner comment on peut entreprendre la tâche de la fondation et déterminer les domaines auxquels elle doit s'étendre.",
+                "PhiH.textAnalysis.descartes.text.title": "Le texte",
+                "PhiH.textAnalysis.descartes.text.content": "Il est certain que nous ne voyons pas les gens démolir toutes les maisons d'une ville pour la seule raison de les reconstruire autrement et d'en rendre les rues plus belles ; mais nous voyons que beaucoup démolissent leurs propres maisons pour les reconstruire, et qu'ils y sont parfois contraints lorsque celles-ci menacent ruine et que leurs fondations ne sont pas solides. Sur ce modèle, je me suis convaincu qu'il n'est pas raisonnable qu'un particulier forme le dessein de réformer un État en changeant tous ses fondements et en le renversant pour le redresser, ni même de réformer le corps entier des sciences[1] ou l'ordre établi dans les écoles pour les enseigner. Mais pour ce qui est de toutes les opinions que j'avais reçues jusque-là en ma créance, je ne pouvais mieux faire que de les ôter[2] une fois toutes ensemble, afin d'en mettre ensuite de meilleures à leur place, ou de les remettre les mêmes lorsque je les aurais ajustées au niveau de la raison. Et je crus fermement que par ce moyen je réussirais à conduire ma vie[3] beaucoup mieux que si je ne bâtissais que sur de vieux fondements[4], et que si je ne m'appuyais que sur les principes que j'avais laissé recevoir en ma jeunesse, sans avoir jamais examiné s'ils étaient vrais.",
+                "PhiH.textAnalysis.descartes.text.source": "R. Descartes, Discours de la méthode, éd. Vrin, pp. 61-62",
+                "PhiH.textAnalysis.descartes.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.descartes.author.alt": "René Descartes",
+                "PhiH.textAnalysis.descartes.author.content": "René Descartes (1596-1650) est un philosophe et savant français, considéré comme le fondateur du rationalisme moderne. La raison, selon lui, est « la chose du monde la mieux partagée » ; mais son usage ne saurait être juste dans le jugement, ni capable de libérer l'homme des erreurs, des illusions et de l'autorité des Anciens, sans une méthode dont les règles doivent être empruntées à la rationalité mathématique, en raison de son évidence et de sa certitude. Il faut donc pratiquer un doute méthodique à l'égard de toutes les connaissances acquises, ce qui prépare la découverte que le « je pense » est la certitude qui constitue la condition de possibilité de toute certitude. Parmi ses œuvres : « Règles pour la direction de l'esprit » (1628), « Discours de la méthode » (1637), « Méditations métaphysiques » (1641), « Principes de la philosophie » (1644).",
+                "PhiH.textAnalysis.descartes.footnotes.title": "Notes de bas de page",
+                "PhiH.textAnalysis.descartes.footnotes.item1": "<strong>(1) « Le corps entier des sciences » :</strong> les sciences sont considérées chez Descartes comme un tout indivisible ; la métaphore cartésienne de l'arbre est sans doute la meilleure expression de l'unité des connaissances : « Toute la philosophie est comme un arbre, dont les racines sont la métaphysique, le tronc est la physique, et les branches qui sortent de ce tronc sont toutes les autres sciences qui se réduisent à trois principales, à savoir la médecine, la mécanique et la morale. »",
+                "PhiH.textAnalysis.descartes.footnotes.item2": "<strong>(2) « Les ôter » :</strong> allusion au caractère radical du doute cartésien qui sera adopté comme méthode.",
+                "PhiH.textAnalysis.descartes.footnotes.item3": "<strong>(3) « Conduire ma vie » :</strong> allusion au fait que la fondation ne se limite pas au domaine de la connaissance, mais s'étend au domaine moral.",
+                "PhiH.textAnalysis.descartes.footnotes.item4": "<strong>(4) « De vieux fondements » :</strong> allusion à la perte de confiance envers la science aristotélicienne, qui fut adoptée au Moyen Âge comme référence cognitive absolue, et qui aboutit à la fossilisation et à la stérilité de la pensée.",
+                "PhiH.textAnalysis.descartes.questions.title": "Tâches",
+                "PhiH.textAnalysis.descartes.questions.q1": "Je détermine les éléments de l'analogie adoptée par l'auteur.",
+                "PhiH.textAnalysis.descartes.questions.q2": "J'exploite mes acquis de l'élément consacré au « quotidien » et je montre pourquoi Descartes a décidé d'« ôter ses opinions toutes ensemble ».",
+                "PhiH.textAnalysis.descartes.questions.q3": "J'évoque de l'histoire de la pensée un exemple pour chacun des deux choix mentionnés par l'auteur :",
+                "PhiH.textAnalysis.descartes.questions.q3.item1": "« Mettre à leur place de meilleures opinions ».",
+                "PhiH.textAnalysis.descartes.questions.q3.item2": "« Les remettre les mêmes lorsque je les aurais ajustées au niveau de la raison ».",
+                "PhiH.textAnalysis.descartes.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.descartes.answers.a1.title": "Réponse à la première tâche :",
+                "PhiH.textAnalysis.descartes.answers.a1.content": "Descartes adopte une analogie entre deux domaines, pour convaincre le lecteur de la nécessité de la fondation individuelle des opinions. On peut en déterminer les éléments dans le tableau suivant :<br><br><strong>1. Le premier terme de l'analogie (domaine de l'architecture) :</strong><br>– <strong>Les maisons et la ville :</strong> elles symbolisent les institutions et les systèmes collectifs (l'État, les sciences, le système d'enseignement).<br>– <strong>La maison individuelle :</strong> elle symbolise les opinions personnelles de l'individu.<br>– <strong>La reconstruction :</strong> elle symbolise la tâche de réforme et de fondation.<br>– <strong>Les fondations instables :</strong> elles symbolisent la perte de légitimité et de solidité.<br><br><strong>2. Le second terme de l'analogie (domaine de la connaissance) :</strong><br>– <strong>L'État :</strong> il symbolise le système politique.<br>– <strong>Les sciences et leur système d'enseignement :</strong> ils symbolisent le système cognitif et éducatif.<br>– <strong>Les opinions personnelles :</strong> elles symbolisent les connaissances acquises dans l'enfance et la jeunesse.<br><br><strong>3. Les éléments de dissemblance (ce en quoi l'assimilation n'est pas valable) :</strong><br>– <strong>Il n'est pas permis à l'individu de démolir l'État :</strong> « il n'est pas raisonnable qu'un particulier forme le dessein de réformer un État en changeant tous ses fondements ».<br>– <strong>Il n'est pas permis à l'individu de démolir toutes les sciences :</strong> « ni même de réformer le corps entier des sciences ou l'ordre établi dans les écoles pour les enseigner ».<br><br><strong>4. Les éléments de ressemblance valables (ce en quoi la fondation est légitime) :</strong><br>– <strong>Il est permis à l'individu de démolir ses propres opinions :</strong> « pour ce qui est de toutes les opinions que j'avais reçues jusque-là en ma créance, je ne pouvais mieux faire que de les ôter une fois toutes ensemble ».<br>– <strong>Parce que les opinions personnelles sont « sa maison » qu'il a le droit de reconstruire :</strong> comme on démolit sa maison pour la reconstruire.<br><br><strong>Conclusion :</strong> l'analogie cartésienne repose sur la distinction entre :<br>– ce qui est <em>collectif</em> (l'État, les sciences, le système d'enseignement) → il n'est pas permis à l'individu de le démolir ;<br>– ce qui est <em>individuel</em> (les opinions personnelles de l'individu) → il est permis à l'individu, et même il doit, de le démolir et de le reconstruire.<br>Par cette analogie, Descartes justifie son projet personnel de fondation, sans prétendre réformer la société ou les sciences dans leur ensemble.",
+                "PhiH.textAnalysis.descartes.answers.a2.title": "Réponse à la deuxième tâche :",
+                "PhiH.textAnalysis.descartes.answers.a2.content": "Pour montrer pourquoi Descartes a décidé d'« ôter ses opinions toutes ensemble », on peut exploiter les acquis de l'élément consacré au « quotidien » :<br><br><strong>1. Le « quotidien » est le domaine de la réception non critique :</strong> le quotidien se caractérise par des opinions reçues et non construites, héritées et non acquises, imposées par l'autorité éducative et sociale et non formulées par la raison. Les opinions que Descartes a reçues dans sa jeunesse sont de cette nature : des opinions reçues des maîtres et des livres, sans avoir examiné leur vérité.<br><br><strong>2. Le « quotidien » est le domaine des fondations instables :</strong> les opinions du quotidien ne reposent pas sur des fondations solides, mais sur l'habitude, la tradition et l'autorité. Leurs fondations sont « instables » – selon l'expression même de Descartes à propos des maisons qui « menacent ruine ».<br><br><strong>3. L'impossibilité d'une réforme partielle des opinions du quotidien :</strong> on ne peut réformer les opinions du quotidien une à une, parce que chacune est liée aux autres, et parce que leur fondement commun (l'autorité et la tradition) est corrompu. Réformer les unes sans les autres laisse intact le fondement corrompu.<br><br><strong>4. La nécessité de l'« extraction globale » (le doute méthodique) :</strong> c'est pourquoi la seule solution est d'« ôter » toutes les opinions à la fois – c'est-à-dire de suspendre le jugement à leur sujet – comme on démolit entièrement sa maison lorsque ses fondations sont instables. C'est là le doute méthodique cartésien : un doute radical, total, global, sans exception.<br><br><strong>5. La fonction de l'« extraction globale » :</strong> cette extraction n'est pas une fin en soi, mais un moyen :<br>– soit pour mettre « de meilleures » opinions à la place des opinions ôtées ;<br>– soit pour restaurer les opinions elles-mêmes « après les avoir ajustées au niveau de la raison ».<br>L'extraction globale est ainsi la condition de possibilité de la fondation, car elle crée le vide dans lequel on peut bâtir sur des fondations solides.<br><br><strong>Conclusion :</strong> Descartes a décidé d'« ôter ses opinions toutes ensemble » parce que ses opinions – en tant qu'elles relèvent du « quotidien » – sont reçues et non construites, leurs fondations sont instables, et il est impossible de les réformer partiellement. L'extraction globale (le doute méthodique) était donc la seule voie vers une reconstruction sur des fondations solides.",
+                "PhiH.textAnalysis.descartes.answers.a3.title": "Réponse à la troisième tâche :",
+                "PhiH.textAnalysis.descartes.answers.a3.content": "<strong>A. Exemple de « mettre à leur place de meilleures opinions » (substitution totale) :</strong><br><br><strong>1. Exemple scientifique : la théorie de la relativité d'Einstein à la place de la physique newtonienne :</strong> Einstein n'a pas pu réformer partiellement la physique de Newton, mais il a dû substituer à ses concepts fondamentaux (espace absolu, temps absolu, gravitation comme force) des concepts nouveaux (espace-temps courbe, gravitation comme courbure). Il a ainsi substitué à l'ancienne thèse une nouvelle thèse « meilleure » dans l'explication des phénomènes.<br><br><strong>2. Exemple chimique : la théorie de l'oxygène de Lavoisier à la place de la théorie du phlogistique :</strong> Lavoisier n'a pas pu réformer la théorie du phlogistique, mais il l'a remplacée par la théorie de l'oxygène, opérant ainsi une substitution totale par une thèse « meilleure ».<br><br><strong>3. Exemple mathématique : la géométrie analytique de Descartes à la place de la géométrie euclidienne :</strong> Descartes ne s'est pas contenté de réformer la géométrie euclidienne, mais il l'a remplacée par la géométrie analytique, qui fusionne l'algèbre et la géométrie dans une méthode nouvelle.<br><br><strong>B. Exemple de « les remettre les mêmes lorsque je les aurais ajustées au niveau de la raison » (restauration après épuration) :</strong><br><br><strong>1. Exemple cartésien : le « je pense » (le cogito) :</strong> Descartes a douté de tout, mais il n'a pas pu douter qu'il pensait. Il a donc restauré cette proposition – « je pense, donc je suis » – après l'avoir épurée par la raison, après l'avoir éprouvée par le doute et l'avoir vue y résister. Ce sont des opinions qui n'ont pas été substituées, mais épurées et restaurées.<br><br><strong>2. Exemple philosophique : le concept de substance chez Spinoza et Leibniz :</strong> Spinoza et Leibniz n'ont pas remplacé le concept cartésien de substance, mais ils l'ont épuré par la raison et en ont reformulé la conception (la substance unique chez Spinoza, les substances multiples chez Leibniz).<br><br><strong>3. Exemple éthique : la valeur de la justice chez Rawls :</strong> Rawls n'a pas remplacé la valeur de la justice, mais il l'a épurée par la raison à travers le concept de « justice comme équité », la restaurant ainsi en elle-même – comme valeur – après l'avoir épurée par le concept de contrat social.<br><br><strong>4. Exemple logique : la logique aristotélicienne dans la logique moderne :</strong> la logique aristotélicienne n'a pas été totalement remplacée, mais elle a été épurée et reformulée dans la logique symbolique moderne, se trouvant ainsi restaurée en elle-même – comme logique – après avoir été épurée par de nouveaux outils mathématiques.<br><br><strong>Conclusion comparative :</strong><br>– « mettre à leur place de meilleures opinions » : <em>substitution totale</em>, où l'ancienne thèse est rejetée en bloc et remplacée par une autre.<br>– « les remettre les mêmes lorsque je les aurais ajustées au niveau de la raison » : <em>restauration après épuration</em>, où la thèse est conservée en son essence, mais épurée et reformulée.<br>Ces deux choix expriment deux stratégies complémentaires dans l'histoire de la pensée : la stratégie de la rupture (la substitution) et la stratégie de la continuité (la restauration). Toutes deux sont légitimes dans le parcours de la fondation, selon ce qu'exige la situation.",
+                "PhiH.textAnalysis.descartes.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.descartes.analysis.thesis.title": "Thèse principale :",
+                "PhiH.textAnalysis.descartes.analysis.thesis.content": "Descartes considère que la réforme de la connaissance ne peut être qu'une fondation radicale, non une réforme partielle. De même que l'on ne démolit pas une ville entière, mais que l'on démolit sa propre maison si ses fondations sont instables, de même il n'est pas permis à l'individu de démolir l'État, les sciences ou le système d'enseignement, mais il lui est permis – et même il lui faut – d'ôter ses propres opinions toutes ensemble, pour les reconstruire sur des fondations solides. La fondation cartésienne part donc du soi individuel et du doute méthodique total, non des réformes partielles.",
+                "PhiH.textAnalysis.descartes.analysis.mechanisms.title": "Mécanismes de la fondation cartésienne :",
+                "PhiH.textAnalysis.descartes.analysis.mechanisms.content": "- <strong>L'analogie discriminante :</strong> distinction entre le domaine de l'individu (les opinions personnelles) et le domaine du collectif (l'État, les sciences), pour convaincre le lecteur des limites de son projet.<br>- <strong>Le doute méthodique global :</strong> « ôter les opinions toutes ensemble », comme condition d'une fondation de la connaissance sur des fondations solides.<br>- <strong>La reconstruction double :</strong> soit en mettant de meilleures opinions à la place des opinions ôtées, soit en restaurant les opinions elles-mêmes après les avoir épurées par la raison.<br>- <strong>La finalité pratique de la fondation :</strong> « conduire ma vie » mieux – la fondation n'est pas purement théorique, mais vise l'amélioration de la vie pratique et morale.<br>- <strong>La rupture avec les fondements de l'enfance :</strong> « je ne m'appuyais que sur les principes que j'avais laissé recevoir en ma jeunesse, sans avoir jamais examiné s'ils étaient vrais » – la rupture avec le passé est la condition de la fondation.",
+                "PhiH.textAnalysis.descartes.analysis.consequences.title": "Conséquences de cette thèse :",
+                "PhiH.textAnalysis.descartes.analysis.consequences.content": "- <strong>Fondation du rationalisme moderne :</strong> Descartes proclame la primauté de la raison individuelle sur l'autorité et la tradition, et fonde la philosophie moderne sur le soi pensant.<br>- <strong>Fondation du doute méthodique :</strong> le doute devient une méthode, non une position finale ; il est un moyen d'accéder à la certitude, non une fin en soi.<br>- <strong>Rupture avec la science aristotélicienne :</strong> Descartes rompt avec la science scolastique qui dominait au Moyen Âge, et fonde une science nouvelle reposant sur les mathématiques et l'observation.<br>- <strong>Élargissement du champ de la fondation :</strong> la fondation ne se limite pas à la connaissance, mais s'étend à la morale et à la « conduite de la vie », devenant un projet existentiel global.<br>- <strong>Fondation de l'individualisme méthodologique :</strong> c'est l'individu – non la communauté – qui construit la connaissance sur des fondations solides, ce qui distingue la philosophie moderne de la philosophie classique.",
+                "PhiH.textAnalysis.descartes.analysis.significance.title": "Significations et dimensions du concept :",
+                "PhiH.textAnalysis.descartes.analysis.significance.content": "Ce texte porte une signification philosophique profonde dans l'histoire de la philosophie :<br><br><strong>1. Signification épistémologique :</strong> le texte fonde une méthode nouvelle en matière de connaissance, reposant sur le doute méthodique et la reconstruction. Cette méthode deviendra le modèle de toute la philosophie moderne.<br><br><strong>2. Signification méthodologique :</strong> le texte offre un modèle de fondation reposant sur :<br>– la distinction entre le domaine de l'individu et celui du collectif ;<br>– l'extraction globale des opinions (le doute méthodique) ;<br>– la reconstruction sur des fondations solides ;<br>– la finalité pratique (la conduite de la vie).<br><br><strong>3. Signification éthique :</strong> le texte montre que la fondation n'est pas une simple opération théorique, mais un projet éthique et existentiel, visant à « conduire ma vie » mieux. La philosophie n'est pas seulement une recherche théorique, mais un art de vivre.<br><br><strong>4. Signification éducative :</strong> le texte critique l'éducation traditionnelle qui inculque les opinions sans les examiner, et fonde une éducation nouvelle reposant sur le doute, l'examen et la reconstruction.<br><br><strong>5. Lien du texte avec la leçon (la fondation) :</strong> le texte représente un moment fondationnel dans l'histoire de la philosophie, où la fondation est redéfinie comme :<br>– rupture avec les fondations anciennes (perte de confiance en la science aristotélicienne) ;<br>– extraction globale des opinions (le doute méthodique) ;<br>– construction sur des fondations solides (le soi pensant, l'évidence, la certitude).<br>Il prépare ainsi le texte de Kant, qui présentera une conception différente de la fondation : la fondation sur les « concepts a priori de la raison pure », non sur le « soi pensant »."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.descartes.level": "3rd Secondary - Philosophy",
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.descartes.title": "Text Analysis: The Necessity of Foundation - René Descartes",
+                "PhiH.textAnalysis.descartes.introduction.title": "Introduction",
+                "PhiH.textAnalysis.descartes.introduction.content": "Whenever the history of human thought undergoes periods of qualitative transformation that sweep away theories, methods and principles, thinkers face an old and ever-renewed task: that of reconstruction. And it becomes necessary to discern how one may undertake the task of foundation and determine the domains to which it must extend.",
+                "PhiH.textAnalysis.descartes.text.title": "The Text",
+                "PhiH.textAnalysis.descartes.text.content": "It is certain that we do not see people demolish all the houses of a city for the sole reason of rebuilding them differently and making its streets more beautiful; but we see that many demolish their own houses to rebuild them, and that they are sometimes compelled to do so when those houses are threatening ruin and their foundations are not solid. Following this model, I became convinced that it is not reasonable for an individual to form the design of reforming a State by changing all its foundations and overturning it in order to set it right, nor even of reforming the entire body of the sciences [1] or the order established in the schools for teaching them. But as for all the opinions I had received until then into my belief, I could do no better than to remove them [2] all at once, in order to put better ones in their place afterwards, or to restore them the same once I had adjusted them to the level of reason. And I firmly believed that by this means I would succeed in conducting my life [3] much better than if I built only on old foundations [4], and if I relied only on the principles I had allowed to be accepted in my youth, without ever examining whether they were true.",
+                "PhiH.textAnalysis.descartes.text.source": "R. Descartes, Discourse on the Method, éd. Vrin, pp. 61-62",
+                "PhiH.textAnalysis.descartes.author.title": "Author Presentation",
+                "PhiH.textAnalysis.descartes.author.alt": "René Descartes",
+                "PhiH.textAnalysis.descartes.author.content": "René Descartes (1596-1650) is a French philosopher and scientist, considered the founder of modern rationalism. Reason, according to him, is \"the thing best shared in the world\"; but its use cannot be sound in judgment, nor capable of liberating man from errors, illusions and the authority of the Ancients, without a method whose rules must be borrowed from mathematical rationality, by reason of its evidence and certainty. One must therefore practice a methodical doubt concerning all acquired knowledge, which prepares the discovery that the \"I think\" is the certainty which constitutes the condition of possibility of all certainty. Among his works: \"Rules for the Direction of the Mind\" (1628), \"Discourse on the Method\" (1637), \"Meditations on First Philosophy\" (1641), \"Principles of Philosophy\" (1644).",
+                "PhiH.textAnalysis.descartes.footnotes.title": "Footnotes",
+                "PhiH.textAnalysis.descartes.footnotes.item1": "<strong>(1) \"The entire body of the sciences\":</strong> the sciences are considered by Descartes as an indivisible whole; the Cartesian metaphor of the tree is undoubtedly the best expression of the unity of knowledge: \"All philosophy is like a tree, whose roots are metaphysics, whose trunk is physics, and whose branches emerging from this trunk are all the other sciences, which reduce to three principal ones, namely medicine, mechanics and morals.\"",
+                "PhiH.textAnalysis.descartes.footnotes.item2": "<strong>(2) \"Remove them\":</strong> allusion to the radical character of Cartesian doubt which will be adopted as method.",
+                "PhiH.textAnalysis.descartes.footnotes.item3": "<strong>(3) \"Conduct my life\":</strong> allusion to the fact that foundation is not limited to the domain of knowledge, but extends to the moral domain.",
+                "PhiH.textAnalysis.descartes.footnotes.item4": "<strong>(4) \"Old foundations\":</strong> allusion to the loss of confidence in Aristotelian science, which was adopted in the Middle Ages as an absolute cognitive reference, and which led to the fossilization and sterility of thought.",
+                "PhiH.textAnalysis.descartes.questions.title": "Tasks",
+                "PhiH.textAnalysis.descartes.questions.q1": "I determine the elements of the analogy adopted by the author.",
+                "PhiH.textAnalysis.descartes.questions.q2": "I exploit my acquisitions from the element devoted to the \"everyday\" and I show why Descartes decided to \"remove his opinions all together\".",
+                "PhiH.textAnalysis.descartes.questions.q3": "I recall from the history of thought an example for each of the two choices mentioned by the author:",
+                "PhiH.textAnalysis.descartes.questions.q3.item1": "\"Put better opinions in their place\".",
+                "PhiH.textAnalysis.descartes.questions.q3.item2": "\"Restore them the same once I had adjusted them to the level of reason\".",
+                "PhiH.textAnalysis.descartes.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.descartes.answers.a1.title": "Answer to the first task:",
+                "PhiH.textAnalysis.descartes.answers.a1.content": "Descartes adopts an analogy between two domains, to convince the reader of the necessity of the individual foundation of opinions. Its elements can be determined in the following table:<br><br><strong>1. The first term of the analogy (domain of architecture):</strong><br>– <strong>Houses and the city:</strong> they symbolize institutions and collective systems (the State, the sciences, the system of education).<br>– <strong>The individual house:</strong> it symbolizes the personal opinions of the individual.<br>– <strong>Reconstruction:</strong> it symbolizes the task of reform and foundation.<br>– <strong>Unstable foundations:</strong> they symbolize the loss of legitimacy and solidity.<br><br><strong>2. The second term of the analogy (domain of knowledge):</strong><br>– <strong>The State:</strong> it symbolizes the political system.<br>– <strong>The sciences and their system of education:</strong> they symbolize the cognitive and educational system.<br>– <strong>Personal opinions:</strong> they symbolize the knowledge acquired in childhood and youth.<br><br><strong>3. The elements of dissemblance (in what respect assimilation is not valid):</strong><br>– <strong>It is not permitted to the individual to demolish the State:</strong> \"it is not reasonable for an individual to form the design of reforming a State by changing all its foundations\".<br>– <strong>It is not permitted to the individual to demolish all the sciences:</strong> \"nor even of reforming the entire body of the sciences or the order established in the schools for teaching them\".<br><br><strong>4. The elements of resemblance that are valid (in what respect foundation is legitimate):</strong><br>– <strong>It is permitted to the individual to demolish his own opinions:</strong> \"as for all the opinions I had received until then into my belief, I could do no better than to remove them all at once\".<br>– <strong>Because personal opinions are \"his house\" that he has the right to rebuild:</strong> as one demolishes one's house to rebuild it.<br><br><strong>Conclusion:</strong> the Cartesian analogy rests on the distinction between:<br>– what is <em>collective</em> (the State, the sciences, the system of education) → it is not permitted to the individual to demolish it;<br>– what is <em>individual</em> (the personal opinions of the individual) → it is permitted to the individual, and even he must, to demolish it and rebuild it.<br>By this analogy, Descartes justifies his personal project of foundation, without claiming to reform society or the sciences as a whole.",
+                "PhiH.textAnalysis.descartes.answers.a2.title": "Answer to the second task:",
+                "PhiH.textAnalysis.descartes.answers.a2.content": "To show why Descartes decided to \"remove his opinions all together\", one can exploit the acquisitions from the element devoted to the \"everyday\":<br><br><strong>1. The \"everyday\" is the domain of uncritical reception:</strong> the everyday is characterized by opinions received and not constructed, inherited and not acquired, imposed by educational and social authority and not formulated by reason. The opinions Descartes received in his youth are of this nature: opinions received from masters and books, without having examined their truth.<br><br><strong>2. The \"everyday\" is the domain of unstable foundations:</strong> the opinions of the everyday do not rest on solid foundations, but on habit, tradition and authority. Their foundations are \"unstable\" – according to Descartes's own expression about the houses that \"are threatening ruin\".<br><br><strong>3. The impossibility of a partial reform of the opinions of the everyday:</strong> one cannot reform the opinions of the everyday one by one, because each is linked to the others, and because their common foundation (authority and tradition) is corrupt. Reforming some without the others leaves intact the corrupt foundation.<br><br><strong>4. The necessity of \"global extraction\" (methodical doubt):</strong> that is why the only solution is to \"remove\" all the opinions at once – that is, to suspend judgment about them – as one demolishes one's house entirely when its foundations are unstable. This is the Cartesian methodical doubt: a radical, total, global doubt, without exception.<br><br><strong>5. The function of \"global extraction\":</strong> this extraction is not an end in itself, but a means:<br>– either to put \"better\" opinions in the place of the removed opinions;<br>– or to restore the opinions themselves \"once they had been adjusted to the level of reason\".<br>Global extraction is thus the condition of possibility of foundation, because it creates the void in which one can build on solid foundations.<br><br><strong>Conclusion:</strong> Descartes decided to \"remove his opinions all together\" because his opinions – insofar as they belong to the \"everyday\" – are received and not constructed, their foundations are unstable, and it is impossible to reform them partially. Global extraction (methodical doubt) was therefore the only path to a reconstruction on solid foundations.",
+                "PhiH.textAnalysis.descartes.answers.a3.title": "Answer to the third task:",
+                "PhiH.textAnalysis.descartes.answers.a3.content": "<strong>A. Example of \"putting better opinions in their place\" (total substitution):</strong><br><br><strong>1. Scientific example: Einstein's theory of relativity in place of Newtonian physics:</strong> Einstein could not partially reform Newton's physics, but he had to substitute for its fundamental concepts (absolute space, absolute time, gravitation as force) new concepts (curved space-time, gravitation as curvature). He thus substituted for the old thesis a new thesis \"better\" in the explanation of phenomena.<br><br><strong>2. Chemical example: Lavoisier's theory of oxygen in place of the phlogiston theory:</strong> Lavoisier could not reform the phlogiston theory, but he replaced it with the theory of oxygen, thus performing a total substitution by a \"better\" thesis.<br><br><strong>3. Mathematical example: Descartes's analytic geometry in place of Euclidean geometry:</strong> Descartes did not content himself with reforming Euclidean geometry, but he replaced it with analytic geometry, which fuses algebra and geometry in a new method.<br><br><strong>B. Example of \"restoring them the same once I had adjusted them to the level of reason\" (restoration after purification):</strong><br><br><strong>1. Cartesian example: the \"I think\" (the cogito):</strong> Descartes doubted everything, but he could not doubt that he was thinking. He therefore restored this proposition – \"I think, therefore I am\" – after having purified it by reason, after having tested it by doubt and having seen it resist. These are opinions that were not substituted, but purified and restored.<br><br><strong>2. Philosophical example: the concept of substance in Spinoza and Leibniz:</strong> Spinoza and Leibniz did not replace the Cartesian concept of substance, but they purified it by reason and reformulated its conception (the single substance in Spinoza, the multiple substances in Leibniz).<br><br><strong>3. Ethical example: the value of justice in Rawls:</strong> Rawls did not replace the value of justice, but he purified it by reason through the concept of \"justice as fairness\", restoring it thus in itself – as value – after having purified it by the concept of social contract.<br><br><strong>4. Logical example: Aristotelian logic in modern logic:</strong> Aristotelian logic was not totally replaced, but it was purified and reformulated in modern symbolic logic, finding itself thus restored in itself – as logic – after having been purified by new mathematical tools.<br><br><strong>Conclusion comparative:</strong><br>– \"putting better opinions in their place\": <em>total substitution</em>, where the old thesis is rejected as a whole and replaced by another.<br>– \"restoring them the same once I had adjusted them to the level of reason\": <em>restoration after purification</em>, where the thesis is preserved in its essence, but purified and reformulated.<br>These two choices express two complementary strategies in the history of thought: the strategy of rupture (substitution) and the strategy of continuity (restoration). Both are legitimate in the path of foundation, according to what the situation demands.",
+                "PhiH.textAnalysis.descartes.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.descartes.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.descartes.analysis.thesis.content": "Descartes considers that the reform of knowledge can only be a radical foundation, not a partial reform. Just as one does not demolish an entire city, but one demolishes one's own house if its foundations are unstable, so it is not permitted to the individual to demolish the State, the sciences or the system of education, but it is permitted to him – and even he must – to remove his own opinions all together, in order to rebuild them on solid foundations. The Cartesian foundation thus starts from the individual self and from total methodical doubt, not from partial reforms.",
+                "PhiH.textAnalysis.descartes.analysis.mechanisms.title": "Mechanisms of the Cartesian foundation:",
+                "PhiH.textAnalysis.descartes.analysis.mechanisms.content": "- <strong>The discriminating analogy:</strong> distinction between the domain of the individual (personal opinions) and the domain of the collective (the State, the sciences), to convince the reader of the limits of his project.<br>- <strong>Global methodical doubt:</strong> \"remove the opinions all together\", as condition of a foundation of knowledge on solid foundations.<br>- <strong>Double reconstruction:</strong> either by putting better opinions in the place of the removed opinions, or by restoring the opinions themselves after having purified them by reason.<br>- <strong>The practical finality of foundation:</strong> \"conduct my life\" better – foundation is not purely theoretical, but aims at the improvement of practical and moral life.<br>- <strong>The rupture with the foundations of childhood:</strong> \"I relied only on the principles I had allowed to be accepted in my youth, without ever examining whether they were true\" – the rupture with the past is the condition of foundation.",
+                "PhiH.textAnalysis.descartes.analysis.consequences.title": "Consequences of this thesis:",
+                "PhiH.textAnalysis.descartes.analysis.consequences.content": "- <strong>Foundation of modern rationalism:</strong> Descartes proclaims the primacy of individual reason over authority and tradition, and founds modern philosophy on the thinking self.<br>- <strong>Foundation of methodical doubt:</strong> doubt becomes a method, not a final position; it is a means of acceding to certainty, not an end in itself.<br>- <strong>Rupture with Aristotelian science:</strong> Descartes breaks with the scholastic science that dominated the Middle Ages, and founds a new science resting on mathematics and observation.<br>- <strong>Broadening of the field of foundation:</strong> foundation is not limited to knowledge, but extends to morality and to the \"conduct of life\", becoming a global existential project.<br>- <strong>Foundation of methodological individualism:</strong> it is the individual – not the community – who constructs knowledge on solid foundations, which distinguishes modern philosophy from classical philosophy.",
+                "PhiH.textAnalysis.descartes.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.descartes.analysis.significance.content": "This text carries a profound philosophical significance in the history of philosophy:<br><br><strong>1. Epistemological significance:</strong> the text founds a new method in matters of knowledge, resting on methodical doubt and reconstruction. This method will become the model of all modern philosophy.<br><br><strong>2. Methodological significance:</strong> the text offers a model of foundation resting on:<br>– the distinction between the domain of the individual and that of the collective;<br>– the global extraction of opinions (methodical doubt);<br>– the reconstruction on solid foundations;<br>– the practical finality (the conduct of life).<br><br><strong>3. Ethical significance:</strong> the text shows that foundation is not a simple theoretical operation, but an ethical and existential project, aiming to \"conduct my life\" better. Philosophy is not only a theoretical research, but an art of living.<br><br><strong>4. Educational significance:</strong> the text criticizes traditional education which inculcates opinions without examining them, and founds a new education resting on doubt, examination and reconstruction.<br><br><strong>5. Link of the text with the lesson (foundation):</strong> the text represents a foundational moment in the history of philosophy, where foundation is redefined as:<br>– rupture with old foundations (loss of confidence in Aristotelian science);<br>– global extraction of opinions (methodical doubt);<br>– construction on solid foundations (the thinking self, evidence, certainty).<br>It thus prepares the text of Kant, which will present a different conception of foundation: foundation on the \"a priori concepts of pure reason\", not on the \"thinking self\"."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.descartes.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.descartes.title": "تحليل النص: ضرورة التأسيس - روني ديكارت",
+                "PhiH.textAnalysis.descartes.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.descartes.introduction.content": "كلَّما شهد تاريخ الفكر البشري فترات تحوُّل نوعي تأتي على النظريات والمناهج والمبادئ، إلاَّ وطرح على المفكرين مهمة قديمة جديدة هي مهمة إعادة البناء. وبات من الضروري أن نتبيّن على أي نحو يمكن الاضطلاع بمهمة التأسيس، وتحديد المجالات التي ينبغي أن يمتدَّ إليها.",
+                "PhiH.textAnalysis.descartes.text.title": "النص",
+                "PhiH.textAnalysis.descartes.text.content": "من المؤكد أننا لا نرى الناس يهدمون كلَّ بيوت مدينة لمجرَّد إعادة بنائها على نحو مخالف، وجعل طرقها أكثر جمالاً، ولكننا نرى أنَّ الكثيرين يهدمون منازلهم لإعادة بنائها، وربما أُجبروا أحياناً على ذلك عندما تأذن بالانهيار، وعندما تكون غير ثابتة الأسس. وعلى ذلك المنوال اقتنعت أنه من غير المعقول أن يضع أحد الأفراد لنفسه مشروعاً لإصلاح دولة بتغيير كلَّ ما فيها من الأسس، وقلبها قلباً حتى تُقوَّم، أو حتى لإصلاح كلَّ العلوم[1] أو نظام تدريسها السائد بالمدارس. ولكن بخصوص كلَّ الآراء التي تلقَّيتها إلى ذلك الحدَّ في اعتقادي، فإنَّ أحسن ما كنت أستطيعه بشأنها هو السعي إلى انتزاعها[2] دفعة واحدة، كي أضع مكانها فيما بعد ما هو أحسن منها، أو أستعيدها بذاتها عندما أكون قد سوَّيتها وفق العقل. واعتقدت راسخاً أنني سأنجح بذلك في توجيه حياتي[3] أحسن مما لو أنني لم أبنِ إلاَّ على أسس قديمة[4]، ولم أستند إلاَّ إلى المبادئ التي تركت نفسي تقتنع بها في شبابي، دون أن أنظر البتة في ما إذا كانت صحيحة.",
+                "PhiH.textAnalysis.descartes.text.source": "ديكارت، مقالة الطريقة - R. Descartes, Discours de la méthode, éd. Vrin, pp. 61-62",
+                "PhiH.textAnalysis.descartes.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.descartes.author.alt": "روني ديكارت",
+                "PhiH.textAnalysis.descartes.author.content": "روني ديكارت (1596-1650) فيلسوف وعالم فرنسي، يُعدّ مؤسّس العقلانية الحديثة. فالعقل لديه \"أعدل الأشياء توزعاً بين البشر\"، غير أنّ استعماله لا يكون سديداً في الحكم، وقادراً على تحرير الإنسان من الأخطاء والأوهام وسلطة القدامى، إلا بمنهج ينبغي استلهام قواعده من معقولية الرياضيات، نظراً لما تتميّز به من يقين وبداهة. لذلك يتعيّن ممارسة شك منهجيّ في كل المعارف المكتسبة، مما يهيئ لاكتشاف أنّ \"الأنا أفكر\" هو اليقين الذي يُمثّل شرط إمكان كل يقين. من مؤلفاته: \"قواعد في توجيه الذهن\" (1628)، \"حديث الطريقة\" (1637)، \"تأمّلات ميتافيزيقية\" (1641)، \"مبادئ الفلسفة\" (1644).",
+                "PhiH.textAnalysis.descartes.footnotes.title": "الهوامش",
+                "PhiH.textAnalysis.descartes.footnotes.item1": "<strong>(1) \"كلّ العلوم\":</strong> تُعتبر العلوم عند ديكارت كلاً لا يتجزأ، ولعلّ مجاز الشجرة الديكارتي أفضل تعبير عن وحدة المعارف: \"فكلّ الفلسفة بمثابة شجرة، جذورها الميتافيزيقا، وجذعها الفيزياء، وفروعها الطب والميكانيكا والأخلاق\".",
+                "PhiH.textAnalysis.descartes.footnotes.item2": "<strong>(2) \"انتزاعها\":</strong> إشارة إلى الطابع الجذري للشكّ الديكارتي الذي سيُعتمد كمنهج.",
+                "PhiH.textAnalysis.descartes.footnotes.item3": "<strong>(3) \"توجيه حياتي\":</strong> إشارة إلى أنّ التأسيس لا يقتصر على المجال المعرفي، وإنما يمتدّ ليشمل المجال الأخلاقي.",
+                "PhiH.textAnalysis.descartes.footnotes.item4": "<strong>(4) \"أسس قديمة\":</strong> إشارة إلى فقدان الثقة في العلم الأرسطي الذي اعتُمد في القرون الوسطى كمرجع معرفي مطلق، وانتهى إلى تكليس الفكر وعقمه.",
+                "PhiH.textAnalysis.descartes.questions.title": "المهام",
+                "PhiH.textAnalysis.descartes.questions.q1": "أحدّد عناصر المماثلة التي اعتمدها الكاتب.",
+                "PhiH.textAnalysis.descartes.questions.q2": "أستثمر مكتسباتي من العنصر الخاص \"باليومي\" وأبيّن لماذا قرّر ديكارت \"انتزاع آرائه دفعة واحدة\".",
+                "PhiH.textAnalysis.descartes.questions.q3": "أستحضر من تاريخ الفكر مثالاً عن كلّ اختيار من الاختيارين التاليين اللذين أوردهما الكاتب:",
+                "PhiH.textAnalysis.descartes.questions.q3.item1": "\"أضع مكانها ما هو أحسن منها\".",
+                "PhiH.textAnalysis.descartes.questions.q3.item2": "\"أستعيدها بذاتها عندما أكون قد صقلتها بالعقل\".",
+                "PhiH.textAnalysis.descartes.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.descartes.answers.a1.title": "الإجابة عن المهمة الأولى:",
+                "PhiH.textAnalysis.descartes.answers.a1.content": "اعتمد ديكارت مماثلةً بين مجاليْن، لإقناع القارئ بضرورة التأسيس الفردي للآراء. ويمكن تحديد عناصرها في الجدول التالي:<br><br><strong>1. الطرف الأول من المماثلة (مجال العمران):</strong><br>– <strong>البيوت والمدينة:</strong> يرمزان إلى المؤسسات والأنظمة الجماعية (الدولة، العلوم، نظام التدريس).<br>– <strong>المنزل الواحد:</strong> يرمز إلى الآراء الشخصية للفرد.<br>– <strong>إعادة البناء:</strong> ترمز إلى مهمة الإصلاح والتأسيس.<br>– <strong>الأسس غير الثابتة:</strong> ترمز إلى فقدان المشروعية والصلابة.<br><br><strong>2. الطرف الثاني من المماثلة (مجال المعرفة):</strong><br>– <strong>الدولة:</strong> ترمز إلى النظام السياسي.<br>– <strong>العلوم ونظام تدريسها:</strong> يرمزان إلى المنظومة المعرفية والتربوية.<br>– <strong>الآراء الشخصية:</strong> ترمز إلى المعارف المكتسبة في الطفولة والشباب.<br><br><strong>3. عناصر الافتراق (ما لا يصحّ فيه التماثل):</strong><br>– <strong>لا يصحّ للفرد أن يهدم الدولة:</strong> \"من غير المعقول أن يضع أحد الأفراد لنفسه مشروعاً لإصلاح دولة بتغيير كلَّ ما فيها من الأسس\".<br>– <strong>لا يصحّ للفرد أن يهدم كلَّ العلوم:</strong> \"أو حتى لإصلاح كلَّ العلوم أو نظام تدريسها السائد بالمدارس\".<br><br><strong>4. عناصر التماثل الصحيحة (ما يصحّ فيه التأسيس):</strong><br>– <strong>يحقّ للفرد أن يهدم آراءه الخاصة:</strong> \"ولكن بخصوص كلَّ الآراء التي تلقَّيتها إلى ذلك الحدَّ في اعتقادي، فإنَّ أحسن ما كنت أستطيعه بشأنها هو السعي إلى انتزاعها دفعة واحدة\".<br>– <strong>لأنّ الآراء الشخصية هي \"منزله\" الذي يحقّ له إعادة بنائه:</strong> كما يهدم المرء منزله لإعادة بنائه.<br><br><strong>الخلاصة:</strong> المماثلة الديكارتية تقوم على التمييز بين:<br>– ما هو <em>جماعي</em> (الدولة، العلوم، نظام التدريس) → لا يحقّ للفرد أن يهدمه.<br>– ما هو <em>فردي</em> (آراء الفرد الخاصة) → يحقّ للفرد، بل يجب عليه، أن يهدمه ويعيد بناءه.<br>وبهذه المماثلة، يبرّر ديكارت مشروعه الشخصي في التأسيس، دون أن يدّعي إصلاح المجتمع أو العلوم جملةً.",
+                "PhiH.textAnalysis.descartes.answers.a2.title": "الإجابة عن المهمة الثانية:",
+                "PhiH.textAnalysis.descartes.answers.a2.content": "لبيان لماذا قرّر ديكارت \"انتزاع آرائه دفعة واحدة\"، يمكن استثمار مكتسباتنا من عنصر \"اليومي\":<br><br><strong>1. \"اليومي\" مجال التلقّي غير النقدي:</strong> يتميّز اليومي بأنّ آراءه متلقّاة لا مبنية، وموروثة لا مكتسبة، ومفروضة من السلطة التربوية والاجتماعية لا مُصاغة بالعقل. وآراء ديكارت التي تلقّاها في شبابه هي من هذا القبيل: آراء تلقّاها من الأساتذة والكتب دون أن ينظر في صحّتها.<br><br><strong>2. \"اليومي\" مجال الأسس غير الثابتة:</strong> آراء اليومي ليست مبنية على أسس راسخة، بل على العادة والتقليد والسلطة. فأسسها \"غير ثابتة\" – على حدّ تعبير ديكارت نفسه عن المنازل التي \"تأذن بالانهيار\".<br><br><strong>3. استحالة الإصلاح الجزئي لآراء اليومي:</strong> لا يمكن إصلاح آراء اليومي واحدةً واحدة، لأنّ كلّ رأي منها مرتبط بغيره، ولأنّ أساسها المشترك (السلطة والتقليد) فاسد. فإصلاح البعض دون البعض الآخر يُبقي الأساس الفاسد قائماً.<br><br><strong>4. ضرورة \"الانتزاع الدفعي\" (الشك المنهجي):</strong> لذلك، فالحلّ الوحيد هو \"انتزاع\" الآراء كلها دفعة واحدة – أي تعليق الحكم فيها جميعاً – كما يهدم المرء منزله بكامله حين تكون أسسه غير ثابتة. وهذا هو الشكّ المنهجي الديكارتي: شكّ جذري، شامل، دفعي، لا استثناء فيه.<br><br><strong>5. وظيفة \"الانتزاع الدفعي\":</strong> هذا الانتزاع ليس غاية في نفسه، بل هو وسيلة:<br>– إمّا لوضع \"ما هو أحسن\" مكان الآراء المنتزعة.<br>– وإمّا لاستعادة الآراء نفسها \"بعد أن تُصفّى بالعقل\".<br>فالانتزاع الدفعي هو شرط إمكان التأسيس، لأنّه يخلق الفراغ الذي يمكن أن يُبنى فيه على أسس راسخة.<br><br><strong>الخلاصة:</strong> قرّر ديكارت \"انتزاع آرائه دفعة واحدة\" لأنّ آراءه – بحكم كونها من \"اليومي\" – متلقّاة لا مبنية، وأسسها غير ثابتة، ولا يمكن إصلاحها جزئياً. فكان الانتزاع الدفعي (الشك المنهجي) هو الطريق الوحيد لإعادة البناء على أسس راسخة.",
+                "PhiH.textAnalysis.descartes.answers.a3.title": "الإجابة عن المهمة الثالثة:",
+                "PhiH.textAnalysis.descartes.answers.a3.content": "<strong>أ. مثال عن \"أضع مكانها ما هو أحسن منها\" (الاستبدال الكامل):</strong><br><br><strong>1. مثال علمي: نظرية النسبية لأينشتاين محلّ الفيزياء النيوتنية:</strong> لم يستطع أينشتاين إصلاح فيزياء نيوتن جزئياً، بل اضطرّ إلى استبدال مفاهيمها الأساسية (المكان المطلق، الزمان المطلق، الجاذبية كقوة) بمفاهيم جديدة (الزمكان المنحني، الجاذبية كانحناء). فاستبدل الأطروحة القديمة بأطروحة جديدة \"هي أحسن منها\" في تفسير الظواهر.<br><br><strong>2. مثال كيميائي: نظرية الأكسجين للافوازييه محلّ نظرية الفلوجستون:</strong> لم يستطع لافوازييه إصلاح نظرية الفلوجستون، بل استبدلها بنظرية الأكسجين، فكان استبدالاً كاملاً بأطروحة \"هي أحسن منها\".<br><br><strong>3. مثال رياضي: الهندسة التحليلية لديكارت محلّ الهندسة الإقليدية:</strong> لم يكتفِ ديكارت بإصلاح الهندسة الإقليدية، بل استبدلها بالهندسة التحليلية، التي تدمج الجبر والهندسة في منهج جديد.<br><br><strong>ب. مثال عن \"أستعيدها بذاتها عندما أكون قد صقلتها بالعقل\" (الاستعادة بعد التصفية):</strong><br><br><strong>1. مثال ديكارتي: \"الأنا أفكر\" (الكوجيتو):</strong> شكّ ديكارت في كلّ شيء، لكنه لم يستطع الشكّ في أنه يفكّر. فاستعاد هذه القضية – \"أنا أفكر، إذن أنا موجود\" – بعد أن صقلها بالعقل، بعد أن اختبرها الشكّ فقاومته. فهي آراء لم تُستبدل، بل صُقلت واستُعيدت.<br><br><strong>2. مثال فلسفي: مفهوم الجوهر عند سبينوزا ولايبنتز:</strong> لم يستبدل سبينوزا ولايبنتز مفهوم الجوهر الديكارتي، بل صقلاه بالعقل وأعادا صياغته (الجوهر الواحد عند سبينوزا، الجواهر المتعددة عند لايبنتز).<br><br><strong>3. مثال أخلاقي: قيمة العدالة عند رولز:</strong> لم يستبدل رولز قيمة العدالة، بل صقلها بالعقل عبر مفهوم \"العدالة كإنصاف\"، فأعاد استعادتها بذاتها – كقيمة – بعد أن صقلها بمفهوم العقد الاجتماعي.<br><br><strong>4. مثال منطقي: المنطق الأرسطي في المنطق الحديث:</strong> لم يُستبدل المنطق الأرسطي كلياً، بل صُقل وأُعيدت صياغته في المنطق الرمزي الحديث، فاستعيد بذاته – كمنطق – بعد أن صُقل بأدوات رياضية جديدة.<br><br><strong>الخلاصة المقارنة:</strong><br>– \"أضع مكانها ما هو أحسن منها\": <em>استبدال كامل</em>، حيث تُرفض الأطروحة القديمة كلياً وتُستبدل بأخرى.<br>– \"أستعيدها بذاتها بعد أن أصقلها بالعقل\": <em>استعادة بعد تصفية</em>، حيث تُحفظ الأطروحة في جوهرها، لكنها تُصقل وتُعاد صياغتها.<br>وهذان الاختياران يعبّران عن استراتيجيتين متكاملتين في تاريخ الفكر: استراتيجية القطيعة (الاستبدال)، واستراتيجية الاستمرارية (الاستعادة). وكلتاهما مشروعتان في مسار التأسيس، بحسب ما يقتضيه المقام.",
+                "PhiH.textAnalysis.descartes.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.descartes.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.descartes.analysis.thesis.content": "يرى ديكارت أنّ إصلاح المعرفة لا يكون إلا بتأسيس جذري، لا بإصلاح جزئي. وكما أنّ المرء لا يهدم مدينة كاملة، بل يهدم منزله إذا كانت أسسه غير ثابتة، فكذلك لا يحقّ للفرد أن يهدم الدولة أو العلوم أو نظام التدريس، بل يحقّ له – بل يجب عليه – أن ينتزع آراءه الخاصة دفعة واحدة، ليعيد بناءها على أسس راسخة. فالتأسيس الديكارتي يبدأ من الذات الفردية، ومن الشكّ المنهجي الشامل، لا من الإصلاحات الجزئية.",
+                "PhiH.textAnalysis.descartes.analysis.mechanisms.title": "آليات التأسيس الديكارتي:",
+                "PhiH.textAnalysis.descartes.analysis.mechanisms.content": "- <strong>المماثلة التمييزية:</strong> التمييز بين مجال الفرد (الآراء الشخصية) ومجال الجماعة (الدولة، العلوم)، لإقناع القارئ بحدود مشروعه.<br>- <strong>الشكّ المنهجي الدفعي:</strong> \"انتزاع الآراء دفعة واحدة\"، كشرط لتأسيس المعرفة على أسس راسخة.<br>- <strong>إعادة البناء المزدوجة:</strong> إما بوضع ما هو أحسن مكان الآراء المنتزعة، أو باستعادة الآراء نفسها بعد صقلها بالعقل.<br>- <strong>الغاية العملية للتأسيس:</strong> \"توجيه حياتي أحسن\" – فالتأسيس ليس نظرياً مجرّداً، بل يهدف إلى تحسين الحياة العملية والأخلاقية.<br>- <strong>القطيعة مع أسس الطفولة:</strong> \"لم أستند إلاَّ إلى المبادئ التي تركت نفسي تقتنع بها في شبابي، دون أن أنظر البتة في ما إذا كانت صحيحة\" – فالقطيعة مع الماضي شرط التأسيس.",
+                "PhiH.textAnalysis.descartes.analysis.consequences.title": "النتائج المترتبة على هذه الأطروحة:",
+                "PhiH.textAnalysis.descartes.analysis.consequences.content": "- <strong>تأسيس العقلانية الحديثة:</strong> ديكارت يُعلن أولوية العقل الفردي على السلطة والتقليد، ويؤسّس للفلسفة الحديثة القائمة على الذات المفكرة.<br>- <strong>تأسيس الشكّ المنهجي:</strong> الشكّ يصبح منهجاً، لا موقفاً نهائياً؛ فهو وسيلة للوصول إلى اليقين، لا غاية في نفسه.<br>- <strong>القطيعة مع العلم الأرسطي:</strong> ديكارت يقطع مع العلم السكولائي الذي كان سائداً في القرون الوسطى، ويؤسّس لعلم جديد قائم على الرياضيات والملاحظة.<br>- <strong>توسيع مجال التأسيس:</strong> التأسيس لا يقتصر على المعرفة، بل يمتدّ إلى الأخلاق وإلى \"توجيه الحياة\"، فيصبح مشروعاً وجودياً شاملاً.<br>- <strong>تأسيس الفردية المنهجية:</strong> الفرد – لا الجماعة – هو من يبني المعرفة على أسس راسخة، وهذا ما يميز الحداثة الفلسفية عن الفلسفة الكلاسيكية.",
+                "PhiH.textAnalysis.descartes.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.descartes.analysis.significance.content": "يحمل هذا النص دلالة فلسفية عميقة في تاريخ الفلسفة:<br><br><strong>1. دلالة إبستمولوجية:</strong> النص يؤسّس لمنهج جديد في المعرفة، يقوم على الشكّ المنهجي وإعادة البناء. وهذا المنهج سيصبح نموذجاً للفلسفة الحديثة كلها.<br><br><strong>2. دلالة منهجية:</strong> النص يقدّم نموذجاً للتأسيس يقوم على:<br>– التمييز بين مجال الفرد ومجال الجماعة.<br>– الانتزاع الدفعي للآراء (الشكّ المنهجي).<br>– إعادة البناء على أسس راسخة.<br>– الغاية العملية (توجيه الحياة).<br><br><strong>3. دلالة أخلاقية:</strong> النص يُبيّن أنّ التأسيس ليس مجرّد عملية نظرية، بل هو مشروع أخلاقي ووجودي، يهدف إلى \"توجيه حياتي أحسن\". فالفلسفة ليست بحثاً نظرياً فحسب، بل هي فنّ العيش.<br><br><strong>4. دلالة تربوية:</strong> النص يُوجّه نقداً للتربية التقليدية التي تلقّن الآراء دون فحصها، ويؤسّس لتربية جديدة تقوم على الشكّ والفحص وإعادة البناء.<br><br><strong>5. صلة النص بالدرس (التأسيس):</strong> النص يمثّل لحظة تأسيسية في تاريخ الفلسفة، حيث يُعاد تعريف التأسيس بوصفه:<br>– قطيعة مع الأسس القديمة (فقدان الثقة في العلم الأرسطي).<br>– انتزاعاً دفعياً للآراء (الشكّ المنهجي).<br>– بناءً على أسس راسخة (الذات المفكرة، البداهة، اليقين).<br>وهو بذلك يُمهّد لنص كانط الذي سيقدّم تصوراً مختلفاً للتأسيس: التأسيس على \"المفاهيم القبلية للعقل المحض\"، لا على \"الأنا المفكرة\"."
+            }
+        };
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

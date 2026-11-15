@@ -175,41 +175,6 @@ const PhiH_Authors = {
 			"deathYear": "1728"
 		}
 	},
-    "john_stuart_mill": {
-        "ar": {
-            "name": "جون ستيوارت ميل",
-            "image": "assets/images/john_stuart_mill.jpg",
-            "alt": "جون ستيوارت ميل",
-            "content": "جون ستيوارت ميل (1806-1873) فيلسوف ورجل اقتصاد إنجليزي ليبرالي النزعة عصامي التكوين، حذق لغات عديدة وبرع في الرياضيات والمنطق منذ حداثة سنه، من منظري النزعة النّفعيّة انتخب نائبا بمجلس العموم البريطاني دافع عن حق المرأة في الانتخاب وكان ذلك من بين أسباب عدم إعادة انتخابه. من بين مؤلفاته: مبادئ الاقتصاد السياسي (1848)، الحرية (1859)، النزعة النفعية (1861)، في استعباد النساء (1869)، نسق المنطق الاستنتاجي والاستقرائي (1869 ط 6).",
-			"century": "19th",
-			"school": "النفعية",
-			"themes": ["الحرية", "الأخلاق", "الاقتصاد", "المنطق"],
-			"birthYear": "1806",
-			"deathYear": "1873"
-		},
-        "fr": {
-            "name": "John Stuart Mill",
-            "image": "assets/images/john_stuart_mill.jpg",
-            "alt": "John Stuart Mill",
-            "content": "John Stuart Mill (1806-1873) philosophe et économiste anglais de tendance libérale, autodidacte de formation, maîtrisa plusieurs langues et excellait en mathématiques et en logique dès son jeune âge. Théoricien de l'utilitarisme, il fut élu député à la Chambre des communes britannique, défendit le droit de vote des femmes, ce qui fut l'une des raisons de sa non-réélection. Parmi ses œuvres : Principes d'économie politique (1848), De la liberté (1859), L'utilitarisme (1861), De l'assujettissement des femmes (1869), Système de logique déductive et inductive (6e éd. 1869).",
-			"century": "19th",
-			"school": "Utilitarisme",
-			"themes": ["liberté", "éthique", "économie", "logique"],
-			"birthYear": "1806",
-			"deathYear": "1873"
-		},
-        "en": {
-            "name": "John Stuart Mill",
-            "image": "assets/images/john_stuart_mill.jpg",
-            "alt": "John Stuart Mill",
-            "content": "John Stuart Mill (1806-1873) English philosopher and economist of liberal tendency, self-taught in formation, mastered several languages and excelled in mathematics and logic from a young age. A theorist of utilitarianism, he was elected as a Member of Parliament to the British House of Commons, defended women's suffrage, which was one of the reasons for his non-reelection. Among his works: Principles of Political Economy (1848), On Liberty (1859), Utilitarianism (1861), The Subjection of Women (1869), A System of Logic, Ratiocinative and Inductive (6th ed. 1869).",
-			"century": "19th",
-			"school": "Utilitarianism",
-			"themes": ["liberty", "ethics", "economy", "logic"],
-			"birthYear": "1806",
-			"deathYear": "1873"
-		}
-	},
     "pierre_bayle": {
         "ar": {
             "name": "بيار بابل",
@@ -978,6 +943,286 @@ const PhiH_Authors = {
             "themes": ["Nazi ideology", "Racism", "Chauvinistic nationalism", "World War II", "Dictatorship"],
             "birthYear": "1889",
             "deathYear": "1945"
+        }
+    },
+	"paul_ricoeur": {
+        "ar": {
+            "name": "ب. ريكور",
+            "image": "assets/images/paul_ricoeur.jpg",
+            "alt": "ب. ريكور",
+            "content": "فيلسوف فرنسي معاصر، هو أبرز ممثل للتيار التأويلي الذي يعمل المتنبئ إليه على فهم الثقافة الإنسانية وتأويل دلالتها. والتأويلية، في مقابل التفسير السببي المعتمد في علوم الطبيعة وعلوم الإنسان هي طريقة تعتمد الفهم ولا تتعلق إلا بالعالم الإنساني الذي تستنطق علاماته في شموليتها طلبا لمعانيها. اشتهر ريكور بمحاورته لأهم التيارات الفكرية المعاصرة كالماركسية والفرودية والبنوية والفلسفة التحليلية. من أهم مؤلفاته: \"التاريخ والحقيقة\" (1955) \"فلسفة الإرادة\" (1960) \"في التأويل: محاولة حول فرويد\" (1961) \"سجال التأويلات: محاولات هرمينوطيقية\" (1969)، \"من النص إلى الفعل: محاولات هرمينوطيقية\" (1986)، \"الذات عينها كآخر\" (1990).",
+            "century": "20th-21st",
+            "school": "التأويلية",
+            "themes": ["التأويل", "الثقافة الإنسانية", "الدلالة", "النص", "الفعل", "الذات", "الآخر", "التاريخ", "الإرادة"],
+            "birthYear": "1913",
+            "deathYear": "2005"
+        },
+        "fr": {
+            "name": "Paul Ricœur",
+            "image": "assets/images/paul_ricoeur.jpg",
+            "alt": "Paul Ricœur",
+            "content": "Philosophe français contemporain, il est le représentant le plus éminent du courant herméneutique, qui vise à comprendre la culture humaine et à interpréter sa signification. L’herméneutique, par opposition à l’explication causale employée dans les sciences de la nature et les sciences humaines, est une méthode fondée sur la compréhension et ne concerne que le monde humain, dont elle interroge les signes dans leur totalité en quête de leurs sens. Ricœur est connu pour son dialogue avec les principaux courants intellectuels contemporains tels que le marxisme, la psychanalyse freudienne, le structuralisme et la philosophie analytique. Œuvres principales : Histoire et vérité (1955), Philosophie de la volonté (1960), De l’interprétation : essai sur Freud (1961), Le conflit des interprétations : essais d’herméneutique (1969), Du texte à l’action : essais d’herméneutique (1986), Soi-même comme un autre (1990).",
+            "century": "20th-21st",
+            "school": "herméneutique",
+            "themes": ["interprétation", "culture humaine", "signification", "texte", "action", "soi", "autre", "histoire", "volonté"],
+            "birthYear": "1913",
+            "deathYear": "2005"
+        },
+        "en": {
+            "name": "Paul Ricœur",
+            "image": "assets/images/paul_ricoeur.jpg",
+            "alt": "Paul Ricœur",
+            "content": "A contemporary French philosopher and the most prominent representative of the hermeneutic current, which seeks to understand human culture and interpret its meaning. Hermeneutics, as opposed to causal explanation used in the natural and human sciences, is a method based on understanding and concerns only the human world, whose signs it interrogates in their totality in search of their meanings. Ricœur is known for his dialogue with major contemporary intellectual currents such as Marxism, Freudianism, structuralism, and analytic philosophy. Major works: History and Truth (1955), Philosophy of the Will (1960), On Interpretation: Essay on Freud (1961), The Conflict of Interpretations: Hermeneutic Essays (1969), From Text to Action: Hermeneutic Essays (1986), Oneself as Another (1990).",
+            "century": "20th-21st",
+            "school": "Hermeneutics",
+            "themes": ["interpretation", "human culture", "meaning", "text", "action", "self", "other", "history", "will"],
+            "birthYear": "1913",
+            "deathYear": "2005"
+        }
+    },
+    "friedrich_nietzsche": {
+        "ar": {
+            "name": "فريديريك نيتشه",
+            "image": "assets/images/friedrich_nietzsche.jpg",
+            "alt": "فريديريك نيتشه",
+            "content": "فيلسوف ألماني من عائلة متدينة حيث كان أبوه وجده قسيسين. وبينما كان يستعد في سن السابعة عشرة لأن يصبح قسا هو الآخر، عاش أزمة روحية وضعت حدّا لمشروعته فوجّه إلى الدراسية الفيلولوجية أي التحليل النقدي للغة. لاحظ نيتشه مبكرا أن الأخلاق تتأسس على ثلاثة مبادئ كبيرة وإطلاقية وكونية وهي \"العقل والله والحقيقة\"، لكنّه لاحظ أيضا أن الطابع الثابت لهذه المبادئ لم يمنع القيم الأخلاقية من أن تكون متغيّرة حسب الحقب، وذلك ما قاده إلى إعادة صياغة السؤال بشأن القيم. ابتدع المنهج الجنيالوجي (النسابي) للبحث في شروط تشكل القيم والنتاجات الثقافية عامة باعتبارها أقدنة يتخفى وراءها صراع قوى يصنفها نيتشه إلى قوى فاعلة تنتصر للحياة وقوى ارتكاسية تزهد في الحيوي وتحتفره. من مولفاته: \"مولد الراجيديا\" (1872)، \"إنساني مفرط في الإنسانية\" (1878)، \"المعرفة الجذل\" (1882)، \"هكذا تكلم زرادشت\" (1883–1885)، \"إرادة القوة\" (1884–1886)، \"فيما وراء الخير والشر\" (1886)، \"نسبة الأخلاق\" (1887)، ثم توقّف عن الكتابة بسبب المرض إلى أن مات سنة (1900) تاركا وراءه فلسفة هي من أكثر الفلسفات ثراء.",
+            "century": "19th",
+            "school": "الجنيالوجيا (النسابية)",
+            "themes": ["الأخلاق", "القيم", "القوة", "الحياة", "الجنيالوجيا", "نقد الميتافيزيقا"],
+            "birthYear": "1844",
+            "deathYear": "1900"
+        },
+        "fr": {
+            "name": "Friedrich Nietzsche",
+            "image": "assets/images/friedrich_nietzsche.jpg",
+            "alt": "Friedrich Nietzsche",
+            "content": "Philosophe allemand issu d’une famille religieuse, son père et son grand-père étaient pasteurs. Alors qu’il se préparait, à dix-sept ans, à devenir pasteur, il vécut une crise spirituelle qui mit fin à ce projet ; il se tourna alors vers la philologie, c’est-à-dire l’analyse critique du langage. Nietzsche remarqua très tôt que la morale se fonde sur trois grands principes absolus et universels — « la raison, Dieu et la vérité » — mais aussi que le caractère fixe de ces principes n’empêchait pas les valeurs morales de varier selon les époques, ce qui le conduisit à reformuler la question des valeurs. Il inventa la méthode généalogique pour rechercher les conditions de formation des valeurs et des productions culturelles en général, comme des couches derrière lesquelles se cache une lutte de forces que Nietzsche classe en forces actives qui affirment la vie et forces réactives qui renoncent au vital et le méprisent. Œuvres : La Naissance de la tragédie (1872), Humain, trop humain (1878), Le Gai Savoir (1882), Ainsi parlait Zarathoustra (1883–1885), La Volonté de puissance (1884–1886), Par-delà le bien et le mal (1886), Généalogie de la morale (1887) ; puis il cessa d’écrire en raison de la maladie jusqu’à sa mort en 1900, laissant derrière lui l’une des philosophies les plus riches.",
+            "century": "19th",
+            "school": "généalogie",
+            "themes": ["morale", "valeurs", "puissance", "vie", "généalogie", "critique de la métaphysique"],
+            "birthYear": "1844",
+            "deathYear": "1900"
+        },
+        "en": {
+            "name": "Friedrich Nietzsche",
+            "image": "assets/images/friedrich_nietzsche.jpg",
+            "alt": "Friedrich Nietzsche",
+            "content": "A German philosopher from a religious family; his father and grandfather were priests. While preparing at seventeen to become a priest, he experienced a spiritual crisis that ended that project, so he turned to philology, i.e., the critical analysis of language. Nietzsche noted early that morality is founded on three great, absolute, universal principles—\"reason, God, and truth\"—but also that the fixed character of these principles did not prevent moral values from changing across eras, which led him to reformulate the question of values. He invented the genealogical method to investigate the conditions of formation of values and cultural products generally as layers behind which hides a struggle of forces, which Nietzsche classifies into active forces that affirm life and reactive forces that renounce the vital and despise it. Works: The Birth of Tragedy (1872), Human, All Too Human (1878), The Gay Science (1882), Thus Spoke Zarathustra (1883–1885), The Will to Power (1884–1886), Beyond Good and Evil (1886), On the Genealogy of Morality (1887); then he stopped writing due to illness until his death in 1900, leaving behind one of the richest philosophies.",
+            "century": "19th",
+            "school": "genealogy",
+            "themes": ["morality", "values", "power", "life", "genealogy", "critique of metaphysics"],
+            "birthYear": "1844",
+            "deathYear": "1900"
+        }
+    },
+    "jean_jacques_rousseau": {
+        "ar": {
+            "name": "جون جاك روسو",
+            "image": "assets/images/jean_jacques_rousseau.jpg",
+            "alt": "جون جاك روسو",
+            "content": "فيلسوف سويسري، من أبرز رموز حركة التنوير، غرف بقوله \"يولد الإنسان حرًا ولكنه في الأغلال حيثما كان\" وبين كيف تنقلب ميزة \"قابلية الاكتمال\" بحكم تلك الحرية لتصبح عامل تراجع له وانحطاط بدل أن تتقدّم به. وقد قاد ذلك روسو إلى النظر في أسباب ما يعانيه الإنسان من ضروب اللامساواة والاستبداد، فبين أن لا حلّ لهذا الوضع إلا بتأسيس تعاقدي للحكم السياسي ومشروع تربوي للأفراد. من أهم مؤلفاته: خطاب حول العلوم والفنون (1750)، خطاب حول أصل التفاوت بين البشر وأسسه (1755)، في العقد الاجتماعي (1762) وأميل أو في التربية (1762).",
+            "century": "18th",
+            "school": "التنوير",
+            "themes": ["الحرية", "اللامساواة", "العقد الاجتماعي", "التربية", "الاستبداد", "قابلية الاكتمال"],
+            "birthYear": "1712",
+            "deathYear": "1778"
+        },
+        "fr": {
+            "name": "Jean-Jacques Rousseau",
+            "image": "assets/images/jean_jacques_rousseau.jpg",
+            "alt": "Jean-Jacques Rousseau",
+            "content": "Philosophe suisse, l’un des principaux symboles du mouvement des Lumières, connu pour sa phrase « L’homme naît libre, et partout il est dans les fers », et il montra comment la caractéristique de la « perfectibilité », en vertu de cette liberté, se transforme en facteur de recul et de dégénérescence au lieu de le faire progresser. Cela conduisit Rousseau à examiner les causes de l’inégalité et du despotisme dont souffre l’être humain, en montrant qu’il n’y a de solution à cette situation que dans une fondation contractuelle du gouvernement politique et un projet éducatif pour les individus. Œuvres principales : Discours sur les sciences et les arts (1750), Discours sur l’origine et les fondements de l’inégalité parmi les hommes (1755), Du contrat social (1762) et Émile, ou De l’éducation (1762).",
+            "century": "18th",
+            "school": "Lumières",
+            "themes": ["liberté", "inégalité", "contrat social", "éducation", "despotisme", "perfectibilité"],
+            "birthYear": "1712",
+            "deathYear": "1778"
+        },
+        "en": {
+            "name": "Jean-Jacques Rousseau",
+            "image": "assets/images/jean_jacques_rousseau.jpg",
+            "alt": "Jean-Jacques Rousseau",
+            "content": "A Swiss philosopher and one of the most prominent figures of the Enlightenment, known for saying \"Man is born free, and everywhere he is in chains,\" and he showed how the feature of \"perfectibility,\" by virtue of that freedom, turns into a factor of decline and degeneration instead of advancing him. This led Rousseau to examine the causes of the inequality and despotism suffered by human beings, showing that there is no solution to this situation except a contractual foundation of political government and an educational project for individuals. Major works: Discourse on the Sciences and Arts (1750), Discourse on the Origin and Basis of Inequality Among Men (1755), On the Social Contract (1762), and Emile, or On Education (1762).",
+            "century": "18th",
+            "school": "Enlightenment",
+            "themes": ["freedom", "inequality", "social contract", "education", "despotism", "perfectibility"],
+            "birthYear": "1712",
+            "deathYear": "1778"
+        }
+    },
+    "chaim_perelman": {
+        "ar": {
+            "name": "ش. برلمان",
+            "image": "assets/images/chaim_perelman.jpg",
+            "alt": "ش. برلمان",
+            "content": "هو من أهم موسيّسي الخطابة الجديدة. ولد بفرصوفيا، التي هاجر منها إلى بلجيكا سنة 1925. تندرج أبحاثه ضمن مجالات عديدة مثل، الخطابة والحجاج، الفلسفة والأخلاق والحقوق. يتمثل مشروعه في وضع نظرية في الحجاج هي \"الخطابة الجديدة\" وتهدف إلى تحرير الحجاج من صرامة الاستدلال المنطقي الذي تكون فيه الحقيقة ضرورية وملزمة، وتشده إلى ضرب جديد من الخطابة تقوم على المعقولية والحرية والحوار المستند إلى الإقرار بتعدد الحقائق ونسبيتها والهادف إلى تحقيق الاقتناع conviction والوفاق بين المتحاورين واستبعاد كلّ أشكال العنف. إننا مع برلمان إزاء معقولية جديدة تشتغل داخل حقل الممكن وتتجاوز هيمنة النموذج الرياضي القائم على البرهنة والنموذج التجريبي القائم على التحقّق فضلا عن مجاوزتها للنزعة الربية. من أهم مؤلفاته: الخطابة والفلسفة (1952)، رسالة في الحجاج \"الخطابة الجديدة\" (1958)، الحقّ، الأخلاق والفلسفة (1968)، إمبراطورية الخطابة (1977).",
+            "century": "20th",
+            "school": "الخطابة الجديدة",
+            "themes": ["الحجاج", "الخطابة", "المعقولية", "الاقتناع", "الوفاق", "الحق", "الأخلاق"],
+            "birthYear": "1912",
+            "deathYear": "1984"
+        },
+        "fr": {
+            "name": "Chaïm Perelman",
+            "image": "assets/images/chaim_perelman.jpg",
+            "alt": "Chaïm Perelman",
+            "content": "L’un des plus importants théoriciens de la Nouvelle Rhétorique. Il est né à Varsovie, d’où il a émigré en Belgique en 1925. Ses recherches relèvent de nombreux domaines, tels que la rhétorique et l’argumentation, la philosophie, l’éthique et le droit. Son projet consiste à établir une théorie de l’argumentation, la « Nouvelle Rhétorique », qui vise à libérer l’argumentation de la rigidité de l’inférence logique où la vérité est nécessaire et contraignante, et à l’orienter vers un nouveau type de rhétorique fondé sur la raisonnabilité, la liberté et le dialogue, appuyé sur la reconnaissance de la pluralité et de la relativité des vérités, et visant la conviction et le consensus entre les interlocuteurs ainsi que l’exclusion de toutes les formes de violence. Avec Perelman, nous sommes devant une nouvelle raisonnabilité qui opère dans le champ du possible et dépasse la domination du modèle mathématique fondé sur la démonstration et du modèle expérimental fondé sur la vérification, tout en dépassant aussi le relativisme. Œuvres principales : Rhétorique et philosophie (1952), Traité de l’argumentation : la Nouvelle Rhétorique (1958), Droit, morale et philosophie (1968), L’Empire rhétorique (1977).",
+            "century": "20th",
+            "school": "Nouvelle Rhétorique",
+            "themes": ["argumentation", "rhétorique", "raisonnabilité", "conviction", "consensus", "droit", "éthique"],
+            "birthYear": "1912",
+            "deathYear": "1984"
+        },
+        "en": {
+            "name": "Chaïm Perelman",
+            "image": "assets/images/chaim_perelman.jpg",
+            "alt": "Chaïm Perelman",
+            "content": "One of the most important theorists of the New Rhetoric. He was born in Warsaw and emigrated from there to Belgium in 1925. His research falls within many fields, such as rhetoric and argumentation, philosophy, ethics, and law. His project consists in establishing a theory of argumentation, the \"New Rhetoric,\" which aims to free argumentation from the rigidity of logical inference in which truth is necessary and binding, and to draw it toward a new kind of rhetoric based on reasonableness, freedom, and dialogue grounded in the recognition of the plurality and relativity of truths, and aiming at conviction and consensus among interlocutors and the exclusion of all forms of violence. With Perelman we are before a new reasonableness operating within the field of the possible, going beyond the dominance of the mathematical model based on demonstration and the experimental model based on verification, as well as going beyond relativism. Major works: Rhetoric and Philosophy (1952), Treatise on Argumentation: The New Rhetoric (1958), Law, Ethics and Philosophy (1968), The Empire of Rhetoric (1977).",
+            "century": "20th",
+            "school": "New Rhetoric",
+            "themes": ["argumentation", "rhetoric", "reasonableness", "conviction", "consensus", "law", "ethics"],
+            "birthYear": "1912",
+            "deathYear": "1984"
+        }
+    },
+    "jurgen_habermas": {
+        "ar": {
+            "name": "يورغان هابرماس",
+            "image": "assets/images/jurgen_habermas.jpg",
+            "alt": "يورغان هابرماس",
+            "content": "فيلسوف وعالم اجتماع ألمان. ينتسب إلى مدرسة فرنكفورت. صاغ مفهومما جديدا للعقل هو العقل التواصلى واهتم بالتواصل في علاقته بالسلطة والتقنية. واشتهر ببحوثه في ايتيقا التواصل إلى جانب \"كارل أوتو آبل\". عوض الأمر القطعي عند كانط في مجال الأخلاق بمداً الحوار، فالاخلاقية عنده تتحدد في ضوء حوار حر. كما دعا ضد كل عنف إلى مراجعة مفهوم الدولة- الأمة والمواطنة في اتجاه احترام الأقليات. من أشهر كتبه: النظرية والبراكسيس (1963)، المعرفة والمنفعة (1968)، العلم والتقنية كإيديولوجيا (1968)، العقل والمشروعية (1973)، بعد ماركس (1976)، نظرية الفعل التواصلى (1981)، الأخلاق والتواصل (1983)، في ايتيقا الحوار (1992)، الحق والديمقراطية: بين الواقع والمعايير (1993)، الحقيقة والتبرير (1999).",
+            "century": "20th-21st",
+            "school": "مدرسة فرنكفورت",
+            "themes": ["العقل التواصلي", "التواصل", "السلطة", "التقنية", "أخلاق الحوار", "المواطنة", "الأقليات", "الديمقراطية"],
+            "birthYear": "1929",
+            "deathYear": "2026"
+        },
+        "fr": {
+            "name": "Jürgen Habermas",
+            "image": "assets/images/jurgen_habermas.jpg",
+            "alt": "Jürgen Habermas",
+            "content": "Philosophe et scientifique social allemand. Il appartient à l’École de Francfort. Il a formulé un nouveau concept de raison, la raison communicationnelle, et s’est intéressé à la communication dans son rapport au pouvoir et à la technique. Il est connu pour ses recherches en éthique de la discussion aux côtés de Karl-Otto Apel. Il a remplacé l’impératif catégorique de Kant en matière de morale par le dialogue : l’éthique, chez lui, se détermine à la lumière d’un dialogue libre. Il a également appelé, contre toute violence, à réviser le concept d’État-nation et de citoyenneté dans le sens du respect des minorités. Œuvres principales : Théorie et pratique (1963), Connaissance et intérêt (1968), La technique et la science comme idéologie (1968), Raison et légitimité (1973), Après Marx (1976), Théorie de l’agir communicationnel (1981), Morale et communication (1983), De l’éthique de la discussion (1992), Droit et démocratie : entre faits et normes (1993), Vérité et justification (1999).",
+            "century": "20th-21st",
+            "school": "École de Francfort",
+            "themes": ["raison communicationnelle", "communication", "pouvoir", "technique", "éthique de la discussion", "citoyenneté", "minorités", "démocratie"],
+            "birthYear": "1929",
+            "deathYear": "2026"
+        },
+        "en": {
+            "name": "Jürgen Habermas",
+            "image": "assets/images/jurgen_habermas.jpg",
+            "alt": "Jürgen Habermas",
+            "content": "A German philosopher and social scientist. He belongs to the Frankfurt School. He formulated a new concept of reason, namely communicative reason, and was concerned with communication in its relation to power and technology. He is known for his research in discourse ethics alongside Karl-Otto Apel. He replaced Kant’s categorical imperative in ethics with dialogue: ethics, for him, is determined in light of free dialogue. He also called, against all violence, for revising the concept of the nation-state and citizenship toward respect for minorities. Major works: Theory and Practice (1963), Knowledge and Human Interests (1968), Science and Technology as Ideology (1968), Reason and Legitimacy (1973), After Marx (1976), The Theory of Communicative Action (1981), Ethics and Communication (1983), On the Ethics of Dialogue (1992), Law and Democracy: Between Facts and Norms (1993), Truth and Justification (1999).",
+            "century": "20th-21st",
+            "school": "Frankfurt School",
+            "themes": ["communicative reason", "communication", "power", "technology", "discourse ethics", "citizenship", "minorities", "democracy"],
+            "birthYear": "1929",
+            "deathYear": "2026"
+        }
+    },
+    "hubert_grenier": {
+        "ar": {
+            "name": "هوبير غرونيي",
+            "image": "assets/images/hubert_grenier.jpg",
+            "alt": "هوبير غرونيي",
+            "content": "فيلسوف فرنسي معاصر، درس في قسنطينة وتونس وبواتيي قبل أن يلتحق بمعهد لويس لو غران. جعل من تدريس الفلسفة موضوع اشتغاله الأساسي حيث حرص على أن يجعل منه إطارا للتأمل والكتابة. عمل على أن يكون المدرس معلما يجسم مقتضيات التفكير بما يقدّمه من دروس لتلاميذه فيحرص في آن على وضوح الفكرة وجمال العبارة ودقتها متأثرا في ذلك بالآلان. علق أحد تلاميذه على مسيرته بالقول: «لقد سخر حياته للكتابة والتدريس، فلا يكتب إلا ليدرس». من أهم مؤلفاته: «المعرفة الفلسفية (1973)»، «المذاهب الأخلاقية الكبرى (1994)»، و«الحرية المرحة (نشر بعد وفاته 2003)».",
+            "century": "20th-21st",
+            "school": "فلسفة التدريس",
+            "themes": ["تدريس الفلسفة", "المعرفة الفلسفية", "الأخلاق", "الحرية", "الكتابة"],
+            "birthYear": "1929",
+            "deathYear": "1997"
+        },
+        "fr": {
+            "name": "Hubert Grenier",
+            "image": "assets/images/hubert_grenier.jpg",
+            "alt": "Hubert Grenier",
+            "content": "Philosophe français contemporain ; il a étudié à Constantine, Tunis et Poitiers avant de rejoindre l’institut Louis-le-Grand. Il a fait de l’enseignement de la philosophie son sujet principal, en cherchant à en faire un cadre de réflexion et d’écriture. Il s’est efforcé de faire de l’enseignant un maître qui incarne les exigences de la pensée à travers les leçons qu’il donne à ses élèves, tout en veillant à la clarté de l’idée et à la beauté et à la précision de l’expression, influencé en cela par Alain. Un de ses élèves a commenté sa carrière en disant : « Il a voué sa vie à l’écriture et à l’enseignement ; il n’écrit que pour enseigner. » Œuvres principales : La connaissance philosophique (1973), Les grandes doctrines morales (1994), et La liberté joyeuse (publié après sa mort en 2003).",
+            "century": "20th-21st",
+            "school": "philosophie de l’enseignement",
+            "themes": ["enseignement de la philosophie", "connaissance philosophique", "éthique", "liberté", "écriture"],
+            "birthYear": "1929",
+            "deathYear": "1997"
+        },
+        "en": {
+            "name": "Hubert Grenier",
+            "image": "assets/images/hubert_grenier.jpg",
+            "alt": "Hubert Grenier",
+            "content": "A contemporary French philosopher; he studied in Constantine, Tunis, and Poitiers before joining the Louis-le-Grand institute. He made the teaching of philosophy his main subject, seeking to make it a framework for reflection and writing. He worked to make the teacher a master who embodies the requirements of thought through the lessons he gives his students, while ensuring clarity of idea and beauty and precision of expression, influenced in this by Alain. One of his students commented on his career: \"He devoted his life to writing and teaching; he writes only in order to teach.\" Major works: Philosophical Knowledge (1973), The Great Moral Doctrines (1994), and Joyful Freedom (published posthumously in 2003).",
+            "century": "20th-21st",
+            "school": "philosophy of teaching",
+            "themes": ["teaching philosophy", "philosophical knowledge", "ethics", "freedom", "writing"],
+            "birthYear": "1929",
+            "deathYear": "1997"
+        }
+    },
+    "epicurus": {
+        "ar": {
+            "name": "أبقور",
+            "image": "assets/images/epicurus.jpg",
+            "alt": "أبقور",
+            "content": "فيلسوف يوناني أقام بأثينا مدرسة في «حديقة البهجة» ظل يدرس فيها الفلسفة حوالي 36 سنة. تقوم نظريته في المعرفة على منظور مادي حسي يعتبر فيه الإحساس والانطباعات معيارا للتمييز بين الصواب والخطأ، الحسن والقيح وأن مصدر الخطأ هو تأويلاتنا وأحكامنا بشأن تلك الإحساسات. والحكمة في نظره هي تحقيق للسعادة التي تكمن في الشعور باللذة ومفارقة الأم ولم وإزالتها بإقصاء أسباب الخوف التي يصنفها أبقور إلى أربع (الخوف من الآلهة، الخوف من الموت، الخوف من الحزن والخوف من الأم). ألف أكثر من 300 كتاب لم يبق منها إلا بعض «الرسائل» ومن أهمها «رسالة إلى مينيسي»، «أربعون قاعدة أساسية» و «مذاهب وحكم».",
+            "century": "4th–3rd BCE",
+            "school": "الأبيقورية",
+            "themes": ["المعرفة الحسية", "الإحساس", "اللذة", "السعادة", "الخوف", "الآلهة", "الموت"],
+            "birthYear": "341 ق.م",
+            "deathYear": "270 ق.م"
+        },
+        "fr": {
+            "name": "Épicure",
+            "image": "assets/images/epicurus.jpg",
+            "alt": "Épicure",
+            "content": "Philosophe grec qui fonda à Athènes une école dans le « Jardin du plaisir », où il enseigna la philosophie pendant environ 36 ans. Sa théorie de la connaissance repose sur une perspective matérialiste et sensorielle, où la sensation et les impressions sont le critère pour distinguer le vrai du faux, le bon du mauvais, et où la source de l’erreur réside dans nos interprétations et jugements concernant ces sensations. La sagesse, selon lui, est l’accomplissement du bonheur, qui réside dans le sentiment de plaisir et dans l’évitement de la douleur et sa suppression par l’élimination des causes de la peur, qu’Épicure classe en quatre : la peur des dieux, la peur de la mort, la peur du chagrin et la peur de la douleur. Il a écrit plus de 300 livres dont il ne reste que quelques « Lettres », parmi les plus importantes : Lettre à Ménécée, Quarante maximes fondamentales et Doctrines et sentences.",
+            "century": "4th–3rd BCE",
+            "school": "épicurisme",
+            "themes": ["connaissance sensorielle", "sensation", "plaisir", "bonheur", "peur", "dieux", "mort"],
+            "birthYear": "341 av. J.-C.",
+            "deathYear": "270 av. J.-C."
+        },
+        "en": {
+            "name": "Epicurus",
+            "image": "assets/images/epicurus.jpg",
+            "alt": "Epicurus",
+            "content": "A Greek philosopher who established a school in Athens in the \"Garden of Delight,\" where he taught philosophy for about 36 years. His theory of knowledge rests on a materialist-sensory perspective in which sensation and impressions are the criterion for distinguishing true from false and good from bad, and the source of error is our interpretations and judgments about those sensations. Wisdom, in his view, is the achievement of happiness, which lies in the feeling of pleasure and in avoiding pain and removing it by eliminating the causes of fear, which Epicurus classifies into four: fear of the gods, fear of death, fear of grief, and fear of pain. He wrote more than 300 books, of which only some \"Letters\" remain, among the most important of which are Letter to Menoeceus, Forty Principal Doctrines, and Doctrines and Sayings.",
+            "century": "4th–3rd BCE",
+            "school": "Epicureanism",
+            "themes": ["sensory knowledge", "sensation", "pleasure", "happiness", "fear", "gods", "death"],
+            "birthYear": "341 BCE",
+            "deathYear": "270 BCE"
+        }
+    },
+    "immanuel_kant": {
+        "ar": {
+            "name": "امانويل كانط",
+            "image": "assets/images/immanuel_kant.jpg",
+            "alt": "امانويل كانط",
+            "content": "فيلسوف ألمانى ولد بمدينة كونيسبرغ. يحدد كانط فلسفته كفلسفة نقدية، انبت على محاورة النزعة العقلانية والخبرية وتجاوزهما نحو مشروع نقدي، يقوم على رسم حدود العقل رسما آل به إلى التمييز بين مجال المعرفة ومجال التفكير. ويهدف المشروع النقدي إلى التأسيس الميتافيزيقي للمعرفة والأخلاق. أهم مؤلفاته هي: نقد العقل المحض (1781)، أسس ميتافيزيقا الأخلاق (1785)، نقد العقل العملي (1788)، نقد ملكة الحكم (1790).",
+            "century": "18th",
+            "school": "المثالية الألمانية",
+            "themes": ["المعرفة", "الأخلاق", "الميتافيزيقا", "العقل", "حدود العقل", "الحكم"],
+            "birthYear": "1724",
+            "deathYear": "1804"
+        },
+        "fr": {
+            "name": "Emmanuel Kant",
+            "image": "assets/images/immanuel_kant.jpg",
+            "alt": "Emmanuel Kant",
+            "content": "Philosophe allemand né à Königsberg. Kant définit sa philosophie comme une philosophie critique ; elle est née d’un dialogue avec le rationalisme et l’empirisme et de leur dépassement vers un projet critique fondé sur la délimitation des frontières de la raison, ce qui l’a conduit à distinguer le domaine de la connaissance et le domaine de la pensée. Le projet critique vise le fondement métaphysique de la connaissance et de la morale. Ses œuvres les plus importantes sont : Critique de la raison pure (1781), Fondements de la métaphysique des mœurs (1785), Critique de la raison pratique (1788), Critique de la faculté de juger (1790).",
+            "century": "18th",
+            "school": "idéalisme allemand",
+            "themes": ["connaissance", "éthique", "métaphysique", "raison", "limites de la raison", "jugement"],
+            "birthYear": "1724",
+            "deathYear": "1804"
+        },
+        "en": {
+            "name": "Immanuel Kant",
+            "image": "assets/images/immanuel_kant.jpg",
+            "alt": "Immanuel Kant",
+            "content": "A German philosopher born in Königsberg. Kant defines his philosophy as critical philosophy; it arose from a dialogue with rationalism and empiricism and their overcoming toward a critical project based on drawing the limits of reason, which led him to distinguish between the field of knowledge and the field of thought. The critical project aims at the metaphysical foundation of knowledge and ethics. His most important works are: Critique of Pure Reason (1781), Groundwork of the Metaphysics of Morals (1785), Critique of Practical Reason (1788), Critique of Judgment (1790).",
+            "century": "18th",
+            "school": "German idealism",
+            "themes": ["knowledge", "ethics", "metaphysics", "reason", "limits of reason", "judgment"],
+            "birthYear": "1724",
+            "deathYear": "1804"
         }
     }
 };

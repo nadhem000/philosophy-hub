@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحجاج - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#bf360c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Deep Coral / Terracotta Theme for argumentation lesson */
+        :root {
+            --primary-color: #bf360c;
+            --primary-light: #d84315;
+            --primary-dark: #8b2408;
+            --secondary-color: #d84315;
+            --secondary-light: #e64a19;
+            --secondary-dark: #bf360c;
+            --accent-color: #e64a19;
+            --accent-light: #f4511e;
+            --accent-dark: #d84315;
+            --light-color: #fbe9e7;
+            --dark-color: #3e1a08;
+            --text-color: #4a2a20;
+            --heading-color: #2e1810;
+            --background-color: #fef6f3;
+            --card-bg: #ffffff;
+            --definition-bg: #ffccbc;
+            --border-color: #ffab91;
+            --table-even-bg: #fbe9e7;
+            --table-hover-bg: #ffccbc;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(191, 54, 12, 0.15);
+            --gradient-primary: linear-gradient(135deg, #bf360c 0%, #d84315 100%);
+            --gradient-secondary: linear-gradient(135deg, #8b2408 0%, #d84315 100%);
+            --gradient-coral: linear-gradient(135deg, #bf360c 0%, #8b2408 100%);
+            --gradient-terracotta: linear-gradient(135deg, #d84315 0%, #e64a19 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #ff7043;
+            --primary-light: #ff8a65;
+            --primary-dark: #f4511e;
+            --secondary-color: #f4511e;
+            --secondary-light: #ff7043;
+            --secondary-dark: #e64a19;
+            --accent-color: #ff8a65;
+            --accent-light: #ffab91;
+            --accent-dark: #ff7043;
+            --light-color: #3e1a08;
+            --dark-color: #1f0d04;
+            --text-color: #ffccbc;
+            --heading-color: #fbe9e7;
+            --background-color: #2e1810;
+            --card-bg: #3e1a08;
+            --definition-bg: #4a1f0a;
+            --border-color: #bf360c;
+            --table-even-bg: #3e1a08;
+            --table-hover-bg: #4a1f0a;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #d84315 0%, #ff7043 100%);
+            --gradient-secondary: linear-gradient(135deg, #bf360c 0%, #f4511e 100%);
+            --gradient-coral: linear-gradient(135deg, #ff7043 0%, #3e1a08 100%);
+            --gradient-terracotta: linear-gradient(135deg, #ff8a65 0%, #f4511e 100%);
+        }
+        /* Definition Cards Layout */
+        .PhiH-definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .PhiH-definition-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(191, 54, 12, 0.2);
+        }
+        .PhiH-definition-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        /* Expand/Collapse Functionality */
+        .PhiH-expandable-section {
+            margin-bottom: 1.5rem;
+        }
+        .PhiH-expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .PhiH-expandable-header:hover {
+            background: var(--gradient-coral);
+        }
+        .PhiH-expandable-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        .PhiH-expandable-content {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            border-top: none;
+        }
+        .PhiH-expandable-content.hidden {
+            display: none;
+        }
+        .PhiH-expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        .PhiH-expand-icon.expanded {
+            transform: rotate(180deg);
+        }
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        .PhiH-author-info {
+            flex: 1;
+        }
+        /* Quotes Section Styling */
+        .PhiH-quotes-container {
+            margin-top: 1rem;
+        }
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(191, 54, 12, 0.2);
+        }
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        /* RTL support for definition cards */
+        body.rtl .PhiH-definition-card-content ul {
+            padding-left: 0;
+            padding-right: 1.2rem;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .PhiH-definitions-grid {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .PhiH-author-image {
+                align-self: center;
+            }
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-argumentation" dir="ltr">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
+    <main class="PhiH-lesson1-container">
+        <div class="PhiH-lesson1-header">
+            <h1 class="PhiH-lesson1-title" data-i18n="PhiH.lessons.argumentation.title">الحجاج</h1>
+            <div class="PhiH-lesson1-level" data-i18n="PhiH.lessons.argumentation.level">السنة الثالثة ثانوي - الفلسفة</div>
+        </div>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="introHeader">
+                <h3 data-i18n="PhiH.lessons.argumentation.introduction.title">التمهيد</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="introContent">
+                <p data-i18n="PhiH.lessons.argumentation.introduction.text">بين ما تلجأ إليه العلوم من برهنة ذات طابع إكراهي، وبين السفسطة التي تعتمد أساليب المغالطة والتمويه الخطابي، يتنزّل الحجاج باعتباره شكل معقولية يكون الاستدلال فيه قائماً على الحجة القابلة للنقاش. فالحجاج لا يفرض نتيجة فرضاً، بل يسعى إلى الاقتناع عبر حجج معقولة تترك للآخر حرية القبول أو الرفض. غير أنّ هذا التوصيف يطرح أسئلة دقيقة: ما الخصائص المميّزة للحجاج؟ وما علاقته بالحرية والعنف؟ وهل الوفاق الذي يبلغه المتحاورون كافٍ لنقل الفكرة من مستوى الرأي إلى مستوى المعرفة؟ سينظر الدرس في نصّ برلمان وتيتكا الذي يبيّن خصوصيات الحجاج وعلاقته بالحرية، ثمّ في نصّ هابرماس الذي يفكّك أوجه الحجاج كتجربة تواصلية معقّدة.</p>
+            </div>
+        </section>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="textsHeader">
+                <h3 data-i18n="PhiH.lessons.argumentation.texts.title">النصوص</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="textsContent">
+                <div class="PhiH-texts-container">
+                    <ul class="PhiH-texts-list">
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2b_lesson3_text1.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.argumentation.texts.text1">في خصوصيات الحجاج - ش. برلمان وأ. تيتكا</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2b_lesson3_text2.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.argumentation.texts.text2">تجربة الحجاج - يورغان هابرماس</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="quotesHeader">
+                <h3 data-i18n="PhiH.lessons.argumentation.quotes.title">شواهد ونصوص ذات صلة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="quotesContent">
+                <div class="PhiH-quotes-container">
+                    <div class="PhiH-quotes-grid">
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.argumentation.quotes.quote1">"العقل ليس معطى كاملاً، والمعقولية ليست معزولة عمّا في التجربة من تنوّع."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.argumentation.quotes.author1">مرلوبونتي</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.argumentation.quotes.quote2">"يكمن فن التأثير في القبول بقدر ما يكمن في الإقناع."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.argumentation.quotes.author2">باسكال</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.argumentation.quotes.quote3">"لا داعي للمناقشة في غياب مبادئ مشتركة."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.argumentation.quotes.author3">كونفشيوس</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="conclusionHeader">
+                <h3 data-i18n="PhiH.lessons.argumentation.conclusion.title">الخاتمة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="conclusionContent">
+                <p data-i18n="PhiH.lessons.argumentation.conclusion.text">يتّضح من الدرس أنّ الحجاج ليس مجرّد تقنية خطابية تُعلَّم كما تُعلَّم قواعد الحساب، بل هو تجربة تواصلية معقّدة تتشابك فيها أبعاد منطقية وأخلاقية وتداولية. فالحجاج يفترض الحرية والتعدّد والحوار، ويقوم على الحجة الأفضل لا على الإكراه أو العنف، وهو بذلك شرط للعيش المشترك وللثقافة الديمقراطية. غير أنّ فعالية الحجاج لا تكتمل إلا إذا اقترنت بفعل نقدي يواجه الحجج المعارضة ويدحضها، وهو ما يستدعي الانتقال من الحجاج إلى التحليل والدحض.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Page-specific translations for argumentation lesson
+        window.translations_PhiHargumentation = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                // Lesson specific translations
+                "PhiH.lessons.argumentation.title": "L'Argumentation",
+                "PhiH.lessons.argumentation.level": "3ème Secondaire - Philosophie",
+                "PhiH.lessons.argumentation.introduction.title": "Introduction",
+                "PhiH.lessons.argumentation.introduction.text": "Entre la démonstration à caractère contraignant dont usent les sciences, et la sophistique qui recourt aux procédés du sophisme et de la manipulation discursive, l'argumentation se situe comme une forme de rationalité où le raisonnement repose sur un argument discutable. L'argumentation n'impose pas sa conclusion, mais vise la conviction par des arguments raisonnables qui laissent à l'autre la liberté d'accepter ou de refuser. Mais cette caractérisation soulève des questions précises : quelles sont les particularités de l'argumentation ? Quel est son rapport à la liberté et à la violence ? Le consensus auquel parviennent les interlocuteurs suffit-il à faire passer l'idée du niveau de l'opinion à celui de la connaissance ? La leçon examinera le texte de Perelman et Tyteca qui montre les particularités de l'argumentation et son lien à la liberté, puis le texte de Habermas qui décompose les aspects de l'argumentation comme expérience communicationnelle complexe.",
+                "PhiH.lessons.argumentation.texts.title": "Textes",
+                "PhiH.lessons.argumentation.texts.text1": "Des particularités de l'argumentation - Ch. Perelman et O. Tyteca",
+                "PhiH.lessons.argumentation.texts.text2": "L'expérience de l'argumentation - Jürgen Habermas",
+                "PhiH.lessons.argumentation.quotes.title": "Citations et textes connexes",
+                "PhiH.lessons.argumentation.quotes.quote1": "« La raison n'est pas un donné complet, et la rationalité n'est pas isolée de la diversité de l'expérience. »",
+                "PhiH.lessons.argumentation.quotes.quote2": "« L'art de persuader réside dans l'adhésion autant que dans la conviction. »",
+                "PhiH.lessons.argumentation.quotes.quote3": "« Il n'y a pas lieu de discuter en l'absence de principes communs. »",
+                "PhiH.lessons.argumentation.quotes.author1": "Merleau-Ponty",
+                "PhiH.lessons.argumentation.quotes.author2": "Pascal",
+                "PhiH.lessons.argumentation.quotes.author3": "Confucius",
+                "PhiH.lessons.argumentation.conclusion.title": "Conclusion",
+                "PhiH.lessons.argumentation.conclusion.text": "Il ressort de la leçon que l'argumentation n'est pas une simple technique discursive que l'on enseignerait comme on enseigne les règles du calcul, mais une expérience communicationnelle complexe où s'entrecroisent des dimensions logiques, éthiques et pragmatiques. L'argumentation présuppose la liberté, la pluralité et le dialogue, et repose sur le meilleur argument, non sur la contrainte ou la violence ; elle est à ce titre une condition du vivre-ensemble et de la culture démocratique. Cependant, l'efficacité de l'argumentation ne s'achève que si elle s'accompagne d'un acte critique qui affronte les arguments adverses et les réfute, ce qui appelle le passage de l'argumentation à l'analyse et à la réfutation."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                // Lesson specific translations
+                "PhiH.lessons.argumentation.title": "Argumentation",
+                "PhiH.lessons.argumentation.level": "3rd Secondary - Philosophy",
+                "PhiH.lessons.argumentation.introduction.title": "Introduction",
+                "PhiH.lessons.argumentation.introduction.text": "Between the constraining demonstration used by the sciences, and sophistry which resorts to the procedures of fallacy and discursive manipulation, argumentation stands as a form of rationality in which reasoning rests on a discussable argument. Argumentation does not impose its conclusion, but seeks conviction through reasonable arguments that leave the other free to accept or refuse. But this characterization raises precise questions: what are the distinctive features of argumentation? What is its relation to freedom and violence? Is the consensus reached by interlocutors sufficient to move the idea from the level of opinion to that of knowledge? The lesson will examine Perelman and Tyteca's text showing the particularities of argumentation and its link to freedom, then Habermas's text decomposing the aspects of argumentation as a complex communicative experience.",
+                "PhiH.lessons.argumentation.texts.title": "Texts",
+                "PhiH.lessons.argumentation.texts.text1": "On the Specificities of Argumentation - Ch. Perelman and O. Tyteca",
+                "PhiH.lessons.argumentation.texts.text2": "The Experience of Argumentation - Jürgen Habermas",
+                "PhiH.lessons.argumentation.quotes.title": "Related Quotes and Texts",
+                "PhiH.lessons.argumentation.quotes.quote1": "\"Reason is not a complete given, and rationality is not isolated from the diversity of experience.\"",
+                "PhiH.lessons.argumentation.quotes.quote2": "\"The art of persuasion lies in adherence as much as in conviction.\"",
+                "PhiH.lessons.argumentation.quotes.quote3": "\"There is no point in discussing in the absence of common principles.\"",
+                "PhiH.lessons.argumentation.quotes.author1": "Merleau-Ponty",
+                "PhiH.lessons.argumentation.quotes.author2": "Pascal",
+                "PhiH.lessons.argumentation.quotes.author3": "Confucius",
+                "PhiH.lessons.argumentation.conclusion.title": "Conclusion",
+                "PhiH.lessons.argumentation.conclusion.text": "It emerges from the lesson that argumentation is not a mere discursive technique to be taught as one teaches the rules of calculation, but a complex communicative experience in which logical, ethical and pragmatic dimensions intertwine. Argumentation presupposes freedom, plurality and dialogue, and rests on the better argument, not on constraint or violence; it is in this sense a condition of living together and of democratic culture. However, the efficacy of argumentation is only complete if it is accompanied by a critical act that confronts opposing arguments and refutes them, which calls for the passage from argumentation to analysis and refutation."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                // Lesson specific translations
+                "PhiH.lessons.argumentation.title": "الحجاج",
+                "PhiH.lessons.argumentation.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.lessons.argumentation.introduction.title": "التمهيد",
+                "PhiH.lessons.argumentation.introduction.text": "بين ما تلجأ إليه العلوم من برهنة ذات طابع إكراهي، وبين السفسطة التي تعتمد أساليب المغالطة والتمويه الخطابي، يتنزّل الحجاج باعتباره شكل معقولية يكون الاستدلال فيه قائماً على الحجة القابلة للنقاش. فالحجاج لا يفرض نتيجة فرضاً، بل يسعى إلى الاقتناع عبر حجج معقولة تترك للآخر حرية القبول أو الرفض. غير أنّ هذا التوصيف يطرح أسئلة دقيقة: ما الخصائص المميّزة للحجاج؟ وما علاقته بالحرية والعنف؟ وهل الوفاق الذي يبلغه المتحاورون كافٍ لنقل الفكرة من مستوى الرأي إلى مستوى المعرفة؟ سينظر الدرس في نصّ برلمان وتيتكا الذي يبيّن خصوصيات الحجاج وعلاقته بالحرية، ثمّ في نصّ هابرماس الذي يفكّك أوجه الحجاج كتجربة تواصلية معقّدة.",
+                "PhiH.lessons.argumentation.texts.title": "النصوص",
+                "PhiH.lessons.argumentation.texts.text1": "في خصوصيات الحجاج - ش. برلمان وأ. تيتكا",
+                "PhiH.lessons.argumentation.texts.text2": "تجربة الحجاج - يورغان هابرماس",
+                "PhiH.lessons.argumentation.quotes.title": "شواهد ونصوص ذات صلة",
+                "PhiH.lessons.argumentation.quotes.quote1": "\"العقل ليس معطى كاملاً، والمعقولية ليست معزولة عمّا في التجربة من تنوّع.\"",
+                "PhiH.lessons.argumentation.quotes.quote2": "\"يكمن فن التأثير في القبول بقدر ما يكمن في الإقناع.\"",
+                "PhiH.lessons.argumentation.quotes.quote3": "\"لا داعي للمناقشة في غياب مبادئ مشتركة.\"",
+                "PhiH.lessons.argumentation.quotes.author1": "مرلوبونتي",
+                "PhiH.lessons.argumentation.quotes.author2": "باسكال",
+                "PhiH.lessons.argumentation.quotes.author3": "كونفشيوس",
+                "PhiH.lessons.argumentation.conclusion.title": "الخاتمة",
+                "PhiH.lessons.argumentation.conclusion.text": "يتّضح من الدرس أنّ الحجاج ليس مجرّد تقنية خطابية تُعلَّم كما تُعلَّم قواعد الحساب، بل هو تجربة تواصلية معقّدة تتشابك فيها أبعاد منطقية وأخلاقية وتداولية. فالحجاج يفترض الحرية والتعدّد والحوار، ويقوم على الحجة الأفضل لا على الإكراه أو العنف، وهو بذلك شرط للعيش المشترك وللثقافة الديمقراطية. غير أنّ فعالية الحجاج لا تكتمل إلا إذا اقترنت بفعل نقدي يواجه الحجج المعارضة ويدحضها، وهو ما يستدعي الانتقال من الحجاج إلى التحليل والدحض."
+            }
+        };
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHargumentation;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+    <script>
+        // Expand/Collapse functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const expandableHeaders = document.querySelectorAll('.PhiH-expandable-header');
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.PhiH-expand-icon');
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('expanded');
+                    } else {
+                        content.classList.add('hidden');
+                        icon.classList.remove('expanded');
+                    }
+                });
+            });
+            // Initially hide all expandable content
+            document.querySelectorAll('.PhiH-expandable-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

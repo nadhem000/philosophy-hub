@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: في مقتضيات الدحض - جون ستيوارت ميل - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#191970">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Midnight Blue / Deep Navy Color Palette */
+        :root {
+            --primary-color: #191970;
+            --primary-light: #2c3e8f;
+            --primary-dark: #0e0e3d;
+            --secondary-color: #2c3e8f;
+            --secondary-light: #4a5fb8;
+            --secondary-dark: #1a1a52;
+            --accent-color: #4a5fb8;
+            --accent-light: #6b7fd4;
+            --accent-dark: #2c3e8f;
+            --light-color: #f0f2ff;
+            --dark-color: #0a0a28;
+            --text-color: #2a2d4a;
+            --heading-color: #141435;
+            --background-color: #f7f8ff;
+            --card-bg: #ffffff;
+            --definition-bg: #e0e4ff;
+            --border-color: #b8c0e8;
+            --table-even-bg: #f0f2ff;
+            --table-hover-bg: #dde2f5;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(25, 25, 112, 0.1), 0 2px 4px -1px rgba(25, 25, 112, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(25, 25, 112, 0.1), 0 4px 6px -2px rgba(25, 25, 112, 0.05);
+            --gradient-primary: linear-gradient(135deg, #191970 0%, #2c3e8f 100%);
+            --gradient-secondary: linear-gradient(135deg, #0e0e3d 0%, #2c3e8f 100%);
+            --gradient-accent: linear-gradient(135deg, #4a5fb8 0%, #191970 100%);
+            --gradient-gray: linear-gradient(135deg, #6b7fd4 0%, #2c3e8f 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #6b7fd4;
+            --primary-light: #8a9be0;
+            --primary-dark: #4a5fb8;
+            --secondary-color: #4a5fb8;
+            --secondary-light: #6b7fd4;
+            --secondary-dark: #2c3e8f;
+            --accent-color: #8a9be0;
+            --accent-light: #a8b8f0;
+            --accent-dark: #6b7fd4;
+            --light-color: #2a2d4a;
+            --dark-color: #0a0a28;
+            --text-color: #d0d6f0;
+            --heading-color: #f0f2ff;
+            --background-color: #0e0e3d;
+            --card-bg: #1a1a52;
+            --definition-bg: #2c3e8f;
+            --border-color: #2c3e8f;
+            --table-even-bg: #1a1a52;
+            --table-hover-bg: #2c3e8f;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #2c3e8f 0%, #6b7fd4 100%);
+            --gradient-secondary: linear-gradient(135deg, #1a1a52 0%, #4a5fb8 100%);
+            --gradient-accent: linear-gradient(135deg: #6b7fd4 0%, #191970 100%);
+            --gradient-gray: linear-gradient(135deg: #8a9be0 0%, #4a5fb8 100%);
+        }
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(25, 25, 112, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(44, 62, 143, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(74, 95, 184, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-author-info {
+            flex: 1;
+        }
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        li strong {
+            color: var(--primary-color);
+        }
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(25, 25, 112, 0.05), transparent);
+        }
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        body.rtl .PhiH-text-card ul li {
+            border-left: none;
+            border-right: 3px solid var(--primary-color);
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .PhiH-author-image {
+                align-self: center;
+            }
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.mill.title">تحليل النص: في مقتضيات الدحض - جون ستيوارت ميل</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.mill.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        <section class="PhiH-text-analysis-section">
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.mill.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.mill.introduction.content">
+                    إذا كانت البرهنة - في الرياضيات مثلاً - عملية منطقية وتقنية صارمة تفضي إلى نتائج ضرورية كونية لا تقبل المجادلة، فإن التفكير والاستدلال في المجالات غير العلمية (كالفلسفة والأدب والنقاشات في المجال العمومي...) تقوم على الحجاج وتقترن بالحوار والنقاش، حيث تكون الحجة قابلة دائماً للمراجعة والنقد. ولا يتأتى للمتحاورين بلوغ الحقيقة وتحقيق الوفاق بشأنها ما لم يتخذوا احتياطات خاصة تقيهم من الانزلاق في سجال وفي أحكام ذاتية تنأى بهم عن مطلوبهم.
+                </p>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.mill.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.mill.text.content">
+                        إذا لم يتمكن المرء من الإحاطة بدقائق قضية ما، فإن معرفته بها تكون ناقصة. وقد تكون أدلته قوية، وقد يعجز الغير عن دحضها، ولكن إذا عجز بدوره عن دحض أدلة خصمه، فبأي وجه يستطيع المفاضلة[1] بين رأيه ورأي خصمه؟ وعلى من كان هذا شأنه أن يمتنع عن إبداء حكمه، فإذا أصدر حكمه فإما أن يكون قد أرغم[2] على ذلك، أو انقاد في ذلك إلى عواطفه، وهذا ما يفعله عامة الناس.
+                        <br><br>
+                        ولا يكفي أن نقف على حجج الخصم كما يسوقها لنا أساتذتنا وبما يتفق مع أهوائهم وآرائهم فيها، لأن هذه الطريقة لا تنصف[3] أقوال الخصم، كما لا تقربها إلى الذهن لكي يتفهمها؛ بل ينبغي أن تسمع أقوال خصمك ممن يؤمن بصحتها، ولا يتوانى عن تأييدها والدفاع عنها. إذ أن اطلاع الإنسان على حجج خصمه وهي في صورة واضحة غير مشوهة، بحيث يشعر بقوتها ورجاحتها[4] وبصعوبة موقف المعارض لها، يساعده على إدراك وجه الصواب الكفيل بدفع تلك الأدلة، وتذليل تلك الصعاب.
+                        <br><br>
+                        بيد أنه يندر، للأسف، بين الطبقة المثقفة من يكلف نفسه تلك المشقة.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.mill.text.source">جون ستيوارت ميل، بحث في الحرية، منشورات وزارة الثقافة - سوريا، ص67</em></p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.mill.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <img src="assets/images/john_stuart_mill.jpg" alt="جون ستيوارت ميل" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.mill.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.mill.author.content">
+                            جون ستيوارت ميل (1806-1873) فيلسوف ورجل اقتصاد إنجليزي، ليبرالي النزعة، عصامي التكوين، حذق لغات عديدة وبرع في الرياضيات والمنطق منذ حداثة سنه. من منظّري النزعة النفعية، انتخب نائباً بمجلس العموم البريطاني، ودافع عن حق المرأة في الانتخاب، وكان ذلك من بين أسباب عدم إعادة انتخابه. من بين مؤلفاته: "مبادئ الاقتصاد السياسي" (1848)، "الحرية" (1859)، "النزعة النفعية" (1861)، "في استعباد النساء" (1869)، "نسق المنطق الاستنتاجي والاستقرائي" (1869، ط.6).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.mill.footnotes.title">الهوامش</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.mill.footnotes.item1"><strong>(1) "المفاضلة":</strong> إشارة إلى المأزق الذي يجد فيه المحاور نفسه في حالة الجهل بأدلة خصمه، فلا يتمكن نتيجة ذلك من دحضها، ومن ثمة يتعذر عليه المفاضلة بين رأيه ورأي خصمه الذي قد لا تقل حججه قوة عن الأدلة التي يستند إليها رأيه الخاص.</li>
+                    <li data-i18n="PhiH.textAnalysis.mill.footnotes.item2"><strong>(2) "أرغم":</strong> إشارة إلى الوضع الذي قد يجد فيه صاحب الرأي نفسه مرغماً على اتخاذ موقف رغم أن شروط الحسم المنطقية لم تتوفر. وهو عيب منطقي وأخلاقي في آن.</li>
+                    <li data-i18n="PhiH.textAnalysis.mill.footnotes.item3"><strong>(3) "لا تنصف":</strong> يعتبر الكاتب أن الحكم على أقوال الخصم انطلاقاً مما يرويه لنا عنها "أساتذتنا" الذين لا يؤمنون بها، والذين تفتقر رواياتهم إذن إلى النزاهة والموضوعية، فيه إخلال بمقتضى الإنصاف لأنها لا تعطي للخصم حقه في الدحض.</li>
+                    <li data-i18n="PhiH.textAnalysis.mill.footnotes.item4"><strong>(4) "رجاحتها":</strong> إشارة إلى ما يميز البرهان (la preuve) عن الحجة (l'argument). فالحجاج يتعلق بمواضيع تخضع للنقاش المعقول، والواقعة الواحدة يمكن النظر إليها من زوايا نظر مختلفة، وتظل عدة مسارات حجاجية ممكنة وحتى مطلوبة، بما يلزم عنه أنه لا وجود لحجاج إكراهي. يمكن للحجاج فقط أن يكون قوياً أو ضعيفاً بحسب نجاعته، وهذا ما يفسر الاقتصاد على نعت الحجة بأنها فقط مرجّحة.</li>
+                </ul>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.mill.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.mill.questions.q1">أبيّن بالرجوع إلى الأسطر الثلاثة الأولى من النص ما إذا كانت قوة حججي كافية للمفاضلة بين رأيي ورأي خصمي، وأعلّل إجابتي.</li>
+                    <li data-i18n="PhiH.textAnalysis.mill.questions.q2">أرصد بالرجوع إلى الفقرة الثانية من النص الشروط المنطقية والأخلاقية لسلامة الحجاج والدحض.</li>
+                    <li data-i18n="PhiH.textAnalysis.mill.questions.q3">أعلّل حكم الكاتب في آخر النص بشأن ندرة المثقفين الذين يلزمون أنفسهم بالشروط الأخلاقية للحجاج والدحض.</li>
+                </ol>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.mill.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.mill.answers.a1.title">الإجابة عن المهمة الأولى:</h5>
+                    <p data-i18n="PhiH.textAnalysis.mill.answers.a1.content">
+                        لا، ليست قوة حججي كافية للمفاضلة بين رأيي ورأي خصمي، وهذا ما يكشفه النص في الأسطر الثلاثة الأولى من خلال الحجج التالية:
+                        <br><br>
+                        <strong>1. المعرفة الناقصة:</strong> "إذا لم يتمكن المرء من الإحاطة بدقائق قضية ما، فإن معرفته بها تكون ناقصة". فحتى لو كانت حججي قوية، فإن معرفتي تبقى ناقصة إن لم أحيط بدقائق القضية كلها، ومن جملتها حجج الخصم.
+                        <br><br>
+                        <strong>2. قوة أدلتي لا تعفيني من دحض أدلة الخصم:</strong> "وقد تكون أدلته قوية، وقد يعجز الغير عن دحضها، ولكن إذا عجز بدوره عن دحض أدلة خصمه، فبأي وجه يستطيع المفاضلة بين رأيه ورأي خصمه؟". فقوة أدلتي شيء، وقدرتي على دحض أدلة الخصم شيء آخر. والمفاضلة العادلة تفترض القدرة على تقييم الأدلتين معاً.
+                        <br><br>
+                        <strong>3. وجوب الامتناع عن الحكم:</strong> "وعلى من كان هذا شأنه أن يمتنع عن إبداء حكمه". فمن لا يقدر على دحض أدلة خصمه، يجب عليه أن يمتنع عن الحكم، لا أن يحكم لصالح رأيه بحجة أن أدلته قوية.
+                        <br><br>
+                        <strong>4. الحكم في هذه الحالة عيب:</strong> "فإذا أصدر حكمه فإما أن يكون قد أرغم على ذلك، أو انقاد في ذلك إلى عواطفه، وهذا ما يفعله عامة الناس". فإصدار الحكم في حالة العجز عن دحض أدلة الخصم يكون إما إكراهاً أو انقياداً للعواطف، وكلاهما مرفوض منطقياً وأخلاقياً.
+                        <br><br>
+                        <strong>الخلاصة:</strong> قوة حججي وحدها لا تكفي للمفاضلة بين رأيي ورأي خصمي. المفاضلة العادلة تفترض:
+                        <br>– الإحاطة بدقائق القضية كلها (بما فيها حجج الخصم).
+                        <br>– القدرة على دحض أدلة الخصم أو الاعتراف بقوتها.
+                        <br>– الامتناع عن الحكم إن لم تتحقق الشروط المنطقية للحسم.
+                        <br>– عدم الانقياد للعواطف أو للإكراه في إصدار الحكم.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.mill.answers.a2.title">الإجابة عن المهمة الثانية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.mill.answers.a2.content">
+                        ترصد الفقرة الثانية من النص جملة من الشروط المنطقية والأخلاقية لسلامة الحجاج والدحض، يمكن تصنيفها كما يلي:
+                        <br><br>
+                        <strong>أ. الشروط المنطقية:</strong>
+                        <br>1. <strong>الاطلاع على حجج الخصم في صورتها الواضحة غير المشوهة:</strong> "اطلاع الإنسان على حجج خصمه وهي في صورة واضحة غير مشوهة".
+                        <br>2. <strong>إدراك قوتها ورجاحتها:</strong> "بحيث يشعر بقوتها ورجاحتها".
+                        <br>3. <strong>إدراك صعوبة موقف المعارض لها:</strong> "وبصعوبة موقف المعارض لها".
+                        <br>4. <strong>القدرة على دفع تلك الأدلة:</strong> "يساعده على إدراك وجه الصواب الكفيل بدفع تلك الأدلة".
+                        <br>5. <strong>تذليل الصعاب:</strong> "وتذليل تلك الصعاب".
+                        <br><br>
+                        <strong>ب. الشروط الأخلاقية (الايتيقية):</strong>
+                        <br>1. <strong>عدم الاكتفاء بما يرويه "الأساتذة" عن الخصم:</strong> "لا يكفي أن نقف على حجج الخصم كما يسوقها لنا أساتذتنا وبما يتفق مع أهوائهم وآرائهم فيها".
+                        <br>2. <strong>الإنصاف:</strong> "لأن هذه الطريقة لا تنصف أقوال الخصم".
+                        <br>3. <strong>طلب الحجج من مؤيديها:</strong> "بل ينبغي أن تسمع أقوال خصمك ممن يؤمن بصحتها، ولا يتوانى عن تأييدها والدفاع عنها".
+                        <br>4. <strong>النزاهة والموضوعية في نقل أقوال الخصم:</strong> (كما في الهامش 3).
+                        <br>5. <strong>عدم التشويه أو التبسيط المخل:</strong> "في صورة واضحة غير مشوهة".
+                        <br><br>
+                        <strong>الخلاصة:</strong> الشروط المنطقية تتعلق بصحة الاستدلال (معرفة الحجج، إدراك قوتها، القدرة على دفعها)؛ أما الشروط الأخلاقية فتتعلق بالإنصاف والنزاهة والموضوعية في التعامل مع الخصم. وباجتماع الشروط المنطقية والأخلاقية، يكون الحجاج والدحض سليمين.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.mill.answers.a3.title">الإجابة عن المهمة الثالثة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.mill.answers.a3.content">
+                        يحكم ميل في آخر النص بأنه "يندر، للأسف، بين الطبقة المثقفة من يكلف نفسه تلك المشقة". ويمكن تعليل هذا الحكم بالعوامل التالية:
+                        <br><br>
+                        <strong>1. مشقة الجهد:</strong> الاطلاع على حجج الخصم من مصادرها الأصلية، وفهمها في أقوى صورها، يتطلب جهداً كبيراً ووقتاً طويلاً، وهو ما يتهرب منه الكثيرون.
+                        <br><br>
+                        <strong>2. الرغبة في السلامة الفكرية:</strong> الاطلاع على حجج الخصم القوية قد يزعزع قناعاتنا، وقد يفرض علينا إعادة النظر في آرائنا. وهذا أمر مزعج نفسياً، فيفضّل الكثيرون تجنبه.
+                        <br><br>
+                        <strong>3. حب الذات والانتصار للرأي:</strong> قد يكون الميل الطبيعي إلى الانتصار لرأينا أقوى من الميل إلى البحث عن الحقيقة، فيفضّل المثقف أن يظل في منطقة أمانه الفكري.
+                        <br><br>
+                        <strong>4. التأثر بالبيئة الثقافية:</strong> في الأوساط المثقفة، قد يكون السائد هو الانتصار للرأي السائد، أو الانتماء إلى جماعة فكرية معينة، فيفضّل المثقف أن يحافظ على انتمائه بدل الانفتاح على حجج الخصوم.
+                        <br><br>
+                        <strong>5. غياب التربية على الحوار:</strong> فالتعليم التقليدي لا يربي على الإنصاف في الحوار، ولا على قراءة الخصم من مصادره الأصلية، بل يربي على الاستظهار والحفظ والتكرار.
+                        <br><br>
+                        <strong>6. التكلفة الاجتماعية:</strong> الاعتراف بقوة حجج الخصم قد يُنظر إليه كضعف أو كخيانة للموقف الذي ينتمي إليه المثقف.
+                        <br><br>
+                        <strong>7. الفرق بين المثقف والمفكر:</strong> فالمثقف قد يكون حاملاً لمعارف ومعلومات، لكنه ليس بالضرورة مفكراً نقدياً حرّاً. والمشقة التي يتحدث عنها ميل تفترض درجة عالية من الحرية الفكرية والنزاهة، وهي فضائل نادرة.
+                        <br><br>
+                        <strong>الخلاصة:</strong> حكم ميل على ندرة المثقفين الذين يكلفون أنفسهم مشقة الاطلاع على حجج الخصم من مصادرها القوية، يستند إلى العوائق النفسية (الخوف من زعزعة القناعات)، والاجتماعية (الانتماء إلى جماعة، التكلفة الاجتماعية)، والتربوية (غياب التربية على الحوار)، والأخلاقية (حب الذات والانتصار للرأي). وهذا الحكم يكشف عن نظرة ميل النقدية إلى المثقفين، وعن إدراكه للفجوة بين ادعاء الثقافة وممارسة الحوار الحقيقي.
+                    </p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.mill.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.mill.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.mill.analysis.thesis.content">
+                        يرى ميل أنّ قوة الحجج الشخصية ليست كافية للمفاضلة العادلة بين رأيي ورأي الخصم. فالمفاضلة العادلة تفترض الإحاطة بحجج الخصم في أقوى صورها، وفهمها في صورتها الواضحة غير المشوهة، وإدراك قوتها ورجاحتها. وهذا يتطلب شروطاً منطقية (معرفة الحجج، القدرة على دفعها) وأخلاقية (الإنصاف، النزاهة، النقل من مؤيدي الحجج أنفسهم). ويلاحظ ميل أنّ هذه الشروط نادرة بين المثقفين، بسبب المشقة التي تفرضها، وبسبب حب الذات وحب الانتصار للرأي.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.mill.analysis.mechanisms.title">آليات الحجاج والدحض السليمين:</h5>
+                    <p data-i18n="PhiH.textAnalysis.mill.analysis.mechanisms.content">
+                        - <strong>الإحاطة بالقضية:</strong> فهم دقائق القضية كلها، بما فيها حجج الخصم، لا مجرد حجج الرأي الشخصي.
+                        <br>- <strong>الاطلاع على حجج الخصم من مصادرها الأصلية:</strong> لا من مصادر معادية أو محرفة، بل من مؤيديها ومن يدافعون عنها.
+                        <br>- <strong>فهم الحجج في أقوى صورها:</strong> لا في صورتها المسقطة أو المبسطة.
+                        <br>- <strong>إدراك قوة الحجج:</strong> الاعتراف برجاحتها وثقلها، لا تجاهلها أو التقليل منها.
+                        <br>- <strong>الامتناع عن الحكم قبل استكمال الشروط:</strong> لا حكم قبل الإحاطة بكلا جانبي المسألة.
+                        <br>- <strong>التحرر من العواطف والإكراه:</strong> لا حكم انقياداً للعاطفة أو تحت ضغط الإكراه.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.mill.analysis.consequences.title">النتائج المترتبة على هذه الأطروحة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.mill.analysis.consequences.content">
+                        - <strong>توسيع مفهوم الحجاج:</strong> الحجاج ليس مجرد بناء حجج شخصية قوية، بل هو اطلاع على حجج الخصم أيضاً، ومواجهتها.
+                        <br>- <strong>ربط الحجاج بالإنصاف:</strong> الحجاج السليم يفترض إنصاف الخصم، وعدم تشويه أقواله.
+                        <br>- <strong>تحويل الحجاج من مواجهة إلى حوار:</strong> الحجاج ليس صراعاً بين خصمين، بل هو بحث مشترك عن الحقيقة، يتم فيه تبادل الحجج في أقوى صورها.
+                        <br>- <strong>نقد النظرة السطحية إلى المثقف:</strong> فالمثقف ليس مجرد حامل للمعارف، بل هو من يمارس الحوار الحقيقي، وهذا نادر.
+                        <br>- <strong>تأسيس مبدأ التسامح الفكري:</strong> فالحوار الحقيقي مع الخصم يفترض الاعتراف بحقه في الاختلاف، وباحتمال أن يكون على صواب.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.mill.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.mill.analysis.significance.content">
+                        يحمل هذا النص دلالة منهجية وأخلاقية عميقة:
+                        <br><br>
+                        <strong>1. دلالة منهجية:</strong> النص يقدّم قواعد منهجية لسلامة الحجاج والدحض، مستخلصة من طبيعة الحجاج كعملية معقولية لا إكراهية. وهو ما يجعل هذه القواعد ضرورية لكل من يريد أن يحجّ أو يدحض بشكل سليم.
+                        <br><br>
+                        <strong>2. دلالة أخلاقية:</strong> النص يربط الحجاج بالإنصاف والنزاهة والموضوعية. فالحجاج ليس مجرد مهارة تقنية، بل هو فضيلة أخلاقية تفترض احترام الخصم والاعتراف بحقه في تقديم حججه في أقوى صورها.
+                        <br><br>
+                        <strong>3. دلالة تربوية:</strong> النص يوجّه نقداً لطريقة التعليم التقليدية التي تربي على الاستظهار بدل الحوار، وعلى تقديم آراء "الأساتذة" بدل الاطلاع على المصادر الأصلية. وهو ما يدعو إلى إصلاح تربوي يجعل من الحوار والإنصاف محوراً للتعليم.
+                        <br><br>
+                        <strong>4. دلالة معرفية:</strong> النص يبيّن أنّ الحقيقة لا تُدرك إلا بمواجهة الحجج المتعارضة. فمن يقتصر على حجج رأيه، دون الاطلاع على حجج خصمه، لا يمكنه بلوغ الحقيقة، بل يبقى في حدود رأيه.
+                        <br><br>
+                        <strong>5. صلة النص بالدرس (التحليل):</strong> يكمّل هذا النص نظرية الدحض عند غرونيي. فغرونيي بيّن أن الدحض تطهير للفلسفة، وميل يبيّن هنا شروط الدحض السليم: الاطلاع على حجج الخصم في أقوى صورها، والإنصاف في التعامل معها. وهو ما يمهد لنص بايل الذي سيجسّم هذه الشروط عملياً في دحضه لموقف أبقور ولوكراس من الموت.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.mill.level": "3ème Secondaire - Philosophie",
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.mill.title": "Analyse du texte : Des exigences de la réfutation - John Stuart Mill",
+                "PhiH.textAnalysis.mill.introduction.title": "Introduction",
+                "PhiH.textAnalysis.mill.introduction.content": "Si la démonstration – en mathématiques par exemple – est une opération logique et technique rigoureuse aboutissant à des résultats nécessaires et universels qui n'admettent pas la contestation, la pensée et le raisonnement dans les domaines non scientifiques (comme la philosophie, la littérature et les débats dans la sphère publique...) reposent sur l'argumentation et s'accompagnent du dialogue et de la discussion, où l'argument est toujours révisable et critiquable. Les interlocuteurs ne peuvent atteindre la vérité et réaliser le consensus à son sujet que s'ils prennent des précautions particulières qui les préservent de glisser dans la polémique et dans des jugements subjectifs qui les éloigneraient de leur but.",
+                "PhiH.textAnalysis.mill.text.title": "Le texte",
+                "PhiH.textAnalysis.mill.text.content": "Si l'on ne parvient pas à embrasser les détails d'une question, la connaissance qu'on en a est incomplète. Les preuves peuvent être fortes, et autrui peut être incapable de les réfuter ; mais si, à son tour, on est incapable de réfuter les preuves de l'adversaire, de quel droit peut-on faire la distinction [1] entre son opinion et celle de l'adversaire ? Celui qui est dans cette situation doit s'abstenir de porter un jugement ; et s'il porte un jugement, c'est soit qu'il y a été contraint [2], soit qu'il a suivi ses passions, et c'est ce que fait le commun des mortels.<br><br>Et il ne suffit pas de s'arrêter sur les arguments de l'adversaire tels que nous les rapportent nos maîtres, conformément à leurs passions et à leurs opinions, car cette méthode ne rend pas justice [3] aux propos de l'adversaire et ne les rapproche pas de l'esprit pour qu'il les comprenne ; il faut au contraire entendre les propos de l'adversaire de la bouche de ceux qui croient en leur vérité et ne manquent pas de les soutenir et de les défendre. Car le fait que l'homme prenne connaissance des arguments de son adversaire dans une forme claire et non déformée, de sorte qu'il ressente leur force et leur prépondérance [4] et la difficulté de la position de celui qui les contredit, l'aide à discerner le point de justesse capable de repousser ces preuves et de surmonter ces difficultés.<br><br>Or il est rare, hélas, parmi la classe instruite, de trouver quelqu'un qui s'impose cette peine.",
+                "PhiH.textAnalysis.mill.text.source": "John Stuart Mill, De la liberté, publications du Ministère de la Culture - Syrie, p.67",
+                "PhiH.textAnalysis.mill.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.mill.author.alt": "John Stuart Mill",
+                "PhiH.textAnalysis.mill.author.content": "John Stuart Mill (1806-1873) est un philosophe et économiste anglais, de tendance libérale, autodidacte, qui maîtrisait de nombreuses langues et excellait en mathématiques et en logique dès son jeune âge. L'un des théoriciens de l'utilitarisme, il fut élu député à la Chambre des communes britannique, et défendit le droit des femmes à voter, ce qui fut l'une des raisons de sa non-réélection. Parmi ses œuvres : « Principes d'économie politique » (1848), « De la liberté » (1859), « L'utilitarisme » (1861), « De l'assujettissement des femmes » (1869), « Système de logique déductive et inductive » (1869, 6e éd.).",
+                "PhiH.textAnalysis.mill.footnotes.title": "Notes de bas de page",
+                "PhiH.textAnalysis.mill.footnotes.item1": "<strong>(1) « La distinction » :</strong> allusion à l'impasse dans laquelle se trouve l'interlocuteur lorsqu'il ignore les preuves de son adversaire, ce qui l'empêche de les réfuter et lui rend par conséquent impossible la distinction entre son opinion et celle de son adversaire, dont les arguments peuvent ne pas être moins forts que les preuves sur lesquelles repose sa propre opinion.",
+                "PhiH.textAnalysis.mill.footnotes.item2": "<strong>(2) « Contraint » :</strong> allusion à la situation dans laquelle peut se trouver le tenant d'une opinion, contraint de prendre position alors que les conditions logiques de la décision ne sont pas réunies. C'est un défaut à la fois logique et éthique.",
+                "PhiH.textAnalysis.mill.footnotes.item3": "<strong>(3) « Ne rend pas justice » :</strong> l'auteur considère que le jugement porté sur les propos de l'adversaire à partir de ce que nous en rapportent « nos maîtres » qui n'y croient pas, et dont les récits manquent donc d'équité et d'objectivité, constitue une atteinte à l'exigence d'équité, car ils ne donnent pas à l'adversaire son droit à la réfutation.",
+                "PhiH.textAnalysis.mill.footnotes.item4": "<strong>(4) « Leur prépondérance » :</strong> allusion à ce qui distingue la preuve (la preuve) de l'argument (l'argument). L'argumentation porte sur des sujets soumis à la discussion raisonnable ; un même fait peut être envisagé sous différents angles, et plusieurs parcours argumentatifs restent possibles et même requis, d'où il résulte qu'il n'y a pas d'argumentation contraignante. L'argumentation ne peut être que forte ou faible selon son efficacité, ce qui explique que l'on se contente de qualifier l'argument de simplement prépondérant.",
+                "PhiH.textAnalysis.mill.questions.title": "Tâches",
+                "PhiH.textAnalysis.mill.questions.q1": "Je montre, en me référant aux trois premières lignes du texte, si la force de mes arguments suffit à faire la distinction entre mon opinion et celle de mon adversaire, et je justifie ma réponse.",
+                "PhiH.textAnalysis.mill.questions.q2": "Je repère, en me référant au deuxième paragraphe du texte, les conditions logiques et éthiques de la saine argumentation et de la saine réfutation.",
+                "PhiH.textAnalysis.mill.questions.q3": "Je justifie le jugement de l'auteur à la fin du texte concernant la rareté des intellectuels qui s'imposent les conditions éthiques de l'argumentation et de la réfutation.",
+                "PhiH.textAnalysis.mill.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.mill.answers.a1.title": "Réponse à la première tâche :",
+                "PhiH.textAnalysis.mill.answers.a1.content": "Non, la force de mes arguments ne suffit pas à faire la distinction entre mon opinion et celle de mon adversaire, et c'est ce que le texte révèle dans les trois premières lignes à travers les arguments suivants :<br><br><strong>1. La connaissance incomplète :</strong> « Si l'on ne parvient pas à embrasser les détails d'une question, la connaissance qu'on en a est incomplète. » Même si mes arguments sont forts, ma connaissance reste incomplète si je n'embrasse pas les détails de la question dans son ensemble, y compris les arguments de l'adversaire.<br><br><strong>2. La force de mes preuves ne me dispense pas de réfuter les preuves de l'adversaire :</strong> « Les preuves peuvent être fortes, et autrui peut être incapable de les réfuter ; mais si, à son tour, on est incapable de réfuter les preuves de l'adversaire, de quel droit peut-on faire la distinction entre son opinion et celle de l'adversaire ? » La force de mes preuves est une chose, ma capacité à réfuter les preuves de l'adversaire en est une autre. La distinction équitable suppose la capacité d'évaluer les deux séries de preuves ensemble.<br><br><strong>3. L'obligation de s'abstenir de juger :</strong> « Celui qui est dans cette situation doit s'abstenir de porter un jugement. » Celui qui ne peut réfuter les preuves de l'adversaire doit s'abstenir de juger, et non juger en faveur de son opinion sous prétexte que ses preuves sont fortes.<br><br><strong>4. Le jugement dans ce cas est un défaut :</strong> « S'il porte un jugement, c'est soit qu'il y a été contraint, soit qu'il a suivi ses passions, et c'est ce que fait le commun des mortels. » Porter un jugement alors qu'on est incapable de réfuter les preuves de l'adversaire relève soit de la contrainte, soit du suivisme des passions, tous deux rejetés logiquement et éthiquement.<br><br><strong>Conclusion :</strong> la force de mes arguments seule ne suffit pas à faire la distinction entre mon opinion et celle de mon adversaire. La distinction équitable suppose :<br>– d'embrasser les détails de la question dans son ensemble (y compris les arguments de l'adversaire) ;<br>– la capacité de réfuter les preuves de l'adversaire ou de reconnaître leur force ;<br>– de s'abstenir de juger si les conditions logiques de la décision ne sont pas réunies ;<br>– de ne pas se laisser entraîner par les passions ou la contrainte dans le jugement.",
+                "PhiH.textAnalysis.mill.answers.a2.title": "Réponse à la deuxième tâche :",
+                "PhiH.textAnalysis.mill.answers.a2.content": "Le deuxième paragraphe du texte repère un ensemble de conditions logiques et éthiques de la saine argumentation et de la saine réfutation, que l'on peut classer comme suit :<br><br><strong>A. Les conditions logiques :</strong><br>1. <strong>Prendre connaissance des arguments de l'adversaire dans leur forme claire et non déformée :</strong> « le fait que l'homme prenne connaissance des arguments de son adversaire dans une forme claire et non déformée ».<br>2. <strong>Ressentir leur force et leur prépondérance :</strong> « de sorte qu'il ressente leur force et leur prépondérance ».<br>3. <strong>Ressentir la difficulté de la position de celui qui les contredit :</strong> « et la difficulté de la position de celui qui les contredit ».<br>4. <strong>La capacité de repousser ces preuves :</strong> « l'aide à discerner le point de justesse capable de repousser ces preuves ».<br>5. <strong>Surmonter ces difficultés :</strong> « et de surmonter ces difficultés ».<br><br><strong>B. Les conditions éthiques (éthiques) :</strong><br>1. <strong>Ne pas se contenter de ce que rapportent « nos maîtres » sur l'adversaire :</strong> « il ne suffit pas de s'arrêter sur les arguments de l'adversaire tels que nous les rapportent nos maîtres, conformément à leurs passions et à leurs opinions ».<br>2. <strong>L'équité :</strong> « cette méthode ne rend pas justice aux propos de l'adversaire ».<br>3. <strong>Demander les arguments à ceux qui y croient :</strong> « il faut au contraire entendre les propos de l'adversaire de la bouche de ceux qui croient en leur vérité et ne manquent pas de les soutenir et de les défendre ».<br>4. <strong>L'équité et l'objectivité dans la transmission des propos de l'adversaire :</strong> (comme dans la note 3).<br>5. <strong>Ne pas déformer ni simplifier à l'excès :</strong> « dans une forme claire et non déformée ».<br><br><strong>Conclusion :</strong> les conditions logiques concernent la validité du raisonnement (connaissance des arguments, perception de leur force, capacité de les repousser) ; les conditions éthiques concernent l'équité, la probité et l'objectivité dans le traitement de l'adversaire. C'est par la réunion des conditions logiques et éthiques que l'argumentation et la réfutation sont saines.",
+                "PhiH.textAnalysis.mill.answers.a3.title": "Réponse à la troisième tâche :",
+                "PhiH.textAnalysis.mill.answers.a3.content": "Mill juge à la fin du texte qu'« il est rare, hélas, parmi la classe instruite, de trouver quelqu'un qui s'impose cette peine ». On peut justifier ce jugement par les facteurs suivants :<br><br><strong>1. La peine de l'effort :</strong> prendre connaissance des arguments de l'adversaire à leurs sources originales, et les comprendre dans leur forme la plus forte, exige un effort considérable et un temps long, dont beaucoup se dispensent.<br><br><strong>2. Le désir de sécurité intellectuelle :</strong> prendre connaissance des arguments forts de l'adversaire peut ébranler nos convictions et nous imposer de reconsidérer nos opinions. C'est psychologiquement inconfortable, et beaucoup préfèrent l'éviter.<br><br><strong>3. L'amour-propre et le parti pris :</strong> la tendance naturelle à vouloir triompher de son opinion peut être plus forte que la tendance à chercher la vérité, et l'intellectuel préfère alors rester dans sa zone de confort intellectuel.<br><br><strong>4. L'influence du milieu culturel :</strong> dans les milieux cultivés, peut dominer le parti pris de l'opinion dominante, ou l'appartenance à un groupe intellectuel particulier, et l'intellectuel préfère alors préserver son appartenance plutôt que de s'ouvrir aux arguments des adversaires.<br><br><strong>5. L'absence d'éducation au dialogue :</strong> l'enseignement traditionnel n'éduque pas à l'équité dans le dialogue, ni à la lecture de l'adversaire à ses sources originales, mais à la mémorisation, à la répétition et à la reproduction.<br><br><strong>6. Le coût social :</strong> reconnaître la force des arguments de l'adversaire peut être perçu comme une faiblesse ou comme une trahison de la position à laquelle l'intellectuel appartient.<br><br><strong>7. La différence entre l'intellectuel et le penseur :</strong> l'intellectuel peut être porteur de connaissances et d'informations, mais il n'est pas nécessairement un penseur critique et libre. La peine dont parle Mill suppose un haut degré de liberté intellectuelle et de probité, vertus rares.<br><br><strong>Conclusion :</strong> le jugement de Mill sur la rareté des intellectuels qui s'imposent la peine de prendre connaissance des arguments de l'adversaire à leurs sources fortes repose sur des obstacles psychologiques (peur d'ébranler ses convictions), sociaux (appartenance à un groupe, coût social), éducatifs (absence d'éducation au dialogue) et éthiques (amour-propre et parti pris). Ce jugement révèle le regard critique de Mill sur les intellectuels, et sa conscience de l'écart entre la prétention à la culture et la pratique du dialogue véritable.",
+                "PhiH.textAnalysis.mill.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.mill.analysis.thesis.title": "Thèse principale :",
+                "PhiH.textAnalysis.mill.analysis.thesis.content": "Mill considère que la force des arguments personnels ne suffit pas à faire la distinction équitable entre son opinion et celle de l'adversaire. La distinction équitable suppose d'embrasser les arguments de l'adversaire dans leur forme la plus forte, de les comprendre dans leur forme claire et non déformée, et de ressentir leur force et leur prépondérance. Cela exige des conditions logiques (connaissance des arguments, capacité de les repousser) et éthiques (équité, probité, transmission à partir des partisans mêmes des arguments). Mill note que ces conditions sont rares parmi les intellectuels, en raison de la peine qu'elles imposent, et de l'amour-propre et du parti pris.",
+                "PhiH.textAnalysis.mill.analysis.mechanisms.title": "Mécanismes de la saine argumentation et de la saine réfutation :",
+                "PhiH.textAnalysis.mill.analysis.mechanisms.content": "- <strong>Embrasser la question :</strong> comprendre les détails de la question dans son ensemble, y compris les arguments de l'adversaire, et non seulement les arguments de l'opinion personnelle.<br>- <strong>Prendre connaissance des arguments de l'adversaire à leurs sources originales :</strong> non à des sources hostiles ou déformées, mais à celles de leurs partisans et de leurs défenseurs.<br>- <strong>Comprendre les arguments dans leur forme la plus forte :</strong> non dans leur forme caricaturale ou simplifiée.<br>- <strong>Ressentir la force des arguments :</strong> reconnaître leur prépondérance et leur poids, ne pas les ignorer ni les minimiser.<br>- <strong>S'abstenir de juger avant d'avoir réuni les conditions :</strong> pas de jugement avant d'embrasser les deux côtés de la question.<br>- <strong>Se libérer des passions et de la contrainte :</strong> pas de jugement par suivisme des passions ou sous la pression de la contrainte.",
+                "PhiH.textAnalysis.mill.analysis.consequences.title": "Conséquences de cette thèse :",
+                "PhiH.textAnalysis.mill.analysis.consequences.content": "- <strong>Élargissement du concept d'argumentation :</strong> l'argumentation n'est pas seulement la construction d'arguments personnels forts, mais aussi la prise de connaissance des arguments de l'adversaire et leur confrontation.<br>- <strong>Lien entre argumentation et équité :</strong> la saine argumentation suppose l'équité envers l'adversaire et le refus de déformer ses propos.<br>- <strong>Transformation de l'argumentation de confrontation en dialogue :</strong> l'argumentation n'est pas un conflit entre deux adversaires, mais une recherche commune de la vérité, où les arguments sont échangés dans leur forme la plus forte.<br>- <strong>Critique de la vision superficielle de l'intellectuel :</strong> l'intellectuel n'est pas un simple porteur de connaissances, mais celui qui pratique le dialogue véritable, ce qui est rare.<br>- <strong>Fondation du principe de tolérance intellectuelle :</strong> le dialogue véritable avec l'adversaire suppose la reconnaissance de son droit à la différence, et de la possibilité qu'il ait raison.",
+                "PhiH.textAnalysis.mill.analysis.significance.title": "Significations et dimensions du concept :",
+                "PhiH.textAnalysis.mill.analysis.significance.content": "Ce texte porte une signification méthodologique et éthique profonde :<br><br><strong>1. Signification méthodologique :</strong> le texte offre des règles méthodologiques pour la saine argumentation et la saine réfutation, tirées de la nature de l'argumentation comme processus rationnel non contraignant. Ces règles sont donc nécessaires à quiconque veut argumenter ou réfuter sainement.<br><br><strong>2. Signification éthique :</strong> le texte lie l'argumentation à l'équité, à la probité et à l'objectivité. L'argumentation n'est pas une simple habileté technique, mais une vertu éthique supposant le respect de l'adversaire et la reconnaissance de son droit à présenter ses arguments dans leur forme la plus forte.<br><br><strong>3. Signification éducative :</strong> le texte adresse une critique à la méthode d'enseignement traditionnelle, qui éduque à la mémorisation plutôt qu'au dialogue, et à la présentation des opinions des « maîtres » plutôt qu'à la lecture des sources originales. Cela appelle une réforme éducative qui fasse du dialogue et de l'équité le pivot de l'enseignement.<br><br><strong>4. Signification cognitive :</strong> le texte montre que la vérité ne se saisit que par la confrontation des arguments opposés. Celui qui se limite aux arguments de son opinion, sans prendre connaissance des arguments de son adversaire, ne peut atteindre la vérité, mais reste dans les limites de son opinion.<br><br><strong>5. Lien du texte avec la leçon (l'analyse) :</strong> ce texte complète la théorie de la réfutation chez Grenier. Grenier a montré que la réfutation est purification de la philosophie ; Mill montre ici les conditions de la saine réfutation : prendre connaissance des arguments de l'adversaire dans leur forme la plus forte, et l'équité dans leur traitement. Cela prépare le texte de Bayle, qui incarnera pratiquement ces conditions dans sa réfutation de la position d'Épicure et de Lucrèce sur la mort."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.mill.level": "3rd Secondary - Philosophy",
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.mill.title": "Text Analysis: On the Requirements of Refutation - John Stuart Mill",
+                "PhiH.textAnalysis.mill.introduction.title": "Introduction",
+                "PhiH.textAnalysis.mill.introduction.content": "If demonstration – in mathematics for example – is a rigorous logical and technical operation leading to necessary and universal results that do not admit contestation, then thought and reasoning in non-scientific fields (such as philosophy, literature and debates in the public sphere...) rest on argumentation and are accompanied by dialogue and discussion, where the argument is always revisable and criticizable. Interlocutors can only reach truth and achieve consensus on it if they take special precautions that preserve them from slipping into polemics and subjective judgments that would take them away from their goal.",
+                "PhiH.textAnalysis.mill.text.title": "The Text",
+                "PhiH.textAnalysis.mill.text.content": "If one cannot grasp the details of a question, one's knowledge of it is incomplete. One's proofs may be strong, and others may be unable to refute them; but if, in turn, one is unable to refute the proofs of one's opponent, on what basis can one make the distinction [1] between one's own opinion and that of one's opponent? Whoever is in this situation must refrain from issuing a judgment; and if he issues a judgment, it is either because he has been compelled [2] to do so, or because he has followed his passions, and this is what the common people do.<br><br>And it is not enough to stop at the opponent's arguments as our teachers report them to us, in accordance with their passions and opinions, for this method does not do justice [3] to the opponent's statements, nor does it bring them closer to the mind so that it may understand them; rather, one must hear the opponent's statements from those who believe in their truth and do not hesitate to support and defend them. For a person's acquaintance with the arguments of his opponent in a clear and undistorted form, such that he feels their strength and their weight [4] and the difficulty of the position of the one who contradicts them, helps him to discern the point of correctness capable of repelling those proofs and of overcoming those difficulties.<br><br>Yet it is rare, alas, among the educated class, to find someone who imposes this hardship upon himself.",
+                "PhiH.textAnalysis.mill.text.source": "John Stuart Mill, On Liberty, publications of the Ministry of Culture - Syria, p.67",
+                "PhiH.textAnalysis.mill.author.title": "Author Presentation",
+                "PhiH.textAnalysis.mill.author.alt": "John Stuart Mill",
+                "PhiH.textAnalysis.mill.author.content": "John Stuart Mill (1806-1873) was an English philosopher and economist, liberal in orientation, self-taught, who mastered many languages and excelled in mathematics and logic from an early age. One of the theorists of utilitarianism, he was elected Member of Parliament in the British House of Commons, and defended women's right to vote, which was one of the reasons for his non-reelection. Among his works: \"Principles of Political Economy\" (1848), \"On Liberty\" (1859), \"Utilitarianism\" (1861), \"The Subjection of Women\" (1869), \"A System of Logic, Ratiocinative and Inductive\" (1869, 6th ed.).",
+                "PhiH.textAnalysis.mill.footnotes.title": "Footnotes",
+                "PhiH.textAnalysis.mill.footnotes.item1": "<strong>(1) \"The distinction\":</strong> allusion to the impasse in which the interlocutor finds himself when he is ignorant of his opponent's proofs, which prevents him from refuting them and consequently makes it impossible for him to distinguish between his own opinion and that of his opponent, whose arguments may be no less strong than the proofs on which his own opinion rests.",
+                "PhiH.textAnalysis.mill.footnotes.item2": "<strong>(2) \"Compelled\":</strong> allusion to the situation in which the holder of an opinion may find himself, compelled to take a position although the logical conditions for decision are not met. It is a defect that is both logical and ethical.",
+                "PhiH.textAnalysis.mill.footnotes.item3": "<strong>(3) \"Does not do justice\":</strong> the author considers that judging the opponent's statements on the basis of what \"our teachers\" – who do not believe in them, and whose accounts therefore lack fairness and objectivity – report to us, constitutes a breach of the requirement of fairness, because they do not give the opponent his right to refutation.",
+                "PhiH.textAnalysis.mill.footnotes.item4": "<strong>(4) \"Their weight\":</strong> allusion to what distinguishes proof (la preuve) from argument (l'argument). Argumentation concerns subjects subject to reasonable discussion; a single fact can be viewed from different angles, and several argumentative paths remain possible and even required, from which it follows that there is no constraining argumentation. Argumentation can only be strong or weak according to its effectiveness, which explains why one is content to describe the argument as merely preponderant.",
+                "PhiH.textAnalysis.mill.questions.title": "Tasks",
+                "PhiH.textAnalysis.mill.questions.q1": "I show, referring to the first three lines of the text, whether the strength of my arguments suffices to make the distinction between my opinion and my opponent's, and I justify my answer.",
+                "PhiH.textAnalysis.mill.questions.q2": "I identify, referring to the second paragraph of the text, the logical and ethical conditions of sound argumentation and sound refutation.",
+                "PhiH.textAnalysis.mill.questions.q3": "I justify the author's judgment at the end of the text concerning the rarity of intellectuals who impose on themselves the ethical conditions of argumentation and refutation.",
+                "PhiH.textAnalysis.mill.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.mill.answers.a1.title": "Answer to the first task:",
+                "PhiH.textAnalysis.mill.answers.a1.content": "No, the strength of my arguments alone does not suffice to make the distinction between my opinion and my opponent's, and this is what the text reveals in the first three lines through the following arguments:<br><br><strong>1. Incomplete knowledge:</strong> \"If one cannot grasp the details of a question, one's knowledge of it is incomplete.\" Even if my arguments are strong, my knowledge remains incomplete if I do not grasp the details of the question as a whole, including the opponent's arguments.<br><br><strong>2. The strength of my proofs does not dispense me from refuting the opponent's proofs:</strong> \"One's proofs may be strong, and others may be unable to refute them; but if, in turn, one is unable to refute the proofs of one's opponent, on what basis can one make the distinction between one's own opinion and that of one's opponent?\" The strength of my proofs is one thing, my capacity to refute the opponent's proofs is another. Fair distinction presupposes the capacity to evaluate both sets of proofs together.<br><br><strong>3. The obligation to refrain from judging:</strong> \"Whoever is in this situation must refrain from issuing a judgment.\" Whoever cannot refute the opponent's proofs must refrain from judging, and not judge in favor of his opinion on the pretext that his proofs are strong.<br><br><strong>4. The judgment in this case is a defect:</strong> \"If he issues a judgment, it is either because he has been compelled to do so, or because he has followed his passions, and this is what the common people do.\" Issuing a judgment while being unable to refute the opponent's proofs is either a matter of compulsion or of following passions, both of which are rejected logically and ethically.<br><br><strong>Conclusion:</strong> the strength of my arguments alone does not suffice to make the distinction between my opinion and my opponent's. Fair distinction presupposes:<br>– to grasp the details of the question as a whole (including the opponent's arguments);<br>– the capacity to refute the opponent's proofs or to acknowledge their strength;<br>– to refrain from judging if the logical conditions for decision are not met;<br>– not to be carried away by passions or compulsion in judging.",
+                "PhiH.textAnalysis.mill.answers.a2.title": "Answer to the second task:",
+                "PhiH.textAnalysis.mill.answers.a2.content": "The second paragraph of the text identifies a set of logical and ethical conditions of sound argumentation and sound refutation, which can be classified as follows:<br><br><strong>A. Logical conditions:</strong><br>1. <strong>Acquaintance with the opponent's arguments in their clear and undistorted form:</strong> \"a person's acquaintance with the arguments of his opponent in a clear and undistorted form\".<br>2. <strong>Feeling their strength and their weight:</strong> \"such that he feels their strength and their weight\".<br>3. <strong>Feeling the difficulty of the position of the one who contradicts them:</strong> \"and the difficulty of the position of the one who contradicts them\".<br>4. <strong>The capacity to repel those proofs:</strong> \"helps him to discern the point of correctness capable of repelling those proofs\".<br>5. <strong>Overcoming those difficulties:</strong> \"and of overcoming those difficulties\".<br><br><strong>B. Ethical conditions:</strong><br>1. <strong>Not to be content with what \"our teachers\" report about the opponent:</strong> \"it is not enough to stop at the opponent's arguments as our teachers report them to us, in accordance with their passions and opinions\".<br>2. <strong>Fairness:</strong> \"this method does not do justice to the opponent's statements\".<br>3. <strong>Seeking the arguments from those who believe in them:</strong> \"rather, one must hear the opponent's statements from those who believe in their truth and do not hesitate to support and defend them\".<br>4. <strong>Fairness and objectivity in transmitting the opponent's statements:</strong> (as in note 3).<br>5. <strong>Not distorting or oversimplifying:</strong> \"in a clear and undistorted form\".<br><br><strong>Conclusion:</strong> logical conditions concern the validity of reasoning (knowledge of arguments, perception of their strength, capacity to repel them); ethical conditions concern fairness, probity and objectivity in dealing with the opponent. It is through the union of logical and ethical conditions that argumentation and refutation are sound.",
+                "PhiH.textAnalysis.mill.answers.a3.title": "Answer to the third task:",
+                "PhiH.textAnalysis.mill.answers.a3.content": "Mill judges at the end of the text that \"it is rare, alas, among the educated class, to find someone who imposes this hardship upon himself\". This judgment can be justified by the following factors:<br><br><strong>1. The hardship of effort:</strong> becoming acquainted with the opponent's arguments from their original sources, and understanding them in their strongest form, requires considerable effort and long time, which many avoid.<br><br><strong>2. The desire for intellectual security:</strong> becoming acquainted with the opponent's strong arguments may shake our convictions and impose on us to reconsider our opinions. This is psychologically uncomfortable, and many prefer to avoid it.<br><br><strong>3. Self-love and partisanship:</strong> the natural tendency to want to triumph with one's opinion may be stronger than the tendency to seek truth, and the intellectual then prefers to remain in his intellectual comfort zone.<br><br><strong>4. The influence of the cultural milieu:</strong> in cultured circles, the partisanship of the dominant opinion, or of belonging to a particular intellectual group, may dominate, and the intellectual then prefers to preserve his belonging rather than to open up to the opponents' arguments.<br><br><strong>5. The absence of education in dialogue:</strong> traditional teaching does not educate in fairness in dialogue, nor in reading the opponent at his original sources, but in memorization, repetition and reproduction.<br><br><strong>6. The social cost:</strong> acknowledging the strength of the opponent's arguments may be perceived as weakness or as betrayal of the position to which the intellectual belongs.<br><br><strong>7. The difference between the intellectual and the thinker:</strong> the intellectual may be a bearer of knowledge and information, but he is not necessarily a free critical thinker. The hardship Mill speaks of presupposes a high degree of intellectual freedom and probity, virtues that are rare.<br><br><strong>Conclusion:</strong> Mill's judgment on the rarity of intellectuals who impose upon themselves the hardship of becoming acquainted with the opponent's arguments at their strong sources rests on psychological obstacles (fear of shaking one's convictions), social obstacles (belonging to a group, social cost), educational obstacles (absence of education in dialogue) and ethical obstacles (self-love and partisanship). This judgment reveals Mill's critical view of intellectuals, and his awareness of the gap between the claim to culture and the practice of genuine dialogue.",
+                "PhiH.textAnalysis.mill.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.mill.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.mill.analysis.thesis.content": "Mill considers that the strength of one's own arguments is not sufficient to make a fair distinction between one's own opinion and that of one's opponent. Fair distinction presupposes grasping the opponent's arguments in their strongest form, understanding them in their clear and undistorted form, and feeling their strength and weight. This requires logical conditions (knowledge of arguments, capacity to repel them) and ethical conditions (fairness, probity, transmission from the very partisans of the arguments). Mill notes that these conditions are rare among intellectuals, because of the hardship they impose, and because of self-love and partisanship.",
+                "PhiH.textAnalysis.mill.analysis.mechanisms.title": "Mechanisms of sound argumentation and sound refutation:",
+                "PhiH.textAnalysis.mill.analysis.mechanisms.content": "- <strong>Grasping the question:</strong> understanding the details of the question as a whole, including the opponent's arguments, and not only the arguments of one's own opinion.<br>- <strong>Acquaintance with the opponent's arguments at their original sources:</strong> not at hostile or distorted sources, but at those of their partisans and defenders.<br>- <strong>Understanding arguments in their strongest form:</strong> not in their caricatural or simplified form.<br>- <strong>Feeling the strength of arguments:</strong> recognizing their weight and their weight, not ignoring or minimizing them.<br>- <strong>Refraining from judging before the conditions are met:</strong> no judgment before grasping both sides of the question.<br>- <strong>Liberation from passions and compulsion:</strong> no judgment through following passions or under the pressure of compulsion.",
+                "PhiH.textAnalysis.mill.analysis.consequences.title": "Consequences of this thesis:",
+                "PhiH.textAnalysis.mill.analysis.consequences.content": "- <strong>Broadening the concept of argumentation:</strong> argumentation is not only the construction of strong personal arguments, but also the acquaintance with the opponent's arguments and their confrontation.<br>- <strong>Link between argumentation and fairness:</strong> sound argumentation presupposes fairness toward the opponent and the refusal to distort his statements.<br>- <strong>Transformation of argumentation from confrontation to dialogue:</strong> argumentation is not a conflict between two adversaries, but a common search for truth, in which arguments are exchanged in their strongest form.<br>- <strong>Critique of the superficial view of the intellectual:</strong> the intellectual is not a simple bearer of knowledge, but the one who practices genuine dialogue, which is rare.<br>- <strong>Foundation of the principle of intellectual tolerance:</strong> genuine dialogue with the opponent presupposes the recognition of his right to differ, and of the possibility that he may be right.",
+                "PhiH.textAnalysis.mill.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.mill.analysis.significance.content": "This text carries a profound methodological and ethical significance:<br><br><strong>1. Methodological significance:</strong> the text offers methodological rules for sound argumentation and sound refutation, drawn from the nature of argumentation as a rational, non-constraining process. These rules are therefore necessary for anyone who wishes to argue or refute soundly.<br><br><strong>2. Ethical significance:</strong> the text links argumentation to fairness, probity and objectivity. Argumentation is not a simple technical skill, but an ethical virtue presupposing respect for the opponent and the recognition of his right to present his arguments in their strongest form.<br><br><strong>3. Educational significance:</strong> the text criticizes the traditional method of teaching, which educates in memorization rather than in dialogue, and in the presentation of the opinions of \"our teachers\" rather than in reading the original sources. This calls for an educational reform that makes dialogue and fairness the pivot of teaching.<br><br><strong>4. Cognitive significance:</strong> the text shows that truth is only grasped through the confrontation of opposing arguments. He who limits himself to the arguments of his own opinion, without becoming acquainted with the arguments of his opponent, cannot reach truth, but remains within the limits of his opinion.<br><br><strong>5. Link of the text with the lesson (analysis):</strong> this text completes the theory of refutation in Grenier. Grenier showed that refutation is purification of philosophy; Mill here shows the conditions of sound refutation: acquaintance with the opponent's arguments in their strongest form, and fairness in their treatment. This prepares the text of Bayle, who will practically embody these conditions in his refutation of Epicurus and Lucretius's position on death."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.mill.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.mill.title": "تحليل النص: في مقتضيات الدحض - جون ستيوارت ميل",
+                "PhiH.textAnalysis.mill.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.mill.introduction.content": "إذا كانت البرهنة - في الرياضيات مثلاً - عملية منطقية وتقنية صارمة تفضي إلى نتائج ضرورية كونية لا تقبل المجادلة، فإن التفكير والاستدلال في المجالات غير العلمية (كالفلسفة والأدب والنقاشات في المجال العمومي...) تقوم على الحجاج وتقترن بالحوار والنقاش، حيث تكون الحجة قابلة دائماً للمراجعة والنقد. ولا يتأتى للمتحاورين بلوغ الحقيقة وتحقيق الوفاق بشأنها ما لم يتخذوا احتياطات خاصة تقيهم من الانزلاق في سجال وفي أحكام ذاتية تنأى بهم عن مطلوبهم.",
+                "PhiH.textAnalysis.mill.text.title": "النص",
+                "PhiH.textAnalysis.mill.text.content": "إذا لم يتمكن المرء من الإحاطة بدقائق قضية ما، فإن معرفته بها تكون ناقصة. وقد تكون أدلته قوية، وقد يعجز الغير عن دحضها، ولكن إذا عجز بدوره عن دحض أدلة خصمه، فبأي وجه يستطيع المفاضلة[1] بين رأيه ورأي خصمه؟ وعلى من كان هذا شأنه أن يمتنع عن إبداء حكمه، فإذا أصدر حكمه فإما أن يكون قد أرغم[2] على ذلك، أو انقاد في ذلك إلى عواطفه، وهذا ما يفعله عامة الناس.<br><br>ولا يكفي أن نقف على حجج الخصم كما يسوقها لنا أساتذتنا وبما يتفق مع أهوائهم وآرائهم فيها، لأن هذه الطريقة لا تنصف[3] أقوال الخصم، كما لا تقربها إلى الذهن لكي يتفهمها؛ بل ينبغي أن تسمع أقوال خصمك ممن يؤمن بصحتها، ولا يتوانى عن تأييدها والدفاع عنها. إذ أن اطلاع الإنسان على حجج خصمه وهي في صورة واضحة غير مشوهة، بحيث يشعر بقوتها ورجاحتها[4] وبصعوبة موقف المعارض لها، يساعده على إدراك وجه الصواب الكفيل بدفع تلك الأدلة، وتذليل تلك الصعاب.<br><br>بيد أنه يندر، للأسف، بين الطبقة المثقفة من يكلف نفسه تلك المشقة.",
+                "PhiH.textAnalysis.mill.text.source": "جون ستيوارت ميل، بحث في الحرية، منشورات وزارة الثقافة - سوريا، ص67",
+                "PhiH.textAnalysis.mill.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.mill.author.alt": "جون ستيوارت ميل",
+                "PhiH.textAnalysis.mill.author.content": "جون ستيوارت ميل (1806-1873) فيلسوف ورجل اقتصاد إنجليزي، ليبرالي النزعة، عصامي التكوين، حذق لغات عديدة وبرع في الرياضيات والمنطق منذ حداثة سنه. من منظّري النزعة النفعية، انتخب نائباً بمجلس العموم البريطاني، ودافع عن حق المرأة في الانتخاب، وكان ذلك من بين أسباب عدم إعادة انتخابه. من بين مؤلفاته: \"مبادئ الاقتصاد السياسي\" (1848)، \"الحرية\" (1859)، \"النزعة النفعية\" (1861)، \"في استعباد النساء\" (1869)، \"نسق المنطق الاستنتاجي والاستقرائي\" (1869، ط.6).",
+                "PhiH.textAnalysis.mill.footnotes.title": "الهوامش",
+                "PhiH.textAnalysis.mill.footnotes.item1": "<strong>(1) \"المفاضلة\":</strong> إشارة إلى المأزق الذي يجد فيه المحاور نفسه في حالة الجهل بأدلة خصمه، فلا يتمكن نتيجة ذلك من دحضها، ومن ثمة يتعذر عليه المفاضلة بين رأيه ورأي خصمه الذي قد لا تقل حججه قوة عن الأدلة التي يستند إليها رأيه الخاص.",
+                "PhiH.textAnalysis.mill.footnotes.item2": "<strong>(2) \"أرغم\":</strong> إشارة إلى الوضع الذي قد يجد فيه صاحب الرأي نفسه مرغماً على اتخاذ موقف رغم أن شروط الحسم المنطقية لم تتوفر. وهو عيب منطقي وأخلاقي في آن.",
+                "PhiH.textAnalysis.mill.footnotes.item3": "<strong>(3) \"لا تنصف\":</strong> يعتبر الكاتب أن الحكم على أقوال الخصم انطلاقاً مما يرويه لنا عنها \"أساتذتنا\" الذين لا يؤمنون بها، والذين تفتقر رواياتهم إذن إلى النزاهة والموضوعية، فيه إخلال بمقتضى الإنصاف لأنها لا تعطي للخصم حقه في الدحض.",
+                "PhiH.textAnalysis.mill.footnotes.item4": "<strong>(4) \"رجاحتها\":</strong> إشارة إلى ما يميز البرهان (la preuve) عن الحجة (l'argument). فالحجاج يتعلق بمواضيع تخضع للنقاش المعقول، والواقعة الواحدة يمكن النظر إليها من زوايا نظر مختلفة، وتظل عدة مسارات حجاجية ممكنة وحتى مطلوبة، بما يلزم عنه أنه لا وجود لحجاج إكراهي. يمكن للحجاج فقط أن يكون قوياً أو ضعيفاً بحسب نجاعته، وهذا ما يفسر الاقتصاد على نعت الحجة بأنها فقط مرجّحة.",
+                "PhiH.textAnalysis.mill.questions.title": "المهام",
+                "PhiH.textAnalysis.mill.questions.q1": "أبيّن بالرجوع إلى الأسطر الثلاثة الأولى من النص ما إذا كانت قوة حججي كافية للمفاضلة بين رأيي ورأي خصمي، وأعلّل إجابتي.",
+                "PhiH.textAnalysis.mill.questions.q2": "أرصد بالرجوع إلى الفقرة الثانية من النص الشروط المنطقية والأخلاقية لسلامة الحجاج والدحض.",
+                "PhiH.textAnalysis.mill.questions.q3": "أعلّل حكم الكاتب في آخر النص بشأن ندرة المثقفين الذين يلزمون أنفسهم بالشروط الأخلاقية للحجاج والدحض.",
+                "PhiH.textAnalysis.mill.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.mill.answers.a1.title": "الإجابة عن المهمة الأولى:",
+                "PhiH.textAnalysis.mill.answers.a1.content": "لا، ليست قوة حججي كافية للمفاضلة بين رأيي ورأي خصمي، وهذا ما يكشفه النص في الأسطر الثلاثة الأولى من خلال الحجج التالية:<br><br><strong>1. المعرفة الناقصة:</strong> \"إذا لم يتمكن المرء من الإحاطة بدقائق قضية ما، فإن معرفته بها تكون ناقصة\". فحتى لو كانت حججي قوية، فإن معرفتي تبقى ناقصة إن لم أحيط بدقائق القضية كلها، ومن جملتها حجج الخصم.<br><br><strong>2. قوة أدلتي لا تعفيني من دحض أدلة الخصم:</strong> \"وقد تكون أدلته قوية، وقد يعجز الغير عن دحضها، ولكن إذا عجز بدوره عن دحض أدلة خصمه، فبأي وجه يستطيع المفاضلة بين رأيه ورأي خصمه؟\". فقوة أدلتي شيء، وقدرتي على دحض أدلة الخصم شيء آخر. والمفاضلة العادلة تفترض القدرة على تقييم الأدلتين معاً.<br><br><strong>3. وجوب الامتناع عن الحكم:</strong> \"وعلى من كان هذا شأنه أن يمتنع عن إبداء حكمه\". فمن لا يقدر على دحض أدلة خصمه، يجب عليه أن يمتنع عن الحكم، لا أن يحكم لصالح رأيه بحجة أن أدلته قوية.<br><br><strong>4. الحكم في هذه الحالة عيب:</strong> \"فإذا أصدر حكمه فإما أن يكون قد أرغم على ذلك، أو انقاد في ذلك إلى عواطفه، وهذا ما يفعله عامة الناس\". فإصدار الحكم في حالة العجز عن دحض أدلة الخصم يكون إما إكراهاً أو انقياداً للعواطف، وكلاهما مرفوض منطقياً وأخلاقياً.<br><br><strong>الخلاصة:</strong> قوة حججي وحدها لا تكفي للمفاضلة بين رأيي ورأي خصمي. المفاضلة العادلة تفترض:<br>– الإحاطة بدقائق القضية كلها (بما فيها حجج الخصم).<br>– القدرة على دحض أدلة الخصم أو الاعتراف بقوتها.<br>– الامتناع عن الحكم إن لم تتحقق الشروط المنطقية للحسم.<br>– عدم الانقياد للعواطف أو للإكراه في إصدار الحكم.",
+                "PhiH.textAnalysis.mill.answers.a2.title": "الإجابة عن المهمة الثانية:",
+                "PhiH.textAnalysis.mill.answers.a2.content": "ترصد الفقرة الثانية من النص جملة من الشروط المنطقية والأخلاقية لسلامة الحجاج والدحض، يمكن تصنيفها كما يلي:<br><br><strong>أ. الشروط المنطقية:</strong><br>1. <strong>الاطلاع على حجج الخصم في صورتها الواضحة غير المشوهة:</strong> \"اطلاع الإنسان على حجج خصمه وهي في صورة واضحة غير مشوهة\".<br>2. <strong>إدراك قوتها ورجاحتها:</strong> \"بحيث يشعر بقوتها ورجاحتها\".<br>3. <strong>إدراك صعوبة موقف المعارض لها:</strong> \"وبصعوبة موقف المعارض لها\".<br>4. <strong>القدرة على دفع تلك الأدلة:</strong> \"يساعده على إدراك وجه الصواب الكفيل بدفع تلك الأدلة\".<br>5. <strong>تذليل الصعاب:</strong> \"وتذليل تلك الصعاب\".<br><br><strong>ب. الشروط الأخلاقية (الايتيقية):</strong><br>1. <strong>عدم الاكتفاء بما يرويه \"الأساتذة\" عن الخصم:</strong> \"لا يكفي أن نقف على حجج الخصم كما يسوقها لنا أساتذتنا وبما يتفق مع أهوائهم وآرائهم فيها\".<br>2. <strong>الإنصاف:</strong> \"لأن هذه الطريقة لا تنصف أقوال الخصم\".<br>3. <strong>طلب الحجج من مؤيديها:</strong> \"بل ينبغي أن تسمع أقوال خصمك ممن يؤمن بصحتها، ولا يتوانى عن تأييدها والدفاع عنها\".<br>4. <strong>النزاهة والموضوعية في نقل أقوال الخصم:</strong> (كما في الهامش 3).<br>5. <strong>عدم التشويه أو التبسيط المخل:</strong> \"في صورة واضحة غير مشوهة\".<br><br><strong>الخلاصة:</strong> الشروط المنطقية تتعلق بصحة الاستدلال (معرفة الحجج، إدراك قوتها، القدرة على دفعها)؛ أما الشروط الأخلاقية فتتعلق بالإنصاف والنزاهة والموضوعية في التعامل مع الخصم. وباجتماع الشروط المنطقية والأخلاقية، يكون الحجاج والدحض سليمين.",
+                "PhiH.textAnalysis.mill.answers.a3.title": "الإجابة عن المهمة الثالثة:",
+                "PhiH.textAnalysis.mill.answers.a3.content": "يحكم ميل في آخر النص بأنه \"يندر، للأسف، بين الطبقة المثقفة من يكلف نفسه تلك المشقة\". ويمكن تعليل هذا الحكم بالعوامل التالية:<br><br><strong>1. مشقة الجهد:</strong> الاطلاع على حجج الخصم من مصادرها الأصلية، وفهمها في أقوى صورها، يتطلب جهداً كبيراً ووقتاً طويلاً، وهو ما يتهرب منه الكثيرون.<br><br><strong>2. الرغبة في السلامة الفكرية:</strong> الاطلاع على حجج الخصم القوية قد يزعزع قناعاتنا، وقد يفرض علينا إعادة النظر في آرائنا. وهذا أمر مزعج نفسياً، فيفضّل الكثيرون تجنبه.<br><br><strong>3. حب الذات والانتصار للرأي:</strong> قد يكون الميل الطبيعي إلى الانتصار لرأينا أقوى من الميل إلى البحث عن الحقيقة، فيفضّل المثقف أن يظل في منطقة أمانه الفكري.<br><br><strong>4. التأثر بالبيئة الثقافية:</strong> في الأوساط المثقفة، قد يكون السائد هو الانتصار للرأي السائد، أو الانتماء إلى جماعة فكرية معينة، فيفضّل المثقف أن يحافظ على انتمائه بدل الانفتاح على حجج الخصوم.<br><br><strong>5. غياب التربية على الحوار:</strong> فالتعليم التقليدي لا يربي على الإنصاف في الحوار، ولا على قراءة الخصم من مصادره الأصلية، بل يربي على الاستظهار والحفظ والتكرار.<br><br><strong>6. التكلفة الاجتماعية:</strong> الاعتراف بقوة حجج الخصم قد يُنظر إليه كضعف أو كخيانة للموقف الذي ينتمي إليه المثقف.<br><br><strong>7. الفرق بين المثقف والمفكر:</strong> فالمثقف قد يكون حاملاً لمعارف ومعلومات، لكنه ليس بالضرورة مفكراً نقدياً حرّاً. والمشقة التي يتحدث عنها ميل تفترض درجة عالية من الحرية الفكرية والنزاهة، وهي فضائل نادرة.<br><br><strong>الخلاصة:</strong> حكم ميل على ندرة المثقفين الذين يكلفون أنفسهم مشقة الاطلاع على حجج الخصم من مصادرها القوية، يستند إلى العوائق النفسية (الخوف من زعزعة القناعات)، والاجتماعية (الانتماء إلى جماعة، التكلفة الاجتماعية)، والتربوية (غياب التربية على الحوار)، والأخلاقية (حب الذات والانتصار للرأي). وهذا الحكم يكشف عن نظرة ميل النقدية إلى المثقفين، وعن إدراكه للفجوة بين ادعاء الثقافة وممارسة الحوار الحقيقي.",
+                "PhiH.textAnalysis.mill.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.mill.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.mill.analysis.thesis.content": "يرى ميل أنّ قوة الحجج الشخصية ليست كافية للمفاضلة العادلة بين رأيي ورأي الخصم. فالمفاضلة العادلة تفترض الإحاطة بحجج الخصم في أقوى صورها، وفهمها في صورتها الواضحة غير المشوهة، وإدراك قوتها ورجاحتها. وهذا يتطلب شروطاً منطقية (معرفة الحجج، القدرة على دفعها) وأخلاقية (الإنصاف، النزاهة، النقل من مؤيدي الحجج أنفسهم). ويلاحظ ميل أنّ هذه الشروط نادرة بين المثقفين، بسبب المشقة التي تفرضها، وبسبب حب الذات وحب الانتصار للرأي.",
+                "PhiH.textAnalysis.mill.analysis.mechanisms.title": "آليات الحجاج والدحض السليمين:",
+                "PhiH.textAnalysis.mill.analysis.mechanisms.content": "- <strong>الإحاطة بالقضية:</strong> فهم دقائق القضية كلها، بما فيها حجج الخصم، لا مجرد حجج الرأي الشخصي.<br>- <strong>الاطلاع على حجج الخصم من مصادرها الأصلية:</strong> لا من مصادر معادية أو محرفة، بل من مؤيديها ومن يدافعون عنها.<br>- <strong>فهم الحجج في أقوى صورها:</strong> لا في صورتها المسقطة أو المبسطة.<br>- <strong>إدراك قوة الحجج:</strong> الاعتراف برجاحتها وثقلها، لا تجاهلها أو التقليل منها.<br>- <strong>الامتناع عن الحكم قبل استكمال الشروط:</strong> لا حكم قبل الإحاطة بكلا جانبي المسألة.<br>- <strong>التحرر من العواطف والإكراه:</strong> لا حكم انقياداً للعاطفة أو تحت ضغط الإكراه.",
+                "PhiH.textAnalysis.mill.analysis.consequences.title": "النتائج المترتبة على هذه الأطروحة:",
+                "PhiH.textAnalysis.mill.analysis.consequences.content": "- <strong>توسيع مفهوم الحجاج:</strong> الحجاج ليس مجرد بناء حجج شخصية قوية، بل هو اطلاع على حجج الخصم أيضاً، ومواجهتها.<br>- <strong>ربط الحجاج بالإنصاف:</strong> الحجاج السليم يفترض إنصاف الخصم، وعدم تشويه أقواله.<br>- <strong>تحويل الحجاج من مواجهة إلى حوار:</strong> الحجاج ليس صراعاً بين خصمين، بل هو بحث مشترك عن الحقيقة، يتم فيه تبادل الحجج في أقوى صورها.<br>- <strong>نقد النظرة السطحية إلى المثقف:</strong> فالمثقف ليس مجرد حامل للمعارف، بل هو من يمارس الحوار الحقيقي، وهذا نادر.<br>- <strong>تأسيس مبدأ التسامح الفكري:</strong> فالحوار الحقيقي مع الخصم يفترض الاعتراف بحقه في الاختلاف، وباحتمال أن يكون على صواب.",
+                "PhiH.textAnalysis.mill.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.mill.analysis.significance.content": "يحمل هذا النص دلالة منهجية وأخلاقية عميقة:<br><br><strong>1. دلالة منهجية:</strong> النص يقدّم قواعد منهجية لسلامة الحجاج والدحض، مستخلصة من طبيعة الحجاج كعملية معقولية لا إكراهية. وهو ما يجعل هذه القواعد ضرورية لكل من يريد أن يحجّ أو يدحض بشكل سليم.<br><br><strong>2. دلالة أخلاقية:</strong> النص يربط الحجاج بالإنصاف والنزاهة والموضوعية. فالحجاج ليس مجرد مهارة تقنية، بل هو فضيلة أخلاقية تفترض احترام الخصم والاعتراف بحقه في تقديم حججه في أقوى صورها.<br><br><strong>3. دلالة تربوية:</strong> النص يوجّه نقداً لطريقة التعليم التقليدية التي تربي على الاستظهار بدل الحوار، وعلى تقديم آراء \"الأساتذة\" بدل الاطلاع على المصادر الأصلية. وهو ما يدعو إلى إصلاح تربوي يجعل من الحوار والإنصاف محوراً للتعليم.<br><br><strong>4. دلالة معرفية:</strong> النص يبيّن أنّ الحقيقة لا تُدرك إلا بمواجهة الحجج المتعارضة. فمن يقتصر على حجج رأيه، دون الاطلاع على حجج خصمه، لا يمكنه بلوغ الحقيقة، بل يبقى في حدود رأيه.<br><br><strong>5. صلة النص بالدرس (التحليل):</strong> يكمّل هذا النص نظرية الدحض عند غرونيي. فغرونيي بيّن أن الدحض تطهير للفلسفة، وميل يبيّن هنا شروط الدحض السليم: الاطلاع على حجج الخصم في أقوى صورها، والإنصاف في التعامل معها. وهو ما يمهد لنص بايل الذي سيجسّم هذه الشروط عملياً في دحضه لموقف أبقور ولوكراس من الموت."
+            }
+        };
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

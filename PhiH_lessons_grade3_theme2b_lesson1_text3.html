@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: مشكل قيمة القيم - فريدريك نيتشه - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#800f2f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Crimson / Amaranth Color Palette */
+        :root {
+            --primary-color: #c9184a;
+            --primary-light: #ff4d6d;
+            --primary-dark: #800f2f;
+            --secondary-color: #590d22;
+            --secondary-light: #7d1830;
+            --secondary-dark: #3a0816;
+            --accent-color: #ff4d6d;
+            --accent-light: #ff758f;
+            --accent-dark: #c9184a;
+            --light-color: #fff0f3;
+            --dark-color: #2b0815;
+            --text-color: #4a1525;
+            --heading-color: #2b0815;
+            --background-color: #fff5f7;
+            --card-bg: #ffffff;
+            --definition-bg: #ffe0e8;
+            --border-color: #f4b8c4;
+            --table-even-bg: #fff0f3;
+            --table-hover-bg: #ffd6e0;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(128, 15, 47, 0.1), 0 2px 4px -1px rgba(128, 15, 47, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(128, 15, 47, 0.1), 0 4px 6px -2px rgba(128, 15, 47, 0.05);
+            --gradient-primary: linear-gradient(135deg, #c9184a 0%, #800f2f 100%);
+            --gradient-secondary: linear-gradient(135deg, #590d22 0%, #3a0816 100%);
+            --gradient-accent: linear-gradient(135deg, #ff4d6d 0%, #c9184a 100%);
+            --gradient-gray: linear-gradient(135deg, #7d1830 0%, #590d22 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #ff4d6d;
+            --primary-light: #ff758f;
+            --primary-dark: #c9184a;
+            --secondary-color: #7d1830;
+            --secondary-light: #9d2842;
+            --secondary-dark: #590d22;
+            --accent-color: #ff758f;
+            --accent-light: #ff9db0;
+            --accent-dark: #ff4d6d;
+            --light-color: #2b0815;
+            --dark-color: #180409;
+            --text-color: #f4b8c4;
+            --heading-color: #fff0f3;
+            --background-color: #1c0510;
+            --card-bg: #2b0815;
+            --definition-bg: #3a0816;
+            --border-color: #590d22;
+            --table-even-bg: #2b0815;
+            --table-hover-bg: #3a0816;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #c9184a 0%, #ff4d6d 100%);
+            --gradient-secondary: linear-gradient(135deg, #7d1830 0%, #9d2842 100%);
+            --gradient-accent: linear-gradient(135deg, #ff4d6d 0%, #c9184a 100%);
+            --gradient-gray: linear-gradient(135deg, #9d2842 0%, #7d1830 100%);
+        }
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(128, 15, 47, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(89, 13, 34, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(255, 77, 109, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-author-info {
+            flex: 1;
+        }
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        li strong {
+            color: var(--primary-color);
+        }
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(128, 15, 47, 0.05), transparent);
+        }
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        body.rtl .PhiH-text-card ul li {
+            border-left: none;
+            border-right: 3px solid var(--primary-color);
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .PhiH-author-image {
+                align-self: center;
+            }
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.nietzscheValues.title">تحليل النص: مشكل قيمة القيم - فريدريك نيتشه</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.nietzscheValues.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        <section class="PhiH-text-analysis-section">
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nietzscheValues.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.nietzscheValues.introduction.content">
+                    إن المشكلات الفلسفية لا هي معطاة بصورة جاهزة ولا هي خالدة، إنها تُبنى ويُعاد بناؤها في التاريخ، فالقيم الإنسانية التي ظلت ولأحقاب طويلة موضوع تفكير يُنظرُ في أسسها أضحت موضع استشكال يُسائلها عن قيمتها.
+                </p>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nietzscheValues.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.nietzscheValues.text.content">
+                        ضمن آية شروط ابتكر الإنسان لنفسه هذين التقييمين: الخير والشرّ بغية استعمالهما في حياته، وما قيمة هذين التقييمين في حدّ ذاتهما[1]؟ هل أعاقا إلى حدّ الآن تطوّر البشرية أم عزّزاه ؟ أهما عارض من عوارض البؤس والفقر الروحي والانحطاط ؟ أم أنهما يُنمان بالعكس عن الغيطة والقوّة وإرادة الحياة والشجاعة والثقة في مستقبل الحياة؟ ردّا على هذا السؤال وجدت في نفسي أجوبة متعدّدة، وجازفت بأجوبة متعدّدة، وشرعتُ أميّز بين العصور والشعوب وتراتب الأفراد. ثمّ حدّدت مشكلتي في خصوصيتها، فكانت الأجوبة تتحوّل إلى أسئلة جديدة وبحوث جديدة وافتراضات واحتمالات، إلى أن تمكّنت أخيرا من غزو بلد وأرض خاصّين بي وحدي [2]. عالم بأسره مجهول، مزدهر وفي عنفوان نموّه، أشبه ما يكون بستان سرّي لم يكن أحد ليشتبه بوجوده حتّى مجرّد اشتباه.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.nietzscheValues.text.source">فريديريك نيتشه، نسابية الأخلاق، الفقرة الثالثة - Friedrich Nietzsche, Généalogie de la morale, Préface, §3</em></p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nietzscheValues.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <img src="assets/images/friedrich_nietzsche.jpg" alt="فريدريك نيتشه" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.nietzscheValues.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.nietzscheValues.author.content">
+                            فريديريك نيتشه (1844-1900) فيلسوف ألماني من عائلة متدينة حيث كان أبوه وجده قسيسين. وبينما كان يستعد في سن السابعة عشرة لأن يصبح قسا هو الآخر، عاش أزمة روحية وضعت حدّا لمشروعته فوجّه إلى الدراسة الفيلولوجية أي التحليل النقدي للغة. لاحظ نيتشه مبكرا أن الأخلاق تتأسس على ثلاثة مبادئ كبيرة وإطلاقية وكونية وهي "العقل والله والحقيقة"، لكنّه لاحظ أيضا أن الطابع الثابت لهذه المبادئ لم يمنع القيم الأخلاقية من أن تكون متغيّرة حسب الحقب، وذلك ما قاده إلى إعادة صياغة السؤال بشأن القيم.
+                            <br><br>
+                            ابتدع المنهج الجنيالوجي (النسابي) للبحث في شروط تشكل القيم والنتاجات الثقافية عامة باعتبارها أقداراً يتخفى وراءها صراع قوى يصنفها نيتشه إلى قوى فاعلة تنتصر للحياة وقوى ارتكاسية تزهد في الحيوي وتحتقره. من مؤلفاته: "مولد التراجيديا" (1872)، "إنساني مفرط في الإنسانية" (1878)، "المعرفة الجذلة" (1882)، "هكذا تكلم زرادشت" (1883-1885)، "إرادة القوة" (1884-1886)، "فيما وراء الخير والشر" (1886)، "نسابية الأخلاق" (1887)، ثم توقّف عن الكتابة بسبب المرض إلى أن مات سنة (1900) تاركا وراءه فلسفة هي من أكثر الفلسفات ثراء.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nietzscheValues.footnotes.title">الهوامش</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.nietzscheValues.footnotes.item1"><strong>(1) "هذين القيمتين في حدّ ذاتهما":</strong> دأب الفلاسفة على تأسيس القيم وفي النصّ إشارة إلى أنّ قيمتي الخير والشر ليستا من المبادئ الأولى، وإنما هما نتاج لظروف معيّنة حسب التأويل الجنيالوجي الذي يؤوّل ظروف نشأة القيم عموما - كثمرة متأخرة لأخلاق الضعفاء وملجأ لهم يعوّضون به عن تراجع قواهم الحيوية وضعفها. لذا فإنّ هذين التقييمين لا يستمدّان قيمتهما من ذاتهما وإنما هما فقط استجابة لمبدأ الحاجة، أي حاجة الضعفاء إلى تحمّل وضعهم المتردّي.</li>
+                    <li data-i18n="PhiH.textAnalysis.nietzscheValues.footnotes.item2"><strong>(2) "أرض وبلد خاصّين بي وحدي":</strong> يُدين نيتشه تبعات الأخلاق في صورتها التقليدية المنظمة لحياة الناس، حيث القيم والقوانين الأخلاقية تُقام باسم حقيقة كونية تتجسّم عبر الله والعقل وتُعتمد لإرساء قيم الزهد في الحياة... ويأتي المنهج الجنيالوجي ليتظنّ على هذين المبدأين ويجعل من الانتصار للحياة وللحيوي المبدأ الوحيد في فهم تكوّن القيم.</li>
+                </ul>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nietzscheValues.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.nietzscheValues.questions.q1">أرصد في النصّ الألفاظ الدالة على المعاناة التي يلقاها المفكر في بناء إشكاليته الخاصة.</li>
+                    <li data-i18n="PhiH.textAnalysis.nietzscheValues.questions.q2">أستثمر الهامش عدد 1 لأتبيّن وجه الطرافة في المساءلة النيتشوية للقيم.</li>
+                    <li data-i18n="PhiH.textAnalysis.nietzscheValues.questions.q3">أستجلي مظاهر التصنيف النيتشوي للقيم في هذا النص.</li>
+                </ol>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nietzscheValues.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nietzscheValues.answers.a1.title">الإجابة عن المهمة الأولى:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nietzscheValues.answers.a1.content">
+                        الألفاظ الدالة على المعاناة التي يلقاها المفكر في بناء إشكاليته الخاصة:
+                        <br><br>
+                        <strong>1. ألفاظ المخاطرة والاجتهاد:</strong> "جازفت بأجوبة متعدّدة" - "شرعتُ أميّز" - "حدّدت مشكلتي في خصوصيتها"؛ فهي تدلّ على الجهد والمخاطرة في البحث دون ضمان مسبق للنتيجة.
+                        <br><br>
+                        <strong>2. ألفاظ التحوّل والتفاعل المستمر:</strong> "كانت الأجوبة تتحوّل إلى أسئلة جديدة وبحوث جديدة وافتراضات واحتمالات"؛ فالبناء الإشكالي ليس لحظة واحدة بل عملية متجدّدة، وهذا يرهق المفكر ويستهلك جهده.
+                        <br><br>
+                        <strong>3. ألفاظ الغزو والاكتشاف:</strong> "تمكّنت أخيرا من غزو بلد وأرض خاصّين بي وحدي"؛ فالغزو يفترض صعوبة ومقاومة وجهداً، وهو تعبير مجازي عن الجهد المضني في بناء الإشكالية.
+                        <br><br>
+                        <strong>4. ألفاظ العزلة والتوحّد:</strong> "أرض خاصّين بي وحدي" - "بستان سرّي لم يكن أحد ليشتبه بوجوده"؛ فالمفكر يعاني من العزلة والوحدة في بناء إشكاليته، ويعاني من عدم فهم الآخرين لها.
+                        <br><br>
+                        <strong>5. ألفاظ الدهشة والسرّ:</strong> "عالم بأسره مجهول، مزدهر وفي عنفوان نموّه"؛ فالاكتشاف يثير الدهشة والحيرة، وهو ثمرة معاناة طويلة من البحث.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nietzscheValues.answers.a2.title">الإجابة عن المهمة الثانية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nietzscheValues.answers.a2.content">
+                        وجه الطرافة في المساءلة النيتشوية للقيم (استثماراً للهامش 1):
+                        <br><br>
+                        <strong>1. نقل السؤال من القيم إلى قيمة القيم نفسها:</strong> لا يسأل نيتشه "ما الخير؟" أو "ما الشر؟" كما يفعل الفلاسفة التقليديون، بل يسأل عن <em>قيمة</em> هذين التقييمين ذاتهما. وهذا نقل جذري لمستوى السؤال.
+                        <br><br>
+                        <strong>2. رفض اعتبار الخير والشر مبدأين أوليين:</strong> يبيّن الهامش أنّ الخير والشر ليسا من المبادئ الأولى، بل هما نتاج لظروف معيّنة، وهما "ثمرة متأخرة لأخلاق الضعفاء". فالمساءلة النيتشوية تنزع عن القيم قداستها الأزلية وتُعيدها إلى تاريخها الأرضي.
+                        <br><br>
+                        <strong>3. الكشف عن الوظيفة الحقيقية للقيم:</strong> القيم عنده ليست حقائق مجرّدة، بل هي "استجابة لمبدأ الحاجة، أي حاجة الضعفاء إلى تحمّل وضعهم المتردّي". فالمساءلة تُحوّل القيم من مبادئ إلى أعراض.
+                        <br><br>
+                        <strong>4. قلب الاتجاه التقليدي للمساءلة:</strong> بينما كان الفلاسفة يسألون: هل الفعل مطابق للقيمة؟ يصبح السؤال النيتشوي: ما قيمة القيمة نفسها؟ هل تخدم الحياة أم تعيقها؟ وهذا هو ما يجعل المساءلة النيتشوية "طرافة" بالمعنى الإشكالي العميق.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nietzscheValues.answers.a3.title">الإجابة عن المهمة الثالثة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nietzscheValues.answers.a3.content">
+                        مظاهر التصنيف النيتشوي للقيم في هذا النص:
+                        <br><br>
+                        <strong>1. التصنيف الثنائي الأساسي:</strong> "الخير والشرّ" كنموذج للتصنيف القيمي، غير أنّ نيتشه لا يقبله كتصنيف نهائي بل يجعله موضوع مساءلة.
+                        <br><br>
+                        <strong>2. تصنيف القيم بحسب وظيفتها تجاه الحياة:</strong>
+                        <br>- قيم <strong>تُعيق</strong> تطوّر البشرية.
+                        <br>- قيم <strong>تُعزّز</strong> تطوّر البشرية.
+                        <br><br>
+                        <strong>3. تصنيف القيم بحسب منشئها النفسي:</strong>
+                        <br>- قيم تعبّر عن "البؤس والفقر الروحي والانحطاط".
+                        <br>- قيم تعبّر عن "الغيطة والقوّة وإرادة الحياة والشجاعة والثقة في مستقبل الحياة".
+                        <br><br>
+                        <strong>4. التصنيف التاريخي-الأنثروبولوجي:</strong> "شرعتُ أميّز بين العصور والشعوب وتراتب الأفراد"؛ فالقيم تختلف بحسب العصور (القديمة/الحديثة) والشعوب (اليونانية/اليهودية-المسيحية...) وتراتب الأفراد (الأقوياء/الضعفاء، السادة/العبيد).
+                        <br><br>
+                        <strong>5. التصنيف بحسب القوى الكامنة وراءها (كما يوضّح الهامش والكاتب):</strong>
+                        <br>- قيم <strong>القوى الفاعلة</strong> المنتصرة للحياة.
+                        <br>- قيم <strong>القوى الارتكاسية</strong> الزاهدة في الحيوي والمحتقرة له.
+                    </p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nietzscheValues.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nietzscheValues.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nietzscheValues.analysis.thesis.content">
+                        يرى نيتشه أنّ القيم الأخلاقية (الخير والشر) ليست مبادئ أولية، ولا حقائق خالدة، ولا معطيات جاهزة، بل هي نتاجات تاريخية ينبغي مساءلتها عن قيمتها. فالمشكل الفلسفي الجديد ليس "ما الخير؟" بل "ما قيمة هذه القيم نفسها؟ هل تخدم الحياة وتُعزّزها، أم تعبّر عن الضعف والانحطاط وتُعيقها؟". وبذلك ينقل نيتشه المساءلة الأخلاقية من مستوى البحث في ماهية القيم إلى مستوى البحث في وظيفتها ومنشئها، مؤسِّساً بذلك المنهج الجنيالوجي (النسابي).
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nietzscheValues.analysis.mechanisms.title">آليات بناء الإشكالية النيتشوية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nietzscheValues.analysis.mechanisms.content">
+                        - <strong>التساؤل الجذري:</strong> نقل السؤال من "القيم" إلى "قيمة القيم نفسها".
+                        <br>- <strong>التأويل الجنيالوجي:</strong> البحث في شروط نشأة القيم وأصولها التاريخية.
+                        <br>- <strong>التمييز بين العصور والشعوب وتراتب الأفراد:</strong> إدخال البعد التاريخي-الأنثروبولوجي في دراسة القيم.
+                        <br>- <strong>تحويل الأجوبة إلى أسئلة جديدة:</strong> الإشكالية النيتشوية إشكالية مفتوحة لا نهائية، تتجدّد باستمرار.
+                        <br>- <strong>الغزو الفكري الشخصي:</strong> "أرض خاصّين بي وحدي" - الإشكالية ليست مشتركة، بل هي إشكالية صاحبها، يعاني في بنائها ويحمل همّها.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nietzscheValues.analysis.consequences.title">نتائج الإشكالية النيتشوية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nietzscheValues.analysis.consequences.content">
+                        - <strong>إزاحة الأخلاق التقليدية عن عرشها:</strong> لم تبقَ القيم مبادئ مقدّسة، بل أضحت موضوعاً للفحص والمساءلة.
+                        <br>- <strong>تأسيس المنهج الجنيالوجي:</strong> منهج نسابي يبحث في أصول القيم بدل الاكتفاء بها كمعطيات.
+                        <br>- <strong>الكشف عن الصراع الكامن وراء القيم:</strong> صراع القوى الفاعلة والارتكاسية، الأقوياء والضعفاء.
+                        <br>- <strong>فتح أفق جديد للفلسفة الأخلاقية:</strong> إعادة تقييم القيم (Umwertung aller Werte) كمشروع فلسفي.
+                        <br>- <strong>تجسيد الطابع الشخصي للإشكالية:</strong> فالمشكل النيتشوي ليس مشكلاً نظرياً مجرّداً، بل هو مشكل المفكر نفسه، يعيشه ويعاني في بنائه.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nietzscheValues.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nietzscheValues.analysis.significance.content">
+                        يحمل هذا النص دلالة منهجية حاسمة في تاريخ الفلسفة: فهو يعلن ميلاد مشروع نيتشه النقدي الجذري، ويؤسّس لما سيُعرف بـ"إعادة تقييم كل القيم". وقد أبان النص عن طبيعة الإشكالية الفلسفية الحقيقية: إنها ليست سؤالاً عابراً يُجاب عنه ثمّ يُغلَق، بل هي مساءلة لا تنفكّ تتجدّد، وتُحوِّل الأجوبة إلى أسئلة جديدة. وبهذا المعنى، فإنّ النص يجسّد أطروحة الدرس (الأشكلة) في أرقى صورها: فالفيلسوف الحق ليس من يجيب، بل من يبني إشكالية خاصة به، يعيشها، ويعاني في بنائها، حتى تصبح "أرضاً خاصة به وحده، أشبه بستان سرّي لا يشتبه بوجوده أحد". إنها إشكالية المفكر التي لا يفهمها غيره، لكنها تفتح آفاقاً للبشرية كلها.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.nietzscheValues.level": "3ème Secondaire - Philosophie",
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.nietzscheValues.title": "Analyse du texte : Le problème de la valeur des valeurs - Friedrich Nietzsche",
+                "PhiH.textAnalysis.nietzscheValues.introduction.title": "Introduction",
+                "PhiH.textAnalysis.nietzscheValues.introduction.content": "Les problèmes philosophiques ne sont ni donnés tout faits ni éternels : ils se construisent et se reconstruisent dans l'histoire. Les valeurs humaines, qui ont été pendant des siècles objet de réflexion quant à leurs fondements, sont devenues un objet de problématisation qui les interroge sur leur valeur.",
+                "PhiH.textAnalysis.nietzscheValues.text.title": "Le texte",
+                "PhiH.textAnalysis.nietzscheValues.text.content": "Dans quelles conditions l'homme s'est-il inventé ces deux évaluations, le Bien et le Mal, pour les utiliser dans sa vie ? Et quelle est la valeur de ces deux évaluations en elles-mêmes [1] ? Ont-elles jusqu'à présent entravé ou favorisé le développement de l'humanité ? Sont-elles un symptôme de misère, de pauvreté spirituelle et de décadence ? Ou bien, au contraire, se manifeste-t-il en elles la plénitude, la force, la volonté de vie, le courage et la confiance en l'avenir de la vie ? En réponse à cette question, j'ai trouvé en moi-même plusieurs réponses, j'ai risqué plusieurs réponses, et je me suis mis à distinguer entre les époques et les peuples et la hiérarchie des individus. Puis j'ai défini mon problème dans sa particularité, et les réponses se transformaient en nouvelles questions, en nouvelles recherches, en hypothèses et en probabilités, jusqu'à ce que je parvienne enfin à conquérir un pays et une terre qui n'appartiennent qu'à moi seul [2]. Un monde entier inconnu, florissant et en pleine croissance, semblable à un jardin secret dont personne n'aurait soupçonné l'existence, ne fût-ce qu'un simple soupçon.",
+                "PhiH.textAnalysis.nietzscheValues.text.source": "Friedrich Nietzsche, Généalogie de la morale, Préface, §3",
+                "PhiH.textAnalysis.nietzscheValues.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.nietzscheValues.author.alt": "Friedrich Nietzsche",
+                "PhiH.textAnalysis.nietzscheValues.author.content": "Friedrich Nietzsche (1844-1900), philosophe allemand issu d'une famille pieuse, son père et son grand-père étant pasteurs. Alors qu'il se préparait, à dix-sept ans, à devenir pasteur à son tour, il vécut une crise spirituelle qui mit fin à son projet et l'orienta vers les études philologiques, c'est-à-dire l'analyse critique du langage. Nietzsche remarqua très tôt que la morale se fonde sur trois grands principes absolus et universels : « la Raison, Dieu et la Vérité », mais il remarqua aussi que le caractère fixe de ces principes n'empêchait pas les valeurs morales de varier selon les époques, ce qui le conduisit à reformuler la question des valeurs.<br><br>Il inventa la méthode généalogique pour rechercher les conditions de formation des valeurs et des productions culturelles en général, en tant que destinées derrière lesquelles se cache un conflit de forces qu'il classe en forces actives qui prennent parti pour la vie, et forces réactives qui font vœu de renoncement au vital et le méprisent. Parmi ses œuvres : « La Naissance de la tragédie » (1872), « Humain, trop humain » (1878), « Le Gai Savoir » (1882), « Ainsi parlait Zarathoustra » (1883-1885), « La Volonté de puissance » (1884-1886), « Par-delà bien et mal » (1886), « Généalogie de la morale » (1887). Il cessa ensuite d'écrire en raison de la maladie jusqu'à sa mort en 1900, laissant derrière lui une philosophie parmi les plus riches.",
+                "PhiH.textAnalysis.nietzscheValues.footnotes.title": "Notes de bas de page",
+                "PhiH.textAnalysis.nietzscheValues.footnotes.item1": "<strong>(1) « Ces deux évaluations en elles-mêmes » :</strong> Les philosophes se sont appliqués à fonder les valeurs ; le texte indique que les valeurs du Bien et du Mal ne sont pas des principes premiers, mais le produit de conditions déterminées selon l'interprétation généalogique qui interprète les conditions de naissance des valeurs en général – comme le fruit tardif de la morale des faibles et leur refuge, par lequel ils compensent le déclin et la faiblesse de leurs forces vitales. Ainsi ces deux évaluations ne tirent-elles pas leur valeur d'elles-mêmes, mais ne sont qu'une réponse au principe du besoin, c'est-à-dire le besoin des faibles d'endurer leur situation détériorée.",
+                "PhiH.textAnalysis.nietzscheValues.footnotes.item2": "<strong>(2) « Un pays et une terre qui n'appartiennent qu'à moi seul » :</strong> Nietzsche condamne les conséquences de la morale dans sa forme traditionnelle qui organise la vie des gens, où les valeurs et les lois morales sont établies au nom d'une vérité universelle incarnée par Dieu et la Raison, et sont adoptées pour instaurer des valeurs d'ascèse dans la vie... La méthode généalogique vient alors contester ces deux principes et faire de la prise de parti pour la vie et pour le vital le seul principe dans la compréhension de la formation des valeurs.",
+                "PhiH.textAnalysis.nietzscheValues.questions.title": "Tâches",
+                "PhiH.textAnalysis.nietzscheValues.questions.q1": "Je repère dans le texte les termes exprimant la souffrance que le penseur endure dans la construction de sa problématique propre.",
+                "PhiH.textAnalysis.nietzscheValues.questions.q2": "J'exploite la note 1 pour discerner l'aspect original du questionnement nietzschéen des valeurs.",
+                "PhiH.textAnalysis.nietzscheValues.questions.q3": "Je mets en évidence les manifestations de la classification nietzschéenne des valeurs dans ce texte.",
+                "PhiH.textAnalysis.nietzscheValues.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.nietzscheValues.answers.a1.title": "Réponse à la première tâche :",
+                "PhiH.textAnalysis.nietzscheValues.answers.a1.content": "Les termes exprimant la souffrance que le penseur endure dans la construction de sa problématique propre :<br><br><strong>1. Termes du risque et de l'effort :</strong> « j'ai risqué plusieurs réponses » - « je me suis mis à distinguer » - « j'ai défini mon problème dans sa particularité » ; ils indiquent l'effort et le risque de la recherche sans garantie préalable du résultat.<br><br><strong>2. Termes de la transformation et de l'interaction continuelles :</strong> « les réponses se transformaient en nouvelles questions, en nouvelles recherches, en hypothèses et en probabilités » ; la construction problématique n'est pas un moment unique mais un processus sans cesse renouvelé, ce qui épuise le penseur et consomme son effort.<br><br><strong>3. Termes de la conquête et de la découverte :</strong> « je parvienne enfin à conquérir un pays et une terre qui n'appartiennent qu'à moi seul » ; la conquête suppose difficulté, résistance et effort, et elle est l'expression métaphorique de l'effort épuisant de la construction de la problématique.<br><br><strong>4. Termes de la solitude et de l'isolement :</strong> « une terre qui n'appartiennent qu'à moi seul » - « un jardin secret dont personne n'aurait soupçonné l'existence » ; le penseur souffre de la solitude et de l'isolement dans la construction de sa problématique, et souffre de l'incompréhension des autres à son égard.<br><br><strong>5. Termes de l'étonnement et du secret :</strong> « un monde entier inconnu, florissant et en pleine croissance » ; la découverte suscite l'étonnement et la perplexité, et elle est le fruit d'une longue souffrance de la recherche.",
+                "PhiH.textAnalysis.nietzscheValues.answers.a2.title": "Réponse à la deuxième tâche :",
+                "PhiH.textAnalysis.nietzscheValues.answers.a2.content": "L'aspect original du questionnement nietzschéen des valeurs (en exploitant la note 1) :<br><br><strong>1. Transfert de la question des valeurs à la valeur des valeurs elles-mêmes :</strong> Nietzsche ne demande pas « qu'est-ce que le Bien ? » ou « qu'est-ce que le Mal ? » comme le font les philosophes traditionnels, mais il demande la <em>valeur</em> de ces deux évaluations elles-mêmes. C'est un transfert radical du niveau de la question.<br><br><strong>2. Refus de considérer le Bien et le Mal comme deux principes premiers :</strong> la note montre que le Bien et le Mal ne sont pas des principes premiers, mais le produit de conditions déterminées, et qu'ils sont « le fruit tardif de la morale des faibles ». Le questionnement nietzschéen dénude les valeurs de leur sacralité éternelle et les ramène à leur histoire terrestre.<br><br><strong>3. Révélation de la fonction réelle des valeurs :</strong> les valeurs, chez lui, ne sont pas des vérités abstraites, mais « une réponse au principe du besoin, c'est-à-dire le besoin des faibles d'endurer leur situation détériorée ». Le questionnement transforme les valeurs de principes en symptômes.<br><br><strong>4. Renversement de l'orientation traditionnelle du questionnement :</strong> alors que les philosophes demandaient : l'acte est-il conforme à la valeur ? la question nietzschéenne devient : quelle est la valeur de la valeur elle-même ? Sert-elle la vie ou l'entrave-t-elle ? Et c'est là ce qui fait du questionnement nietzschéen une « originalité » au sens problématique profond.",
+                "PhiH.textAnalysis.nietzscheValues.answers.a3.title": "Réponse à la troisième tâche :",
+                "PhiH.textAnalysis.nietzscheValues.answers.a3.content": "Les manifestations de la classification nietzschéenne des valeurs dans ce texte :<br><br><strong>1. La classification binaire fondamentale :</strong> « le Bien et le Mal » comme modèle de classification axiologique, mais Nietzsche ne l'accepte pas comme classification finale, il en fait l'objet d'un questionnement.<br><br><strong>2. Classification des valeurs selon leur fonction à l'égard de la vie :</strong><br>- valeurs qui <strong>entravent</strong> le développement de l'humanité ;<br>- valeurs qui <strong>favorisent</strong> le développement de l'humanité.<br><br><strong>3. Classification des valeurs selon leur origine psychologique :</strong><br>- valeurs exprimant « la misère, la pauvreté spirituelle et la décadence » ;<br>- valeurs exprimant « la plénitude, la force, la volonté de vie, le courage et la confiance en l'avenir de la vie ».<br><br><strong>4. Classification historico-anthropologique :</strong> « je me suis mis à distinguer entre les époques et les peuples et la hiérarchie des individus » ; les valeurs varient selon les époques (anciennes/modernes), les peuples (grecs/judéo-chrétiens...) et la hiérarchie des individus (forts/faibles, maîtres/esclaves).<br><br><strong>5. Classification selon les forces qui les sous-tendent (comme le précisent la note et l'auteur) :</strong><br>- valeurs des <strong>forces actives</strong> prenant parti pour la vie ;<br>- valeurs des <strong>forces réactives</strong> faisant vœu de renoncement au vital et le méprisant.",
+                "PhiH.textAnalysis.nietzscheValues.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.nietzscheValues.analysis.thesis.title": "Thèse principale :",
+                "PhiH.textAnalysis.nietzscheValues.analysis.thesis.content": "Nietzsche considère que les valeurs morales (le Bien et le Mal) ne sont pas des principes premiers, ni des vérités éternelles, ni des données toutes faites, mais des produits historiques qu'il faut interroger sur leur valeur. Le nouveau problème philosophique n'est plus « qu'est-ce que le Bien ? » mais « quelle est la valeur de ces valeurs elles-mêmes ? Servent-elles la vie et la renforcent-elles, ou bien expriment-elles la faiblesse et la décadence et l'entravent-elles ? ». Nietzsche déplace ainsi le questionnement éthique du niveau de la recherche de l'essence des valeurs à celui de la recherche de leur fonction et de leur origine, fondant par là la méthode généalogique.",
+                "PhiH.textAnalysis.nietzscheValues.analysis.mechanisms.title": "Mécanismes de la construction de la problématique nietzschéenne :",
+                "PhiH.textAnalysis.nietzscheValues.analysis.mechanisms.content": "- <strong>Questionnement radical :</strong> transfert de la question des « valeurs » à celle de la « valeur des valeurs elles-mêmes ».<br>- <strong>Interprétation généalogique :</strong> recherche des conditions de naissance des valeurs et de leurs origines historiques.<br>- <strong>Distinction entre les époques, les peuples et la hiérarchie des individus :</strong> introduction de la dimension historico-anthropologique dans l'étude des valeurs.<br>- <strong>Transformation des réponses en nouvelles questions :</strong> la problématique nietzschéenne est une problématique ouverte et infinie, sans cesse renouvelée.<br>- <strong>Conquête intellectuelle personnelle :</strong> « une terre qui n'appartiennent qu'à moi seul » - la problématique n'est pas commune, elle est celle de son auteur, qui souffre à la construire et en porte le souci.",
+                "PhiH.textAnalysis.nietzscheValues.analysis.consequences.title": "Conséquences de la problématique nietzschéenne :",
+                "PhiH.textAnalysis.nietzscheValues.analysis.consequences.content": "- <strong>Détrônement de la morale traditionnelle :</strong> les valeurs ne sont plus des principes sacrés, elles deviennent objet d'examen et de questionnement.<br>- <strong>Fondation de la méthode généalogique :</strong> une méthode généalogique qui recherche les origines des valeurs au lieu de les accepter comme des données.<br>- <strong>Révélation du conflit latent derrière les valeurs :</strong> conflit des forces actives et réactives, des forts et des faibles.<br>- <strong>Ouverture d'un nouvel horizon pour la philosophie morale :</strong> la réévaluation de toutes les valeurs (Umwertung aller Werte) comme projet philosophique.<br>- <strong>Incarner le caractère personnel de la problématique :</strong> le problème nietzschéen n'est pas un problème théorique abstrait, il est le problème du penseur lui-même, qu'il vit et dont il souffre en le construisant.",
+                "PhiH.textAnalysis.nietzscheValues.analysis.significance.title": "Significations et dimensions du concept :",
+                "PhiH.textAnalysis.nietzscheValues.analysis.significance.content": "Ce texte porte une signification méthodologique décisive dans l'histoire de la philosophie : il annonce la naissance du projet critique radical de Nietzsche et fonde ce qu'on appellera la « réévaluation de toutes les valeurs ». Le texte a montré la nature du problème philosophique véritable : il n'est pas une question passagère à laquelle on répond puis que l'on ferme, mais un questionnement qui ne cesse de se renouveler et qui transforme les réponses en nouvelles questions. En ce sens, le texte incarne la thèse de la leçon (la problématisation) dans sa forme la plus élevée : le vrai philosophe n'est pas celui qui répond, mais celui qui construit une problématique propre, qu'il vit, dont il souffre en la construisant, jusqu'à ce qu'elle devienne « une terre qui n'appartient qu'à lui seul, semblable à un jardin secret dont personne ne soupçonnerait l'existence ». C'est la problématique du penseur que d'autres ne comprennent pas, mais qui ouvre des horizons à l'humanité entière."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.nietzscheValues.level": "3rd Secondary - Philosophy",
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.nietzscheValues.title": "Text Analysis: The Problem of the Value of Values - Friedrich Nietzsche",
+                "PhiH.textAnalysis.nietzscheValues.introduction.title": "Introduction",
+                "PhiH.textAnalysis.nietzscheValues.introduction.content": "Philosophical problems are neither given ready-made nor eternal: they are constructed and reconstructed in history. Human values, which remained for long ages an object of reflection on their foundations, have become an object of problematization questioning them about their value.",
+                "PhiH.textAnalysis.nietzscheValues.text.title": "The Text",
+                "PhiH.textAnalysis.nietzscheValues.text.content": "Under what conditions did man invent for himself these two evaluations, Good and Evil, in order to use them in his life? And what is the value of these two evaluations in themselves [1]? Have they so far hindered or promoted the development of humanity? Are they a symptom of misery, spiritual poverty and decline? Or, on the contrary, do they manifest fullness, strength, the will to life, courage and confidence in the future of life? In response to this question, I found in myself multiple answers, I risked multiple answers, and I began to distinguish between eras and peoples and the hierarchy of individuals. Then I defined my problem in its particularity, and the answers turned into new questions, new research, hypotheses and probabilities, until I finally managed to conquer a country and a land that belong to me alone [2]. An entire unknown world, flourishing and in full growth, resembling a secret garden whose existence no one would have suspected, even as a mere suspicion.",
+                "PhiH.textAnalysis.nietzscheValues.text.source": "Friedrich Nietzsche, On the Genealogy of Morality, Preface, §3",
+                "PhiH.textAnalysis.nietzscheValues.author.title": "Author Presentation",
+                "PhiH.textAnalysis.nietzscheValues.author.alt": "Friedrich Nietzsche",
+                "PhiH.textAnalysis.nietzscheValues.author.content": "Friedrich Nietzsche (1844-1900), German philosopher from a pious family, his father and grandfather being pastors. While preparing at seventeen to become a pastor himself, he experienced a spiritual crisis that put an end to his project and directed him toward philological studies, that is, the critical analysis of language. Nietzsche noticed early that morality is founded on three great absolute and universal principles: \"Reason, God and Truth\", but he also noticed that the fixed character of these principles did not prevent moral values from varying according to eras, which led him to reformulate the question of values.<br><br>He invented the genealogical method to investigate the conditions of formation of values and cultural productions in general, as destinies behind which hides a conflict of forces that he classifies into active forces that take the side of life, and reactive forces that vow renunciation of the vital and despise it. Among his works: \"The Birth of Tragedy\" (1872), \"Human, All Too Human\" (1878), \"The Gay Science\" (1882), \"Thus Spoke Zarathustra\" (1883-1885), \"The Will to Power\" (1884-1886), \"Beyond Good and Evil\" (1886), \"On the Genealogy of Morality\" (1887). He then ceased writing due to illness until his death in 1900, leaving behind a philosophy among the richest.",
+                "PhiH.textAnalysis.nietzscheValues.footnotes.title": "Footnotes",
+                "PhiH.textAnalysis.nietzscheValues.footnotes.item1": "<strong>(1) \"These two evaluations in themselves\":</strong> Philosophers have applied themselves to founding values; the text indicates that the values of Good and Evil are not first principles, but the product of determinate conditions according to the genealogical interpretation which interprets the conditions of the birth of values in general – as the late fruit of the morality of the weak and their refuge, by which they compensate for the decline and weakness of their vital forces. Thus these two evaluations do not draw their value from themselves, but are only a response to the principle of need, that is, the need of the weak to endure their deteriorated situation.",
+                "PhiH.textAnalysis.nietzscheValues.footnotes.item2": "<strong>(2) \"A country and a land that belong to me alone\":</strong> Nietzsche condemns the consequences of morality in its traditional form that organizes people's lives, where moral values and laws are established in the name of a universal truth embodied through God and Reason, and are adopted to establish values of asceticism in life... The genealogical method then comes to challenge these two principles and to make taking the side of life and of the vital the sole principle in understanding the formation of values.",
+                "PhiH.textAnalysis.nietzscheValues.questions.title": "Tasks",
+                "PhiH.textAnalysis.nietzscheValues.questions.q1": "I identify in the text the terms expressing the suffering that the thinker endures in constructing his own problematic.",
+                "PhiH.textAnalysis.nietzscheValues.questions.q2": "I use footnote 1 to discern the aspect of originality in Nietzsche's questioning of values.",
+                "PhiH.textAnalysis.nietzscheValues.questions.q3": "I bring out the manifestations of Nietzsche's classification of values in this text.",
+                "PhiH.textAnalysis.nietzscheValues.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.nietzscheValues.answers.a1.title": "Answer to the first task:",
+                "PhiH.textAnalysis.nietzscheValues.answers.a1.content": "The terms expressing the suffering that the thinker endures in constructing his own problematic:<br><br><strong>1. Terms of risk and effort:</strong> \"I risked multiple answers\" - \"I began to distinguish\" - \"I defined my problem in its particularity\"; they indicate effort and the risk of research without prior guarantee of the result.<br><br><strong>2. Terms of continual transformation and interaction:</strong> \"the answers turned into new questions, new research, hypotheses and probabilities\"; problem-construction is not a single moment but a ceaselessly renewed process, which exhausts the thinker and consumes his effort.<br><br><strong>3. Terms of conquest and discovery:</strong> \"I finally managed to conquer a country and a land that belong to me alone\"; conquest presupposes difficulty, resistance and effort, and it is the metaphorical expression of the exhausting effort of constructing the problematic.<br><br><strong>4. Terms of solitude and isolation:</strong> \"a land that belong to me alone\" - \"a secret garden whose existence no one would have suspected\"; the thinker suffers from solitude and isolation in constructing his problematic, and suffers from others' incomprehension of it.<br><br><strong>5. Terms of astonishment and secrecy:</strong> \"an entire unknown world, flourishing and in full growth\"; discovery arouses astonishment and perplexity, and it is the fruit of a long suffering of research.",
+                "PhiH.textAnalysis.nietzscheValues.answers.a2.title": "Answer to the second task:",
+                "PhiH.textAnalysis.nietzscheValues.answers.a2.content": "The aspect of originality in Nietzsche's questioning of values (using footnote 1):<br><br><strong>1. Transfer of the question from values to the value of values themselves:</strong> Nietzsche does not ask \"what is the Good?\" or \"what is Evil?\" as traditional philosophers do, but he asks the <em>value</em> of these two evaluations themselves. This is a radical transfer of the level of the question.<br><br><strong>2. Refusal to consider Good and Evil as two first principles:</strong> the footnote shows that Good and Evil are not first principles, but the product of determinate conditions, and that they are \"the late fruit of the morality of the weak\". Nietzsche's questioning strips values of their eternal sacredness and brings them back to their earthly history.<br><br><strong>3. Revelation of the real function of values:</strong> values, for him, are not abstract truths, but \"a response to the principle of need, that is, the need of the weak to endure their deteriorated situation\". The questioning transforms values from principles into symptoms.<br><br><strong>4. Reversal of the traditional orientation of questioning:</strong> while philosophers asked: is the act in conformity with the value? the Nietzschean question becomes: what is the value of the value itself? Does it serve life or hinder it? And this is what makes Nietzsche's questioning an \"originality\" in the deep problematic sense.",
+                "PhiH.textAnalysis.nietzscheValues.answers.a3.title": "Answer to the third task:",
+                "PhiH.textAnalysis.nietzscheValues.answers.a3.content": "The manifestations of Nietzsche's classification of values in this text:<br><br><strong>1. The fundamental binary classification:</strong> \"Good and Evil\" as a model of axiological classification, but Nietzsche does not accept it as a final classification; he makes it the object of questioning.<br><br><strong>2. Classification of values according to their function with regard to life:</strong><br>- values that <strong>hinder</strong> the development of humanity;<br>- values that <strong>promote</strong> the development of humanity.<br><br><strong>3. Classification of values according to their psychological origin:</strong><br>- values expressing \"misery, spiritual poverty and decline\";<br>- values expressing \"fullness, strength, the will to life, courage and confidence in the future of life\".<br><br><strong>4. Historico-anthropological classification:</strong> \"I began to distinguish between eras and peoples and the hierarchy of individuals\"; values vary according to eras (ancient/modern), peoples (Greeks/Judeo-Christians...) and the hierarchy of individuals (strong/weak, masters/slaves).<br><br><strong>5. Classification according to the forces that underlie them (as the footnote and the author make clear):</strong><br>- values of <strong>active forces</strong> taking the side of life;<br>- values of <strong>reactive forces</strong> vowing renunciation of the vital and despising it.",
+                "PhiH.textAnalysis.nietzscheValues.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.nietzscheValues.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.nietzscheValues.analysis.thesis.content": "Nietzsche holds that moral values (Good and Evil) are not first principles, nor eternal truths, nor ready-made data, but historical products that must be questioned as to their value. The new philosophical problem is no longer \"what is the Good?\" but \"what is the value of these values themselves? Do they serve life and strengthen it, or do they express weakness and decline and hinder it?\". Nietzsche thus shifts ethical questioning from the level of the search for the essence of values to that of the search for their function and origin, thereby founding the genealogical method.",
+                "PhiH.textAnalysis.nietzscheValues.analysis.mechanisms.title": "Mechanisms of the construction of the Nietzschean problematic:",
+                "PhiH.textAnalysis.nietzscheValues.analysis.mechanisms.content": "- <strong>Radical questioning:</strong> transfer of the question from \"values\" to the \"value of values themselves\".<br>- <strong>Genealogical interpretation:</strong> investigation of the conditions of the birth of values and their historical origins.<br>- <strong>Distinction between eras, peoples and the hierarchy of individuals:</strong> introduction of the historico-anthropological dimension into the study of values.<br>- <strong>Transformation of answers into new questions:</strong> the Nietzschean problematic is an open and infinite problematic, ceaselessly renewed.<br>- <strong>Personal intellectual conquest:</strong> \"a land that belong to me alone\" - the problematic is not common, it is that of its author, who suffers in constructing it and bears its concern.",
+                "PhiH.textAnalysis.nietzscheValues.analysis.consequences.title": "Consequences of the Nietzschean problematic:",
+                "PhiH.textAnalysis.nietzscheValues.analysis.consequences.content": "- <strong>Dethronement of traditional morality:</strong> values are no longer sacred principles, they become an object of examination and questioning.<br>- <strong>Foundation of the genealogical method:</strong> a genealogical method that investigates the origins of values instead of accepting them as data.<br>- <strong>Revelation of the latent conflict behind values:</strong> conflict of active and reactive forces, of the strong and the weak.<br>- <strong>Opening of a new horizon for moral philosophy:</strong> the revaluation of all values (Umwertung aller Werte) as a philosophical project.<br>- <strong>Incarnating the personal character of the problematic:</strong> the Nietzschean problem is not an abstract theoretical problem, it is the thinker's own problem, which he lives and from which he suffers in constructing it.",
+                "PhiH.textAnalysis.nietzscheValues.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.nietzscheValues.analysis.significance.content": "This text carries a decisive methodological significance in the history of philosophy: it announces the birth of Nietzsche's radical critical project and founds what will be called the \"revaluation of all values\". The text has shown the nature of the genuine philosophical problem: it is not a passing question to which one answers and which one then closes, but a questioning that never ceases to renew itself and that transforms answers into new questions. In this sense, the text embodies the thesis of the lesson (problematization) in its highest form: the true philosopher is not the one who answers, but the one who constructs his own problematic, which he lives, from which he suffers in constructing it, until it becomes \"a land that belongs to him alone, resembling a secret garden whose existence no one would suspect\". It is the thinker's problematic that others do not understand, but that opens horizons for all humanity."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.nietzscheValues.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.nietzscheValues.title": "تحليل النص: مشكل قيمة القيم - فريدريك نيتشه",
+                "PhiH.textAnalysis.nietzscheValues.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.nietzscheValues.introduction.content": "إن المشكلات الفلسفية لا هي معطاة بصورة جاهزة ولا هي خالدة، إنها تُبنى ويُعاد بناؤها في التاريخ، فالقيم الإنسانية التي ظلت ولأحقاب طويلة موضوع تفكير يُنظرُ في أسسها أضحت موضع استشكال يُسائلها عن قيمتها.",
+                "PhiH.textAnalysis.nietzscheValues.text.title": "النص",
+                "PhiH.textAnalysis.nietzscheValues.text.content": "ضمن آية شروط ابتكر الإنسان لنفسه هذين التقييمين: الخير والشرّ بغية استعمالهما في حياته، وما قيمة هذين التقييمين في حدّ ذاتهما[1]؟ هل أعاقا إلى حدّ الآن تطوّر البشرية أم عزّزاه ؟ أهما عارض من عوارض البؤس والفقر الروحي والانحطاط ؟ أم أنهما يُنمان بالعكس عن الغيطة والقوّة وإرادة الحياة والشجاعة والثقة في مستقبل الحياة؟ ردّا على هذا السؤال وجدت في نفسي أجوبة متعدّدة، وجازفت بأجوبة متعدّدة، وشرعتُ أميّز بين العصور والشعوب وتراتب الأفراد. ثمّ حدّدت مشكلتي في خصوصيتها، فكانت الأجوبة تتحوّل إلى أسئلة جديدة وبحوث جديدة وافتراضات واحتمالات، إلى أن تمكّنت أخيرا من غزو بلد وأرض خاصّين بي وحدي [2]. عالم بأسره مجهول، مزدهر وفي عنفوان نموّه، أشبه ما يكون بستان سرّي لم يكن أحد ليشتبه بوجوده حتّى مجرّد اشتباه.",
+                "PhiH.textAnalysis.nietzscheValues.text.source": "فريديريك نيتشه، نسابية الأخلاق، الفقرة الثالثة - Friedrich Nietzsche, Généalogie de la morale, Préface, §3",
+                "PhiH.textAnalysis.nietzscheValues.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.nietzscheValues.author.alt": "فريدريك نيتشه",
+                "PhiH.textAnalysis.nietzscheValues.author.content": "فريديريك نيتشه (1844-1900) فيلسوف ألماني من عائلة متدينة حيث كان أبوه وجده قسيسين. وبينما كان يستعد في سن السابعة عشرة لأن يصبح قسا هو الآخر، عاش أزمة روحية وضعت حدّا لمشروعته فوجّه إلى الدراسة الفيلولوجية أي التحليل النقدي للغة. لاحظ نيتشه مبكرا أن الأخلاق تتأسس على ثلاثة مبادئ كبيرة وإطلاقية وكونية وهي \"العقل والله والحقيقة\"، لكنّه لاحظ أيضا أن الطابع الثابت لهذه المبادئ لم يمنع القيم الأخلاقية من أن تكون متغيّرة حسب الحقب، وذلك ما قاده إلى إعادة صياغة السؤال بشأن القيم.<br><br>ابتدع المنهج الجنيالوجي (النسابي) للبحث في شروط تشكل القيم والنتاجات الثقافية عامة باعتبارها أقداراً يتخفى وراءها صراع قوى يصنفها نيتشه إلى قوى فاعلة تنتصر للحياة وقوى ارتكاسية تزهد في الحيوي وتحتقره. من مؤلفاته: \"مولد التراجيديا\" (1872)، \"إنساني مفرط في الإنسانية\" (1878)، \"المعرفة الجذلة\" (1882)، \"هكذا تكلم زرادشت\" (1883-1885)، \"إرادة القوة\" (1884-1886)، \"فيما وراء الخير والشر\" (1886)، \"نسابية الأخلاق\" (1887)، ثم توقّف عن الكتابة بسبب المرض إلى أن مات سنة (1900) تاركا وراءه فلسفة هي من أكثر الفلسفات ثراء.",
+                "PhiH.textAnalysis.nietzscheValues.footnotes.title": "الهوامش",
+                "PhiH.textAnalysis.nietzscheValues.footnotes.item1": "<strong>(1) \"هذين القيمتين في حدّ ذاتهما\":</strong> دأب الفلاسفة على تأسيس القيم وفي النصّ إشارة إلى أنّ قيمتي الخير والشر ليستا من المبادئ الأولى، وإنما هما نتاج لظروف معيّنة حسب التأويل الجنيالوجي الذي يؤوّل ظروف نشأة القيم عموما - كثمرة متأخرة لأخلاق الضعفاء وملجأ لهم يعوّضون به عن تراجع قواهم الحيوية وضعفها. لذا فإنّ هذين التقييمين لا يستمدّان قيمتهما من ذاتهما وإنما هما فقط استجابة لمبدأ الحاجة، أي حاجة الضعفاء إلى تحمّل وضعهم المتردّي.",
+                "PhiH.textAnalysis.nietzscheValues.footnotes.item2": "<strong>(2) \"أرض وبلد خاصّين بي وحدي\":</strong> يُدين نيتشه تبعات الأخلاق في صورتها التقليدية المنظمة لحياة الناس، حيث القيم والقوانين الأخلاقية تُقام باسم حقيقة كونية تتجسّم عبر الله والعقل وتُعتمد لإرساء قيم الزهد في الحياة... ويأتي المنهج الجنيالوجي ليتظنّ على هذين المبدأين ويجعل من الانتصار للحياة وللحيوي المبدأ الوحيد في فهم تكوّن القيم.",
+                "PhiH.textAnalysis.nietzscheValues.questions.title": "المهام",
+                "PhiH.textAnalysis.nietzscheValues.questions.q1": "أرصد في النصّ الألفاظ الدالة على المعاناة التي يلقاها المفكر في بناء إشكاليته الخاصة.",
+                "PhiH.textAnalysis.nietzscheValues.questions.q2": "أستثمر الهامش عدد 1 لأتبيّن وجه الطرافة في المساءلة النيتشوية للقيم.",
+                "PhiH.textAnalysis.nietzscheValues.questions.q3": "أستجلي مظاهر التصنيف النيتشوي للقيم في هذا النص.",
+                "PhiH.textAnalysis.nietzscheValues.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.nietzscheValues.answers.a1.title": "الإجابة عن المهمة الأولى:",
+                "PhiH.textAnalysis.nietzscheValues.answers.a1.content": "الألفاظ الدالة على المعاناة التي يلقاها المفكر في بناء إشكاليته الخاصة:<br><br><strong>1. ألفاظ المخاطرة والاجتهاد:</strong> \"جازفت بأجوبة متعدّدة\" - \"شرعتُ أميّز\" - \"حدّدت مشكلتي في خصوصيتها\"؛ فهي تدلّ على الجهد والمخاطرة في البحث دون ضمان مسبق للنتيجة.<br><br><strong>2. ألفاظ التحوّل والتفاعل المستمر:</strong> \"كانت الأجوبة تتحوّل إلى أسئلة جديدة وبحوث جديدة وافتراضات واحتمالات\"؛ فالبناء الإشكالي ليس لحظة واحدة بل عملية متجدّدة، وهذا يرهق المفكر ويستهلك جهده.<br><br><strong>3. ألفاظ الغزو والاكتشاف:</strong> \"تمكّنت أخيرا من غزو بلد وأرض خاصّين بي وحدي\"؛ فالغزو يفترض صعوبة ومقاومة وجهداً، وهو تعبير مجازي عن الجهد المضني في بناء الإشكالية.<br><br><strong>4. ألفاظ العزلة والتوحّد:</strong> \"أرض خاصّين بي وحدي\" - \"بستان سرّي لم يكن أحد ليشتبه بوجوده\"؛ فالمفكر يعاني من العزلة والوحدة في بناء إشكاليته، ويعاني من عدم فهم الآخرين لها.<br><br><strong>5. ألفاظ الدهشة والسرّ:</strong> \"عالم بأسره مجهول، مزدهر وفي عنفوان نموّه\"؛ فالاكتشاف يثير الدهشة والحيرة، وهو ثمرة معاناة طويلة من البحث.",
+                "PhiH.textAnalysis.nietzscheValues.answers.a2.title": "الإجابة عن المهمة الثانية:",
+                "PhiH.textAnalysis.nietzscheValues.answers.a2.content": "وجه الطرافة في المساءلة النيتشوية للقيم (استثماراً للهامش 1):<br><br><strong>1. نقل السؤال من القيم إلى قيمة القيم نفسها:</strong> لا يسأل نيتشه \"ما الخير؟\" أو \"ما الشر؟\" كما يفعل الفلاسفة التقليديون، بل يسأل عن <em>قيمة</em> هذين التقييمين ذاتهما. وهذا نقل جذري لمستوى السؤال.<br><br><strong>2. رفض اعتبار الخير والشر مبدأين أوليين:</strong> يبيّن الهامش أنّ الخير والشر ليسا من المبادئ الأولى، بل هما نتاج لظروف معيّنة، وهما \"ثمرة متأخرة لأخلاق الضعفاء\". فالمساءلة النيتشوية تنزع عن القيم قداستها الأزلية وتُعيدها إلى تاريخها الأرضي.<br><br><strong>3. الكشف عن الوظيفة الحقيقية للقيم:</strong> القيم عنده ليست حقائق مجرّدة، بل هي \"استجابة لمبدأ الحاجة، أي حاجة الضعفاء إلى تحمّل وضعهم المتردّي\". فالمساءلة تُحوّل القيم من مبادئ إلى أعراض.<br><br><strong>4. قلب الاتجاه التقليدي للمساءلة:</strong> بينما كان الفلاسفة يسألون: هل الفعل مطابق للقيمة؟ يصبح السؤال النيتشوي: ما قيمة القيمة نفسها؟ هل تخدم الحياة أم تعيقها؟ وهذا هو ما يجعل المساءلة النيتشوية \"طرافة\" بالمعنى الإشكالي العميق.",
+                "PhiH.textAnalysis.nietzscheValues.answers.a3.title": "الإجابة عن المهمة الثالثة:",
+                "PhiH.textAnalysis.nietzscheValues.answers.a3.content": "مظاهر التصنيف النيتشوي للقيم في هذا النص:<br><br><strong>1. التصنيف الثنائي الأساسي:</strong> \"الخير والشرّ\" كنموذج للتصنيف القيمي، غير أنّ نيتشه لا يقبله كتصنيف نهائي بل يجعله موضوع مساءلة.<br><br><strong>2. تصنيف القيم بحسب وظيفتها تجاه الحياة:</strong><br>- قيم <strong>تُعيق</strong> تطوّر البشرية.<br>- قيم <strong>تُعزّز</strong> تطوّر البشرية.<br><br><strong>3. تصنيف القيم بحسب منشئها النفسي:</strong><br>- قيم تعبّر عن \"البؤس والفقر الروحي والانحطاط\".<br>- قيم تعبّر عن \"الغيطة والقوّة وإرادة الحياة والشجاعة والثقة في مستقبل الحياة\".<br><br><strong>4. التصنيف التاريخي-الأنثروبولوجي:</strong> \"شرعتُ أميّز بين العصور والشعوب وتراتب الأفراد\"؛ فالقيم تختلف بحسب العصور (القديمة/الحديثة) والشعوب (اليونانية/اليهودية-المسيحية...) وتراتب الأفراد (الأقوياء/الضعفاء، السادة/العبيد).<br><br><strong>5. التصنيف بحسب القوى الكامنة وراءها (كما يوضّح الهامش والكاتب):</strong><br>- قيم <strong>القوى الفاعلة</strong> المنتصرة للحياة.<br>- قيم <strong>القوى الارتكاسية</strong> الزاهدة في الحيوي والمحتقرة له.",
+                "PhiH.textAnalysis.nietzscheValues.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.nietzscheValues.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.nietzscheValues.analysis.thesis.content": "يرى نيتشه أنّ القيم الأخلاقية (الخير والشر) ليست مبادئ أولية، ولا حقائق خالدة، ولا معطيات جاهزة، بل هي نتاجات تاريخية ينبغي مساءلتها عن قيمتها. فالمشكل الفلسفي الجديد ليس \"ما الخير؟\" بل \"ما قيمة هذه القيم نفسها؟ هل تخدم الحياة وتُعزّزها، أم تعبّر عن الضعف والانحطاط وتُعيقها؟\". وبذلك ينقل نيتشه المساءلة الأخلاقية من مستوى البحث في ماهية القيم إلى مستوى البحث في وظيفتها ومنشئها، مؤسِّساً بذلك المنهج الجنيالوجي (النسابي).",
+                "PhiH.textAnalysis.nietzscheValues.analysis.mechanisms.title": "آليات بناء الإشكالية النيتشوية:",
+                "PhiH.textAnalysis.nietzscheValues.analysis.mechanisms.content": "- <strong>التساؤل الجذري:</strong> نقل السؤال من \"القيم\" إلى \"قيمة القيم نفسها\".<br>- <strong>التأويل الجنيالوجي:</strong> البحث في شروط نشأة القيم وأصولها التاريخية.<br>- <strong>التمييز بين العصور والشعوب وتراتب الأفراد:</strong> إدخال البعد التاريخي-الأنثروبولوجي في دراسة القيم.<br>- <strong>تحويل الأجوبة إلى أسئلة جديدة:</strong> الإشكالية النيتشوية إشكالية مفتوحة لا نهائية، تتجدّد باستمرار.<br>- <strong>الغزو الفكري الشخصي:</strong> \"أرض خاصّين بي وحدي\" - الإشكالية ليست مشتركة، بل هي إشكالية صاحبها، يعاني في بنائها ويحمل همّها.",
+                "PhiH.textAnalysis.nietzscheValues.analysis.consequences.title": "نتائج الإشكالية النيتشوية:",
+                "PhiH.textAnalysis.nietzscheValues.analysis.consequences.content": "- <strong>إزاحة الأخلاق التقليدية عن عرشها:</strong> لم تبقَ القيم مبادئ مقدّسة، بل أضحت موضوعاً للفحص والمساءلة.<br>- <strong>تأسيس المنهج الجنيالوجي:</strong> منهج نسابي يبحث في أصول القيم بدل الاكتفاء بها كمعطيات.<br>- <strong>الكشف عن الصراع الكامن وراء القيم:</strong> صراع القوى الفاعلة والارتكاسية، الأقوياء والضعفاء.<br>- <strong>فتح أفق جديد للفلسفة الأخلاقية:</strong> إعادة تقييم القيم (Umwertung aller Werte) كمشروع فلسفي.<br>- <strong>تجسيد الطابع الشخصي للإشكالية:</strong> فالمشكل النيتشوي ليس مشكلاً نظرياً مجرّداً، بل هو مشكل المفكر نفسه، يعيشه ويعاني في بنائه.",
+                "PhiH.textAnalysis.nietzscheValues.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.nietzscheValues.analysis.significance.content": "يحمل هذا النص دلالة منهجية حاسمة في تاريخ الفلسفة: فهو يعلن ميلاد مشروع نيتشه النقدي الجذري، ويؤسّس لما سيُعرف بـ\"إعادة تقييم كل القيم\". وقد أبان النص عن طبيعة الإشكالية الفلسفية الحقيقية: إنها ليست سؤالاً عابراً يُجاب عنه ثمّ يُغلَق، بل هي مساءلة لا تنفكّ تتجدّد، وتُحوِّل الأجوبة إلى أسئلة جديدة. وبهذا المعنى، فإنّ النص يجسّد أطروحة الدرس (الأشكلة) في أرقى صورها: فالفيلسوف الحق ليس من يجيب، بل من يبني إشكالية خاصة به، يعيشها، ويعاني في بنائها، حتى تصبح \"أرضاً خاصة به وحده، أشبه بستان سرّي لا يشتبه بوجوده أحد\". إنها إشكالية المفكر التي لا يفهمها غيره، لكنها تفتح آفاقاً للبشرية كلها."
+            }
+        };
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

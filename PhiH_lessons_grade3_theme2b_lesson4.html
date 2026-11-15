@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التحليل - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#880e4f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Deep Plum / Dark Magenta Theme for analysis lesson */
+        :root {
+            --primary-color: #880e4f;
+            --primary-light: #ad1457;
+            --primary-dark: #560027;
+            --secondary-color: #ad1457;
+            --secondary-light: #c2185b;
+            --secondary-dark: #880e4f;
+            --accent-color: #c2185b;
+            --accent-light: #d81b60;
+            --accent-dark: #ad1457;
+            --light-color: #fce4ec;
+            --dark-color: #2d0416;
+            --text-color: #4a1a2e;
+            --heading-color: #2a0a1a;
+            --background-color: #fdf2f5;
+            --card-bg: #ffffff;
+            --definition-bg: #f8bbd0;
+            --border-color: #f48fb1;
+            --table-even-bg: #fce4ec;
+            --table-hover-bg: #f8bbd0;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(136, 14, 79, 0.15);
+            --gradient-primary: linear-gradient(135deg, #880e4f 0%, #ad1457 100%);
+            --gradient-secondary: linear-gradient(135deg, #560027 0%, #ad1457 100%);
+            --gradient-plum: linear-gradient(135deg, #880e4f 0%, #560027 100%);
+            --gradient-magenta: linear-gradient(135deg, #ad1457 0%, #c2185b 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #f06292;
+            --primary-light: #f48fb1;
+            --primary-dark: #ec407a;
+            --secondary-color: #ec407a;
+            --secondary-light: #f06292;
+            --secondary-dark: #d81b60;
+            --accent-color: #f48fb1;
+            --accent-light: #f8bbd0;
+            --accent-dark: #f06292;
+            --light-color: #3e0d25;
+            --dark-color: #1f0412;
+            --text-color: #f8bbd0;
+            --heading-color: #fce4ec;
+            --background-color: #2d0416;
+            --card-bg: #3e0d25;
+            --definition-bg: #4a0f2c;
+            --border-color: #880e4f;
+            --table-even-bg: #3e0d25;
+            --table-hover-bg: #4a0f2c;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #ad1457 0%, #f06292 100%);
+            --gradient-secondary: linear-gradient(135deg, #880e4f 0%, #ec407a 100%);
+            --gradient-plum: linear-gradient(135deg, #f06292 0%, #2d0416 100%);
+            --gradient-magenta: linear-gradient(135deg, #f48fb1 0%, #ec407a 100%);
+        }
+        /* Definition Cards Layout */
+        .PhiH-definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .PhiH-definition-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(136, 14, 79, 0.2);
+        }
+        .PhiH-definition-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        /* Expand/Collapse Functionality */
+        .PhiH-expandable-section {
+            margin-bottom: 1.5rem;
+        }
+        .PhiH-expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .PhiH-expandable-header:hover {
+            background: var(--gradient-plum);
+        }
+        .PhiH-expandable-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        .PhiH-expandable-content {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            border-top: none;
+        }
+        .PhiH-expandable-content.hidden {
+            display: none;
+        }
+        .PhiH-expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        .PhiH-expand-icon.expanded {
+            transform: rotate(180deg);
+        }
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        .PhiH-author-info {
+            flex: 1;
+        }
+        /* Quotes Section Styling */
+        .PhiH-quotes-container {
+            margin-top: 1rem;
+        }
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(136, 14, 79, 0.2);
+        }
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        /* RTL support for definition cards */
+        body.rtl .PhiH-definition-card-content ul {
+            padding-left: 0;
+            padding-right: 1.2rem;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .PhiH-definitions-grid {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .PhiH-author-image {
+                align-self: center;
+            }
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-analysis" dir="ltr">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
+    <main class="PhiH-lesson1-container">
+        <div class="PhiH-lesson1-header">
+            <h1 class="PhiH-lesson1-title" data-i18n="PhiH.lessons.analysis.title">التحليل</h1>
+            <div class="PhiH-lesson1-level" data-i18n="PhiH.lessons.analysis.level">السنة الثالثة ثانوي - الفلسفة</div>
+        </div>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="introHeader">
+                <h3 data-i18n="PhiH.lessons.analysis.introduction.title">التمهيد</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="introContent">
+                <p data-i18n="PhiH.lessons.analysis.introduction.text">إذا كانت البرهنة، في الرياضيات مثلاً، عملية منطقية صارمة تفضي إلى نتائج ضرورية لا تقبل المجادلة، فإنّ التفكير في المجالات غير العلمية (كالفلسفة والأخلاق والنقاشات العمومية) يقوم على الحجاج ويقترن بالحوار والنقد، حيث تكون الحجة قابلة دائماً للمراجعة والدحض. غير أنّ الدحض في الفلسفة لا يعني الهدم والإقصاء، بل هو فعل تحليلي نقدي يُطهّر الفلسفة من أخطائها ويُعيد بعثها في صورة جديدة. وهذا ما يقتضي شروطاً منطقية وأخلاقية لسلامته. سينظر الدرس في نصّ غرونيي الذي يبيّن أنّ الدحض تطهير للفلسفة لا دحض لها، ثمّ في نصّ ميل الذي يحدّد مقتضيات الدحض وشروط الإنصاف فيه، وأخيراً في نصّ بايل الذي يجسّم الدحض الفلسفي في مواجهته لموقف أبقور ولوكراس من الموت.</p>
+            </div>
+        </section>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="textsHeader">
+                <h3 data-i18n="PhiH.lessons.analysis.texts.title">النصوص</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="textsContent">
+                <div class="PhiH-texts-container">
+                    <ul class="PhiH-texts-list">
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2b_lesson4_text1.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.analysis.texts.text1">الدحض تطهير - هوبير غرونيي</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2b_lesson4_text2.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.analysis.texts.text2">في مقتضيات الدحض - جون ستيوارت ميل</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2b_lesson4_text3.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.analysis.texts.text3">الحجاج والحجاج المضاد - ب. بايل (مع نص أبقور)</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="quotesHeader">
+                <h3 data-i18n="PhiH.lessons.analysis.quotes.title">شواهد ونصوص ذات صلة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="quotesContent">
+                <div class="PhiH-quotes-container">
+                    <div class="PhiH-quotes-grid">
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.analysis.quotes.quote1">"إذا بدا لأيّ منكم أنّ النتائج التي أصلُ إليها غير صحيحة، يجب عليه التدخّل ليدحض قولي، لأنّي لا أتحدّث عن معرفة مسبقة، وإنّما أنا باحث مثلكم."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.analysis.quotes.author1">أفلاطون</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.analysis.quotes.quote2">"يقول الفكر لنفسه: لا."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.analysis.quotes.author2">آلان</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.analysis.quotes.quote3">"هذه دفعة على الحساب قبل أن أقرأ الكتاب."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.analysis.quotes.author3">أحد شيوخ الزيتونة، في ردّه على كتاب «امرأنا في الشريعة والمجتمع» للطاهر الحداد</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.analysis.quotes.quote4">"لا شكّ أنّ الحوار يستوجب لا فقط أن نجيب عمّا هو حقّ، بل فضلاً عن ذلك ألاّ نؤسّس جوابنا إلاّ على ما يعترف مخاطبنا بأنّه حقّ."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.analysis.quotes.author4">أفلاطون (مينون، 75 cd)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="conclusionHeader">
+                <h3 data-i18n="PhiH.lessons.analysis.conclusion.title">الخاتمة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="conclusionContent">
+                <p data-i18n="PhiH.lessons.analysis.conclusion.text">يتّضح من الدرس أنّ الدحض ليس فعلاً هدّاماً، بل هو الفعل الذي يمنح الفلسفة حيويّتها، ويجعلها قادرة على مواجهة نفسها ونقد مسلّماتها. غير أنّ هذا الفعل لا يكون ناجحاً إلا إذا التزم بشروط منطقية (سلامة الاستدلال) وأخلاقية (الإنصاف في الاستماع إلى الخصم، وعرض حججه في أقوى صورة). وبهذا المعنى، فإنّ التحليل والدحض هما صورة من صور احترام الحقيقة، لا صورة من صور الانتصار على الخصم. غير أنّ كلّ دحض يفترض وجود مبادئ يُرجع إليها في الحكم على الأفكار، وهو ما يطرح مسألة التأسيس.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Page-specific translations for analysis lesson
+        window.translations_PhiHanalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                // Lesson specific translations
+                "PhiH.lessons.analysis.title": "L'Analyse",
+                "PhiH.lessons.analysis.level": "3ème Secondaire - Philosophie",
+                "PhiH.lessons.analysis.introduction.title": "Introduction",
+                "PhiH.lessons.analysis.introduction.text": "Si la démonstration, en mathématiques par exemple, est une opération logique rigoureuse qui aboutit à des résultats nécessaires et indiscutables, la pensée dans les domaines non scientifiques (philosophie, éthique, débats publics) repose sur l'argumentation et s'accompagne du dialogue et de la critique, où l'argument est toujours révisable et réfutable. Mais la réfutation en philosophie ne signifie pas destruction et exclusion : elle est un acte analytique et critique qui purifie la philosophie de ses erreurs et la fait renaître sous une forme nouvelle. Cela exige des conditions logiques et éthiques pour sa validité. La leçon examinera le texte de Grenier montrant que la réfutation est purification de la philosophie et non sa destruction, puis le texte de Mill qui détermine les exigences de la réfutation et les conditions d'équité, enfin le texte de Bayle qui incarne la réfutation philosophique dans sa confrontation avec la position d'Épicure et de Lucrèce sur la mort.",
+                "PhiH.lessons.analysis.texts.title": "Textes",
+                "PhiH.lessons.analysis.texts.text1": "La réfutation purifie - Hubert Grenier",
+                "PhiH.lessons.analysis.texts.text2": "Des exigences de la réfutation - John Stuart Mill",
+                "PhiH.lessons.analysis.texts.text3": "Argumentation et contre-argumentation - P. Bayle (avec le texte d'Épicure)",
+                "PhiH.lessons.analysis.quotes.title": "Citations et textes connexes",
+                "PhiH.lessons.analysis.quotes.quote1": "« Si l'un de vous estime que les résultats auxquels j'aboutis ne sont pas corrects, il doit intervenir pour réfuter mes propos, car je ne parle pas d'un savoir préalable, mais je suis un chercheur comme vous. »",
+                "PhiH.lessons.analysis.quotes.quote2": "« La pensée se dit à elle-même : non. »",
+                "PhiH.lessons.analysis.quotes.quote3": "« Ceci est un acompte avant que je ne lise le livre. »",
+                "PhiH.lessons.analysis.quotes.quote4": "« Le dialogue exige non seulement que nous répondions à ce qui est vrai, mais aussi, et par-dessus tout, que nous ne fondions notre réponse que sur ce que notre interlocuteur reconnaît comme vrai. »",
+                "PhiH.lessons.analysis.quotes.author1": "Platon",
+                "PhiH.lessons.analysis.quotes.author2": "Alain",
+                "PhiH.lessons.analysis.quotes.author3": "Un cheikh de la Zitouna, dans sa réponse au livre « Notre femme dans la charia et la société » de Tahar Haddad",
+                "PhiH.lessons.analysis.quotes.author4": "Platon (Ménon, 75 cd)",
+                "PhiH.lessons.analysis.conclusion.title": "Conclusion",
+                "PhiH.lessons.analysis.conclusion.text": "Il ressort de la leçon que la réfutation n'est pas un acte destructeur, mais l'acte qui donne à la philosophie sa vitalité et la rend capable de se confronter à elle-même et de critiquer ses présupposés. Cependant, cet acte n'est réussi que s'il respecte des conditions logiques (validité du raisonnement) et éthiques (équité dans l'écoute de l'adversaire et présentation de ses arguments sous leur forme la plus forte). En ce sens, l'analyse et la réfutation sont une forme de respect de la vérité, non une forme de victoire sur l'adversaire. Mais toute réfutation présuppose des principes auxquels on se réfère pour juger les idées, ce qui pose la question de la fondation."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                // Lesson specific translations
+                "PhiH.lessons.analysis.title": "Analysis",
+                "PhiH.lessons.analysis.level": "3rd Secondary - Philosophy",
+                "PhiH.lessons.analysis.introduction.title": "Introduction",
+                "PhiH.lessons.analysis.introduction.text": "If demonstration, in mathematics for example, is a rigorous logical operation leading to necessary and indisputable results, thought in non-scientific domains (philosophy, ethics, public debates) rests on argumentation and is accompanied by dialogue and criticism, where the argument is always revisable and refutable. But refutation in philosophy does not mean destruction and exclusion: it is a critical analytical act that purifies philosophy of its errors and revives it in a new form. This requires logical and ethical conditions for its validity. The lesson will examine Grenier's text showing that refutation is purification of philosophy and not its destruction, then Mill's text determining the requirements of refutation and the conditions of fairness, and finally Bayle's text which embodies philosophical refutation in its confrontation with Epicurus and Lucretius's position on death.",
+                "PhiH.lessons.analysis.texts.title": "Texts",
+                "PhiH.lessons.analysis.texts.text1": "Refutation Purifies - Hubert Grenier",
+                "PhiH.lessons.analysis.texts.text2": "On the Requirements of Refutation - John Stuart Mill",
+                "PhiH.lessons.analysis.texts.text3": "Argumentation and Counter-Argumentation - P. Bayle (with Epicurus's text)",
+                "PhiH.lessons.analysis.quotes.title": "Related Quotes and Texts",
+                "PhiH.lessons.analysis.quotes.quote1": "\"If any of you thinks that the results I arrive at are not correct, he must intervene to refute my words, for I do not speak of prior knowledge, but I am a researcher like you.\"",
+                "PhiH.lessons.analysis.quotes.quote2": "\"Thought says to itself: no.\"",
+                "PhiH.lessons.analysis.quotes.quote3": "\"This is an advance payment before I read the book.\"",
+                "PhiH.lessons.analysis.quotes.quote4": "\"Dialogue requires not only that we answer what is true, but also, and above all, that we found our answer only on what our interlocutor acknowledges as true.\"",
+                "PhiH.lessons.analysis.quotes.author1": "Plato",
+                "PhiH.lessons.analysis.quotes.author2": "Alain",
+                "PhiH.lessons.analysis.quotes.author3": "A sheikh of the Zitouna, in his response to the book \"Our Woman in Sharia and Society\" by Tahar Haddad",
+                "PhiH.lessons.analysis.quotes.author4": "Plato (Meno, 75 cd)",
+                "PhiH.lessons.analysis.conclusion.title": "Conclusion",
+                "PhiH.lessons.analysis.conclusion.text": "It emerges from the lesson that refutation is not a destructive act, but the act that gives philosophy its vitality and makes it capable of confronting itself and criticizing its presuppositions. However, this act only succeeds if it respects logical conditions (validity of reasoning) and ethical conditions (fairness in listening to the opponent and presenting his arguments in their strongest form). In this sense, analysis and refutation are a form of respect for truth, not a form of victory over the opponent. But every refutation presupposes principles to which one refers in judging ideas, which raises the question of foundation."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                // Lesson specific translations
+                "PhiH.lessons.analysis.title": "التحليل",
+                "PhiH.lessons.analysis.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.lessons.analysis.introduction.title": "التمهيد",
+                "PhiH.lessons.analysis.introduction.text": "إذا كانت البرهنة، في الرياضيات مثلاً، عملية منطقية صارمة تفضي إلى نتائج ضرورية لا تقبل المجادلة، فإنّ التفكير في المجالات غير العلمية (كالفلسفة والأخلاق والنقاشات العمومية) يقوم على الحجاج ويقترن بالحوار والنقد، حيث تكون الحجة قابلة دائماً للمراجعة والدحض. غير أنّ الدحض في الفلسفة لا يعني الهدم والإقصاء، بل هو فعل تحليلي نقدي يُطهّر الفلسفة من أخطائها ويُعيد بعثها في صورة جديدة. وهذا ما يقتضي شروطاً منطقية وأخلاقية لسلامته. سينظر الدرس في نصّ غرونيي الذي يبيّن أنّ الدحض تطهير للفلسفة لا دحض لها، ثمّ في نصّ ميل الذي يحدّد مقتضيات الدحض وشروط الإنصاف فيه، وأخيراً في نصّ بايل الذي يجسّم الدحض الفلسفي في مواجهته لموقف أبقور ولوكراس من الموت.",
+                "PhiH.lessons.analysis.texts.title": "النصوص",
+                "PhiH.lessons.analysis.texts.text1": "الدحض تطهير - هوبير غرونيي",
+                "PhiH.lessons.analysis.texts.text2": "في مقتضيات الدحض - جون ستيوارت ميل",
+                "PhiH.lessons.analysis.texts.text3": "الحجاج والحجاج المضاد - ب. بايل (مع نص أبقور)",
+                "PhiH.lessons.analysis.quotes.title": "شواهد ونصوص ذات صلة",
+                "PhiH.lessons.analysis.quotes.quote1": "\"إذا بدا لأيّ منكم أنّ النتائج التي أصلُ إليها غير صحيحة، يجب عليه التدخّل ليدحض قولي، لأنّي لا أتحدّث عن معرفة مسبقة، وإنّما أنا باحث مثلكم.\"",
+                "PhiH.lessons.analysis.quotes.quote2": "\"يقول الفكر لنفسه: لا.\"",
+                "PhiH.lessons.analysis.quotes.quote3": "\"هذه دفعة على الحساب قبل أن أقرأ الكتاب.\"",
+                "PhiH.lessons.analysis.quotes.quote4": "\"لا شكّ أنّ الحوار يستوجب لا فقط أن نجيب عمّا هو حقّ، بل فضلاً عن ذلك ألاّ نؤسّس جوابنا إلاّ على ما يعترف مخاطبنا بأنّه حقّ.\"",
+                "PhiH.lessons.analysis.quotes.author1": "أفلاطون",
+                "PhiH.lessons.analysis.quotes.author2": "آلان",
+                "PhiH.lessons.analysis.quotes.author3": "أحد شيوخ الزيتونة، في ردّه على كتاب «امرأنا في الشريعة والمجتمع» للطاهر الحداد",
+                "PhiH.lessons.analysis.quotes.author4": "أفلاطون (مينون، 75 cd)",
+                "PhiH.lessons.analysis.conclusion.title": "الخاتمة",
+                "PhiH.lessons.analysis.conclusion.text": "يتّضح من الدرس أنّ الدحض ليس فعلاً هدّاماً، بل هو الفعل الذي يمنح الفلسفة حيويّتها، ويجعلها قادرة على مواجهة نفسها ونقد مسلّماتها. غير أنّ هذا الفعل لا يكون ناجحاً إلا إذا التزم بشروط منطقية (سلامة الاستدلال) وأخلاقية (الإنصاف في الاستماع إلى الخصم، وعرض حججه في أقوى صورة). وبهذا المعنى، فإنّ التحليل والدحض هما صورة من صور احترام الحقيقة، لا صورة من صور الانتصار على الخصم. غير أنّ كلّ دحض يفترض وجود مبادئ يُرجع إليها في الحكم على الأفكار، وهو ما يطرح مسألة التأسيس."
+            }
+        };
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHanalysis;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+    <script>
+        // Expand/Collapse functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const expandableHeaders = document.querySelectorAll('.PhiH-expandable-header');
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.PhiH-expand-icon');
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('expanded');
+                    } else {
+                        content.classList.add('hidden');
+                        icon.classList.remove('expanded');
+                    }
+                });
+            });
+            // Initially hide all expandable content
+            document.querySelectorAll('.PhiH-expandable-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: في أوجه الحدّ - الغزالي - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#003153">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Prussian Blue / Navy Color Palette */
+        :root {
+            --primary-color: #003153;
+            --primary-light: #1a4d7a;
+            --primary-dark: #001f36;
+            --secondary-color: #2c5f8a;
+            --secondary-light: #4a7cab;
+            --secondary-dark: #1a3d5c;
+            --accent-color: #4a7cab;
+            --accent-light: #6fa0cc;
+            --accent-dark: #2c5f8a;
+            --light-color: #f0f6fc;
+            --dark-color: #0a1c2e;
+            --text-color: #2a3f52;
+            --heading-color: #0f2438;
+            --background-color: #f7fafd;
+            --card-bg: #ffffff;
+            --definition-bg: #e3eef7;
+            --border-color: #b3cde3;
+            --table-even-bg: #f0f6fc;
+            --table-hover-bg: #d6e6f3;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(0, 49, 83, 0.1), 0 2px 4px -1px rgba(0, 49, 83, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 49, 83, 0.1), 0 4px 6px -2px rgba(0, 49, 83, 0.05);
+            --gradient-primary: linear-gradient(135deg, #003153 0%, #1a4d7a 100%);
+            --gradient-secondary: linear-gradient(135deg, #1a3d5c 0%, #2c5f8a 100%);
+            --gradient-accent: linear-gradient(135deg, #4a7cab 0%, #003153 100%);
+            --gradient-gray: linear-gradient(135deg, #4a7cab 0%, #2c5f8a 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #6fa0cc;
+            --primary-light: #8db5d9;
+            --primary-dark: #4a7cab;
+            --secondary-color: #4a7cab;
+            --secondary-light: #6fa0cc;
+            --secondary-dark: #2c5f8a;
+            --accent-color: #8db5d9;
+            --accent-light: #a8c9e5;
+            --accent-dark: #6fa0cc;
+            --light-color: #1a3d5c;
+            --dark-color: #0a1c2e;
+            --text-color: #c9dceb;
+            --heading-color: #f0f6fc;
+            --background-color: #0a1c2e;
+            --card-bg: #12283f;
+            --definition-bg: #1a3d5c;
+            --border-color: #2c5f8a;
+            --table-even-bg: #12283f;
+            --table-hover-bg: #1a3d5c;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #4a7cab 0%, #6fa0cc 100%);
+            --gradient-secondary: linear-gradient(135deg, #2c5f8a 0%, #4a7cab 100%);
+            --gradient-accent: linear-gradient(135deg, #4a7cab 0%, #003153 100%);
+            --gradient-gray: linear-gradient(135deg, #6fa0cc 0%, #4a7cab 100%);
+        }
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(0, 49, 83, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(44, 95, 138, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(74, 124, 171, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-author-info {
+            flex: 1;
+        }
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        li strong {
+            color: var(--primary-color);
+        }
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(0, 49, 83, 0.05), transparent);
+        }
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        body.rtl .PhiH-text-card ul li {
+            border-left: none;
+            border-right: 3px solid var(--primary-color);
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .PhiH-author-image {
+                align-self: center;
+            }
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.ghazaliDefinition.title">تحليل النص: في أوجه الحدّ - الغزالي</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.ghazaliDefinition.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        <section class="PhiH-text-analysis-section">
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazaliDefinition.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.ghazaliDefinition.introduction.content">
+                    تنوّع أسئلتنا بقدر تنوّع مطلوبنا، ولقد أبدعت اللغة لذلك صيغاً تساؤلية مختلفة لتيسّر التواصل بين السائل والمجيب بحيث يشتركان في فهم مطلوب "الكيف" و"المتى" و"الأين". ومعظم الصيغ التساؤلية مطلقة، مما يجعل الحاجة إلى تحديد مطلوب الأسئلة وتعريف الألفاظ وضبط حدودها بشكل صارم أمراً مؤكداً.
+                </p>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazaliDefinition.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.ghazaliDefinition.text.content">
+                        مطلب "ما" يُطلق على ثلاثة أوجه:
+                        <br>
+                        الأوّل أن يُطلب به شرح اللفظ كما يقول من لا يدري ما العُقار: "ما العُقار؟" فيُقال له الخمر إذا كان يعرف[1] الخمر.
+                        <br>
+                        الثاني أن يطلب لفظاً مُميّزاً يتميّز به المسؤول عنه عن غيره بكلام جامع مانع كيف ما كان الكلام، سواء كان عبارة عن لوازمه[2] أو ذاتياته[3]، كقول القائل "ما الخمر؟" أي ما حدّ الخمر؟ فيُقال: هو المائع الذي يَقدّف بالزّبَد ثم يستحيل إلى الحموضة ويُحفظ في الدنّ، والمقصود أن لا يتعرّض لذاتياته، ولكن نُجمع من عوارضه ولوازمه ما يساوي بجملته الخمر بحيث لا يخرج عنه خمر ولا يدخل فيه ما ليس بخمر.
+                        <br>
+                        الثالث أن يُقال "ما الخمر؟" فيُقال: هو شراب مُسكر مُعتصر من العنب، فيكون ذلك كاشفاً عن كنه حقيقته الذاتية، ويتبعه أيضاً أنه تميّز جامع مانع ولكن ليس المقصود التمييز بل تصوّر كنه الشيء وحقيقته، ثمّ التمييز يتبعه لا محالة.
+                        <br>
+                        واسم الحدّ في العادة قد يُطلق على هذه الأجوبة الثلاثة على سبيل الاشتراك. فلنخترع لكل واحد أسماء: ولنسمّ الأوّل حدّاً لفظياً، إذ السائل ليس يطلب إلاّ شرح اللفظ؛ ولنسمّ الثاني حدّاً رسميّاً[4] وهو طلب مترسم بالعلم غير متشوّف إلى درك حقيقة الشيء؛ ولنسمّ الثالث حدّاً حقيقياً إذ مُدرك الطالب فيه درك حقيقة الشيء.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.ghazaliDefinition.text.source">الغزالي، محكّ النظر، ص 25-26 (المعقوفات ونقاط الاستفهام من وضع لجنة التأليف)</em></p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazaliDefinition.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <img src="assets/images/al_ghazali.jpg" alt="الغزالي" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.ghazaliDefinition.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.ghazaliDefinition.author.content">
+                            الغزالي (1058-1111) هو أبو حامد محمد بن أحمد الغزالي الطوسي، ولد في مدينة طوس في خراسان. اشتغل بالتدريس في المدرسة النظامية ببغداد بتكليف من نظام الملك. يُعدّ من كبار المفكرين في مجال علم الأخلاق والفلسفة والعقيدة والمنطق. من أشهر كتبه: "إحياء علوم الدين"، "المنقذ من الضلال"، "مقاصد الفلاسفة"، "تهافت الفلاسفة"، "معيار العلم"، "محكّ النظر" (منطق)، "ميزان العمل"، "الاقتصاد في الاعتقاد"، "فضائح الباطنية"، "القسطاس المستقيم"، "فيصل التفرقة بين الإسلام والزندقة"، "التبر المسبوك في نصيحة الملوك"، "أيها الولد المحب"، "كيمياء السعادة".
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazaliDefinition.footnotes.title">الهوامش</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.ghazaliDefinition.footnotes.item1"><strong>(1) "يعرف":</strong> تطبيقاً لقاعدة تقضي بأن لا نعرّف اللفظ بلفظ أعسر منه. "ولا يجوز تعريف الشيء بما هو أخفى منه ولا بما هو مثله في الجلاء والخفاء" (الشهرستاني، الملل والنحل، ص310).</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazaliDefinition.footnotes.item2"><strong>(2) "لوازمه":</strong> تطلق على الخصائص التي لا تفارق الشيء وإن لم تكن محددة لماهيته. ولقد عرّفها الغزالي بقوله: "فكون الإنسان حياً داخل في ماهية الإنسان أعني الحيوانية فكان جنساً. وكونه مولوداً ومخلوقاً لازم له لا يفارقه قطُّ ولكنه ليس داخلاً في الماهية" (تهافت الفلاسفة، ص46).</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazaliDefinition.footnotes.item3"><strong>(3) "ذاتياته":</strong> تطلق على الخصائص الماهوية كالتعقل بالنسبة للإنسان. ولقد عرّفها الغزالي فقال: "فليس العقلية المجردة للذات من اللوازم بل هي الماهية" (تهافت الفلاسفة، ص48).</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazaliDefinition.footnotes.item4"><strong>(4) "رسمياً":</strong> الرسم لغة هو أثر الشيء، واصطلاحاً هو تعريف الشيء بلوازمه لا بذاتياته. وعرَّفه الغزالي فقال: "لا تحدد الأشياء إلا بالمقومات، فإن حددت باللوازم كان ذلك رسماً للتمييز لا لتصوير حقيقة الشيء. فلا يقال في حد المثلث إنه الذي تساوي زواياه القائمتين وإن كان ذلك لازماً عاماً لكل مثلث، بل يقال إنه شكل يحيط به ثلاثة أضلاع" (تهافت الفلاسفة، ص46). وقال سيف الدين الآمدي في كتابه المبين: "أما الحد الرسمي، فعبارة عن ما يميز الشيء عن غيره تمييزاً غير ذاتي" (أورده عبد الأمير الأعمم في كتابه "المصطلح الفلسفي عند العرب"، الدار التونسية للنشر، 1991، ص361).</li>
+                </ul>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazaliDefinition.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.ghazaliDefinition.questions.q1">أحدد مستويات التعريف.</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazaliDefinition.questions.q2">أبين كيف يحيل كل تعريف إلى علاقة.</li>
+                    <li data-i18n="PhiH.textAnalysis.ghazaliDefinition.questions.q3">أبين ما إذا كان القول بأن "التعريف الحقيقي" للشيء يكون بتحديد كنهه" ينسجم مع القول بالطابع التاريخي للمعرفة الإنسانية.</li>
+                </ol>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazaliDefinition.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazaliDefinition.answers.a1.title">الإجابة عن المهمة الأولى:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazaliDefinition.answers.a1.content">
+                        يحدد الغزالي ثلاثة مستويات للتعريف، بحسب ما يطلبه السائل من مطلب "ما":
+                        <br><br>
+                        <strong>1. الحدّ اللفظي:</strong> وهو شرح اللفظ وبيان معناه، دون التعرّض لحقيقة الشيء ذاته. مثاله: أن يقول السائل "ما العُقار؟" فيُقال له "الخمر"، إذا كان يعرف الخمر. فالسائل هنا لا يطلب إلاّ شرح اللفظ.
+                        <br><br>
+                        <strong>2. الحدّ الرسمي:</strong> وهو تعريف الشيء بلوازمه وعوارضه لا بذاتياته، أي بجملة من الخصائص التي تميّزه عن غيره تمييزاً جامعاً مانعاً، دون أن تكشف عن كنه حقيقته. مثاله: تعريف الخمر بأنها "المائع الذي يَقذف بالزبد ثم يستحيل إلى الحموضة ويُحفظ في الدنّ". فالمقصود هنا التمييز لا تصوّر الحقيقة.
+                        <br><br>
+                        <strong>3. الحدّ الحقيقي:</strong> وهو تعريف الشيء بذاتياته الكاشفة عن كنه حقيقته، كتعريف الخمر بأنها "شراب مُسكر مُعتصر من العنب". فهذا التعريف يكشف عن الجنس (شراب) والفصل (مُسكر) والخاصة (مُعتصر من العنب). والتمييز هنا يتبع الكشف عن الحقيقة لا محالة، لكن المقصود الأصلي هو تصوّر كنه الشيء.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazaliDefinition.answers.a2.title">الإجابة عن المهمة الثانية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazaliDefinition.answers.a2.content">
+                        يحيل كل تعريف إلى علاقة، لأنّ التعريف ليس فعلاً منعزلاً عن السياق الذي يطلبه فيه السائل، بل هو دائماً تعريف <em>لشيء</em> <em>بشيء آخر</em> <em>لغرض معين</em>. وإليك بيان ذلك في كل مستوى:
+                        <br><br>
+                        <strong>1. في الحدّ اللفظي:</strong> العلاقة بين لفظين. علاقة بين اللفظ المُعرَّف (العُقار) واللفظ المُعرِّف (الخمر). وهي علاقة دلالية-لغوية، تفترض أن السائل يعرف الخمر ولا يعرف العُقار. والتعريف هنا لا يزيد عن كونه جسراً بين لفظين.
+                        <br><br>
+                        <strong>2. في الحدّ الرسمي:</strong> العلاقة بين الشيء وبين لوازمه وعوارضه. علاقة بين الماهية المُعرَّفة (الخمر) ومجموعة من الخصائص التي تُلازمها (المائع، مقدّف بالزبد، يستحيل إلى الحموضة، يُحفظ في الدنّ). وهذه العلاقة علاقة لزوم لا علاقة ماهية.
+                        <br><br>
+                        <strong>3. في الحدّ الحقيقي:</strong> العلاقة بين الشيء وبين ذاته، أي بين الماهية وذاتياتها. علاقة بين الخمر وبين "الشراب المُسكر المُعتصر من العنب". وهذه هي العلاقة الأصلية التي تكشف عن الكنه، والتمييز فيها يتبع الكشف عن الحقيقة.
+                        <br><br>
+                        ويمكن أن نضيف أنّ كل تعريف يحيل كذلك إلى <strong>علاقة بين السائل والمُعرِّف</strong>: فالسائل يطلب شيئاً، والمُعرِّف يستجيب لمستوى طلبه. وإلى <strong>علاقة بين اللفظ والواقع</strong>: من خلال الفرق بين التصور اللغوي (الحد اللفظي) والتصور اللازمي (الحد الرسمي) والتصور الماهوي (الحد الحقيقي).
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazaliDefinition.answers.a3.title">الإجابة عن المهمة الثالثة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazaliDefinition.answers.a3.content">
+                        يمكن معالجة هذا السؤال من زاويتين متكاملتين:
+                        <br><br>
+                        <strong>1. من زاوية التراث الغزالي:</strong> يبدو التعريف الحقيقي (بتحديد الكنه والذاتيات) في النص الغزالي تعبيراً عن تصور فلسفي كلاسيكي يرى الماهيات ثابتة وقابلة للكشف النهائي. وهو تصور ينسجم مع مشروع أرسطو والفلاسفة المشائين.
+                        <br><br>
+                        <strong>2. من زاوية الطابع التاريخي للمعرفة:</strong> إن القول بأن الطابع التاريخي للمعرفة يعني أن المفاهيم تتطور بتطور العلوم والتجارب الإنسانية. فالخمر التي عرّفها الغزالي بأنها "شراب مُسكر مُعتصر من العنب" قد يعاد تعريفها في الكيمياء الحديثة بمكونات كيميائية دقيقة؛ وأي تعريف منها لا يكشف "الكنه المطلق" بل يكشف الكنه المتاح في لحظة تاريخية معينة.
+                        <br><br>
+                        <strong>3. الموقف التركيبي:</strong> لا يلزم من إقرار الغزالي بالحدّ الحقيقي إنكار الطابع التاريخي للمعرفة، لأنّ الحدّ الحقيقي في نظره يمثل <em>غاية مثالية</em> للبحث، لا <em>واقعاً محققاً نهائياً</em>. فالمعرفة الإنسانية تسعى إلى الكشف عن الحقيقة (وهو ما يبرر وجود الحدّ الحقيقي كغاية)، لكنها لا تبلغه إلاّ بشكل تدريجي وتاريخي (وهو ما يبرر الطابع التاريخي للمعرفة). وبهذا المعنى، فإنّ الحدّ الحقيقي بوصفه غاية، والطابع التاريخي بوصفه مساراً لبلوغ هذه الغاية، لا يتناقضان بل يتكاملان.
+                    </p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.ghazaliDefinition.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazaliDefinition.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazaliDefinition.analysis.thesis.content">
+                        يرى الغزالي أنّ مطلب "ما" لا يُطلق على معنى واحد، بل على ثلاثة أوجه متمايزة: شرح اللفظ (الحدّ اللفظي)، والتمييز باللوازم والعوارض (الحدّ الرسمي)، والكشف عن الكنه والذاتيات (الحدّ الحقيقي). وقد أبدع الغزالي مصطلحات ثلاثة لهذه المستويات في تقليد منطقي عربي-إسلامي دقيق، يجعل التعريف عملية متعددة المستويات بحسب ما يطلبه السائل وما يتوفر من معرفة.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazaliDefinition.analysis.mechanisms.title">آليات التمييز بين مستويات التعريف:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazaliDefinition.analysis.mechanisms.content">
+                        - <strong>معيار المطلوب:</strong> ما الذي يطلبه السائل من تعريفه؟ شرح لفظ؟ أم تمييز عن غيره؟ أم كشف للكنه؟
+                        <br>- <strong>معيار المحتوى:</strong> هل يتضمن التعريف ذاتيات الشيء (ما يدخل في ماهيته) أم لوازمه (ما يلازمه دون أن يدخل في ماهيته)؟
+                        <br>- <strong>معيار الغاية:</strong> هل الغاية رفع اللبس اللفظي؟ أم التمييز بين الأشياء المتشابهة؟ أم تصوّر حقيقة الشيء؟
+                        <br>- <strong>قاعدة عدم الدور:</strong> لا يجوز تعريف اللفظ بلفظ أعسر منه، تطبيقاً لقاعدة "لا يجوز تعريف الشيء بما هو أخفى منه".
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazaliDefinition.analysis.consequences.title">نتائج هذا التمييز:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazaliDefinition.analysis.consequences.content">
+                        - <strong>تأسيس منطق عربي-إسلامي دقيق:</strong> يفرّق بين مستويات التعريف، ويضع لكل مستوى مصطلحاً خاصاً.
+                        <br>- <strong>حلّ إشكال الالتباس اللفظي:</strong> بتمييز ما هو لغوي (الحد اللفظي) عمّا هو معرفي (الحد الرسمي والحقيقي).
+                        <br>- <strong>ضبط العلاقة بين اللفظ والواقع:</strong> فالحدّ اللفظي يبقى في مستوى اللغة، بينما الحدّ الرسمي والحقيقي يحيلان إلى الواقع.
+                        <br>- <strong>توجيه عملية التعلم والتعليم:</strong> على المعلّم أن يميّز بين ما يحتاجه المتعلّم من شرح لفظي أو تمييز رسمي أو كشف حقيقي.
+                        <br>- <strong>تنقية المنطق من الخلط بين الماهية واللوازم:</strong> فليس كل لازم جزءاً من الماهية، وليس كل تعريف يكشف عن الكنه.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.ghazaliDefinition.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.ghazaliDefinition.analysis.significance.content">
+                        يحمل هذا النص دلالة منهجية عميقة في تاريخ المنطق العربي-الإسلامي؛ فالغزالي يقدّم نظرية متكاملة في التعريف تقوم على التمييز بين ثلاثة مستويات: لغوي، ومنطقي-لازمي، ومنطقي-ماهوي. وهو بهذا يضع الأساس لبناء معجم اصطلاحي دقيق، وللتفريق بين ما هو مجرد شرح لفظي وما هو تعريف حقيقي. وقد كان لهذا التمييز أثر كبير في تطور العلوم الإسلامية (أصول الفقه، الكلام، الفلسفة)، وفي نقد الأخطاء المنطقية الناتجة عن الخلط بين هذه المستويات. كما أن النص يبيّن أن التعريف ليس عملية واحدة بسيطة، بل هو <em>إجراء مركب</em> يتطلب وعياً بمستوياته ومقاصده، وهذا ما يجعله من أهم النصوص المؤسِّسة للتفكير المنطقي في الحضارة العربية-الإسلامية.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.ghazaliDefinition.level": "3ème Secondaire - Philosophie",
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.ghazaliDefinition.title": "Analyse du texte : Des aspects de la définition - Al-Ghazali",
+                "PhiH.textAnalysis.ghazaliDefinition.introduction.title": "Introduction",
+                "PhiH.textAnalysis.ghazaliDefinition.introduction.content": "La diversité de nos questions est à la mesure de la diversité de ce que nous cherchons. La langue a donc créé différentes formes interrogatives pour faciliter la communication entre celui qui demande et celui qui répond, de sorte qu'ils s'accordent sur ce que vise le « comment », le « quand » et le « où ». Et la plupart des formes interrogatives sont absolues, ce qui rend d'autant plus nécessaire la détermination de ce que visent les questions, la définition des termes et la délimitation stricte de leurs frontières.",
+                "PhiH.textAnalysis.ghazaliDefinition.text.title": "Le texte",
+                "PhiH.textAnalysis.ghazaliDefinition.text.content": "La demande « qu'est-ce que ? » (mā) se dit de trois aspects :<br><br>Le premier : qu'on demande par elle l'explication du mot, comme dit celui qui ne sait pas ce qu'est l'« al-ʿuqār » : « Qu'est-ce que l'al-ʿuqār ? » On lui répond : le vin, s'il connaît [1] le vin.<br><br>Le deuxième : qu'on demande un mot distinctif par lequel le questionné se distingue d'autre que lui, au moyen d'un discours compréhensif et exclusif, quel que soit ce discours, qu'il soit l'expression de ses propriétés nécessaires [2] ou de ses essences constitutives [3] ; comme lorsque celui qui dit : « Qu'est-ce que le vin ? » veut dire : quelle est la définition du vin ? On répond : c'est le liquide qui bouillonne en écumant puis se transforme en acidité et se conserve dans la jarre. Le but n'est pas de traiter de ses essences constitutives, mais de rassembler parmi ses accidents et ses propriétés nécessaires de quoi égaler le vin dans son ensemble, de sorte que rien de ce qui est vin n'en sorte et que rien de ce qui n'est pas vin n'y entre.<br><br>Le troisième : qu'on dise : « Qu'est-ce que le vin ? » et qu'on réponde : c'est une boisson enivrante extraite du raisin, ce qui révèle la nature intime de sa réalité essentielle ; et il s'ensuit aussi qu'elle est compréhensive et exclusive, mais le but n'est pas la distinction, mais la conception de la nature intime de la chose et de sa réalité ; et la distinction s'ensuit nécessairement.<br><br>Le nom de « définition » (ḥadd) s'applique habituellement à ces trois réponses par équivocité. Inventons donc pour chacune un nom : appelons la première définition verbale (ḥadd lafẓī), car celui qui interroge ne cherche que l'explication du mot ; appelons la deuxième définition formelle (ḥadd rasmī) [4], qui est une demande tracée par la science, sans aspiration à saisir la réalité de la chose ; et appelons la troisième définition réelle (ḥadd ḥaqīqī), puisque celui qui interroge y saisit la réalité de la chose.",
+                "PhiH.textAnalysis.ghazaliDefinition.text.source": "Al-Ghazali, Miḥakk al-Naẓar, pp. 25-26",
+                "PhiH.textAnalysis.ghazaliDefinition.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.ghazaliDefinition.author.alt": "Al-Ghazali",
+                "PhiH.textAnalysis.ghazaliDefinition.author.content": "Al-Ghazali (1058-1111) est Abū Ḥāmid Muḥammad ibn Aḥmad al-Ghazālī al-Ṭūsī, né à Ṭūs dans le Khorasan. Il enseigna à la Niẓāmiyya de Bagdad sur ordre de Niẓām al-Mulk. Il est considéré comme l'un des plus grands penseurs dans le domaine de la morale, de la philosophie, du dogme et de la logique. Parmi ses œuvres les plus célèbres : « Iḥyāʾ ʿulūm al-dīn », « Al-Munqidh min al-ḍalāl », « Maqāṣid al-falāsifa », « Tahāfut al-falāsifa », « Miʿyār al-ʿilm », « Miḥakk al-naẓar » (logique), « Mīzān al-ʿamal », « Al-Iqtiṣād fī al-iʿtiqād », « Faḍāʾiḥ al-bāṭiniyya », « Al-Qisṭās al-mustaqīm », « Fayṣal al-tafriqa bayna al-Islām wa-al-zandaqa », « Al-Tibr al-masbūk fī naṣīḥat al-mulūk », « Ayyuhā al-walad al-muḥibb », « Kīmiyāʾ al-saʿāda ».",
+                "PhiH.textAnalysis.ghazaliDefinition.footnotes.title": "Notes de bas de page",
+                "PhiH.textAnalysis.ghazaliDefinition.footnotes.item1": "<strong>(1) « Il connaît » :</strong> application d'une règle qui veut qu'on ne définisse pas un mot par un mot plus obscur que lui. « Il n'est pas permis de définir une chose par ce qui est plus caché qu'elle, ni par ce qui est semblable à elle en clarté et en obscurité » (Al-Shahrastānī, Al-Milal wa-al-niḥal, p.310).",
+                "PhiH.textAnalysis.ghazaliDefinition.footnotes.item2": "<strong>(2) « Ses propriétés nécessaires » :</strong> désignent les caractéristiques qui ne quittent pas la chose sans pour autant déterminer sa quiddité. Al-Ghazālī les a définies ainsi : « Être vivant fait partie de la quiddité de l'homme, à savoir l'animalité, et constitue donc le genre. Être engendré et créé est une propriété nécessaire qui ne le quitte jamais, mais qui ne fait pas partie de la quiddité » (Tahāfut al-falāsifa, p.46).",
+                "PhiH.textAnalysis.ghazaliDefinition.footnotes.item3": "<strong>(3) « Ses essences constitutives » :</strong> désignent les caractéristiques quidditatives comme la rationalité pour l'homme. Al-Ghazālī les a définies ainsi : « La rationalité abstraite n'est pas pour l'essence une propriété nécessaire, elle est la quiddité elle-même » (Tahāfut al-falāsifa, p.48).",
+                "PhiH.textAnalysis.ghazaliDefinition.footnotes.item4": "<strong>(4) « Formellement » :</strong> le terme « rasm » signifie linguistiquement la trace de la chose, et techniquement la définition d'une chose par ses propriétés nécessaires et non par ses essences constitutives. Al-Ghazālī l'a défini ainsi : « Les choses ne se définissent que par leurs constitutifs ; si on les définit par leurs propriétés nécessaires, c'est une définition formelle pour la distinction, non pour la représentation de la réalité de la chose. On ne dit pas dans la définition du triangle qu'il est celui dont les angles égalent deux droits, bien que cela soit une propriété générale de tout triangle ; on dit plutôt qu'il est une figure entourée de trois côtés » (Tahāfut al-falāsifa, p.46). Et Sayf al-Dīn al-Āmidī dit dans son ouvrage Al-Mubīn : « Quant à la définition formelle, elle est l'expression de ce qui distingue une chose d'autre qu'elle par une distinction non essentielle » (cité par ʿAbd al-Amīr al-Aʿsam dans son ouvrage « Le terme philosophique chez les Arabes », Maison tunisienne de publication, 1991, p.361).",
+                "PhiH.textAnalysis.ghazaliDefinition.questions.title": "Tâches",
+                "PhiH.textAnalysis.ghazaliDefinition.questions.q1": "Je détermine les niveaux de la définition.",
+                "PhiH.textAnalysis.ghazaliDefinition.questions.q2": "Je montre comment chaque définition renvoie à une relation.",
+                "PhiH.textAnalysis.ghazaliDefinition.questions.q3": "Je montre si l'affirmation selon laquelle « la définition réelle » d'une chose consiste à déterminer sa nature intime » est compatible avec l'affirmation du caractère historique de la connaissance humaine.",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a1.title": "Réponse à la première tâche :",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a1.content": "Al-Ghazālī détermine trois niveaux de définition, selon ce que celui qui interroge demande par la demande « qu'est-ce que ? » (mā) :<br><br><strong>1. La définition verbale :</strong> elle consiste à expliquer le mot et à en clarifier le sens, sans traiter de la réalité de la chose elle-même. Exemple : que celui qui interroge dise « Qu'est-ce que l'al-ʿuqār ? » et qu'on lui réponde « le vin », s'il connaît le vin. Celui qui interroge ne cherche ici que l'explication du mot.<br><br><strong>2. La définition formelle :</strong> elle consiste à définir la chose par ses propriétés nécessaires et ses accidents, non par ses essences constitutives, c'est-à-dire par un ensemble de caractéristiques qui la distinguent d'autre qu'elle de manière compréhensive et exclusive, sans révéler la nature intime de sa réalité. Exemple : définir le vin comme « le liquide qui bouillonne en écumant puis se transforme en acidité et se conserve dans la jarre ». Le but ici est la distinction, non la conception de la réalité.<br><br><strong>3. La définition réelle :</strong> elle consiste à définir la chose par ses essences constitutives qui révèlent la nature intime de sa réalité, comme définir le vin comme « une boisson enivrante extraite du raisin ». Cette définition révèle le genre (boisson), la différence (enivrante) et la propriété (extraite du raisin). La distinction ici s'ensuit nécessairement de la révélation de la réalité, mais le but premier est la conception de la nature intime de la chose.",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a2.title": "Réponse à la deuxième tâche :",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a2.content": "Chaque définition renvoie à une relation, car la définition n'est pas un acte isolé du contexte dans lequel celui qui interroge la demande, mais elle est toujours la définition <em>d'une chose</em> <em>par une autre chose</em> <em>pour une fin déterminée</em>. Voici l'explication à chaque niveau :<br><br><strong>1. Dans la définition verbale :</strong> relation entre deux mots. Relation entre le mot défini (al-ʿuqār) et le mot définissant (le vin). C'est une relation sémantico-linguistique, qui suppose que celui qui interroge connaît le vin et ne connaît pas al-ʿuqār. La définition ici n'est qu'un pont entre deux mots.<br><br><strong>2. Dans la définition formelle :</strong> relation entre la chose et ses propriétés nécessaires et accidents. Relation entre la quiddité définie (le vin) et un ensemble de caractéristiques qui l'accompagnent nécessairement (liquide, bouillonnant, se transformant en acidité, conservé dans la jarre). Cette relation est une relation de concomitance, non une relation de quiddité.<br><br><strong>3. Dans la définition réelle :</strong> relation entre la chose et son essence, c'est-à-dire entre la quiddité et ses essences constitutives. Relation entre le vin et « la boisson enivrante extraite du raisin ». C'est la relation originelle qui révèle la nature intime, et la distinction y suit nécessairement la révélation de la réalité.<br><br>On peut ajouter que chaque définition renvoie également à une <strong>relation entre celui qui interroge et celui qui définit</strong> : celui qui interroge demande quelque chose, et celui qui définit répond à son niveau de demande. Et à une <strong>relation entre le mot et la réalité</strong> : à travers la différence entre la représentation linguistique (définition verbale), la représentation par propriétés nécessaires (définition formelle) et la représentation quidditative (définition réelle).",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a3.title": "Réponse à la troisième tâche :",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a3.content": "On peut traiter cette question de deux points de vue complémentaires :<br><br><strong>1. Du point de vue de l'héritage d'Al-Ghazālī :</strong> la définition réelle (par la détermination de la nature intime et des essences constitutives) apparaît dans le texte d'Al-Ghazālī comme l'expression d'une conception philosophique classique qui voit les quiddités comme fixes et susceptibles d'une révélation définitive. C'est une conception compatible avec le projet d'Aristote et des philosophes péripatéticiens.<br><br><strong>2. Du point de vue du caractère historique de la connaissance :</strong> affirmer le caractère historique de la connaissance signifie que les concepts évoluent avec le développement des sciences et des expériences humaines. Le vin qu'Al-Ghazālī a défini comme « une boisson enivrante extraite du raisin » pourrait être redéfini dans la chimie moderne par des composants chimiques précis ; et aucune de ces définitions ne révèle la « nature intime absolue », mais révèle la nature intime disponible à un moment historique donné.<br><br><strong>3. La position synthétique :</strong> du fait qu'Al-Ghazālī affirme la définition réelle, il ne s'ensuit pas la négation du caractère historique de la connaissance, car la définition réelle est à ses yeux un <em>idéal régulateur</em> de la recherche, non une <em>réalité achevée définitivement</em>. La connaissance humaine tend vers la révélation de la vérité (ce qui justifie l'existence de la définition réelle comme fin), mais ne l'atteint que progressivement et historiquement (ce qui justifie le caractère historique de la connaissance). En ce sens, la définition réelle comme fin, et le caractère historique comme parcours pour atteindre cette fin, ne s'opposent pas mais se complètent.",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.thesis.title": "Thèse principale :",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.thesis.content": "Al-Ghazālī considère que la demande « qu'est-ce que ? » (mā) ne se dit pas d'un seul sens, mais de trois aspects distincts : l'explication du mot (la définition verbale), la distinction par les propriétés nécessaires et les accidents (la définition formelle), et la révélation de la nature intime et des essences constitutives (la définition réelle). Al-Ghazālī a ainsi forgé trois termes pour ces niveaux dans une tradition logique arabo-islamique précise, faisant de la définition une opération à plusieurs niveaux selon ce que demande celui qui interroge et selon la connaissance dont on dispose.",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.mechanisms.title": "Mécanismes de la distinction entre les niveaux de définition :",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.mechanisms.content": "- <strong>Le critère de ce qui est demandé :</strong> que demande celui qui interroge par sa définition ? L'explication d'un mot ? La distinction d'avec autre chose ? La révélation de la nature intime ?<br>- <strong>Le critère du contenu :</strong> la définition comporte-t-elle les essences constitutives de la chose (ce qui entre dans sa quiddité) ou ses propriétés nécessaires (ce qui l'accompagne sans entrer dans sa quiddité) ?<br>- <strong>Le critère de la fin :</strong> la fin est-elle de lever l'ambiguïté verbale ? De distinguer entre des choses similaires ? De concevoir la réalité de la chose ?<br>- <strong>La règle de non-cercle :</strong> il n'est pas permis de définir un mot par un mot plus obscur que lui, en application de la règle « il n'est pas permis de définir une chose par ce qui est plus caché qu'elle ».",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.consequences.title": "Conséquences de cette distinction :",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.consequences.content": "- <strong>Fondation d'une logique arabo-islamique précise :</strong> qui distingue les niveaux de définition et attribue à chacun un terme propre.<br>- <strong>Résolution du problème de l'ambiguïté verbale :</strong> en distinguant ce qui est linguistique (la définition verbale) de ce qui est cognitif (la définition formelle et réelle).<br>- <strong>Fixation de la relation entre le mot et la réalité :</strong> la définition verbale reste au niveau de la langue, tandis que la définition formelle et réelle renvoient à la réalité.<br>- <strong>Orientation du processus d'apprentissage et d'enseignement :</strong> l'enseignant doit distinguer ce dont l'apprenant a besoin : explication verbale, distinction formelle ou révélation réelle.<br>- <strong>Purification de la logique de la confusion entre quiddité et propriétés nécessaires :</strong> toute propriété nécessaire n'est pas une partie de la quiddité, et toute définition ne révèle pas la nature intime.",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.significance.title": "Significations et dimensions du concept :",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.significance.content": "Ce texte porte une signification méthodologique profonde dans l'histoire de la logique arabo-islamique ; Al-Ghazālī y présente une théorie intégrale de la définition reposant sur la distinction entre trois niveaux : linguistique, logico-concomitant et logico-quidditatif. Il pose ainsi la base d'un lexique terminologique précis et de la distinction entre ce qui n'est qu'une explication verbale et ce qui est une définition réelle. Cette distinction a eu un impact majeur sur le développement des sciences islamiques (uṣūl al-fiqh, kalām, philosophie) et sur la critique des erreurs logiques résultant de la confusion entre ces niveaux. Le texte montre également que la définition n'est pas une opération simple, mais une <em>procédure complexe</em> qui exige une conscience de ses niveaux et de ses finalités, ce qui en fait l'un des textes fondateurs de la pensée logique dans la civilisation arabo-islamique."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.ghazaliDefinition.level": "3rd Secondary - Philosophy",
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.ghazaliDefinition.title": "Text Analysis: On the Aspects of Definition - Al-Ghazali",
+                "PhiH.textAnalysis.ghazaliDefinition.introduction.title": "Introduction",
+                "PhiH.textAnalysis.ghazaliDefinition.introduction.content": "The diversity of our questions is to the measure of the diversity of what we seek. Language has therefore created various interrogative forms to facilitate communication between the questioner and the respondent, so that they agree on what the \"how\", the \"when\" and the \"where\" seek. And most interrogative forms are absolute, which makes it all the more necessary to determine what the questions seek, to define terms and to delimit their boundaries strictly.",
+                "PhiH.textAnalysis.ghazaliDefinition.text.title": "The Text",
+                "PhiH.textAnalysis.ghazaliDefinition.text.content": "The request \"what is?\" (mā) is said in three aspects:<br><br>The first: to ask by it for the explanation of the word, as says the one who does not know what \"al-ʿuqār\" is: \"What is al-ʿuqār?\" and it is said to him: wine, if he knows [1] wine.<br><br>The second: to ask for a distinctive word by which the one asked is distinguished from other than it, by a comprehensive and exclusive discourse, whatever that discourse may be, whether it be the expression of its necessary properties [2] or of its constitutive essences [3]; as when the one who says: \"What is wine?\" means: what is the definition of wine? and it is said: it is the liquid that bubbles with foam and then transforms into acidity and is preserved in the jar. The purpose is not to address its constitutive essences, but to gather from its accidents and necessary properties what equals wine in its totality, so that nothing of what is wine exits from it and nothing of what is not wine enters into it.<br><br>The third: to say: \"What is wine?\" and to say: it is an intoxicating drink extracted from grapes, which reveals the inner nature of its essential reality; and it also follows that it is comprehensive and exclusive, but the purpose is not distinction but the conception of the inner nature of the thing and its reality; and distinction follows necessarily.<br><br>The name of \"definition\" (ḥadd) is usually applied to these three responses by equivocation. Let us invent for each a name: let us call the first a verbal definition (ḥadd lafẓī), since the questioner seeks only the explanation of the word; let us call the second a formal definition (ḥadd rasmī) [4], which is a request traced by science, without aspiration to grasp the reality of the thing; and let us call the third a real definition (ḥadd ḥaqīqī), since the seeker's grasp in it is a grasp of the reality of the thing.",
+                "PhiH.textAnalysis.ghazaliDefinition.text.source": "Al-Ghazali, Miḥakk al-Naẓar, pp. 25-26",
+                "PhiH.textAnalysis.ghazaliDefinition.author.title": "Author Presentation",
+                "PhiH.textAnalysis.ghazaliDefinition.author.alt": "Al-Ghazali",
+                "PhiH.textAnalysis.ghazaliDefinition.author.content": "Al-Ghazali (1058-1111) is Abū Ḥāmid Muḥammad ibn Aḥmad al-Ghazālī al-Ṭūsī, born in Ṭūs in Khorasan. He taught at the Niẓāmiyya in Baghdad by order of Niẓām al-Mulk. He is considered one of the greatest thinkers in the fields of ethics, philosophy, creed and logic. Among his most famous works: \"Iḥyāʾ ʿulūm al-dīn\", \"Al-Munqidh min al-ḍalāl\", \"Maqāṣid al-falāsifa\", \"Tahāfut al-falāsifa\", \"Miʿyār al-ʿilm\", \"Miḥakk al-naẓar\" (logic), \"Mīzān al-ʿamal\", \"Al-Iqtiṣād fī al-iʿtiqād\", \"Faḍāʾiḥ al-bāṭiniyya\", \"Al-Qisṭās al-mustaqīm\", \"Fayṣal al-tafriqa bayna al-Islām wa-al-zandaqa\", \"Al-Tibr al-masbūk fī naṣīḥat al-mulūk\", \"Ayyuhā al-walad al-muḥibb\", \"Kīmiyāʾ al-saʿāda\".",
+                "PhiH.textAnalysis.ghazaliDefinition.footnotes.title": "Footnotes",
+                "PhiH.textAnalysis.ghazaliDefinition.footnotes.item1": "<strong>(1) \"He knows\":</strong> application of a rule that says one should not define a word by a word more obscure than it. \"It is not permitted to define a thing by what is more hidden than it, nor by what is similar to it in clarity and obscurity\" (Al-Shahrastānī, Al-Milal wa-al-niḥal, p.310).",
+                "PhiH.textAnalysis.ghazaliDefinition.footnotes.item2": "<strong>(2) \"Its necessary properties\":</strong> refer to the characteristics that do not leave the thing without thereby determining its quiddity. Al-Ghazālī defined them thus: \"Being alive is part of the quiddity of man, namely animality, and thus constitutes the genus. Being engendered and created is a necessary property that never leaves him, but that is not part of the quiddity\" (Tahāfut al-falāsifa, p.46).",
+                "PhiH.textAnalysis.ghazaliDefinition.footnotes.item3": "<strong>(3) \"Its constitutive essences\":</strong> refer to the quidditative characteristics such as rationality for man. Al-Ghazālī defined them thus: \"Abstract rationality is not for the essence a necessary property; it is the quiddity itself\" (Tahāfut al-falāsifa, p.48).",
+                "PhiH.textAnalysis.ghazaliDefinition.footnotes.item4": "<strong>(4) \"Formally\":</strong> the term \"rasm\" linguistically means the trace of the thing, and technically the definition of a thing by its necessary properties and not by its constitutive essences. Al-Ghazālī defined it thus: \"Things are defined only by their constituents; if they are defined by their necessary properties, that is a formal definition for distinction, not for the representation of the reality of the thing. One does not say in the definition of the triangle that it is the one whose angles equal two right angles, though that is a general property of every triangle; one says rather that it is a figure enclosed by three sides\" (Tahāfut al-falāsifa, p.46). And Sayf al-Dīn al-Āmidī says in his work Al-Mubīn: \"As for the formal definition, it is the expression of what distinguishes a thing from other than it by a non-essential distinction\" (cited by ʿAbd al-Amīr al-Aʿsam in his work \"The Philosophical Term among the Arabs\", Tunisian Publishing House, 1991, p.361).",
+                "PhiH.textAnalysis.ghazaliDefinition.questions.title": "Tasks",
+                "PhiH.textAnalysis.ghazaliDefinition.questions.q1": "I determine the levels of definition.",
+                "PhiH.textAnalysis.ghazaliDefinition.questions.q2": "I show how each definition refers to a relation.",
+                "PhiH.textAnalysis.ghazaliDefinition.questions.q3": "I show whether the statement that \"the real definition\" of a thing consists in determining its inner nature\" is compatible with the statement of the historical character of human knowledge.",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a1.title": "Answer to the first task:",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a1.content": "Al-Ghazālī determines three levels of definition, according to what the questioner demands by the request \"what is?\" (mā):<br><br><strong>1. The verbal definition:</strong> it consists in explaining the word and clarifying its meaning, without addressing the reality of the thing itself. Example: the questioner says \"What is al-ʿuqār?\" and one answers \"wine\", if he knows wine. The questioner here seeks only the explanation of the word.<br><br><strong>2. The formal definition:</strong> it consists in defining the thing by its necessary properties and accidents, not by its constitutive essences, that is, by a set of characteristics that distinguish it from other than it in a comprehensive and exclusive manner, without revealing the inner nature of its reality. Example: defining wine as \"the liquid that bubbles with foam and then transforms into acidity and is preserved in the jar\". The purpose here is distinction, not the conception of reality.<br><br><strong>3. The real definition:</strong> it consists in defining the thing by its constitutive essences that reveal the inner nature of its reality, as defining wine as \"an intoxicating drink extracted from grapes\". This definition reveals the genus (drink), the difference (intoxicating) and the property (extracted from grapes). Distinction here necessarily follows the revelation of reality, but the primary purpose is the conception of the inner nature of the thing.",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a2.title": "Answer to the second task:",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a2.content": "Each definition refers to a relation, for definition is not an act isolated from the context in which the questioner demands it, but is always the definition <em>of a thing</em> <em>by another thing</em> <em>for a determinate end</em>. Here is the explanation at each level:<br><br><strong>1. In the verbal definition:</strong> relation between two words. Relation between the defined word (al-ʿuqār) and the defining word (wine). It is a semantic-linguistic relation, which presupposes that the questioner knows wine and does not know al-ʿuqār. The definition here is only a bridge between two words.<br><br><strong>2. In the formal definition:</strong> relation between the thing and its necessary properties and accidents. Relation between the defined quiddity (wine) and a set of characteristics that necessarily accompany it (liquid, bubbling, transforming into acidity, preserved in the jar). This relation is a relation of concomitance, not a relation of quiddity.<br><br><strong>3. In the real definition:</strong> relation between the thing and its essence, that is, between the quiddity and its constitutive essences. Relation between wine and \"the intoxicating drink extracted from grapes\". This is the original relation that reveals the inner nature, and distinction there necessarily follows the revelation of reality.<br><br>One may add that each definition also refers to a <strong>relation between the questioner and the definer</strong>: the questioner demands something, and the definer responds to his level of demand. And to a <strong>relation between the word and reality</strong>: through the difference between linguistic representation (verbal definition), representation by necessary properties (formal definition) and quidditative representation (real definition).",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a3.title": "Answer to the third task:",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a3.content": "This question can be treated from two complementary points of view:<br><br><strong>1. From the point of view of Al-Ghazālī's heritage:</strong> the real definition (by the determination of the inner nature and constitutive essences) appears in Al-Ghazālī's text as the expression of a classical philosophical conception that sees quiddities as fixed and susceptible to definitive revelation. This is a conception compatible with the project of Aristotle and the Peripatetic philosophers.<br><br><strong>2. From the point of view of the historical character of knowledge:</strong> affirming the historical character of knowledge means that concepts evolve with the development of the sciences and human experiences. The wine that Al-Ghazālī defined as \"an intoxicating drink extracted from grapes\" could be redefined in modern chemistry by precise chemical components; and none of these definitions reveals the \"absolute inner nature\", but reveals the inner nature available at a given historical moment.<br><br><strong>3. The synthetic position:</strong> from the fact that Al-Ghazālī affirms the real definition, it does not follow the negation of the historical character of knowledge, for the real definition is in his eyes a <em>regulative ideal</em> of research, not a <em>definitively achieved reality</em>. Human knowledge tends towards the revelation of truth (which justifies the existence of the real definition as an end), but only reaches it progressively and historically (which justifies the historical character of knowledge). In this sense, the real definition as an end, and the historical character as a path to reach this end, do not oppose each other but complement each other.",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.thesis.content": "Al-Ghazālī holds that the request \"what is?\" (mā) is not said in a single sense, but in three distinct aspects: the explanation of the word (the verbal definition), the distinction by necessary properties and accidents (the formal definition), and the revelation of the inner nature and constitutive essences (the real definition). Al-Ghazālī thus forged three terms for these levels in a precise Arab-Islamic logical tradition, making definition a multi-level operation according to what the questioner demands and according to the knowledge available.",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.mechanisms.title": "Mechanisms of the distinction between the levels of definition:",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.mechanisms.content": "- <strong>The criterion of what is demanded:</strong> what does the questioner demand by his definition? The explanation of a word? The distinction from other things? The revelation of the inner nature?<br>- <strong>The criterion of content:</strong> does the definition contain the constitutive essences of the thing (what enters into its quiddity) or its necessary properties (what accompanies it without entering into its quiddity)?<br>- <strong>The criterion of the end:</strong> is the end to remove verbal ambiguity? To distinguish between similar things? To conceive the reality of the thing?<br>- <strong>The rule of non-circularity:</strong> it is not permitted to define a word by a word more obscure than it, in application of the rule \"it is not permitted to define a thing by what is more hidden than it\".",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.consequences.title": "Consequences of this distinction:",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.consequences.content": "- <strong>Foundation of a precise Arab-Islamic logic:</strong> which distinguishes the levels of definition and assigns to each a proper term.<br>- <strong>Resolution of the problem of verbal ambiguity:</strong> by distinguishing what is linguistic (the verbal definition) from what is cognitive (the formal and real definition).<br>- <strong>Fixation of the relation between the word and reality:</strong> the verbal definition remains at the level of language, while the formal and real definition refer to reality.<br>- <strong>Orientation of the process of learning and teaching:</strong> the teacher must distinguish what the learner needs: verbal explanation, formal distinction or real revelation.<br>- <strong>Purification of logic from the confusion between quiddity and necessary properties:</strong> not every necessary property is a part of the quiddity, and not every definition reveals the inner nature.",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.significance.content": "This text carries a profound methodological significance in the history of Arab-Islamic logic; Al-Ghazālī presents an integral theory of definition based on the distinction between three levels: linguistic, logico-concomitant and logico-quidditative. He thus lays the foundation for a precise terminological lexicon and for the distinction between what is only a verbal explanation and what is a real definition. This distinction had a major impact on the development of Islamic sciences (uṣūl al-fiqh, kalām, philosophy) and on the critique of logical errors resulting from the confusion between these levels. The text also shows that definition is not a simple operation, but a <em>complex procedure</em> that requires awareness of its levels and its purposes, which makes it one of the founding texts of logical thought in Arab-Islamic civilization."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.ghazaliDefinition.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.ghazaliDefinition.title": "تحليل النص: في أوجه الحدّ - الغزالي",
+                "PhiH.textAnalysis.ghazaliDefinition.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.ghazaliDefinition.introduction.content": "تنوّع أسئلتنا بقدر تنوّع مطلوبنا، ولقد أبدعت اللغة لذلك صيغاً تساؤلية مختلفة لتيسّر التواصل بين السائل والمجيب بحيث يشتركان في فهم مطلوب \"الكيف\" و\"المتى\" و\"الأين\". ومعظم الصيغ التساؤلية مطلقة، مما يجعل الحاجة إلى تحديد مطلوب الأسئلة وتعريف الألفاظ وضبط حدودها بشكل صارم أمراً مؤكداً.",
+                "PhiH.textAnalysis.ghazaliDefinition.text.title": "النص",
+                "PhiH.textAnalysis.ghazaliDefinition.text.content": "مطلب \"ما\" يُطلق على ثلاثة أوجه:<br><br>الأوّل أن يُطلب به شرح اللفظ كما يقول من لا يدري ما العُقار: \"ما العُقار؟\" فيُقال له الخمر إذا كان يعرف[1] الخمر.<br><br>الثاني أن يطلب لفظاً مُميّزاً يتميّز به المسؤول عنه عن غيره بكلام جامع مانع كيف ما كان الكلام، سواء كان عبارة عن لوازمه[2] أو ذاتياته[3]، كقول القائل \"ما الخمر؟\" أي ما حدّ الخمر؟ فيُقال: هو المائع الذي يَقدّف بالزّبَد ثم يستحيل إلى الحموضة ويُحفظ في الدنّ، والمقصود أن لا يتعرّض لذاتياته، ولكن نُجمع من عوارضه ولوازمه ما يساوي بجملته الخمر بحيث لا يخرج عنه خمر ولا يدخل فيه ما ليس بخمر.<br><br>الثالث أن يُقال \"ما الخمر؟\" فيُقال: هو شراب مُسكر مُعتصر من العنب، فيكون ذلك كاشفاً عن كنه حقيقته الذاتية، ويتبعه أيضاً أنه تميّز جامع مانع ولكن ليس المقصود التمييز بل تصوّر كنه الشيء وحقيقته، ثمّ التمييز يتبعه لا محالة.<br><br>واسم الحدّ في العادة قد يُطلق على هذه الأجوبة الثلاثة على سبيل الاشتراك. فلنخترع لكل واحد أسماء: ولنسمّ الأوّل حدّاً لفظياً، إذ السائل ليس يطلب إلاّ شرح اللفظ؛ ولنسمّ الثاني حدّاً رسميّاً[4] وهو طلب مترسم بالعلم غير متشوّف إلى درك حقيقة الشيء؛ ولنسمّ الثالث حدّاً حقيقياً إذ مُدرك الطالب فيه درك حقيقة الشيء.",
+                "PhiH.textAnalysis.ghazaliDefinition.text.source": "الغزالي، محكّ النظر، ص 25-26 (المعقوفات ونقاط الاستفهام من وضع لجنة التأليف)",
+                "PhiH.textAnalysis.ghazaliDefinition.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.ghazaliDefinition.author.alt": "الغزالي",
+                "PhiH.textAnalysis.ghazaliDefinition.author.content": "الغزالي (1058-1111) هو أبو حامد محمد بن أحمد الغزالي الطوسي، ولد في مدينة طوس في خراسان. اشتغل بالتدريس في المدرسة النظامية ببغداد بتكليف من نظام الملك. يُعدّ من كبار المفكرين في مجال علم الأخلاق والفلسفة والعقيدة والمنطق. من أشهر كتبه: \"إحياء علوم الدين\"، \"المنقذ من الضلال\"، \"مقاصد الفلاسفة\"، \"تهافت الفلاسفة\"، \"معيار العلم\"، \"محكّ النظر\" (منطق)، \"ميزان العمل\"، \"الاقتصاد في الاعتقاد\"، \"فضائح الباطنية\"، \"القسطاس المستقيم\"، \"فيصل التفرقة بين الإسلام والزندقة\"، \"التبر المسبوك في نصيحة الملوك\"، \"أيها الولد المحب\"، \"كيمياء السعادة\".",
+                "PhiH.textAnalysis.ghazaliDefinition.footnotes.title": "الهوامش",
+                "PhiH.textAnalysis.ghazaliDefinition.footnotes.item1": "<strong>(1) \"يعرف\":</strong> تطبيقاً لقاعدة تقضي بأن لا نعرّف اللفظ بلفظ أعسر منه. \"ولا يجوز تعريف الشيء بما هو أخفى منه ولا بما هو مثله في الجلاء والخفاء\" (الشهرستاني، الملل والنحل، ص310).",
+                "PhiH.textAnalysis.ghazaliDefinition.footnotes.item2": "<strong>(2) \"لوازمه\":</strong> تطلق على الخصائص التي لا تفارق الشيء وإن لم تكن محددة لماهيته. ولقد عرّفها الغزالي بقوله: \"فكون الإنسان حياً داخل في ماهية الإنسان أعني الحيوانية فكان جنساً. وكونه مولوداً ومخلوقاً لازم له لا يفارقه قطُّ ولكنه ليس داخلاً في الماهية\" (تهافت الفلاسفة، ص46).",
+                "PhiH.textAnalysis.ghazaliDefinition.footnotes.item3": "<strong>(3) \"ذاتياته\":</strong> تطلق على الخصائص الماهوية كالتعقل بالنسبة للإنسان. ولقد عرّفها الغزالي فقال: \"فليس العقلية المجردة للذات من اللوازم بل هي الماهية\" (تهافت الفلاسفة، ص48).",
+                "PhiH.textAnalysis.ghazaliDefinition.footnotes.item4": "<strong>(4) \"رسمياً\":</strong> الرسم لغة هو أثر الشيء، واصطلاحاً هو تعريف الشيء بلوازمه لا بذاتياته. وعرَّفه الغزالي فقال: \"لا تحدد الأشياء إلا بالمقومات، فإن حددت باللوازم كان ذلك رسماً للتمييز لا لتصوير حقيقة الشيء. فلا يقال في حد المثلث إنه الذي تساوي زواياه القائمتين وإن كان ذلك لازماً عاماً لكل مثلث، بل يقال إنه شكل يحيط به ثلاثة أضلاع\" (تهافت الفلاسفة، ص46). وقال سيف الدين الآمدي في كتابه المبين: \"أما الحد الرسمي، فعبارة عن ما يميز الشيء عن غيره تمييزاً غير ذاتي\" (أورده عبد الأمير الأعمم في كتابه \"المصطلح الفلسفي عند العرب\"، الدار التونسية للنشر، 1991، ص361).",
+                "PhiH.textAnalysis.ghazaliDefinition.questions.title": "المهام",
+                "PhiH.textAnalysis.ghazaliDefinition.questions.q1": "أحدد مستويات التعريف.",
+                "PhiH.textAnalysis.ghazaliDefinition.questions.q2": "أبين كيف يحيل كل تعريف إلى علاقة.",
+                "PhiH.textAnalysis.ghazaliDefinition.questions.q3": "أبين ما إذا كان القول بأن \"التعريف الحقيقي\" للشيء يكون بتحديد كنهه\" ينسجم مع القول بالطابع التاريخي للمعرفة الإنسانية.",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a1.title": "الإجابة عن المهمة الأولى:",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a1.content": "يحدد الغزالي ثلاثة مستويات للتعريف، بحسب ما يطلبه السائل من مطلب \"ما\":<br><br><strong>1. الحدّ اللفظي:</strong> وهو شرح اللفظ وبيان معناه، دون التعرّض لحقيقة الشيء ذاته. مثاله: أن يقول السائل \"ما العُقار؟\" فيُقال له \"الخمر\"، إذا كان يعرف الخمر. فالسائل هنا لا يطلب إلاّ شرح اللفظ.<br><br><strong>2. الحدّ الرسمي:</strong> وهو تعريف الشيء بلوازمه وعوارضه لا بذاتياته، أي بجملة من الخصائص التي تميّزه عن غيره تمييزاً جامعاً مانعاً، دون أن تكشف عن كنه حقيقته. مثاله: تعريف الخمر بأنها \"المائع الذي يَقذف بالزبد ثم يستحيل إلى الحموضة ويُحفظ في الدنّ\". فالمقصود هنا التمييز لا تصوّر الحقيقة.<br><br><strong>3. الحدّ الحقيقي:</strong> وهو تعريف الشيء بذاتياته الكاشفة عن كنه حقيقته، كتعريف الخمر بأنها \"شراب مُسكر مُعتصر من العنب\". فهذا التعريف يكشف عن الجنس (شراب) والفصل (مُسكر) والخاصة (مُعتصر من العنب). والتمييز هنا يتبع الكشف عن الحقيقة لا محالة، لكن المقصود الأصلي هو تصوّر كنه الشيء.",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a2.title": "الإجابة عن المهمة الثانية:",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a2.content": "يحيل كل تعريف إلى علاقة، لأنّ التعريف ليس فعلاً منعزلاً عن السياق الذي يطلبه فيه السائل، بل هو دائماً تعريف <em>لشيء</em> <em>بشيء آخر</em> <em>لغرض معين</em>. وإليك بيان ذلك في كل مستوى:<br><br><strong>1. في الحدّ اللفظي:</strong> العلاقة بين لفظين. علاقة بين اللفظ المُعرَّف (العُقار) واللفظ المُعرِّف (الخمر). وهي علاقة دلالية-لغوية، تفترض أن السائل يعرف الخمر ولا يعرف العُقار. والتعريف هنا لا يزيد عن كونه جسراً بين لفظين.<br><br><strong>2. في الحدّ الرسمي:</strong> العلاقة بين الشيء وبين لوازمه وعوارضه. علاقة بين الماهية المُعرَّفة (الخمر) ومجموعة من الخصائص التي تُلازمها (المائع، مقدّف بالزبد، يستحيل إلى الحموضة، يُحفظ في الدنّ). وهذه العلاقة علاقة لزوم لا علاقة ماهية.<br><br><strong>3. في الحدّ الحقيقي:</strong> العلاقة بين الشيء وبين ذاته، أي بين الماهية وذاتياتها. علاقة بين الخمر وبين \"الشراب المُسكر المُعتصر من العنب\". وهذه هي العلاقة الأصلية التي تكشف عن الكنه، والتمييز فيها يتبع الكشف عن الحقيقة.<br><br>ويمكن أن نضيف أنّ كل تعريف يحيل كذلك إلى <strong>علاقة بين السائل والمُعرِّف</strong>: فالسائل يطلب شيئاً، والمُعرِّف يستجيب لمستوى طلبه. وإلى <strong>علاقة بين اللفظ والواقع</strong>: من خلال الفرق بين التصور اللغوي (الحد اللفظي) والتصور اللازمي (الحد الرسمي) والتصور الماهوي (الحد الحقيقي).",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a3.title": "الإجابة عن المهمة الثالثة:",
+                "PhiH.textAnalysis.ghazaliDefinition.answers.a3.content": "يمكن معالجة هذا السؤال من زاويتين متكاملتين:<br><br><strong>1. من زاوية التراث الغزالي:</strong> يبدو التعريف الحقيقي (بتحديد الكنه والذاتيات) في النص الغزالي تعبيراً عن تصور فلسفي كلاسيكي يرى الماهيات ثابتة وقابلة للكشف النهائي. وهو تصور ينسجم مع مشروع أرسطو والفلاسفة المشائين.<br><br><strong>2. من زاوية الطابع التاريخي للمعرفة:</strong> إن القول بأن الطابع التاريخي للمعرفة يعني أن المفاهيم تتطور بتطور العلوم والتجارب الإنسانية. فالخمر التي عرّفها الغزالي بأنها \"شراب مُسكر مُعتصر من العنب\" قد يعاد تعريفها في الكيمياء الحديثة بمكونات كيميائية دقيقة؛ وأي تعريف منها لا يكشف \"الكنه المطلق\" بل يكشف الكنه المتاح في لحظة تاريخية معينة.<br><br><strong>3. الموقف التركيبي:</strong> لا يلزم من إقرار الغزالي بالحدّ الحقيقي إنكار الطابع التاريخي للمعرفة، لأنّ الحدّ الحقيقي في نظره يمثل <em>غاية مثالية</em> للبحث، لا <em>واقعاً محققاً نهائياً</em>. فالمعرفة الإنسانية تسعى إلى الكشف عن الحقيقة (وهو ما يبرر وجود الحدّ الحقيقي كغاية)، لكنها لا تبلغه إلاّ بشكل تدريجي وتاريخي (وهو ما يبرر الطابع التاريخي للمعرفة). وبهذا المعنى، فإنّ الحدّ الحقيقي بوصفه غاية، والطابع التاريخي بوصفه مساراً لبلوغ هذه الغاية، لا يتناقضان بل يتكاملان.",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.thesis.content": "يرى الغزالي أنّ مطلب \"ما\" لا يُطلق على معنى واحد، بل على ثلاثة أوجه متمايزة: شرح اللفظ (الحدّ اللفظي)، والتمييز باللوازم والعوارض (الحدّ الرسمي)، والكشف عن الكنه والذاتيات (الحدّ الحقيقي). وقد أبدع الغزالي مصطلحات ثلاثة لهذه المستويات في تقليد منطقي عربي-إسلامي دقيق، يجعل التعريف عملية متعددة المستويات بحسب ما يطلبه السائل وما يتوفر من معرفة.",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.mechanisms.title": "آليات التمييز بين مستويات التعريف:",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.mechanisms.content": "- <strong>معيار المطلوب:</strong> ما الذي يطلبه السائل من تعريفه؟ شرح لفظ؟ أم تمييز عن غيره؟ أم كشف للكنه؟<br>- <strong>معيار المحتوى:</strong> هل يتضمن التعريف ذاتيات الشيء (ما يدخل في ماهيته) أم لوازمه (ما يلازمه دون أن يدخل في ماهيته)؟<br>- <strong>معيار الغاية:</strong> هل الغاية رفع اللبس اللفظي؟ أم التمييز بين الأشياء المتشابهة؟ أم تصوّر حقيقة الشيء؟<br>- <strong>قاعدة عدم الدور:</strong> لا يجوز تعريف اللفظ بلفظ أعسر منه، تطبيقاً لقاعدة \"لا يجوز تعريف الشيء بما هو أخفى منه\".",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.consequences.title": "نتائج هذا التمييز:",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.consequences.content": "- <strong>تأسيس منطق عربي-إسلامي دقيق:</strong> يفرّق بين مستويات التعريف، ويضع لكل مستوى مصطلحاً خاصاً.<br>- <strong>حلّ إشكال الالتباس اللفظي:</strong> بتمييز ما هو لغوي (الحد اللفظي) عمّا هو معرفي (الحد الرسمي والحقيقي).<br>- <strong>ضبط العلاقة بين اللفظ والواقع:</strong> فالحدّ اللفظي يبقى في مستوى اللغة، بينما الحدّ الرسمي والحقيقي يحيلان إلى الواقع.<br>- <strong>توجيه عملية التعلم والتعليم:</strong> على المعلّم أن يميّز بين ما يحتاجه المتعلّم من شرح لفظي أو تمييز رسمي أو كشف حقيقي.<br>- <strong>تنقية المنطق من الخلط بين الماهية واللوازم:</strong> فليس كل لازم جزءاً من الماهية، وليس كل تعريف يكشف عن الكنه.",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.ghazaliDefinition.analysis.significance.content": "يحمل هذا النص دلالة منهجية عميقة في تاريخ المنطق العربي-الإسلامي؛ فالغزالي يقدّم نظرية متكاملة في التعريف تقوم على التمييز بين ثلاثة مستويات: لغوي، ومنطقي-لازمي، ومنطقي-ماهوي. وهو بهذا يضع الأساس لبناء معجم اصطلاحي دقيق، وللتفريق بين ما هو مجرد شرح لفظي وما هو تعريف حقيقي. وقد كان لهذا التمييز أثر كبير في تطور العلوم الإسلامية (أصول الفقه، الكلام، الفلسفة)، وفي نقد الأخطاء المنطقية الناتجة عن الخلط بين هذه المستويات. كما أن النص يبيّن أن التعريف ليس عملية واحدة بسيطة، بل هو <em>إجراء مركب</em> يتطلب وعياً بمستوياته ومقاصده، وهذا ما يجعله من أهم النصوص المؤسِّسة للتفكير المنطقي في الحضارة العربية-الإسلامية."
+            }
+        };
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

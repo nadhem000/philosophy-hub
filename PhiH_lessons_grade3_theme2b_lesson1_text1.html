@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: ما من بحث دون مشكل - أرسطو - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#008b8b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Dark Cyan / Cadet Blue Color Palette */
+        :root {
+            --primary-color: #008b8b;
+            --primary-light: #20b2aa;
+            --primary-dark: #006666;
+            --secondary-color: #2f4f4f;
+            --secondary-light: #5f9ea0;
+            --secondary-dark: #1c3131;
+            --accent-color: #20b2aa;
+            --accent-light: #40c4c4;
+            --accent-dark: #008b8b;
+            --light-color: #f0ffff;
+            --dark-color: #003333;
+            --text-color: #2f4f4f;
+            --heading-color: #1c3131;
+            --background-color: #f5fdfd;
+            --card-bg: #ffffff;
+            --definition-bg: #e0f7f7;
+            --border-color: #b2e0e0;
+            --table-even-bg: #f0ffff;
+            --table-hover-bg: #d4eeee;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(0, 139, 139, 0.1), 0 2px 4px -1px rgba(0, 139, 139, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 139, 139, 0.1), 0 4px 6px -2px rgba(0, 139, 139, 0.05);
+            --gradient-primary: linear-gradient(135deg, #008b8b 0%, #20b2aa 100%);
+            --gradient-secondary: linear-gradient(135deg, #2f4f4f 0%, #5f9ea0 100%);
+            --gradient-accent: linear-gradient(135deg, #20b2aa 0%, #008b8b 100%);
+            --gradient-gray: linear-gradient(135deg, #5f9ea0 0%, #2f4f4f 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #20b2aa;
+            --primary-light: #40c4c4;
+            --primary-dark: #008b8b;
+            --secondary-color: #5f9ea0;
+            --secondary-light: #7fb8b8;
+            --secondary-dark: #2f4f4f;
+            --accent-color: #40c4c4;
+            --accent-light: #60d4d4;
+            --accent-dark: #20b2aa;
+            --light-color: #1c3131;
+            --dark-color: #003333;
+            --text-color: #d0e8e8;
+            --heading-color: #f0ffff;
+            --background-color: #0d1f1f;
+            --card-bg: #1c3131;
+            --definition-bg: #163030;
+            --border-color: #2f4f4f;
+            --table-even-bg: #1c3131;
+            --table-hover-bg: #163030;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #20b2aa 0%, #40c4c4 100%);
+            --gradient-secondary: linear-gradient(135deg, #5f9ea0 0%, #7fb8b8 100%);
+            --gradient-accent: linear-gradient(135deg, #20b2aa 0%, #008b8b 100%);
+            --gradient-gray: linear-gradient(135deg, #7fb8b8 0%, #5f9ea0 100%);
+        }
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(0, 139, 139, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(47, 79, 79, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(32, 178, 170, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-author-info {
+            flex: 1;
+        }
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        li strong {
+            color: var(--primary-color);
+        }
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-text-card ol li ul {
+            margin-top: 0.6rem;
+            padding-right: 1.5rem;
+            padding-left: 0;
+        }
+        .PhiH-text-card ol li ul li {
+            background-color: var(--definition-bg);
+            padding: 0.6rem 0.9rem;
+            font-size: 0.95rem;
+        }
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(0, 139, 139, 0.05), transparent);
+        }
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        body.rtl .PhiH-text-card ul li {
+            border-left: none;
+            border-right: 3px solid var(--primary-color);
+        }
+        body.rtl .PhiH-text-card ol li ul {
+            padding-right: 0;
+            padding-left: 0;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .PhiH-author-image {
+                align-self: center;
+            }
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.aristotleProblem.title">تحليل النص: ما من بحث دون مشكل - أرسطو</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.aristotleProblem.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        <section class="PhiH-text-analysis-section">
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotleProblem.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.aristotleProblem.introduction.content">
+                    لا يُخفي البعض إحباطهم حين يكتشفون أنَّ التَّفلسف تساؤل دائم لا ينفكَّ يولَّد المشكلات ويعيد طرحها وبحثها، معتقدين أنَّ الأهمَّ يكمن في الحصول على إجابات تمنح اليقين وتنهي الحيرة، وأنَّ غياب مثل هذه الإجابات هو علامة قصور لا يمكنها إلا أن تخيب آمال كل من يهتم بالفلسفة. ولكن ألا يناقض هذا الموقف من التَّفلسف نفسه بنفسه عندما يختزل قيمة البحث في نتيجته دون أن يمنح نفس القيمة للمشكلات التي دفعت إلى البحث ووجَّهته؟
+                </p>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotleProblem.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.aristotleProblem.text.content">
+                        عندما نُرِيد حلَّ صعوبة ما [١]، يحسن بنا أن نطرحها بعناية، لأنَّ الراحة التي سيلقاها الفكر في المستقبل تفترضُ حالاً للصعوبات الموجودة من قبل، وإنه لمن المُحال فكَّ عقدة دون معرفتها. وارتباك الفكر يجعلُ هذه العقدة بَيْنَة بالنسبة إلى موضوع بحثنا. وبالفعل، فأنَّ يكون الفكر مرتبكا هو أن يجد نفسه في وضع شبه بوضع إنسانٍ مقيَّدٍ، فيكون مثله عاجزا عن التقدَّم. ينبغي إذن، قبل كل شيء، أن يفحص كل الصعوبات، وذلك لا بالنظر إلى الدواعي المذكورة بكلَّ تأكيد، وإنما أيضا لأنَّ من يبحث دون أن يطرح المشكل أولاً شبيه بمن يمشي دون أن يعرف إلى أين هو ذاهب، بل ويصبح مُعَرَّضاً إلى أن لا يعرف ما إذا كان قد عثر على المطلوب أم لا في مرحلة ما من مراحل البحث.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.aristotleProblem.text.source">أرسطو، ما بعد الطبيعة، ترجمة لجنة التأليف - Aristote, Métaphysique, Librairie J Vrin, p.70</em></p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotleProblem.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <img src="assets/images/aristotle.jpg" alt="أرسطو" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.aristotleProblem.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.aristotleProblem.author.content">
+                            أرسطو (385 ق م - 322 ق م) فيلسوف يونانيّ انتسب إلى الأكاديمية ليتتلمذ على أفلاطون، وبعد وفاة أستاذه تفرّغ لتأسيس مدرسته الفلسفيّة الخاصة المسمّاة بـ "الليسي" Lycée. نقد الجدليّة الأفلاطونيّة واستبدلها بالمنطق الذي يبحث في مبادئ الفكر والشروط الصوريّة لصلاحيّة الاستدلال التي تعصمه من الخطأ والمغالطة. وجّه البحث في الوجود من منظور واقعيّ يؤصّله في تضايف بين الصورة والمادة، وجعل من عالم الكون والفساد موضوعا للعلم، كما جعل من التجربة منطلقا لاستقراء أسس الممارسة في إطار الأخلاق والسياسة، فكان فيلسوفا موسوعيّا بامتياز ومكّنه ذلك من أن يكون رمز العصر الوسيط حيث جعله توماس الإكويني مرجع الفكر السكولائيّ ولقّبه العرب "بالمعلّم الأوّل". من أهمّ مؤلفاته: "الأرغانون"، "الميتافيزيقا"، "السماع الطبيعيّ"، "في السماء"، "في النفس"، "أجزاء الحيوان"، "أخلاق إلى نيقوماخوس"، "السياسات".
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotleProblem.footnotes.title">الهوامش</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.aristotleProblem.footnotes.item1"><strong>(1) "صعوبة" ما:</strong> إن اهتمام أرسطو بالمشكل، في هذا السياق، لا يتحدد انطلاقا من مشكل خاص يتنزل في إطار مجال معيّن من الموضوعات، بل يعبر عن اشتغال بقواعد المنهج الذي ينبغي أن يقود الفكر بنظام في كل بحث كما يعبر عن اشتغال بالأسقية المنهجية التي يتبوؤها تحديد المشكل في سياق ذلك بغض النظر عن مضمونه ومجاله.</li>
+                </ul>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotleProblem.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.aristotleProblem.questions.q1">يقول أرسطو في حجاجه على قيمة طرح المشكل بالنسبة إلى كل بحث: "من المحال فك عقدة دون معرفتها." أقرأ النص وأرصد الحجج الأخرى التي اعتمدها في الدفاع عن تلك القيمة. وأستخلص المنزلة التي يتبوؤها المشكل في البحث الفلسفي.</li>
+                    <li data-i18n="PhiH.textAnalysis.aristotleProblem.questions.q2">
+                        أقرأ الأسئلة التالية، وأحدد من بينها ما تثير إشكالا فلسفيًا، وأعلل إجابتي:
+                        <ul>
+                            <li data-i18n="PhiH.textAnalysis.aristotleProblem.questions.q2.item1">هل من حل للتصحر؟</li>
+                            <li data-i18n="PhiH.textAnalysis.aristotleProblem.questions.q2.item2">هل الحقيقة واحدة؟</li>
+                            <li data-i18n="PhiH.textAnalysis.aristotleProblem.questions.q2.item3">هل تعتبر عليسة شخصية تاريخية؟</li>
+                            <li data-i18n="PhiH.textAnalysis.aristotleProblem.questions.q2.item4">هل يعقل أن نخشى الموت؟</li>
+                            <li data-i18n="PhiH.textAnalysis.aristotleProblem.questions.q2.item5">هل من تأثير للطلاق في تكوين شخصية الأبناء؟</li>
+                            <li data-i18n="PhiH.textAnalysis.aristotleProblem.questions.q2.item6">هل أن العلم قادر على أن يجيب عن كل أسئلة الإنسان؟</li>
+                        </ul>
+                    </li>
+                    <li data-i18n="PhiH.textAnalysis.aristotleProblem.questions.q3">أنظر في الأسئلة التي اعتبرتها فلسفية، وأنبين إن كانت تمثل عقدة. أي معنى للعقدة في هذا السياق؟</li>
+                    <li data-i18n="PhiH.textAnalysis.aristotleProblem.questions.q4">الأاحظ الأسئلة التي اعتبرها فلسفية، وأنظر فيما إذا كانت تربك الفكر وفيما إذا كان هذا الإرباك يعوقه عن البحث أم هو باعث توتر يدفعه نحو البحث؟</li>
+                </ol>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotleProblem.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotleProblem.answers.a1.title">الإجابة عن المهمة الأولى:</h5>
+                    <p data-i18n="PhiH.textAnalysis.aristotleProblem.answers.a1.content">
+                        الحجج الأخرى التي اعتمدها أرسطو للدفاع عن قيمة طرح المشكل في كل بحث:
+                        <br>- "الراحة التي سيلقاها الفكر في المستقبل تفترضُ حالاً للصعوبات الموجودة من قبل": أي أنّ التقدّم المعرفي لا يتحقّق إلا انطلاقاً من وعي مسبق بالصعوبات المطروحة.
+                        <br>- "إنه لمن المُحال فكَّ عقدة دون معرفتها": فلا يمكن حلّ مشكل لا نعرف كنهه وحدوده.
+                        <br>- "ارتباك الفكر يجعلُ هذه العقدة بَيْنَة بالنسبة إلى موضوع بحثنا": فالارتباك مؤشّر على وجود عقدة تستدعي الفحص والبحث.
+                        <br>- "الفكر المرتبك يشبه إنساناً مقيَّداً عاجزاً عن التقدّم": فطالما لم يُطرح المشكل بوضوح يبقى الفكر مقيّداً.
+                        <br>- "من يبحث دون أن يطرح المشكل أولاً شبيه بمن يمشي دون أن يعرف إلى أين هو ذاهب": فغياب المشكل يفقِد البحث وجهته.
+                        <br>- يصبح الباحث "مُعَرَّضاً إلى أن لا يعرف ما إذا كان قد عثر على المطلوب أم لا": فلا معيار للحكم على النتائج في غياب مشكل موجّه.
+                        <br><br>
+                        <strong>المنزلة التي يتبوؤها المشكل في البحث الفلسفي:</strong> يتبوّأ المشكل منزلة الشرط المنهجي الأول والأساسي لكل بحث فلسفي؛ فهو ليس عائقاً عارضاً بل هو الشرط الذي يمنح البحث وجهته ومعياره ومشروعيّته، ولذلك لا بحث فلسفي دون مشكل.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotleProblem.answers.a2.title">الإجابة عن المهمة الثانية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.aristotleProblem.answers.a2.content">
+                        الأسئلة الفلسفية هي:
+                        <br>- <strong>هل الحقيقة واحدة؟</strong> سؤال فلسفي لأنه يتعلق بطبيعة الحقيقة وماهيتها ووحدتها أو تعدّدها، وهو سؤال ميتافيزيقي/معرفي كلّي.
+                        <br>- <strong>هل يعقل أن نخشى الموت؟</strong> سؤال فلسفي لأنه سؤال وجودي/أخلاقي يتعلق بمعنى الموت وموقف الإنسان منه، ولا يُحلّ بطريقة تجريبية.
+                        <br>- <strong>هل أن العلم قادر على أن يجيب عن كل أسئلة الإنسان؟</strong> سؤال فلسفي إبستمولوجي يتعلق بحدود العلم وإمكاناته وقيمته المعرفية.
+                        <br><br>
+                        أما الأسئلة الأخرى فهي غير فلسفية:
+                        <br>- <strong>هل من حل للتصحر؟</strong> سؤال علمي/تقني تجريبي.
+                        <br>- <strong>هل تعتبر عليسة شخصية تاريخية؟</strong> سؤال تاريخي وضعي.
+                        <br>- <strong>هل من تأثير للطلاق في تكوين شخصية الأبناء؟</strong> سؤال سوسيولوجي/نفسي تجريبي.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotleProblem.answers.a3.title">الإجابة عن المهمة الثالثة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.aristotleProblem.answers.a3.content">
+                        الأسئلة الفلسفية تمثّل "عقداً" بالمعنى الذي يقصده أرسطو؛ فالعقدة في هذا السياق تعني الصعوبة الفكرية التي تُربك الفكر وتشلّ حركته وتستدعي فحصاً وطرحاً منهجياً. والأسئلة الفلسفية عُقَد لأنها:
+                        <br>- تطرح مسائل كلّية لا تُحلّ بإجابة نهائية.
+                        <br>- تثير ارتباكاً فكرياً عميقاً يستدعي تأسيساً منهجياً.
+                        <br>- تتشابك فيها مستويات السؤال والجواب.
+                        <br>- لا تنفكّ تتجدّد وتُعاد صياغتها.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotleProblem.answers.a4.title">الإجابة عن المهمة الرابعة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.aristotleProblem.answers.a4.content">
+                        الأسئلة الفلسفية تُربك الفكر، لكنّ هذا الإرباك ليس عائقاً عن البحث، بل هو باعث توتر إيجابي يدفعه نحو البحث. فالإرباك حالة صحية تُنبّه الفكر إلى وجود عقدة ينبغي فحصها، فيتحوّل الإرباك من قيد إلى محرّك. وهذا ما يؤكده أرسطو حين يشبّه الفكر المرتبك بإنسان مقيَّد، لكنّ هذا القيد نفسه هو ما يدفع إلى فحص الصعوبات وطرح المشكل بعناية. الإرباك إذن ليس عائقاً بل محرّك للبحث.
+                    </p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.aristotleProblem.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotleProblem.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.aristotleProblem.analysis.thesis.content">
+                        يرى أرسطو أنّ طرح المشكل (الصعوبة) بشكل مسبق وصريح هو الشرط الضروري لكل بحث فلسفي حقيقي؛ فالبحث دون مشكل محدّد يشبه المشي دون وجهة، لا يمكن التحقّق من نتائجه ولا توجيه جهده. المشكل هو ما يمنح البحث معناه ووجهته ومعياره.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotleProblem.analysis.mechanisms.title">آليات اشتغال المشكل في البحث:</h5>
+                    <p data-i18n="PhiH.textAnalysis.aristotleProblem.analysis.mechanisms.content">
+                        - <strong>تحديد الصعوبة وطرحها بعناية:</strong> فلا يكفي أن نُدرك وجود صعوبة، بل يجب أن نُحسن طرحها.
+                        <br>- <strong>فحص كل الصعوبات قبل الشروع في البحث:</strong> حتى تتّضح معالم العقدة وحدودها.
+                        <br>- <strong>الوعي بأنّ ارتباك الفكر علامة على وجود عقدة:</strong> فيكون الارتباك مؤشّراً منهجياً لا عائقاً.
+                        <br>- <strong>اعتبار المشكل موجّهاً للبحث:</strong> فهو الذي يحدّد المسار ومعايير الحكم على النتائج.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotleProblem.analysis.consequences.title">نتائج غياب طرح المشكل:</h5>
+                    <p data-i18n="PhiH.textAnalysis.aristotleProblem.analysis.consequences.content">
+                        - <strong>التيه في البحث دون وجهة:</strong> كمن يمشي دون أن يعرف إلى أين هو ذاهب.
+                        <br>- <strong>العجز عن الحكم على النتائج:</strong> فلا يعرف الباحث هل عثر على المطلوب أم لا.
+                        <br>- <strong>ضياع الجهد دون فائدة:</strong> لأنّ الفكر يبقى مرتطماً في صعوبات غير محدّدة.
+                        <br>- <strong>بقاء الفكر مقيّداً:</strong> لعدم تحرّره من الإرباك بالانتقال منه إلى طرح صريح للمشكل.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.aristotleProblem.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.aristotleProblem.analysis.significance.content">
+                        يحمل النص دلالة منهجية عميقة؛ فالمشكل عند أرسطو ليس مجرّد عائق سلبي يُعترض به على البحث، بل هو شرط إمكانه ومحرّكه الأساسي. والمشكل هنا ذو طابع منهجي قبل أن يكون مضمونياً؛ أي أن اهتمام أرسطو لا يتعلّق بمشكل خاص في مجال معيّن، بل بقواعد المنهج التي ينبغي أن تقود الفكر في كل بحث. وهذا ما يجعل النص حجّة قوية على أولوية الأشكلة (la problématisation) في البحث الفلسفي، وعلى أنّ قيمة البحث لا تُختزل في نتيجته، بل تكمن في المشكل الذي دفعه ووجّهه.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.aristotleProblem.level": "3ème Secondaire - Philosophie",
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.aristotleProblem.title": "Analyse du texte : Il n'y a pas de recherche sans problème - Aristote",
+                "PhiH.textAnalysis.aristotleProblem.introduction.title": "Introduction",
+                "PhiH.textAnalysis.aristotleProblem.introduction.content": "Certains ne cachent pas leur frustration lorsqu'ils découvrent que philosopher est un questionnement permanent qui ne cesse d'engendrer des problèmes et de les reposer et de les examiner, croyant que l'essentiel réside dans l'obtention de réponses qui donnent la certitude et mettent fin à la perplexité, et que l'absence de telles réponses est un signe d'insuffisance qui ne peut que décevoir les espoirs de quiconque s'intéresse à la philosophie. Mais cette position sur la philosophie ne se contredit-elle pas elle-même lorsqu'elle réduit la valeur de la recherche à son résultat sans accorder la même valeur aux problèmes qui ont suscité la recherche et l'ont orientée ?",
+                "PhiH.textAnalysis.aristotleProblem.text.title": "Le texte",
+                "PhiH.textAnalysis.aristotleProblem.text.content": "Lorsque nous voulons résoudre une difficulté [1], il convient de la poser avec soin, car le repos que l'esprit trouvera à l'avenir suppose un état antérieur des difficultés existantes, et il est impossible de dénouer un nœud sans le connaître. L'embarras de l'esprit rend ce nœud évident relativement à l'objet de notre recherche. Et en effet, que l'esprit soit embarrassé, c'est qu'il se trouve dans une situation semblable à celle d'un homme enchaîné, qui est comme lui incapable d'avancer. Il faut donc, avant tout, examiner toutes les difficultés, et cela non seulement en considération des motifs déjà affirmés avec insistance, mais aussi parce que celui qui cherche sans avoir d'abord posé le problème est semblable à celui qui marche sans savoir où il va, et s'expose même à ne pas savoir s'il a trouvé ce qu'il cherchait ou non à quelque étape que ce soit de la recherche.",
+                "PhiH.textAnalysis.aristotleProblem.text.source": "Aristote, Métaphysique, traduction du comité de rédaction - Librairie J. Vrin, p.70",
+                "PhiH.textAnalysis.aristotleProblem.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.aristotleProblem.author.alt": "Aristote",
+                "PhiH.textAnalysis.aristotleProblem.author.content": "Aristote (385 av. J.-C. - 322 av. J.-C.) philosophe grec qui a rejoint l'Académie pour étudier sous Platon, et après la mort de son maître, il a fondé sa propre école philosophique appelée le Lycée. Il a critiqué la dialectique platonicienne et l'a remplacée par la logique qui examine les principes de la pensée et les conditions formelles de la validité du raisonnement, le protégeant ainsi de l'erreur et de la sophistique. Il a orienté la recherche sur l'être d'un point de vue réaliste, l'ancrant dans la corrélation entre la forme et la matière, et a fait du monde de la génération et de la corruption un objet de science, tout en faisant de l'expérience le point de départ de l'induction des fondements de la pratique dans le cadre de l'éthique et de la politique. C'était un philosophe encyclopédique par excellence, ce qui lui a permis d'être un symbole du Moyen Âge, où Thomas d'Aquin l'a établi comme référence de la pensée scolastique et les Arabes l'ont surnommé « le Premier Enseignant ». Parmi ses œuvres majeures : « Organon », « Métaphysique », « Physique », « Du Ciel », « De l'Âme », « Les Parties des Animaux », « Éthique à Nicomaque », « Politique ».",
+                "PhiH.textAnalysis.aristotleProblem.footnotes.title": "Notes de bas de page",
+                "PhiH.textAnalysis.aristotleProblem.footnotes.item1": "<strong>(1) « Une difficulté » :</strong> L'intérêt d'Aristote pour le problème, dans ce contexte, ne se détermine pas à partir d'un problème particulier s'inscrivant dans le cadre d'un domaine précis de sujets, mais exprime un travail sur les règles de la méthode qui doit conduire la pensée avec ordre dans toute recherche, ainsi qu'un travail sur les présupposés méthodologiques que présuppose la détermination du problème dans ce contexte, indépendamment de son contenu et de son domaine.",
+                "PhiH.textAnalysis.aristotleProblem.questions.title": "Tâches",
+                "PhiH.textAnalysis.aristotleProblem.questions.q1": "Aristote dit dans son argumentation sur la valeur de la posée du problème pour toute recherche : « Il est impossible de dénouer un nœud sans le connaître. » Je lis le texte et je repère les autres arguments qu'il a adoptés pour défendre cette valeur. J'en dégage la place que le problème occupe dans la recherche philosophique.",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2": "Je lis les questions suivantes, je détermine parmi elles celles qui soulèvent un problème philosophique, et je justifie ma réponse :",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item1": "Y a-t-il une solution à la désertification ?",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item2": "La vérité est-elle une ?",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item3": "Élissa est-elle considérée comme une figure historique ?",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item4": "Est-il raisonnable de craindre la mort ?",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item5": "Y a-t-il un effet du divorce sur la formation de la personnalité des enfants ?",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item6": "La science est-elle capable de répondre à toutes les questions de l'être humain ?",
+                "PhiH.textAnalysis.aristotleProblem.questions.q3": "J'examine les questions que j'ai considérées comme philosophiques, et je précise si elles représentent un nœud. Quel sens a le nœud dans ce contexte ?",
+                "PhiH.textAnalysis.aristotleProblem.questions.q4": "J'observe les questions que je considère comme philosophiques, et je regarde si elles embarrassent la pensée, et si cet embarras l'empêche de chercher ou s'il est une tension qui la pousse vers la recherche ?",
+                "PhiH.textAnalysis.aristotleProblem.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.aristotleProblem.answers.a1.title": "Réponse à la première tâche :",
+                "PhiH.textAnalysis.aristotleProblem.answers.a1.content": "Les autres arguments qu'Aristote a adoptés pour défendre la valeur de la posée du problème dans toute recherche :<br>- « Le repos que l'esprit trouvera à l'avenir suppose un état antérieur des difficultés existantes » : le progrès cognitif ne se réalise qu'à partir d'une conscience préalable des difficultés posées.<br>- « Il est impossible de dénouer un nœud sans le connaître » : on ne peut résoudre un problème dont on ne connaît ni la nature ni les limites.<br>- « L'embarras de l'esprit rend ce nœud évident relativement à l'objet de notre recherche » : l'embarras est un indicateur de l'existence d'un nœud qui appelle examen et recherche.<br>- « L'esprit embarrassé ressemble à un homme enchaîné incapable d'avancer » : tant que le problème n'est pas posé clairement, l'esprit reste entravé.<br>- « Celui qui cherche sans avoir d'abord posé le problème est semblable à celui qui marche sans savoir où il va » : l'absence de problème prive la recherche de son orientation.<br>- Le chercheur s'expose « à ne pas savoir s'il a trouvé ce qu'il cherchait ou non » : il n'y a pas de critère pour juger les résultats en l'absence d'un problème directeur.<br><br><strong>La place que le problème occupe dans la recherche philosophique :</strong> le problème occupe la place de la condition méthodologique première et fondamentale de toute recherche philosophique ; il n'est pas un obstacle accidentel mais la condition qui donne à la recherche son orientation, son critère et sa légitimité ; c'est pourquoi il n'y a pas de recherche philosophique sans problème.",
+                "PhiH.textAnalysis.aristotleProblem.answers.a2.title": "Réponse à la deuxième tâche :",
+                "PhiH.textAnalysis.aristotleProblem.answers.a2.content": "Les questions philosophiques sont :<br>- <strong>La vérité est-elle une ?</strong> Question philosophique car elle porte sur la nature de la vérité, son unité ou sa pluralité ; question métaphysique/épistémologique universelle.<br>- <strong>Est-il raisonnable de craindre la mort ?</strong> Question philosophique car elle est existentielle/éthique, porte sur le sens de la mort et la position de l'homme à son égard, et ne se résout pas empiriquement.<br>- <strong>La science est-elle capable de répondre à toutes les questions de l'être humain ?</strong> Question philosophique épistémologique portant sur les limites de la science, ses capacités et sa valeur cognitive.<br><br>Quant aux autres questions, elles ne sont pas philosophiques :<br>- <strong>Y a-t-il une solution à la désertification ?</strong> Question scientifique/technique empirique.<br>- <strong>Élissa est-elle considérée comme une figure historique ?</strong> Question historique positive.<br>- <strong>Y a-t-il un effet du divorce sur la formation de la personnalité des enfants ?</strong> Question sociologique/psychologique empirique.",
+                "PhiH.textAnalysis.aristotleProblem.answers.a3.title": "Réponse à la troisième tâche :",
+                "PhiH.textAnalysis.aristotleProblem.answers.a3.content": "Les questions philosophiques représentent des « nœuds » au sens qu'Aristote entend ; le nœud dans ce contexte signifie la difficulté intellectuelle qui embarrasse la pensée, paralyse son mouvement et appelle un examen et une posée méthodique. Les questions philosophiques sont des nœuds parce qu'elles :<br>- posent des problèmes universels qui ne se résolvent pas par une réponse définitive ;<br>- suscitent un embarras intellectuel profond qui appelle un fondement méthodique ;<br>- entremêlent les niveaux de la question et de la réponse ;<br>- ne cessent de se renouveler et d'être reformulées.",
+                "PhiH.textAnalysis.aristotleProblem.answers.a4.title": "Réponse à la quatrième tâche :",
+                "PhiH.textAnalysis.aristotleProblem.answers.a4.content": "Les questions philosophiques embarrassent la pensée, mais cet embarras n'est pas un obstacle à la recherche, il est une tension positive qui la pousse vers la recherche. L'embarras est un état sain qui avertit la pensée de l'existence d'un nœud à examiner, transformant ainsi l'embarras de contrainte en moteur. C'est ce que confirme Aristote lorsqu'il compare l'esprit embarrassé à un homme enchaîné, mais cette chaîne elle-même est ce qui pousse à examiner les difficultés et à poser le problème avec soin. L'embarras n'est donc pas un obstacle mais un moteur de la recherche.",
+                "PhiH.textAnalysis.aristotleProblem.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.aristotleProblem.analysis.thesis.title": "Thèse principale :",
+                "PhiH.textAnalysis.aristotleProblem.analysis.thesis.content": "Aristote considère que la posée du problème (la difficulté) de manière préalable et explicite est la condition nécessaire de toute recherche philosophique véritable ; la recherche sans problème déterminé ressemble à la marche sans destination, on ne peut vérifier ses résultats ni orienter son effort. Le problème est ce qui donne à la recherche son sens, son orientation et son critère.",
+                "PhiH.textAnalysis.aristotleProblem.analysis.mechanisms.title": "Mécanismes du fonctionnement du problème dans la recherche :",
+                "PhiH.textAnalysis.aristotleProblem.analysis.mechanisms.content": "- <strong>Détermination de la difficulté et sa posée avec soin :</strong> il ne suffit pas de percevoir l'existence d'une difficulté, il faut savoir la poser.<br>- <strong>Examen de toutes les difficultés avant d'entreprendre la recherche :</strong> afin que les contours du nœud et ses limites se clarifient.<br>- <strong>Conscience que l'embarras de l'esprit est le signe d'un nœud :</strong> l'embarras est alors un indicateur méthodique et non un obstacle.<br>- <strong>Considérer le problème comme directeur de la recherche :</strong> c'est lui qui détermine la trajectoire et les critères de jugement des résultats.",
+                "PhiH.textAnalysis.aristotleProblem.analysis.consequences.title": "Conséquences de l'absence de posée du problème :",
+                "PhiH.textAnalysis.aristotleProblem.analysis.consequences.content": "- <strong>Égarement dans la recherche sans orientation :</strong> comme celui qui marche sans savoir où il va.<br>- <strong>Incapacité à juger les résultats :</strong> le chercheur ne sait pas s'il a trouvé ce qu'il cherchait.<br>- <strong>Perte de l'effort sans profit :</strong> car l'esprit reste empêtré dans des difficultés non déterminées.<br>- <strong>L'esprit reste enchaîné :</strong> faute de s'être libéré de l'embarras en passant à une posée explicite du problème.",
+                "PhiH.textAnalysis.aristotleProblem.analysis.significance.title": "Significations et dimensions du concept :",
+                "PhiH.textAnalysis.aristotleProblem.analysis.significance.content": "Le texte porte une signification méthodologique profonde ; le problème chez Aristote n'est pas un simple obstacle négatif opposé à la recherche, mais sa condition de possibilité et son moteur fondamental. Le problème a ici un caractère méthodologique avant d'être contentuel ; l'intérêt d'Aristote ne porte pas sur un problème particulier dans un domaine donné, mais sur les règles de la méthode qui doivent conduire la pensée dans toute recherche. C'est ce qui fait du texte un argument fort en faveur de la primauté de la problématisation dans la recherche philosophique, et de l'idée que la valeur de la recherche ne se réduit pas à son résultat, mais réside dans le problème qui l'a suscitée et orientée."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.aristotleProblem.level": "3rd Secondary - Philosophy",
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.aristotleProblem.title": "Text Analysis: There is No Research Without a Problem - Aristotle",
+                "PhiH.textAnalysis.aristotleProblem.introduction.title": "Introduction",
+                "PhiH.textAnalysis.aristotleProblem.introduction.content": "Some do not hide their frustration when they discover that philosophizing is a permanent questioning that never ceases to generate problems and to re-pose and examine them, believing that the essential lies in obtaining answers that give certainty and end perplexity, and that the absence of such answers is a sign of deficiency that can only disappoint the hopes of anyone interested in philosophy. But does not this position on philosophy contradict itself when it reduces the value of research to its result without granting the same value to the problems that prompted the research and oriented it?",
+                "PhiH.textAnalysis.aristotleProblem.text.title": "The Text",
+                "PhiH.textAnalysis.aristotleProblem.text.content": "When we wish to resolve a difficulty [1], it is fitting to pose it carefully, because the repose that the mind will find in the future presupposes a prior state of the existing difficulties, and it is impossible to untie a knot without knowing it. The embarrassment of the mind makes this knot evident with respect to the object of our research. And indeed, for the mind to be embarrassed is for it to find itself in a situation similar to that of a chained man, being like him unable to advance. One must therefore, before everything, examine all the difficulties, and this not only in view of the motives already affirmed with insistence, but also because he who researches without first posing the problem is like one who walks without knowing where he is going, and even becomes exposed to not knowing whether he has found what was sought or not at any stage of the research.",
+                "PhiH.textAnalysis.aristotleProblem.text.source": "Aristotle, Metaphysics, translation by the writing committee - Librairie J. Vrin, p.70",
+                "PhiH.textAnalysis.aristotleProblem.author.title": "Author Presentation",
+                "PhiH.textAnalysis.aristotleProblem.author.alt": "Aristotle",
+                "PhiH.textAnalysis.aristotleProblem.author.content": "Aristotle (385 BC – 322 BC) was a Greek philosopher who joined the Academy to study under Plato, and after his teacher's death, he founded his own philosophical school called the Lyceum. He criticized Platonic dialectic and replaced it with logic, which examines the principles of thought and the formal conditions for the validity of reasoning, thus protecting it from error and sophistry. He directed the inquiry into being from a realistic perspective, grounding it in the correlation between form and matter, and made the world of generation and corruption an object of science, while making experience the starting point for inducing the foundations of practice within the framework of ethics and politics. He was an encyclopedic philosopher par excellence, which allowed him to become a symbol of the Middle Ages, where Thomas Aquinas established him as a reference for scholastic thought and the Arabs nicknamed him 'the First Teacher'. Among his major works: \"Organon\", \"Metaphysics\", \"Physics\", \"On the Heavens\", \"On the Soul\", \"Parts of Animals\", \"Nicomachean Ethics\", \"Politics\".",
+                "PhiH.textAnalysis.aristotleProblem.footnotes.title": "Footnotes",
+                "PhiH.textAnalysis.aristotleProblem.footnotes.item1": "<strong>(1) \"A difficulty\":</strong> Aristotle's interest in the problem, in this context, is not determined starting from a particular problem situated within the framework of a specific field of subjects, but expresses a work on the rules of method that must lead thought with order in every research, as well as a work on the methodological presuppositions that the determination of the problem presupposes in that context, regardless of its content and its field.",
+                "PhiH.textAnalysis.aristotleProblem.questions.title": "Tasks",
+                "PhiH.textAnalysis.aristotleProblem.questions.q1": "Aristotle says in his argumentation on the value of posing the problem for every research: \"It is impossible to untie a knot without knowing it.\" I read the text and note the other arguments he adopted to defend that value. I deduce the place the problem occupies in philosophical research.",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2": "I read the following questions, I determine among them those that raise a philosophical problem, and I justify my answer:",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item1": "Is there a solution to desertification?",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item2": "Is truth one?",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item3": "Is Elissa considered a historical figure?",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item4": "Is it reasonable to fear death?",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item5": "Is there an effect of divorce on the formation of children's personality?",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item6": "Is science capable of answering all human questions?",
+                "PhiH.textAnalysis.aristotleProblem.questions.q3": "I examine the questions I have considered philosophical, and I specify whether they represent a knot. What meaning does the knot have in this context?",
+                "PhiH.textAnalysis.aristotleProblem.questions.q4": "I observe the questions I consider philosophical, and I consider whether they embarrass thought and whether this embarrassment hinders it from research or whether it is a tension that drives it towards research?",
+                "PhiH.textAnalysis.aristotleProblem.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.aristotleProblem.answers.a1.title": "Answer to the first task:",
+                "PhiH.textAnalysis.aristotleProblem.answers.a1.content": "The other arguments Aristotle adopted to defend the value of posing the problem in every research:<br>- \"The repose that the mind will find in the future presupposes a prior state of the existing difficulties\": cognitive progress is only realized starting from a prior awareness of the difficulties posed.<br>- \"It is impossible to untie a knot without knowing it\": one cannot solve a problem whose nature and limits are unknown.<br>- \"The embarrassment of the mind makes this knot evident with respect to the object of our research\": embarrassment is an indicator of the existence of a knot that calls for examination and research.<br>- \"The embarrassed mind resembles a chained man unable to advance\": as long as the problem is not posed clearly, the mind remains shackled.<br>- \"He who researches without first posing the problem is like one who walks without knowing where he is going\": the absence of a problem deprives research of its orientation.<br>- The researcher becomes exposed \"to not knowing whether he has found what was sought or not\": there is no criterion for judging results in the absence of a directing problem.<br><br><strong>The place the problem occupies in philosophical research:</strong> the problem occupies the place of the first and fundamental methodological condition of all philosophical research; it is not an accidental obstacle but the condition that gives research its orientation, its criterion and its legitimacy; that is why there is no philosophical research without a problem.",
+                "PhiH.textAnalysis.aristotleProblem.answers.a2.title": "Answer to the second task:",
+                "PhiH.textAnalysis.aristotleProblem.answers.a2.content": "The philosophical questions are:<br>- <strong>Is truth one?</strong> A philosophical question because it concerns the nature of truth, its unity or plurality; a universal metaphysical/epistemological question.<br>- <strong>Is it reasonable to fear death?</strong> A philosophical question because it is existential/ethical, concerning the meaning of death and man's position towards it, and it is not resolved empirically.<br>- <strong>Is science capable of answering all human questions?</strong> A philosophical epistemological question concerning the limits of science, its capacities and its cognitive value.<br><br>As for the other questions, they are not philosophical:<br>- <strong>Is there a solution to desertification?</strong> An empirical scientific/technical question.<br>- <strong>Is Elissa considered a historical figure?</strong> A positive historical question.<br>- <strong>Is there an effect of divorce on the formation of children's personality?</strong> An empirical sociological/psychological question.",
+                "PhiH.textAnalysis.aristotleProblem.answers.a3.title": "Answer to the third task:",
+                "PhiH.textAnalysis.aristotleProblem.answers.a3.content": "The philosophical questions represent 'knots' in the sense Aristotle intends; the knot in this context means the intellectual difficulty that embarrasses thought, paralyzes its movement and calls for a methodological examination and positing. The philosophical questions are knots because they:<br>- pose universal issues that are not resolved by a definitive answer;<br>- raise a deep intellectual embarrassment that calls for a methodological foundation;<br>- intertwine the levels of question and answer;<br>- never cease to renew and be reformulated.",
+                "PhiH.textAnalysis.aristotleProblem.answers.a4.title": "Answer to the fourth task:",
+                "PhiH.textAnalysis.aristotleProblem.answers.a4.content": "The philosophical questions embarrass thought, but this embarrassment is not an obstacle to research, it is a positive tension that drives it towards research. Embarrassment is a healthy state that alerts thought to the existence of a knot to be examined, transforming embarrassment from a constraint into a motor. This is what Aristotle confirms when he compares the embarrassed mind to a chained man, but this chain itself is what drives the examination of difficulties and the careful positing of the problem. Embarrassment is therefore not an obstacle but a motor of research.",
+                "PhiH.textAnalysis.aristotleProblem.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.aristotleProblem.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.aristotleProblem.analysis.thesis.content": "Aristotle holds that posing the problem (the difficulty) in a prior and explicit manner is the necessary condition of every genuine philosophical research; research without a determined problem resembles walking without a destination, one cannot verify its results nor orient its effort. The problem is what gives research its meaning, its orientation and its criterion.",
+                "PhiH.textAnalysis.aristotleProblem.analysis.mechanisms.title": "Mechanisms of the problem's functioning in research:",
+                "PhiH.textAnalysis.aristotleProblem.analysis.mechanisms.content": "- <strong>Determination of the difficulty and its careful positing:</strong> it is not enough to perceive the existence of a difficulty, one must know how to pose it.<br>- <strong>Examination of all the difficulties before undertaking the research:</strong> so that the contours of the knot and its limits become clear.<br>- <strong>Awareness that the embarrassment of the mind is the sign of a knot:</strong> embarrassment is then a methodological indicator and not an obstacle.<br>- <strong>Considering the problem as director of the research:</strong> it is what determines the trajectory and the criteria for judging the results.",
+                "PhiH.textAnalysis.aristotleProblem.analysis.consequences.title": "Consequences of the absence of the positing of the problem:",
+                "PhiH.textAnalysis.aristotleProblem.analysis.consequences.content": "- <strong>Loss in research without orientation:</strong> like one who walks without knowing where he is going.<br>- <strong>Inability to judge the results:</strong> the researcher does not know whether he has found what he was seeking.<br>- <strong>Loss of effort without benefit:</strong> because the mind remains entangled in undetermined difficulties.<br>- <strong>The mind remains chained:</strong> for failing to free itself from embarrassment by passing to an explicit positing of the problem.",
+                "PhiH.textAnalysis.aristotleProblem.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.aristotleProblem.analysis.significance.content": "The text carries a deep methodological significance; the problem for Aristotle is not a simple negative obstacle opposed to research, but its condition of possibility and its fundamental motor. The problem here has a methodological character before being a contentual one; Aristotle's interest does not concern a particular problem in a given field, but the rules of method that must lead thought in every research. This is what makes the text a strong argument in favor of the primacy of problematization in philosophical research, and of the idea that the value of research is not reduced to its result, but resides in the problem that prompted and oriented it."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.aristotleProblem.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.aristotleProblem.title": "تحليل النص: ما من بحث دون مشكل - أرسطو",
+                "PhiH.textAnalysis.aristotleProblem.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.aristotleProblem.introduction.content": "لا يُخفي البعض إحباطهم حين يكتشفون أنَّ التَّفلسف تساؤل دائم لا ينفكَّ يولَّد المشكلات ويعيد طرحها وبحثها، معتقدين أنَّ الأهمَّ يكمن في الحصول على إجابات تمنح اليقين وتنهي الحيرة، وأنَّ غياب مثل هذه الإجابات هو علامة قصور لا يمكنها إلا أن تخيب آمال كل من يهتم بالفلسفة. ولكن ألا يناقض هذا الموقف من التَّفلسف نفسه بنفسه عندما يختزل قيمة البحث في نتيجته دون أن يمنح نفس القيمة للمشكلات التي دفعت إلى البحث ووجَّهته؟",
+                "PhiH.textAnalysis.aristotleProblem.text.title": "النص",
+                "PhiH.textAnalysis.aristotleProblem.text.content": "عندما نُرِيد حلَّ صعوبة ما [١]، يحسن بنا أن نطرحها بعناية، لأنَّ الراحة التي سيلقاها الفكر في المستقبل تفترضُ حالاً للصعوبات الموجودة من قبل، وإنه لمن المُحال فكَّ عقدة دون معرفتها. وارتباك الفكر يجعلُ هذه العقدة بَيْنَة بالنسبة إلى موضوع بحثنا. وبالفعل، فأنَّ يكون الفكر مرتبكا هو أن يجد نفسه في وضع شبه بوضع إنسانٍ مقيَّدٍ، فيكون مثله عاجزا عن التقدَّم. ينبغي إذن، قبل كل شيء، أن يفحص كل الصعوبات، وذلك لا بالنظر إلى الدواعي المذكورة بكلَّ تأكيد، وإنما أيضا لأنَّ من يبحث دون أن يطرح المشكل أولاً شبيه بمن يمشي دون أن يعرف إلى أين هو ذاهب، بل ويصبح مُعَرَّضاً إلى أن لا يعرف ما إذا كان قد عثر على المطلوب أم لا في مرحلة ما من مراحل البحث.",
+                "PhiH.textAnalysis.aristotleProblem.text.source": "أرسطو، ما بعد الطبيعة، ترجمة لجنة التأليف - Aristote, Métaphysique, Librairie J Vrin, p.70",
+                "PhiH.textAnalysis.aristotleProblem.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.aristotleProblem.author.alt": "أرسطو",
+                "PhiH.textAnalysis.aristotleProblem.author.content": "أرسطو (385 ق م - 322 ق م) فيلسوف يونانيّ انتسب إلى الأكاديمية ليتتلمذ على أفلاطون، وبعد وفاة أستاذه تفرّغ لتأسيس مدرسته الفلسفيّة الخاصة المسمّاة بـ \"الليسي\" Lycée. نقد الجدليّة الأفلاطونيّة واستبدلها بالمنطق الذي يبحث في مبادئ الفكر والشروط الصوريّة لصلاحيّة الاستدلال التي تعصمه من الخطأ والمغالطة. وجّه البحث في الوجود من منظور واقعيّ يؤصّله في تضايف بين الصورة والمادة، وجعل من عالم الكون والفساد موضوعا للعلم، كما جعل من التجربة منطلقا لاستقراء أسس الممارسة في إطار الأخلاق والسياسة، فكان فيلسوفا موسوعيّا بامتياز ومكّنه ذلك من أن يكون رمز العصر الوسيط حيث جعله توماس الإكويني مرجع الفكر السكولائيّ ولقّبه العرب \"بالمعلّم الأوّل\". من أهمّ مؤلفاته: \"الأرغانون\"، \"الميتافيزيقا\"، \"السماع الطبيعيّ\"، \"في السماء\"، \"في النفس\"، \"أجزاء الحيوان\"، \"أخلاق إلى نيقوماخوس\"، \"السياسات\".",
+                "PhiH.textAnalysis.aristotleProblem.footnotes.title": "الهوامش",
+                "PhiH.textAnalysis.aristotleProblem.footnotes.item1": "<strong>(1) \"صعوبة\" ما:</strong> إن اهتمام أرسطو بالمشكل، في هذا السياق، لا يتحدد انطلاقا من مشكل خاص يتنزل في إطار مجال معيّن من الموضوعات، بل يعبر عن اشتغال بقواعد المنهج الذي ينبغي أن يقود الفكر بنظام في كل بحث كما يعبر عن اشتغال بالأسقية المنهجية التي يتبوؤها تحديد المشكل في سياق ذلك بغض النظر عن مضمونه ومجاله.",
+                "PhiH.textAnalysis.aristotleProblem.questions.title": "المهام",
+                "PhiH.textAnalysis.aristotleProblem.questions.q1": "يقول أرسطو في حجاجه على قيمة طرح المشكل بالنسبة إلى كل بحث: \"من المحال فك عقدة دون معرفتها.\" أقرأ النص وأرصد الحجج الأخرى التي اعتمدها في الدفاع عن تلك القيمة. وأستخلص المنزلة التي يتبوؤها المشكل في البحث الفلسفي.",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2": "أقرأ الأسئلة التالية، وأحدد من بينها ما تثير إشكالا فلسفيًا، وأعلل إجابتي:",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item1": "هل من حل للتصحر؟",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item2": "هل الحقيقة واحدة؟",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item3": "هل تعتبر عليسة شخصية تاريخية؟",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item4": "هل يعقل أن نخشى الموت؟",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item5": "هل من تأثير للطلاق في تكوين شخصية الأبناء؟",
+                "PhiH.textAnalysis.aristotleProblem.questions.q2.item6": "هل أن العلم قادر على أن يجيب عن كل أسئلة الإنسان؟",
+                "PhiH.textAnalysis.aristotleProblem.questions.q3": "أنظر في الأسئلة التي اعتبرتها فلسفية، وأنبين إن كانت تمثل عقدة. أي معنى للعقدة في هذا السياق؟",
+                "PhiH.textAnalysis.aristotleProblem.questions.q4": "الأاحظ الأسئلة التي اعتبرها فلسفية، وأنظر فيما إذا كانت تربك الفكر وفيما إذا كان هذا الإرباك يعوقه عن البحث أم هو باعث توتر يدفعه نحو البحث؟",
+                "PhiH.textAnalysis.aristotleProblem.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.aristotleProblem.answers.a1.title": "الإجابة عن المهمة الأولى:",
+                "PhiH.textAnalysis.aristotleProblem.answers.a1.content": "الحجج الأخرى التي اعتمدها أرسطو للدفاع عن قيمة طرح المشكل في كل بحث:<br>- \"الراحة التي سيلقاها الفكر في المستقبل تفترضُ حالاً للصعوبات الموجودة من قبل\": أي أنّ التقدّم المعرفي لا يتحقّق إلا انطلاقاً من وعي مسبق بالصعوبات المطروحة.<br>- \"إنه لمن المُحال فكَّ عقدة دون معرفتها\": فلا يمكن حلّ مشكل لا نعرف كنهه وحدوده.<br>- \"ارتباك الفكر يجعلُ هذه العقدة بَيْنَة بالنسبة إلى موضوع بحثنا\": فالارتباك مؤشّر على وجود عقدة تستدعي الفحص والبحث.<br>- \"الفكر المرتبك يشبه إنساناً مقيَّداً عاجزاً عن التقدّم\": فطالما لم يُطرح المشكل بوضوح يبقى الفكر مقيّداً.<br>- \"من يبحث دون أن يطرح المشكل أولاً شبيه بمن يمشي دون أن يعرف إلى أين هو ذاهب\": فغياب المشكل يفقِد البحث وجهته.<br>- يصبح الباحث \"مُعَرَّضاً إلى أن لا يعرف ما إذا كان قد عثر على المطلوب أم لا\": فلا معيار للحكم على النتائج في غياب مشكل موجّه.<br><br><strong>المنزلة التي يتبوؤها المشكل في البحث الفلسفي:</strong> يتبوّأ المشكل منزلة الشرط المنهجي الأول والأساسي لكل بحث فلسفي؛ فهو ليس عائقاً عارضاً بل هو الشرط الذي يمنح البحث وجهته ومعياره ومشروعيّته، ولذلك لا بحث فلسفي دون مشكل.",
+                "PhiH.textAnalysis.aristotleProblem.answers.a2.title": "الإجابة عن المهمة الثانية:",
+                "PhiH.textAnalysis.aristotleProblem.answers.a2.content": "الأسئلة الفلسفية هي:<br>- <strong>هل الحقيقة واحدة؟</strong> سؤال فلسفي لأنه يتعلق بطبيعة الحقيقة وماهيتها ووحدتها أو تعدّدها، وهو سؤال ميتافيزيقي/معرفي كلّي.<br>- <strong>هل يعقل أن نخشى الموت؟</strong> سؤال فلسفي لأنه سؤال وجودي/أخلاقي يتعلق بمعنى الموت وموقف الإنسان منه، ولا يُحلّ بطريقة تجريبية.<br>- <strong>هل أن العلم قادر على أن يجيب عن كل أسئلة الإنسان؟</strong> سؤال فلسفي إبستمولوجي يتعلق بحدود العلم وإمكاناته وقيمته المعرفية.<br><br>أما الأسئلة الأخرى فهي غير فلسفية:<br>- <strong>هل من حل للتصحر؟</strong> سؤال علمي/تقني تجريبي.<br>- <strong>هل تعتبر عليسة شخصية تاريخية؟</strong> سؤال تاريخي وضعي.<br>- <strong>هل من تأثير للطلاق في تكوين شخصية الأبناء؟</strong> سؤال سوسيولوجي/نفسي تجريبي.",
+                "PhiH.textAnalysis.aristotleProblem.answers.a3.title": "الإجابة عن المهمة الثالثة:",
+                "PhiH.textAnalysis.aristotleProblem.answers.a3.content": "الأسئلة الفلسفية تمثّل \"عقداً\" بالمعنى الذي يقصده أرسطو؛ فالعقدة في هذا السياق تعني الصعوبة الفكرية التي تُربك الفكر وتشلّ حركته وتستدعي فحصاً وطرحاً منهجياً. والأسئلة الفلسفية عُقَد لأنها:<br>- تطرح مسائل كلّية لا تُحلّ بإجابة نهائية.<br>- تثير ارتباكاً فكرياً عميقاً يستدعي تأسيساً منهجياً.<br>- تتشابك فيها مستويات السؤال والجواب.<br>- لا تنفكّ تتجدّد وتُعاد صياغتها.",
+                "PhiH.textAnalysis.aristotleProblem.answers.a4.title": "الإجابة عن المهمة الرابعة:",
+                "PhiH.textAnalysis.aristotleProblem.answers.a4.content": "الأسئلة الفلسفية تُربك الفكر، لكنّ هذا الإرباك ليس عائقاً عن البحث، بل هو باعث توتر إيجابي يدفعه نحو البحث. فالإرباك حالة صحية تُنبّه الفكر إلى وجود عقدة ينبغي فحصها، فيتحوّل الإرباك من قيد إلى محرّك. وهذا ما يؤكده أرسطو حين يشبّه الفكر المرتبك بإنسان مقيَّد، لكنّ هذا القيد نفسه هو ما يدفع إلى فحص الصعوبات وطرح المشكل بعناية. الإرباك إذن ليس عائقاً بل محرّك للبحث.",
+                "PhiH.textAnalysis.aristotleProblem.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.aristotleProblem.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.aristotleProblem.analysis.thesis.content": "يرى أرسطو أنّ طرح المشكل (الصعوبة) بشكل مسبق وصريح هو الشرط الضروري لكل بحث فلسفي حقيقي؛ فالبحث دون مشكل محدّد يشبه المشي دون وجهة، لا يمكن التحقّق من نتائجه ولا توجيه جهده. المشكل هو ما يمنح البحث معناه ووجهته ومعياره.",
+                "PhiH.textAnalysis.aristotleProblem.analysis.mechanisms.title": "آليات اشتغال المشكل في البحث:",
+                "PhiH.textAnalysis.aristotleProblem.analysis.mechanisms.content": "- <strong>تحديد الصعوبة وطرحها بعناية:</strong> فلا يكفي أن نُدرك وجود صعوبة، بل يجب أن نُحسن طرحها.<br>- <strong>فحص كل الصعوبات قبل الشروع في البحث:</strong> حتى تتّضح معالم العقدة وحدودها.<br>- <strong>الوعي بأنّ ارتباك الفكر علامة على وجود عقدة:</strong> فيكون الارتباك مؤشّراً منهجياً لا عائقاً.<br>- <strong>اعتبار المشكل موجّهاً للبحث:</strong> فهو الذي يحدّد المسار ومعايير الحكم على النتائج.",
+                "PhiH.textAnalysis.aristotleProblem.analysis.consequences.title": "نتائج غياب طرح المشكل:",
+                "PhiH.textAnalysis.aristotleProblem.analysis.consequences.content": "- <strong>التيه في البحث دون وجهة:</strong> كمن يمشي دون أن يعرف إلى أين هو ذاهب.<br>- <strong>العجز عن الحكم على النتائج:</strong> فلا يعرف الباحث هل عثر على المطلوب أم لا.<br>- <strong>ضياع الجهد دون فائدة:</strong> لأنّ الفكر يبقى مرتطماً في صعوبات غير محدّدة.<br>- <strong>بقاء الفكر مقيّداً:</strong> لعدم تحرّره من الإرباك بالانتقال منه إلى طرح صريح للمشكل.",
+                "PhiH.textAnalysis.aristotleProblem.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.aristotleProblem.analysis.significance.content": "يحمل النص دلالة منهجية عميقة؛ فالمشكل عند أرسطو ليس مجرّد عائق سلبي يُعترض به على البحث، بل هو شرط إمكانه ومحرّكه الأساسي. والمشكل هنا ذو طابع منهجي قبل أن يكون مضمونياً؛ أي أن اهتمام أرسطو لا يتعلّق بمشكل خاص في مجال معيّن، بل بقواعد المنهج التي ينبغي أن تقود الفكر في كل بحث. وهذا ما يجعل النص حجّة قوية على أولوية الأشكلة (la problématisation) في البحث الفلسفي، وعلى أنّ قيمة البحث لا تُختزل في نتيجته، بل تكمن في المشكل الذي دفعه ووجّهه."
+            }
+        };
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

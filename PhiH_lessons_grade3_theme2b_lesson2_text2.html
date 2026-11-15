@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: في تعريف التفاوت - ج.ج. روسو - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#1b5e20">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Forest Green / Hunter Green Color Palette */
+        :root {
+            --primary-color: #1b5e20;
+            --primary-light: #2e7d32;
+            --primary-dark: #0d3d12;
+            --secondary-color: #33691e;
+            --secondary-light: #558b2f;
+            --secondary-dark: #1e4010;
+            --accent-color: #2e7d32;
+            --accent-light: #4caf50;
+            --accent-dark: #1b5e20;
+            --light-color: #f1f8e9;
+            --dark-color: #0d2810;
+            --text-color: #2e3d28;
+            --heading-color: #1a2e1a;
+            --background-color: #f7fcf3;
+            --card-bg: #ffffff;
+            --definition-bg: #e8f5e0;
+            --border-color: #b9d6a8;
+            --table-even-bg: #f1f8e9;
+            --table-hover-bg: #dcedc8;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(27, 94, 32, 0.1), 0 2px 4px -1px rgba(27, 94, 32, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(27, 94, 32, 0.1), 0 4px 6px -2px rgba(27, 94, 32, 0.05);
+            --gradient-primary: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+            --gradient-secondary: linear-gradient(135deg, #1e4010 0%, #33691e 100%);
+            --gradient-accent: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            --gradient-gray: linear-gradient(135deg, #558b2f 0%, #33691e 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #4caf50;
+            --primary-light: #66bb6a;
+            --primary-dark: #2e7d32;
+            --secondary-color: #558b2f;
+            --secondary-light: #7cb342;
+            --secondary-dark: #33691e;
+            --accent-color: #66bb6a;
+            --accent-light: #81c784;
+            --accent-dark: #4caf50;
+            --light-color: #1e4010;
+            --dark-color: #0d2810;
+            --text-color: #c8e6c9;
+            --heading-color: #f1f8e9;
+            --background-color: #0d2810;
+            --card-bg: #163a1a;
+            --definition-bg: #1e4010;
+            --border-color: #33691e;
+            --table-even-bg: #163a1a;
+            --table-hover-bg: #1e4010;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+            --gradient-secondary: linear-gradient(135deg, #33691e 0%, #558b2f 100%);
+            --gradient-accent: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            --gradient-gray: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%);
+        }
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(27, 94, 32, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(51, 105, 30, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(46, 125, 50, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-author-info {
+            flex: 1;
+        }
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        li strong {
+            color: var(--primary-color);
+        }
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(27, 94, 32, 0.05), transparent);
+        }
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        body.rtl .PhiH-text-card ul li {
+            border-left: none;
+            border-right: 3px solid var(--primary-color);
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .PhiH-author-image {
+                align-self: center;
+            }
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.rousseauInequality.title">تحليل النص: في تعريف التفاوت - ج.ج. روسو</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.rousseauInequality.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        <section class="PhiH-text-analysis-section">
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.rousseauInequality.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.rousseauInequality.introduction.content">
+                    هناك وعي حادّ لدى جميع الناس بمدى التباس بعض الألفاظ في العديد من مجالات التواصل. وهو أمرٌ يدفع بالبعض إلى الاعتقاد أن التعريف كفيلٌ بوضع حدّ لالتباس الألفاظ بضبط دلالة دقيقة لها. ولكن الاضطلاع بذلك عن كثب سرعان ما يكشف مدى صعوبة هذه المهمة، بما تفتح عليه من مجالات اشتغال واصطلاحات مختلفة تستدعي حذراً أكبر.
+                </p>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.rousseauInequality.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.rousseauInequality.text.content">
+                        أتصوّر[1] أن ثمة ضربين من التفاوت في الجنس البشري: أحدهما أسميه طبيعياً أو فيزيائياً، لأن الطبيعة[2] هي التي أوجدته، ويتمثل في الاختلاف في السن وفي الصحة وفي قوى الجسم وفي خصائص الفكر أو النفس. أما التفاوت الثاني فيمكن تسميته تفاوتاً أخلاقياً أو سياسياً، لأنه توقّف على ضرب من المواضعة[3] وأقيم بفعل موافقة البشر أو على الأقل نتيجة سماحهم بذلك. ويتمثل هذا التفاوت في الامتيازات المختلفة التي تتمتع بها قلة من الناس على حساب البعض الآخر، كأن تكون أكثر ثراءً وحظوة ونفوذاً، بل وتعمل على إخضاعهم.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.rousseauInequality.text.source">ج.ج. روسو، في أصل التفاوت بين البشر، ترجمة لجنة التأليف - J.-J. Rousseau, Discours sur l'origine et les fondements de l'inégalité parmi les hommes, Nathan 1981, p.45</em></p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.rousseauInequality.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <img src="assets/images/jean_jacques_rousseau.jpg" alt="جون جاك روسو" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.rousseauInequality.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.rousseauInequality.author.content">
+                            جون جاك روسو (1712-1778) فيلسوف سويسري، من أبرز رموز حركة التنوير، عُرف بقوله "يولد الإنسان حراً ولكنه في الأغلال حيثما كان". وبيّن كيف تنقلب ميزة "قابلية الاكتمال" بحكم تلك الحرية لتصبح عامل تراجع له وانحطاط بدل أن تتقدّم به. وقد قاد ذلك روسو إلى النظر في أسباب ما يعانيه الإنسان من ضروب اللامساواة والاستبداد، فبيّن أن لا حلّ لهذا الوضع إلا بتأسيس تعاقدي للحكم السياسي ومشروع تربوي للأفراد. من أهم مؤلفاته: "خطاب حول العلوم والفنون" (1750)، "خطاب حول أصل التفاوت بين البشر وأسسه" (1755)، "في العقد الاجتماعي" (1762)، و"إميل أو في التربية" (1762).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.rousseauInequality.footnotes.title">الهوامش</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.rousseauInequality.footnotes.item1"><strong>(1) "أتصوّر":</strong> النص مقتطف من المقال الذي كتبه روسو إجابة عن سؤال طرحته أكاديمية ديجون: ما هو أصل التفاوت بين البشر؟</li>
+                    <li data-i18n="PhiH.textAnalysis.rousseauInequality.footnotes.item2"><strong>(2) "الطبيعة":</strong> تميّز بين الطبيعة الخارجية والطبيعة البشرية، وفي سياق النص تحيل الطبيعة إلى المبدأ المنظّم للكون كما تحيل إلى المعطى الفطري للكائنات.</li>
+                    <li data-i18n="PhiH.textAnalysis.rousseauInequality.footnotes.item3"><strong>(3) "المواضعة":</strong> هي الاتفاق، وتحيل في سياق التصوّر الروسوي للتعاقد كأساس لتنظيم المجتمع.</li>
+                </ul>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.rousseauInequality.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.rousseauInequality.questions.q1">أرصد التعريفين اللذين قدّمهما روسو للتفاوت.</li>
+                    <li data-i18n="PhiH.textAnalysis.rousseauInequality.questions.q2">أعيّن مجال اشتغال كلّ منهما وأحدّد وظيفة كلّ من مفهوم الطبيعة ومفهوم المواضعة في التعريف الذي انتهى إليه الكاتب.</li>
+                    <li data-i18n="PhiH.textAnalysis.rousseauInequality.questions.q3">أقارن بين لفظي اختلاف وامتياز وأستخلص موقف الكاتب من مدى مشروعية التفاوت بين البشر.</li>
+                    <li data-i18n="PhiH.textAnalysis.rousseauInequality.questions.q4">أنطلق من التعريف الذي انتهى إليه الكاتب في النص وأستنتج ما يمكن أن تكون عليه وظيفته في أشكلة التفاوت بين البشر.</li>
+                </ol>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.rousseauInequality.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.rousseauInequality.answers.a1.title">الإجابة عن المهمة الأولى:</h5>
+                    <p data-i18n="PhiH.textAnalysis.rousseauInequality.answers.a1.content">
+                        يقدّم روسو تعريفين للتفاوت في الجنس البشري:
+                        <br><br>
+                        <strong>1. التفاوت الطبيعي أو الفيزيائي:</strong> وهو التفاوت الذي أوجدته الطبيعة، ويتمثّل في "الاختلاف في السنّ وفي الصحة وفي قوى الجسم وفي خصائص الفكر أو النفس".
+                        <br><br>
+                        <strong>2. التفاوت الأخلاقي أو السياسي:</strong> وهو التفاوت الذي توقّف على "ضرب من المواضعة"، وأقيم بفعل موافقة البشر أو على الأقل نتيجة سماحهم بذلك، ويتمثّل في "الامتيازات المختلفة التي تتمتع بها قلّة من الناس على حساب البعض الآخر، كأن تكون أكثر ثراءً وحظوة ونفوذاً، بل وتعمل على إخضاعهم".
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.rousseauInequality.answers.a2.title">الإجابة عن المهمة الثانية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.rousseauInequality.answers.a2.content">
+                        <strong>1. مجال اشتغال كلّ تعريف:</strong>
+                        <br>- <strong>مجال التفاوت الطبيعي:</strong> هو مجال الطبيعة والجسد والنفس، أي كلّ ما هو معطى فطري لا دخل للإنسان في صنعه (السنّ، الصحة، القوى، الخصائص الذهنية والنفسية). وهو مجال فيزيائي/أنثروبولوجي.
+                        <br>- <strong>مجال التفاوت الأخلاقي/السياسي:</strong> هو مجال العلاقات الاجتماعية والثقافية والسياسية، أي كلّ ما هو مبنِيٌّ على المواضعة والاتفاق (الثروة، الحظوة، النفوذ، الإخضاع). وهو مجال أخلاقي-سياسي-تاريخي.
+                        <br><br>
+                        <strong>2. وظيفة مفهوم الطبيعة:</strong>
+                        <br>يؤدّي مفهوم الطبيعة في تعريف روسو وظيفة مزدوجة:
+                        <br>- وظيفة <em>تفسيرية</em>: بيان أنّ التفاوت الطبيعي ليس من صُنع الإنسان، بل هو معطى فطري.
+                        <br>- وظيفة <em>نقدية</em>: نزع الطابع الطبيعي عن التفاوت الأخلاقي، أي إظهار أنّه ليس طبيعياً كما يُشيع المدافعون عن الوضع القائم.
+                        <br><br>
+                        <strong>3. وظيفة مفهوم المواضعة:</strong>
+                        <br>يؤدّي مفهوم المواضعة وظيفة كاشفة ونقدية:
+                        <br>- وظيفة <em>كاشفة</em>: الكشف عن الأصل البشري-التاريخي للتفاوت الأخلاقي (اتفاق، سماح، موافقة).
+                        <br>- وظيفة <em>نقدية</em>: جعل التفاوت الأخلاقي موضوعاً للمساءلة والتغيير، لأنّه من صُنع البشر، فيمكن تغييره أو إعادة تأسيسه على أسس عادلة.
+                        <br>- وظيفة <em>تأسيسية</em>: تهيئة المجال لتصوّر بديل تعاقدي (العقد الاجتماعي) يعيد تأسيس العلاقات السياسية على أسس مشروعة.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.rousseauInequality.answers.a3.title">الإجابة عن المهمة الثالثة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.rousseauInequality.answers.a3.content">
+                        <strong>1. المقارنة بين لفظي "اختلاف" و"امتياز":</strong>
+                        <br><br>
+                        <strong>- الاختلاف:</strong> لفظ وصفي-حيادي، يدلّ على مجرّد وجود فروق بين الأشياء أو الأفراد، دون أن ينطوي على حكم قيمة أو علاقة domination. فالقول بأنّ "زيداً أطول من عمرو" هو وصف لاختلاف طبيعي، لا يتضمن أيّ حكم على عدالته أو ظلمه.
+                        <br><br>
+                        <strong>- الامتياز:</strong> لفظ معياري-تقييمي، يدلّ على ميزة مُناحة لبعض الأفراد على حساب آخرين، وينطوي على علاقة قوّة وإخضاع. فالقول بأنّ "قلّة تتمتع بامتيازات على حساب البعض الآخر" هو وصف يتضمن حكماً ضمنياً على لا-عدالة هذا الوضع.
+                        <br><br>
+                        <strong>2. الموقف الروسوي من مشروعية التفاوت:</strong>
+                        <br><br>
+                        - <strong>التفاوت الطبيعي:</strong> لا يُسائل روسو مشروعيته، لأنه معطى فطري، ولا يمكن للبشر تغييره، وهو خارج نطاق الأخلاق والسياسة.
+                        <br>- <strong>التفاوت الأخلاقي/السياسي:</strong> يرفض روسو مشروعيته، لأنه ليس طبيعياً، بل هو من صُنع البشر (مواضعة، سماح)، ويهدف إلى إخضاع الأغلبية لمصلحة قلّة. وهو بهذا الوضع غير مشروع، ويستدعي إعادة تأسيس سياسي.
+                        <br><br>
+                        وبهذا، فإنّ التمييز بين الاختلاف والامتياز هو ما يتيح لروسو التمييز بين تفاوت مشروع (طبيعي) وتفاوت غير مشروع (أخلاقي/سياسي)، أي بين تفاوت لا يمكن تجاوزه (فيزيائي) وتفاوت يجب تجاوزه أو إعادة تأسيسه (سياسي).
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.rousseauInequality.answers.a4.title">الإجابة عن المهمة الرابعة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.rousseauInequality.answers.a4.content">
+                        ينطلق روسو من تعريفٍ مزدوج للتفاوت، ليؤسّس بذلك إشكالية فلسفية-سياسية عميقة. ويمكن بيان وظيفة هذا التعريف في أشكلة التفاوت على النحو التالي:
+                        <br><br>
+                        <strong>1. وظيفة التمييز:</strong> التعريف يفرّق بين ما يبدو في الخطاب الشائع نوعاً واحداً من التفاوت، فيكشف أنّ تحت لفظ "التفاوت" نوعين مختلفين في الطبيعة والمنشأ والحكم الأخلاقي. وهذا التمييز هو شرط إمكان أيّ أشكلة حقيقية.
+                        <br><br>
+                        <strong>2. وظيفة إبطال الطابع "الطبيعي" للتفاوت الأخلاقي:</strong> التعريف يبيّن أنّ التفاوت الأخلاقي ليس طبيعياً (خلافاً لما يُشيع)، بل هو من صُنع البشر (مواضعة، سماح). وبهذا يُبطل التعريف التبرير الطبيعي للامتيازات الاجتماعية، ويفتح المجال لمساءلتها.
+                        <br><br>
+                        <strong>3. وظيفة توليد السؤال الفلسفي:</strong> بمجرّد أن يتبيّن أنّ التفاوت الأخلاقي ليس طبيعياً، يطرح السؤال: <em>كيف نشأ هذا التفاوت؟</em> و<em>هل هو مشروع؟</em> و<em>كيف يمكن تجاوزه أو إعادة تأسيسه؟</em> وهذا هو السؤال الفلسفي-السياسي الجديد الذي يفتحه التعريف.
+                        <br><br>
+                        <strong>4. وظيفة إعادة توجيه البحث:</strong> التعريف لا يقتصر على التمييز، بل يوجّه البحث نحو أصل التفاوت الأخلاقي (بحث جينيالوجي/تاريخي)، ونحو إمكان تأسيس سياسي بديل (العقد الاجتماعي).
+                        <br><br>
+                        <strong>5. الوظيفة الأشكالية الخاصة:</strong> التعريف الروسوي ليس تعريفاً "تحديدياً" لماهية التفاوت (كما يفعل المناطقة في الحدّ الحقيقي)، بل هو <em>تعريف تفريقي-تفكيكي</em> يفرّق بين ما يُخلَط، ويزيل الالتباس، ويؤسّس على هذا التفريق إمكان أشكلة التفاوت. فهو تعريف-أداة، لا تعريف-غاية.
+                    </p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.rousseauInequality.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.rousseauInequality.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.rousseauInequality.analysis.thesis.content">
+                        يرى روسو أنّ التفاوت في الجنس البشري ليس نوعاً واحداً، بل نوعان: تفاوت طبيعي/فيزيائي (من صُنع الطبيعة)، وتفاوت أخلاقي/سياسي (من صُنع البشر عبر المواضعة والسماح). ومن خلال هذا التمييز، يكشف روسو أنّ التفاوت الأخلاقي ليس طبيعياً كما يُشيع المدافعون عن الوضع القائم، بل هو من صُنع البشر، ومن ثمّ فهو قابل للمساءلة والتغيير. وبهذا التمييز، يفتح روسو إشكالية فلسفية-سياسية جديدة: ما أصل التفاوت الأخلاقي؟ وهل هو مشروع؟ وكيف يمكن إعادة تأسيسه؟
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.rousseauInequality.analysis.mechanisms.title">آليات التعريف الروسوي:</h5>
+                    <p data-i18n="PhiH.textAnalysis.rousseauInequality.analysis.mechanisms.content">
+                        - <strong>التعريف التفريقي (par distinction):</strong> روسو لا يعرّف التفاوت بتحديد جنسه وفصله (كما يفعل المناطقة)، بل يعرّفه بتفريقه إلى نوعين مختلفين في الطبيعة والمنشأ.
+                        <br>- <strong>الرجوع إلى المنشأ:</strong> كلّ نوع يُعرَّف بالرجوع إلى أصله: الطبيعة للتفاوت الطبيعي، والمواضعة للتفاوت الأخلاقي.
+                        <br>- <strong>الوصف التفصيلي للمظاهر:</strong> السنّ والصحة والقوى والفكر (للتفاوت الطبيعي)؛ الثروة والحظوة والنفوذ والإخضاع (للتفاوت الأخلاقي).
+                        <br>- <strong>تحديد الوظيفة:</strong> التفاوت الطبيعي وظيفته تفسيرية (يكشف ما هو معطى)، والتفاوت الأخلاقي وظيفته نقدية (يكشف ما هو مصنوع ومشكوك في مشروعيته).
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.rousseauInequality.analysis.consequences.title">نتائج هذا التعريف:</h5>
+                    <p data-i18n="PhiH.textAnalysis.rousseauInequality.analysis.consequences.content">
+                        - <strong>نزع الطابع الطبيعي عن التفاوت الأخلاقي:</strong> لم يبقَ التفاوت الأخلاقي معطى أزلياً، بل أضحى نتاجاً تاريخياً بشرياً.
+                        <br>- <strong>إبطال التبرير الطبيعي للامتيازات:</strong> إذا كان التفاوت الأخلاقي ليس طبيعياً، فلا يمكن تبريره بأنّه "من سنن الطبيعة" أو "من إرادة الله".
+                        <br>- <strong>فتح إشكالية الأصل:</strong> كيف نشأ التفاوت الأخلاقي من التفاوت الطبيعي؟ هذه هي الإشكالية الجديدة التي يفتحها التعريف.
+                        <br>- <strong>توجيه المشروع السياسي:</strong> بما أنّ التفاوت الأخلاقي من صُنع البشر، فيمكن إعادة تأسيسه على أسس عادلة (العقد الاجتماعي).
+                        <br>- <strong>تأسيس مشروع تربوي:</strong> بما أنّ "قابلية الاكتمال" يمكن أن تنقلب إلى عامل انحطاط، فلا بدّ من مشروع تربوي (إميل) يعيد توجيه الإنسان نحو الخير.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.rousseauInequality.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.rousseauInequality.analysis.significance.content">
+                        يحمل هذا النص دلالة منهجية وسياسية عميقة:
+                        <br><br>
+                        <strong>1. دلالة منهجية:</strong> يقدّم روسو نموذجاً للتعريف التفريقي-النقدي، الذي لا يكتفي بتحديد الماهية، بل يفرّق بين ما يُخلَط، ويكشف عن الأصول، ويؤسّس على هذا التفريق إمكان المساءلة. وهذا النموذج يجيب عن إشكال التمهيد: إذا كان التعريف يبدو مهمة صعبة، فمن لأنّه لا يقتصر على شرح اللفظ، بل يتضمن تمييزاً وتفريقاً ونقداً.
+                        <br><br>
+                        <strong>2. دلالة سياسية:</strong> يفتح النص الباب أمام مشروع روسو النقدي الكبير: نقد المجتمع القائم، والكشف عن أنّ التفاوت الأخلاقي ليس طبيعياً بل مصنوعاً، ومن ثمّ يمكن تجاوزه عبر تعاقد اجتماعي جديد. النص هو النواة الأولى لمشروع "العقد الاجتماعي".
+                        <br><br>
+                        <strong>3. دلالة فلسفية عامة:</strong> يبيّن النص أنّ التعريف ليس مجرّد عملية لغوية أو منطقية محايدة، بل هو عملية فلسفية تتضمن اختيارات نظرية وإيحاءات سياسية. التعريف الجيد هو ما يفتح إشكالية، لا ما يُغلقها.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.rousseauInequality.level": "3ème Secondaire - Philosophie",
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.rousseauInequality.title": "Analyse du texte : De la définition de l'inégalité - J.-J. Rousseau",
+                "PhiH.textAnalysis.rousseauInequality.introduction.title": "Introduction",
+                "PhiH.textAnalysis.rousseauInequality.introduction.content": "Il existe chez tous les hommes une conscience aiguë de l'ambiguïté de certains mots dans de nombreux domaines de la communication. Cela pousse certains à croire que la définition suffirait à mettre fin à l'ambiguïté des mots en fixant pour eux une signification précise. Mais l'examen attentif de cette tâche révèle bientôt sa difficulté, par les champs de travail qu'elle ouvre et les terminologies diverses qu'elle exige, appelant une plus grande prudence.",
+                "PhiH.textAnalysis.rousseauInequality.text.title": "Le texte",
+                "PhiH.textAnalysis.rousseauInequality.text.content": "Je conçois [1] qu'il y a deux sortes d'inégalité dans le genre humain : l'une, que j'appelle naturelle ou physique, parce que la nature [2] l'a établie, et qui consiste dans la différence d'âge, de santé, des forces du corps et des qualités de l'esprit ou de l'âme ; l'autre, qu'on peut appeler inégalité morale ou politique, parce qu'elle dépend d'une sorte de convention [3] et qu'elle est établie, ou du moins autorisée, par le consentement des hommes. Celle-ci consiste dans les différents privilèges dont quelques-uns jouissent au préjudice des autres, comme d'être plus riches, plus honorés, plus puissants, ou même de s'en faire obéir.",
+                "PhiH.textAnalysis.rousseauInequality.text.source": "J.-J. Rousseau, Discours sur l'origine et les fondements de l'inégalité parmi les hommes, Nathan 1981, p.45",
+                "PhiH.textAnalysis.rousseauInequality.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.rousseauInequality.author.alt": "Jean-Jacques Rousseau",
+                "PhiH.textAnalysis.rousseauInequality.author.content": "Jean-Jacques Rousseau (1712-1778), philosophe suisse, l'un des plus éminents représentants du mouvement des Lumières, connu pour sa phrase « L'homme est né libre, et partout il est dans les fers ». Il a montré comment l'avantage de la « perfectibilité » se retourne, du fait de cette liberté, en facteur de régression et de décadence au lieu de le faire progresser. Cela a conduit Rousseau à examiner les causes des formes d'inégalité et de despotisme dont souffre l'homme, et à montrer qu'il n'y a d'autre solution à cet état qu'une fondation contractuelle du gouvernement politique et un projet éducatif pour les individus. Parmi ses œuvres majeures : « Discours sur les sciences et les arts » (1750), « Discours sur l'origine et les fondements de l'inégalité parmi les hommes » (1755), « Du contrat social » (1762), et « Émile ou De l'éducation » (1762).",
+                "PhiH.textAnalysis.rousseauInequality.footnotes.title": "Notes de bas de page",
+                "PhiH.textAnalysis.rousseauInequality.footnotes.item1": "<strong>(1) « Je conçois » :</strong> le texte est extrait de l'essai que Rousseau a écrit en réponse à une question posée par l'Académie de Dijon : quelle est l'origine de l'inégalité parmi les hommes ?",
+                "PhiH.textAnalysis.rousseauInequality.footnotes.item2": "<strong>(2) « La nature » :</strong> on distingue la nature extérieure et la nature humaine ; dans le contexte du texte, la nature renvoie au principe organisateur du cosmos ainsi qu'à la donnée innée des êtres.",
+                "PhiH.textAnalysis.rousseauInequality.footnotes.item3": "<strong>(3) « Convention » :</strong> c'est l'accord, et elle renvoie dans le contexte de la conception rousseauiste au contrat comme fondement de l'organisation de la société.",
+                "PhiH.textAnalysis.rousseauInequality.questions.title": "Tâches",
+                "PhiH.textAnalysis.rousseauInequality.questions.q1": "Je repère les deux définitions que Rousseau donne de l'inégalité.",
+                "PhiH.textAnalysis.rousseauInequality.questions.q2": "Je détermine le champ de travail de chacune d'elles et je précise la fonction de chacun des concepts de nature et de convention dans la définition à laquelle l'auteur aboutit.",
+                "PhiH.textAnalysis.rousseauInequality.questions.q3": "Je compare les deux termes de différence et de privilège et je dégage la position de l'auteur sur le degré de légitimité de l'inégalité entre les hommes.",
+                "PhiH.textAnalysis.rousseauInequality.questions.q4": "Je pars de la définition à laquelle l'auteur aboutit dans le texte et j'en déduis ce que peut être sa fonction dans la problématisation de l'inégalité entre les hommes.",
+                "PhiH.textAnalysis.rousseauInequality.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.rousseauInequality.answers.a1.title": "Réponse à la première tâche :",
+                "PhiH.textAnalysis.rousseauInequality.answers.a1.content": "Rousseau donne deux définitions de l'inégalité dans le genre humain :<br><br><strong>1. L'inégalité naturelle ou physique :</strong> c'est l'inégalité que la nature a établie, et qui consiste dans « la différence d'âge, de santé, des forces du corps et des qualités de l'esprit ou de l'âme ».<br><br><strong>2. L'inégalité morale ou politique :</strong> c'est l'inégalité qui dépend d'« une sorte de convention », et qui est établie, ou du moins autorisée, par le consentement des hommes ; elle consiste dans « les différents privilèges dont quelques-uns jouissent au préjudice des autres, comme d'être plus riches, plus honorés, plus puissants, ou même de s'en faire obéir ».",
+                "PhiH.textAnalysis.rousseauInequality.answers.a2.title": "Réponse à la deuxième tâche :",
+                "PhiH.textAnalysis.rousseauInequality.answers.a2.content": "<strong>1. Champ de travail de chaque définition :</strong><br>- <strong>Champ de l'inégalité naturelle :</strong> c'est le champ de la nature, du corps et de l'âme, c'est-à-dire tout ce qui est une donnée innée sur laquelle l'homme n'a pas de prise (âge, santé, forces, qualités mentales et psychiques). C'est un champ physique/anthropologique.<br>- <strong>Champ de l'inégalité morale/politique :</strong> c'est le champ des relations sociales, culturelles et politiques, c'est-à-dire tout ce qui est construit sur la convention et l'accord (richesse, honneur, puissance, obéissance). C'est un champ moral-politique-historique.<br><br><strong>2. Fonction du concept de nature :</strong><br>Le concept de nature remplit chez Rousseau une double fonction :<br>- une fonction <em>explicative</em> : montrer que l'inégalité naturelle n'est pas un produit humain, mais une donnée innée ;<br>- une fonction <em>critique</em> : dénaturaliser l'inégalité morale, c'est-à-dire montrer qu'elle n'est pas naturelle comme le prétendent les défenseurs de l'ordre établi.<br><br><strong>3. Fonction du concept de convention :</strong><br>Le concept de convention remplit une fonction révélatrice et critique :<br>- une fonction <em>révélatrice</em> : dévoiler l'origine humaine et historique de l'inégalité morale (accord, consentement, autorisation) ;<br>- une fonction <em>critique</em> : faire de l'inégalité morale un objet de questionnement et de transformation, puisqu'elle est un produit humain, elle peut être changée ou refondée sur des bases justes ;<br>- une fonction <em>fondationnelle</em> : préparer la voie à une alternative contractuelle (le contrat social) qui refonde les relations politiques sur des bases légitimes.",
+                "PhiH.textAnalysis.rousseauInequality.answers.a3.title": "Réponse à la troisième tâche :",
+                "PhiH.textAnalysis.rousseauInequality.answers.a3.content": "<strong>1. Comparaison entre les deux termes de « différence » et de « privilège » :</strong><br><br><strong>- La différence :</strong> terme descriptif et neutre, désignant le simple fait qu'il existe des écarts entre les choses ou les individus, sans impliquer de jugement de valeur ni de relation de domination. Dire que « Pierre est plus grand que Paul » est la description d'une différence naturelle, qui ne comporte aucun jugement sur sa justice ou son injustice.<br><br><strong>- Le privilège :</strong> terme normatif et évaluatif, désignant un avantage accordé à certains individus au détriment d'autres, et impliquant une relation de force et d'assujettissement. Dire que « quelques-uns jouissent de privilèges au préjudice des autres » est une description qui comporte un jugement implicite sur l'injustice de cette situation.<br><br><strong>2. La position rousseauiste sur la légitimité de l'inégalité :</strong><br><br>- <strong>L'inégalité naturelle :</strong> Rousseau ne questionne pas sa légitimité, car elle est une donnée innée, que les hommes ne peuvent changer, et qui est hors du champ de la morale et de la politique.<br>- <strong>L'inégalité morale/politique :</strong> Rousseau en refuse la légitimité, car elle n'est pas naturelle mais un produit humain (convention, autorisation), et elle vise à assujettir la majorité au profit d'une minorité. Elle est donc injuste et appelle une refondation politique.<br><br>Ainsi, la distinction entre différence et privilège est ce qui permet à Rousseau de distinguer une inégalité légitime (naturelle) et une inégalité illégitime (morale/politique), c'est-à-dire une inégalité qu'on ne peut dépasser (physique) et une inégalité qu'il faut dépasser ou refonder (politique).",
+                "PhiH.textAnalysis.rousseauInequality.answers.a4.title": "Réponse à la quatrième tâche :",
+                "PhiH.textAnalysis.rousseauInequality.answers.a4.content": "Rousseau part d'une définition double de l'inégalité, pour fonder par là une problématique philosophico-politique profonde. On peut montrer la fonction de cette définition dans la problématisation de l'inégalité de la manière suivante :<br><br><strong>1. Fonction de distinction :</strong> la définition sépare ce qui, dans le discours courant, paraît être un seul type d'inégalité ; elle révèle que sous le mot « inégalité » se trouvent deux types différents par la nature, l'origine et le jugement moral. Cette distinction est la condition de possibilité de toute problématisation véritable.<br><br><strong>2. Fonction d'invalidation du caractère « naturel » de l'inégalité morale :</strong> la définition montre que l'inégalité morale n'est pas naturelle (contrairement à ce qui est répandu), mais un produit humain (convention, autorisation). Elle invalide ainsi la justification naturelle des privilèges sociaux et ouvre la voie à leur mise en question.<br><br><strong>3. Fonction de génération de la question philosophique :</strong> dès qu'il apparaît que l'inégalité morale n'est pas naturelle, se pose la question : <em>comment cette inégalité est-elle née ?</em> et <em>est-elle légitime ?</em> et <em>comment peut-on la dépasser ou la refonder ?</em> C'est là la nouvelle question philosophico-politique que la définition ouvre.<br><br><strong>4. Fonction de réorientation de la recherche :</strong> la définition ne se limite pas à distinguer, mais oriente la recherche vers l'origine de l'inégalité morale (recherche généalogique/historique), et vers la possibilité d'une fondation politique alternative (le contrat social).<br><br><strong>5. La fonction problématisante propre :</strong> la définition rousseauiste n'est pas une définition « déterminative » de la quiddité de l'inégalité (comme le fait le logicien dans la définition réelle), mais une <em>définition différentielle-déconstructrice</em> qui distingue ce qui est confondu, lève l'ambiguïté, et fonde sur cette distinction la possibilité de problématiser l'inégalité. C'est une définition-outil, non une définition-but.",
+                "PhiH.textAnalysis.rousseauInequality.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.rousseauInequality.analysis.thesis.title": "Thèse principale :",
+                "PhiH.textAnalysis.rousseauInequality.analysis.thesis.content": "Rousseau considère que l'inégalité dans le genre humain n'est pas d'un seul type, mais de deux : une inégalité naturelle/physique (établie par la nature) et une inégalité morale/politique (établie par les hommes par convention et autorisation). Par cette distinction, Rousseau révèle que l'inégalité morale n'est pas naturelle comme le prétendent les défenseurs de l'ordre établi, mais un produit humain, et donc susceptible d'être questionnée et transformée. Par cette distinction, Rousseau ouvre une nouvelle problématique philosophico-politique : quelle est l'origine de l'inégalité morale ? est-elle légitime ? comment peut-on la refonder ?",
+                "PhiH.textAnalysis.rousseauInequality.analysis.mechanisms.title": "Mécanismes de la définition rousseauiste :",
+                "PhiH.textAnalysis.rousseauInequality.analysis.mechanisms.content": "- <strong>La définition par distinction :</strong> Rousseau ne définit pas l'inégalité en déterminant son genre et sa différence (comme le font les logiciens), mais en la distinguant en deux types différents par la nature et l'origine.<br>- <strong>Le retour à l'origine :</strong> chaque type est défini par référence à son origine : la nature pour l'inégalité naturelle, la convention pour l'inégalité morale.<br>- <strong>La description détaillée des manifestations :</strong> âge, santé, forces et esprit (pour l'inégalité naturelle) ; richesse, honneur, puissance et assujettissement (pour l'inégalité morale).<br>- <strong>La détermination de la fonction :</strong> l'inégalité naturelle a une fonction explicative (elle révèle ce qui est donné), et l'inégalité morale a une fonction critique (elle révèle ce qui est fabriqué et dont la légitimité est douteuse).",
+                "PhiH.textAnalysis.rousseauInequality.analysis.consequences.title": "Conséquences de cette définition :",
+                "PhiH.textAnalysis.rousseauInequality.analysis.consequences.content": "- <strong>Dénaturalisation de l'inégalité morale :</strong> l'inégalité morale n'est plus une donnée éternelle, mais un produit historique humain.<br>- <strong>Invalidation de la justification naturelle des privilèges :</strong> si l'inégalité morale n'est pas naturelle, on ne peut la justifier comme « loi de la nature » ou « volonté de Dieu ».<br>- <strong>Ouverture de la problématique de l'origine :</strong> comment l'inégalité morale est-elle née de l'inégalité naturelle ? C'est là la nouvelle problématique que la définition ouvre.<br>- <strong>Orientation du projet politique :</strong> puisque l'inégalité morale est un produit humain, elle peut être refondée sur des bases justes (le contrat social).<br>- <strong>Fondation du projet éducatif :</strong> puisque la « perfectibilité » peut se retourner en facteur de décadence, il faut un projet éducatif (Émile) qui réoriente l'homme vers le bien.",
+                "PhiH.textAnalysis.rousseauInequality.analysis.significance.title": "Significations et dimensions du concept :",
+                "PhiH.textAnalysis.rousseauInequality.analysis.significance.content": "Ce texte porte une signification méthodologique et politique profonde :<br><br><strong>1. Signification méthodologique :</strong> Rousseau y présente un modèle de définition différentielle-critique, qui ne se contente pas de déterminer la quiddité, mais distingue ce qui est confondu, révèle les origines, et fonde sur cette distinction la possibilité du questionnement. Ce modèle répond à l'aporie de l'introduction : si la définition paraît une tâche difficile, c'est qu'elle ne se réduit pas à l'explication du mot, mais comporte distinction, différenciation et critique.<br><br><strong>2. Signification politique :</strong> le texte ouvre la voie au grand projet critique de Rousseau : la critique de la société établie, la révélation que l'inégalité morale n'est pas naturelle mais fabriquée, et donc qu'elle peut être dépassée par un nouveau contrat social. Le texte est le noyau premier du projet du « Contrat social ».<br><br><strong>3. Signification philosophique générale :</strong> le texte montre que la définition n'est pas une opération linguistique ou logique neutre, mais une opération philosophique qui comporte des choix théoriques et des implications politiques. Une bonne définition est celle qui ouvre une problématique, non celle qui la ferme."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.rousseauInequality.level": "3rd Secondary - Philosophy",
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.rousseauInequality.title": "Text Analysis: On the Definition of Inequality - J.-J. Rousseau",
+                "PhiH.textAnalysis.rousseauInequality.introduction.title": "Introduction",
+                "PhiH.textAnalysis.rousseauInequality.introduction.content": "There is in all people an acute awareness of the ambiguity of certain words in many fields of communication. This leads some to believe that definition would suffice to put an end to the ambiguity of words by fixing a precise meaning for them. But a close examination of this task soon reveals its difficulty, by the fields of work it opens and the various terminologies it requires, calling for greater caution.",
+                "PhiH.textAnalysis.rousseauInequality.text.title": "The Text",
+                "PhiH.textAnalysis.rousseauInequality.text.content": "I conceive [1] that there are two kinds of inequality in the human race: one, which I call natural or physical, because nature [2] has established it, and which consists in the difference of age, health, bodily strength and qualities of mind or soul; the other, which may be called moral or political inequality, because it depends on a kind of convention [3] and is established, or at least authorized, by the consent of men. This one consists in the different privileges that some enjoy at the expense of others, such as being richer, more honored, more powerful, or even making themselves obeyed.",
+                "PhiH.textAnalysis.rousseauInequality.text.source": "J.-J. Rousseau, Discourse on the Origin and Foundations of Inequality among Men, Nathan 1981, p.45",
+                "PhiH.textAnalysis.rousseauInequality.author.title": "Author Presentation",
+                "PhiH.textAnalysis.rousseauInequality.author.alt": "Jean-Jacques Rousseau",
+                "PhiH.textAnalysis.rousseauInequality.author.content": "Jean-Jacques Rousseau (1712-1778), Swiss philosopher, one of the most eminent representatives of the Enlightenment movement, known for his phrase \"Man is born free, and everywhere he is in chains\". He showed how the advantage of \"perfectibility\" is turned, by virtue of that freedom, into a factor of regression and decadence instead of advancing him. This led Rousseau to examine the causes of the forms of inequality and despotism from which man suffers, and to show that there is no solution to this state except a contractual foundation of political government and an educational project for individuals. Among his major works: \"Discourse on the Sciences and the Arts\" (1750), \"Discourse on the Origin and Foundations of Inequality among Men\" (1755), \"On the Social Contract\" (1762), and \"Emile, or On Education\" (1762).",
+                "PhiH.textAnalysis.rousseauInequality.footnotes.title": "Footnotes",
+                "PhiH.textAnalysis.rousseauInequality.footnotes.item1": "<strong>(1) \"I conceive\":</strong> the text is extracted from the essay that Rousseau wrote in response to a question posed by the Academy of Dijon: what is the origin of inequality among men?",
+                "PhiH.textAnalysis.rousseauInequality.footnotes.item2": "<strong>(2) \"Nature\":</strong> a distinction is made between external nature and human nature; in the context of the text, nature refers to the organizing principle of the cosmos as well as to the innate given of beings.",
+                "PhiH.textAnalysis.rousseauInequality.footnotes.item3": "<strong>(3) \"Convention\":</strong> it is the agreement, and in the context of the Rousseauist conception it refers to the contract as the foundation of the organization of society.",
+                "PhiH.textAnalysis.rousseauInequality.questions.title": "Tasks",
+                "PhiH.textAnalysis.rousseauInequality.questions.q1": "I identify the two definitions that Rousseau gives of inequality.",
+                "PhiH.textAnalysis.rousseauInequality.questions.q2": "I determine the field of work of each of them and I specify the function of each of the concepts of nature and convention in the definition to which the author arrives.",
+                "PhiH.textAnalysis.rousseauInequality.questions.q3": "I compare the two terms of difference and privilege and I draw out the author's position on the degree of legitimacy of inequality among men.",
+                "PhiH.textAnalysis.rousseauInequality.questions.q4": "I start from the definition to which the author arrives in the text and I deduce what may be its function in the problematization of inequality among men.",
+                "PhiH.textAnalysis.rousseauInequality.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.rousseauInequality.answers.a1.title": "Answer to the first task:",
+                "PhiH.textAnalysis.rousseauInequality.answers.a1.content": "Rousseau gives two definitions of inequality in the human race:<br><br><strong>1. Natural or physical inequality:</strong> it is the inequality that nature has established, and which consists in \"the difference of age, health, bodily strength and qualities of mind or soul\".<br><br><strong>2. Moral or political inequality:</strong> it is the inequality that depends on \"a kind of convention\", and which is established, or at least authorized, by the consent of men; it consists in \"the different privileges that some enjoy at the expense of others, such as being richer, more honored, more powerful, or even making themselves obeyed\".",
+                "PhiH.textAnalysis.rousseauInequality.answers.a2.title": "Answer to the second task:",
+                "PhiH.textAnalysis.rousseauInequality.answers.a2.content": "<strong>1. Field of work of each definition:</strong><br>- <strong>Field of natural inequality:</strong> it is the field of nature, body and soul, that is, all that is an innate given over which man has no hold (age, health, strength, mental and psychic qualities). It is a physical/anthropological field.<br>- <strong>Field of moral/political inequality:</strong> it is the field of social, cultural and political relations, that is, all that is built on convention and agreement (wealth, honor, power, obedience). It is a moral-political-historical field.<br><br><strong>2. Function of the concept of nature:</strong><br>The concept of nature fulfills a double function in Rousseau:<br>- an <em>explanatory</em> function: to show that natural inequality is not a human product but an innate given;<br>- a <em>critical</em> function: to denaturalize moral inequality, that is, to show that it is not natural as the defenders of the established order claim.<br><br><strong>3. Function of the concept of convention:</strong><br>The concept of convention fulfills a revelatory and critical function:<br>- a <em>revelatory</em> function: to unveil the human and historical origin of moral inequality (agreement, consent, authorization);<br>- a <em>critical</em> function: to make moral inequality an object of questioning and transformation, since it is a human product, it can be changed or refounded on just bases;<br>- a <em>foundational</em> function: to prepare the way for a contractual alternative (the social contract) that refounds political relations on legitimate bases.",
+                "PhiH.textAnalysis.rousseauInequality.answers.a3.title": "Answer to the third task:",
+                "PhiH.textAnalysis.rousseauInequality.answers.a3.content": "<strong>1. Comparison between the two terms of \"difference\" and \"privilege\":</strong><br><br><strong>- Difference:</strong> a descriptive and neutral term, designating the simple fact that there are gaps between things or individuals, without implying a value judgment or a relation of domination. Saying that \"Peter is taller than Paul\" is the description of a natural difference, which contains no judgment on its justice or injustice.<br><br><strong>- Privilege:</strong> a normative and evaluative term, designating an advantage granted to some individuals at the expense of others, and implying a relation of force and subjection. Saying that \"some enjoy privileges at the expense of others\" is a description that contains an implicit judgment on the injustice of this situation.<br><br><strong>2. The Rousseauist position on the legitimacy of inequality:</strong><br><br>- <strong>Natural inequality:</strong> Rousseau does not question its legitimacy, for it is an innate given that men cannot change, and which is outside the field of morality and politics.<br>- <strong>Moral/political inequality:</strong> Rousseau refuses its legitimacy, for it is not natural but a human product (convention, authorization), and it aims to subject the majority to the profit of a minority. It is therefore unjust and calls for a political refoundation.<br><br>Thus, the distinction between difference and privilege is what allows Rousseau to distinguish a legitimate inequality (natural) and an illegitimate inequality (moral/political), that is, an inequality that cannot be overcome (physical) and an inequality that must be overcome or refounded (political).",
+                "PhiH.textAnalysis.rousseauInequality.answers.a4.title": "Answer to the fourth task:",
+                "PhiH.textAnalysis.rousseauInequality.answers.a4.content": "Rousseau starts from a double definition of inequality, in order to found thereby a deep philosophico-political problematic. The function of this definition in the problematization of inequality can be shown as follows:<br><br><strong>1. Function of distinction:</strong> the definition separates what, in ordinary discourse, appears to be a single type of inequality; it reveals that under the word \"inequality\" lie two types different in nature, origin and moral judgment. This distinction is the condition of possibility of any genuine problematization.<br><br><strong>2. Function of invalidation of the \"natural\" character of moral inequality:</strong> the definition shows that moral inequality is not natural (contrary to what is widespread), but a human product (convention, authorization). It thus invalidates the natural justification of social privileges and opens the way to their questioning.<br><br><strong>3. Function of generation of the philosophical question:</strong> as soon as it appears that moral inequality is not natural, the question arises: <em>how did this inequality come about?</em> and <em>is it legitimate?</em> and <em>how can it be overcome or refounded?</em> This is the new philosophico-political question that the definition opens.<br><br><strong>4. Function of reorientation of research:</strong> the definition does not limit itself to distinguishing, but orients research toward the origin of moral inequality (genealogical/historical research), and toward the possibility of an alternative political foundation (the social contract).<br><br><strong>5. The proper problematizing function:</strong> the Rousseauist definition is not a \"determinative\" definition of the quiddity of inequality (as the logician does in the real definition), but a <em>differential-deconstructive definition</em> that distinguishes what is confused, removes ambiguity, and founds on this distinction the possibility of problematizing inequality. It is a definition-tool, not a definition-goal.",
+                "PhiH.textAnalysis.rousseauInequality.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.rousseauInequality.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.rousseauInequality.analysis.thesis.content": "Rousseau holds that inequality in the human race is not of a single type, but of two: a natural/physical inequality (established by nature) and a moral/political inequality (established by men through convention and authorization). By this distinction, Rousseau reveals that moral inequality is not natural as the defenders of the established order claim, but a human product, and therefore susceptible of being questioned and transformed. By this distinction, Rousseau opens a new philosophico-political problematic: what is the origin of moral inequality? is it legitimate? how can it be refounded?",
+                "PhiH.textAnalysis.rousseauInequality.analysis.mechanisms.title": "Mechanisms of the Rousseauist definition:",
+                "PhiH.textAnalysis.rousseauInequality.analysis.mechanisms.content": "- <strong>Definition by distinction:</strong> Rousseau does not define inequality by determining its genus and difference (as logicians do), but by distinguishing it into two types different in nature and origin.<br>- <strong>Return to the origin:</strong> each type is defined by reference to its origin: nature for natural inequality, convention for moral inequality.<br>- <strong>Detailed description of manifestations:</strong> age, health, strength and mind (for natural inequality); wealth, honor, power and subjection (for moral inequality).<br>- <strong>Determination of function:</strong> natural inequality has an explanatory function (it reveals what is given), and moral inequality has a critical function (it reveals what is fabricated and whose legitimacy is doubtful).",
+                "PhiH.textAnalysis.rousseauInequality.analysis.consequences.title": "Consequences of this definition:",
+                "PhiH.textAnalysis.rousseauInequality.analysis.consequences.content": "- <strong>Denaturalization of moral inequality:</strong> moral inequality is no longer an eternal given, but a human historical product.<br>- <strong>Invalidation of the natural justification of privileges:</strong> if moral inequality is not natural, one cannot justify it as \"law of nature\" or \"will of God\".<br>- <strong>Opening of the problematic of origin:</strong> how did moral inequality arise from natural inequality? This is the new problematic that the definition opens.<br>- <strong>Orientation of the political project:</strong> since moral inequality is a human product, it can be refounded on just bases (the social contract).<br>- <strong>Foundation of the educational project:</strong> since \"perfectibility\" can turn into a factor of decadence, an educational project (Emile) is needed to reorient man toward the good.",
+                "PhiH.textAnalysis.rousseauInequality.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.rousseauInequality.analysis.significance.content": "This text carries a profound methodological and political significance:<br><br><strong>1. Methodological significance:</strong> Rousseau presents a model of differential-critical definition, which does not content itself with determining the quiddity, but distinguishes what is confused, reveals origins, and founds on this distinction the possibility of questioning. This model responds to the aporia of the introduction: if definition appears a difficult task, it is because it is not reduced to the explanation of the word, but involves distinction, differentiation and critique.<br><br><strong>2. Political significance:</strong> the text opens the way to Rousseau's great critical project: the critique of established society, the revelation that moral inequality is not natural but fabricated, and therefore can be overcome by a new social contract. The text is the first nucleus of the project of the \"Social Contract\".<br><br><strong>3. General philosophical significance:</strong> the text shows that definition is not a neutral linguistic or logical operation, but a philosophical operation that involves theoretical choices and political implications. A good definition is one that opens a problematic, not one that closes it."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.rousseauInequality.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.rousseauInequality.title": "تحليل النص: في تعريف التفاوت - ج.ج. روسو",
+                "PhiH.textAnalysis.rousseauInequality.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.rousseauInequality.introduction.content": "هناك وعي حادّ لدى جميع الناس بمدى التباس بعض الألفاظ في العديد من مجالات التواصل. وهو أمرٌ يدفع بالبعض إلى الاعتقاد أن التعريف كفيلٌ بوضع حدّ لالتباس الألفاظ بضبط دلالة دقيقة لها. ولكن الاضطلاع بذلك عن كثب سرعان ما يكشف مدى صعوبة هذه المهمة، بما تفتح عليه من مجالات اشتغال واصطلاحات مختلفة تستدعي حذراً أكبر.",
+                "PhiH.textAnalysis.rousseauInequality.text.title": "النص",
+                "PhiH.textAnalysis.rousseauInequality.text.content": "أتصوّر[1] أن ثمة ضربين من التفاوت في الجنس البشري: أحدهما أسميه طبيعياً أو فيزيائياً، لأن الطبيعة[2] هي التي أوجدته، ويتمثل في الاختلاف في السن وفي الصحة وفي قوى الجسم وفي خصائص الفكر أو النفس. أما التفاوت الثاني فيمكن تسميته تفاوتاً أخلاقياً أو سياسياً، لأنه توقّف على ضرب من المواضعة[3] وأقيم بفعل موافقة البشر أو على الأقل نتيجة سماحهم بذلك. ويتمثل هذا التفاوت في الامتيازات المختلفة التي تتمتع بها قلّة من الناس على حساب البعض الآخر، كأن تكون أكثر ثراءً وحظوة ونفوذاً، بل وتعمل على إخضاعهم.",
+                "PhiH.textAnalysis.rousseauInequality.text.source": "ج.ج. روسو، في أصل التفاوت بين البشر، ترجمة لجنة التأليف - J.-J. Rousseau, Discours sur l'origine et les fondements de l'inégalité parmi les hommes, Nathan 1981, p.45",
+                "PhiH.textAnalysis.rousseauInequality.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.rousseauInequality.author.alt": "جون جاك روسو",
+                "PhiH.textAnalysis.rousseauInequality.author.content": "جون جاك روسو (1712-1778) فيلسوف سويسري، من أبرز رموز حركة التنوير، عُرف بقوله \"يولد الإنسان حراً ولكنه في الأغلال حيثما كان\". وبيّن كيف تنقلب ميزة \"قابلية الاكتمال\" بحكم تلك الحرية لتصبح عامل تراجع له وانحطاط بدل أن تتقدّم به. وقد قاد ذلك روسو إلى النظر في أسباب ما يعانيه الإنسان من ضروب اللامساواة والاستبداد، فبيّن أن لا حلّ لهذا الوضع إلا بتأسيس تعاقدي للحكم السياسي ومشروع تربوي للأفراد. من أهم مؤلفاته: \"خطاب حول العلوم والفنون\" (1750)، \"خطاب حول أصل التفاوت بين البشر وأسسه\" (1755)، \"في العقد الاجتماعي\" (1762)، و\"إميل أو في التربية\" (1762).",
+                "PhiH.textAnalysis.rousseauInequality.footnotes.title": "الهوامش",
+                "PhiH.textAnalysis.rousseauInequality.footnotes.item1": "<strong>(1) \"أتصوّر\":</strong> النص مقتطف من المقال الذي كتبه روسو إجابة عن سؤال طرحته أكاديمية ديجون: ما هو أصل التفاوت بين البشر؟",
+                "PhiH.textAnalysis.rousseauInequality.footnotes.item2": "<strong>(2) \"الطبيعة\":</strong> تميّز بين الطبيعة الخارجية والطبيعة البشرية، وفي سياق النص تحيل الطبيعة إلى المبدأ المنظّم للكون كما تحيل إلى المعطى الفطري للكائنات.",
+                "PhiH.textAnalysis.rousseauInequality.footnotes.item3": "<strong>(3) \"المواضعة\":</strong> هي الاتفاق، وتحيل في سياق التصوّر الروسوي للتعاقد كأساس لتنظيم المجتمع.",
+                "PhiH.textAnalysis.rousseauInequality.questions.title": "المهام",
+                "PhiH.textAnalysis.rousseauInequality.questions.q1": "أرصد التعريفين اللذين قدّمهما روسو للتفاوت.",
+                "PhiH.textAnalysis.rousseauInequality.questions.q2": "أعيّن مجال اشتغال كلّ منهما وأحدّد وظيفة كلّ من مفهوم الطبيعة ومفهوم المواضعة في التعريف الذي انتهى إليه الكاتب.",
+                "PhiH.textAnalysis.rousseauInequality.questions.q3": "أقارن بين لفظي اختلاف وامتياز وأستخلص موقف الكاتب من مدى مشروعية التفاوت بين البشر.",
+                "PhiH.textAnalysis.rousseauInequality.questions.q4": "أنطلق من التعريف الذي انتهى إليه الكاتب في النص وأستنتج ما يمكن أن تكون عليه وظيفته في أشكلة التفاوت بين البشر.",
+                "PhiH.textAnalysis.rousseauInequality.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.rousseauInequality.answers.a1.title": "الإجابة عن المهمة الأولى:",
+                "PhiH.textAnalysis.rousseauInequality.answers.a1.content": "يقدّم روسو تعريفين للتفاوت في الجنس البشري:<br><br><strong>1. التفاوت الطبيعي أو الفيزيائي:</strong> وهو التفاوت الذي أوجدته الطبيعة، ويتمثّل في \"الاختلاف في السنّ وفي الصحة وفي قوى الجسم وفي خصائص الفكر أو النفس\".<br><br><strong>2. التفاوت الأخلاقي أو السياسي:</strong> وهو التفاوت الذي توقّف على \"ضرب من المواضعة\"، وأقيم بفعل موافقة البشر أو على الأقل نتيجة سماحهم بذلك، ويتمثّل في \"الامتيازات المختلفة التي تتمتع بها قلّة من الناس على حساب البعض الآخر، كأن تكون أكثر ثراءً وحظوة ونفوذاً، بل وتعمل على إخضاعهم\".",
+                "PhiH.textAnalysis.rousseauInequality.answers.a2.title": "الإجابة عن المهمة الثانية:",
+                "PhiH.textAnalysis.rousseauInequality.answers.a2.content": "<strong>1. مجال اشتغال كلّ تعريف:</strong><br>- <strong>مجال التفاوت الطبيعي:</strong> هو مجال الطبيعة والجسد والنفس، أي كلّ ما هو معطى فطري لا دخل للإنسان في صنعه (السنّ، الصحة، القوى، الخصائص الذهنية والنفسية). وهو مجال فيزيائي/أنثروبولوجي.<br>- <strong>مجال التفاوت الأخلاقي/السياسي:</strong> هو مجال العلاقات الاجتماعية والثقافية والسياسية، أي كلّ ما هو مبنِيٌّ على المواضعة والاتفاق (الثروة، الحظوة، النفوذ، الإخضاع). وهو مجال أخلاقي-سياسي-تاريخي.<br><br><strong>2. وظيفة مفهوم الطبيعة:</strong><br>يؤدّي مفهوم الطبيعة في تعريف روسو وظيفة مزدوجة:<br>- وظيفة <em>تفسيرية</em>: بيان أنّ التفاوت الطبيعي ليس من صُنع الإنسان، بل هو معطى فطري.<br>- وظيفة <em>نقدية</em>: نزع الطابع الطبيعي عن التفاوت الأخلاقي، أي إظهار أنّه ليس طبيعياً كما يُشيع المدافعون عن الوضع القائم.<br><br><strong>3. وظيفة مفهوم المواضعة:</strong><br>يؤدّي مفهوم المواضعة وظيفة كاشفة ونقدية:<br>- وظيفة <em>كاشفة</em>: الكشف عن الأصل البشري-التاريخي للتفاوت الأخلاقي (اتفاق، سماح، موافقة).<br>- وظيفة <em>نقدية</em>: جعل التفاوت الأخلاقي موضوعاً للمساءلة والتغيير، لأنّه من صُنع البشر، فيمكن تغييره أو إعادة تأسيسه على أسس عادلة.<br>- وظيفة <em>تأسيسية</em>: تهيئة المجال لتصوّر بديل تعاقدي (العقد الاجتماعي) يعيد تأسيس العلاقات السياسية على أسس مشروعة.",
+                "PhiH.textAnalysis.rousseauInequality.answers.a3.title": "الإجابة عن المهمة الثالثة:",
+                "PhiH.textAnalysis.rousseauInequality.answers.a3.content": "<strong>1. المقارنة بين لفظي \"اختلاف\" و\"امتياز\":</strong><br><br><strong>- الاختلاف:</strong> لفظ وصفي-حيادي، يدلّ على مجرّد وجود فروق بين الأشياء أو الأفراد، دون أن ينطوي على حكم قيمة أو علاقة إخضاع. فالقول بأنّ \"زيداً أطول من عمرو\" هو وصف لاختلاف طبيعي، لا يتضمن أيّ حكم على عدالته أو ظلمه.<br><br><strong>- الامتياز:</strong> لفظ معياري-تقييمي، يدلّ على ميزة مُناحة لبعض الأفراد على حساب آخرين، وينطوي على علاقة قوّة وإخضاع. فالقول بأنّ \"قلّة تتمتع بامتيازات على حساب البعض الآخر\" هو وصف يتضمن حكماً ضمنياً على لا-عدالة هذا الوضع.<br><br><strong>2. الموقف الروسوي من مشروعية التفاوت:</strong><br><br>- <strong>التفاوت الطبيعي:</strong> لا يُسائل روسو مشروعيته، لأنه معطى فطري، ولا يمكن للبشر تغييره، وهو خارج نطاق الأخلاق والسياسة.<br>- <strong>التفاوت الأخلاقي/السياسي:</strong> يرفض روسو مشروعيته، لأنه ليس طبيعياً، بل هو من صُنع البشر (مواضعة، سماح)، ويهدف إلى إخضاع الأغلبية لمصلحة قلّة. وهو بهذا الوضع غير مشروع، ويستدعي إعادة تأسيس سياسي.<br><br>وبهذا، فإنّ التمييز بين الاختلاف والامتياز هو ما يتيح لروسو التمييز بين تفاوت مشروع (طبيعي) وتفاوت غير مشروع (أخلاقي/سياسي)، أي بين تفاوت لا يمكن تجاوزه (فيزيائي) وتفاوت يجب تجاوزه أو إعادة تأسيسه (سياسي).",
+                "PhiH.textAnalysis.rousseauInequality.answers.a4.title": "الإجابة عن المهمة الرابعة:",
+                "PhiH.textAnalysis.rousseauInequality.answers.a4.content": "ينطلق روسو من تعريفٍ مزدوج للتفاوت، ليؤسّس بذلك إشكالية فلسفية-سياسية عميقة. ويمكن بيان وظيفة هذا التعريف في أشكلة التفاوت على النحو التالي:<br><br><strong>1. وظيفة التمييز:</strong> التعريف يفرّق بين ما يبدو في الخطاب الشائع نوعاً واحداً من التفاوت، فيكشف أنّ تحت لفظ \"التفاوت\" نوعين مختلفين في الطبيعة والمنشأ والحكم الأخلاقي. وهذا التمييز هو شرط إمكان أيّ أشكلة حقيقية.<br><br><strong>2. وظيفة إبطال الطابع \"الطبيعي\" للتفاوت الأخلاقي:</strong> التعريف يبيّن أنّ التفاوت الأخلاقي ليس طبيعياً (خلافاً لما يُشيع)، بل هو من صُنع البشر (مواضعة، سماح). وبهذا يُبطل التعريف التبرير الطبيعي للامتيازات الاجتماعية، ويفتح المجال لمساءلتها.<br><br><strong>3. وظيفة توليد السؤال الفلسفي:</strong> بمجرّد أن يتبيّن أنّ التفاوت الأخلاقي ليس طبيعياً، يطرح السؤال: <em>كيف نشأ هذا التفاوت؟</em> و<em>هل هو مشروع؟</em> و<em>كيف يمكن تجاوزه أو إعادة تأسيسه؟</em> وهذا هو السؤال الفلسفي-السياسي الجديد الذي يفتحه التعريف.<br><br><strong>4. وظيفة إعادة توجيه البحث:</strong> التعريف لا يقتصر على التمييز، بل يوجّه البحث نحو أصل التفاوت الأخلاقي (بحث جينيالوجي/تاريخي)، ونحو إمكان تأسيس سياسي بديل (العقد الاجتماعي).<br><br><strong>5. الوظيفة الأشكالية الخاصة:</strong> التعريف الروسوي ليس تعريفاً \"تحديدياً\" لماهية التفاوت (كما يفعل المناطقة في الحدّ الحقيقي)، بل هو <em>تعريف تفريقي-تفكيكي</em> يفرّق بين ما يُخلَط، ويزيل الالتباس، ويؤسّس على هذا التفريق إمكان أشكلة التفاوت. فهو تعريف-أداة، لا تعريف-غاية.",
+                "PhiH.textAnalysis.rousseauInequality.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.rousseauInequality.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.rousseauInequality.analysis.thesis.content": "يرى روسو أنّ التفاوت في الجنس البشري ليس نوعاً واحداً، بل نوعان: تفاوت طبيعي/فيزيائي (من صُنع الطبيعة)، وتفاوت أخلاقي/سياسي (من صُنع البشر عبر المواضعة والسماح). ومن خلال هذا التمييز، يكشف روسو أنّ التفاوت الأخلاقي ليس طبيعياً كما يُشيع المدافعون عن الوضع القائم، بل هو من صُنع البشر، ومن ثمّ فهو قابل للمساءلة والتغيير. وبهذا التمييز، يفتح روسو إشكالية فلسفية-سياسية جديدة: ما أصل التفاوت الأخلاقي؟ وهل هو مشروع؟ وكيف يمكن إعادة تأسيسه؟",
+                "PhiH.textAnalysis.rousseauInequality.analysis.mechanisms.title": "آليات التعريف الروسوي:",
+                "PhiH.textAnalysis.rousseauInequality.analysis.mechanisms.content": "- <strong>التعريف التفريقي (par distinction):</strong> روسو لا يعرّف التفاوت بتحديد جنسه وفصله (كما يفعل المناطقة)، بل يعرّفه بتفريقه إلى نوعين مختلفين في الطبيعة والمنشأ.<br>- <strong>الرجوع إلى المنشأ:</strong> كلّ نوع يُعرَّف بالرجوع إلى أصله: الطبيعة للتفاوت الطبيعي، والمواضعة للتفاوت الأخلاقي.<br>- <strong>الوصف التفصيلي للمظاهر:</strong> السنّ والصحة والقوى والفكر (للتفاوت الطبيعي)؛ الثروة والحظوة والنفوذ والإخضاع (للتفاوت الأخلاقي).<br>- <strong>تحديد الوظيفة:</strong> التفاوت الطبيعي وظيفته تفسيرية (يكشف ما هو معطى)، والتفاوت الأخلاقي وظيفته نقدية (يكشف ما هو مصنوع ومشكوك في مشروعيته).",
+                "PhiH.textAnalysis.rousseauInequality.analysis.consequences.title": "نتائج هذا التعريف:",
+                "PhiH.textAnalysis.rousseauInequality.analysis.consequences.content": "- <strong>نزع الطابع الطبيعي عن التفاوت الأخلاقي:</strong> لم يبقَ التفاوت الأخلاقي معطى أزلياً، بل أضحى نتاجاً تاريخياً بشرياً.<br>- <strong>إبطال التبرير الطبيعي للامتيازات:</strong> إذا كان التفاوت الأخلاقي ليس طبيعياً، فلا يمكن تبريره بأنّه \"من سنن الطبيعة\" أو \"من إرادة الله\".<br>- <strong>فتح إشكالية الأصل:</strong> كيف نشأ التفاوت الأخلاقي من التفاوت الطبيعي؟ هذه هي الإشكالية الجديدة التي يفتحها التعريف.<br>- <strong>توجيه المشروع السياسي:</strong> بما أنّ التفاوت الأخلاقي من صُنع البشر، فيمكن إعادة تأسيسه على أسس عادلة (العقد الاجتماعي).<br>- <strong>تأسيس مشروع تربوي:</strong> بما أنّ \"قابلية الاكتمال\" يمكن أن تنقلب إلى عامل انحطاط، فلا بدّ من مشروع تربوي (إميل) يعيد توجيه الإنسان نحو الخير.",
+                "PhiH.textAnalysis.rousseauInequality.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.rousseauInequality.analysis.significance.content": "يحمل هذا النص دلالة منهجية وسياسية عميقة:<br><br><strong>1. دلالة منهجية:</strong> يقدّم روسو نموذجاً للتعريف التفريقي-النقدي، الذي لا يكتفي بتحديد الماهية، بل يفرّق بين ما يُخلَط، ويكشف عن الأصول، ويؤسّس على هذا التفريق إمكان المساءلة. وهذا النموذج يجيب عن إشكال التمهيد: إذا كان التعريف يبدو مهمة صعبة، فمن لأنّه لا يقتصر على شرح اللفظ، بل يتضمن تمييزاً وتفريقاً ونقداً.<br><br><strong>2. دلالة سياسية:</strong> يفتح النص الباب أمام مشروع روسو النقدي الكبير: نقد المجتمع القائم، والكشف عن أنّ التفاوت الأخلاقي ليس طبيعياً بل مصنوعاً، ومن ثمّ يمكن تجاوزه عبر تعاقد اجتماعي جديد. النص هو النواة الأولى لمشروع \"العقد الاجتماعي\".<br><br><strong>3. دلالة فلسفية عامة:</strong> يبيّن النص أنّ التعريف ليس مجرّد عملية لغوية أو منطقية محايدة، بل هو عملية فلسفية تتضمن اختيارات نظرية وإيحاءات سياسية. التعريف الجيد هو ما يفتح إشكالية، لا ما يُغلقها."
+            }
+        };
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: تجربة الحجاج - يورغان هابرماس - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#5b2a86">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Deep Violet / Royal Purple Color Palette */
+        :root {
+            --primary-color: #5b2a86;
+            --primary-light: #7b4ca6;
+            --primary-dark: #3a1a57;
+            --secondary-color: #6b3596;
+            --secondary-light: #8b5ab6;
+            --secondary-dark: #4a2568;
+            --accent-color: #7b4ca6;
+            --accent-light: #9d6bc4;
+            --accent-dark: #5b2a86;
+            --light-color: #f3edf9;
+            --dark-color: #1a0d2b;
+            --text-color: #3a2a4a;
+            --heading-color: #1a0d2b;
+            --background-color: #faf7fd;
+            --card-bg: #ffffff;
+            --definition-bg: #ebe0f5;
+            --border-color: #d0bde6;
+            --table-even-bg: #f3edf9;
+            --table-hover-bg: #e2d3f0;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(91, 42, 134, 0.1), 0 2px 4px -1px rgba(91, 42, 134, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(91, 42, 134, 0.1), 0 4px 6px -2px rgba(91, 42, 134, 0.05);
+            --gradient-primary: linear-gradient(135deg, #5b2a86 0%, #7b4ca6 100%);
+            --gradient-secondary: linear-gradient(135deg, #3a1a57 0%, #6b3596 100%);
+            --gradient-accent: linear-gradient(135deg, #7b4ca6 0%, #5b2a86 100%);
+            --gradient-gray: linear-gradient(135deg, #8b5ab6 0%, #6b3596 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #9d6bc4;
+            --primary-light: #b58ade;
+            --primary-dark: #7b4ca6;
+            --secondary-color: #8b5ab6;
+            --secondary-light: #a678d0;
+            --secondary-dark: #6b3596;
+            --accent-color: #b58ade;
+            --accent-light: #c9a8e8;
+            --accent-dark: #9d6bc4;
+            --light-color: #3a2a4a;
+            --dark-color: #1a0d2b;
+            --text-color: #d8c8e8;
+            --heading-color: #f3edf9;
+            --background-color: #1a0d2b;
+            --card-bg: #2d1a42;
+            --definition-bg: #3a1a57;
+            --border-color: #4a2568;
+            --table-even-bg: #2d1a42;
+            --table-hover-bg: #3a1a57;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #7b4ca6 0%, #9d6bc4 100%);
+            --gradient-secondary: linear-gradient(135deg, #6b3596 0%, #8b5ab6 100%);
+            --gradient-accent: linear-gradient(135deg, #7b4ca6 0%, #5b2a86 100%);
+            --gradient-gray: linear-gradient(135deg, #b58ade 0%, #8b5ab6 100%);
+        }
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(91, 42, 134, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(107, 53, 150, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(123, 76, 166, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-author-info {
+            flex: 1;
+        }
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        li strong {
+            color: var(--primary-color);
+        }
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(91, 42, 134, 0.05), transparent);
+        }
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        body.rtl .PhiH-text-card ul li {
+            border-left: none;
+            border-right: 3px solid var(--primary-color);
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .PhiH-author-image {
+                align-self: center;
+            }
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.habermasArgumentation.title">تحليل النص: تجربة الحجاج - يورغان هابرماس</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.habermasArgumentation.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        <section class="PhiH-text-analysis-section">
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.habermasArgumentation.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.habermasArgumentation.introduction.content">
+                    يبدو أنَّ الاهتمام المتزايد بالحجاج لدى المجتمعات الحديثة يكشف عن نزوع نحو تغليب قوة المنطق على منطق القوة تأميناً لمطلب العيش المشترك. لكن التعامل مع الحجاج كمجرَّد إجراء تقني تُعلَّم فنونه كما تُعلَّم قواعد الحساب يُهدَّد بإفراغه من بعده الأخلاقي، ويستدعي النظر في مكونات الحجاج كتجربة تواصلية معقّدة ومتعدّدة الأبعاد.
+                </p>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.habermasArgumentation.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.habermasArgumentation.text.content">
+                        يمكننا أن نميز في الخطاب الحجاجي بين أوجه ثلاثة:
+                        <br><br>
+                        <strong>الوجه الأول: الحجاج كمسار.</strong> فإذا اعتبرنا هذا الخطاب من حيث هو مسار، يتعلّق الأمر عندئذ بشكل من التواصل غير المؤكد تحقّقه، لأنه ما ينفكّ ينزع نحو الشروط المثلى (...) فالمشاركون في الحجاج مضطرون للتسليم في الغالب بأنَّ بنية تواصلهم (...) تستبعد كلَّ إلزام غير إلزام الحجة الأفضل[1] (...) ومن هذه الناحية، يمكن تصوّر الحجاج على أنه متابعة بوسائل فكرية للنشاط الموجّه نحو التفاهم المتبادل.
+                        <br><br>
+                        <strong>الوجه الثاني: الحجاج كإجراء.</strong> ومن جهة ثانية، ما أن نعتبر الحجاج من حيث هو إجراء، حتى يتعلّق الأمر بشكل من التفاعل منظّم على نحو مخصوص. وبالفعل، إنَّ المسار الاستدلالي للوفاق، وقد نظَّم في شكل تقسيم تعاوني للعمل بين العارض والمعترض، مقتنن بكيفية:
+                        <br>– تجعل المشاركين يبلورون ادعاءً للصلاحية[2] أضحى إشكالياً.
+                        <br>– ويتخلَّصون من ضغط الممارسة والتجربة على نحو افتراضي.
+                        <br>– ويشتبتون بواسطة الحجج وبالحجج وحدها، ما إذا كان الادعاء الذي دافع عنه العارض صائباً أم لا.
+                        <br><br>
+                        <strong>الوجه الثالث: الحجاج كإنتاج للحجج.</strong> وأخيراً، يمكننا النظر إلى الحجاج من زاوية ثالثة: هي إنتاج حجج ملائمة ومقنعة بفعل خصائصها الذاتية التي نتبيّن بفضلها ما إذا كانت ادعاءات الصلاحية يمكن أن تُحترم أو تُرفض. إنَّ الحجج هي تلك الوسائل التي يمكن للاعتراف البيئذاتي بادعاء الصلاحية المزعوم – على نحو فرضي من قبل العارض – أن يحصل فيتحوَّل الرأي إلى معرفة.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.habermasArgumentation.text.source">هابرماس، نظرية الفعل التواصلي، ترجمة لجنة التأليف - Jürgen Habermas, Théorie de l'agir communicationnel, éd. Gallimard, 1980, pp. 41-42</em></p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.habermasArgumentation.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <img src="assets/images/jurgen_habermas.jpg" alt="يورغان هابرماس" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.habermasArgumentation.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.habermasArgumentation.author.content">
+                            يورغان هابرماس (1929) فيلسوف وعالم اجتماع ألماني. ينتسب إلى مدرسة فرانكفورت (انظر تعريفاً بالمدرسة في دعائم الفصل الأول الخاص باليومي). صاغ مفهوماً جديداً للعقل هو العقل التواصلي، واهتم بالتواصل في علاقته بالسلطة والتقنية. واشتهر ببحوثه في أخلاقيات التواصل إلى جانب "كارل أوتو آبل". عوّض الأمر القطعي عند كانط في مجال الأخلاق بمبدأ الحوار، فأخلاقيته عنده تتحدّد في ضوء حوار حر. كما دعا ضد كل عنف إلى مراجعة مفهوم الدولة-الأمة والمواطنة في اتجاه احترام الأقليات. من أشهر كتبه: "النظرية والبراكسيس" (1963)، "المعرفة والمنفعة" (1968)، "العلم والتقنية كإيديولوجيا" (1968)، "العقل والمشروعية" (1973)، "بعد ماركس" (1976)، "نظرية الفعل التواصلي" (1981)، "الأخلاق والتواصل" (1983)، "في أخلاقيات الحوار" (1992)، "الحق والديمقراطية: بين الواقع والمعايير" (1993)، "الحقيقة والتبرير" (1999).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.habermasArgumentation.footnotes.title">الهوامش</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.habermasArgumentation.footnotes.item1"><strong>(1) "الحجة الأفضل":</strong> تتمتع هذه الحجة بنفوذ غير إكراهي، وهي ليست بالضرورة الحجة الأفضل على الإطلاق، وإنما هي الأفضل في سياق تداولي مخصوص. وقوّتها ليست مضادة للعقل ما دامت ملازمة للحوار بما هو اختيار معقول والتزام بالأفضل كأساس لكل حوار.</li>
+                    <li data-i18n="PhiH.textAnalysis.habermasArgumentation.footnotes.item2"><strong>(2) "الصلاحية":</strong> يميّز الكاتب بين الصلاحية الخيرية القائمة على التطابق بين الحقيقة والواقع، والصلاحية الصورية التي تعني الانسجام الداخلي للخطاب من ناحية، والصلاحية المنبثقة عن إجماع المشاركين في النقاش وتوافقهم من ناحية أخرى.</li>
+                </ul>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.habermasArgumentation.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.habermasArgumentation.questions.q1">أحدّد الوسائل التي يستوجبها الحجاج والوسائل التي يستبعدها.</li>
+                    <li data-i18n="PhiH.textAnalysis.habermasArgumentation.questions.q2">أرصد أوجه الحجاج في النصّ وأبيّن طبيعة كلّ وجه منها.</li>
+                    <li data-i18n="PhiH.textAnalysis.habermasArgumentation.questions.q3">أبيّن البعد التعاوني في الحجاج.</li>
+                    <li data-i18n="PhiH.textAnalysis.habermasArgumentation.questions.q4">أبيّن ما إذا كان الوفاق كافياً لنقل الفكرة من مستوى الرأي إلى مستوى المعرفة.</li>
+                </ol>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.habermasArgumentation.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.habermasArgumentation.answers.a1.title">الإجابة عن المهمة الأولى:</h5>
+                    <p data-i18n="PhiH.textAnalysis.habermasArgumentation.answers.a1.content">
+                        <strong>أ. الوسائل التي يستوجبها الحجاج:</strong>
+                        <br>1. <strong>الحجة الأفضل:</strong> "تستبعد كلَّ إلزام غير إلزام الحجة الأفضل"؛ فالحجة الأفضل هي الآلية المركزية للحجاج.
+                        <br>2. <strong>بلورة ادعاء الصلاحية:</strong> "تجعل المشاركين يبلورون ادعاءً للصلاحية أضحى إشكالياً"؛ فلا حجاج دون ادعاء صلاحية قابل للمساءلة.
+                        <br>3. <strong>التجريد من ضغط الممارسة والتجربة:</strong> "ويتخلَّصون من ضغط الممارسة والتجربة على نحو افتراضي"؛ أي تأجيل البتّ العملي للبحث في الصلاحية.
+                        <br>4. <strong>الاقتصار على الحجج:</strong> "ويشتبتون بواسطة الحجج وبالحجج وحدها"؛ فلا يُقبل إلا الحجة كوسيلة للفصل في الادعاء.
+                        <br>5. <strong>التنظيم التعاوني:</strong> "تقسيم تعاوني للعمل بين العارض والمعترض"؛ فالحجاج يفترض أدواراً منظمة ومتكاملة.
+                        <br>6. <strong>إنتاج الحجج الملائمة والمقنعة:</strong> "إنتاج حجج ملائمة ومقنعة بفعل خصائصها الذاتية".
+                        <br>7. <strong>الاعتراف البيئذاتي:</strong> "الاعتراف البيئذاتي بادعاء الصلاحية المزعوم"؛ فالحجاج يفترض اعترافاً متبادلاً بين المشاركين.
+                        <br><br>
+                        <strong>ب. الوسائل التي يستبعدها الحجاج:</strong>
+                        <br>1. <strong>كل إلزام غير إلزام الحجة الأفضل:</strong> أي الإكراه والسلطة والعنف والإيعاز والتهديد. فالحجاج لا يقبل إلا سلطة الحجة.
+                        <br>2. <strong>ضغط الممارسة والتجربة المباشر:</strong> أي الحسم الفوري للمسألة بالرجوع إلى الواقع، بدل البحث في الصلاحية.
+                        <br>3. <strong>الوسائل غير الحجاجية:</strong> كالإقناع العاطفي، والخطابة الديماغوجية، والتلاعب النفسي، والاستمالة، والتضليل. فالحجاج لا يقبل إلا الحجج.
+                        <br>4. <strong>الادعاء غير القابل للمساءلة:</strong> أي الادعاء الذي لا يقبل أن يُشكَّك فيه. فالحجاج يفترض ادعاءً "أضحى إشكالياً".
+                        <br><br>
+                        <strong>الخلاصة:</strong> الحجاج يستوجب كل ما يخدم "الحجة الأفضل" (بلورة الادعاء، التجريد، التنظيم التعاوني، إنتاج الحجج، الاعتراف المتبادل)، ويستبعد كل ما يخرج عن سلطان الحجة (الإكراه، العنف، الضغط المباشر، الوسائل غير الحجاجية، الادعاءات غير القابلة للمساءلة).
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.habermasArgumentation.answers.a2.title">الإجابة عن المهمة الثانية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.habermasArgumentation.answers.a2.content">
+                        يرصد هابرماس ثلاثة أوجه للحجاج، لكلّ وجه طبيعة خاصة:
+                        <br><br>
+                        <strong>1. الحجاج كمسار (كما Process):</strong>
+                        <br>– <em>الطبيعة:</em> شكل من أشكال التواصل غير المؤكد تحقّقه.
+                        <br>– <em>التوجّه:</em> ينزع نحو "الشروط المثلى" للتواصل.
+                        <br>– <em>الخصيصة:</em> "متابعة بوسائل فكرية للنشاط الموجّه نحو التفاهم المتبادل". فهو استمرار للتفاعل اليومي، لكن بوسائل فكرية منظمة.
+                        <br>– <em>الوظيفة:</em> توجيه الحجاج نحو التفاهم المتبادل، لا نحو الانتصار على الخصم.
+                        <br><br>
+                        <strong>2. الحجاج كإجراء (كما Procedure):</strong>
+                        <br>– <em>الطبيعة:</em> شكل من التفاعل منظّم على نحو مخصوص.
+                        <br>– <em>البنية:</em> "تقسيم تعاوني للعمل بين العارض والمعترض"؛ فالحجاج إجراء مؤسَّس على توزيع الأدوار.
+                        <br>– <em>الوظائف الثلاث:</em> بلورة ادعاء صلاحية إشكالي؛ التخلص من ضغط الممارسة والتجربة؛ الفصل بالحجج وحدها في صواب الادعاء.
+                        <br>– <em>الوظيفة:</em> توفير الإطار الإجرائي المنظّم للبحث في الصلاحية.
+                        <br><br>
+                        <strong>3. الحجاج كإنتاج للحجج (كما Production of Arguments):</strong>
+                        <br>– <em>الطبيعة:</em> إنتاج حجج ملائمة ومقنعة بفعل خصائصها الذاتية.
+                        <br>– <em>الوظيفة:</em> تمكين "الاعتراف البيئذاتي بادعاء الصلاحية المزعوم".
+                        <br>– <em>الغاية القصوى:</em> "فيتحوَّل الرأي إلى معرفة". فهذه هي الغاية المعرفية للحجاج.
+                        <br><br>
+                        <strong>الخلاصة:</strong> الأوجه الثلاثة متكاملة ولا تنفصل: المسار (البعد التوجّهي) + الإجراء (البعد التنظيمي) + إنتاج الحجج (البعد الإنتاجي-المعرفي). وباجتماعها يتحقق الحجاج كتجربة تواصلية كاملة.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.habermasArgumentation.answers.a3.title">الإجابة عن المهمة الثالثة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.habermasArgumentation.answers.a3.content">
+                        يتجلّى البعد التعاوني في الحجاج في النص من خلال معطيات عدة:
+                        <br><br>
+                        <strong>1. "التقسيم التعاوني للعمل بين العارض والمعترض":</strong> هذه العبارة هي الأوضح دلالةً على البعد التعاوني. فالحجاج ليس صراعاً بين خصمين، بل هو تقسيم للأدوار بين شريكين: أحدهما يقترح (العارض)، والآخر يعترض وينتقد. وكلاهما يعمل على هدف مشترك هو الوصول إلى الحقيقة.
+                        <br><br>
+                        <strong>2. "التفاهم المتبادل" كغاية للمسار:</strong> "متابعة بوسائل فكرية للنشاط الموجّه نحو التفاهم المتبادل". فالحجاج ليس بحثاً عن الانتصار، بل عن التفاهم.
+                        <br><br>
+                        <strong>3. "بلورة ادعاء الصلاحية" بشكل مشترك:</strong> "تجعل المشاركين يبلورون ادعاءً للصلاحية". فالبلورة مشتركة، لا فردية.
+                        <br><br>
+                        <strong>4. "الاعتراف البيئذاتي":</strong> اعتراف كل طرف بالآخر كشريك في البحث. فالحجاج يفترض اعترافاً متبادلاً، لا إقصاءً أو تهميشاً.
+                        <br><br>
+                        <strong>5. "الحجة الأفضل":</strong> الحجة الأفضل ليست حجة أحد الطرفين بالضرورة، بل هي ما يظهر في سياق الحوار المشترك. فالطرفان يعملان معاً على الكشف عنها.
+                        <br><br>
+                        <strong>6. "الوفاق" كغاية للحجاج:</strong> الوفاق هو "المسار الاستدلالي" للحجاج. والوفاق لا يتحقق إلا بالتعاون، لا بالإكراه.
+                        <br><br>
+                        <strong>الخلاصة:</strong> البعد التعاوني في الحجاج يعني أن المشاركين ليسوا خصومًا يتنازعون، بل شركاء يتعاونون على البحث عن الحقيقة. وهذا هو ما يميّز الحجاج عن السجال والمغالطة والسفسطة.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.habermasArgumentation.answers.a4.title">الإجابة عن المهمة الرابعة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.habermasArgumentation.answers.a4.content">
+                        يفيد النصّ بأنّ الوفاق - أو الاعتراف البيئذاتي بادعاء الصلاحية - هو ما يتيح "تحوّل الرأي إلى معرفة". فهل الوفاق كافٍ لذلك؟
+                        <br><br>
+                        <strong>1. في المنظور الهابرماسي: نعم، الوفاق العقلاني كافٍ.</strong> فالوفاق الحجاجي المبني على الحجة الأفضل، في ظروف حوارية حرة وخالية من الإكراه، هو ما يحوّل الرأي إلى معرفة. فالمعرفة عند هابرماس ليست تطابقاً مع الواقع (كما في التصور الكلاسيكي)، بل هي "اعتراف بيئذاتي" بصلاحية الادعاء. وهذا الاعتراف هو ما يمنح الادعاء صفته المعرفية.
+                        <br><br>
+                        <strong>2. لكن الوفاق مشروط بشروط صارمة:</strong>
+                        <br>– يجب أن يكون وفاقاً عقلانياً (مبنياً على الحجة الأفضل، لا على الإكراه أو التضليل).
+                        <br>– يجب أن يتم في ظروف حوارية مثالية (حرية الكلام، تكافؤ الفرص، غياب السلطة).
+                        <br>– يجب أن يكون مبنياً على "الصلاحية" بمعانيها الثلاثة: الصلاحية الخيرية (التطابق مع الواقع)، والصلاحية الصورية (الانسجام الداخلي)، والصلاحية التداولية (إجماع المشاركين).
+                        <br><br>
+                        <strong>3. الفرق بين الوفاق الزائف والوفاق الحقيقي:</strong> هناك وفاق زائف يمكن أن يتحقق تحت ضغط الإكراه أو التضليل، أو في ظروف حوارية غير عادلة. هذا الوفاق لا يحوّل الرأي إلى معرفة، بل يظل رأياً مسيطراً عليه. فالمعرفة الحقيقية تفترض وفاقاً حرّاً وعقلانياً.
+                        <br><br>
+                        <strong>4. الموقف التركيبي:</strong> الوفاق <em>العقلاني</em> المبني على الحجة الأفضل وفي ظروف حوارية حرة كافٍ لنقل الرأي إلى معرفة. أما الوفاق <em>غير العقلاني</em> (المبني على الإكراه أو التضليل أو السلطة)، فلا يكفي، بل يظل رأياً لا معرفة. وبعبارة أدق: المعرفة عند هابرماس هي <em>الوفاق العقلاني المتحقق في ظروف حوارية مثالية</em>، لا مجرد أي وفاق.
+                        <br><br>
+                        <strong>ملاحظة مقارنة مع برلمان:</strong> عند برلمان، الوفاق هو غاية الحجاج، لكنه لا يصل إلى مستوى "المعرفة" بالمعنى العلمي، بل يظل في حقل "المعقولية". أما عند هابرماس، فالوفاق العقلاني هو ما يحوّل الرأي إلى معرفة، لكن بمعنى تداولي لا موضوعي. فالمعرفة عند هابرماس ليست مطابقة للواقع، بل هي "اعتراف بيئذاتي بصلاحية الادعاء" في ظروف حوارية حرة.
+                    </p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.habermasArgumentation.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.habermasArgumentation.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.habermasArgumentation.analysis.thesis.content">
+                        يرى هابرماس أنّ الحجاج ليس مجرّد إجراء تقني، بل هو <em>تجربة تواصلية معقّدة ومتعدّدة الأبعاد</em>، يمكن تحليلها من ثلاث زوايا متكاملة: كمسار (process) ينزع نحو الشروط المثلى للتواصل ويستبعد كل إلزام غير إلزام الحجة الأفضل؛ وكإجراء (procedure) منظّم في شكل تقسيم تعاوني للعمل بين العارض والمعترض؛ وكإنتاج (production) لحجج ملائمة ومقنعة تُتيح الاعتراف البيئذاتي بادعاء الصلاحية، فيتحوّل الرأي إلى معرفة. فالحجاج، بهذا المعنى، هو ما يحوّل التخاطب من مجرّد تبادل للآراء إلى عملية معرفية تداولية، هدفها التفاهم المتبادل والوفاق العقلاني.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.habermasArgumentation.analysis.mechanisms.title">آليات اشتغال الحجاج كتجربة تواصلية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.habermasArgumentation.analysis.mechanisms.content">
+                        - <strong>التوجّه نحو الشروط المثلى:</strong> الحجاج ينزع، بحكم بنيته، نحو ظروف حوارية مثالية، وإن لم يتحقّق فيها تماماً.
+                        <br>- <strong>استبعاد كل إلزام غير إلزام الحجة الأفضل:</strong> الحجاج لا يقبل سلطة إلا سلطة الحجة.
+                        <br>- <strong>التقسيم التعاوني للأدوار:</strong> العارض والمعترض يعملان معاً على البحث في الصلاحية.
+                        <br>- <strong>بلورة ادعاء الصلاحية:</strong> تحويل الادعاء من ادعاء بديهي إلى ادعاء إشكالي قابل للمساءلة.
+                        <br>- <strong>التجريد من ضغط الممارسة:</strong> تأجيل البتّ العملي، للبحث في الصلاحية على نحو افتراضي.
+                        <br>- <strong>الاقتصار على الحجج:</strong> لا وسيلة للفصل في الادعاء إلا الحجة.
+                        <br>- <strong>إنتاج الحجج:</strong> إنتاج حجج ذات خصائص تجعلها ملائمة ومقنعة.
+                        <br>- <strong>الاعتراف البيئذاتي:</strong> اعتراف متبادل بصلاحية الادعاء، بوصفه شرطاً لتحويل الرأي إلى معرفة.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.habermasArgumentation.analysis.consequences.title">النتائج المترتبة على هذه الأطروحة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.habermasArgumentation.analysis.consequences.content">
+                        - <strong>تحويل الحجاج من تقنية إلى تجربة:</strong> الحجاج ليس مجرّد تقنية خطابية تُعلَّم كالحساب، بل تجربة تواصلية ذات أبعاد أخلاقية ومعرفية.
+                        <br>- <strong>نقل مركز الثقل من الحقيقة إلى الصلاحية:</strong> المعرفة ليست مطابقة للواقع، بل اعتراف بيئذاتي بصلاحية الادعاء.
+                        <br>- <strong>تأسيس العقل التواصلي:</strong> العقل ليس ذاتياً (كما عند ديكارت) ولا أداتياً (كما عند مدرسة فرانكفورت الأولى)، بل تواصلياً، يتحقق في الحوار.
+                        <br>- <strong>ربط المعرفة بالديمقراطية:</strong> الحجاج يفترض ظروفاً حوارية حرة، وهي نفسها شروط الديمقراطية. فالمعرفة والديمقراطية مترابطتان.
+                        <br>- <strong>تجاوز النموذج البرهاني:</strong> المعرفة الحجاجية تتجاوز النموذج البرهاني الرياضي، دون أن تلغي الحقيقة، بل تعيد تعريفها تداولياً.
+                        <br>- <strong>تأسيس أخلاقيات الحوار:</strong> الحجاج يفترض اعترافاً متبادلاً بين المشاركين، وهو ما يؤسّس لأخلاقيات تواصلية.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.habermasArgumentation.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.habermasArgumentation.analysis.significance.content">
+                        يحمل هذا النص دلالة فلسفية حاسمة في تاريخ الفلسفة المعاصرة:
+                        <br><br>
+                        <strong>1. دلالة إبستمولوجية:</strong> النص يقدّم نظرية جديدة في المعرفة، تتجاوز النموذجين العقلاني والتجريبي، نحو "معرفة تداولية" تقوم على الاعتراف البيئذاتي. فالمعرفة ليست علاقة بين ذات وموضوع، بل علاقة بين ذوات متحاورة.
+                        <br><br>
+                        <strong>2. دلالة أخلاقية-سياسية:</strong> النص يؤسّس لأخلاقيات الحوار والديمقراطية التداولية. فالحجاج يفترض ظروفاً حوارية حرة، وهي نفسها شروط الديمقراطية. فالمعرفة والديمقراطية والعقل التواصلي مترابطون.
+                        <br><br>
+                        <strong>3. دلالة نقدية:</strong> النص يوجّه نقداً للتعامل مع الحجاج كمجرد "إجراء تقني" (كما في التمهيد)، ويؤكد على بعده الأخلاقي. فالحجاج ليس مجرد فن خطابي، بل هو تجربة إنسانية كاملة.
+                        <br><br>
+                        <strong>4. دلالة أنثروبولوجية:</strong> النص يبيّن أنّ الإنسان كائن تواصلي، يتحقّق وجوده في الحوار والتفاهم. فالعقل ليس جوهراً فردياً، بل هو علاقة تواصلية.
+                        <br><br>
+                        <strong>5. صلة النص بالدرس (الحجاج):</strong> النص يكمل نظرية الحجاج عند برلمان. فبعد أن كان برلمان قد أكّد على الطابع غير الإلزامي للحجاج وربطه بالحرية، يأتي هابرماس ليكشف عن أبعاده التواصلية والبنائية، وعن وظيفته المعرفية (تحويل الرأي إلى معرفة). فإذا كان برلمان قد أسّس للحجاج كمعقولية، فإنّ هابرماس يؤسّس للحجاج كتجربة تواصلية معرفية.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.habermasArgumentation.level": "3ème Secondaire - Philosophie",
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.habermasArgumentation.title": "Analyse du texte : L'expérience de l'argumentation - Jürgen Habermas",
+                "PhiH.textAnalysis.habermasArgumentation.introduction.title": "Introduction",
+                "PhiH.textAnalysis.habermasArgumentation.introduction.content": "Il semble que l'intérêt croissant pour l'argumentation dans les sociétés modernes révèle une tendance à privilégier la force de la logique sur la logique de la force, afin de garantir l'exigence du vivre-ensemble. Mais traiter l'argumentation comme une simple procédure technique dont on enseigne les arts comme on enseigne les règles du calcul menace de la vider de sa dimension éthique, et appelle à considérer les composantes de l'argumentation comme une expérience communicationnelle complexe et multidimensionnelle.",
+                "PhiH.textAnalysis.habermasArgumentation.text.title": "Le texte",
+                "PhiH.textAnalysis.habermasArgumentation.text.content": "Nous pouvons distinguer dans le discours argumentatif trois aspects :<br><br><strong>Le premier aspect : l'argumentation comme processus.</strong> Si nous considérons ce discours en tant que processus, il s'agit alors d'une forme de communication dont la réalisation n'est pas certaine, car elle ne cesse de tendre vers les conditions idéales (...) Les participants à l'argumentation sont donc contraints d'admettre le plus souvent que la structure de leur communication (...) exclut toute contrainte autre que celle du meilleur argument [1] (...) Et de ce point de vue, l'argumentation peut être conçue comme une poursuite par des moyens intellectuels de l'activité orientée vers l'intercompréhension mutuelle.<br><br><strong>Le deuxième aspect : l'argumentation comme procédure.</strong> D'autre part, dès que nous considérons l'argumentation en tant que procédure, il s'agit alors d'une forme d'interaction organisée d'une manière particulière. En effet, le parcours inférentiel du consensus, organisé sous forme de division coopérative du travail entre le proposant et l'opposant, est codifié de manière à :<br>– amener les participants à formuler une prétention à la validité [2] devenue problématique ;<br>– les libérer par anticipation de la pression de la pratique et de l'expérience ;<br>– les amener à décider, au moyen des arguments et des arguments seuls, si la prétention défendue par le proposant est correcte ou non.<br><br><strong>Le troisième aspect : l'argumentation comme production d'arguments.</strong> Enfin, nous pouvons considérer l'argumentation sous un troisième angle : la production d'arguments appropriés et convaincants en vertu de leurs propriétés intrinsèques, grâce auxquelles nous discernons si les prétentions à la validité peuvent être acceptées ou rejetées. Les arguments sont ces moyens par lesquels la reconnaissance intersubjective de la prétention à la validité revendiquée – à titre hypothétique par le proposant – peut avoir lieu, transformant ainsi l'opinion en savoir.",
+                "PhiH.textAnalysis.habermasArgumentation.text.source": "Jürgen Habermas, Théorie de l'agir communicationnel, éd. Gallimard, 1980, pp. 41-42",
+                "PhiH.textAnalysis.habermasArgumentation.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.habermasArgumentation.author.alt": "Jürgen Habermas",
+                "PhiH.textAnalysis.habermasArgumentation.author.content": "Jürgen Habermas (1929) est un philosophe et sociologue allemand. Il appartient à l'École de Francfort (voir la définition de l'école dans les fondements du premier chapitre consacré au quotidien). Il a forgé un nouveau concept de raison, la raison communicationnelle, et s'est intéressé à la communication dans son rapport au pouvoir et à la technique. Il est connu pour ses recherches en éthique de la communication aux côtés de « Karl-Otto Apel ». Il a remplacé l'impératif catégorique kantien en matière de morale par le principe du dialogue, son éthique se déterminant à la lumière d'un dialogue libre. Il a également appelé, contre toute violence, à réviser le concept d'État-nation et de citoyenneté dans le sens du respect des minorités. Parmi ses livres les plus célèbres : « Théorie et Praxis » (1963), « Connaissance et intérêt » (1968), « La technique et la science comme idéologie » (1968), « Raison et légitimité » (1973), « Après Marx » (1976), « Théorie de l'agir communicationnel » (1981), « Morale et communication » (1983), « Éthique de la discussion » (1992), « Droit et démocratie : entre faits et normes » (1993), « Vérité et justification » (1999).",
+                "PhiH.textAnalysis.habermasArgumentation.footnotes.title": "Notes de bas de page",
+                "PhiH.textAnalysis.habermasArgumentation.footnotes.item1": "<strong>(1) « Le meilleur argument » :</strong> cet argument jouit d'une influence non contraignante, et il n'est pas nécessairement le meilleur argument absolu, mais il est le meilleur dans un contexte discursif particulier. Sa force n'est pas opposée à la raison tant qu'elle est inséparable du dialogue comme choix raisonnable et engagement envers le meilleur comme base de tout dialogue.",
+                "PhiH.textAnalysis.habermasArgumentation.footnotes.item2": "<strong>(2) « La validité » :</strong> l'auteur distingue la validité théorique fondée sur la correspondance entre la vérité et la réalité, la validité formelle qui signifie la cohérence interne du discours d'une part, et la validité émanant du consensus et de l'accord des participants à la discussion d'autre part.",
+                "PhiH.textAnalysis.habermasArgumentation.questions.title": "Tâches",
+                "PhiH.textAnalysis.habermasArgumentation.questions.q1": "Je détermine les moyens que requiert l'argumentation et les moyens qu'elle exclut.",
+                "PhiH.textAnalysis.habermasArgumentation.questions.q2": "Je repère les aspects de l'argumentation dans le texte et je précise la nature de chacun d'eux.",
+                "PhiH.textAnalysis.habermasArgumentation.questions.q3": "Je montre la dimension coopérative de l'argumentation.",
+                "PhiH.textAnalysis.habermasArgumentation.questions.q4": "Je montre si le consensus suffit à faire passer l'idée du niveau de l'opinion à celui du savoir.",
+                "PhiH.textAnalysis.habermasArgumentation.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a1.title": "Réponse à la première tâche :",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a1.content": "<strong>A. Les moyens que requiert l'argumentation :</strong><br>1. <strong>Le meilleur argument :</strong> « exclut toute contrainte autre que celle du meilleur argument » ; le meilleur argument est le mécanisme central de l'argumentation.<br>2. <strong>La formulation de la prétention à la validité :</strong> « amener les participants à formuler une prétention à la validité devenue problématique » ; pas d'argumentation sans prétention à la validité susceptible d'être questionnée.<br>3. <strong>La libération anticipée de la pression de la pratique et de l'expérience :</strong> « les libérer par anticipation de la pression de la pratique et de l'expérience » ; c'est-à-dire suspendre la décision pratique pour examiner la validité.<br>4. <strong>Le recours aux arguments seuls :</strong> « au moyen des arguments et des arguments seuls » ; seule l'argument est acceptée comme moyen de trancher la prétention.<br>5. <strong>L'organisation coopérative :</strong> « division coopérative du travail entre le proposant et l'opposant » ; l'argumentation présuppose des rôles organisés et complémentaires.<br>6. <strong>La production d'arguments appropriés et convaincants :</strong> « la production d'arguments appropriés et convaincants en vertu de leurs propriétés intrinsèques ».<br>7. <strong>La reconnaissance intersubjective :</strong> « la reconnaissance intersubjective de la prétention à la validité revendiquée » ; l'argumentation présuppose une reconnaissance mutuelle entre les participants.<br><br><strong>B. Les moyens que l'argumentation exclut :</strong><br>1. <strong>Toute contrainte autre que celle du meilleur argument :</strong> c'est-à-dire la coercition, le pouvoir, la violence, l'injonction, la menace. L'argumentation n'accepte que l'autorité de l'argument.<br>2. <strong>La pression directe de la pratique et de l'expérience :</strong> c'est-à-dire la résolution immédiate de la question par le recours au réel, au lieu de l'examen de la validité.<br>3. <strong>Les moyens non argumentatifs :</strong> comme la persuasion émotionnelle, la rhétorique démagogique, la manipulation psychologique, la séduction, la tromperie. L'argumentation n'accepte que les arguments.<br>4. <strong>La prétention non susceptible d'être questionnée :</strong> c'est-à-dire la prétention qui ne peut être mise en doute. L'argumentation présuppose une prétention « devenue problématique ».<br><br><strong>Conclusion :</strong> l'argumentation requiert tout ce qui sert « le meilleur argument » (formulation de la prétention, libération, organisation coopérative, production d'arguments, reconnaissance mutuelle), et exclut tout ce qui sort de l'autorité de l'argument (contrainte, violence, pression directe, moyens non argumentatifs, prétentions non questionnables).",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a2.title": "Réponse à la deuxième tâche :",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a2.content": "Habermas distingue trois aspects de l'argumentation, chacun ayant une nature particulière :<br><br><strong>1. L'argumentation comme processus :</strong><br>– <em>Nature :</em> une forme de communication dont la réalisation n'est pas certaine.<br>– <em>Orientation :</em> tend vers les « conditions idéales » de la communication.<br>– <em>Caractéristique :</em> « poursuite par des moyens intellectuels de l'activité orientée vers l'intercompréhension mutuelle ». C'est la continuation de l'interaction quotidienne, mais par des moyens intellectuels organisés.<br>– <em>Fonction :</em> orienter l'argumentation vers l'intercompréhension mutuelle, non vers la victoire sur l'adversaire.<br><br><strong>2. L'argumentation comme procédure :</strong><br>– <em>Nature :</em> une forme d'interaction organisée d'une manière particulière.<br>– <em>Structure :</em> « division coopérative du travail entre le proposant et l'opposant » ; l'argumentation est une procédure fondée sur la répartition des rôles.<br>– <em>Trois fonctions :</em> formuler une prétention à la validité problématique ; libérer de la pression de la pratique et de l'expérience ; trancher par les arguments seuls la justesse de la prétention.<br>– <em>Fonction :</em> fournir le cadre procédural organisé pour l'examen de la validité.<br><br><strong>3. L'argumentation comme production d'arguments :</strong><br>– <em>Nature :</em> production d'arguments appropriés et convaincants en vertu de leurs propriétés intrinsèques.<br>– <em>Fonction :</em> permettre « la reconnaissance intersubjective de la prétention à la validité revendiquée ».<br>– <em>But ultime :</em> « transformant ainsi l'opinion en savoir ». C'est là le but cognitif de l'argumentation.<br><br><strong>Conclusion :</strong> les trois aspects sont complémentaires et inséparables : le processus (dimension d'orientation) + la procédure (dimension organisationnelle) + la production d'arguments (dimension productive-cognitive). C'est par leur réunion que l'argumentation se réalise comme expérience communicationnelle complète.",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a3.title": "Réponse à la troisième tâche :",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a3.content": "La dimension coopérative de l'argumentation se manifeste dans le texte à travers plusieurs données :<br><br><strong>1. « La division coopérative du travail entre le proposant et l'opposant » :</strong> cette expression est la plus claire indication de la dimension coopérative. L'argumentation n'est pas un conflit entre deux adversaires, mais une division des rôles entre deux partenaires : l'un propose (le proposant), l'autre objecte et critique (l'opposant). Et tous deux œuvrent à un but commun, la recherche de la vérité.<br><br><strong>2. « L'intercompréhension mutuelle » comme but du processus :</strong> « poursuite par des moyens intellectuels de l'activité orientée vers l'intercompréhension mutuelle ». L'argumentation n'est pas la recherche de la victoire, mais celle de l'intercompréhension.<br><br><strong>3. La « formulation de la prétention à la validité » de manière conjointe :</strong> « amener les participants à formuler une prétention à la validité ». La formulation est conjointe, non individuelle.<br><br><strong>4. « La reconnaissance intersubjective » :</strong> reconnaissance de chaque partie par l'autre comme partenaire dans la recherche. L'argumentation présuppose une reconnaissance mutuelle, non une exclusion ou une marginalisation.<br><br><strong>5. « Le meilleur argument » :</strong> le meilleur argument n'est pas nécessairement celui d'une des deux parties, mais celui qui émerge dans le contexte du dialogue commun. Les deux parties travaillent ensemble à le découvrir.<br><br><strong>6. « Le consensus » comme but de l'argumentation :</strong> le consensus est le « parcours inférentiel » de l'argumentation. Et le consensus ne se réalise que par la coopération, non par la contrainte.<br><br><strong>Conclusion :</strong> la dimension coopérative de l'argumentation signifie que les participants ne sont pas des adversaires qui se disputent, mais des partenaires qui coopèrent à la recherche de la vérité. C'est là ce qui distingue l'argumentation de la polémique, du sophisme et de la sophistique.",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a4.title": "Réponse à la quatrième tâche :",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a4.content": "Le texte indique que le consensus – ou la reconnaissance intersubjective de la prétention à la validité – est ce qui permet « la transformation de l'opinion en savoir ». Le consensus suffit-il pour cela ?<br><br><strong>1. Dans la perspective habermasienne : oui, le consensus rationnel suffit.</strong> Le consensus argumentatif fondé sur le meilleur argument, dans des conditions dialogiques libres et exemptes de contrainte, est ce qui transforme l'opinion en savoir. Car le savoir chez Habermas n'est pas une correspondance avec le réel (comme dans la conception classique), mais une « reconnaissance intersubjective » de la validité de la prétention. Et cette reconnaissance est ce qui confère à la prétention son statut cognitif.<br><br><strong>2. Mais le consensus est soumis à des conditions strictes :</strong><br>– il doit être un consensus rationnel (fondé sur le meilleur argument, non sur la contrainte ou la tromperie) ;<br>– il doit se réaliser dans des conditions dialogiques idéales (liberté de parole, égalité des chances, absence de pouvoir) ;<br>– il doit être fondé sur la « validité » en ses trois sens : validité théorique (correspondance avec le réel), validité formelle (cohérence interne), validité discursive (consensus des participants).<br><br><strong>3. La différence entre consensus faux et consensus vrai :</strong> il y a un consensus faux qui peut se réaliser sous la pression de la contrainte ou de la tromperie, ou dans des conditions dialogiques injustes. Ce consensus ne transforme pas l'opinion en savoir, mais reste une opinion dominée. Le savoir véritable présuppose un consensus libre et rationnel.<br><br><strong>4. La position synthétique :</strong> le consensus <em>rationnel</em> fondé sur le meilleur argument et dans des conditions dialogiques libres suffit à faire passer l'opinion au savoir. Quant au consensus <em>non rationnel</em> (fondé sur la contrainte, la tromperie ou le pouvoir), il ne suffit pas, mais reste opinion et non savoir. Plus précisément : le savoir chez Habermas est <em>le consensus rationnel réalisé dans des conditions dialogiques idéales</em>, et non n'importe quel consensus.<br><br><strong>Note comparative avec Perelman :</strong> chez Perelman, le consensus est le but de l'argumentation, mais il n'atteint pas le niveau du « savoir » au sens scientifique ; il reste dans le champ de la « rationalité ». Chez Habermas, le consensus rationnel est ce qui transforme l'opinion en savoir, mais en un sens discursif et non objectif. Le savoir chez Habermas n'est pas une correspondance avec le réel, mais une « reconnaissance intersubjective de la validité de la prétention » dans des conditions dialogiques libres.",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.thesis.title": "Thèse principale :",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.thesis.content": "Habermas considère que l'argumentation n'est pas une simple procédure technique, mais une <em>expérience communicationnelle complexe et multidimensionnelle</em>, analysable sous trois angles complémentaires : comme processus tendant vers les conditions idéales de la communication et excluant toute contrainte autre que celle du meilleur argument ; comme procédure organisée sous forme de division coopérative du travail entre le proposant et l'opposant ; et comme production d'arguments appropriés et convaincants permettant la reconnaissance intersubjective de la prétention à la validité, transformant ainsi l'opinion en savoir. L'argumentation, en ce sens, est ce qui transforme la communication d'un simple échange d'opinions en un processus cognitif discursif, dont le but est l'intercompréhension mutuelle et le consensus rationnel.",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.mechanisms.title": "Mécanismes du fonctionnement de l'argumentation comme expérience communicationnelle :",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.mechanisms.content": "- <strong>L'orientation vers les conditions idéales :</strong> l'argumentation tend, par sa structure, vers des conditions dialogiques idéales, même si elle ne les réalise pas pleinement.<br>- <strong>L'exclusion de toute contrainte autre que celle du meilleur argument :</strong> l'argumentation n'accepte d'autre autorité que celle de l'argument.<br>- <strong>La division coopérative des rôles :</strong> le proposant et l'opposant travaillent ensemble à l'examen de la validité.<br>- <strong>La formulation de la prétention à la validité :</strong> transformer la prétention d'une prétention évidente en une prétention problématique susceptible d'être questionnée.<br>- <strong>La libération de la pression de la pratique :</strong> suspendre la décision pratique, pour examiner la validité de manière hypothétique.<br>- <strong>Le recours aux arguments seuls :</strong> aucun moyen de trancher la prétention que l'argument.<br>- <strong>La production d'arguments :</strong> production d'arguments dont les propriétés intrinsèques les rendent appropriés et convaincants.<br>- <strong>La reconnaissance intersubjective :</strong> reconnaissance mutuelle de la validité de la prétention, comme condition de la transformation de l'opinion en savoir.",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.consequences.title": "Conséquences de cette thèse :",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.consequences.content": "- <strong>Transformation de l'argumentation de technique en expérience :</strong> l'argumentation n'est pas une simple technique rhétorique que l'on enseigne comme le calcul, mais une expérience communicationnelle aux dimensions éthiques et cognitives.<br>- <strong>Déplacement du centre de gravité de la vérité vers la validité :</strong> le savoir n'est pas une correspondance avec le réel, mais une reconnaissance intersubjective de la validité de la prétention.<br>- <strong>Fondation de la raison communicationnelle :</strong> la raison n'est ni subjective (comme chez Descartes) ni instrumentale (comme dans la première École de Francfort), mais communicationnelle, se réalisant dans le dialogue.<br>- <strong>Lien entre savoir et démocratie :</strong> l'argumentation présuppose des conditions dialogiques libres, qui sont elles-mêmes les conditions de la démocratie. Savoir et démocratie sont donc liés.<br>- <strong>Dépassement du modèle démonstratif :</strong> le savoir argumentatif dépasse le modèle démonstratif mathématique, sans abolir la vérité, mais en la redéfinissant discursivement.<br>- <strong>Fondation d'une éthique du dialogue :</strong> l'argumentation présuppose une reconnaissance mutuelle entre les participants, ce qui fonde une éthique communicationnelle.",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.significance.title": "Significations et dimensions du concept :",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.significance.content": "Ce texte porte une signification philosophique décisive dans l'histoire de la philosophie contemporaine :<br><br><strong>1. Signification épistémologique :</strong> le texte présente une nouvelle théorie de la connaissance, dépassant les modèles rationaliste et empiriste vers un « savoir discursif » reposant sur la reconnaissance intersubjective. Le savoir n'est pas une relation entre un sujet et un objet, mais une relation entre des sujets dialoguant.<br><br><strong>2. Signification éthico-politique :</strong> le texte fonde une éthique du dialogue et de la démocratie délibérative. L'argumentation présuppose des conditions dialogiques libres, qui sont elles-mêmes les conditions de la démocratie. Savoir, démocratie et raison communicationnelle sont liés.<br><br><strong>3. Signification critique :</strong> le texte critique le traitement de l'argumentation comme simple « procédure technique » (comme dans l'introduction), et affirme sa dimension éthique. L'argumentation n'est pas un simple art rhétorique, mais une expérience humaine complète.<br><br><strong>4. Signification anthropologique :</strong> le texte montre que l'homme est un être communicationnel, dont l'existence se réalise dans le dialogue et l'intercompréhension. La raison n'est pas une substance individuelle, mais une relation communicationnelle.<br><br><strong>5. Lien du texte avec la leçon (l'argumentation) :</strong> le texte complète la théorie de l'argumentation chez Perelman. Après que Perelman a affirmé le caractère non contraignant de l'argumentation et son lien à la liberté, Habermas vient révéler ses dimensions communicationnelles et constructives, et sa fonction cognitive (transformer l'opinion en savoir). Si Perelman a fondé l'argumentation comme rationalité, Habermas fonde l'argumentation comme expérience communicationnelle cognitive."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.habermasArgumentation.level": "3rd Secondary - Philosophy",
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.habermasArgumentation.title": "Text Analysis: The Experience of Argumentation - Jürgen Habermas",
+                "PhiH.textAnalysis.habermasArgumentation.introduction.title": "Introduction",
+                "PhiH.textAnalysis.habermasArgumentation.introduction.content": "It seems that the growing interest in argumentation in modern societies reveals a tendency to privilege the force of logic over the logic of force, in order to secure the requirement of living together. But treating argumentation as a mere technical procedure whose arts are taught as one teaches the rules of calculation threatens to empty it of its ethical dimension, and calls for considering the components of argumentation as a complex and multidimensional communicative experience.",
+                "PhiH.textAnalysis.habermasArgumentation.text.title": "The Text",
+                "PhiH.textAnalysis.habermasArgumentation.text.content": "We can distinguish in argumentative discourse three aspects:<br><br><strong>The first aspect: argumentation as process.</strong> If we consider this discourse as a process, it is then a form of communication whose realization is not certain, because it never ceases to tend toward ideal conditions (...) The participants in argumentation are therefore compelled to admit most often that the structure of their communication (...) excludes any constraint other than that of the better argument [1] (...) And from this point of view, argumentation can be conceived as a pursuit by intellectual means of the activity oriented toward mutual understanding.<br><br><strong>The second aspect: argumentation as procedure.</strong> On the other hand, as soon as we consider argumentation as a procedure, it is then a form of interaction organized in a particular manner. Indeed, the inferential path of consensus, organized in the form of a cooperative division of labor between the proponent and the opponent, is codified so as to:<br>– lead the participants to formulate a validity claim [2] that has become problematic;<br>– free them in advance from the pressure of practice and experience;<br>– lead them to decide, by means of arguments and arguments alone, whether the claim defended by the proponent is correct or not.<br><br><strong>The third aspect: argumentation as production of arguments.</strong> Finally, we can consider argumentation from a third angle: the production of appropriate and convincing arguments by virtue of their intrinsic properties, thanks to which we discern whether validity claims can be accepted or rejected. Arguments are those means by which the intersubjective recognition of the claimed validity claim – hypothetically by the proponent – can take place, thus transforming opinion into knowledge.",
+                "PhiH.textAnalysis.habermasArgumentation.text.source": "Jürgen Habermas, The Theory of Communicative Action, éd. Gallimard, 1980, pp. 41-42",
+                "PhiH.textAnalysis.habermasArgumentation.author.title": "Author Presentation",
+                "PhiH.textAnalysis.habermasArgumentation.author.alt": "Jürgen Habermas",
+                "PhiH.textAnalysis.habermasArgumentation.author.content": "Jürgen Habermas (1929) is a German philosopher and sociologist. He belongs to the Frankfurt School (see the definition of the school in the foundations of the first chapter devoted to the everyday). He forged a new concept of reason, communicative reason, and became interested in communication in its relation to power and technique. He is known for his research in communication ethics alongside \"Karl-Otto Apel\". He replaced the Kantian categorical imperative in the field of morality with the principle of dialogue, his ethics being determined in the light of a free dialogue. He also called, against all violence, for a revision of the concept of nation-state and citizenship in the direction of respect for minorities. Among his most famous books: \"Theory and Praxis\" (1963), \"Knowledge and Interest\" (1968), \"Technique and Science as Ideology\" (1968), \"Reason and Legitimacy\" (1973), \"After Marx\" (1976), \"The Theory of Communicative Action\" (1981), \"Morality and Communication\" (1983), \"Ethics of Discussion\" (1992), \"Law and Democracy: Between Facts and Norms\" (1993), \"Truth and Justification\" (1999).",
+                "PhiH.textAnalysis.habermasArgumentation.footnotes.title": "Footnotes",
+                "PhiH.textAnalysis.habermasArgumentation.footnotes.item1": "<strong>(1) \"The better argument\":</strong> this argument enjoys a non-constraining influence, and it is not necessarily the absolute best argument, but it is the best in a particular discursive context. Its force is not opposed to reason as long as it is inseparable from dialogue as a reasonable choice and commitment to the best as the basis of all dialogue.",
+                "PhiH.textAnalysis.habermasArgumentation.footnotes.item2": "<strong>(2) \"Validity\":</strong> the author distinguishes theoretical validity based on the correspondence between truth and reality, formal validity which means the internal coherence of discourse on the one hand, and validity arising from the consensus and agreement of the participants in the discussion on the other hand.",
+                "PhiH.textAnalysis.habermasArgumentation.questions.title": "Tasks",
+                "PhiH.textAnalysis.habermasArgumentation.questions.q1": "I determine the means that argumentation requires and the means it excludes.",
+                "PhiH.textAnalysis.habermasArgumentation.questions.q2": "I identify the aspects of argumentation in the text and specify the nature of each of them.",
+                "PhiH.textAnalysis.habermasArgumentation.questions.q3": "I show the cooperative dimension of argumentation.",
+                "PhiH.textAnalysis.habermasArgumentation.questions.q4": "I show whether consensus is sufficient to move the idea from the level of opinion to the level of knowledge.",
+                "PhiH.textAnalysis.habermasArgumentation.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a1.title": "Answer to the first task:",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a1.content": "<strong>A. The means that argumentation requires:</strong><br>1. <strong>The better argument:</strong> \"excludes any constraint other than that of the better argument\"; the better argument is the central mechanism of argumentation.<br>2. <strong>The formulation of the validity claim:</strong> \"lead the participants to formulate a validity claim that has become problematic\"; no argumentation without a validity claim open to questioning.<br>3. <strong>Anticipatory liberation from the pressure of practice and experience:</strong> \"free them in advance from the pressure of practice and experience\"; that is, suspend the practical decision to examine validity.<br>4. <strong>Recourse to arguments alone:</strong> \"by means of arguments and arguments alone\"; only argument is accepted as a means of settling the claim.<br>5. <strong>Cooperative organization:</strong> \"cooperative division of labor between the proponent and the opponent\"; argumentation presupposes organized and complementary roles.<br>6. <strong>The production of appropriate and convincing arguments:</strong> \"the production of appropriate and convincing arguments by virtue of their intrinsic properties\".<br>7. <strong>Intersubjective recognition:</strong> \"the intersubjective recognition of the claimed validity claim\"; argumentation presupposes mutual recognition among participants.<br><br><strong>B. The means that argumentation excludes:</strong><br>1. <strong>Any constraint other than that of the better argument:</strong> that is, coercion, power, violence, injunction, threat. Argumentation accepts only the authority of argument.<br>2. <strong>The direct pressure of practice and experience:</strong> that is, the immediate resolution of the question by recourse to the real, instead of the examination of validity.<br>3. <strong>Non-argumentative means:</strong> such as emotional persuasion, demagogic rhetoric, psychological manipulation, seduction, deception. Argumentation accepts only arguments.<br>4. <strong>The non-questionable claim:</strong> that is, the claim that cannot be doubted. Argumentation presupposes a claim \"that has become problematic\".<br><br><strong>Conclusion:</strong> argumentation requires everything that serves \"the better argument\" (formulation of the claim, liberation, cooperative organization, production of arguments, mutual recognition), and excludes everything that falls outside the authority of argument (constraint, violence, direct pressure, non-argumentative means, non-questionable claims).",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a2.title": "Answer to the second task:",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a2.content": "Habermas distinguishes three aspects of argumentation, each having a particular nature:<br><br><strong>1. Argumentation as process:</strong><br>– <em>Nature:</em> a form of communication whose realization is not certain.<br>– <em>Orientation:</em> tends toward the \"ideal conditions\" of communication.<br>– <em>Characteristic:</em> \"pursuit by intellectual means of the activity oriented toward mutual understanding\". It is the continuation of everyday interaction, but by organized intellectual means.<br>– <em>Function:</em> to orient argumentation toward mutual understanding, not toward victory over the adversary.<br><br><strong>2. Argumentation as procedure:</strong><br>– <em>Nature:</em> a form of interaction organized in a particular manner.<br>– <em>Structure:</em> \"cooperative division of labor between the proponent and the opponent\"; argumentation is a procedure founded on the distribution of roles.<br>– <em>Three functions:</em> formulate a problematic validity claim; free from the pressure of practice and experience; settle by arguments alone the correctness of the claim.<br>– <em>Function:</em> provide the organized procedural framework for the examination of validity.<br><br><strong>3. Argumentation as production of arguments:</strong><br>– <em>Nature:</em> production of appropriate and convincing arguments by virtue of their intrinsic properties.<br>– <em>Function:</em> to allow \"the intersubjective recognition of the claimed validity claim\".<br>– <em>Ultimate goal:</em> \"thus transforming opinion into knowledge\". This is the cognitive goal of argumentation.<br><br><strong>Conclusion:</strong> the three aspects are complementary and inseparable: the process (orientation dimension) + the procedure (organizational dimension) + the production of arguments (productive-cognitive dimension). It is through their union that argumentation is realized as a complete communicative experience.",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a3.title": "Answer to the third task:",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a3.content": "The cooperative dimension of argumentation is manifested in the text through several data:<br><br><strong>1. \"The cooperative division of labor between the proponent and the opponent\":</strong> this expression is the clearest indication of the cooperative dimension. Argumentation is not a conflict between two adversaries, but a division of roles between two partners: one proposes (the proponent), the other objects and criticizes (the opponent). And both work toward a common goal, the search for truth.<br><br><strong>2. \"Mutual understanding\" as the goal of the process:</strong> \"pursuit by intellectual means of the activity oriented toward mutual understanding\". Argumentation is not the pursuit of victory, but that of mutual understanding.<br><br><strong>3. The \"formulation of the validity claim\" jointly:</strong> \"lead the participants to formulate a validity claim\". The formulation is joint, not individual.<br><br><strong>4. \"Intersubjective recognition\":</strong> recognition of each party by the other as a partner in the search. Argumentation presupposes mutual recognition, not exclusion or marginalization.<br><br><strong>5. \"The better argument\":</strong> the better argument is not necessarily that of one of the two parties, but that which emerges in the context of the common dialogue. Both parties work together to discover it.<br><br><strong>6. \"Consensus\" as the goal of argumentation:</strong> consensus is the \"inferential path\" of argumentation. And consensus is only realized through cooperation, not through constraint.<br><br><strong>Conclusion:</strong> the cooperative dimension of argumentation means that the participants are not adversaries who dispute, but partners who cooperate in the search for truth. This is what distinguishes argumentation from polemics, sophistry and sophistry.",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a4.title": "Answer to the fourth task:",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a4.content": "The text indicates that consensus – or the intersubjective recognition of the validity claim – is what allows \"the transformation of opinion into knowledge\". Is consensus sufficient for this?<br><br><strong>1. In the Habermasian perspective: yes, rational consensus is sufficient.</strong> Argumentative consensus based on the better argument, in free and constraint-free dialogical conditions, is what transforms opinion into knowledge. For knowledge in Habermas is not a correspondence with the real (as in the classical conception), but an \"intersubjective recognition\" of the validity of the claim. And this recognition is what confers on the claim its cognitive status.<br><br><strong>2. But consensus is subject to strict conditions:</strong><br>– it must be a rational consensus (based on the better argument, not on constraint or deception);<br>– it must be realized in ideal dialogical conditions (freedom of speech, equal opportunity, absence of power);<br>– it must be founded on \"validity\" in its three senses: theoretical validity (correspondence with the real), formal validity (internal coherence), discursive validity (consensus of participants).<br><br><strong>3. The difference between false consensus and true consensus:</strong> there is a false consensus that can be realized under the pressure of constraint or deception, or in unjust dialogical conditions. This consensus does not transform opinion into knowledge, but remains a dominated opinion. True knowledge presupposes a free and rational consensus.<br><br><strong>4. The synthetic position:</strong> <em>rational</em> consensus founded on the better argument and in free dialogical conditions is sufficient to move opinion to knowledge. As for <em>non-rational</em> consensus (founded on constraint, deception or power), it is not sufficient, but remains opinion and not knowledge. More precisely: knowledge in Habermas is <em>the rational consensus realized in ideal dialogical conditions</em>, and not just any consensus.<br><br><strong>Comparative note with Perelman:</strong> in Perelman, consensus is the goal of argumentation, but it does not reach the level of \"knowledge\" in the scientific sense; it remains in the field of \"rationality\". In Habermas, rational consensus is what transforms opinion into knowledge, but in a discursive and not objective sense. Knowledge in Habermas is not a correspondence with the real, but an \"intersubjective recognition of the validity of the claim\" in free dialogical conditions.",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.thesis.content": "Habermas considers that argumentation is not a simple technical procedure, but a <em>complex and multidimensional communicative experience</em>, analyzable from three complementary angles: as a process tending toward the ideal conditions of communication and excluding any constraint other than that of the better argument; as a procedure organized in the form of a cooperative division of labor between the proponent and the opponent; and as a production of appropriate and convincing arguments allowing the intersubjective recognition of the validity claim, thus transforming opinion into knowledge. Argumentation, in this sense, is what transforms communication from a simple exchange of opinions into a discursive cognitive process, whose goal is mutual understanding and rational consensus.",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.mechanisms.title": "Mechanisms of the functioning of argumentation as a communicative experience:",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.mechanisms.content": "- <strong>Orientation toward ideal conditions:</strong> argumentation tends, by its structure, toward ideal dialogical conditions, even if it does not fully realize them.<br>- <strong>Exclusion of any constraint other than that of the better argument:</strong> argumentation accepts no authority other than that of argument.<br>- <strong>Cooperative division of roles:</strong> the proponent and the opponent work together to examine validity.<br>- <strong>Formulation of the validity claim:</strong> transforming the claim from an evident claim into a problematic claim open to questioning.<br>- <strong>Liberation from the pressure of practice:</strong> suspending the practical decision, to examine validity hypothetically.<br>- <strong>Recourse to arguments alone:</strong> no means of settling the claim other than argument.<br>- <strong>Production of arguments:</strong> production of arguments whose intrinsic properties make them appropriate and convincing.<br>- <strong>Intersubjective recognition:</strong> mutual recognition of the validity of the claim, as a condition for the transformation of opinion into knowledge.",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.consequences.title": "Consequences of this thesis:",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.consequences.content": "- <strong>Transformation of argumentation from technique to experience:</strong> argumentation is not a simple rhetorical technique that one teaches like calculation, but a communicative experience with ethical and cognitive dimensions.<br>- <strong>Shift of the center of gravity from truth to validity:</strong> knowledge is not a correspondence with the real, but an intersubjective recognition of the validity of the claim.<br>- <strong>Foundation of communicative reason:</strong> reason is neither subjective (as in Descartes) nor instrumental (as in the first Frankfurt School), but communicative, realized in dialogue.<br>- <strong>Link between knowledge and democracy:</strong> argumentation presupposes free dialogical conditions, which are themselves the conditions of democracy. Knowledge and democracy are therefore linked.<br>- <strong>Going beyond the demonstrative model:</strong> argumentative knowledge goes beyond the mathematical demonstrative model, without abolishing truth, but by redefining it discursively.<br>- <strong>Foundation of an ethics of dialogue:</strong> argumentation presupposes mutual recognition among participants, which founds a communicative ethics.",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.significance.content": "This text carries a decisive philosophical significance in the history of contemporary philosophy:<br><br><strong>1. Epistemological significance:</strong> the text presents a new theory of knowledge, going beyond the rationalist and empiricist models toward a \"discursive knowledge\" resting on intersubjective recognition. Knowledge is not a relation between a subject and an object, but a relation between dialoguing subjects.<br><br><strong>2. Ethico-political significance:</strong> the text founds an ethics of dialogue and deliberative democracy. Argumentation presupposes free dialogical conditions, which are themselves the conditions of democracy. Knowledge, democracy and communicative reason are linked.<br><br><strong>3. Critical significance:</strong> the text criticizes the treatment of argumentation as a simple \"technical procedure\" (as in the introduction), and affirms its ethical dimension. Argumentation is not a simple rhetorical art, but a complete human experience.<br><br><strong>4. Anthropological significance:</strong> the text shows that man is a communicative being, whose existence is realized in dialogue and mutual understanding. Reason is not an individual substance, but a communicative relation.<br><br><strong>5. Link of the text with the lesson (argumentation):</strong> the text completes the theory of argumentation in Perelman. After Perelman affirmed the non-constraining character of argumentation and its link to freedom, Habermas comes to reveal its communicative and constructive dimensions, and its cognitive function (transforming opinion into knowledge). If Perelman founded argumentation as rationality, Habermas founds argumentation as a cognitive communicative experience."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.habermasArgumentation.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.habermasArgumentation.title": "تحليل النص: تجربة الحجاج - يورغان هابرماس",
+                "PhiH.textAnalysis.habermasArgumentation.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.habermasArgumentation.introduction.content": "يبدو أنَّ الاهتمام المتزايد بالحجاج لدى المجتمعات الحديثة يكشف عن نزوع نحو تغليب قوة المنطق على منطق القوة تأميناً لمطلب العيش المشترك. لكن التعامل مع الحجاج كمجرَّد إجراء تقني تُعلَّم فنونه كما تُعلَّم قواعد الحساب يُهدَّد بإفراغه من بعده الأخلاقي، ويستدعي النظر في مكونات الحجاج كتجربة تواصلية معقّدة ومتعدّدة الأبعاد.",
+                "PhiH.textAnalysis.habermasArgumentation.text.title": "النص",
+                "PhiH.textAnalysis.habermasArgumentation.text.content": "يمكننا أن نميز في الخطاب الحجاجي بين أوجه ثلاثة:<br><br><strong>الوجه الأول: الحجاج كمسار.</strong> فإذا اعتبرنا هذا الخطاب من حيث هو مسار، يتعلّق الأمر عندئذ بشكل من التواصل غير المؤكد تحقّقه، لأنه ما ينفكّ ينزع نحو الشروط المثلى (...) فالمشاركون في الحجاج مضطرون للتسليم في الغالب بأنَّ بنية تواصلهم (...) تستبعد كلَّ إلزام غير إلزام الحجة الأفضل[1] (...) ومن هذه الناحية، يمكن تصوّر الحجاج على أنه متابعة بوسائل فكرية للنشاط الموجّه نحو التفاهم المتبادل.<br><br><strong>الوجه الثاني: الحجاج كإجراء.</strong> ومن جهة ثانية، ما أن نعتبر الحجاج من حيث هو إجراء، حتى يتعلّق الأمر بشكل من التفاعل منظّم على نحو مخصوص. وبالفعل، إنَّ المسار الاستدلالي للوفاق، وقد نظَّم في شكل تقسيم تعاوني للعمل بين العارض والمعترض، مقتنن بكيفية:<br>– تجعل المشاركين يبلورون ادعاءً للصلاحية[2] أضحى إشكالياً.<br>– ويتخلَّصون من ضغط الممارسة والتجربة على نحو افتراضي.<br>– ويشتبتون بواسطة الحجج وبالحجج وحدها، ما إذا كان الادعاء الذي دافع عنه العارض صائباً أم لا.<br><br><strong>الوجه الثالث: الحجاج كإنتاج للحجج.</strong> وأخيراً، يمكننا النظر إلى الحجاج من زاوية ثالثة: هي إنتاج حجج ملائمة ومقنعة بفعل خصائصها الذاتية التي نتبيّن بفضلها ما إذا كانت ادعاءات الصلاحية يمكن أن تُحترم أو تُرفض. إنَّ الحجج هي تلك الوسائل التي يمكن للاعتراف البيئذاتي بادعاء الصلاحية المزعوم – على نحو فرضي من قبل العارض – أن يحصل فيتحوَّل الرأي إلى معرفة.",
+                "PhiH.textAnalysis.habermasArgumentation.text.source": "هابرماس، نظرية الفعل التواصلي، ترجمة لجنة التأليف - Jürgen Habermas, Théorie de l'agir communicationnel, éd. Gallimard, 1980, pp. 41-42",
+                "PhiH.textAnalysis.habermasArgumentation.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.habermasArgumentation.author.alt": "يورغان هابرماس",
+                "PhiH.textAnalysis.habermasArgumentation.author.content": "يورغان هابرماس (1929) فيلسوف وعالم اجتماع ألماني. ينتسب إلى مدرسة فرانكفورت (انظر تعريفاً بالمدرسة في دعائم الفصل الأول الخاص باليومي). صاغ مفهوماً جديداً للعقل هو العقل التواصلي، واهتم بالتواصل في علاقته بالسلطة والتقنية. واشتهر ببحوثه في أخلاقيات التواصل إلى جانب \"كارل أوتو آبل\". عوّض الأمر القطعي عند كانط في مجال الأخلاق بمبدأ الحوار، فأخلاقيته عنده تتحدّد في ضوء حوار حر. كما دعا ضد كل عنف إلى مراجعة مفهوم الدولة-الأمة والمواطنة في اتجاه احترام الأقليات. من أشهر كتبه: \"النظرية والبراكسيس\" (1963)، \"المعرفة والمنفعة\" (1968)، \"العلم والتقنية كإيديولوجيا\" (1968)، \"العقل والمشروعية\" (1973)، \"بعد ماركس\" (1976)، \"نظرية الفعل التواصلي\" (1981)، \"الأخلاق والتواصل\" (1983)، \"في أخلاقيات الحوار\" (1992)، \"الحق والديمقراطية: بين الواقع والمعايير\" (1993)، \"الحقيقة والتبرير\" (1999).",
+                "PhiH.textAnalysis.habermasArgumentation.footnotes.title": "الهوامش",
+                "PhiH.textAnalysis.habermasArgumentation.footnotes.item1": "<strong>(1) \"الحجة الأفضل\":</strong> تتمتع هذه الحجة بنفوذ غير إكراهي، وهي ليست بالضرورة الحجة الأفضل على الإطلاق، وإنما هي الأفضل في سياق تداولي مخصوص. وقوّتها ليست مضادة للعقل ما دامت ملازمة للحوار بما هو اختيار معقول والتزام بالأفضل كأساس لكل حوار.",
+                "PhiH.textAnalysis.habermasArgumentation.footnotes.item2": "<strong>(2) \"الصلاحية\":</strong> يميّز الكاتب بين الصلاحية الخيرية القائمة على التطابق بين الحقيقة والواقع، والصلاحية الصورية التي تعني الانسجام الداخلي للخطاب من ناحية، والصلاحية المنبثقة عن إجماع المشاركين في النقاش وتوافقهم من ناحية أخرى.",
+                "PhiH.textAnalysis.habermasArgumentation.questions.title": "المهام",
+                "PhiH.textAnalysis.habermasArgumentation.questions.q1": "أحدّد الوسائل التي يستوجبها الحجاج والوسائل التي يستبعدها.",
+                "PhiH.textAnalysis.habermasArgumentation.questions.q2": "أرصد أوجه الحجاج في النصّ وأبيّن طبيعة كلّ وجه منها.",
+                "PhiH.textAnalysis.habermasArgumentation.questions.q3": "أبيّن البعد التعاوني في الحجاج.",
+                "PhiH.textAnalysis.habermasArgumentation.questions.q4": "أبيّن ما إذا كان الوفاق كافياً لنقل الفكرة من مستوى الرأي إلى مستوى المعرفة.",
+                "PhiH.textAnalysis.habermasArgumentation.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a1.title": "الإجابة عن المهمة الأولى:",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a1.content": "<strong>أ. الوسائل التي يستوجبها الحجاج:</strong><br>1. <strong>الحجة الأفضل:</strong> \"تستبعد كلَّ إلزام غير إلزام الحجة الأفضل\"؛ فالحجة الأفضل هي الآلية المركزية للحجاج.<br>2. <strong>بلورة ادعاء الصلاحية:</strong> \"تجعل المشاركين يبلورون ادعاءً للصلاحية أضحى إشكالياً\"؛ فلا حجاج دون ادعاء صلاحية قابل للمساءلة.<br>3. <strong>التجريد من ضغط الممارسة والتجربة:</strong> \"ويتخلَّصون من ضغط الممارسة والتجربة على نحو افتراضي\"؛ أي تأجيل البتّ العملي للبحث في الصلاحية.<br>4. <strong>الاقتصار على الحجج:</strong> \"ويشتبتون بواسطة الحجج وبالحجج وحدها\"؛ فلا يُقبل إلا الحجة كوسيلة للفصل في الادعاء.<br>5. <strong>التنظيم التعاوني:</strong> \"تقسيم تعاوني للعمل بين العارض والمعترض\"؛ فالحجاج يفترض أدواراً منظمة ومتكاملة.<br>6. <strong>إنتاج الحجج الملائمة والمقنعة:</strong> \"إنتاج حجج ملائمة ومقنعة بفعل خصائصها الذاتية\".<br>7. <strong>الاعتراف البيئذاتي:</strong> \"الاعتراف البيئذاتي بادعاء الصلاحية المزعوم\"؛ فالحجاج يفترض اعترافاً متبادلاً بين المشاركين.<br><br><strong>ب. الوسائل التي يستبعدها الحجاج:</strong><br>1. <strong>كل إلزام غير إلزام الحجة الأفضل:</strong> أي الإكراه والسلطة والعنف والإيعاز والتهديد. فالحجاج لا يقبل إلا سلطة الحجة.<br>2. <strong>ضغط الممارسة والتجربة المباشر:</strong> أي الحسم الفوري للمسألة بالرجوع إلى الواقع، بدل البحث في الصلاحية.<br>3. <strong>الوسائل غير الحجاجية:</strong> كالإقناع العاطفي، والخطابة الديماغوجية، والتلاعب النفسي، والاستمالة، والتضليل. فالحجاج لا يقبل إلا الحجج.<br>4. <strong>الادعاء غير القابل للمساءلة:</strong> أي الادعاء الذي لا يقبل أن يُشكَّك فيه. فالحجاج يفترض ادعاءً \"أضحى إشكالياً\".<br><br><strong>الخلاصة:</strong> الحجاج يستوجب كل ما يخدم \"الحجة الأفضل\" (بلورة الادعاء، التجريد، التنظيم التعاوني، إنتاج الحجج، الاعتراف المتبادل)، ويستبعد كل ما يخرج عن سلطان الحجة (الإكراه، العنف، الضغط المباشر، الوسائل غير الحجاجية، الادعاءات غير القابلة للمساءلة).",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a2.title": "الإجابة عن المهمة الثانية:",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a2.content": "يرصد هابرماس ثلاثة أوجه للحجاج، لكلّ وجه طبيعة خاصة:<br><br><strong>1. الحجاج كمسار (process):</strong><br>– <em>الطبيعة:</em> شكل من أشكال التواصل غير المؤكد تحقّقه.<br>– <em>التوجّه:</em> ينزع نحو \"الشروط المثلى\" للتواصل.<br>– <em>الخصيصة:</em> \"متابعة بوسائل فكرية للنشاط الموجّه نحو التفاهم المتبادل\". فهو استمرار للتفاعل اليومي، لكن بوسائل فكرية منظمة.<br>– <em>الوظيفة:</em> توجيه الحجاج نحو التفاهم المتبادل، لا نحو الانتصار على الخصم.<br><br><strong>2. الحجاج كإجراء (procedure):</strong><br>– <em>الطبيعة:</em> شكل من التفاعل منظّم على نحو مخصوص.<br>– <em>البنية:</em> \"تقسيم تعاوني للعمل بين العارض والمعترض\"؛ فالحجاج إجراء مؤسَّس على توزيع الأدوار.<br>– <em>الوظائف الثلاث:</em> بلورة ادعاء صلاحية إشكالي؛ التخلص من ضغط الممارسة والتجربة؛ الفصل بالحجج وحدها في صواب الادعاء.<br>– <em>الوظيفة:</em> توفير الإطار الإجرائي المنظّم للبحث في الصلاحية.<br><br><strong>3. الحجاج كإنتاج للحجج (production of arguments):</strong><br>– <em>الطبيعة:</em> إنتاج حجج ملائمة ومقنعة بفعل خصائصها الذاتية.<br>– <em>الوظيفة:</em> تمكين \"الاعتراف البيئذاتي بادعاء الصلاحية المزعوم\".<br>– <em>الغاية القصوى:</em> \"فيتحوَّل الرأي إلى معرفة\". فهذه هي الغاية المعرفية للحجاج.<br><br><strong>الخلاصة:</strong> الأوجه الثلاثة متكاملة ولا تنفصل: المسار (البعد التوجّهي) + الإجراء (البعد التنظيمي) + إنتاج الحجج (البعد الإنتاجي-المعرفي). وباجتماعها يتحقق الحجاج كتجربة تواصلية كاملة.",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a3.title": "الإجابة عن المهمة الثالثة:",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a3.content": "يتجلّى البعد التعاوني في الحجاج في النص من خلال معطيات عدة:<br><br><strong>1. \"التقسيم التعاوني للعمل بين العارض والمعترض\":</strong> هذه العبارة هي الأوضح دلالةً على البعد التعاوني. فالحجاج ليس صراعاً بين خصمين، بل هو تقسيم للأدوار بين شريكين: أحدهما يقترح (العارض)، والآخر يعترض وينتقد. وكلاهما يعمل على هدف مشترك هو الوصول إلى الحقيقة.<br><br><strong>2. \"التفاهم المتبادل\" كغاية للمسار:</strong> \"متابعة بوسائل فكرية للنشاط الموجّه نحو التفاهم المتبادل\". فالحجاج ليس بحثاً عن الانتصار، بل عن التفاهم.<br><br><strong>3. \"بلورة ادعاء الصلاحية\" بشكل مشترك:</strong> \"تجعل المشاركين يبلورون ادعاءً للصلاحية\". فالبلورة مشتركة، لا فردية.<br><br><strong>4. \"الاعتراف البيئذاتي\":</strong> اعتراف كل طرف بالآخر كشريك في البحث. فالحجاج يفترض اعترافاً متبادلاً، لا إقصاءً أو تهميشاً.<br><br><strong>5. \"الحجة الأفضل\":</strong> الحجة الأفضل ليست حجة أحد الطرفين بالضرورة، بل هي ما يظهر في سياق الحوار المشترك. فالطرفان يعملان معاً على الكشف عنها.<br><br><strong>6. \"الوفاق\" كغاية للحجاج:</strong> الوفاق هو \"المسار الاستدلالي\" للحجاج. والوفاق لا يتحقق إلا بالتعاون، لا بالإكراه.<br><br><strong>الخلاصة:</strong> البعد التعاوني في الحجاج يعني أن المشاركين ليسوا خصومًا يتنازعون، بل شركاء يتعاونون على البحث عن الحقيقة. وهذا هو ما يميّز الحجاج عن السجال والمغالطة والسفسطة.",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a4.title": "الإجابة عن المهمة الرابعة:",
+                "PhiH.textAnalysis.habermasArgumentation.answers.a4.content": "يفيد النصّ بأنّ الوفاق - أو الاعتراف البيئذاتي بادعاء الصلاحية - هو ما يتيح \"تحوّل الرأي إلى معرفة\". فهل الوفاق كافٍ لذلك؟<br><br><strong>1. في المنظور الهابرماسي: نعم، الوفاق العقلاني كافٍ.</strong> فالوفاق الحجاجي المبني على الحجة الأفضل، في ظروف حوارية حرة وخالية من الإكراه، هو ما يحوّل الرأي إلى معرفة. فالمعرفة عند هابرماس ليست تطابقاً مع الواقع (كما في التصور الكلاسيكي)، بل هي \"اعتراف بيئذاتي\" بصلاحية الادعاء. وهذا الاعتراف هو ما يمنح الادعاء صفته المعرفية.<br><br><strong>2. لكن الوفاق مشروط بشروط صارمة:</strong><br>– يجب أن يكون وفاقاً عقلانياً (مبنياً على الحجة الأفضل، لا على الإكراه أو التضليل).<br>– يجب أن يتم في ظروف حوارية مثالية (حرية الكلام، تكافؤ الفرص، غياب السلطة).<br>– يجب أن يكون مبنياً على \"الصلاحية\" بمعانيها الثلاثة: الصلاحية الخيرية (التطابق مع الواقع)، والصلاحية الصورية (الانسجام الداخلي)، والصلاحية التداولية (إجماع المشاركين).<br><br><strong>3. الفرق بين الوفاق الزائف والوفاق الحقيقي:</strong> هناك وفاق زائف يمكن أن يتحقق تحت ضغط الإكراه أو التضليل، أو في ظروف حوارية غير عادلة. هذا الوفاق لا يحوّل الرأي إلى معرفة، بل يظل رأياً مسيطراً عليه. فالمعرفة الحقيقية تفترض وفاقاً حرّاً وعقلانياً.<br><br><strong>4. الموقف التركيبي:</strong> الوفاق <em>العقلاني</em> المبني على الحجة الأفضل وفي ظروف حوارية حرة كافٍ لنقل الرأي إلى معرفة. أما الوفاق <em>غير العقلاني</em> (المبني على الإكراه أو التضليل أو السلطة)، فلا يكفي، بل يظل رأياً لا معرفة. وبعبارة أدق: المعرفة عند هابرماس هي <em>الوفاق العقلاني المتحقق في ظروف حوارية مثالية</em>، لا مجرد أي وفاق.<br><br><strong>ملاحظة مقارنة مع برلمان:</strong> عند برلمان، الوفاق هو غاية الحجاج، لكنه لا يصل إلى مستوى \"المعرفة\" بالمعنى العلمي، بل يظل في حقل \"المعقولية\". أما عند هابرماس، فالوفاق العقلاني هو ما يحوّل الرأي إلى معرفة، لكن بمعنى تداولي لا موضوعي. فالمعرفة عند هابرماس ليست مطابقة للواقع، بل هي \"اعتراف بيئذاتي بصلاحية الادعاء\" في ظروف حوارية حرة.",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.thesis.content": "يرى هابرماس أنّ الحجاج ليس مجرّد إجراء تقني، بل هو <em>تجربة تواصلية معقّدة ومتعدّدة الأبعاد</em>، يمكن تحليلها من ثلاث زوايا متكاملة: كمسار (process) ينزع نحو الشروط المثلى للتواصل ويستبعد كل إلزام غير إلزام الحجة الأفضل؛ وكإجراء (procedure) منظّم في شكل تقسيم تعاوني للعمل بين العارض والمعترض؛ وكإنتاج (production) لحجج ملائمة ومقنعة تُتيح الاعتراف البيئذاتي بادعاء الصلاحية، فيتحوّل الرأي إلى معرفة. فالحجاج، بهذا المعنى، هو ما يحوّل التخاطب من مجرّد تبادل للآراء إلى عملية معرفية تداولية، هدفها التفاهم المتبادل والوفاق العقلاني.",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.mechanisms.title": "آليات اشتغال الحجاج كتجربة تواصلية:",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.mechanisms.content": "- <strong>التوجّه نحو الشروط المثلى:</strong> الحجاج ينزع، بحكم بنيته، نحو ظروف حوارية مثالية، وإن لم يتحقّق فيها تماماً.<br>- <strong>استبعاد كل إلزام غير إلزام الحجة الأفضل:</strong> الحجاج لا يقبل سلطة إلا سلطة الحجة.<br>- <strong>التقسيم التعاوني للأدوار:</strong> العارض والمعترض يعملان معاً على البحث في الصلاحية.<br>- <strong>بلورة ادعاء الصلاحية:</strong> تحويل الادعاء من ادعاء بديهي إلى ادعاء إشكالي قابل للمساءلة.<br>- <strong>التجريد من ضغط الممارسة:</strong> تأجيل البتّ العملي، للبحث في الصلاحية على نحو افتراضي.<br>- <strong>الاقتصار على الحجج:</strong> لا وسيلة للفصل في الادعاء إلا الحجة.<br>- <strong>إنتاج الحجج:</strong> إنتاج حجج ذات خصائص تجعلها ملائمة ومقنعة.<br>- <strong>الاعتراف البيئذاتي:</strong> اعتراف متبادل بصلاحية الادعاء، بوصفه شرطاً لتحويل الرأي إلى معرفة.",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.consequences.title": "النتائج المترتبة على هذه الأطروحة:",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.consequences.content": "- <strong>تحويل الحجاج من تقنية إلى تجربة:</strong> الحجاج ليس مجرّد تقنية خطابية تُعلَّم كالحساب، بل تجربة تواصلية ذات أبعاد أخلاقية ومعرفية.<br>- <strong>نقل مركز الثقل من الحقيقة إلى الصلاحية:</strong> المعرفة ليست مطابقة للواقع، بل اعتراف بيئذاتي بصلاحية الادعاء.<br>- <strong>تأسيس العقل التواصلي:</strong> العقل ليس ذاتياً (كما عند ديكارت) ولا أداتياً (كما عند مدرسة فرانكفورت الأولى)، بل تواصلياً، يتحقق في الحوار.<br>- <strong>ربط المعرفة بالديمقراطية:</strong> الحجاج يفترض ظروفاً حوارية حرة، وهي نفسها شروط الديمقراطية. فالمعرفة والديمقراطية مترابطتان.<br>- <strong>تجاوز النموذج البرهاني:</strong> المعرفة الحجاجية تتجاوز النموذج البرهاني الرياضي، دون أن تلغي الحقيقة، بل تعيد تعريفها تداولياً.<br>- <strong>تأسيس أخلاقيات الحوار:</strong> الحجاج يفترض اعترافاً متبادلاً بين المشاركين، وهو ما يؤسّس لأخلاقيات تواصلية.",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.habermasArgumentation.analysis.significance.content": "يحمل هذا النص دلالة فلسفية حاسمة في تاريخ الفلسفة المعاصرة:<br><br><strong>1. دلالة إبستمولوجية:</strong> النص يقدّم نظرية جديدة في المعرفة، تتجاوز النموذجين العقلاني والتجريبي، نحو \"معرفة تداولية\" تقوم على الاعتراف البيئذاتي. فالمعرفة ليست علاقة بين ذات وموضوع، بل علاقة بين ذوات متحاورة.<br><br><strong>2. دلالة أخلاقية-سياسية:</strong> النص يؤسّس لأخلاقيات الحوار والديمقراطية التداولية. فالحجاج يفترض ظروفاً حوارية حرة، وهي نفسها شروط الديمقراطية. فالمعرفة والديمقراطية والعقل التواصلي مترابطون.<br><br><strong>3. دلالة نقدية:</strong> النص يوجّه نقداً للتعامل مع الحجاج كمجرد \"إجراء تقني\" (كما في التمهيد)، ويؤكد على بعده الأخلاقي. فالحجاج ليس مجرد فن خطابي، بل هو تجربة إنسانية كاملة.<br><br><strong>4. دلالة أنثروبولوجية:</strong> النص يبيّن أنّ الإنسان كائن تواصلي، يتحقّق وجوده في الحوار والتفاهم. فالعقل ليس جوهراً فردياً، بل هو علاقة تواصلية.<br><br><strong>5. صلة النص بالدرس (الحجاج):</strong> النص يكمل نظرية الحجاج عند برلمان. فبعد أن كان برلمان قد أكّد على الطابع غير الإلزامي للحجاج وربطه بالحرية، يأتي هابرماس ليكشف عن أبعاده التواصلية والبنائية، وعن وظيفته المعرفية (تحويل الرأي إلى معرفة). فإذا كان برلمان قد أسّس للحجاج كمعقولية، فإنّ هابرماس يؤسّس للحجاج كتجربة تواصلية معرفية."
+            }
+        };
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

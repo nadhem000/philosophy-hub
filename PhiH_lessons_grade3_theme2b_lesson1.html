@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأشكلة - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#b8860b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Dark Goldenrod / Amber Theme for problematization lesson */
+        :root {
+            --primary-color: #b8860b;
+            --primary-light: #d4a017;
+            --primary-dark: #8b6914;
+            --secondary-color: #8b6914;
+            --secondary-light: #b8860b;
+            --secondary-dark: #654e0e;
+            --accent-color: #d4a017;
+            --accent-light: #e6b800;
+            --accent-dark: #b8860b;
+            --light-color: #fdf8e8;
+            --dark-color: #3d3008;
+            --text-color: #3a3328;
+            --heading-color: #1f1a08;
+            --background-color: #fffdf5;
+            --card-bg: #ffffff;
+            --definition-bg: #faf0d0;
+            --border-color: #e6d499;
+            --table-even-bg: #fdf8e8;
+            --table-hover-bg: #f5e9c4;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(184, 134, 11, 0.15);
+            --gradient-primary: linear-gradient(135deg, #b8860b 0%, #d4a017 100%);
+            --gradient-secondary: linear-gradient(135deg, #654e0e 0%, #8b6914 100%);
+            --gradient-gold: linear-gradient(135deg, #b8860b 0%, #654e0e 100%);
+            --gradient-amber: linear-gradient(135deg, #d4a017 0%, #b8860b 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #e6b800;
+            --primary-light: #f0c530;
+            --primary-dark: #d4a017;
+            --secondary-color: #d4a017;
+            --secondary-light: #e6b800;
+            --secondary-dark: #b8860b;
+            --accent-color: #f0c530;
+            --accent-light: #f7d766;
+            --accent-dark: #e6b800;
+            --light-color: #3d3008;
+            --dark-color: #1f1a08;
+            --text-color: #f0e6c4;
+            --heading-color: #fdf8e8;
+            --background-color: #1f1a08;
+            --card-bg: #3d3008;
+            --definition-bg: #2a2208;
+            --border-color: #8b6914;
+            --table-even-bg: #2a2208;
+            --table-hover-bg: #3d3008;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #d4a017 0%, #e6b800 100%);
+            --gradient-secondary: linear-gradient(135deg, #8b6914 0%, #b8860b 100%);
+            --gradient-gold: linear-gradient(135deg, #e6b800 0%, #3d3008 100%);
+            --gradient-amber: linear-gradient(135deg, #f0c530 0%, #d4a017 100%);
+        }
+        /* Definition Cards Layout */
+        .PhiH-definitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .PhiH-definition-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(184, 134, 11, 0.2);
+        }
+        .PhiH-definition-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        /* Expand/Collapse Functionality */
+        .PhiH-expandable-section {
+            margin-bottom: 1.5rem;
+        }
+        .PhiH-expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .PhiH-expandable-header:hover {
+            background: var(--gradient-gold);
+        }
+        .PhiH-expandable-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        .PhiH-expandable-content {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            border-top: none;
+        }
+        .PhiH-expandable-content.hidden {
+            display: none;
+        }
+        .PhiH-expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        .PhiH-expand-icon.expanded {
+            transform: rotate(180deg);
+        }
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        .PhiH-author-info {
+            flex: 1;
+        }
+        /* Quotes Section Styling */
+        .PhiH-quotes-container {
+            margin-top: 1rem;
+        }
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(184, 134, 11, 0.2);
+        }
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        body.rtl .text-analysis-indent-2 {
+            margin-left: 0;
+            margin-right: 3rem;
+        }
+        body.rtl .text-analysis-indent-3 {
+            margin-left: 0;
+            margin-right: 4.5rem;
+        }
+        /* RTL support for definition cards */
+        body.rtl .PhiH-definition-card-content ul {
+            padding-left: 0;
+            padding-right: 1.2rem;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .PhiH-definitions-grid {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .PhiH-author-image {
+                align-self: center;
+            }
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-problematization" dir="ltr">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
+    <main class="PhiH-lesson1-container">
+        <div class="PhiH-lesson1-header">
+            <h1 class="PhiH-lesson1-title" data-i18n="PhiH.lessons.problematization.title">الأشكلة</h1>
+            <div class="PhiH-lesson1-level" data-i18n="PhiH.lessons.problematization.level">السنة الثالثة ثانوي - الفلسفة</div>
+        </div>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="introHeader">
+                <h3 data-i18n="PhiH.lessons.problematization.introduction.title">التمهيد</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="introContent">
+                <p data-i18n="PhiH.lessons.problematization.introduction.text">لا يقوم التفلسف على استظهار الأجوبة بقدر ما يقوم على القدرة على بناء المشكلات. فالفيلسوف الحق ليس من يُجيب عن أسئلة غيره، بل من يُنشئ سؤالاً جديداً يفتح أفقاً لم يُطرق من قبل. غير أنّ هذا الإقرار يقتضي وقفة منهجية: ما منزلة المشكل في البحث؟ وهل كلّ سؤال يمثّل مشكلاً حقيقياً؟ وما الذي يجعل مشكلاً ما فريداً ومنتمياً إلى صاحبه؟ تُطرح هذه الأسئلة بحدّة في تاريخ الفلسفة، وقد حاول كلّ من أرسطو وريكور ونيتشه الإجابة عنها من زاوية مختلفة. سينظر الدرس في نصّ أرسطو الذي يؤكّد استحالة البحث دون مشكل، ثمّ في نصّ ريكور الذي يبيّن فرادة المشكل الفلسفي وارتباطه بوضع صاحبه، وأخيراً في نصّ نيتشه الذي يجسّم هذه الفرادة بجعل "قيمة القيم" نفسها مشكلاً.</p>
+            </div>
+        </section>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="textsHeader">
+                <h3 data-i18n="PhiH.lessons.problematization.texts.title">النصوص</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="textsContent">
+                <div class="PhiH-texts-container">
+                    <ul class="PhiH-texts-list">
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2b_lesson1_text1.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.problematization.texts.text1">ما من بحث دون مشكل - أرسطو</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2b_lesson1_text2.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.problematization.texts.text2">في فرادة المشكل الفلسفي - ب. ريكور</span>
+                            </a>
+                        </li>
+                        <li class="PhiH-text-item">
+                            <a href="PhiH_lessons_grade3_theme2b_lesson1_text3.html" class="PhiH-text-link">
+                                <span data-i18n="PhiH.lessons.problematization.texts.text3">مشكل قيمة القيم - فريديريك نيتشه</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="quotesHeader">
+                <h3 data-i18n="PhiH.lessons.problematization.quotes.title">شواهد ونصوص ذات صلة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="quotesContent">
+                <div class="PhiH-quotes-container">
+                    <div class="PhiH-quotes-grid">
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.problematization.quotes.quote1">"للحلِّ دوماً الحقيقة الجديدة به طبقاً للمشكل الذي يُجيبُ عنه، وللمشكل الحلُّ الجديد به طبقاً لحقيقته الخاصة أي طبقاً لمناه."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.problematization.quotes.author1">جيل دولوز</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.problematization.quotes.quote2">"إنَّ الأسئلة في الفلسفة أهمُّ من الأجوبة، وكلُّ جواب يتحوَّل إلى سؤال جديد."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.problematization.quotes.author2">كارل ياسبرز</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.problematization.quotes.quote3">"إنَّ الفلسفة هي علم المشكلات التي تمَّ حلُّها."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.problematization.quotes.author3">ليون برونشفيك</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.problematization.quotes.quote4">"إنَّ الحيرة هي حياة الروح."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.problematization.quotes.author4">هيغل</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.problematization.quotes.quote5">"يجعل الغباء من ترسانه حقائقه نظام وقاية ضد نهشات الحقيقة."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.problematization.quotes.author5">هوبير غرونيي</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.problematization.quotes.quote6">"إنَّ المسألة هي مبدأ التفكير ذاته، مبدؤه الفلسفي بامتياز."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.problematization.quotes.author6">ميشال ميار</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.problematization.quotes.quote7">"إنَّ الجهد الذي يبذله المرء للحفاظ على بقائه هو الأساس الأوّل والأوحد للفضيلة. لأنه لا يوجد مبدأ آخر يمكن اعتباره سابقاً عليه."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.problematization.quotes.author7">سبينوزا</div>
+                        </div>
+                        <div class="PhiH-quote-card">
+                            <div class="PhiH-quote-text" data-i18n="PhiH.lessons.problematization.quotes.quote8">"يمكننا أن نتحدث عن تأسيس للتفكير الفردي انطلاقاً من كوجيتو ديكارت، غير أن هذا التأسيس لا يخرج عن سلطة الآخر."</div>
+                            <div class="PhiH-quote-author" data-i18n="PhiH.lessons.problematization.quotes.author8">ميشال فوكو</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="PhiH-expandable-section">
+            <div class="PhiH-expandable-header" id="conclusionHeader">
+                <h3 data-i18n="PhiH.lessons.problematization.conclusion.title">الخاتمة</h3>
+                <span class="PhiH-expand-icon">▼</span>
+            </div>
+            <div class="PhiH-expandable-content" id="conclusionContent">
+                <p data-i18n="PhiH.lessons.problematization.conclusion.text">يتّضح مما سبق أنّ الأشكلة هي الإجراء الأول والأساسي في التفكير الفلسفي؛ فالمشكل ليس عائقاً عارضاً بل هو الشرط الذي يمنح البحث وجهته ومعياره ومشروعيّته، وهو ما يشارك الفلسفة فرادتها ويجعلها أثراً لا يقبل التكرار. ومن ثمّ فإنّ قيمة الفيلسوف لا تُقاس بعدد أجوبته بل بقدرته على تغيير الإشكالية السابقة وإعادة قدّ الأسئلة الأساسية. غير أنّ بناء المشكل لا يكفي وحده؛ إذ لا بدّ من تأسيسه على مبادئ تُبرّر مشروعيّته وتضمن صلابته، وهو ما يستدعي الانتقال من الأشكلة إلى التأسيس.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">Terms of Use</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Page-specific translations for problematization lesson
+        window.translations_PhiHproblematization = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                // Lesson specific translations
+                "PhiH.lessons.problematization.title": "La Problématisation",
+                "PhiH.lessons.problematization.level": "3ème Secondaire - Philosophie",
+                "PhiH.lessons.problematization.introduction.title": "Introduction",
+                "PhiH.lessons.problematization.introduction.text": "Philosopher ne consiste pas à collectionner les réponses, mais à savoir construire des problèmes. Le grand philosophe n'est pas celui qui répond aux questions des autres, mais celui qui inaugure une question nouvelle, ouvrant un horizon inexploré. Or, cette affirmation exige un examen méthodique : quelle est la place du problème dans la recherche ? Toute question est-elle un problème véritable ? Qu'est-ce qui rend un problème singulier et propre à son auteur ? Ces questions se posent avec acuité dans l'histoire de la philosophie, et Aristote, Ricœur et Nietzsche ont tenté d'y répondre chacun à sa manière. La leçon examinera le texte d'Aristote qui affirme l'impossibilité de toute recherche sans problème, puis celui de Ricœur qui montre la singularité du problème philosophique et son lien à la situation de son auteur, enfin celui de Nietzsche qui incarne cette singularité en faisant de la « valeur des valeurs » elle-même un problème.",
+                "PhiH.lessons.problematization.texts.title": "Textes",
+                "PhiH.lessons.problematization.texts.text1": "Il n'y a pas de recherche sans problème - Aristote",
+                "PhiH.lessons.problematization.texts.text2": "De la singularité du problème philosophique - P. Ricœur",
+                "PhiH.lessons.problematization.texts.text3": "Le problème de la valeur des valeurs - Friedrich Nietzsche",
+                "PhiH.lessons.problematization.quotes.title": "Citations et textes connexes",
+                "PhiH.lessons.problematization.quotes.quote1": "« La solution a toujours la nouvelle vérité qui lui correspond selon le problème auquel elle répond, et le problème a la nouvelle solution qui lui correspond selon sa vérité propre, c'est-à-dire selon ses propres termes. »",
+                "PhiH.lessons.problematization.quotes.quote2": "« Les questions en philosophie sont plus importantes que les réponses, et chaque réponse se transforme en une nouvelle question. »",
+                "PhiH.lessons.problematization.quotes.quote3": "« La philosophie est la science des problèmes résolus. »",
+                "PhiH.lessons.problematization.quotes.quote4": "« La perplexité est la vie de l'esprit. »",
+                "PhiH.lessons.problematization.quotes.quote5": "« La bêtise fait de ses vérités un système de défense contre les morsures de la vérité. »",
+                "PhiH.lessons.problematization.quotes.quote6": "« La question est le principe de la pensée elle-même, son principe philosophique par excellence. »",
+                "PhiH.lessons.problematization.quotes.quote7": "« L'effort que l'homme déploie pour préserver son être est le fondement premier et unique de la vertu. Car il n'existe aucun autre principe qu'on puisse considérer comme antérieur à celui-là. »",
+                "PhiH.lessons.problematization.quotes.quote8": "« On peut parler d'une fondation de la pensée individuelle à partir du cogito de Descartes, mais cette fondation ne sort pas de l'autorité de l'autre. »",
+                "PhiH.lessons.problematization.quotes.author1": "Gilles Deleuze",
+                "PhiH.lessons.problematization.quotes.author2": "Karl Jaspers",
+                "PhiH.lessons.problematization.quotes.author3": "Léon Brunschvicg",
+                "PhiH.lessons.problematization.quotes.author4": "Hegel",
+                "PhiH.lessons.problematization.quotes.author5": "Hubert Grenier",
+                "PhiH.lessons.problematization.quotes.author6": "Michel Meyer",
+                "PhiH.lessons.problematization.quotes.author7": "Spinoza",
+                "PhiH.lessons.problematization.quotes.author8": "Michel Foucault",
+                "PhiH.lessons.problematization.conclusion.title": "Conclusion",
+                "PhiH.lessons.problematization.conclusion.text": "Il ressort de ce qui précède que la problématisation est l'acte premier et fondamental de la pensée philosophique ; le problème n'est pas un obstacle accidentel, mais la condition qui donne à la recherche son orientation, son critère et sa légitimité, et c'est lui qui fait partager à la philosophie sa singularité et en fait une œuvre irréductible à la répétition. La valeur du philosophe ne se mesure donc pas au nombre de ses réponses, mais à sa capacité de changer la problématique antérieure et de redessiner la stature des questions fondamentales. Cependant, la construction du problème ne suffit pas : encore faut-il le fonder sur des principes qui justifient sa légitimité et assurent sa solidité, ce qui appelle le passage de la problématisation à la fondation."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                // Lesson specific translations
+                "PhiH.lessons.problematization.title": "Problematization",
+                "PhiH.lessons.problematization.level": "3rd Secondary - Philosophy",
+                "PhiH.lessons.problematization.introduction.title": "Introduction",
+                "PhiH.lessons.problematization.introduction.text": "Philosophizing does not consist in collecting answers, but in the capacity to construct problems. The true philosopher is not the one who answers others' questions, but the one who inaugurates a new question, opening an unexplored horizon. Yet this claim demands a methodological examination: what is the place of the problem in research? Is every question a genuine problem? What makes a problem singular and proper to its author? These questions arise with acuity in the history of philosophy, and Aristotle, Ricœur and Nietzsche each attempted to answer them in their own way. The lesson will examine Aristotle's text affirming the impossibility of any research without a problem, then Ricœur's text showing the singularity of the philosophical problem and its link to the author's situation, and finally Nietzsche's text which embodies this singularity by making the \"value of values\" itself a problem.",
+                "PhiH.lessons.problematization.texts.title": "Texts",
+                "PhiH.lessons.problematization.texts.text1": "There is No Research Without a Problem - Aristotle",
+                "PhiH.lessons.problematization.texts.text2": "On the Singularity of the Philosophical Problem - P. Ricœur",
+                "PhiH.lessons.problematization.texts.text3": "The Problem of the Value of Values - Friedrich Nietzsche",
+                "PhiH.lessons.problematization.quotes.title": "Related Quotes and Texts",
+                "PhiH.lessons.problematization.quotes.quote1": "\"The solution always has the new truth corresponding to it according to the problem it answers, and the problem has the new solution corresponding to it according to its own truth, that is, according to its own terms.\"",
+                "PhiH.lessons.problematization.quotes.quote2": "\"Questions in philosophy are more important than answers, and every answer transforms into a new question.\"",
+                "PhiH.lessons.problematization.quotes.quote3": "\"Philosophy is the science of solved problems.\"",
+                "PhiH.lessons.problematization.quotes.quote4": "\"Perplexity is the life of the spirit.\"",
+                "PhiH.lessons.problematization.quotes.quote5": "\"Stupidity makes of its truths a system of defense against the bites of truth.\"",
+                "PhiH.lessons.problematization.quotes.quote6": "\"The question is the principle of thought itself, its philosophical principle par excellence.\"",
+                "PhiH.lessons.problematization.quotes.quote7": "\"The effort a man deploys to preserve his own being is the first and only foundation of virtue. For there is no other principle that can be considered prior to it.\"",
+                "PhiH.lessons.problematization.quotes.quote8": "\"One can speak of a foundation of individual thought starting from Descartes' cogito, but this foundation does not escape the authority of the other.\"",
+                "PhiH.lessons.problematization.quotes.author1": "Gilles Deleuze",
+                "PhiH.lessons.problematization.quotes.author2": "Karl Jaspers",
+                "PhiH.lessons.problematization.quotes.author3": "Léon Brunschvicg",
+                "PhiH.lessons.problematization.quotes.author4": "Hegel",
+                "PhiH.lessons.problematization.quotes.author5": "Hubert Grenier",
+                "PhiH.lessons.problematization.quotes.author6": "Michel Meyer",
+                "PhiH.lessons.problematization.quotes.author7": "Spinoza",
+                "PhiH.lessons.problematization.quotes.author8": "Michel Foucault",
+                "PhiH.lessons.problematization.conclusion.title": "Conclusion",
+                "PhiH.lessons.problematization.conclusion.text": "It emerges from the foregoing that problematization is the first and fundamental act of philosophical thought; the problem is not an accidental obstacle but the condition that gives research its orientation, its criterion and its legitimacy, and it is what makes the philosophy share in its singularity and turns it into a work irreducible to repetition. The value of the philosopher is therefore not measured by the number of his answers, but by his capacity to change the previous problematic and to redraw the stature of the fundamental questions. However, constructing the problem is not enough: it must still be founded on principles that justify its legitimacy and ensure its solidity, which calls for the passage from problematization to foundation."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                // Lesson specific translations
+                "PhiH.lessons.problematization.title": "الأشكلة",
+                "PhiH.lessons.problematization.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.lessons.problematization.introduction.title": "التمهيد",
+                "PhiH.lessons.problematization.introduction.text": "لا يقوم التفلسف على استظهار الأجوبة بقدر ما يقوم على القدرة على بناء المشكلات. فالفيلسوف الحق ليس من يُجيب عن أسئلة غيره، بل من يُنشئ سؤالاً جديداً يفتح أفقاً لم يُطرق من قبل. غير أنّ هذا الإقرار يقتضي وقفة منهجية: ما منزلة المشكل في البحث؟ وهل كلّ سؤال يمثّل مشكلاً حقيقياً؟ وما الذي يجعل مشكلاً ما فريداً ومنتمياً إلى صاحبه؟ تُطرح هذه الأسئلة بحدّة في تاريخ الفلسفة، وقد حاول كلّ من أرسطو وريكور ونيتشه الإجابة عنها من زاوية مختلفة. سينظر الدرس في نصّ أرسطو الذي يؤكّد استحالة البحث دون مشكل، ثمّ في نصّ ريكور الذي يبيّن فرادة المشكل الفلسفي وارتباطه بوضع صاحبه، وأخيراً في نصّ نيتشه الذي يجسّم هذه الفرادة بجعل \"قيمة القيم\" نفسها مشكلاً.",
+                "PhiH.lessons.problematization.texts.title": "النصوص",
+                "PhiH.lessons.problematization.texts.text1": "ما من بحث دون مشكل - أرسطو",
+                "PhiH.lessons.problematization.texts.text2": "في فرادة المشكل الفلسفي - ب. ريكور",
+                "PhiH.lessons.problematization.texts.text3": "مشكل قيمة القيم - فريديريك نيتشه",
+                "PhiH.lessons.problematization.quotes.title": "شواهد ونصوص ذات صلة",
+                "PhiH.lessons.problematization.quotes.quote1": "\"للحلِّ دوماً الحقيقة الجديدة به طبقاً للمشكل الذي يُجيبُ عنه، وللمشكل الحلُّ الجديد به طبقاً لحقيقته الخاصة أي طبقاً لمناه.\"",
+                "PhiH.lessons.problematization.quotes.quote2": "\"إنَّ الأسئلة في الفلسفة أهمُّ من الأجوبة، وكلُّ جواب يتحوَّل إلى سؤال جديد.\"",
+                "PhiH.lessons.problematization.quotes.quote3": "\"إنَّ الفلسفة هي علم المشكلات التي تمَّ حلُّها.\"",
+                "PhiH.lessons.problematization.quotes.quote4": "\"إنَّ الحيرة هي حياة الروح.\"",
+                "PhiH.lessons.problematization.quotes.quote5": "\"يجعل الغباء من ترسانه حقائقه نظام وقاية ضد نهشات الحقيقة.\"",
+                "PhiH.lessons.problematization.quotes.quote6": "\"إنَّ المسألة هي مبدأ التفكير ذاته، مبدؤه الفلسفي بامتياز.\"",
+                "PhiH.lessons.problematization.quotes.quote7": "\"إنَّ الجهد الذي يبذله المرء للحفاظ على بقائه هو الأساس الأوّل والأوحد للفضيلة. لأنه لا يوجد مبدأ آخر يمكن اعتباره سابقاً عليه.\"",
+                "PhiH.lessons.problematization.quotes.quote8": "\"يمكننا أن نتحدث عن تأسيس للتفكير الفردي انطلاقاً من كوجيتو ديكارت، غير أن هذا التأسيس لا يخرج عن سلطة الآخر.\"",
+                "PhiH.lessons.problematization.quotes.author1": "جيل دولوز",
+                "PhiH.lessons.problematization.quotes.author2": "كارل ياسبرز",
+                "PhiH.lessons.problematization.quotes.author3": "ليون برونشفيك",
+                "PhiH.lessons.problematization.quotes.author4": "هيغل",
+                "PhiH.lessons.problematization.quotes.author5": "هوبير غرونيي",
+                "PhiH.lessons.problematization.quotes.author6": "ميشال ميار",
+                "PhiH.lessons.problematization.quotes.author7": "سبينوزا",
+                "PhiH.lessons.problematization.quotes.author8": "ميشال فوكو",
+                "PhiH.lessons.problematization.conclusion.title": "الخاتمة",
+                "PhiH.lessons.problematization.conclusion.text": "يتّضح مما سبق أنّ الأشكلة هي الإجراء الأول والأساسي في التفكير الفلسفي؛ فالمشكل ليس عائقاً عارضاً بل هو الشرط الذي يمنح البحث وجهته ومعياره ومشروعيّته، وهو ما يشارك الفلسفة فرادتها ويجعلها أثراً لا يقبل التكرار. ومن ثمّ فإنّ قيمة الفيلسوف لا تُقاس بعدد أجوبته بل بقدرته على تغيير الإشكالية السابقة وإعادة قدّ الأسئلة الأساسية. غير أنّ بناء المشكل لا يكفي وحده؛ إذ لا بدّ من تأسيسه على مبادئ تُبرّر مشروعيّته وتضمن صلابته، وهو ما يستدعي الانتقال من الأشكلة إلى التأسيس."
+            }
+        };
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHproblematization;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+    <script>
+        // Expand/Collapse functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const expandableHeaders = document.querySelectorAll('.PhiH-expandable-header');
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.PhiH-expand-icon');
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('expanded');
+                    } else {
+                        content.classList.add('hidden');
+                        icon.classList.remove('expanded');
+                    }
+                });
+            });
+            // Initially hide all expandable content
+            document.querySelectorAll('.PhiH-expandable-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

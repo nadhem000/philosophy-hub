@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: في خصوصيات الحجاج - ش. برلمان وأ. تيتكا - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#483d8b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Dark Slate Blue / Royal Indigo Color Palette */
+        :root {
+            --primary-color: #483d8b;
+            --primary-light: #6a5acd;
+            --primary-dark: #2e2456;
+            --secondary-color: #4b3d8b;
+            --secondary-light: #7b6fc4;
+            --secondary-dark: #322861;
+            --accent-color: #6a5acd;
+            --accent-light: #8a7de0;
+            --accent-dark: #483d8b;
+            --light-color: #f0eeff;
+            --dark-color: #1a1533;
+            --text-color: #2e2a4a;
+            --heading-color: #1a1533;
+            --background-color: #f7f5ff;
+            --card-bg: #ffffff;
+            --definition-bg: #e8e4ff;
+            --border-color: #c4bce8;
+            --table-even-bg: #f0eeff;
+            --table-hover-bg: #ddd6ff;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(72, 61, 139, 0.1), 0 2px 4px -1px rgba(72, 61, 139, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(72, 61, 139, 0.1), 0 4px 6px -2px rgba(72, 61, 139, 0.05);
+            --gradient-primary: linear-gradient(135deg, #483d8b 0%, #6a5acd 100%);
+            --gradient-secondary: linear-gradient(135deg, #322861 0%, #4b3d8b 100%);
+            --gradient-accent: linear-gradient(135deg, #6a5acd 0%, #483d8b 100%);
+            --gradient-gray: linear-gradient(135deg, #7b6fc4 0%, #4b3d8b 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #8a7de0;
+            --primary-light: #a89ef0;
+            --primary-dark: #6a5acd;
+            --secondary-color: #7b6fc4;
+            --secondary-light: #9e94d8;
+            --secondary-dark: #4b3d8b;
+            --accent-color: #a89ef0;
+            --accent-light: #c0b8f4;
+            --accent-dark: #8a7de0;
+            --light-color: #2e2a4a;
+            --dark-color: #1a1533;
+            --text-color: #d4cef0;
+            --heading-color: #f0eeff;
+            --background-color: #1a1533;
+            --card-bg: #2e2456;
+            --definition-bg: #322861;
+            --border-color: #4b3d8b;
+            --table-even-bg: #2e2456;
+            --table-hover-bg: #322861;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #6a5acd 0%, #8a7de0 100%);
+            --gradient-secondary: linear-gradient(135deg, #4b3d8b 0%, #7b6fc4 100%);
+            --gradient-accent: linear-gradient(135deg, #6a5acd 0%, #483d8b 100%);
+            --gradient-gray: linear-gradient(135deg, #9e94d8 0%, #7b6fc4 100%);
+        }
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(72, 61, 139, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(75, 61, 139, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(106, 90, 205, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-author-info {
+            flex: 1;
+        }
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        li strong {
+            color: var(--primary-color);
+        }
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-text-card ol li ul {
+            margin-top: 0.6rem;
+            padding-right: 1.5rem;
+            padding-left: 0;
+        }
+        .PhiH-text-card ol li ul li {
+            background-color: var(--definition-bg);
+            padding: 0.5rem 0.9rem;
+            font-size: 0.95rem;
+        }
+        /* Table Styling */
+        .PhiH-text-card table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        .PhiH-text-card th {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.85rem 1rem;
+            text-align: right;
+            font-weight: 600;
+            border: 1px solid var(--primary-dark);
+        }
+        .PhiH-text-card td {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+        .PhiH-text-card tbody tr:nth-child(even) {
+            background-color: var(--table-even-bg);
+        }
+        .PhiH-text-card tbody tr:hover {
+            background-color: var(--table-hover-bg);
+        }
+        body.rtl .PhiH-text-card th,
+        body.rtl .PhiH-text-card td {
+            text-align: right;
+        }
+        body.ltr .PhiH-text-card th,
+        body.ltr .PhiH-text-card td {
+            text-align: left;
+        }
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(72, 61, 139, 0.05), transparent);
+        }
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        body.rtl .PhiH-text-card ul li {
+            border-left: none;
+            border-right: 3px solid var(--primary-color);
+        }
+        body.rtl .PhiH-text-card ol li ul {
+            padding-right: 0;
+            padding-left: 0;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .PhiH-author-image {
+                align-self: center;
+            }
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+            .PhiH-text-card table {
+                font-size: 0.9rem;
+            }
+            .PhiH-text-card th,
+            .PhiH-text-card td {
+                padding: 0.5rem 0.6rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-text-card table {
+                font-size: 0.85rem;
+            }
+        }
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.perelmanTyteca.title">تحليل النص: في خصوصيات الحجاج - ش. برلمان وأ. تيتكا</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.perelmanTyteca.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        <section class="PhiH-text-analysis-section">
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.perelmanTyteca.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.perelmanTyteca.introduction.content">
+                    بين ما تلجأ إليه العلوم من برهنة ذات طابع إكراهي، وبين السفسطة التي تعتمد أساليب المغالطة والتمويه الخطابي، يتنزّل الحجاج باعتباره شكل معقولية يكون الاستدلال فيه قائماً على الحجة القابلة للنقاش.
+                </p>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.perelmanTyteca.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.perelmanTyteca.text.content">
+                        إنّ وجود الحجاج الذي لا يكون إلزامياً ولا اعتباطياً، هو وحده الذي يمنح الحرية الإنسانية معنى، من حيث هي شرط ممارسة اختيار معقول[1]. ولو كانت الحرية مجرّد انخراط ضروري في نظام طبيعي معطى مسبقاً، لأقصت أيّ إمكان للاختيار. ولو لم تكن ممارسة الحرية مؤسَّسة على حجة، فإنّ كلّ اختيار يغدو لامعقولاً، ويؤول إلى قرار اعتباطي يتحرك في فراغ فكري.
+                        <br><br>
+                        وإنّه ليمكن للمرء بفضل الحجاج القائم على أسباب غير إلزامية أن يفلت من المعضلة التالية: إمّا القبول بحقيقة جائزة موضوعياً وكلياً[2]، وإمّا الالتجاء إلى الإيعاز وإلى العنف لفرض القبول بآرائه وقراراته.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.perelmanTyteca.text.source">ش. برلمان وأ. تيتكا: مصنف في الحجاج - الخطابة الجديدة، ص 682، ترجمة لجنة التأليف - Ch. Perelman et O. Tyteca, Traité de l'argumentation, éd. de l'Université de Bruxelles, 1992</em></p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.perelmanTyteca.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <img src="assets/images/chaim_perelman.jpg" alt="ش. برلمان" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.perelmanTyteca.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.perelmanTyteca.author.content">
+                            ش. برلمان (1912-1984) هو من أهم مؤسسي الخطابة الجديدة. ولد بوارسو، التي هاجر منها إلى بلجيكا سنة 1925. تندرج أبحاثه ضمن مجالات عديدة مثل: الخطابة والحجاج، الفلسفة والأخلاق والحقوق. يتمثل مشروعه في وضع نظرية في الحجاج هي "الخطابة الجديدة"، وتهدف إلى تحرير الحجاج من صرامة الاستدلال المنطقي الذي تكون فيه الحقيقة ضرورية وملزمة، وتشده إلى ضرب جديد من الخطابة تقوم على المعقولية والحرية والحوار المستند إلى الإقرار بتعدد الحقائق ونسبيتها، والهادف إلى تحقيق الاقتناع (conviction) والوفاق بين المتحاورين واستبعاد كلّ أشكال العنف. إننا مع برلمان إزاء معقولية جديدة تشتغل داخل حقل الممكن، وتتجاوز هيمنة النموذج الرياضي القائم على البرهنة والنموذج التجريبي القائم على التحقّق، فضلاً عن مجاوزتها للنزعة الريبية. من أهم مؤلفاته: "الخطابة والفلسفة" (1952)، "رسالة في الحجاج - الخطابة الجديدة" (1958)، "الحقّ والأخلاق والفلسفة" (1968)، "إمبراطورية الخطابة" (1977).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.perelmanTyteca.footnotes.title">الهوامش</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.perelmanTyteca.footnotes.item1"><strong>(1) "اختيار معقول":</strong> لا يتحدّد كنتيجة للاستدلال الرياضي ولا للتحقّق التجريبي، وإنّما يتحدّد كحصيلة لبناء الحجج التي ترقى بالخطاب إلى مستوى المعقولية.</li>
+                    <li data-i18n="PhiH.textAnalysis.perelmanTyteca.footnotes.item2"><strong>(2) "القبول بحقيقة جائزة موضوعياً وكلياً":</strong> إحالة إلى الحقيقة العلمية (التي يتمّ بناؤها وفق إجراءات البرهنة في الرياضيات أو التحقّق في العلوم التجريبية)، بما هي حقيقة كلية وموضوعية غير قابلة للنقاش.</li>
+                </ul>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.perelmanTyteca.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.perelmanTyteca.questions.q1">أُبرز الخصائص المميّزة للحجاج في نظر الكاتب.</li>
+                    <li data-i18n="PhiH.textAnalysis.perelmanTyteca.questions.q2">أحدّد من بين المجالات التالية ما يمكن أن يحضر فيه الحجاج: الرياضيات، الفنّ، الفلسفة، الأخلاق، المرافعات القضائية، السفسطة، النقاشات في المجالس، الفيزياء.</li>
+                    <li data-i18n="PhiH.textAnalysis.perelmanTyteca.questions.q3">أبيّن ما إذا كانت ممارسة الحجاج تقينا ضرورةً من العنف.</li>
+                    <li data-i18n="PhiH.textAnalysis.perelmanTyteca.questions.q4">أكشف عمّا يفترضه مفهوم الكاتب للحجاج من تصوّر للحقيقة.</li>
+                </ol>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.perelmanTyteca.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.perelmanTyteca.answers.a1.title">الإجابة عن المهمة الأولى:</h5>
+                    <p data-i18n="PhiH.textAnalysis.perelmanTyteca.answers.a1.content">
+                        الخصائص المميّزة للحجاج في نظر الكاتب:
+                        <br><br>
+                        <strong>1. ليس إلزامياً:</strong> الحجاج لا يفرض نتيجة فرضاً كما تفعل البرهنة الرياضية، بل يترك للآخر حرية القبول أو الرفض.
+                        <br><br>
+                        <strong>2. ليس اعتباطياً:</strong> هو ليس قراراً عشوائياً، بل هو قائم على أسباب وحجج معقولة. فهو بين الإلزام والاعتباط، في حقل "الممكن".
+                        <br><br>
+                        <strong>3. قائم على حجة قابلة للنقاش:</strong> الحجة الحجاجية ليست نهائية، بل هي مفتوحة للمراجعة والنقد والدحض.
+                        <br><br>
+                        <strong>4. شرط للحرية الإنسانية:</strong> "إنّ وجود الحجاج... هو وحده الذي يمنح الحرية الإنسانية معنى". فبدون الحجاج، لا تكون الحرية إلا ضرورة أو اعتباطاً.
+                        <br><br>
+                        <strong>5. يمنح الاختيار معقولية:</strong> "ولو لم تكن ممارسة الحرية مؤسَّسة على حجة، فإنّ كلّ اختيار يغدو لامعقولاً، ويؤول إلى قرار اعتباطي يتحرك في فراغ فكري".
+                        <br><br>
+                        <strong>6. يفلت من معضلة الحقيقة الإلزامية أو العنف:</strong> "إمّا القبول بحقيقة جائزة موضوعياً وكلياً، وإمّا الالتجاء إلى الإيعاز وإلى العنف". فالحجاج بديل عن كليهما.
+                        <br><br>
+                        <strong>7. يهدف إلى الاقتناع والوفاق:</strong> فهو يسعى إلى إقناع الآخر بالحجة، لا إلى إخضاعه بالقوة أو الإيعاز.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.perelmanTyteca.answers.a2.title">الإجابة عن المهمة الثانية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.perelmanTyteca.answers.a2.content">
+                        من بين المجالات المطروحة، يمكن أن يحضر الحجاج في:
+                        <br><br>
+                        <strong>✓ الفنّ:</strong> في النقد الفني والجمالي، حيث تُناقش الأحكام الجمالية بحجج معقولة دون إلزام.
+                        <br><br>
+                        <strong>✓ الفلسفة:</strong> حيث يقوم التفلسف على الحجاج والنقاش العقلي، ولا يفرض نتائجه فرضاً.
+                        <br><br>
+                        <strong>✓ الأخلاق:</strong> حيث تُناقش القيم والأفعال بحجج معقولة في مجال المداولة العملية.
+                        <br><br>
+                        <strong>✓ المرافعات القضائية:</strong> وهي المثال الأبرز للحجاج عند برلمان، حيث يسعى المحامي إلى إقناع القاضي بالحجة دون إلزام.
+                        <br><br>
+                        <strong>✓ النقاشات في المجالس:</strong> حيث تُطرح القضايا العامة للنقاش والحوار، ويُسعى إلى الوفاق بالحجة.
+                        <br><br>
+                        <strong>✗ الرياضيات:</strong> لأنّها تعتمد على البرهنة الإلزامية، لا على الحجة القابلة للنقاش.
+                        <br><br>
+                        <strong>✗ الفيزياء:</strong> لأنّها تعتمد على التحقّق التجريبي والبرهنة، لا على الحجاج.
+                        <br><br>
+                        <strong>✗ السفسطة:</strong> لأنّها تعتمد على المغالطة والتمويه، لا على الحجة المعقولة.
+                        <br><br>
+                        <strong>الخلاصة:</strong> الحجاج يحضر في المجالات التي تتأسّس على المعقولية القابلة للنقاش (الفنّ، الفلسفة، الأخلاق، المرافعات القضائية، النقاشات في المجالس)، ولا يحضر في المجالات التي تتأسّس على البرهنة الإلزامية (الرياضيات، الفيزياء)، أو على المغالطة (السفسطة).
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.perelmanTyteca.answers.a3.title">الإجابة عن المهمة الثالثة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.perelmanTyteca.answers.a3.content">
+                        يمكن معالجة السؤال من زاويتين:
+                        <br><br>
+                        <strong>1. نعم، الحجاج يقي من العنف (كما يبدو من النص):</strong> يقول برلمان إنّ الحجاج القائم على أسباب غير إلزامية يتيح للمرء أن "يفلت" من المعضلة: إما القبول بحقيقة إلزامية، وإما الالتجاء إلى الإيعاز والعنف. فالحجاج هو البديل الثالث الذي يسمح بحلّ الخلافات دون عنف، وهو ما يجعله أداة للعيش المشترك.
+                        <br><br>
+                        <strong>2. لكن، لا يقي "ضرورةً" من العنف (بالمعنى الصارم للكلمة):</strong> فالحجاج لا يضمن بالضرورة إقناع الآخر. قد يفشل الحجاج، وقد يلجأ المتحاور إلى العنف رغم وجود الحجاج. فالحجاج هو <em>شرط إمكان</em> للخروج من العنف، لا <em>ضمانة نهائية</em> له.
+                        <br><br>
+                        <strong>3. الموقف التركيبي:</strong> الحجاج يقي من العنف <em>من حيث المبدأ</em> و<em>في التوجّه</em>، لأنه يجعل الوفاق ممكنًا بدلاً من الإكراه. لكنه لا يقي منه <em>ضرورةً</em> بالمعنى الحتمي، لأنّ نجاحه رهين بشروط (استعداد المتحاورين للإصغاء، قبولهم بقواعد الحوار، تجنّبهم للمغالطة). فالحجاج هو <em>الطريق المعقول</em> لتفادي العنف، لا <em>الضمانة المطلقة</em> له.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.perelmanTyteca.answers.a4.title">الإجابة عن المهمة الرابعة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.perelmanTyteca.answers.a4.content">
+                        يفترض مفهوم الكاتب للحجاج تصوّراً خاصاً للحقيقة، يمكن بيانه كما يلي:
+                        <br><br>
+                        <strong>1. رفض الحقيقة الإلزامية الكلية:</strong> الحجاج يفترض أنّ الحقيقة ليست واحدة، ولا كلية، ولا موضوعية بالمعنى العلمي الضيق. ويرفض النموذج العلمي الذي يفرض حقيقة "جائزة موضوعياً وكلياً" بوصفها غير قابلة للنقاش.
+                        <br><br>
+                        <strong>2. الإقرار بتعدد الحقائق ونسبيتها:</strong> كما ورد في تقديم الكاتب، مشروع برلمان يقوم على "الإقرار بتعدد الحقائق ونسبيتها". فالحقيقة ليست واحدة مطلقة، بل هي متعددة ومرتبطة بالسياقات والجماهير.
+                        <br><br>
+                        <strong>3. الحقيقة في حقل "الممكن":</strong> الحقيقة الحجاجية تعمل داخل حقل الممكن، لا داخل حقل الضرورة. فهي ليست ضرورية كضرورة البرهان الرياضي، ولا اعتباطية كاعتباطية الرأي، بل هي معقولة وقابلة للنقاش.
+                        <br><br>
+                        <strong>4. الحقيقة بوصفها بناءً حوارياً:</strong> الحقيقة في الحجاج ليست معطى جاهزاً يُكشف عنه، بل هي <em>بناء</em> يتم عبر الحوار والنقاش، وهي <em>حصيلة</em> للوفاق بين المتحاورين.
+                        <br><br>
+                        <strong>5. الحقيقة مرتبطة بالاقتناع:</strong> الحقيقة الحجاجية لا تُفرض، بل تُقبل باقتناع. فهي حقيقة "يُقتنع بها" لا حقيقة "تُبرهن عليها".
+                        <br><br>
+                        <strong>6. الحقيقة بوصفها معقولية لا يقيناً:</strong> الحجاج يستبدل نموذج "اليقين" (البرهاني) بنموذج "المعقولية" (الحجاجي). فالمطلوب ليس الوصول إلى يقين مطلق، بل إلى معقولية مقبولة.
+                        <br><br>
+                        <strong>الخلاصة:</strong> تصوّر الحقيقة في الحجاج هو تصوّر <em>تعددي، نسبي، حواري، بنائي، قابل للمراجعة</em>. وهو تصوّر بديل عن التصوّر العلمي الإلزامي، وعن التصوّر السفسطائي الاعتباطي.
+                    </p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.perelmanTyteca.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.perelmanTyteca.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.perelmanTyteca.analysis.thesis.content">
+                        يرى برلمان وتيتكا أنّ الحجاج - بوصفه استدلالاً لا إلزامياً ولا اعتباطياً - هو الشرط الذي يمنح الحرية الإنسانية معناها. فبدون الحجاج، تصبح الحرية إمّا ضرورة طبيعية (إن كانت مجرّد انخراط في نظام معطى)، وإمّا اعتباطاً في فراغ فكري (إن لم تكن مبنية على حجة). والحجاج، بما هو قائم على أسباب غير إلزامية، يتيح للمرء أن يفلت من معضلة الإكراه: إمّا القبول بحقيقة إلزامية (علمية)، وإمّا اللجوء إلى العنف لفرض الآراء. فالحجاج هو الطريق الثالث الذي يحفظ الحرية ويؤسّس للوفاق.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.perelmanTyteca.analysis.mechanisms.title">آليات الحجاج ووظائفه:</h5>
+                    <p data-i18n="PhiH.textAnalysis.perelmanTyteca.analysis.mechanisms.content">
+                        - <strong>اللاتزام (non-coercition):</strong> الحجاج لا يفرض نتيجته، بل يترك للآخر حرية القبول أو الرفض.
+                        <br>- <strong>اللاتعسّف (non-arbitraire):</strong> الحجاج لا يقوم على الاعتباط، بل على أسباب معقولة.
+                        <br>- <strong>الاستناد إلى الحجة:</strong> الحجة هي الأداة المركزية للحجاج، وهي قابلة للنقاش.
+                        <br>- <strong>تأسيس الحرية:</strong> الحجاج هو ما يجعل الحرية "معقولة" لا "اعتباطية".
+                        <br>- <strong>الخروج من معضلة الإكراه:</strong> الحجاج بديل عن القبول بالحقيقة الإلزامية أو اللجوء إلى العنف.
+                        <br>- <strong>تحقيق الاقتناع والوفاق:</strong> غاية الحجاج هي إقناع الآخر بالحجة، لا إخضاعه بالقوة.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.perelmanTyteca.analysis.consequences.title">النتائج المترتبة على هذه الأطروحة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.perelmanTyteca.analysis.consequences.content">
+                        - <strong>إعادة تعريف العلاقة بين الحرية والحجة:</strong> الحرية ليست غياب القيود، بل هي القدرة على الاختيار المؤسَّس على حجة.
+                        <br>- <strong>تجاوز النموذجين العلمي والسفسطائي:</strong> الحجاج يتجاوز البرهنة الإلزامية (العلم) والمغالطة (السفسطة) معاً.
+                        <br>- <strong>تأسيس أخلاقيات الحوار:</strong> الحجاج يفترض الاحترام المتبادل والاعتراف بالآخر كشريك في البحث عن الحقيقة.
+                        <br>- <strong>ربط المعقولية بالحرية:</strong> المعقولية الحجاجية ليست مجرّدة، بل هي مرتبطة بممارسة الحرية.
+                        <br>- <strong>الانتقال من الحقيقة الواحدة إلى الحقائق المتعددة:</strong> الحجاج يقرّ بتعدد الحقائق ونسبيتها، ويتجاوز النموذج الإلزامي الواحد.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.perelmanTyteca.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.perelmanTyteca.analysis.significance.content">
+                        يحمل هذا النص دلالة فلسفية عميقة في تاريخ الفلسفة المعاصرة:
+                        <br><br>
+                        <strong>1. دلالة إبستمولوجية:</strong> النص يقدّم تصوّراً جديداً للمعقولية، يتجاوز النموذج الرياضي (البرهاني) والنموذج التجريبي (التحقّقي) نحو "معقولية حجاجية" تعمل في حقل الممكن. وهي معقولية لا تلغي الحقيقة، بل تعيد تعريفها بوصفها بناءً حوارياً.
+                        <br><br>
+                        <strong>2. دلالة أخلاقية-سياسية:</strong> النص يؤسّس لأخلاقيات الحوار والديمقراطية. فالحجاج هو ما يجعل العيش المشترك ممكناً دون عنف، ويجعل الاختلاف مصدر إثراء لا مصدر صراع. وهو ما يجعله ركيزة أساسية للثقافة الديمقراطية.
+                        <br><br>
+                        <strong>3. دلالة أنثروبولوجية:</strong> النص يبيّن أنّ الحرية الإنسانية لا تتحقّق إلا بالحجاج. فالإنسان ليس كائناً إلزامياً (كالجماد)، ولا كائناً اعتباطياً (كالحيوان)، بل هو كائن حجاجي، يبني اختياراته على حجج معقولة.
+                        <br><br>
+                        <strong>4. صلة النص بالدرس (الحجاج):</strong> النص يمثّل النص المؤسِّس لنظرية "الخطابة الجديدة" عند برلمان، وهو ما يجعله النص المرجعي في درس الحجاج. فمن خلاله يتحدّد مفهوم الحجاج، وخصائصه، ووظيفته، وعلاقته بالحرية والعنف والحقيقة. والنصان المواليان (هابرماس) سيكمّلان هذا التصوّر من خلال تحليل الحجاج كتجربة تواصلية معقّدة.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.perelmanTyteca.level": "3ème Secondaire - Philosophie",
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.perelmanTyteca.title": "Analyse du texte : Des particularités de l'argumentation - Ch. Perelman et O. Tyteca",
+                "PhiH.textAnalysis.perelmanTyteca.introduction.title": "Introduction",
+                "PhiH.textAnalysis.perelmanTyteca.introduction.content": "Entre la démonstration à caractère contraignant dont usent les sciences, et la sophistique qui recourt aux procédés du sophisme et de la manipulation discursive, l'argumentation se situe comme une forme de rationalité où le raisonnement repose sur un argument discutable.",
+                "PhiH.textAnalysis.perelmanTyteca.text.title": "Le texte",
+                "PhiH.textAnalysis.perelmanTyteca.text.content": "L'existence de l'argumentation, qui n'est ni contraignante ni arbitraire, est seule à donner un sens à la liberté humaine, en tant qu'elle est la condition de l'exercice d'un choix raisonnable [1]. Si la liberté n'était qu'une insertion nécessaire dans un système naturel donné d'avance, elle exclurait toute possibilité de choix. Et si l'exercice de la liberté ne reposait pas sur un argument, tout choix deviendrait déraisonnable, et se réduirait à une décision arbitraire se mouvant dans un vide intellectuel.<br><br>Et il est possible à l'homme, grâce à l'argumentation fondée sur des raisons non contraignantes, d'échapper au dilemme suivant : soit l'acceptation d'une vérité valable objectivement et totalement [2], soit le recours à l'injonction et à la violence pour imposer l'acceptation de ses opinions et de ses décisions.",
+                "PhiH.textAnalysis.perelmanTyteca.text.source": "Ch. Perelman et O. Tyteca, Traité de l'argumentation - La nouvelle rhétorique, p. 682, éd. de l'Université de Bruxelles, 1992",
+                "PhiH.textAnalysis.perelmanTyteca.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.perelmanTyteca.author.alt": "Chaïm Perelman",
+                "PhiH.textAnalysis.perelmanTyteca.author.content": "Ch. Perelman (1912-1984) est l'un des fondateurs les plus importants de la nouvelle rhétorique. Il est né à Varsovie, d'où il a émigré en Belgique en 1925. Ses recherches s'inscrivent dans de nombreux domaines : rhétorique et argumentation, philosophie, éthique et droit. Son projet consiste à élaborer une théorie de l'argumentation, la « nouvelle rhétorique », visant à libérer l'argumentation de la rigueur du raisonnement logique où la vérité est nécessaire et contraignante, et à l'orienter vers un nouveau type de rhétorique fondé sur la rationalité, la liberté et le dialogue, s'appuyant sur la reconnaissance de la pluralité et de la relativité des vérités, et visant à réaliser la conviction et le consensus entre les interlocuteurs, tout en écartant toutes les formes de violence. Nous sommes avec Perelman devant une nouvelle rationalité qui opère dans le champ du possible et dépasse la domination du modèle mathématique fondé sur la démonstration et du modèle expérimental fondé sur la vérification, tout en dépassant également le scepticisme. Parmi ses œuvres majeures : « Rhétorique et philosophie » (1952), « Traité de l'argumentation - La nouvelle rhétorique » (1958), « Droit, morale et philosophie » (1968), « L'empire rhétorique » (1977).",
+                "PhiH.textAnalysis.perelmanTyteca.footnotes.title": "Notes de bas de page",
+                "PhiH.textAnalysis.perelmanTyteca.footnotes.item1": "<strong>(1) « Choix raisonnable » :</strong> il n'est déterminé ni par la démonstration mathématique ni par la vérification expérimentale, mais il est déterminé comme le résultat de la construction d'arguments qui élèvent le discours au niveau de la rationalité.",
+                "PhiH.textAnalysis.perelmanTyteca.footnotes.item2": "<strong>(2) « L'acceptation d'une vérité valable objectivement et totalement » :</strong> référence à la vérité scientifique (qui est construite selon les procédures de la démonstration en mathématiques ou de la vérification dans les sciences expérimentales), en tant que vérité totale et objective non discutable.",
+                "PhiH.textAnalysis.perelmanTyteca.questions.title": "Tâches",
+                "PhiH.textAnalysis.perelmanTyteca.questions.q1": "Je mets en évidence les caractéristiques distinctives de l'argumentation selon l'auteur.",
+                "PhiH.textAnalysis.perelmanTyteca.questions.q2": "Je détermine parmi les domaines suivants ceux où l'argumentation peut être présente : mathématiques, art, philosophie, éthique, plaidoiries judiciaires, sophistique, débats dans les conseils, physique.",
+                "PhiH.textAnalysis.perelmanTyteca.questions.q3": "Je montre si la pratique de l'argumentation nous protège nécessairement de la violence.",
+                "PhiH.textAnalysis.perelmanTyteca.questions.q4": "Je révèle quelle conception de la vérité présuppose le concept d'argumentation de l'auteur.",
+                "PhiH.textAnalysis.perelmanTyteca.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a1.title": "Réponse à la première tâche :",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a1.content": "Les caractéristiques distinctives de l'argumentation selon l'auteur :<br><br><strong>1. Non contraignante :</strong> l'argumentation n'impose pas sa conclusion comme le fait la démonstration mathématique ; elle laisse à l'autre la liberté d'accepter ou de refuser.<br><br><strong>2. Non arbitraire :</strong> elle n'est pas une décision hasardeuse, mais repose sur des raisons et des arguments raisonnables. Elle se situe entre la contrainte et l'arbitraire, dans le champ du « possible ».<br><br><strong>3. Fondée sur un argument discutable :</strong> l'argument argumentatif n'est pas définitif, mais ouvert à la révision, à la critique et à la réfutation.<br><br><strong>4. Condition de la liberté humaine :</strong> « L'existence de l'argumentation... est seule à donner un sens à la liberté humaine. » Sans argumentation, la liberté n'est que nécessité ou arbitraire.<br><br><strong>5. Elle donne au choix sa rationalité :</strong> « Si l'exercice de la liberté ne reposait pas sur un argument, tout choix deviendrait déraisonnable, et se réduirait à une décision arbitraire se mouvant dans un vide intellectuel. »<br><br><strong>6. Elle permet d'échapper au dilemme de la vérité contraignante ou de la violence :</strong> « soit l'acceptation d'une vérité valable objectivement et totalement, soit le recours à l'injonction et à la violence. » L'argumentation est l'alternative aux deux.<br><br><strong>7. Elle vise la conviction et le consensus :</strong> elle cherche à convaincre l'autre par l'argument, non à le soumettre par la force ou l'injonction.",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a2.title": "Réponse à la deuxième tâche :",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a2.content": "Parmi les domaines proposés, l'argumentation peut être présente dans :<br><br><strong>✓ L'art :</strong> dans la critique artistique et esthétique, où les jugements esthétiques sont discutés par des arguments raisonnables sans contrainte.<br><br><strong>✓ La philosophie :</strong> où le philosopher repose sur l'argumentation et le débat rationnel, et n'impose pas ses résultats.<br><br><strong>✓ L'éthique :</strong> où les valeurs et les actes sont discutés par des arguments raisonnables dans le champ de la délibération pratique.<br><br><strong>✓ Les plaidoiries judiciaires :</strong> c'est l'exemple paradigmatique de l'argumentation chez Perelman, où l'avocat cherche à convaincre le juge par l'argument sans contrainte.<br><br><strong>✓ Les débats dans les conseils :</strong> où les questions publiques sont soumises à la discussion et au dialogue, et où le consensus est recherché par l'argument.<br><br><strong>✗ Les mathématiques :</strong> car elles reposent sur la démonstration contraignante, non sur l'argument discutable.<br><br><strong>✗ La physique :</strong> car elle repose sur la vérification expérimentale et la démonstration, non sur l'argumentation.<br><br><strong>✗ La sophistique :</strong> car elle repose sur le sophisme et la manipulation, non sur l'argument raisonnable.<br><br><strong>Conclusion :</strong> l'argumentation est présente dans les domaines fondés sur la rationalité discutable (art, philosophie, éthique, plaidoiries judiciaires, débats dans les conseils), et n'est pas présente dans les domaines fondés sur la démonstration contraignante (mathématiques, physique) ou sur le sophisme (sophistique).",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a3.title": "Réponse à la troisième tâche :",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a3.content": "On peut traiter la question sous deux angles :<br><br><strong>1. Oui, l'argumentation protège de la violence (comme il apparaît du texte) :</strong> Perelman dit que l'argumentation fondée sur des raisons non contraignantes permet à l'homme d'« échapper » au dilemme : soit l'acceptation d'une vérité contraignante, soit le recours à l'injonction et à la violence. L'argumentation est la troisième alternative qui permet de résoudre les différends sans violence, ce qui en fait un instrument du vivre-ensemble.<br><br><strong>2. Mais elle ne protège pas « nécessairement » de la violence (au sens strict du terme) :</strong> l'argumentation ne garantit pas nécessairement la conviction de l'autre. L'argumentation peut échouer, et l'interlocuteur peut recourir à la violence malgré l'existence de l'argumentation. L'argumentation est une <em>condition de possibilité</em> de la sortie de la violence, non une <em>garantie définitive</em>.<br><br><strong>3. La position synthétique :</strong> l'argumentation protège de la violence <em>par principe</em> et <em>dans son orientation</em>, parce qu'elle rend le consensus possible au lieu de la contrainte. Mais elle n'en protège pas <em>nécessairement</em> au sens déterministe, car son succès dépend de conditions (la disposition des interlocuteurs à écouter, leur acceptation des règles du dialogue, leur évitement du sophisme). L'argumentation est la <em>voie raisonnable</em> pour éviter la violence, non la <em>garantie absolue</em>.",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a4.title": "Réponse à la quatrième tâche :",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a4.content": "Le concept d'argumentation de l'auteur présuppose une conception particulière de la vérité, que l'on peut exposer ainsi :<br><br><strong>1. Rejet de la vérité contraignante totale :</strong> l'argumentation présuppose que la vérité n'est ni une, ni totale, ni objective au sens scientifique étroit. Elle refuse le modèle scientifique qui impose une vérité « valable objectivement et totalement » comme non discutable.<br><br><strong>2. Reconnaissance de la pluralité et de la relativité des vérités :</strong> comme indiqué dans la présentation de l'auteur, le projet de Perelman repose sur « la reconnaissance de la pluralité et de la relativité des vérités ». La vérité n'est pas une et absolue, mais multiple et liée aux contextes et aux auditoires.<br><br><strong>3. La vérité dans le champ du « possible » :</strong> la vérité argumentative opère dans le champ du possible, non dans celui de la nécessité. Elle n'est pas nécessaire comme la nécessité de la démonstration mathématique, ni arbitraire comme l'arbitraire de l'opinion, mais elle est raisonnable et discutable.<br><br><strong>4. La vérité comme construction dialogique :</strong> la vérité dans l'argumentation n'est pas une donnée toute faite que l'on découvre, mais une <em>construction</em> qui se fait à travers le dialogue et la discussion, et un <em>résultat</em> du consensus entre les interlocuteurs.<br><br><strong>5. La vérité liée à la conviction :</strong> la vérité argumentative ne s'impose pas, mais est acceptée par conviction. Elle est une vérité « dont on est convaincu », non une vérité « sur laquelle on démontre ».<br><br><strong>6. La vérité comme rationalité et non comme certitude :</strong> l'argumentation substitue au modèle de la « certitude » (démonstrative) le modèle de la « rationalité » (argumentative). Ce qui est recherché n'est pas la certitude absolue, mais la rationalité acceptable.<br><br><strong>Conclusion :</strong> la conception de la vérité dans l'argumentation est une conception <em>pluraliste, relative, dialogique, constructive et révisable</em>. C'est une conception alternative à la conception scientifique contraignante et à la conception sophistique arbitraire.",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.thesis.title": "Thèse principale :",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.thesis.content": "Perelman et Tyteca considèrent que l'argumentation — en tant que raisonnement ni contraignant ni arbitraire — est la condition qui donne un sens à la liberté humaine. Sans l'argumentation, la liberté devient soit une nécessité naturelle (si elle n'est qu'une insertion dans un système donné), soit un arbitraire dans un vide intellectuel (si elle n'est pas fondée sur un argument). Et l'argumentation, en tant que fondée sur des raisons non contraignantes, permet à l'homme d'échapper au dilemme de la contrainte : soit l'acceptation d'une vérité contraignante (scientifique), soit le recours à la violence pour imposer ses opinions. L'argumentation est la troisième voie qui préserve la liberté et fonde le consensus.",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.mechanisms.title": "Mécanismes et fonctions de l'argumentation :",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.mechanisms.content": "- <strong>La non-contrainte (non-coercition) :</strong> l'argumentation n'impose pas sa conclusion, mais laisse à l'autre la liberté d'accepter ou de refuser.<br>- <strong>La non-arbitraire (non-arbitraire) :</strong> l'argumentation ne repose pas sur l'arbitraire, mais sur des raisons raisonnables.<br>- <strong>L'appui sur l'argument :</strong> l'argument est l'outil central de l'argumentation, et il est discutable.<br>- <strong>La fondation de la liberté :</strong> l'argumentation est ce qui rend la liberté « raisonnable » et non « arbitraire ».<br>- <strong>La sortie du dilemme de la contrainte :</strong> l'argumentation est l'alternative à l'acceptation de la vérité contraignante ou au recours à la violence.<br>- <strong>La réalisation de la conviction et du consensus :</strong> le but de l'argumentation est de convaincre l'autre par l'argument, non de le soumettre par la force.",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.consequences.title": "Conséquences de cette thèse :",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.consequences.content": "- <strong>Redéfinition du rapport entre liberté et argument :</strong> la liberté n'est pas l'absence de contraintes, mais la capacité de choisir en se fondant sur un argument.<br>- <strong>Dépassement des deux modèles scientifique et sophistique :</strong> l'argumentation dépasse à la fois la démonstration contraignante (science) et le sophisme (sophistique).<br>- <strong>Fondation d'une éthique du dialogue :</strong> l'argumentation présuppose le respect mutuel et la reconnaissance de l'autre comme partenaire dans la recherche de la vérité.<br>- <strong>Lien entre rationalité et liberté :</strong> la rationalité argumentative n'est pas abstraite, mais liée à l'exercice de la liberté.<br>- <strong>Passage de la vérité une aux vérités multiples :</strong> l'argumentation reconnaît la pluralité et la relativité des vérités, et dépasse le modèle contraignant unique.",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.significance.title": "Significations et dimensions du concept :",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.significance.content": "Ce texte porte une signification philosophique profonde dans l'histoire de la philosophie contemporaine :<br><br><strong>1. Signification épistémologique :</strong> le texte présente une nouvelle conception de la rationalité, qui dépasse le modèle mathématique (démonstratif) et le modèle expérimental (vérificatif) vers une « rationalité argumentative » opérant dans le champ du possible. C'est une rationalité qui n'abolit pas la vérité, mais la redéfinit comme construction dialogique.<br><br><strong>2. Signification éthico-politique :</strong> le texte fonde une éthique du dialogue et de la démocratie. L'argumentation est ce qui rend le vivre-ensemble possible sans violence, et fait de la différence une source d'enrichissement plutôt qu'une source de conflit. C'est ce qui en fait un pilier essentiel de la culture démocratique.<br><br><strong>3. Signification anthropologique :</strong> le texte montre que la liberté humaine ne se réalise que par l'argumentation. L'homme n'est ni un être contraignant (comme le minéral), ni un être arbitraire (comme l'animal), mais un être argumentatif, qui construit ses choix sur des arguments raisonnables.<br><br><strong>4. Lien du texte avec la leçon (l'argumentation) :</strong> le texte représente le texte fondateur de la théorie de la « nouvelle rhétorique » chez Perelman, ce qui en fait le texte de référence dans la leçon sur l'argumentation. C'est à travers lui que se définit le concept d'argumentation, ses caractéristiques, sa fonction, et son rapport à la liberté, à la violence et à la vérité. Le texte suivant (Habermas) complétera cette conception en analysant l'argumentation comme expérience communicationnelle complexe."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.perelmanTyteca.level": "3rd Secondary - Philosophy",
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.perelmanTyteca.title": "Text Analysis: On the Specificities of Argumentation - Ch. Perelman and O. Tyteca",
+                "PhiH.textAnalysis.perelmanTyteca.introduction.title": "Introduction",
+                "PhiH.textAnalysis.perelmanTyteca.introduction.content": "Between the constraining demonstration used by the sciences and the sophistry that resorts to the procedures of fallacy and discursive manipulation, argumentation stands as a form of rationality in which reasoning rests on a discussable argument.",
+                "PhiH.textAnalysis.perelmanTyteca.text.title": "The Text",
+                "PhiH.textAnalysis.perelmanTyteca.text.content": "The existence of argumentation, which is neither constraining nor arbitrary, is alone in giving meaning to human freedom, insofar as it is the condition for the exercise of a reasonable choice [1]. If freedom were merely a necessary insertion into a natural system given in advance, it would exclude any possibility of choice. And if the exercise of freedom did not rest on an argument, every choice would become unreasonable, and would amount to an arbitrary decision moving in an intellectual void.<br><br>And it is possible for man, thanks to argumentation founded on non-constraining reasons, to escape the following dilemma: either the acceptance of a truth valid objectively and totally [2], or the recourse to injunction and to violence to impose the acceptance of his opinions and decisions.",
+                "PhiH.textAnalysis.perelmanTyteca.text.source": "Ch. Perelman and O. Tyteca, Traité de l'argumentation - La nouvelle rhétorique, p. 682, éd. de l'Université de Bruxelles, 1992",
+                "PhiH.textAnalysis.perelmanTyteca.author.title": "Author Presentation",
+                "PhiH.textAnalysis.perelmanTyteca.author.alt": "Chaïm Perelman",
+                "PhiH.textAnalysis.perelmanTyteca.author.content": "Ch. Perelman (1912-1984) is one of the most important founders of the new rhetoric. He was born in Warsaw, from where he emigrated to Belgium in 1925. His research falls within many fields: rhetoric and argumentation, philosophy, ethics and law. His project consists in elaborating a theory of argumentation, the \"new rhetoric\", aiming to free argumentation from the rigor of logical reasoning in which truth is necessary and constraining, and to orient it toward a new type of rhetoric based on rationality, freedom and dialogue, relying on the recognition of the plurality and relativity of truths, and aiming to achieve conviction and consensus among interlocutors, while excluding all forms of violence. We are with Perelman before a new rationality that operates in the field of the possible and goes beyond the domination of the mathematical model based on demonstration and the experimental model based on verification, while also going beyond skepticism. Among his major works: \"Rhetoric and Philosophy\" (1952), \"Traité de l'argumentation - La nouvelle rhétorique\" (1958), \"Law, Morality and Philosophy\" (1968), \"The Empire of Rhetoric\" (1977).",
+                "PhiH.textAnalysis.perelmanTyteca.footnotes.title": "Footnotes",
+                "PhiH.textAnalysis.perelmanTyteca.footnotes.item1": "<strong>(1) \"Reasonable choice\":</strong> it is determined neither by mathematical demonstration nor by experimental verification, but is determined as the result of the construction of arguments that raise the discourse to the level of rationality.",
+                "PhiH.textAnalysis.perelmanTyteca.footnotes.item2": "<strong>(2) \"The acceptance of a truth valid objectively and totally\":</strong> reference to scientific truth (which is constructed according to the procedures of demonstration in mathematics or verification in the experimental sciences), as a total and objective truth that is not discussable.",
+                "PhiH.textAnalysis.perelmanTyteca.questions.title": "Tasks",
+                "PhiH.textAnalysis.perelmanTyteca.questions.q1": "I highlight the distinctive characteristics of argumentation according to the author.",
+                "PhiH.textAnalysis.perelmanTyteca.questions.q2": "I determine among the following fields those in which argumentation can be present: mathematics, art, philosophy, ethics, judicial pleadings, sophistry, debates in councils, physics.",
+                "PhiH.textAnalysis.perelmanTyteca.questions.q3": "I show whether the practice of argumentation necessarily protects us from violence.",
+                "PhiH.textAnalysis.perelmanTyteca.questions.q4": "I reveal what conception of truth the author's concept of argumentation presupposes.",
+                "PhiH.textAnalysis.perelmanTyteca.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a1.title": "Answer to the first task:",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a1.content": "The distinctive characteristics of argumentation according to the author:<br><br><strong>1. Non-constraining:</strong> argumentation does not impose its conclusion as mathematical demonstration does; it leaves the other free to accept or refuse.<br><br><strong>2. Non-arbitrary:</strong> it is not a haphazard decision, but rests on reasonable reasons and arguments. It stands between constraint and arbitrariness, in the field of the \"possible\".<br><br><strong>3. Founded on a discussable argument:</strong> the argumentative argument is not definitive, but open to revision, criticism and refutation.<br><br><strong>4. Condition of human freedom:</strong> \"The existence of argumentation... is alone in giving meaning to human freedom.\" Without argumentation, freedom is only necessity or arbitrariness.<br><br><strong>5. It gives the choice its rationality:</strong> \"If the exercise of freedom did not rest on an argument, every choice would become unreasonable, and would amount to an arbitrary decision moving in an intellectual void.\"<br><br><strong>6. It allows escape from the dilemma of constraining truth or violence:</strong> \"either the acceptance of a truth valid objectively and totally, or the recourse to injunction and to violence.\" Argumentation is the alternative to both.<br><br><strong>7. It aims at conviction and consensus:</strong> it seeks to convince the other by argument, not to submit him by force or injunction.",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a2.title": "Answer to the second task:",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a2.content": "Among the proposed fields, argumentation can be present in:<br><br><strong>✓ Art:</strong> in artistic and aesthetic criticism, where aesthetic judgments are discussed by reasonable arguments without constraint.<br><br><strong>✓ Philosophy:</strong> where philosophizing rests on argumentation and rational debate, and does not impose its results.<br><br><strong>✓ Ethics:</strong> where values and actions are discussed by reasonable arguments in the field of practical deliberation.<br><br><strong>✓ Judicial pleadings:</strong> this is the paradigmatic example of argumentation in Perelman, where the lawyer seeks to convince the judge by argument without constraint.<br><br><strong>✓ Debates in councils:</strong> where public questions are submitted to discussion and dialogue, and where consensus is sought by argument.<br><br><strong>✗ Mathematics:</strong> because they rest on constraining demonstration, not on discussable argument.<br><br><strong>✗ Physics:</strong> because it rests on experimental verification and demonstration, not on argumentation.<br><br><strong>✗ Sophistry:</strong> because it rests on fallacy and manipulation, not on reasonable argument.<br><br><strong>Conclusion:</strong> argumentation is present in fields based on discussable rationality (art, philosophy, ethics, judicial pleadings, debates in councils), and is not present in fields based on constraining demonstration (mathematics, physics) or on fallacy (sophistry).",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a3.title": "Answer to the third task:",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a3.content": "The question can be treated from two angles:<br><br><strong>1. Yes, argumentation protects from violence (as it appears from the text):</strong> Perelman says that argumentation founded on non-constraining reasons allows man to \"escape\" the dilemma: either the acceptance of a constraining truth, or the recourse to injunction and violence. Argumentation is the third alternative that allows resolving differences without violence, which makes it an instrument of living together.<br><br><strong>2. But it does not protect \"necessarily\" from violence (in the strict sense of the term):</strong> argumentation does not necessarily guarantee the conviction of the other. Argumentation can fail, and the interlocutor can resort to violence despite the existence of argumentation. Argumentation is a <em>condition of possibility</em> for exiting violence, not a <em>definitive guarantee</em>.<br><br><strong>3. The synthetic position:</strong> argumentation protects from violence <em>by principle</em> and <em>in its orientation</em>, because it makes consensus possible instead of constraint. But it does not protect from it <em>necessarily</em> in the deterministic sense, because its success depends on conditions (the interlocutors' readiness to listen, their acceptance of the rules of dialogue, their avoidance of fallacy). Argumentation is the <em>reasonable path</em> to avoid violence, not the <em>absolute guarantee</em>.",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a4.title": "Answer to the fourth task:",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a4.content": "The author's concept of argumentation presupposes a particular conception of truth, which can be expounded as follows:<br><br><strong>1. Rejection of constraining total truth:</strong> argumentation presupposes that truth is neither one, nor total, nor objective in the narrow scientific sense. It rejects the scientific model that imposes a truth \"valid objectively and totally\" as non-discussable.<br><br><strong>2. Recognition of the plurality and relativity of truths:</strong> as indicated in the author's presentation, Perelman's project rests on \"the recognition of the plurality and relativity of truths\". Truth is not one and absolute, but multiple and linked to contexts and audiences.<br><br><strong>3. Truth in the field of the \"possible\":</strong> argumentative truth operates in the field of the possible, not in that of necessity. It is not necessary like the necessity of mathematical demonstration, nor arbitrary like the arbitrariness of opinion, but it is reasonable and discussable.<br><br><strong>4. Truth as dialogical construction:</strong> truth in argumentation is not a ready-made given that one discovers, but a <em>construction</em> that is made through dialogue and discussion, and a <em>result</em> of consensus between interlocutors.<br><br><strong>5. Truth linked to conviction:</strong> argumentative truth is not imposed, but is accepted by conviction. It is a truth \"of which one is convinced\", not a truth \"on which one demonstrates\".<br><br><strong>6. Truth as rationality and not as certainty:</strong> argumentation substitutes for the model of \"certainty\" (demonstrative) the model of \"rationality\" (argumentative). What is sought is not absolute certainty, but acceptable rationality.<br><br><strong>Conclusion:</strong> the conception of truth in argumentation is a conception that is <em>pluralist, relative, dialogical, constructive and revisable</em>. It is an alternative conception to the constraining scientific conception and to the arbitrary sophistic conception.",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.thesis.content": "Perelman and Tyteca hold that argumentation — as reasoning that is neither constraining nor arbitrary — is the condition that gives meaning to human freedom. Without argumentation, freedom becomes either a natural necessity (if it is only an insertion into a given system), or an arbitrariness in an intellectual void (if it is not founded on an argument). And argumentation, as founded on non-constraining reasons, allows man to escape the dilemma of constraint: either the acceptance of a constraining truth (scientific), or the recourse to violence to impose his opinions. Argumentation is the third way that preserves freedom and founds consensus.",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.mechanisms.title": "Mechanisms and functions of argumentation:",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.mechanisms.content": "- <strong>Non-constraint (non-coercion):</strong> argumentation does not impose its conclusion, but leaves the other free to accept or refuse.<br>- <strong>Non-arbitrariness:</strong> argumentation does not rest on arbitrariness, but on reasonable reasons.<br>- <strong>Reliance on argument:</strong> argument is the central tool of argumentation, and it is discussable.<br>- <strong>Foundation of freedom:</strong> argumentation is what makes freedom \"reasonable\" and not \"arbitrary\".<br>- <strong>Exit from the dilemma of constraint:</strong> argumentation is the alternative to the acceptance of constraining truth or to the recourse to violence.<br>- <strong>Achievement of conviction and consensus:</strong> the goal of argumentation is to convince the other by argument, not to submit him by force.",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.consequences.title": "Consequences of this thesis:",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.consequences.content": "- <strong>Redefinition of the relationship between freedom and argument:</strong> freedom is not the absence of constraints, but the capacity to choose by founding oneself on an argument.<br>- <strong>Going beyond the two scientific and sophistic models:</strong> argumentation goes beyond both constraining demonstration (science) and sophistry (sophistic).<br>- <strong>Foundation of an ethics of dialogue:</strong> argumentation presupposes mutual respect and recognition of the other as a partner in the search for truth.<br>- <strong>Link between rationality and freedom:</strong> argumentative rationality is not abstract, but linked to the exercise of freedom.<br>- <strong>Passage from one truth to multiple truths:</strong> argumentation recognizes the plurality and relativity of truths, and goes beyond the single constraining model.",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.significance.content": "This text carries a profound philosophical significance in the history of contemporary philosophy:<br><br><strong>1. Epistemological significance:</strong> the text presents a new conception of rationality, which goes beyond the mathematical model (demonstrative) and the experimental model (verificative) toward an \"argumentative rationality\" operating in the field of the possible. It is a rationality that does not abolish truth, but redefines it as dialogical construction.<br><br><strong>2. Ethico-political significance:</strong> the text founds an ethics of dialogue and democracy. Argumentation is what makes living together possible without violence, and makes difference a source of enrichment rather than a source of conflict. This is what makes it an essential pillar of democratic culture.<br><br><strong>3. Anthropological significance:</strong> the text shows that human freedom is only realized through argumentation. Man is neither a constraining being (like the mineral), nor an arbitrary being (like the animal), but an argumentative being, who constructs his choices on reasonable arguments.<br><br><strong>4. Link of the text with the lesson (argumentation):</strong> the text represents the founding text of the theory of the \"new rhetoric\" in Perelman, which makes it the reference text in the lesson on argumentation. It is through it that the concept of argumentation is defined, its characteristics, its function, and its relationship to freedom, violence and truth. The following text (Habermas) will complete this conception by analyzing argumentation as a complex communicative experience."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.perelmanTyteca.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.perelmanTyteca.title": "تحليل النص: في خصوصيات الحجاج - ش. برلمان وأ. تيتكا",
+                "PhiH.textAnalysis.perelmanTyteca.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.perelmanTyteca.introduction.content": "بين ما تلجأ إليه العلوم من برهنة ذات طابع إكراهي، وبين السفسطة التي تعتمد أساليب المغالطة والتمويه الخطابي، يتنزّل الحجاج باعتباره شكل معقولية يكون الاستدلال فيه قائماً على الحجة القابلة للنقاش.",
+                "PhiH.textAnalysis.perelmanTyteca.text.title": "النص",
+                "PhiH.textAnalysis.perelmanTyteca.text.content": "إنّ وجود الحجاج الذي لا يكون إلزامياً ولا اعتباطياً، هو وحده الذي يمنح الحرية الإنسانية معنى، من حيث هي شرط ممارسة اختيار معقول[1]. ولو كانت الحرية مجرّد انخراط ضروري في نظام طبيعي معطى مسبقاً، لأقصت أيّ إمكان للاختيار. ولو لم تكن ممارسة الحرية مؤسَّسة على حجة، فإنّ كلّ اختيار يغدو لامعقولاً، ويؤول إلى قرار اعتباطي يتحرك في فراغ فكري.<br><br>وإنّه ليمكن للمرء بفضل الحجاج القائم على أسباب غير إلزامية أن يفلت من المعضلة التالية: إمّا القبول بحقيقة جائزة موضوعياً وكلياً[2]، وإمّا الالتجاء إلى الإيعاز وإلى العنف لفرض القبول بآرائه وقراراته.",
+                "PhiH.textAnalysis.perelmanTyteca.text.source": "ش. برلمان وأ. تيتكا: مصنف في الحجاج - الخطابة الجديدة، ص 682، ترجمة لجنة التأليف - Ch. Perelman et O. Tyteca, Traité de l'argumentation, éd. de l'Université de Bruxelles, 1992",
+                "PhiH.textAnalysis.perelmanTyteca.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.perelmanTyteca.author.alt": "ش. برلمان",
+                "PhiH.textAnalysis.perelmanTyteca.author.content": "ش. برلمان (1912-1984) هو من أهم مؤسسي الخطابة الجديدة. ولد بوارسو، التي هاجر منها إلى بلجيكا سنة 1925. تندرج أبحاثه ضمن مجالات عديدة مثل: الخطابة والحجاج، الفلسفة والأخلاق والحقوق. يتمثل مشروعه في وضع نظرية في الحجاج هي \"الخطابة الجديدة\"، وتهدف إلى تحرير الحجاج من صرامة الاستدلال المنطقي الذي تكون فيه الحقيقة ضرورية وملزمة، وتشده إلى ضرب جديد من الخطابة تقوم على المعقولية والحرية والحوار المستند إلى الإقرار بتعدد الحقائق ونسبيتها، والهادف إلى تحقيق الاقتناع (conviction) والوفاق بين المتحاورين واستبعاد كلّ أشكال العنف. إننا مع برلمان إزاء معقولية جديدة تشتغل داخل حقل الممكن، وتتجاوز هيمنة النموذج الرياضي القائم على البرهنة والنموذج التجريبي القائم على التحقّق، فضلاً عن مجاوزتها للنزعة الريبية. من أهم مؤلفاته: \"الخطابة والفلسفة\" (1952)، \"رسالة في الحجاج - الخطابة الجديدة\" (1958)، \"الحقّ والأخلاق والفلسفة\" (1968)، \"إمبراطورية الخطابة\" (1977).",
+                "PhiH.textAnalysis.perelmanTyteca.footnotes.title": "الهوامش",
+                "PhiH.textAnalysis.perelmanTyteca.footnotes.item1": "<strong>(1) \"اختيار معقول\":</strong> لا يتحدّد كنتيجة للاستدلال الرياضي ولا للتحقّق التجريبي، وإنّما يتحدّد كحصيلة لبناء الحجج التي ترقى بالخطاب إلى مستوى المعقولية.",
+                "PhiH.textAnalysis.perelmanTyteca.footnotes.item2": "<strong>(2) \"القبول بحقيقة جائزة موضوعياً وكلياً\":</strong> إحالة إلى الحقيقة العلمية (التي يتمّ بناؤها وفق إجراءات البرهنة في الرياضيات أو التحقّق في العلوم التجريبية)، بما هي حقيقة كلية وموضوعية غير قابلة للنقاش.",
+                "PhiH.textAnalysis.perelmanTyteca.questions.title": "المهام",
+                "PhiH.textAnalysis.perelmanTyteca.questions.q1": "أُبرز الخصائص المميّزة للحجاج في نظر الكاتب.",
+                "PhiH.textAnalysis.perelmanTyteca.questions.q2": "أحدّد من بين المجالات التالية ما يمكن أن يحضر فيه الحجاج: الرياضيات، الفنّ، الفلسفة، الأخلاق، المرافعات القضائية، السفسطة، النقاشات في المجالس، الفيزياء.",
+                "PhiH.textAnalysis.perelmanTyteca.questions.q3": "أبيّن ما إذا كانت ممارسة الحجاج تقينا ضرورةً من العنف.",
+                "PhiH.textAnalysis.perelmanTyteca.questions.q4": "أكشف عمّا يفترضه مفهوم الكاتب للحجاج من تصوّر للحقيقة.",
+                "PhiH.textAnalysis.perelmanTyteca.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a1.title": "الإجابة عن المهمة الأولى:",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a1.content": "الخصائص المميّزة للحجاج في نظر الكاتب:<br><br><strong>1. ليس إلزامياً:</strong> الحجاج لا يفرض نتيجة فرضاً كما تفعل البرهنة الرياضية، بل يترك للآخر حرية القبول أو الرفض.<br><br><strong>2. ليس اعتباطياً:</strong> هو ليس قراراً عشوائياً، بل هو قائم على أسباب وحجج معقولة. فهو بين الإلزام والاعتباط، في حقل \"الممكن\".<br><br><strong>3. قائم على حجة قابلة للنقاش:</strong> الحجة الحجاجية ليست نهائية، بل هي مفتوحة للمراجعة والنقد والدحض.<br><br><strong>4. شرط للحرية الإنسانية:</strong> \"إنّ وجود الحجاج... هو وحده الذي يمنح الحرية الإنسانية معنى\". فبدون الحجاج، لا تكون الحرية إلا ضرورة أو اعتباطاً.<br><br><strong>5. يمنح الاختيار معقولية:</strong> \"ولو لم تكن ممارسة الحرية مؤسَّسة على حجة، فإنّ كلّ اختيار يغدو لامعقولاً، ويؤول إلى قرار اعتباطي يتحرك في فراغ فكري\".<br><br><strong>6. يفلت من معضلة الحقيقة الإلزامية أو العنف:</strong> \"إمّا القبول بحقيقة جائزة موضوعياً وكلياً، وإمّا الالتجاء إلى الإيعاز وإلى العنف\". فالحجاج بديل عن كليهما.<br><br><strong>7. يهدف إلى الاقتناع والوفاق:</strong> فهو يسعى إلى إقناع الآخر بالحجة، لا إلى إخضاعه بالقوة أو الإيعاز.",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a2.title": "الإجابة عن المهمة الثانية:",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a2.content": "من بين المجالات المطروحة، يمكن أن يحضر الحجاج في:<br><br><strong>✓ الفنّ:</strong> في النقد الفني والجمالي، حيث تُناقش الأحكام الجمالية بحجج معقولة دون إلزام.<br><br><strong>✓ الفلسفة:</strong> حيث يقوم التفلسف على الحجاج والنقاش العقلي، ولا يفرض نتائجه فرضاً.<br><br><strong>✓ الأخلاق:</strong> حيث تُناقش القيم والأفعال بحجج معقولة في مجال المداولة العملية.<br><br><strong>✓ المرافعات القضائية:</strong> وهي المثال الأبرز للحجاج عند برلمان، حيث يسعى المحامي إلى إقناع القاضي بالحجة دون إلزام.<br><br><strong>✓ النقاشات في المجالس:</strong> حيث تُطرح القضايا العامة للنقاش والحوار، ويُسعى إلى الوفاق بالحجة.<br><br><strong>✗ الرياضيات:</strong> لأنّها تعتمد على البرهنة الإلزامية، لا على الحجة القابلة للنقاش.<br><br><strong>✗ الفيزياء:</strong> لأنّها تعتمد على التحقّق التجريبي والبرهنة، لا على الحجاج.<br><br><strong>✗ السفسطة:</strong> لأنّها تعتمد على المغالطة والتمويه، لا على الحجة المعقولة.<br><br><strong>الخلاصة:</strong> الحجاج يحضر في المجالات التي تتأسّس على المعقولية القابلة للنقاش (الفنّ، الفلسفة، الأخلاق، المرافعات القضائية، النقاشات في المجالس)، ولا يحضر في المجالات التي تتأسّس على البرهنة الإلزامية (الرياضيات، الفيزياء)، أو على المغالطة (السفسطة).",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a3.title": "الإجابة عن المهمة الثالثة:",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a3.content": "يمكن معالجة السؤال من زاويتين:<br><br><strong>1. نعم، الحجاج يقي من العنف (كما يبدو من النص):</strong> يقول برلمان إنّ الحجاج القائم على أسباب غير إلزامية يتيح للمرء أن \"يفلت\" من المعضلة: إما القبول بحقيقة إلزامية، وإما الالتجاء إلى الإيعاز والعنف. فالحجاج هو البديل الثالث الذي يسمح بحلّ الخلافات دون عنف، وهو ما يجعله أداة للعيش المشترك.<br><br><strong>2. لكن، لا يقي \"ضرورةً\" من العنف (بالمعنى الصارم للكلمة):</strong> فالحجاج لا يضمن بالضرورة إقناع الآخر. قد يفشل الحجاج، وقد يلجأ المتحاور إلى العنف رغم وجود الحجاج. فالحجاج هو <em>شرط إمكان</em> للخروج من العنف، لا <em>ضمانة نهائية</em> له.<br><br><strong>3. الموقف التركيبي:</strong> الحجاج يقي من العنف <em>من حيث المبدأ</em> و<em>في التوجّه</em>، لأنه يجعل الوفاق ممكنًا بدلاً من الإكراه. لكنه لا يقي منه <em>ضرورةً</em> بالمعنى الحتمي، لأنّ نجاحه رهين بشروط (استعداد المتحاورين للإصغاء، قبولهم بقواعد الحوار، تجنّبهم للمغالطة). فالحجاج هو <em>الطريق المعقول</em> لتفادي العنف، لا <em>الضمانة المطلقة</em> له.",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a4.title": "الإجابة عن المهمة الرابعة:",
+                "PhiH.textAnalysis.perelmanTyteca.answers.a4.content": "يفترض مفهوم الكاتب للحجاج تصوّراً خاصاً للحقيقة، يمكن بيانه كما يلي:<br><br><strong>1. رفض الحقيقة الإلزامية الكلية:</strong> الحجاج يفترض أنّ الحقيقة ليست واحدة، ولا كلية، ولا موضوعية بالمعنى العلمي الضيق. ويرفض النموذج العلمي الذي يفرض حقيقة \"جائزة موضوعياً وكلياً\" بوصفها غير قابلة للنقاش.<br><br><strong>2. الإقرار بتعدد الحقائق ونسبيتها:</strong> كما ورد في تقديم الكاتب، مشروع برلمان يقوم على \"الإقرار بتعدد الحقائق ونسبيتها\". فالحقيقة ليست واحدة مطلقة، بل هي متعددة ومرتبطة بالسياقات والجماهير.<br><br><strong>3. الحقيقة في حقل \"الممكن\":</strong> الحقيقة الحجاجية تعمل داخل حقل الممكن، لا داخل حقل الضرورة. فهي ليست ضرورية كضرورة البرهان الرياضي، ولا اعتباطية كاعتباطية الرأي، بل هي معقولة وقابلة للنقاش.<br><br><strong>4. الحقيقة بوصفها بناءً حوارياً:</strong> الحقيقة في الحجاج ليست معطى جاهزاً يُكشف عنه، بل هي <em>بناء</em> يتم عبر الحوار والنقاش، وهي <em>حصيلة</em> للوفاق بين المتحاورين.<br><br><strong>5. الحقيقة مرتبطة بالاقتناع:</strong> الحقيقة الحجاجية لا تُفرض، بل تُقبل باقتناع. فهي حقيقة \"يُقتنع بها\" لا حقيقة \"تُبرهن عليها\".<br><br><strong>6. الحقيقة بوصفها معقولية لا يقيناً:</strong> الحجاج يستبدل نموذج \"اليقين\" (البرهاني) بنموذج \"المعقولية\" (الحجاجي). فالمطلوب ليس الوصول إلى يقين مطلق، بل إلى معقولية مقبولة.<br><br><strong>الخلاصة:</strong> تصوّر الحقيقة في الحجاج هو تصوّر <em>تعددي، نسبي، حواري، بنائي، قابل للمراجعة</em>. وهو تصوّر بديل عن التصوّر العلمي الإلزامي، وعن التصوّر السفسطائي الاعتباطي.",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.thesis.content": "يرى برلمان وتيتكا أنّ الحجاج - بوصفه استدلالاً لا إلزامياً ولا اعتباطياً - هو الشرط الذي يمنح الحرية الإنسانية معناها. فبدون الحجاج، تصبح الحرية إمّا ضرورة طبيعية (إن كانت مجرّد انخراط في نظام معطى)، وإمّا اعتباطاً في فراغ فكري (إن لم تكن مبنية على حجة). والحجاج، بما هو قائم على أسباب غير إلزامية، يتيح للمرء أن يفلت من معضلة الإكراه: إمّا القبول بحقيقة إلزامية (علمية)، وإمّا اللجوء إلى العنف لفرض الآراء. فالحجاج هو الطريق الثالث الذي يحفظ الحرية ويؤسّس للوفاق.",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.mechanisms.title": "آليات الحجاج ووظائفه:",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.mechanisms.content": "- <strong>اللاتزام (non-coercition):</strong> الحجاج لا يفرض نتيجته، بل يترك للآخر حرية القبول أو الرفض.<br>- <strong>اللاتعسّف (non-arbitraire):</strong> الحجاج لا يقوم على الاعتباط، بل على أسباب معقولة.<br>- <strong>الاستناد إلى الحجة:</strong> الحجة هي الأداة المركزية للحجاج، وهي قابلة للنقاش.<br>- <strong>تأسيس الحرية:</strong> الحجاج هو ما يجعل الحرية \"معقولة\" لا \"اعتباطية\".<br>- <strong>الخروج من معضلة الإكراه:</strong> الحجاج بديل عن القبول بالحقيقة الإلزامية أو اللجوء إلى العنف.<br>- <strong>تحقيق الاقتناع والوفاق:</strong> غاية الحجاج هي إقناع الآخر بالحجة، لا إخضاعه بالقوة.",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.consequences.title": "النتائج المترتبة على هذه الأطروحة:",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.consequences.content": "- <strong>إعادة تعريف العلاقة بين الحرية والحجة:</strong> الحرية ليست غياب القيود، بل هي القدرة على الاختيار المؤسَّس على حجة.<br>- <strong>تجاوز النموذجين العلمي والسفسطائي:</strong> الحجاج يتجاوز البرهنة الإلزامية (العلم) والمغالطة (السفسطة) معاً.<br>- <strong>تأسيس أخلاقيات الحوار:</strong> الحجاج يفترض الاحترام المتبادل والاعتراف بالآخر كشريك في البحث عن الحقيقة.<br>- <strong>ربط المعقولية بالحرية:</strong> المعقولية الحجاجية ليست مجرّدة، بل هي مرتبطة بممارسة الحرية.<br>- <strong>الانتقال من الحقيقة الواحدة إلى الحقائق المتعددة:</strong> الحجاج يقرّ بتعدد الحقائق ونسبيتها، ويتجاوز النموذج الإلزامي الواحد.",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.perelmanTyteca.analysis.significance.content": "يحمل هذا النص دلالة فلسفية عميقة في تاريخ الفلسفة المعاصرة:<br><br><strong>1. دلالة إبستمولوجية:</strong> النص يقدّم تصوّراً جديداً للمعقولية، يتجاوز النموذج الرياضي (البرهاني) والنموذج التجريبي (التحقّقي) نحو \"معقولية حجاجية\" تعمل في حقل الممكن. وهي معقولية لا تلغي الحقيقة، بل تعيد تعريفها بوصفها بناءً حوارياً.<br><br><strong>2. دلالة أخلاقية-سياسية:</strong> النص يؤسّس لأخلاقيات الحوار والديمقراطية. فالحجاج هو ما يجعل العيش المشترك ممكناً دون عنف، ويجعل الاختلاف مصدر إثراء لا مصدر صراع. وهو ما يجعله ركيزة أساسية للثقافة الديمقراطية.<br><br><strong>3. دلالة أنثروبولوجية:</strong> النص يبيّن أنّ الحرية الإنسانية لا تتحقّق إلا بالحجاج. فالإنسان ليس كائناً إلزامياً (كالجماد)، ولا كائناً اعتباطياً (كالحيوان)، بل هو كائن حجاجي، يبني اختياراته على حجج معقولة.<br><br><strong>4. صلة النص بالدرس (الحجاج):</strong> النص يمثّل النص المؤسِّس لنظرية \"الخطابة الجديدة\" عند برلمان، وهو ما يجعله النص المرجعي في درس الحجاج. فمن خلاله يتحدّد مفهوم الحجاج، وخصائصه، ووظيفته، وعلاقته بالحرية والعنف والحقيقة. والنص الموالي (هابرماس) سيكمّلان هذا التصوّر من خلال تحليل الحجاج كتجربة تواصلية معقّدة."
+            }
+        };
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

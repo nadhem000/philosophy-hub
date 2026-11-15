@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: تكوّن المفاهيم - فريدريك نيتشه - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#8b2500">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Burnt Sienna / Dark Amber Color Palette */
+        :root {
+            --primary-color: #8b2500;
+            --primary-light: #a04000;
+            --primary-dark: #5c1600;
+            --secondary-color: #a04000;
+            --secondary-light: #c75b28;
+            --secondary-dark: #6e2600;
+            --accent-color: #c75b28;
+            --accent-light: #e07a4a;
+            --accent-dark: #a04000;
+            --light-color: #fdf0e8;
+            --dark-color: #3d0f00;
+            --text-color: #4a2010;
+            --heading-color: #2e1008;
+            --background-color: #fef8f4;
+            --card-bg: #ffffff;
+            --definition-bg: #fce4d6;
+            --border-color: #e8b898;
+            --table-even-bg: #fdf0e8;
+            --table-hover-bg: #f8d8c0;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(139, 37, 0, 0.1), 0 2px 4px -1px rgba(139, 37, 0, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(139, 37, 0, 0.1), 0 4px 6px -2px rgba(139, 37, 0, 0.05);
+            --gradient-primary: linear-gradient(135deg, #8b2500 0%, #a04000 100%);
+            --gradient-secondary: linear-gradient(135deg, #5c1600 0%, #a04000 100%);
+            --gradient-accent: linear-gradient(135deg, #c75b28 0%, #8b2500 100%);
+            --gradient-gray: linear-gradient(135deg, #c75b28 0%, #a04000 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #c75b28;
+            --primary-light: #e07a4a;
+            --primary-dark: #a04000;
+            --secondary-color: #a04000;
+            --secondary-light: #c75b28;
+            --secondary-dark: #6e2600;
+            --accent-color: #e07a4a;
+            --accent-light: #f09a70;
+            --accent-dark: #c75b28;
+            --light-color: #3d0f00;
+            --dark-color: #1f0800;
+            --text-color: #f0c8b0;
+            --heading-color: #fdf0e8;
+            --background-color: #1a0700;
+            --card-bg: #2e1008;
+            --definition-bg: #3d0f00;
+            --border-color: #6e2600;
+            --table-even-bg: #2e1008;
+            --table-hover-bg: #3d0f00;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #a04000 0%, #c75b28 100%);
+            --gradient-secondary: linear-gradient(135deg, #6e2600 0%, #a04000 100%);
+            --gradient-accent: linear-gradient(135deg, #c75b28 0%, #8b2500 100%);
+            --gradient-gray: linear-gradient(135deg, #e07a4a 0%, #c75b28 100%);
+        }
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(139, 37, 0, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(160, 64, 0, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(199, 91, 40, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-author-info {
+            flex: 1;
+        }
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        li strong {
+            color: var(--primary-color);
+        }
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        /* Table Styling (for Task 1) */
+        .PhiH-text-card table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        .PhiH-text-card th {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.85rem 1rem;
+            text-align: right;
+            font-weight: 600;
+            border: 1px solid var(--primary-dark);
+        }
+        .PhiH-text-card td {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+        .PhiH-text-card tbody tr:nth-child(even) {
+            background-color: var(--table-even-bg);
+        }
+        .PhiH-text-card tbody tr:hover {
+            background-color: var(--table-hover-bg);
+        }
+        body.rtl .PhiH-text-card th,
+        body.rtl .PhiH-text-card td {
+            text-align: right;
+        }
+        body.ltr .PhiH-text-card th,
+        body.ltr .PhiH-text-card td {
+            text-align: left;
+        }
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(139, 37, 0, 0.05), transparent);
+        }
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        body.rtl .PhiH-text-card ul li {
+            border-left: none;
+            border-right: 3px solid var(--primary-color);
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .PhiH-author-image {
+                align-self: center;
+            }
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+            .PhiH-text-card table {
+                font-size: 0.9rem;
+            }
+            .PhiH-text-card th,
+            .PhiH-text-card td {
+                padding: 0.5rem 0.6rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-text-card table {
+                font-size: 0.85rem;
+            }
+        }
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.nietzscheConcepts.title">تحليل النص: تكوّن المفاهيم - فريدريك نيتشه</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.nietzscheConcepts.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        <section class="PhiH-text-analysis-section">
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nietzscheConcepts.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.nietzscheConcepts.introduction.content">
+                    لما كان حضور الإنسان في العالم لم يغلب عليه الطابع العملي النفعي، فإن فعل التسمية قد اقترن بالذكاء العملي للإنسان، بحيث أفضى به إلى نحت ألفاظ تكتسي طابعاً تعميمياً يبعث على التظنّن بشأن قدرة اللغة على أن تقول حقيقة الوجود في ثرائه وتنوّعه.
+                </p>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nietzscheConcepts.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.nietzscheConcepts.text.content">
+                        لننظر مجدداً وبوجه خاص في تكوّن المفاهيم. إنَّ كلَّ كلمة تتحوّل مباشرة إلى مفهوم بفعل عدم استخدامها في التجربة الأصلية[1] والفريدة والشخصية بإطلاق والتي يَدِينُ لها بولادته (...) أعني كذكرى. ولكن يجب على العكس من ذلك، أن تُستخدم وفي الآن نفسه في تجارب لا تُحصى، متفاوتة التماثل، أي على وجه الدقة غير متماهية إطلاقاً، ولا يجب أن تتناسب إذن إلا مع حالات مختلفة.
+                        <br><br>
+                        إنَّ كلَّ مفهوم إنما ينشأ من المماهاة[2] بين أشياء لا متماهية. ومثلما أننا على يقين من أنَّ ورقة ما لا تكون أبداً مطابقة تماماً لورقة أخرى، فإننا على يقين أيضاً من أنَّ مفهوم الورقة إنما تكوّن بفضل التخلي المقصود عن هذه الفوارق الفردية وبفضل نسيان الخصائص. فيُوقظُ عندئذ التمثل، كما لو كان في الطبيعة وبعض عن الأوراق شيئاً ما هو "الورقة"[3]، ضرباً من الصورة الأصلية التي تُحاك كلَّ الأوراق وتُصوّر وتُحزّ وتُلَوّن وتُجعدّ وتُطلَّ على شاكلتها، ولكن بأيدٍ تُعوزها المهارة إلى درجة لا يمكن فيها لأية نسخة أن تنجح بكلَّ دقة وثبات في أن تكون النسخة الوفية للصورة الأصلية.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.nietzscheConcepts.text.source">فريديريك نيتشه، كتاب الفيلسوف، ترجمة لجنة التأليف - Friedrich Nietzsche, Le livre du philosophe, ed. GF, p.123</em></p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nietzscheConcepts.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <img src="assets/images/friedrich_nietzsche.jpg" alt="فريدريك نيتشه" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.nietzscheConcepts.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.nietzscheConcepts.author.content">
+                            فريديريك نيتشه (1844-1900) فيلسوف ألماني من عائلة متدينة حيث كان أبوه وجده قسيسين. وبينما كان يستعد في سن السابعة عشرة لأن يصبح قسا هو الآخر، عاش أزمة روحية وضعت حدّا لمشروعته فوجّه إلى الدراسة الفيلولوجية أي التحليل النقدي للغة. لاحظ نيتشه مبكرا أن الأخلاق تتأسس على ثلاثة مبادئ كبيرة وإطلاقية وكونية وهي "العقل والله والحقيقة"، لكنّه لاحظ أيضا أن الطابع الثابت لهذه المبادئ لم يمنع القيم الأخلاقية من أن تكون متغيّرة حسب الحقب، وذلك ما قاده إلى إعادة صياغة السؤال بشأن القيم.
+                            <br><br>
+                            ابتدع المنهج الجنيالوجي (النسابي) للبحث في شروط تشكل القيم والنتاجات الثقافية عامة باعتبارها أقداراً يتخفى وراءها صراع قوى يصنفها نيتشه إلى قوى فاعلة تنتصر للحياة وقوى ارتكاسية تزهد في الحيوي وتحتقره. من مؤلفاته: "مولد التراجيديا" (1872)، "إنساني مفرط في الإنسانية" (1878)، "المعرفة الجذلة" (1882)، "هكذا تكلم زرادشت" (1883-1885)، "إرادة القوة" (1884-1886)، "فيما وراء الخير والشر" (1886)، "نسابية الأخلاق" (1887)، ثم توقّف عن الكتابة بسبب المرض إلى أن مات سنة (1900) تاركا وراءه فلسفة هي من أكثر الفلسفات ثراء.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nietzscheConcepts.footnotes.title">الهوامش</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.nietzscheConcepts.footnotes.item1"><strong>(1) "التجربة الأصيلة":</strong> إشارة إلى التجربة التي نستخدم فيها اللغة استخداماً إبداعياً نُؤلّف فيه بين أشياء وتصوّرات لا يجمع بينها الاصطلاح، غير أنّ تواتر الاستخدام يُضعف أصالة العبارة عندما يعزلها عن سياقها الأصيل والمتفرّد ويعمّم استعمالها على وضعيات متباينة.</li>
+                    <li data-i18n="PhiH.textAnalysis.nietzscheConcepts.footnotes.item2"><strong>(2) "المماهاة":</strong> ماهي بين شيئين أي أسند لهما ماهية واحدة، والمفاهيم بحكم عموميتها ووصفها لأعمّ ما تشترك فيه الأشياء تغفل عن الخصائص والفوارق.</li>
+                    <li data-i18n="PhiH.textAnalysis.nietzscheConcepts.footnotes.item3"><strong>(3) "الورقة":</strong> ورد ذلك في علاقة بنقد التصوّر الأفلاطوني القائل بوجود ماهيات أصلية تقوم مقام المثال الذي تُحاكيه الأشياء في العالم المحسوس.</li>
+                </ul>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nietzscheConcepts.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.nietzscheConcepts.questions.q1">أستخرج من النصّ العبارات الدالة على الكائن والعبارات الدالة على المفهوم وأضعها في جدول.</li>
+                    <li data-i18n="PhiH.textAnalysis.nietzscheConcepts.questions.q2">أكشف ما تفترضه عملية التسمية حسب الكاتب.</li>
+                    <li data-i18n="PhiH.textAnalysis.nietzscheConcepts.questions.q3">أحدّد موقفي من الإمكانيات التالية في شأن الكلمات والمفاهيم وأعلّل اختياري:
+                        <ul>
+                            <li data-i18n="PhiH.textAnalysis.nietzscheConcepts.questions.q3.item1">أبحث عن وسيلة تعبير بديلة عن اللغة.</li>
+                            <li data-i18n="PhiH.textAnalysis.nietzscheConcepts.questions.q3.item2">أصمت.</li>
+                            <li data-i18n="PhiH.textAnalysis.nietzscheConcepts.questions.q3.item3">أسائل الكلمات وأتجنّب التعامل العفوي معها.</li>
+                            <li data-i18n="PhiH.textAnalysis.nietzscheConcepts.questions.q3.item4">أستعمل لغة رمزية كونية.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nietzscheConcepts.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nietzscheConcepts.answers.a1.title">الإجابة عن المهمة الأولى:</h5>
+                    <div data-i18n="PhiH.textAnalysis.nietzscheConcepts.answers.a1.content">
+                        <p>أستخرج من النصّ العبارات الدالة على الكائن (الوجود العيني في تجرده وفرادته)، والعبارات الدالة على المفهوم (التصور الذهني العام)، وأضعهما في الجدول التالي:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>الألفاظ والعبارات الدالة على الكائن</th>
+                                    <th>الألفاظ والعبارات الدالة على المفهوم</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>"ورقة ما" / "كل الأوراق" / "ورقة أخرى"</td>
+                                    <td>"كل كلمة تتحوّل مباشرة إلى مفهوم" / "مفهوم الورقة"</td>
+                                </tr>
+                                <tr>
+                                    <td>"التجربة الأصلية والفريدة والشخصية بإطلاق"</td>
+                                    <td>"التجارب التي لا تُحصى" / "التعميم"</td>
+                                </tr>
+                                <tr>
+                                    <td>"أشياء لا متماهية إطلاقاً" / "حالات مختلفة"</td>
+                                    <td>"المماهاة بين أشياء لا متماهية"</td>
+                                </tr>
+                                <tr>
+                                    <td>"الفوارق الفردية" / "الخصائص"</td>
+                                    <td>"التخلي المقصود عن هذه الفوارق" / "نسيان الخصائص"</td>
+                                </tr>
+                                <tr>
+                                    <td>"النسخة الوفية" / "الصورة الأصلية" (في التمثل)</td>
+                                    <td>"التمثل" / "الصورة الأصلية" (بوصفها تصوراً ذهنياً عاماً)</td>
+                                </tr>
+                                <tr>
+                                    <td>"الأوراق التي تُحاك وتُصوّر وتُحزّ وتُلَوّن وتُجعدّ"</td>
+                                    <td>"التماثل" / "المطابقة" / "التصور"</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><em>ملاحظة: يستنتج من الجدول أنّ الكائن يتميز بالفرادَة والفوارق والتنوّه، بينما المفهوم يتميز بالعمومية والتماثل والنسيان الإرادي للفوارق.</em></p>
+                    </div>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nietzscheConcepts.answers.a2.title">الإجابة عن المهمة الثانية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nietzscheConcepts.answers.a2.content">
+                        تكشف عملية التسمية حسب الكاتب عن افتراضات عميقة، نجملها في ما يلي:
+                        <br><br>
+                        <strong>1. افتراض التعميم:</strong> التسمية تفترض أنّ اللفظ الذي نُطلقه على الأشياء لا يقتصر على شيء واحد، بل يشمل جملة من الأشياء التي "تُشبه" بعضها. فالتسمية هي بحد ذاتها عملية تعميم، تنتقل من الفردي إلى العام.
+                        <br><br>
+                        <strong>2. افتراض التخلي عن التجربة الأصلية:</strong> الكلمة تتحول إلى مفهوم "بفعل عدم استخدامها في التجربة الأصلية والفريدة والشخصية بإطلاق". فالتسمية تفترض التخلي عن الخصوصية الفريدة للتجربة، وعن أصالتها، لصالح قابلية الاستخدام في تجارب "لا تُحصى".
+                        <br><br>
+                        <strong>3. افتراض المماهاة بين ما لا يتماثل:</strong> "كل مفهوم إنما ينشأ من المماهاة بين أشياء لا متماهية". فالتسمية تفترض أن نُسند ماهية واحدة لأشياء مختلفة في الواقع، ونغفل - عن قصد - عن الفوارق الفردية والخصائص المميزة.
+                        <br><br>
+                        <strong>4. افتراض النسيان الإرادي:</strong> "التخلي المقصود عن هذه الفوارق الفردية وبفضل نسيان الخصائص". فالتسمية تفترض نسياناً إرادياً للفوارق، وليس مجرد إغفال عابر.
+                        <br><br>
+                        <strong>5. افتراض وجود "صورة أصلية" في الطبيعة:</strong> "فيُوقظُ عندئذ التمثل، كما لو كان في الطبيعة وبعض عن الأوراق شيئاً ما هو الورقة". فالتسمية تفترض - بشكل خاطئ حسب نيتشه - أن في الواقع "ماهية" أصلية تُحاك، وهو ما يربطه نيتشه بنقد التصور الأفلاطوني (الهامش 3).
+                        <br><br>
+                        <strong>6. افتراض العجز عن المطابقة:</strong> "لا يمكن فيها لأية نسخة أن تنجح بكلَّ دقة وثبات في أن تكون النسخة الوفية للصورة الأصلية". فالتسمية تفترض مسبقاً عجز اللغة عن أن تقول حقيقة الوجود في ثرائه، أي عجزها البنيوي عن مطابقة الواقع.
+                        <br><br>
+                        <strong>الخلاصة:</strong> التسمية ليست عملية بريئة، بل هي عملية تجريدية-نقدية تفترض التعميم والتخلي والنسيان والمماهاة. وهي بذلك تكشف عن "العجز البنيوي" للغة عن أن تقول حقيقة الوجود في ثرائه وتنوّعه.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nietzscheConcepts.answers.a3.title">الإجابة عن المهمة الثالثة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nietzscheConcepts.answers.a3.content">
+                        من بين الإمكانيات الأربع المطروحة، أختار <strong>"أسائل الكلمات وأتجنّب التعامل العفوي معها"</strong>. وهذا تعليل اختياري:
+                        <br><br>
+                        <strong>1. رفض الإمكانية الأولى (البحث عن وسيلة تعبير بديلة عن اللغة):</strong> لا يمكن تصور بديل كامل عن اللغة، لأن الإنسان كائن لغوي بالضرورة، وكل محاولة لإيجاد "لغة أخرى" تظل لغة رمزية أو إشارية، أي نوعاً من اللغة. فهذه الإمكانية وهمية في أساسها.
+                        <br><br>
+                        <strong>2. رفض الإمكانية الثانية (الصمت):</strong> الصمت موقف سلبي، وهو استسلام أمام التباس الألفاظ، لا حلاً له. وهو أيضاً لا يخلو من دلالة لغوية، لأن الصمت نفسه قد يكون رسالة. والصمت المطلق مستحيل عملياً.
+                        <br><br>
+                        <strong>3. رفض الإمكانية الرابعة (استعمال لغة رمزية كونية):</strong> هذه الإمكانية تفترض إمكان وجود لغة "كونية" تتجاوز خصوصيات اللغات الطبيعية، وهو ما يذكّر بأوهام اللغة العالمية (مثل الإسبرانتو أو لغة الرياضيات الكاملة). وهو مشروع طوباوي، لا يحل إشكال التباس الألفاظ، بل ينقل الإشكال إلى مستوى آخر.
+                        <br><br>
+                        <strong>4. تبرير اختيار الإمكانية الثالثة (مساءلة الكلمات وتجنب التعامل العفوي معها):</strong>
+                        <br>هذا الاختيار هو الأنسب للموقف النيتشوي نفسه، ولعدة اعتبارات:
+                        <br>- <strong>يتسق مع منهج نيتشه:</strong> فقد كان نيتشه نفسه فيلولوجياً، أي محللاً نقدياً للغة. ومساءلة الكلمات هي ما يميز منهجه الجنيالوجي.
+                        <br>- <strong>يكشف آليات التكوّن:</strong> فمساءلة الكلمات تتيح الكشف عن آليات تعميمها ونسيانها للفوارق، كما فعل نيتشه في نصه هذا.
+                        <br>- <strong>يتجنب السذاجة اللغوية:</strong> التعامل العفوي مع الكلمات هو ما يؤدي إلى الوقوع في أسر المفاهيم الجاهزة، ومن ثمّ في التصورات الميتافيزيقية التي ينتقدها نيتشه.
+                        <br>- <strong>يفتح إمكان التحرر:</strong> فمساءلة الكلمات هي الخطوة الأولى نحو التحرر من الاستلاب اللغوي، ومن ثمّ من الاستلاب الفكري عموماً.
+                        <br>- <strong>يعترف بحدود اللغة دون إنكارها:</strong> فهو لا ينكر اللغة (كما في الصمت أو البحث عن بديل)، ولا يقدّسها (كما في اللغة الكونية)، بل يتعامل معها بوعي نقدي.
+                        <br><br>
+                        <strong>الخلاصة:</strong> مساءلة الكلمات وتجنب التعامل العفوي معها هو الموقف النقدي الوحيد القابل للتحقق، وهو الأنسب لروح النص النيتشوي، ولإشكال التباس الألفاظ الذي طرحه التمهيد.
+                    </p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.nietzscheConcepts.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nietzscheConcepts.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nietzscheConcepts.analysis.thesis.content">
+                        يرى نيتشه أنّ المفاهيم ليست معطيات أصلية، ولا صوراً مطابقة للواقع، بل هي نتاجات تاريخية-لغوية تنشأ من "المماهاة بين أشياء لا متماهية"، أي من عملية تجريدية تقوم على التخلي الإرادي عن الفوارق الفردية والخصائص المميزة. فكل مفهوم هو "نسيان" للفردي، و"تعميم" للعام. ومن ثمّ، فإنّ اللغة - بوصفها نظاماً من المفاهيم - عاجزة بنيوياً عن أن تقول حقيقة الوجود في ثرائه وتنوّعه، وهي لا تقدّم لنا الواقع، بل تقدّم لنا "صورة" عنه مشوّهة ومبسطة. وهذه الأطروحة تُلخّص نقد نيتشه للميتافيزيقا الأفلاطونية التي تؤمن بوجود "ماهيات أصلية" تُحاكيها الأشياء في العالم المحسوس.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nietzscheConcepts.analysis.mechanisms.title">آليات تكوّن المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nietzscheConcepts.analysis.mechanisms.content">
+                        - <strong>الخروج من التجربة الأصلية:</strong> "كل كلمة تتحوّل مباشرة إلى مفهوم بفعل عدم استخدامها في التجربة الأصلية والفريدة والشخصية".
+                        <br>- <strong>التعميم:</strong> استخدام الكلمة في "تجارب لا تُحصى، متفاوتة التماثل"، أي في حالات مختلفة لا تجمعها وحدة حقيقية.
+                        <br>- <strong>المماهاة:</strong> "إنّ كل مفهوم إنما ينشأ من المماهاة بين أشياء لا متماهية"؛ أي إسناد ماهية واحدة لأشياء مختلفة.
+                        <br>- <strong>التخلي المقصود:</strong> "التخلي المقصود عن هذه الفوارق الفردية".
+                        <br>- <strong>النسيان:</strong> "نسيان الخصائص"؛ فالنسيان هنا ليس عارضاً، بل هو شرط تكوّن المفهوم.
+                        <br>- <strong>التمثل:</strong> "فيُوقظُ عندئذ التمثل"؛ أي خلق صورة ذهنية عامة، "كما لو كان في الطبيعة... شيء ما هو الورقة".
+                        <br>- <strong>الإحالة إلى صورة أصلية:</strong> "ضرباً من الصورة الأصلية التي تُحاك كلَّ الأوراق"؛ وهذه إحالة نقدية إلى التصور الأفلاطوني (الهامش 3).
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nietzscheConcepts.analysis.consequences.title">النتائج المترتبة على هذه الأطروحة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nietzscheConcepts.analysis.consequences.content">
+                        - <strong>نسبية المعرفة المفاهيمية:</strong> المفاهيم لا تعبّر عن "حقيقة" الواقع، بل عن "تعميمات" عملية تخدم الحياة، لا المعرفة الصافية.
+                        <br>- <strong>نقد الميتافيزيقا الأفلاطونية:</strong> نقد الاعتقاد بوجود "ماهيات أصلية" و"صور" أزلية، فالمفهوم ليس كشفاً عن مثال، بل بناءً تاريخياً.
+                        <br>- <strong>نقد اللغة بوصفها نظاماً مغلقاً:</strong> اللغة ليست أداة بريئة، بل هي نظام من "التعميمات" التي تفرض رؤية معينة للعالم.
+                        <br>- <strong>إعادة الاعتبار للفردي والجزئي:</strong> الفلسفة النيتشوية ترفض هيمنة المفهوم العام على التجربة الفريدة، وتدعو إلى احترام الفردي والخصوصي.
+                        <br>- <strong>تأسيس المنهج الجنيالوجي:</strong> إذا كانت المفاهيم نتاجات تاريخية، فلا بدّ من دراسة أصولها وشروط تكوّنها، وهو ما فعله نيتشه في "نسابية الأخلاق".
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.nietzscheConcepts.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.nietzscheConcepts.analysis.significance.content">
+                        يحمل هذا النص دلالة منهجية حاسمة في تاريخ الفلسفة المعاصرة:
+                        <br><br>
+                        <strong>1. دلالة نقدية:</strong> النص يقدّم نقداً جذرياً للتصور التقليدي للمفاهيم بوصفها "صوراً" مطابقة للواقع، أو "ماهيات" أزلية. وهو بهذا يفتح الطريق أمام النقد البراغماتي والتحليلي للغة.
+                        <br><br>
+                        <strong>2. دلالة أنثروبولوجية:</strong> النص يبيّن أنّ المفاهيم ليست نتاج "عقل خالص" يتأمل الواقع، بل نتاج "ذكاء عملي" يخدم الحياة. فالتعميم ليس فضيلة معرفية، بل ضرورة حياتية.
+                        <br><br>
+                        <strong>3. دلالة لغوية:</strong> النص يكشف عن البنية "النسيانية" للغة؛ فاللغة تعمل بالنسيان لا بالتذكر، وبالتعميم لا بالتخصيص، وبالمماهاة لا بالتفريق. وهذا ما يجعلها عاجزة عن قول الفردي.
+                        <br><br>
+                        <strong>4. دلالة فلسفية عامة:</strong> النص يمثّل لحظة فارقة في تاريخ الفلسفة، لأنه ينقل السؤال من "ما حقيقة المفهوم؟" إلى "كيف تكوّن المفهوم؟" و"ما وظيفته الحياتية؟". وهو بهذا يفتح المسار أمام الهرمينوطيقا والتفكيكية والفلسفة التحليلية.
+                        <br><br>
+                        <strong>5. صلة النص بالدرس (التعريف):</strong> النص يكمل نقد التعريف الذي بدأه الغزالي وروسو؛ فالغزالي ميّز بين مستويات التعريف، وروسو كشف عن الطابع البشري-السياسي للتعريف، ونيتشه يكشف عن الطابع اللغوي-النسياني لكل تعريف. وهكذا يكتمل مسار الدرس: التعريف ليس عملية بريئة، بل هو عملية مركبة تنطوي على اختيارات نظرية وسياسية ولغوية.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.nietzscheConcepts.level": "3ème Secondaire - Philosophie",
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.nietzscheConcepts.title": "Analyse du texte : La formation des concepts - Friedrich Nietzsche",
+                "PhiH.textAnalysis.nietzscheConcepts.introduction.title": "Introduction",
+                "PhiH.textAnalysis.nietzscheConcepts.introduction.content": "Comme la présence de l'homme dans le monde n'a pas été dominée par le caractère pratique et utilitaire, l'acte de nomination s'est lié à l'intelligence pratique de l'homme, au point de le conduire à forger des mots revêtant un caractère général qui suscite le doute quant à la capacité de la langue à dire la vérité de l'être dans sa richesse et sa diversité.",
+                "PhiH.textAnalysis.nietzscheConcepts.text.title": "Le texte",
+                "PhiH.textAnalysis.nietzscheConcepts.text.content": "Considérons à nouveau, et de manière particulière, la formation des concepts. Chaque mot devient directement un concept du fait de son non-usage dans l'expérience originale [1], unique et personnelle absolument, à laquelle il doit sa naissance (...) je veux dire comme souvenir. Mais il doit au contraire être utilisé en même temps dans des expériences innombrables, diversement semblables, c'est-à-dire à proprement parler non identiques du tout, et ne doit donc correspondre qu'à des cas différents.<br><br>Chaque concept ne naît que de l'assimilation [2] entre des choses non identiques. Et de même que nous sommes certains qu'une feuille n'est jamais parfaitement identique à une autre feuille, nous sommes aussi certains que le concept de feuille ne s'est formé que grâce au renoncement intentionnel à ces différences individuelles et grâce à l'oubli des caractéristiques. Se réveille alors la représentation, comme s'il y avait dans la nature, parmi les feuilles, quelque chose qui est « la feuille » [3], une sorte d'image originale que toutes les feuilles imitent, dessinent, gravent, colorent, froissent et découpent à sa ressemblance, mais par des mains si peu habiles qu'aucune copie ne peut réussir avec précision et constance à être la copie fidèle de l'image originale.",
+                "PhiH.textAnalysis.nietzscheConcepts.text.source": "Friedrich Nietzsche, Le livre du philosophe, ed. GF, p.123",
+                "PhiH.textAnalysis.nietzscheConcepts.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.nietzscheConcepts.author.alt": "Friedrich Nietzsche",
+                "PhiH.textAnalysis.nietzscheConcepts.author.content": "Friedrich Nietzsche (1844-1900), philosophe allemand issu d'une famille pieuse, son père et son grand-père étant pasteurs. Alors qu'il se préparait, à dix-sept ans, à devenir pasteur à son tour, il vécut une crise spirituelle qui mit fin à son projet et l'orienta vers les études philologiques, c'est-à-dire l'analyse critique du langage. Nietzsche remarqua très tôt que la morale se fonde sur trois grands principes absolus et universels : « la Raison, Dieu et la Vérité », mais il remarqua aussi que le caractère fixe de ces principes n'empêchait pas les valeurs morales de varier selon les époques, ce qui le conduisit à reformuler la question des valeurs.<br><br>Il inventa la méthode généalogique pour rechercher les conditions de formation des valeurs et des productions culturelles en général, en tant que destinées derrière lesquelles se cache un conflit de forces qu'il classe en forces actives qui prennent parti pour la vie, et forces réactives qui font vœu de renoncement au vital et le méprisent. Parmi ses œuvres : « La Naissance de la tragédie » (1872), « Humain, trop humain » (1878), « Le Gai Savoir » (1882), « Ainsi parlait Zarathoustra » (1883-1885), « La Volonté de puissance » (1884-1886), « Par-delà bien et mal » (1886), « Généalogie de la morale » (1887). Il cessa ensuite d'écrire en raison de la maladie jusqu'à sa mort en 1900, laissant derrière lui une philosophie parmi les plus riches.",
+                "PhiH.textAnalysis.nietzscheConcepts.footnotes.title": "Notes de bas de page",
+                "PhiH.textAnalysis.nietzscheConcepts.footnotes.item1": "<strong>(1) « L'expérience originale » :</strong> référence à l'expérience dans laquelle nous utilisons la langue de manière créative, combinant des choses et des représentations que l'usage ne rassemble pas ; mais la fréquence de l'usage affaiblit l'originalité de l'expression lorsqu'elle l'isole de son contexte original et singulier et généralise son emploi à des situations disparates.",
+                "PhiH.textAnalysis.nietzscheConcepts.footnotes.item2": "<strong>(2) « L'assimilation » :</strong> rendre identiques deux choses en essence, c'est-à-dire leur attribuer une même essence ; et les concepts, du fait de leur généralité et de leur description de ce qu'il y a de plus commun entre les choses, négligent les caractéristiques et les différences.",
+                "PhiH.textAnalysis.nietzscheConcepts.footnotes.item3": "<strong>(3) « La feuille » :</strong> cela s'inscrit dans la critique de la conception platonicienne affirmant l'existence d'essences originales tenant lieu de modèle que les choses imitent dans le monde sensible.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.title": "Tâches",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q1": "J'extrais du texte les expressions indiquant l'être et les expressions indiquant le concept, et je les place dans un tableau.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q2": "Je révèle ce que présuppose l'acte de nomination selon l'auteur.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q3": "Je précise ma position à l'égard des possibilités suivantes concernant les mots et les concepts, et je justifie mon choix :",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q3.item1": "Je cherche un moyen d'expression alternatif à la langue.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q3.item2": "Je me tais.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q3.item3": "J'interroge les mots et j'évite le rapport spontané avec eux.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q3.item4": "J'utilise une langue symbolique universelle.",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a1.title": "Réponse à la première tâche :",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a1.content": "<p>J'extrais du texte les expressions indiquant l'être (l'existence concrète dans sa singularité et son individualité) et les expressions indiquant le concept (la représentation mentale générale), et je les place dans le tableau suivant :</p><table><thead><tr><th>Les mots et expressions indiquant l'être</th><th>Les mots et expressions indiquant le concept</th></tr></thead><tbody><tr><td>« une feuille » / « toutes les feuilles » / « une autre feuille »</td><td>« chaque mot devient directement un concept » / « le concept de feuille »</td></tr><tr><td>« l'expérience originale, unique et personnelle absolument »</td><td>« les expériences innombrables » / « la généralisation »</td></tr><tr><td>« des choses non identiques du tout » / « des cas différents »</td><td>« l'assimilation entre des choses non identiques »</td></tr><tr><td>« les différences individuelles » / « les caractéristiques »</td><td>« le renoncement intentionnel à ces différences » / « l'oubli des caractéristiques »</td></tr><tr><td>« la copie fidèle » / « l'image originale » (dans la représentation)</td><td>« la représentation » / « l'image originale » (en tant que représentation mentale générale)</td></tr><tr><td>« les feuilles qui imitent, dessinent, gravent, colorent, froissent »</td><td>« la ressemblance » / « l'identité » / « la représentation »</td></tr></tbody></table><p><em>Note : on conclut du tableau que l'être se caractérise par la singularité, les différences et la diversité, tandis que le concept se caractérise par la généralité, la ressemblance et l'oubli intentionnel des différences.</em></p>",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a2.title": "Réponse à la deuxième tâche :",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a2.content": "L'acte de nomination, selon l'auteur, révèle des présupposés profonds, que nous résumons ainsi :<br><br><strong>1. Le présupposé de la généralisation :</strong> la nomination présuppose que le mot que nous appliquons aux choses ne se limite pas à une seule chose, mais englobe un ensemble de choses qui « se ressemblent ». La nomination est en elle-même une opération de généralisation, qui passe de l'individuel au général.<br><br><strong>2. Le présupposé du renoncement à l'expérience originale :</strong> le mot devient un concept « du fait de son non-usage dans l'expérience originale, unique et personnelle absolument ». La nomination présuppose le renoncement à la singularité de l'expérience et à son originalité, au profit de son utilisabilité dans des expériences « innombrables ».<br><br><strong>3. Le présupposé de l'assimilation entre ce qui n'est pas identique :</strong> « chaque concept ne naît que de l'assimilation entre des choses non identiques ». La nomination présuppose que nous attribuons une même essence à des choses différentes dans la réalité, et que nous négligeons — intentionnellement — les différences individuelles et les caractéristiques distinctives.<br><br><strong>4. Le présupposé de l'oubli intentionnel :</strong> « le renoncement intentionnel à ces différences individuelles et grâce à l'oubli des caractéristiques ». La nomination présuppose un oubli intentionnel des différences, et non une simple négligence passagère.<br><br><strong>5. Le présupposé de l'existence d'une « image originale » dans la nature :</strong> « Se réveille alors la représentation, comme s'il y avait dans la nature, parmi les feuilles, quelque chose qui est la feuille ». La nomination présuppose — à tort selon Nietzsche — qu'il y a dans la réalité une « essence » originale qu'on imite, ce que Nietzsche rattache à la critique de la conception platonicienne (note 3).<br><br><strong>6. Le présupposé de l'incapacité à l'identité :</strong> « aucune copie ne peut réussir avec précision et constance à être la copie fidèle de l'image originale ». La nomination présuppose d'emblée l'incapacité de la langue à dire la vérité de l'être dans sa richesse, c'est-à-dire son incapacité structurelle à être identique au réel.<br><br><strong>Conclusion :</strong> la nomination n'est pas une opération innocente, mais une opération abstractive-critique qui présuppose la généralisation, le renoncement, l'oubli et l'assimilation. Elle révèle ainsi l'« incapacité structurelle » de la langue à dire la vérité de l'être dans sa richesse et sa diversité.",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a3.title": "Réponse à la troisième tâche :",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a3.content": "Parmi les quatre possibilités proposées, je choisis <strong>« J'interroge les mots et j'évite le rapport spontané avec eux »</strong>. Voici la justification de mon choix :<br><br><strong>1. Rejet de la première possibilité (chercher un moyen d'expression alternatif à la langue) :</strong> on ne peut concevoir un substitut complet à la langue, car l'homme est un être langagier par nécessité, et toute tentative de trouver un « autre langage » reste un langage symbolique ou signalétique, c'est-à-dire une sorte de langage. Cette possibilité est illusoire dans son fondement.<br><br><strong>2. Rejet de la deuxième possibilité (se taire) :</strong> le silence est une position passive, une résignation face à l'ambiguïté des mots, non une solution. Il n'est pas non plus dépourvu de signification langagière, car le silence lui-même peut être un message. Le silence absolu est pratiquement impossible.<br><br><strong>3. Rejet de la quatrième possibilité (utiliser une langue symbolique universelle) :</strong> cette possibilité présuppose la possibilité d'une langue « universelle » dépassant les particularités des langues naturelles, ce qui rappelle les illusions de la langue universelle (comme l'espéranto ou le langage mathématique complet). C'est un projet utopique, qui ne résout pas le problème de l'ambiguïté des mots, mais déplace le problème à un autre niveau.<br><br><strong>4. Justification du choix de la troisième possibilité (interroger les mots et éviter le rapport spontané avec eux) :</strong><br>Ce choix est le plus approprié à la position nietzschéenne elle-même, et ce pour plusieurs considérations :<br>- <strong>Il est cohérent avec la méthode de Nietzsche :</strong> Nietzsche lui-même était philologue, c'est-à-dire analyste critique du langage. Interroger les mots est ce qui distingue sa méthode généalogique.<br>- <strong>Il révèle les mécanismes de formation :</strong> interroger les mots permet de révéler les mécanismes de leur généralisation et de leur oubli des différences, comme Nietzsche l'a fait dans ce texte.<br>- <strong>Il évite la naïveté linguistique :</strong> le rapport spontané avec les mots est ce qui conduit à tomber dans l'emprise des concepts tout faits, et donc dans les représentations métaphysiques que Nietzsche critique.<br>- <strong>Il ouvre la possibilité de l'émancipation :</strong> interroger les mots est le premier pas vers l'émancipation de l'aliénation linguistique, et donc de l'aliénation intellectuelle en général.<br>- <strong>Il reconnaît les limites de la langue sans la nier :</strong> il ne nie pas la langue (comme dans le silence ou la recherche d'un substitut), ni ne la sacralise (comme dans la langue universelle), mais il la traite avec une conscience critique.<br><br><strong>Conclusion :</strong> interroger les mots et éviter le rapport spontané avec eux est la seule position critique réalisable, et la plus appropriée à l'esprit du texte nietzschéen et au problème de l'ambiguïté des mots posé dans l'introduction.",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.thesis.title": "Thèse principale :",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.thesis.content": "Nietzsche considère que les concepts ne sont ni des données originales ni des images fidèles du réel, mais des produits historico-linguistiques qui naissent de « l'assimilation entre des choses non identiques », c'est-à-dire d'une opération abstractive fondée sur le renoncement intentionnel aux différences individuelles et aux caractéristiques distinctives. Tout concept est un « oubli » de l'individuel et une « généralisation » du général. Par conséquent, la langue — en tant que système de concepts — est structurellement incapable de dire la vérité de l'être dans sa richesse et sa diversité, et elle ne nous donne pas le réel, mais une « image » déformée et simplifiée de celui-ci. Cette thèse résume la critique nietzschéenne de la métaphysique platonicienne qui croit à l'existence d'« essences originales » que les choses imitent dans le monde sensible.",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.mechanisms.title": "Mécanismes de la formation du concept :",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.mechanisms.content": "- <strong>La sortie de l'expérience originale :</strong> « chaque mot devient directement un concept du fait de son non-usage dans l'expérience originale, unique et personnelle ».<br>- <strong>La généralisation :</strong> l'usage du mot dans « des expériences innombrables, diversement semblables », c'est-à-dire dans des cas différents que rien n'unit réellement.<br>- <strong>L'assimilation :</strong> « chaque concept ne naît que de l'assimilation entre des choses non identiques » ; c'est-à-dire l'attribution d'une même essence à des choses différentes.<br>- <strong>Le renoncement intentionnel :</strong> « le renoncement intentionnel à ces différences individuelles ».<br>- <strong>L'oubli :</strong> « l'oubli des caractéristiques » ; l'oubli n'est pas ici accidentel, il est la condition de la formation du concept.<br>- <strong>La représentation :</strong> « Se réveille alors la représentation » ; c'est-à-dire la création d'une image mentale générale, « comme s'il y avait dans la nature... quelque chose qui est la feuille ».<br>- <strong>La référence à une image originale :</strong> « une sorte d'image originale que toutes les feuilles imitent » ; c'est une référence critique à la conception platonicienne (note 3).",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.consequences.title": "Conséquences de cette thèse :",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.consequences.content": "- <strong>Relativité de la connaissance conceptuelle :</strong> les concepts n'expriment pas la « vérité » du réel, mais des « généralisations » pratiques qui servent la vie, non la connaissance pure.<br>- <strong>Critique de la métaphysique platonicienne :</strong> critique de la croyance en l'existence d'« essences originales » et d'« images » éternelles ; le concept n'est pas une révélation d'un modèle, mais une construction historique.<br>- <strong>Critique de la langue comme système clos :</strong> la langue n'est pas un outil innocent, mais un système de « généralisations » qui impose une certaine vision du monde.<br>- <strong>Réhabilitation de l'individuel et du singulier :</strong> la philosophie nietzschéenne refuse la domination du concept général sur l'expérience singulière, et appelle au respect de l'individuel et du particulier.<br>- <strong>Fondation de la méthode généalogique :</strong> si les concepts sont des produits historiques, il faut étudier leurs origines et leurs conditions de formation, ce que Nietzsche a fait dans la « Généalogie de la morale ».",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.significance.title": "Significations et dimensions du concept :",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.significance.content": "Ce texte porte une signification méthodologique décisive dans l'histoire de la philosophie contemporaine :<br><br><strong>1. Signification critique :</strong> le texte présente une critique radicale de la conception traditionnelle des concepts comme « images » fidèles du réel, ou « essences » éternelles. Il ouvre ainsi la voie à la critique pragmatiste et analytique du langage.<br><br><strong>2. Signification anthropologique :</strong> le texte montre que les concepts ne sont pas le produit d'un « esprit pur » contemplant le réel, mais le produit d'une « intelligence pratique » au service de la vie. La généralisation n'est pas une vertu cognitive, mais une nécessité vitale.<br><br><strong>3. Signification linguistique :</strong> le texte révèle la structure « oublieuse » de la langue ; la langue fonctionne par l'oubli et non par le rappel, par la généralisation et non par la spécification, par l'assimilation et non par la différenciation. C'est ce qui la rend incapable de dire le singulier.<br><br><strong>4. Signification philosophique générale :</strong> le texte représente un moment décisif dans l'histoire de la philosophie, car il déplace la question de « quelle est la vérité du concept ? » à « comment le concept s'est-il formé ? » et « quelle est sa fonction vitale ? ». Il ouvre ainsi la voie à l'herméneutique, à la déconstruction et à la philosophie analytique.<br><br><strong>5. Lien du texte avec la leçon (la définition) :</strong> le texte complète la critique de la définition commencée par Al-Ghazali et Rousseau ; Al-Ghazali a distingué les niveaux de la définition, Rousseau a révélé le caractère humain-politique de la définition, et Nietzsche révèle le caractère linguistique-oublieux de toute définition. Ainsi s'achève le parcours de la leçon : la définition n'est pas une opération innocente, mais une opération complexe impliquant des choix théoriques, politiques et linguistiques."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.nietzscheConcepts.level": "3rd Secondary - Philosophy",
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.nietzscheConcepts.title": "Text Analysis: The Formation of Concepts - Friedrich Nietzsche",
+                "PhiH.textAnalysis.nietzscheConcepts.introduction.title": "Introduction",
+                "PhiH.textAnalysis.nietzscheConcepts.introduction.content": "Since man's presence in the world has not been dominated by the practical and utilitarian character, the act of naming has been linked to man's practical intelligence, to the point of leading him to coin words bearing a general character that raises doubt about the capacity of language to say the truth of being in its richness and diversity.",
+                "PhiH.textAnalysis.nietzscheConcepts.text.title": "The Text",
+                "PhiH.textAnalysis.nietzscheConcepts.text.content": "Let us consider again, and in a particular way, the formation of concepts. Every word becomes directly a concept through its non-use in the original [1], unique and absolutely personal experience to which it owes its birth (...) I mean as memory. But it must on the contrary be used at the same time in innumerable experiences, variously similar, that is to say strictly speaking not identical at all, and must therefore correspond only to different cases.<br><br>Every concept arises only from the assimilation [2] between non-identical things. And just as we are certain that one leaf is never perfectly identical to another leaf, we are also certain that the concept of leaf was formed only thanks to the intentional renunciation of these individual differences and thanks to the forgetting of characteristics. There then awakens the representation, as if there were in nature, among the leaves, something that is \"the leaf\" [3], a kind of original image that all leaves imitate, draw, engrave, color, crumple and cut in its likeness, but by hands so unskilled that no copy can succeed with precision and constancy in being the faithful copy of the original image.",
+                "PhiH.textAnalysis.nietzscheConcepts.text.source": "Friedrich Nietzsche, The Philosopher's Book, ed. GF, p.123",
+                "PhiH.textAnalysis.nietzscheConcepts.author.title": "Author Presentation",
+                "PhiH.textAnalysis.nietzscheConcepts.author.alt": "Friedrich Nietzsche",
+                "PhiH.textAnalysis.nietzscheConcepts.author.content": "Friedrich Nietzsche (1844-1900), German philosopher from a pious family, his father and grandfather being pastors. While preparing at seventeen to become a pastor himself, he experienced a spiritual crisis that put an end to his project and directed him toward philological studies, that is, the critical analysis of language. Nietzsche noticed early that morality is founded on three great absolute and universal principles: \"Reason, God and Truth\", but he also noticed that the fixed character of these principles did not prevent moral values from varying according to eras, which led him to reformulate the question of values.<br><br>He invented the genealogical method to investigate the conditions of formation of values and cultural productions in general, as destinies behind which hides a conflict of forces that he classifies into active forces that take the side of life, and reactive forces that vow renunciation of the vital and despise it. Among his works: \"The Birth of Tragedy\" (1872), \"Human, All Too Human\" (1878), \"The Gay Science\" (1882), \"Thus Spoke Zarathustra\" (1883-1885), \"The Will to Power\" (1884-1886), \"Beyond Good and Evil\" (1886), \"On the Genealogy of Morality\" (1887). He then ceased writing due to illness until his death in 1900, leaving behind a philosophy among the richest.",
+                "PhiH.textAnalysis.nietzscheConcepts.footnotes.title": "Footnotes",
+                "PhiH.textAnalysis.nietzscheConcepts.footnotes.item1": "<strong>(1) \"The original experience\":</strong> reference to the experience in which we use language creatively, combining things and representations that usage does not bring together; however, the frequency of use weakens the originality of the expression when it isolates it from its original and singular context and generalizes its use to disparate situations.",
+                "PhiH.textAnalysis.nietzscheConcepts.footnotes.item2": "<strong>(2) \"Assimilation\":</strong> making two things identical in essence, that is, attributing to them the same essence; and concepts, by their generality and their description of what is most common among things, neglect characteristics and differences.",
+                "PhiH.textAnalysis.nietzscheConcepts.footnotes.item3": "<strong>(3) \"The leaf\":</strong> this is linked to the critique of the Platonic conception affirming the existence of original essences serving as the model that things imitate in the sensible world.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.title": "Tasks",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q1": "I extract from the text the expressions indicating being and the expressions indicating the concept, and I place them in a table.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q2": "I reveal what the act of naming presupposes according to the author.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q3": "I specify my position on the following possibilities regarding words and concepts, and I justify my choice:",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q3.item1": "I seek a means of expression alternative to language.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q3.item2": "I remain silent.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q3.item3": "I question words and avoid the spontaneous relationship with them.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q3.item4": "I use a universal symbolic language.",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a1.title": "Answer to the first task:",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a1.content": "<p>I extract from the text the expressions indicating being (concrete existence in its singularity and individuality) and the expressions indicating the concept (general mental representation), and I place them in the following table:</p><table><thead><tr><th>Words and expressions indicating being</th><th>Words and expressions indicating the concept</th></tr></thead><tbody><tr><td>\"a leaf\" / \"all leaves\" / \"another leaf\"</td><td>\"every word becomes directly a concept\" / \"the concept of leaf\"</td></tr><tr><td>\"the original, unique and absolutely personal experience\"</td><td>\"innumerable experiences\" / \"generalization\"</td></tr><tr><td>\"things not identical at all\" / \"different cases\"</td><td>\"assimilation between non-identical things\"</td></tr><tr><td>\"individual differences\" / \"characteristics\"</td><td>\"intentional renunciation of these differences\" / \"forgetting of characteristics\"</td></tr><tr><td>\"the faithful copy\" / \"the original image\" (in representation)</td><td>\"representation\" / \"original image\" (as general mental representation)</td></tr><tr><td>\"the leaves that imitate, draw, engrave, color, crumple\"</td><td>\"similarity\" / \"identity\" / \"representation\"</td></tr></tbody></table><p><em>Note: it is concluded from the table that being is characterized by singularity, differences and diversity, while the concept is characterized by generality, similarity and the intentional forgetting of differences.</em></p>",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a2.title": "Answer to the second task:",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a2.content": "The act of naming, according to the author, reveals deep presuppositions, which we summarize as follows:<br><br><strong>1. The presupposition of generalization:</strong> naming presupposes that the word we apply to things is not limited to a single thing, but encompasses a set of things that \"resemble\" each other. Naming is in itself an operation of generalization, which moves from the individual to the general.<br><br><strong>2. The presupposition of renunciation of the original experience:</strong> the word becomes a concept \"through its non-use in the original, unique and absolutely personal experience\". Naming presupposes the renunciation of the singularity of the experience and of its originality, in favor of its usability in \"innumerable\" experiences.<br><br><strong>3. The presupposition of assimilation between what is not identical:</strong> \"every concept arises only from the assimilation between non-identical things\". Naming presupposes that we attribute the same essence to different things in reality, and that we neglect — intentionally — the individual differences and distinctive characteristics.<br><br><strong>4. The presupposition of intentional forgetting:</strong> \"the intentional renunciation of these individual differences and thanks to the forgetting of characteristics\". Naming presupposes an intentional forgetting of differences, and not a mere passing negligence.<br><br><strong>5. The presupposition of the existence of an \"original image\" in nature:</strong> \"There then awakens the representation, as if there were in nature, among the leaves, something that is the leaf\". Naming presupposes — wrongly according to Nietzsche — that there is in reality an original \"essence\" that is imitated, which Nietzsche links to the critique of the Platonic conception (note 3).<br><br><strong>6. The presupposition of the incapacity for identity:</strong> \"no copy can succeed with precision and constancy in being the faithful copy of the original image\". Naming presupposes from the outset the incapacity of language to say the truth of being in its richness, that is, its structural incapacity to be identical to the real.<br><br><strong>Conclusion:</strong> naming is not an innocent operation, but an abstractive-critical operation that presupposes generalization, renunciation, forgetting and assimilation. It thus reveals the \"structural incapacity\" of language to say the truth of being in its richness and diversity.",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a3.title": "Answer to the third task:",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a3.content": "Among the four possibilities proposed, I choose <strong>\"I question words and avoid the spontaneous relationship with them\"</strong>. Here is the justification of my choice:<br><br><strong>1. Rejection of the first possibility (seeking a means of expression alternative to language):</strong> one cannot conceive a complete substitute for language, for man is a linguistic being by necessity, and every attempt to find an \"other language\" remains a symbolic or signaletic language, that is, a sort of language. This possibility is illusory in its foundation.<br><br><strong>2. Rejection of the second possibility (remaining silent):</strong> silence is a passive position, a resignation before the ambiguity of words, not a solution. It is not devoid of linguistic significance either, for silence itself can be a message. Absolute silence is practically impossible.<br><br><strong>3. Rejection of the fourth possibility (using a universal symbolic language):</strong> this possibility presupposes the possibility of a \"universal\" language surpassing the particularities of natural languages, which recalls the illusions of universal language (such as Esperanto or complete mathematical language). It is a utopian project, which does not resolve the problem of the ambiguity of words, but moves the problem to another level.<br><br><strong>4. Justification of the choice of the third possibility (questioning words and avoiding the spontaneous relationship with them):</strong><br>This choice is the most appropriate to the Nietzschean position itself, for several considerations:<br>- <strong>It is consistent with Nietzsche's method:</strong> Nietzsche himself was a philologist, that is, a critical analyst of language. Questioning words is what distinguishes his genealogical method.<br>- <strong>It reveals the mechanisms of formation:</strong> questioning words allows revealing the mechanisms of their generalization and their forgetting of differences, as Nietzsche did in this text.<br>- <strong>It avoids linguistic naivety:</strong> the spontaneous relationship with words is what leads to falling into the grip of ready-made concepts, and therefore into the metaphysical representations that Nietzsche criticizes.<br>- <strong>It opens the possibility of emancipation:</strong> questioning words is the first step towards emancipation from linguistic alienation, and therefore from intellectual alienation in general.<br>- <strong>It recognizes the limits of language without denying it:</strong> it does not deny language (as in silence or the search for a substitute), nor does it sacralize it (as in universal language), but treats it with critical awareness.<br><br><strong>Conclusion:</strong> questioning words and avoiding the spontaneous relationship with them is the only realizable critical position, and the most appropriate to the spirit of the Nietzschean text and to the problem of the ambiguity of words posed in the introduction.",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.thesis.content": "Nietzsche considers that concepts are neither original data nor faithful images of the real, but historico-linguistic products that arise from \"assimilation between non-identical things\", that is, from an abstractive operation based on the intentional renunciation of individual differences and distinctive characteristics. Every concept is an \"oblivion\" of the individual and a \"generalization\" of the general. Consequently, language — as a system of concepts — is structurally incapable of saying the truth of being in its richness and diversity, and it does not give us the real, but a distorted and simplified \"image\" of it. This thesis summarizes Nietzsche's critique of Platonic metaphysics which believes in the existence of \"original essences\" that things imitate in the sensible world.",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.mechanisms.title": "Mechanisms of the formation of the concept:",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.mechanisms.content": "- <strong>The exit from the original experience:</strong> \"every word becomes directly a concept through its non-use in the original, unique and personal experience\".<br>- <strong>Generalization:</strong> the use of the word in \"innumerable experiences, variously similar\", that is, in different cases that nothing really unites.<br>- <strong>Assimilation:</strong> \"every concept arises only from the assimilation between non-identical things\"; that is, the attribution of the same essence to different things.<br>- <strong>Intentional renunciation:</strong> \"the intentional renunciation of these individual differences\".<br>- <strong>Forgetting:</strong> \"the forgetting of characteristics\"; forgetting is not accidental here, it is the condition of the formation of the concept.<br>- <strong>Representation:</strong> \"There then awakens the representation\"; that is, the creation of a general mental image, \"as if there were in nature... something that is the leaf\".<br>- <strong>Reference to an original image:</strong> \"a kind of original image that all leaves imitate\"; this is a critical reference to the Platonic conception (note 3).",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.consequences.title": "Consequences of this thesis:",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.consequences.content": "- <strong>Relativity of conceptual knowledge:</strong> concepts do not express the \"truth\" of the real, but practical \"generalizations\" that serve life, not pure knowledge.<br>- <strong>Critique of Platonic metaphysics:</strong> critique of the belief in the existence of \"original essences\" and eternal \"images\"; the concept is not a revelation of a model, but a historical construction.<br>- <strong>Critique of language as a closed system:</strong> language is not an innocent tool, but a system of \"generalizations\" that imposes a certain vision of the world.<br>- <strong>Rehabilitation of the individual and the singular:</strong> Nietzschean philosophy refuses the domination of the general concept over singular experience, and calls for respect for the individual and the particular.<br>- <strong>Foundation of the genealogical method:</strong> if concepts are historical products, one must study their origins and conditions of formation, which Nietzsche did in the \"Genealogy of Morality\".",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.significance.content": "This text carries a decisive methodological significance in the history of contemporary philosophy:<br><br><strong>1. Critical significance:</strong> the text presents a radical critique of the traditional conception of concepts as faithful \"images\" of the real, or eternal \"essences\". It thus opens the way to the pragmatist and analytic critique of language.<br><br><strong>2. Anthropological significance:</strong> the text shows that concepts are not the product of a \"pure spirit\" contemplating the real, but the product of a \"practical intelligence\" in the service of life. Generalization is not a cognitive virtue, but a vital necessity.<br><br><strong>3. Linguistic significance:</strong> the text reveals the \"forgetful\" structure of language; language functions by forgetting and not by recalling, by generalization and not by specification, by assimilation and not by differentiation. This is what makes it incapable of saying the singular.<br><br><strong>4. General philosophical significance:</strong> the text represents a decisive moment in the history of philosophy, for it shifts the question from \"what is the truth of the concept?\" to \"how did the concept form?\" and \"what is its vital function?\". It thus opens the way to hermeneutics, deconstruction and analytic philosophy.<br><br><strong>5. Link of the text with the lesson (definition):</strong> the text completes the critique of definition begun by Al-Ghazali and Rousseau; Al-Ghazali distinguished the levels of definition, Rousseau revealed the human-political character of definition, and Nietzsche reveals the linguistic-forgetful character of every definition. Thus the course of the lesson is completed: definition is not an innocent operation, but a complex operation involving theoretical, political and linguistic choices."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.nietzscheConcepts.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.nietzscheConcepts.title": "تحليل النص: تكوّن المفاهيم - فريدريك نيتشه",
+                "PhiH.textAnalysis.nietzscheConcepts.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.nietzscheConcepts.introduction.content": "لما كان حضور الإنسان في العالم لم يغلب عليه الطابع العملي النفعي، فإن فعل التسمية قد اقترن بالذكاء العملي للإنسان، بحيث أفضى به إلى نحت ألفاظ تكتسي طابعاً تعميمياً يبعث على التظنّن بشأن قدرة اللغة على أن تقول حقيقة الوجود في ثرائه وتنوّعه.",
+                "PhiH.textAnalysis.nietzscheConcepts.text.title": "النص",
+                "PhiH.textAnalysis.nietzscheConcepts.text.content": "لننظر مجدداً وبوجه خاص في تكوّن المفاهيم. إنَّ كلَّ كلمة تتحوّل مباشرة إلى مفهوم بفعل عدم استخدامها في التجربة الأصلية[1] والفريدة والشخصية بإطلاق والتي يَدِينُ لها بولادته (...) أعني كذكرى. ولكن يجب على العكس من ذلك، أن تُستخدم وفي الآن نفسه في تجارب لا تُحصى، متفاوتة التماثل، أي على وجه الدقة غير متماهية إطلاقاً، ولا يجب أن تتناسب إذن إلا مع حالات مختلفة.<br><br>إنَّ كلَّ مفهوم إنما ينشأ من المماهاة[2] بين أشياء لا متماهية. ومثلما أننا على يقين من أنَّ ورقة ما لا تكون أبداً مطابقة تماماً لورقة أخرى، فإننا على يقين أيضاً من أنَّ مفهوم الورقة إنما تكوّن بفضل التخلي المقصود عن هذه الفوارق الفردية وبفضل نسيان الخصائص. فيُوقظُ عندئذ التمثل، كما لو كان في الطبيعة وبعض عن الأوراق شيئاً ما هو \"الورقة\"[3]، ضرباً من الصورة الأصلية التي تُحاك كلَّ الأوراق وتُصوّر وتُحزّ وتُلَوّن وتُجعدّ وتُطلَّ على شاكلتها، ولكن بأيدٍ تُعوزها المهارة إلى درجة لا يمكن فيها لأية نسخة أن تنجح بكلَّ دقة وثبات في أن تكون النسخة الوفية للصورة الأصلية.",
+                "PhiH.textAnalysis.nietzscheConcepts.text.source": "فريديريك نيتشه، كتاب الفيلسوف، ترجمة لجنة التأليف - Friedrich Nietzsche, Le livre du philosophe, ed. GF, p.123",
+                "PhiH.textAnalysis.nietzscheConcepts.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.nietzscheConcepts.author.alt": "فريدريك نيتشه",
+                "PhiH.textAnalysis.nietzscheConcepts.author.content": "فريديريك نيتشه (1844-1900) فيلسوف ألماني من عائلة متدينة حيث كان أبوه وجده قسيسين. وبينما كان يستعد في سن السابعة عشرة لأن يصبح قسا هو الآخر، عاش أزمة روحية وضعت حدّا لمشروعته فوجّه إلى الدراسة الفيلولوجية أي التحليل النقدي للغة. لاحظ نيتشه مبكرا أن الأخلاق تتأسس على ثلاثة مبادئ كبيرة وإطلاقية وكونية وهي \"العقل والله والحقيقة\"، لكنّه لاحظ أيضا أن الطابع الثابت لهذه المبادئ لم يمنع القيم الأخلاقية من أن تكون متغيّرة حسب الحقب، وذلك ما قاده إلى إعادة صياغة السؤال بشأن القيم.<br><br>ابتدع المنهج الجنيالوجي (النسابي) للبحث في شروط تشكل القيم والنتاجات الثقافية عامة باعتبارها أقداراً يتخفى وراءها صراع قوى يصنفها نيتشه إلى قوى فاعلة تنتصر للحياة وقوى ارتكاسية تزهد في الحيوي وتحتقره. من مؤلفاته: \"مولد التراجيديا\" (1872)، \"إنساني مفرط في الإنسانية\" (1878)، \"المعرفة الجذلة\" (1882)، \"هكذا تكلم زرادشت\" (1883-1885)، \"إرادة القوة\" (1884-1886)، \"فيما وراء الخير والشر\" (1886)، \"نسابية الأخلاق\" (1887)، ثم توقّف عن الكتابة بسبب المرض إلى أن مات سنة (1900) تاركا وراءه فلسفة هي من أكثر الفلسفات ثراء.",
+                "PhiH.textAnalysis.nietzscheConcepts.footnotes.title": "الهوامش",
+                "PhiH.textAnalysis.nietzscheConcepts.footnotes.item1": "<strong>(1) \"التجربة الأصيلة\":</strong> إشارة إلى التجربة التي نستخدم فيها اللغة استخداماً إبداعياً نُؤلّف فيه بين أشياء وتصوّرات لا يجمع بينها الاصطلاح، غير أنّ تواتر الاستخدام يُضعف أصالة العبارة عندما يعزلها عن سياقها الأصيل والمتفرّد ويعمّم استعمالها على وضعيات متباينة.",
+                "PhiH.textAnalysis.nietzscheConcepts.footnotes.item2": "<strong>(2) \"المماهاة\":</strong> ماهي بين شيئين أي أسند لهما ماهية واحدة، والمفاهيم بحكم عموميتها ووصفها لأعمّ ما تشترك فيه الأشياء تغفل عن الخصائص والفوارق.",
+                "PhiH.textAnalysis.nietzscheConcepts.footnotes.item3": "<strong>(3) \"الورقة\":</strong> ورد ذلك في علاقة بنقد التصوّر الأفلاطوني القائل بوجود ماهيات أصلية تقوم مقام المثال الذي تُحاكيه الأشياء في العالم المحسوس.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.title": "المهام",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q1": "أستخرج من النصّ العبارات الدالة على الكائن والعبارات الدالة على المفهوم وأضعها في جدول.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q2": "أكشف ما تفترضه عملية التسمية حسب الكاتب.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q3": "أحدّد موقفي من الإمكانيات التالية في شأن الكلمات والمفاهيم وأعلّل اختياري:",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q3.item1": "أبحث عن وسيلة تعبير بديلة عن اللغة.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q3.item2": "أصمت.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q3.item3": "أسائل الكلمات وأتجنّب التعامل العفوي معها.",
+                "PhiH.textAnalysis.nietzscheConcepts.questions.q3.item4": "أستعمل لغة رمزية كونية.",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a1.title": "الإجابة عن المهمة الأولى:",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a1.content": "<p>أستخرج من النصّ العبارات الدالة على الكائن (الوجود العيني في تجرده وفرادته)، والعبارات الدالة على المفهوم (التصور الذهني العام)، وأضعهما في الجدول التالي:</p><table><thead><tr><th>الألفاظ والعبارات الدالة على الكائن</th><th>الألفاظ والعبارات الدالة على المفهوم</th></tr></thead><tbody><tr><td>\"ورقة ما\" / \"كل الأوراق\" / \"ورقة أخرى\"</td><td>\"كل كلمة تتحوّل مباشرة إلى مفهوم\" / \"مفهوم الورقة\"</td></tr><tr><td>\"التجربة الأصلية والفريدة والشخصية بإطلاق\"</td><td>\"التجارب التي لا تُحصى\" / \"التعميم\"</td></tr><tr><td>\"أشياء لا متماهية إطلاقاً\" / \"حالات مختلفة\"</td><td>\"المماهاة بين أشياء لا متماهية\"</td></tr><tr><td>\"الفوارق الفردية\" / \"الخصائص\"</td><td>\"التخلي المقصود عن هذه الفوارق\" / \"نسيان الخصائص\"</td></tr><tr><td>\"النسخة الوفية\" / \"الصورة الأصلية\" (في التمثل)</td><td>\"التمثل\" / \"الصورة الأصلية\" (بوصفها تصوراً ذهنياً عاماً)</td></tr><tr><td>\"الأوراق التي تُحاك وتُصوّر وتُحزّ وتُلَوّن وتُجعدّ\"</td><td>\"التماثل\" / \"المطابقة\" / \"التصور\"</td></tr></tbody></table><p><em>ملاحظة: يستنتج من الجدول أنّ الكائن يتميز بالفرادَة والفوارق والتنوّه، بينما المفهوم يتميز بالعمومية والتماثل والنسيان الإرادي للفوارق.</em></p>",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a2.title": "الإجابة عن المهمة الثانية:",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a2.content": "تكشف عملية التسمية حسب الكاتب عن افتراضات عميقة، نجملها في ما يلي:<br><br><strong>1. افتراض التعميم:</strong> التسمية تفترض أنّ اللفظ الذي نُطلقه على الأشياء لا يقتصر على شيء واحد، بل يشمل جملة من الأشياء التي \"تُشبه\" بعضها. فالتسمية هي بحد ذاتها عملية تعميم، تنتقل من الفردي إلى العام.<br><br><strong>2. افتراض التخلي عن التجربة الأصلية:</strong> الكلمة تتحول إلى مفهوم \"بفعل عدم استخدامها في التجربة الأصلية والفريدة والشخصية بإطلاق\". فالتسمية تفترض التخلي عن الخصوصية الفريدة للتجربة، وعن أصالتها، لصالح قابلية الاستخدام في تجارب \"لا تُحصى\".<br><br><strong>3. افتراض المماهاة بين ما لا يتماثل:</strong> \"كل مفهوم إنما ينشأ من المماهاة بين أشياء لا متماهية\". فالتسمية تفترض أن نُسند ماهية واحدة لأشياء مختلفة في الواقع، ونغفل - عن قصد - عن الفوارق الفردية والخصائص المميزة.<br><br><strong>4. افتراض النسيان الإرادي:</strong> \"التخلي المقصود عن هذه الفوارق الفردية وبفضل نسيان الخصائص\". فالتسمية تفترض نسياناً إرادياً للفوارق، وليس مجرد إغفال عابر.<br><br><strong>5. افتراض وجود \"صورة أصلية\" في الطبيعة:</strong> \"فيُوقظُ عندئذ التمثل، كما لو كان في الطبيعة وبعض عن الأوراق شيئاً ما هو الورقة\". فالتسمية تفترض - بشكل خاطئ حسب نيتشه - أن في الواقع \"ماهية\" أصلية تُحاك، وهو ما يربطه نيتشه بنقد التصور الأفلاطوني (الهامش 3).<br><br><strong>6. افتراض العجز عن المطابقة:</strong> \"لا يمكن فيها لأية نسخة أن تنجح بكلَّ دقة وثبات في أن تكون النسخة الوفية للصورة الأصلية\". فالتسمية تفترض مسبقاً عجز اللغة عن أن تقول حقيقة الوجود في ثرائه، أي عجزها البنيوي عن مطابقة الواقع.<br><br><strong>الخلاصة:</strong> التسمية ليست عملية بريئة، بل هي عملية تجريدية-نقدية تفترض التعميم والتخلي والنسيان والمماهاة. وهي بذلك تكشف عن \"العجز البنيوي\" للغة عن أن تقول حقيقة الوجود في ثرائه وتنوّعه.",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a3.title": "الإجابة عن المهمة الثالثة:",
+                "PhiH.textAnalysis.nietzscheConcepts.answers.a3.content": "من بين الإمكانيات الأربع المطروحة، أختار <strong>\"أسائل الكلمات وأتجنّب التعامل العفوي معها\"</strong>. وهذا تعليل اختياري:<br><br><strong>1. رفض الإمكانية الأولى (البحث عن وسيلة تعبير بديلة عن اللغة):</strong> لا يمكن تصور بديل كامل عن اللغة، لأن الإنسان كائن لغوي بالضرورة، وكل محاولة لإيجاد \"لغة أخرى\" تظل لغة رمزية أو إشارية، أي نوعاً من اللغة. فهذه الإمكانية وهمية في أساسها.<br><br><strong>2. رفض الإمكانية الثانية (الصمت):</strong> الصمت موقف سلبي، وهو استسلام أمام التباس الألفاظ، لا حلاً له. وهو أيضاً لا يخلو من دلالة لغوية، لأن الصمت نفسه قد يكون رسالة. والصمت المطلق مستحيل عملياً.<br><br><strong>3. رفض الإمكانية الرابعة (استعمال لغة رمزية كونية):</strong> هذه الإمكانية تفترض إمكان وجود لغة \"كونية\" تتجاوز خصوصيات اللغات الطبيعية، وهو ما يذكّر بأوهام اللغة العالمية (مثل الإسبرانتو أو لغة الرياضيات الكاملة). وهو مشروع طوباوي، لا يحل إشكال التباس الألفاظ، بل ينقل الإشكال إلى مستوى آخر.<br><br><strong>4. تبرير اختيار الإمكانية الثالثة (مساءلة الكلمات وتجنب التعامل العفوي معها):</strong><br>هذا الاختيار هو الأنسب للموقف النيتشوي نفسه، ولعدة اعتبارات:<br>- <strong>يتسق مع منهج نيتشه:</strong> فقد كان نيتشه نفسه فيلولوجياً، أي محللاً نقدياً للغة. ومساءلة الكلمات هي ما يميز منهجه الجنيالوجي.<br>- <strong>يكشف آليات التكوّن:</strong> فمساءلة الكلمات تتيح الكشف عن آليات تعميمها ونسيانها للفوارق، كما فعل نيتشه في نصه هذا.<br>- <strong>يتجنب السذاجة اللغوية:</strong> التعامل العفوي مع الكلمات هو ما يؤدي إلى الوقوع في أسر المفاهيم الجاهزة، ومن ثمّ في التصورات الميتافيزيقية التي ينتقدها نيتشه.<br>- <strong>يفتح إمكان التحرر:</strong> فمساءلة الكلمات هي الخطوة الأولى نحو التحرر من الاستلاب اللغوي، ومن ثمّ من الاستلاب الفكري عموماً.<br>- <strong>يعترف بحدود اللغة دون إنكارها:</strong> فهو لا ينكر اللغة (كما في الصمت أو البحث عن بديل)، ولا يقدّسها (كما في اللغة الكونية)، بل يتعامل معها بوعي نقدي.<br><br><strong>الخلاصة:</strong> مساءلة الكلمات وتجنب التعامل العفوي معها هو الموقف النقدي الوحيد القابل للتحقق، وهو الأنسب لروح النص النيتشوي، ولإشكال التباس الألفاظ الذي طرحه التمهيد.",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.thesis.content": "يرى نيتشه أنّ المفاهيم ليست معطيات أصلية، ولا صوراً مطابقة للواقع، بل هي نتاجات تاريخية-لغوية تنشأ من \"المماهاة بين أشياء لا متماهية\"، أي من عملية تجريدية تقوم على التخلي الإرادي عن الفوارق الفردية والخصائص المميزة. فكل مفهوم هو \"نسيان\" للفردي، و\"تعميم\" للعام. ومن ثمّ، فإنّ اللغة - بوصفها نظاماً من المفاهيم - عاجزة بنيوياً عن أن تقول حقيقة الوجود في ثرائه وتنوّعه، وهي لا تقدّم لنا الواقع، بل تقدّم لنا \"صورة\" عنه مشوّهة ومبسطة. وهذه الأطروحة تُلخّص نقد نيتشه للميتافيزيقا الأفلاطونية التي تؤمن بوجود \"ماهيات أصلية\" تُحاكيها الأشياء في العالم المحسوس.",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.mechanisms.title": "آليات تكوّن المفهوم:",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.mechanisms.content": "- <strong>الخروج من التجربة الأصلية:</strong> \"كل كلمة تتحوّل مباشرة إلى مفهوم بفعل عدم استخدامها في التجربة الأصلية والفريدة والشخصية\".<br>- <strong>التعميم:</strong> استخدام الكلمة في \"تجارب لا تُحصى، متفاوتة التماثل\"، أي في حالات مختلفة لا تجمعها وحدة حقيقية.<br>- <strong>المماهاة:</strong> \"إنّ كل مفهوم إنما ينشأ من المماهاة بين أشياء لا متماهية\"؛ أي إسناد ماهية واحدة لأشياء مختلفة.<br>- <strong>التخلي المقصود:</strong> \"التخلي المقصود عن هذه الفوارق الفردية\".<br>- <strong>النسيان:</strong> \"نسيان الخصائص\"؛ فالنسيان هنا ليس عارضاً، بل هو شرط تكوّن المفهوم.<br>- <strong>التمثل:</strong> \"فيُوقظُ عندئذ التمثل\"؛ أي خلق صورة ذهنية عامة، \"كما لو كان في الطبيعة... شيء ما هو الورقة\".<br>- <strong>الإحالة إلى صورة أصلية:</strong> \"ضرباً من الصورة الأصلية التي تُحاك كلَّ الأوراق\"؛ وهذه إحالة نقدية إلى التصور الأفلاطوني (الهامش 3).",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.consequences.title": "النتائج المترتبة على هذه الأطروحة:",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.consequences.content": "- <strong>نسبية المعرفة المفاهيمية:</strong> المفاهيم لا تعبّر عن \"حقيقة\" الواقع، بل عن \"تعميمات\" عملية تخدم الحياة، لا المعرفة الصافية.<br>- <strong>نقد الميتافيزيقا الأفلاطونية:</strong> نقد الاعتقاد بوجود \"ماهيات أصلية\" و\"صور\" أزلية، فالمفهوم ليس كشفاً عن مثال، بل بناءً تاريخياً.<br>- <strong>نقد اللغة بوصفها نظاماً مغلقاً:</strong> اللغة ليست أداة بريئة، بل هي نظام من \"التعميمات\" التي تفرض رؤية معينة للعالم.<br>- <strong>إعادة الاعتبار للفردي والجزئي:</strong> الفلسفة النيتشوية ترفض هيمنة المفهوم العام على التجربة الفريدة، وتدعو إلى احترام الفردي والخصوصي.<br>- <strong>تأسيس المنهج الجنيالوجي:</strong> إذا كانت المفاهيم نتاجات تاريخية، فلا بدّ من دراسة أصولها وشروط تكوّنها، وهو ما فعله نيتشه في \"نسابية الأخلاق\".",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.nietzscheConcepts.analysis.significance.content": "يحمل هذا النص دلالة منهجية حاسمة في تاريخ الفلسفة المعاصرة:<br><br><strong>1. دلالة نقدية:</strong> النص يقدّم نقداً جذرياً للتصور التقليدي للمفاهيم بوصفها \"صوراً\" مطابقة للواقع، أو \"ماهيات\" أزلية. وهو بهذا يفتح الطريق أمام النقد البراغماتي والتحليلي للغة.<br><br><strong>2. دلالة أنثروبولوجية:</strong> النص يبيّن أنّ المفاهيم ليست نتاج \"عقل خالص\" يتأمل الواقع، بل نتاج \"ذكاء عملي\" يخدم الحياة. فالتعميم ليس فضيلة معرفية، بل ضرورة حياتية.<br><br><strong>3. دلالة لغوية:</strong> النص يكشف عن البنية \"النسيانية\" للغة؛ فاللغة تعمل بالنسيان لا بالتذكر، وبالتعميم لا بالتخصيص، وبالمماهاة لا بالتفريق. وهذا ما يجعلها عاجزة عن قول الفردي.<br><br><strong>4. دلالة فلسفية عامة:</strong> النص يمثّل لحظة فارقة في تاريخ الفلسفة، لأنه ينقل السؤال من \"ما حقيقة المفهوم؟\" إلى \"كيف تكوّن المفهوم؟\" و\"ما وظيفته الحياتية؟\". وهو بهذا يفتح المسار أمام الهرمينوطيقا والتفكيكية والفلسفة التحليلية.<br><br><strong>5. صلة النص بالدرس (التعريف):</strong> النص يكمل نقد التعريف الذي بدأه الغزالي وروسو؛ فالغزالي ميّز بين مستويات التعريف، وروسو كشف عن الطابع البشري-السياسي للتعريف، ونيتشه يكشف عن الطابع اللغوي-النسياني لكل تعريف. وهكذا يكتمل مسار الدرس: التعريف ليس عملية بريئة، بل هو عملية مركبة تنطوي على اختيارات نظرية وسياسية ولغوية."
+            }
+        };
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

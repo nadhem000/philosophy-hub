@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل النص: القاعدة والانضباط - إيمانويل كانط - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#4a148c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Dark Plum / Aubergine Color Palette */
+        :root {
+            --primary-color: #4a148c;
+            --primary-light: #6a1b9a;
+            --primary-dark: #2d0a56;
+            --secondary-color: #6a1b9a;
+            --secondary-light: #8e24aa;
+            --secondary-dark: #38006b;
+            --accent-color: #8e24aa;
+            --accent-light: #ab47bc;
+            --accent-dark: #6a1b9a;
+            --light-color: #f3e5f5;
+            --dark-color: #1a0b2e;
+            --text-color: #3a2a4a;
+            --heading-color: #1a0b2e;
+            --background-color: #faf5fc;
+            --card-bg: #ffffff;
+            --definition-bg: #ece0f2;
+            --border-color: #ce93d8;
+            --table-even-bg: #f3e5f5;
+            --table-hover-bg: #e1bee7;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 6px -1px rgba(74, 20, 140, 0.1), 0 2px 4px -1px rgba(74, 20, 140, 0.06);
+            --box-shadow-lg: 0 10px 15px -3px rgba(74, 20, 140, 0.1), 0 4px 6px -2px rgba(74, 20, 140, 0.05);
+            --gradient-primary: linear-gradient(135deg, #4a148c 0%, #6a1b9a 100%);
+            --gradient-secondary: linear-gradient(135deg, #2d0a56 0%, #6a1b9a 100%);
+            --gradient-accent: linear-gradient(135deg, #8e24aa 0%, #4a148c 100%);
+            --gradient-gray: linear-gradient(135deg, #ab47bc 0%, #6a1b9a 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #ab47bc;
+            --primary-light: #ce93d8;
+            --primary-dark: #8e24aa;
+            --secondary-color: #8e24aa;
+            --secondary-light: #ab47bc;
+            --secondary-dark: #6a1b9a;
+            --accent-color: #ce93d8;
+            --accent-light: #e1bee7;
+            --accent-dark: #ab47bc;
+            --light-color: #2d1b3d;
+            --dark-color: #12061f;
+            --text-color: #d8c8e0;
+            --heading-color: #f3e5f5;
+            --background-color: #1a0b2e;
+            --card-bg: #2d1b3d;
+            --definition-bg: #38006b;
+            --border-color: #6a1b9a;
+            --table-even-bg: #2d1b3d;
+            --table-hover-bg: #38006b;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, #6a1b9a 0%, #ab47bc 100%);
+            --gradient-secondary: linear-gradient(135deg, #38006b 0%, #8e24aa 100%);
+            --gradient-accent: linear-gradient(135deg, #8e24aa 0%, #4a148c 100%);
+            --gradient-gray: linear-gradient(135deg, #ce93d8 0%, #8e24aa 100%);
+        }
+        /* Base Typography */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        /* Text Analysis Level Styling */
+        .text-analysis-level-1 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(74, 20, 140, 0.05), transparent);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-2 {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(106, 27, 154, 0.05), transparent);
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-3 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            background: linear-gradient(to right, rgba(142, 36, 170, 0.05), transparent);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-level-4 {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .text-analysis-indent {
+            margin-left: 1.5rem;
+        }
+        /* Text Card Styling */
+        .PhiH-text-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-text-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-text-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-text-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-text-card-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        /* Author Presentation Styling */
+        .PhiH-author-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .PhiH-author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+            flex-shrink: 0;
+        }
+        .PhiH-author-info {
+            flex: 1;
+        }
+        /* Quotes Styling */
+        .PhiH-quotes-container {
+            margin-top: 1.5rem;
+        }
+        .PhiH-quotes-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .PhiH-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .PhiH-quote-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .PhiH-quote-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        .PhiH-quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        .PhiH-quote-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+        .PhiH-quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-light);
+            position: absolute;
+            left: -0.5rem;
+            top: -0.5rem;
+            opacity: 0.7;
+        }
+        .PhiH-quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .PhiH-quote-source {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* Header Styling */
+        .PhiH-general-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .PhiH-general-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-general-logo-container {
+            flex: 0 0 auto;
+        }
+        .PhiH-general-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .PhiH-general-logo:hover {
+            transform: scale(1.05);
+        }
+        .PhiH-general-title-container {
+            flex: 1;
+            text-align: center;
+        }
+        .PhiH-general-title-container h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .PhiH-general-header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .PhiH-general-theme-toggle {
+            display: flex;
+            align-items: center;
+        }
+        .PhiH-theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .PhiH-theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .PhiH-theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .PhiH-theme-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .PhiH-theme-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .PhiH-theme-toggle-slider {
+            background-color: var(--primary-dark);
+        }
+        input:checked + .PhiH-theme-toggle-slider:before {
+            transform: translateX(26px);
+        }
+        .PhiH-general-language-selector select {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .PhiH-general-language-selector select:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .PhiH-general-language-selector select option {
+            color: #333;
+        }
+        /* Main Content Styling */
+        .PhiH-text-analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .PhiH-text-analysis-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+        .PhiH-text-analysis-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .PhiH-text-analysis-level {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        /* Footer Styling */
+        .PhiH-general-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .PhiH-general-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .PhiH-general-footer-column h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .PhiH-general-footer-column p {
+            margin: 0.5rem 0;
+        }
+        .PhiH-general-footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .PhiH-general-footer-links a {
+            color: var(--secondary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .PhiH-general-footer-links a:hover {
+            color: white;
+        }
+        /* Lists Styling */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        li strong {
+            color: var(--primary-color);
+        }
+        /* Definition Styling */
+        .PhiH-text-card ul li {
+            background-color: var(--definition-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        /* Questions Styling */
+        .PhiH-text-card ol li {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .PhiH-text-card ol li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+        /* Comparison Table Styling */
+        .PhiH-text-card table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        .PhiH-text-card th {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.85rem 1rem;
+            text-align: right;
+            font-weight: 600;
+            border: 1px solid var(--primary-dark);
+        }
+        .PhiH-text-card td {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+        .PhiH-text-card tbody tr:nth-child(even) {
+            background-color: var(--table-even-bg);
+        }
+        .PhiH-text-card tbody tr:hover {
+            background-color: var(--table-hover-bg);
+        }
+        body.rtl .PhiH-text-card th,
+        body.rtl .PhiH-text-card td {
+            text-align: right;
+        }
+        body.ltr .PhiH-text-card th,
+        body.ltr .PhiH-text-card td {
+            text-align: left;
+        }
+        /* RTL support for indentation */
+        body.rtl .text-analysis-level-1,
+        body.rtl .text-analysis-level-2,
+        body.rtl .text-analysis-level-3,
+        body.rtl .text-analysis-level-4 {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+            padding-left: 0;
+            padding-right: 1rem;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: linear-gradient(to left, rgba(74, 20, 140, 0.05), transparent);
+        }
+        body.rtl .text-analysis-level-2 {
+            border-right: 3px solid var(--secondary-color);
+        }
+        body.rtl .text-analysis-level-3 {
+            border-right: 2px solid var(--accent-color);
+        }
+        body.rtl .text-analysis-level-4 {
+            border-right: 1px solid var(--border-color);
+        }
+        body.rtl .text-analysis-indent {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+        body.rtl .PhiH-text-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-text-card-title::before {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        body.rtl .PhiH-quote-card::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        body.rtl .PhiH-quote-text::before {
+            left: auto;
+            right: -0.5rem;
+        }
+        body.rtl .PhiH-quote-text {
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+        body.rtl .PhiH-text-card ul li {
+            border-left: none;
+            border-right: 3px solid var(--primary-color);
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .PhiH-author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .PhiH-author-image {
+                align-self: center;
+            }
+            .PhiH-quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-general-header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .PhiH-general-logo-container {
+                order: 1;
+            }
+            .PhiH-general-title-container {
+                order: 3;
+                flex-basis: 100%;
+                margin-top: 0.5rem;
+            }
+            .PhiH-general-header-controls {
+                order: 2;
+            }
+            .PhiH-text-analysis-title {
+                font-size: 1.5rem;
+            }
+            .PhiH-text-card {
+                padding: 1.25rem;
+            }
+            .PhiH-text-card table {
+                font-size: 0.9rem;
+            }
+            .PhiH-text-card th,
+            .PhiH-text-card td {
+                padding: 0.5rem 0.6rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .PhiH-general-header-content {
+                padding: 0 1rem;
+            }
+            .PhiH-text-analysis-container {
+                padding: 0 1rem;
+            }
+            .PhiH-text-card {
+                padding: 1rem;
+            }
+            .PhiH-general-footer-content {
+                grid-template-columns: 1fr;
+            }
+            .PhiH-text-card table {
+                font-size: 0.85rem;
+            }
+        }
+        /* Print Styles */
+        @media print {
+            .PhiH-general-header,
+            .PhiH-general-footer,
+            .PhiH-general-header-controls {
+                display: none;
+            }
+            .PhiH-text-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-text-analysis" dir="rtl">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">مركز تعلم الفلسفة</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">الوضع الداكن</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item active">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">الرئيسية</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">الفلاسفة</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">شواهد</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">الموارد</span>
+        </a>
+    </nav>
+    <main class="PhiH-text-analysis-container">
+        <div class="PhiH-text-analysis-header">
+            <h1 class="PhiH-text-analysis-title" data-i18n="PhiH.textAnalysis.kant.title">تحليل النص: القاعدة والانضباط - إيمانويل كانط</h1>
+            <div class="PhiH-text-analysis-level" data-i18n="PhiH.textAnalysis.kant.level">السنة الثالثة ثانوي - الفلسفة - تحليل النص</div>
+        </div>
+        <section class="PhiH-text-analysis-section">
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.kant.introduction.title">التمهيد</h4>
+                <p data-i18n="PhiH.textAnalysis.kant.introduction.content">
+                    كثيراً ما تواجهنا الحياة العملية بأسئلة لا نقدر على الحسم في شأنها، فنجيب كما اتفق أو تحت ضغط المصلحة الخاصة والعاجلة. ولعلّ أبرز هذه الأسئلة يُطرح على النحو التالي: ماذا يجب عليَّ أن أفعل؟ أو ما العمل؟ وتصبح هذه الأسئلة أكثر إحراجاً عندما تتعلق بتربية الناشئة، إذ بقدر ما ندرك مقتضى التأسيس والثبات على المبدأ، تغرينا النتائج المرتقبة من الفعل، وقد لا تخلو مواقفنا حينها من تناقض.
+                </p>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.kant.text.title">النص</h4>
+                <div class="text-analysis-indent">
+                    <p data-i18n="PhiH.textAnalysis.kant.text.content">
+                        يجب أن تتأسس الثقافة الأخلاقية على القواعد[1] لا على الانضباط. فالانضباط يحول دون العيوب، والقواعد تكوّن طريقة التفكير. علينا أن نتصرف على نحو يُعدّ الطفل على العمل وفق القواعد لا وفق بواعث ما. فالانضباط لا يخلّف غير عادات تضمحلّ بمرور السنين. وعلى الطفل أن يتعلم العمل وفق قواعد يُدرك هو نفسه ما فيها من عدل. إننا نرى بيسر أنه من الصعب أن نُحدث هذا الأثر في الأطفال الصغار، وأنّ الثقافة الأخلاقية[2] تقتضي الكثير من التبصر من قبل الأولياء والمعلمين.
+                        <br><br>
+                        فعلى سبيل المثال، عندما يكذب طفل ما، لا يجب علينا أن نعاقبه، وإنما نعامله باستخفاف ونقول له بأننا لن نصدقه مستقبلاً، الخ. بينما إن نحن عاقبناه لشرّ أتاه أو جازيناه لخير قام به، فإنه سيأتي الخير، عند ذلك، من أجل أن نحسن معاملته، وعندما ينتقل بعد ذلك إلى عالم الحياة العملية حيث لا تجري الأمور على هذا النحو البتة، فإنه لن يهتمّ في فعله للخير أو الشرّ إلا بوسائل النجاح، فيكون طيباً أو خبيثاً بحسب تقديره للفائدة[3] المرتقبة من الطيبة أو الخبث.
+                    </p>
+                    <p><em data-i18n="PhiH.textAnalysis.kant.text.source">كانط، مقال في البيداغوجيا، ترجمة لجنة التأليف - Kant, Traité de pédagogie, éd. numérique, p.14</em></p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.kant.author.title">تقديم المؤلف</h4>
+                <div class="PhiH-author-card">
+                    <div class="PhiH-author-image-container">
+                        <img src="assets/images/immanuel_kant.jpg" alt="إيمانويل كانط" class="PhiH-author-image" data-i18n-alt="PhiH.textAnalysis.kant.author.alt">
+                    </div>
+                    <div class="PhiH-author-info">
+                        <p data-i18n="PhiH.textAnalysis.kant.author.content">
+                            إيمانويل كانط (1724-1804) فيلسوف ألماني ولد بمدينة كونيغسبرغ (كونيسبرغ). يحدّد كانط فلسفته كفلسفة نقدية، انبنَت على محاورة النزعة العقلانية والخبرية وتجاوزهما نحو مشروع نقدي، يقوم على رسم حدود العقل رسماً آل به إلى التمييز بين مجال المعرفة ومجال التفكير. ويهدف المشروع النقدي إلى التأسيس الميتافيزيقي للمعرفة والأخلاق. أهم مؤلفاته: "نقد العقل المحض" (1781)، "أسس ميتافيزيقا الأخلاق" (1785)، "نقد العقل العملي" (1788)، "نقد ملكة الحكم" (1790).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.kant.footnotes.title">الهوامش</h4>
+                <ul>
+                    <li data-i18n="PhiH.textAnalysis.kant.footnotes.item1"><strong>(1) "القواعد":</strong> القاعدة حسب كانط هي المبدأ الذاتي الذي يضع تحديداً لفعل الإرادة، وتُقاس قيمة قاعدة ما من خلال قابليتها لأن تكون كونية، أي قدرتها على التوجّه إلى كل كائن عاقل.</li>
+                    <li data-i18n="PhiH.textAnalysis.kant.footnotes.item2"><strong>(2) "الثقافة الأخلاقية":</strong> أحد فروع الثقافة التي يميز الكاتب داخلها بين ثقافة نفعية تقوم على الانضباط دون معرفة بالمبادئ، وثقافة أخلاقية تقوم على احترام المبادئ. وقد كان قد تعرّض فيما تقدّم إلى تربية الجسم.</li>
+                    <li data-i18n="PhiH.textAnalysis.kant.footnotes.item3"><strong>(3) "لفائدة":</strong> يميّز كانط في كتابه "أسس ميتافيزيقا الأخلاق" بين الأمر القطعي والأمر الشرطي، ويعني بهذا الأخير الأفعال التي يتحدّد الإقدام عليها والإحجام عنها في ضوء طبيعة النتائج المترتبة، إن كانت مفيدة أم ضارة.</li>
+                </ul>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.kant.questions.title">المهام</h4>
+                <ol>
+                    <li data-i18n="PhiH.textAnalysis.kant.questions.q1">أحدّد صنفي التربية اللذين ذكرهما الكاتب.</li>
+                    <li data-i18n="PhiH.textAnalysis.kant.questions.q2">أبيّن إيجابيات وسلبيات كل صنف.</li>
+                    <li data-i18n="PhiH.textAnalysis.kant.questions.q3">أكشف عن الأساس الذي تنبني عليه الثقافة الأخلاقية الحقّة.</li>
+                    <li data-i18n="PhiH.textAnalysis.kant.questions.q4">أبيّن مدى وجاهة التأسيس في حضارة موسومة بالعرضية.</li>
+                </ol>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.kant.answers.title">إجابات مقترحة</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.kant.answers.a1.title">الإجابة عن المهمة الأولى:</h5>
+                    <p data-i18n="PhiH.textAnalysis.kant.answers.a1.content">
+                        يذكر كانط صنفين من التربية (أو من الثقافة)، يتمايزان بحسب أساسهما:
+                        <br><br>
+                        <strong>1. التربية بالانضباط (التربية النفعية):</strong> وهي التربية التي تقوم على الانضباط، أي على العقاب والمكافأة، وعلى بواعث خارجية (الخوف من العقاب، أو الرغبة في المكافأة). وهدفها منع العيوب وتكوين عادات سلوكية.
+                        <br><br>
+                        <strong>2. التربية بالقواعد (التربية الأخلاقية):</strong> وهي التربية التي تقوم على القواعد، أي على المبادئ التي يدرك الطفل بنفسه ما فيها من عدل. وهدفها تكوين طريقة تفكير، لا مجرد تكوين عادات.
+                        <br><br>
+                        ويمكن تلخيص الفرق في الجدول التالي:
+                        <!-- <table>
+                            <thead>
+                                <tr>
+                                    <th>المعيار</th>
+                                    <th>التربية بالانضباط</th>
+                                    <th>التربية بالقواعد</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>الأساس</td>
+                                    <td>العقاب والمكافأة (بواعث خارجية)</td>
+                                    <td>القواعد والمبادئ (بواعث داخلية)</td>
+                                </tr>
+                                <tr>
+                                    <td>الهدف</td>
+                                    <td>منع العيوب</td>
+                                    <td>تكوين طريقة التفكير</td>
+                                </tr>
+                                <tr>
+                                    <td>النتيجة</td>
+                                    <td>عادات تضمحلّ بمرور السنين</td>
+                                    <td>طريقة تفكير راسخة</td>
+                                </tr>
+                                <tr>
+                                    <td>موقف الطفل</td>
+                                    <td>منقاد سلبيّ للبواعث الخارجية</td>
+                                    <td>مُدرِك لعدل القاعدة، وفاعل واعٍ</td>
+                                </tr>
+                                <tr>
+                                    <td>المدى</td>
+                                    <td>محدود (مرتبط بالمرحلة)</td>
+                                    <td>ممتدّ (يصاحب الطفل في حياته العملية)</td>
+                                </tr>
+                            </tbody>
+                        </table> -->
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.kant.answers.a2.title">الإجابة عن المهمة الثانية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.kant.answers.a2.content">
+                        <strong>أ. إيجابيات وسلبيات التربية بالانضباط:</strong>
+                        <br><br>
+                        <em>الإيجابيات:</em>
+                        <br>– <strong>الفعالية المباشرة:</strong> تُوقف السلوك السيئ فوراً (مثل الكذب أو العنف).
+                        <br>– <strong>السهولة:</strong> لا تتطلب من الطفل جهداً معرفياً، بل تتطلب فقط الانقياد.
+                        <br>– <strong>الوضوح:</strong> تُحدّد للطفل بوضوح ما هو مسموح وما هو ممنوع.
+                        <br><br>
+                        <em>السلبيات:</em>
+                        <br>– <strong>السطحية:</strong> تُعدّل السلوك دون أن تُعدّل الباعث الداخلي.
+                        <br>– <strong>الهشاشة:</strong> "فالانضباط لا يخلّف غير عادات تضمحلّ بمرور السنين". فبغياب الرقيب الخارجي، تختفي هذه العادات.
+                        <br>– <strong>الحسابية:</strong> يُصبح الطفل "طيباً أو خبيثاً بحسب تقديره للفائدة المرتقبة"، فيكون سلوكه نفعياً لا أخلاقياً.
+                        <br>– <strong>الانفصال عن الحياة العملية:</strong> عندما ينتقل الطفل إلى "عالم الحياة العملية حيث لا تجري الأمور على هذا النحو البتة"، لا يجد البواعث الخارجية، فيضيع.
+                        <br><br>
+                        <strong>ب. إيجابيات وسلبيات التربية بالقواعد:</strong>
+                        <br><br>
+                        <em>الإيجابيات:</em>
+                        <br>– <strong>العمق:</strong> تُكوّن طريقة تفكير، لا مجرد عادات سطحية.
+                        <br>– <strong>الرسوخ:</strong> القواعد الراسخة في العقل تبقى مع الطفل في حياته العملية.
+                        <br>– <strong>الأخلاقية الحقة:</strong> تجعل الطفل فاعلاً واعياً يُدرك بنفسه عدل القاعدة، فيكون سلوكه أخلاقياً لا نفعياً.
+                        <br>– <strong>الاستمرارية:</strong> لا ترتبط بوجود رقيب خارجي، لأن الباعث داخليّ.
+                        <br><br>
+                        <em>السلبيات:</em>
+                        <br>– <strong>الصعوبة:</strong> "إننا نرى بيسر أنه من الصعب أن نُحدث هذا الأثر في الأطفال الصغار".
+                        <br>– <strong>الحاجة إلى التبصر:</strong> "الثقافة الأخلاقية تقتضي الكثير من التبصر من قبل الأولياء والمعلمين".
+                        <br>– <strong>البطء:</strong> لا تُعطي نتائج فورية، بل تحتاج إلى وقت طويل.
+                        <br>– <strong>الاعتماد على نضج الطفل:</strong> تتطلب قدراً من النضج العقلي الذي قد لا يتوفر عند الأطفال الصغار.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.kant.answers.a3.title">الإجابة عن المهمة الثالثة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.kant.answers.a3.content">
+                        تنبني الثقافة الأخلاقية الحقّة - حسب كانط - على الأساس التالي:
+                        <br><br>
+                        <strong>1. الأساس: القواعد الكونية، لا البواعث الفردية:</strong>
+                        <br>يقول كانط: "يجب أن تتأسس الثقافة الأخلاقية على القواعد لا على الانضباط". والقاعدة - كما يوضّح الهامش - هي "المبدأ الذاتي الذي يضع تحديداً لفعل الإرادة"، وتُقاس قيمتها من خلال "قابليتها لأن تكون كونية". فالثقافة الأخلاقية الحقّة تنبني على قواعد كونية، لا على بواعث فردية أو نفعية.
+                        <br><br>
+                        <strong>2. الأساس: إدراك الطفل لعدل القاعدة، لا انصياعه الأعمى:</strong>
+                        <br>يقول كانط: "وعلى الطفل أن يتعلم العمل وفق قواعد يُدرك هو نفسه ما فيها من عدل". فالثقافة الأخلاقية الحقّة لا تكتفي بأن يعمل الطفل وفق القواعد، بل يجب أن يُدرك بنفسه عدلها. وهذا الإدراك هو ما يحوّل السلوك من انصياع أعمى إلى فعل أخلاقي واعٍ.
+                        <br><br>
+                        <strong>3. الأساس: الباعث الداخلي، لا الباعث الخارجي:</strong>
+                        <br>يقول كانط: "علينا أن نتصرف على نحو يُعدّ الطفل على العمل وفق القواعد لا وفق بواعث ما". فالثقافة الأخلاقية الحقّة تنبني على الباعث الداخلي (احترام القاعدة لذاتها)، لا على الباعث الخارجي (الخوف من العقاب أو الرغبة في المكافأة).
+                        <br><br>
+                        <strong>4. الأساس: تكوين طريقة التفكير، لا تكوين عادات:</strong>
+                        <br>يقول كانط: "فالانضباط يحول دون العيوب، والقواعد تكوّن طريقة التفكير". فالثقافة الأخلاقية الحقّة تنبني على تكوين طريقة تفكير، لا على مجرد تكوين عادات. وطريقة التفكير هي ما يبقى مع الطفل في حياته العملية.
+                        <br><br>
+                        <strong>الخلاصة:</strong> الثقافة الأخلاقية الحقّة تنبني على أساس مزدوج:
+                        <br>– <em>أساس موضوعي:</em> القواعد الكونية، لا البواعث النفعية.
+                        <br>– <em>أساس ذاتي:</em> إدراك الطفل لعدل القاعدة، لا انصياعه الأعمى.
+                        <br>وهذا الأساس المزدوج هو ما يميز التربية الأخلاقية الحقّة عن التربية النفعية بالانضباط.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.kant.answers.a4.title">الإجابة عن المهمة الرابعة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.kant.answers.a4.content">
+                        يمكن معالجة هذا السؤال من زاويتين متكاملتين:
+                        <br><br>
+                        <strong>1. من زاوية وجاهة التأسيس في حضارة موسومة بالعرضية (الموقف المؤيد):</strong>
+                        <br>– <strong>الحاجة إلى بوصلة في زمن التعدد:</strong> كلما زادت العرضية (تعدد الآراء، تنوع القيم، غياب مرجعية واحدة)، زادت الحاجة إلى التأسيس على مبادئ راسخة، لا على العادات المتغيرة.
+                        <br>– <strong>الحصانة ضد النسبية:</strong> التأسيس على قواعد كونية هو الحصانة الوحيدة ضد النسبية الأخلاقية التي تنتج عن العرضية.
+                        <br>– <strong>الاستمرارية عبر التحولات:</strong> عندما تتغير الظروف (كما في الحياة العملية)، تبقى القواعد الراسخة هي البوصلة، بينما تضمحلّ العادات.
+                        <br>– <strong>التربية على النقد:</strong> التأسيس على "قواعد يدرك الطفل نفسه ما فيها من عدل" يربي على النقد والاستقلال، لا على الانصياع الأعمى - وهو ما تحتاجه الحضارة المعاصرة.
+                        <br><br>
+                        <strong>2. من زاوية حدود التأسيس في حضارة موسومة بالعرضية (الموقف النقدي):</strong>
+                        <br>– <strong>صعوبة التأسيس في غياب مرجعية مشتركة:</strong> العرضية تعني غياب مرجعية قيمية مشتركة، فكيف نؤسس على قواعد كونية في غياب إجماع عليها؟
+                        <br>– <strong>الخوف من الدوغمائية:</strong> التأسيس على قواعد قد يتحول إلى دوغمائية إذا لم يُقترن بالنقد والمراجعة.
+                        <br>– <strong>تحدي التعددية:</strong> هل يمكن لقواعد كونية واحدة أن تستوعب التعددية القيمية للحضارة المعاصرة؟
+                        <br>– <strong>خطر الوصاية:</strong> من يحدد هذه القواعد الكونية؟ ألا يمكن أن تتحوّل إلى أداة وصاية على الآخر؟
+                        <br><br>
+                        <strong>3. الموقف التركيبي:</strong> التأسيس في حضارة موسومة بالعرضية يبقى وجيهاً وضرورياً، لكنه يحتاج إلى شروط:
+                        <br>– أن يكون تأسيساً <em>منفتحاً</em>، لا دوغمائياً، أي يقوم على قواعد قابلة للنقد والمراجعة.
+                        <br>– أن يكون تأسيساً <em>حواريّاً</em>، لا أحادياً، أي يبني القواعد المشتركة عبر الحوار لا عبر الوصاية.
+                        <br>– أن يكون تأسيساً <em>مُواكباً للتاريخ</em>، لا متجاهلاً له، أي يستوعب التحولات دون أن يفقد البوصلة.
+                        <br>– أن يكون تأسيساً على <em>الكرامة الإنسانية</em>، لا على قيم جزئية، أي على ما يمكن أن يلتقي حوله الجميع.
+                        <br><br>
+                        <strong>الخلاصة:</strong> في حضارة موسومة بالعرضية، لا يكون التأسيس ترفاً فكرياً، بل ضرورة وجودية وأخلاقية. لكن هذه الضرورة تفرض على التأسيس أن يكون منفتحاً وحواريّاً ومواكباً للتاريخ، لا دوغمائياً وأحادياً ومتجاهلاً له. وبهذا الشكل، يبقى التأسيس الكانطي وجيهاً في زمن العرضية، لا كإعادة إنتاج للدوغمائية، بل كأساس للحوار والاستقلال.
+                    </p>
+                </div>
+            </div>
+            <div class="PhiH-text-card">
+                <h4 class="PhiH-text-card-title" data-i18n="PhiH.textAnalysis.kant.analysis.title">تحليل النص</h4>
+                <div class="text-analysis-indent">
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.kant.analysis.thesis.title">الأطروحة الأساسية:</h5>
+                    <p data-i18n="PhiH.textAnalysis.kant.analysis.thesis.content">
+                        يرى كانط أنّ الثقافة الأخلاقية الحقّة تنبني على القواعد (المبادئ الكونية التي يُدرك الطفل بنفسه عدلها) لا على الانضباط (البواعث الخارجية من عقاب ومكافأة). فالتربية بالانضباط تخلّف عادات سطحية تضمحلّ بمرور السنين، وتُكوّن سلوكاً نفعياً حساباتياً ينفصل عن الحياة العملية. أما التربية بالقواعد فتُكوّن طريقة تفكير راسخة، وتجعل السلوك أخلاقياً لا نفعياً. وهذا التأسيس الأخلاقي يتطلب جهداً كبيراً وتبصراً من الأولياء والمعلمين، بسبب صعوبة إحداث هذا الأثر في الأطفال الصغار.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.kant.analysis.mechanisms.title">آليات التأسيس الأخلاقي عند كانط:</h5>
+                    <p data-i18n="PhiH.textAnalysis.kant.analysis.mechanisms.content">
+                        - <strong>الانتقال من الباعث الخارجي إلى الباعث الداخلي:</strong> من العقاب والمكافأة إلى إدراك عدل القاعدة.
+                        <br>- <strong>الانتقال من العادة إلى طريقة التفكير:</strong> من سلوك آلي متكرر إلى مبدأ عقلي راسخ.
+                        <br>- <strong>الانتقال من النفعية إلى الأخلاقية:</strong> من "الطيب أو الخبيث بحسب تقديره للفائدة" إلى "الطيب أو الخبيث بحسب القاعدة".
+                        <br>- <strong>الانتقال من الانصياع الأعمى إلى الإدراك الواعي:</strong> من "العمل وفق القواعد" إلى "إدراك ما فيها من عدل".
+                        <br>- <strong>الانتقال من التربية الجزئية إلى التربية الشاملة:</strong> من تربية الجسم (التي سبق أن تعرض لها كانط) إلى الثقافة الأخلاقية.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.kant.analysis.consequences.title">النتائج المترتبة على هذه الأطروحة:</h5>
+                    <p data-i18n="PhiH.textAnalysis.kant.analysis.consequences.content">
+                        - <strong>تأسيس أخلاقية الواجب:</strong> النص يُمهّد لأخلاقية الواجب الكانطية، القائمة على الأمر القطعي، لا على البواعث النفعية (الأمر الشرطي).
+                        <br>- <strong>تأسيس مفهوم الكرامة الإنسانية:</strong> إذا كان الطفل يُدرك بنفسه عدل القاعدة، فإنه يُعامل ككائن عاقل، لا كوسيلة للتأديب.
+                        <br>- <strong>نقد التربية النفعية:</strong> النص يوجّه نقداً ضمنياً للتربية القائمة على العقاب والمكافأة، ويؤسّس لتربية أخلاقية حقة.
+                        <br>- <strong>تأسيس الاستقلالية الأخلاقية:</strong> إدراك الطفل لعدل القاعدة هو أساس الاستقلالية الأخلاقية، لا الانصياع الأعمى.
+                        <br>- <strong>ربط النظر بالعمل:</strong> التأسيس بالقواعد لا يقتصر على النظر، بل يمتدّ إلى الحياة العملية، حيث لا تجري الأمور على نحو البواعث الخارجية.
+                    </p>
+                    <h5 class="text-analysis-level-2" data-i18n="PhiH.textAnalysis.kant.analysis.significance.title">دلالات وأبعاد المفهوم:</h5>
+                    <p data-i18n="PhiH.textAnalysis.kant.analysis.significance.content">
+                        يحمل هذا النص دلالة فلسفية عميقة في تاريخ الفلسفة الأخلاقية:
+                        <br><br>
+                        <strong>1. دلالة أخلاقية:</strong> النص يؤسّس لأخلاقية الواجب، القائمة على القواعد الكونية لا على البواعث النفعية. وهو بذلك يميّز بين الأخلاقية والنفعية، ويرفض اختزال الأخلاق في الحسابات النفعية.
+                        <br><br>
+                        <strong>2. دلالة تربوية:</strong> النص يقدّم تصوراً جديداً للتربية الأخلاقية، يقوم على تكوين طريقة تفكير لا على تكوين عادات. وهو بذلك يرفض التربية السلطوية القائمة على العقاب والمكافأة.
+                        <br><br>
+                        <strong>3. دلالة أنثروبولوجية:</strong> النص يبيّن أنّ الإنسان كائن عاقل قادر على إدراك عدل القاعدة، لا مجرد كائن قابل للت conditioning. وهذا ما يميّزه عن الحيوان.
+                        <br><br>
+                        <strong>4. دلالة سياسية:</strong> النص يبيّن أنّ التربية الأخلاقية هي شرط المواطنة الحقة. فالمواطن ليس من ينصاع للقانون خوفاً من العقاب، بل من يُدرك عدل القانون ويلتزم به.
+                        <br><br>
+                        <strong>5. صلة النص بالدرس (التأسيس):</strong> النص يُغلق درس التأسيس بنموذج مختلف عن النموذجين السابقين:
+                        <br>– بعد التأسيس على "المبادئ الأولى" (أرسطو)، وعلى "الأنا المفكرة" (ديكارت)، يأتي التأسيس على "القواعد الكونية" (كانط).
+                        <br>– وهذا التأسيس لا يقتصر على المعرفة، بل يمتدّ إلى الأخلاق والتربية، فيصبح تأسيساً أشمل وأعمق.
+                        <br>– وبذلك يكتمل درس التأسيس بتصوراته الثلاث: الأرسطية (المبادئ الأولى)، الديكارتية (الأنا المفكرة)، الكانطية (القواعد الكونية).
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">المطور</h4>
+                <p data-i18n="PhiH.general.developer">مجرى زياد</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">الإصدار</h4>
+                <p data-i18n="PhiH.general.version">v1.0.0</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">الروابط</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="#" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="#" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Text Analysis specific translations
+        window.translations_PhiHtextAnalysis = {
+            fr: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.general.authors": "Philosophes",
+                "PhiH.textAnalysis.kant.level": "3ème Secondaire - Philosophie",
+                // Windows bar translations
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.kant.title": "Analyse du texte : La règle et la discipline - Emmanuel Kant",
+                "PhiH.textAnalysis.kant.introduction.title": "Introduction",
+                "PhiH.textAnalysis.kant.introduction.content": "La vie pratique nous confronte souvent à des questions sur lesquelles nous ne pouvons pas trancher, et nous y répondons au hasard ou sous la pression de l'intérêt privé et immédiat. La plus éminente de ces questions se pose sans doute ainsi : que dois-je faire ? ou que faire ? Et ces questions deviennent plus embarrassantes lorsqu'elles concernent l'éducation de la jeunesse, car autant nous percevons l'exigence de la fondation et de la constance sur le principe, autant les résultats attendus de l'action nous séduisent, et nos positions ne sont alors pas exemptes de contradiction.",
+                "PhiH.textAnalysis.kant.text.title": "Le texte",
+                "PhiH.textAnalysis.kant.text.content": "La culture morale doit se fonder sur des règles [1] et non sur la discipline. Car la discipline empêche les défauts, et les règles forment la manière de penser. Nous devons nous comporter de manière à habituer l'enfant à agir selon les règles et non selon certains mobiles. Car la discipline ne laisse que des habitudes qui s'évanouissent avec le passage des années. Et l'enfant doit apprendre à agir selon des règles dont il perçoit lui-même la justice. Nous voyons aisément qu'il est difficile de produire cet effet chez les jeunes enfants, et que la culture morale [2] exige beaucoup de discernement de la part des parents et des enseignants.<br><br>Ainsi, par exemple, lorsqu'un enfant ment, nous ne devons pas le punir, mais le traiter avec mépris et lui dire que nous ne le croirons plus à l'avenir, etc. Tandis que si nous le punissons pour un mal qu'il a commis ou le récompensons pour un bien qu'il a fait, il fera le bien, alors, pour que nous le traitions bien, et lorsqu'il passera ensuite au monde de la vie pratique où les choses ne se passent pas du tout de cette manière, il ne s'intéressera, dans son action pour le bien ou le mal, qu'aux moyens de réussir, étant bon ou mauvais selon son estimation de l'utilité [3] attendue de la bonté ou de la méchanceté.",
+                "PhiH.textAnalysis.kant.text.source": "Kant, Traité de pédagogie, traduction du comité de rédaction, éd. numérique, p.14",
+                "PhiH.textAnalysis.kant.author.title": "Présentation de l'auteur",
+                "PhiH.textAnalysis.kant.author.alt": "Emmanuel Kant",
+                "PhiH.textAnalysis.kant.author.content": "Emmanuel Kant (1724-1804), philosophe allemand né à Königsberg (Königsberg). Kant définit sa philosophie comme une philosophie critique, bâtie sur le dialogue avec le rationalisme et l'empirisme et sur leur dépassement vers un projet critique, consistant à tracer les limites de la raison, tracé qui l'a conduit à distinguer le domaine de la connaissance du domaine de la pensée. Le projet critique vise la fondation métaphysique de la connaissance et de la morale. Ses œuvres principales : « Critique de la raison pure » (1781), « Fondements de la métaphysique des mœurs » (1785), « Critique de la raison pratique » (1788), « Critique de la faculté de juger » (1790).",
+                "PhiH.textAnalysis.kant.footnotes.title": "Notes de bas de page",
+                "PhiH.textAnalysis.kant.footnotes.item1": "<strong>(1) « La règle » :</strong> la règle selon Kant est le principe subjectif qui détermine l'acte de la volonté, et la valeur d'une règle se mesure à sa capacité à être universelle, c'est-à-dire à sa capacité à s'adresser à tout être raisonnable.",
+                "PhiH.textAnalysis.kant.footnotes.item2": "<strong>(2) « La culture morale » :</strong> l'une des branches de la culture, à l'intérieur de laquelle l'auteur distingue une culture utilitaire reposant sur la discipline sans connaissance des principes, et une culture morale reposant sur le respect des principes. Il avait déjà traité auparavant de la culture du corps.",
+                "PhiH.textAnalysis.kant.footnotes.item3": "<strong>(3) « L'utilité » :</strong> Kant distingue dans son ouvrage « Fondements de la métaphysique des mœurs » entre l'impératif catégorique et l'impératif hypothétique, et entend par ce dernier les actions dont l'accomplissement ou l'abstention est déterminé par la nature des conséquences qui en résultent, selon qu'elles sont utiles ou nuisibles.",
+                "PhiH.textAnalysis.kant.questions.title": "Tâches",
+                "PhiH.textAnalysis.kant.questions.q1": "Je détermine les deux types d'éducation mentionnés par l'auteur.",
+                "PhiH.textAnalysis.kant.questions.q2": "Je montre les avantages et les inconvénients de chaque type.",
+                "PhiH.textAnalysis.kant.questions.q3": "Je révèle le fondement sur lequel repose la culture morale véritable.",
+                "PhiH.textAnalysis.kant.questions.q4": "Je montre la pertinence de la fondation dans une civilisation marquée par la contingence.",
+                "PhiH.textAnalysis.kant.answers.title": "Réponses suggérées",
+                "PhiH.textAnalysis.kant.answers.a1.title": "Réponse à la première tâche :",
+                "PhiH.textAnalysis.kant.answers.a1.content": "Kant mentionne deux types d'éducation (ou de culture), qui se distinguent par leur fondement :<br><br><strong>1. L'éducation par la discipline (éducation utilitaire) :</strong> c'est l'éducation qui repose sur la discipline, c'est-à-dire sur la punition et la récompense, et sur des mobiles extérieurs (la crainte de la punition, ou le désir de la récompense). Son but est d'empêcher les défauts et de former des habitudes comportementales.<br><br><strong>2. L'éducation par les règles (éducation morale) :</strong> c'est l'éducation qui repose sur les règles, c'est-à-dire sur les principes dont l'enfant perçoit lui-même la justice. Son but est de former une manière de penser, et non simplement de former des habitudes.<br><br>On peut résumer la différence dans le tableau suivant :<table><thead><tr><th>Critère</th><th>Éducation par la discipline</th><th>Éducation par les règles</th></tr></thead><tbody><tr><td>Fondement</td><td>Punition et récompense (mobiles extérieurs)</td><td>Règles et principes (mobiles intérieurs)</td></tr><tr><td>But</td><td>Empêcher les défauts</td><td>Former la manière de penser</td></tr><tr><td>Résultat</td><td>Habitudes qui s'évanouissent avec les années</td><td>Manière de penser solide</td></tr><tr><td>Position de l'enfant</td><td>Conduit passivement par des mobiles extérieurs</td><td>Percevant la justice de la règle, acteur conscient</td></tr><tr><td>Portée</td><td>Limitée (liée à l'étape)</td><td>Étendue (accompagne l'enfant dans sa vie pratique)</td></tr></tbody></table>",
+                "PhiH.textAnalysis.kant.answers.a2.title": "Réponse à la deuxième tâche :",
+                "PhiH.textAnalysis.kant.answers.a2.content": "<strong>A. Avantages et inconvénients de l'éducation par la discipline :</strong><br><br><em>Avantages :</em><br>– <strong>Efficacité immédiate :</strong> elle arrête immédiatement le mauvais comportement (comme le mensonge ou la violence).<br>– <strong>Facilité :</strong> elle n'exige pas de l'enfant un effort cognitif, mais seulement la soumission.<br>– <strong>Clarté :</strong> elle indique clairement à l'enfant ce qui est permis et ce qui est interdit.<br><br><em>Inconvénients :</em><br>– <strong>Superficialité :</strong> elle modifie le comportement sans modifier le mobile intérieur.<br>– <strong>Fragilité :</strong> « la discipline ne laisse que des habitudes qui s'évanouissent avec le passage des années ». En l'absence du surveillant extérieur, ces habitudes disparaissent.<br>– <strong>Calcul :</strong> l'enfant devient « bon ou mauvais selon son estimation de l'utilité attendue », son comportement devient utilitaire et non moral.<br>– <strong>Déconnexion de la vie pratique :</strong> lorsque l'enfant passe « au monde de la vie pratique où les choses ne se passent pas du tout de cette manière », il ne trouve pas les mobiles extérieurs et se perd.<br><br><strong>B. Avantages et inconvénients de l'éducation par les règles :</strong><br><br><em>Avantages :</em><br>– <strong>Profondeur :</strong> elle forme une manière de penser, et non de simples habitudes superficielles.<br>– <strong>Solidité :</strong> les règles enracinées dans la raison restent avec l'enfant dans sa vie pratique.<br>– <strong>Véritable moralité :</strong> elle rend l'enfant acteur conscient qui perçoit lui-même la justice de la règle, son comportement devenant moral et non utilitaire.<br>– <strong>Continuité :</strong> elle n'est pas liée à la présence d'un surveillant extérieur, car le mobile est intérieur.<br><br><em>Inconvénients :</em><br>– <strong>Difficulté :</strong> « nous voyons aisément qu'il est difficile de produire cet effet chez les jeunes enfants ».<br>– <strong>Besoin de discernement :</strong> « la culture morale exige beaucoup de discernement de la part des parents et des enseignants ».<br>– <strong>Lenteur :</strong> elle ne donne pas de résultats immédiats, mais exige beaucoup de temps.<br>– <strong>Dépendance à la maturité de l'enfant :</strong> elle exige un certain degré de maturité rationnelle qui peut manquer chez les jeunes enfants.",
+                "PhiH.textAnalysis.kant.answers.a3.title": "Réponse à la troisième tâche :",
+                "PhiH.textAnalysis.kant.answers.a3.content": "La culture morale véritable repose, selon Kant, sur le fondement suivant :<br><br><strong>1. Le fondement : les règles universelles, non les mobiles individuels :</strong><br>Kant dit : « la culture morale doit se fonder sur des règles et non sur la discipline ». Et la règle – comme le précise la note – est « le principe subjectif qui détermine l'acte de la volonté », et sa valeur se mesure à « sa capacité à être universelle ». La culture morale véritable repose donc sur des règles universelles, non sur des mobiles individuels ou utilitaires.<br><br><strong>2. Le fondement : la perception par l'enfant de la justice de la règle, non sa soumission aveugle :</strong><br>Kant dit : « l'enfant doit apprendre à agir selon des règles dont il perçoit lui-même la justice ». La culture morale véritable ne se contente pas que l'enfant agisse selon les règles, mais exige qu'il perçoive lui-même leur justice. Et cette perception est ce qui transforme le comportement d'une soumission aveugle en un acte moral conscient.<br><br><strong>3. Le fondement : le mobile intérieur, non le mobile extérieur :</strong><br>Kant dit : « nous devons nous comporter de manière à habituer l'enfant à agir selon les règles et non selon certains mobiles ». La culture morale véritable repose sur le mobile intérieur (le respect de la règle pour elle-même), non sur le mobile extérieur (la crainte de la punition ou le désir de la récompense).<br><br><strong>4. Le fondement : former la manière de penser, non former des habitudes :</strong><br>Kant dit : « la discipline empêche les défauts, et les règles forment la manière de penser ». La culture morale véritable repose sur la formation d'une manière de penser, non sur la simple formation d'habitudes. Et la manière de penser est ce qui reste avec l'enfant dans sa vie pratique.<br><br><strong>Conclusion :</strong> la culture morale véritable repose sur un fondement double :<br>– <em>fondement objectif :</em> les règles universelles, non les mobiles utilitaires ;<br>– <em>fondement subjectif :</em> la perception par l'enfant de la justice de la règle, non sa soumission aveugle.<br>Et c'est ce double fondement qui distingue la véritable éducation morale de l'éducation utilitaire par la discipline.",
+                "PhiH.textAnalysis.kant.answers.a4.title": "Réponse à la quatrième tâche :",
+                "PhiH.textAnalysis.kant.answers.a4.content": "On peut traiter cette question sous deux angles complémentaires :<br><br><strong>1. Du point de vue de la pertinence de la fondation dans une civilisation marquée par la contingence (position favorable) :</strong><br>– <strong>Le besoin d'une boussole au temps de la pluralité :</strong> plus la contingence augmente (pluralité des opinions, diversité des valeurs, absence d'une référence unique), plus le besoin de fondation sur des principes solides augmente, et non sur des habitudes changeantes.<br>– <strong>L'immunité contre le relativisme :</strong> la fondation sur des règles universelles est la seule immunité contre le relativisme moral qui résulte de la contingence.<br>– <strong>La continuité à travers les transformations :</strong> lorsque les circonstances changent (comme dans la vie pratique), les règles solides restent la boussole, tandis que les habitudes s'évanouissent.<br>– <strong>L'éducation à la critique :</strong> la fondation sur des « règles dont l'enfant perçoit lui-même la justice » éduque à la critique et à l'autonomie, non à la soumission aveugle – ce dont la civilisation contemporaine a besoin.<br><br><strong>2. Du point de vue des limites de la fondation dans une civilisation marquée par la contingence (position critique) :</strong><br>– <strong>La difficulté de la fondation en l'absence d'une référence commune :</strong> la contingence signifie l'absence d'une référence axiologique commune, comment fonder sur des règles universelles en l'absence de consensus à leur sujet ?<br>– <strong>La crainte du dogmatisme :</strong> la fondation sur des règles peut devenir dogmatique si elle n'est pas accompagnée de critique et de révision.<br>– <strong>Le défi de la pluralité :</strong> des règles universelles uniques peuvent-elles englober la pluralité axiologique de la civilisation contemporaine ?<br>– <strong>Le risque de tutelle :</strong> qui détermine ces règles universelles ? Ne peuvent-elles pas devenir un instrument de tutelle sur l'autre ?<br><br><strong>3. La position synthétique :</strong> la fondation dans une civilisation marquée par la contingence reste pertinente et nécessaire, mais elle exige des conditions :<br>– qu'elle soit une fondation <em>ouverte</em>, non dogmatique, c'est-à-dire reposant sur des règles susceptibles de critique et de révision ;<br>– qu'elle soit une fondation <em>dialogique</em>, non unilatérale, c'est-à-dire construisant les règles communes par le dialogue, non par la tutelle ;<br>– qu'elle soit une fondation <em>accompagnant l'histoire</em>, non l'ignorant, c'est-à-dire intégrant les transformations sans perdre la boussole ;<br>– qu'elle soit une fondation sur la <em>dignité humaine</em>, non sur des valeurs partielles, c'est-à-dire sur ce autour de quoi tous peuvent se retrouver.<br><br><strong>Conclusion :</strong> dans une civilisation marquée par la contingence, la fondation n'est pas un luxe intellectuel, mais une nécessité existentielle et éthique. Mais cette nécessité impose à la fondation d'être ouverte, dialogique et accompagnant l'histoire, non dogmatique, unilatérale et l'ignorant. Et c'est ainsi que la fondation kantienne reste pertinente au temps de la contingence, non comme reproduction du dogmatisme, mais comme fondement du dialogue et de l'autonomie.",
+                "PhiH.textAnalysis.kant.analysis.title": "Analyse du texte",
+                "PhiH.textAnalysis.kant.analysis.thesis.title": "Thèse principale :",
+                "PhiH.textAnalysis.kant.analysis.thesis.content": "Kant considère que la véritable culture morale repose sur les règles (les principes universels dont l'enfant perçoit lui-même la justice), et non sur la discipline (les mobiles extérieurs de punition et de récompense). L'éducation par la discipline ne laisse que des habitudes superficielles qui s'évanouissent avec les années, et forme un comportement utilitaire calculateur déconnecté de la vie pratique. Quant à l'éducation par les règles, elle forme une manière de penser solide, et rend le comportement moral et non utilitaire. Cette fondation morale exige un effort considérable et du discernement de la part des parents et des enseignants, en raison de la difficulté de produire cet effet chez les jeunes enfants.",
+                "PhiH.textAnalysis.kant.analysis.mechanisms.title": "Mécanismes de la fondation morale chez Kant :",
+                "PhiH.textAnalysis.kant.analysis.mechanisms.content": "- <strong>Le passage du mobile extérieur au mobile intérieur :</strong> de la punition et de la récompense à la perception de la justice de la règle.<br>- <strong>Le passage de l'habitude à la manière de penser :</strong> d'un comportement mécanique répété à un principe rationnel solide.<br>- <strong>Le passage de l'utilitarisme à la moralité :</strong> de « bon ou mauvais selon son estimation de l'utilité » à « bon ou mauvais selon la règle ».<br>- <strong>Le passage de la soumission aveugle à la perception consciente :</strong> d'« agir selon les règles » à « percevoir leur justice ».<br>- <strong>Le passage de l'éducation partielle à l'éducation totale :</strong> de la culture du corps (déjà traitée par Kant) à la culture morale.",
+                "PhiH.textAnalysis.kant.analysis.consequences.title": "Conséquences de cette thèse :",
+                "PhiH.textAnalysis.kant.analysis.consequences.content": "- <strong>Fondation d'une éthique du devoir :</strong> le texte prépare l'éthique du devoir kantienne, reposant sur l'impératif catégorique, non sur les mobiles utilitaires (impératif hypothétique).<br>- <strong>Fondation du concept de dignité humaine :</strong> si l'enfant perçoit lui-même la justice de la règle, il est traité comme un être raisonnable, et non comme un moyen de discipline.<br>- <strong>Critique de l'éducation utilitaire :</strong> le texte critique implicitement l'éducation reposant sur la punition et la récompense, et fonde une véritable éducation morale.<br>- <strong>Fondation de l'autonomie morale :</strong> la perception par l'enfant de la justice de la règle est le fondement de l'autonomie morale, non la soumission aveugle.<br>- <strong>Lien du théorique et du pratique :</strong> la fondation sur les règles ne se limite pas à la théorie, mais s'étend à la vie pratique, où les choses ne se passent pas du tout selon les mobiles extérieurs.",
+                "PhiH.textAnalysis.kant.analysis.significance.title": "Significations et dimensions du concept :",
+                "PhiH.textAnalysis.kant.analysis.significance.content": "Ce texte porte une signification philosophique profonde dans l'histoire de la philosophie morale :<br><br><strong>1. Signification éthique :</strong> le texte fonde une éthique du devoir, reposant sur les règles universelles et non sur les mobiles utilitaires. Il distingue ainsi la moralité de l'utilitarisme, et refuse de réduire la morale à des calculs utilitaires.<br><br><strong>2. Signification éducative :</strong> le texte présente une nouvelle conception de l'éducation morale, reposant sur la formation d'une manière de penser et non sur la formation d'habitudes. Il refuse ainsi l'éducation autoritaire reposant sur la punition et la récompense.<br><br><strong>3. Signification anthropologique :</strong> le texte montre que l'homme est un être raisonnable capable de percevoir la justice de la règle, et non un simple être conditionnable. C'est là ce qui le distingue de l'animal.<br><br><strong>4. Signification politique :</strong> le texte montre que l'éducation morale est la condition de la citoyenneté véritable. Le citoyen n'est pas celui qui se soumet à la loi par crainte de la punition, mais celui qui perçoit la justice de la loi et s'y engage.<br><br><strong>5. Lien du texte avec la leçon (la fondation) :</strong> le texte clôt la leçon de la fondation par un modèle différent des deux modèles précédents :<br>– après la fondation sur les « premiers principes » (Aristote), et sur le « moi pensant » (Descartes), vient la fondation sur les « règles universelles » (Kant) ;<br>– et cette fondation ne se limite pas à la connaissance, mais s'étend à la morale et à l'éducation, devenant une fondation plus globale et plus profonde ;<br>– la leçon de la fondation s'achève ainsi par ses trois conceptions : aristotélicienne (premiers principes), cartésienne (moi pensant), kantienne (règles universelles)."
+            },
+            en: {
+                // General translations
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.general.authors": "Philosophers",
+                "PhiH.textAnalysis.kant.level": "3rd Secondary - Philosophy",
+                // Windows bar translations
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                // Text Analysis specific translations
+                "PhiH.textAnalysis.kant.title": "Text Analysis: The Rule and Discipline - Emmanuel Kant",
+                "PhiH.textAnalysis.kant.introduction.title": "Introduction",
+                "PhiH.textAnalysis.kant.introduction.content": "Practical life often confronts us with questions we cannot decide, and we answer them haphazardly or under the pressure of private and immediate interest. The most prominent of these questions is probably posed as follows: what ought I to do? or what is to be done? And these questions become more embarrassing when they concern the education of the young, for as much as we perceive the requirement of foundation and constancy in principle, the expected results of action seduce us, and our positions are then not free from contradiction.",
+                "PhiH.textAnalysis.kant.text.title": "The Text",
+                "PhiH.textAnalysis.kant.text.content": "Moral culture must be founded on rules [1] and not on discipline. For discipline prevents defects, and rules form the manner of thinking. We must behave in such a way as to accustom the child to act according to rules and not according to certain motives. For discipline leaves only habits that vanish with the passing of years. And the child must learn to act according to rules whose justice he himself perceives. We see easily that it is difficult to produce this effect in young children, and that moral culture [2] requires much discernment on the part of parents and teachers.<br><br>For example, when a child lies, we must not punish him, but treat him with contempt and tell him that we will not believe him in the future, etc. Whereas if we punish him for a wrong he has committed or reward him for a good he has done, he will do good, then, so that we treat him well, and when he passes afterwards to the world of practical life where things do not go at all in this way, he will be concerned, in his action for good or evil, only with the means of success, being good or evil according to his estimation of the utility [3] expected from goodness or evil.",
+                "PhiH.textAnalysis.kant.text.source": "Kant, Traité de pédagogie, translation by the writing committee, éd. numérique, p.14",
+                "PhiH.textAnalysis.kant.author.title": "Author Presentation",
+                "PhiH.textAnalysis.kant.author.alt": "Emmanuel Kant",
+                "PhiH.textAnalysis.kant.author.content": "Emmanuel Kant (1724-1804), German philosopher born in Königsberg. Kant defines his philosophy as a critical philosophy, built on the dialogue with rationalism and empiricism and on their overcoming toward a critical project, consisting in tracing the limits of reason, a tracing that led him to distinguish the domain of knowledge from the domain of thought. The critical project aims at the metaphysical foundation of knowledge and morality. His main works: \"Critique of Pure Reason\" (1781), \"Groundwork of the Metaphysics of Morals\" (1785), \"Critique of Practical Reason\" (1788), \"Critique of the Power of Judgment\" (1790).",
+                "PhiH.textAnalysis.kant.footnotes.title": "Footnotes",
+                "PhiH.textAnalysis.kant.footnotes.item1": "<strong>(1) \"The rule\":</strong> the rule according to Kant is the subjective principle that determines the act of the will, and the value of a rule is measured by its capacity to be universal, that is, by its capacity to address every rational being.",
+                "PhiH.textAnalysis.kant.footnotes.item2": "<strong>(2) \"Moral culture\":</strong> one of the branches of culture, within which the author distinguishes a utilitarian culture resting on discipline without knowledge of principles, and a moral culture resting on respect for principles. He had already dealt with the culture of the body earlier.",
+                "PhiH.textAnalysis.kant.footnotes.item3": "<strong>(3) \"Utility\":</strong> Kant distinguishes in his work \"Groundwork of the Metaphysics of Morals\" between the categorical imperative and the hypothetical imperative, and understands by the latter the actions whose undertaking or abstention is determined by the nature of the consequences that result, according to whether they are useful or harmful.",
+                "PhiH.textAnalysis.kant.questions.title": "Tasks",
+                "PhiH.textAnalysis.kant.questions.q1": "I determine the two types of education mentioned by the author.",
+                "PhiH.textAnalysis.kant.questions.q2": "I show the advantages and disadvantages of each type.",
+                "PhiH.textAnalysis.kant.questions.q3": "I reveal the foundation on which genuine moral culture rests.",
+                "PhiH.textAnalysis.kant.questions.q4": "I show the relevance of foundation in a civilization marked by contingency.",
+                "PhiH.textAnalysis.kant.answers.title": "Suggested Answers",
+                "PhiH.textAnalysis.kant.answers.a1.title": "Answer to the first task:",
+                "PhiH.textAnalysis.kant.answers.a1.content": "Kant mentions two types of education (or culture), which are distinguished by their foundation:<br><br><strong>1. Education by discipline (utilitarian education):</strong> it is the education that rests on discipline, that is, on punishment and reward, and on external motives (fear of punishment, or desire for reward). Its aim is to prevent defects and to form behavioral habits.<br><br><strong>2. Education by rules (moral education):</strong> it is the education that rests on rules, that is, on principles whose justice the child himself perceives. Its aim is to form a manner of thinking, and not simply to form habits.<br><br>One can summarize the difference in the following table:<table><thead><tr><th>Criterion</th><th>Education by discipline</th><th>Education by rules</th></tr></thead><tbody><tr><td>Foundation</td><td>Punishment and reward (external motives)</td><td>Rules and principles (internal motives)</td></tr><tr><td>Aim</td><td>Prevent defects</td><td>Form the manner of thinking</td></tr><tr><td>Result</td><td>Habits that vanish with the years</td><td>Solid manner of thinking</td></tr><tr><td>Position of the child</td><td>Passively led by external motives</td><td>Perceiving the justice of the rule, conscious actor</td></tr><tr><td>Scope</td><td>Limited (linked to the stage)</td><td>Extended (accompanies the child in practical life)</td></tr></tbody></table>",
+                "PhiH.textAnalysis.kant.answers.a2.title": "Answer to the second task:",
+                "PhiH.textAnalysis.kant.answers.a2.content": "<strong>A. Advantages and disadvantages of education by discipline:</strong><br><br><em>Advantages:</em><br>– <strong>Immediate efficacy:</strong> it immediately stops bad behavior (like lying or violence).<br>– <strong>Ease:</strong> it does not demand of the child a cognitive effort, but only submission.<br>– <strong>Clarity:</strong> it clearly indicates to the child what is permitted and what is forbidden.<br><br><em>Disadvantages:</em><br>– <strong>Superficiality:</strong> it modifies the behavior without modifying the internal motive.<br>– <strong>Fragility:</strong> \"discipline leaves only habits that vanish with the passing of years\". In the absence of the external supervisor, these habits disappear.<br>– <strong>Calculation:</strong> the child becomes \"good or evil according to his estimation of the expected utility\", his behavior becoming utilitarian and not moral.<br>– <strong>Disconnection from practical life:</strong> when the child passes \"to the world of practical life where things do not go at all in this way\", he does not find the external motives and is lost.<br><br><strong>B. Advantages and disadvantages of education by rules:</strong><br><br><em>Advantages:</em><br>– <strong>Depth:</strong> it forms a manner of thinking, and not simple superficial habits.<br>– <strong>Solidity:</strong> rules rooted in reason remain with the child in his practical life.<br>– <strong>Genuine morality:</strong> it makes the child a conscious actor who perceives himself the justice of the rule, his behavior becoming moral and not utilitarian.<br>– <strong>Continuity:</strong> it is not linked to the presence of an external supervisor, because the motive is internal.<br><br><em>Disadvantages:</em><br>– <strong>Difficulty:</strong> \"we see easily that it is difficult to produce this effect in young children\".<br>– <strong>Need for discernment:</strong> \"moral culture requires much discernment on the part of parents and teachers\".<br>– <strong>Slowness:</strong> it does not give immediate results, but requires much time.<br>– <strong>Dependence on the child's maturity:</strong> it requires a certain degree of rational maturity that may be lacking in young children.",
+                "PhiH.textAnalysis.kant.answers.a3.title": "Answer to the third task:",
+                "PhiH.textAnalysis.kant.answers.a3.content": "Genuine moral culture rests, according to Kant, on the following foundation:<br><br><strong>1. The foundation: universal rules, not individual motives:</strong><br>Kant says: \"moral culture must be founded on rules and not on discipline\". And the rule – as the note clarifies – is \"the subjective principle that determines the act of the will\", and its value is measured by \"its capacity to be universal\". Genuine moral culture thus rests on universal rules, not on individual or utilitarian motives.<br><br><strong>2. The foundation: the child's perception of the justice of the rule, not his blind submission:</strong><br>Kant says: \"the child must learn to act according to rules whose justice he himself perceives\". Genuine moral culture does not content itself with the child acting according to rules, but requires that he himself perceive their justice. And this perception is what transforms behavior from blind submission into a conscious moral act.<br><br><strong>3. The foundation: internal motive, not external motive:</strong><br>Kant says: \"we must behave in such a way as to accustom the child to act according to rules and not according to certain motives\". Genuine moral culture rests on the internal motive (respect for the rule for itself), not on the external motive (fear of punishment or desire for reward).<br><br><strong>4. The foundation: forming the manner of thinking, not forming habits:</strong><br>Kant says: \"discipline prevents defects, and rules form the manner of thinking\". Genuine moral culture rests on the formation of a manner of thinking, not on the simple formation of habits. And the manner of thinking is what remains with the child in his practical life.<br><br><strong>Conclusion:</strong> genuine moral culture rests on a double foundation:<br>– <em>objective foundation:</em> universal rules, not utilitarian motives;<br>– <em>subjective foundation:</em> the child's perception of the justice of the rule, not his blind submission.<br>And it is this double foundation that distinguishes genuine moral education from utilitarian education by discipline.",
+                "PhiH.textAnalysis.kant.answers.a4.title": "Answer to the fourth task:",
+                "PhiH.textAnalysis.kant.answers.a4.content": "This question can be treated from two complementary angles:<br><br><strong>1. From the point of view of the relevance of foundation in a civilization marked by contingency (favorable position):</strong><br>– <strong>The need for a compass in the time of plurality:</strong> the more contingency increases (plurality of opinions, diversity of values, absence of a single reference), the more the need for foundation on solid principles increases, and not on changing habits.<br>– <strong>Immunity against relativism:</strong> foundation on universal rules is the only immunity against the moral relativism that results from contingency.<br>– <strong>Continuity through transformations:</strong> when circumstances change (as in practical life), solid rules remain the compass, while habits vanish.<br>– <strong>Education to criticism:</strong> foundation on \"rules whose justice the child himself perceives\" educates to criticism and autonomy, not to blind submission – which is what contemporary civilization needs.<br><br><strong>2. From the point of view of the limits of foundation in a civilization marked by contingency (critical position):</strong><br>– <strong>The difficulty of foundation in the absence of a common reference:</strong> contingency means the absence of a common axiological reference, how can one found on universal rules in the absence of consensus about them?<br>– <strong>The fear of dogmatism:</strong> foundation on rules can become dogmatic if it is not accompanied by criticism and revision.<br>– <strong>The challenge of plurality:</strong> can single universal rules encompass the axiological plurality of contemporary civilization?<br>– <strong>The risk of tutelage:</strong> who determines these universal rules? Can they not become an instrument of tutelage over the other?<br><br><strong>3. The synthetic position:</strong> foundation in a civilization marked by contingency remains relevant and necessary, but it requires conditions:<br>– that it be an <em>open</em> foundation, not dogmatic, that is, resting on rules susceptible to criticism and revision;<br>– that it be a <em>dialogical</em> foundation, not unilateral, that is, constructing common rules through dialogue, not through tutelage;<br>– that it be a foundation <em>accompanying history</em>, not ignoring it, that is, integrating transformations without losing the compass;<br>– that it be a foundation on <em>human dignity</em>, not on partial values, that is, on what everyone can agree on.<br><br><strong>Conclusion:</strong> in a civilization marked by contingency, foundation is not an intellectual luxury, but an existential and ethical necessity. But this necessity imposes on foundation to be open, dialogical and accompanying history, not dogmatic, unilateral and ignoring it. And it is thus that the Kantian foundation remains relevant in the time of contingency, not as a reproduction of dogmatism, but as the foundation of dialogue and autonomy.",
+                "PhiH.textAnalysis.kant.analysis.title": "Text Analysis",
+                "PhiH.textAnalysis.kant.analysis.thesis.title": "Main thesis:",
+                "PhiH.textAnalysis.kant.analysis.thesis.content": "Kant considers that genuine moral culture rests on rules (the universal principles whose justice the child himself perceives), and not on discipline (the external motives of punishment and reward). Education by discipline leaves only superficial habits that vanish with the years, and forms a utilitarian calculating behavior disconnected from practical life. As for education by rules, it forms a solid manner of thinking, and makes behavior moral and not utilitarian. This moral foundation requires considerable effort and discernment on the part of parents and teachers, because of the difficulty of producing this effect in young children.",
+                "PhiH.textAnalysis.kant.analysis.mechanisms.title": "Mechanisms of moral foundation in Kant:",
+                "PhiH.textAnalysis.kant.analysis.mechanisms.content": "- <strong>The passage from external motive to internal motive:</strong> from punishment and reward to the perception of the justice of the rule.<br>- <strong>The passage from habit to manner of thinking:</strong> from a repeated mechanical behavior to a solid rational principle.<br>- <strong>The passage from utilitarianism to morality:</strong> from \"good or evil according to his estimation of utility\" to \"good or evil according to the rule\".<br>- <strong>The passage from blind submission to conscious perception:</strong> from \"acting according to rules\" to \"perceiving their justice\".<br>- <strong>The passage from partial education to total education:</strong> from the culture of the body (already treated by Kant) to moral culture.",
+                "PhiH.textAnalysis.kant.analysis.consequences.title": "Consequences of this thesis:",
+                "PhiH.textAnalysis.kant.analysis.consequences.content": "- <strong>Foundation of an ethics of duty:</strong> the text prepares the Kantian ethics of duty, resting on the categorical imperative, not on utilitarian motives (hypothetical imperative).<br>- <strong>Foundation of the concept of human dignity:</strong> if the child perceives himself the justice of the rule, he is treated as a rational being, and not as a means of discipline.<br>- <strong>Critique of utilitarian education:</strong> the text implicitly criticizes the education resting on punishment and reward, and founds a genuine moral education.<br>- <strong>Foundation of moral autonomy:</strong> the child's perception of the justice of the rule is the foundation of moral autonomy, not blind submission.<br>- <strong>Link of the theoretical and the practical:</strong> foundation on rules is not limited to theory, but extends to practical life, where things do not go at all according to external motives.",
+                "PhiH.textAnalysis.kant.analysis.significance.title": "Significance and dimensions of the concept:",
+                "PhiH.textAnalysis.kant.analysis.significance.content": "This text carries a profound philosophical significance in the history of moral philosophy:<br><br><strong>1. Ethical significance:</strong> the text founds an ethics of duty, resting on universal rules and not on utilitarian motives. It thus distinguishes morality from utilitarianism, and refuses to reduce morality to utilitarian calculations.<br><br><strong>2. Educational significance:</strong> the text presents a new conception of moral education, resting on the formation of a manner of thinking and not on the formation of habits. It thus refuses authoritarian education resting on punishment and reward.<br><br><strong>3. Anthropological significance:</strong> the text shows that man is a rational being capable of perceiving the justice of the rule, and not a simply conditionable being. This is what distinguishes him from the animal.<br><br><strong>4. Political significance:</strong> the text shows that moral education is the condition of genuine citizenship. The citizen is not the one who submits to the law out of fear of punishment, but the one who perceives the justice of the law and commits to it.<br><br><strong>5. Link of the text with the lesson (foundation):</strong> the text closes the lesson of foundation with a model different from the two previous models:<br>– after foundation on the \"first principles\" (Aristotle), and on the \"thinking self\" (Descartes), comes foundation on \"universal rules\" (Kant);<br>– and this foundation is not limited to knowledge, but extends to morality and education, becoming a more global and more profound foundation;<br>– the lesson of foundation is thus completed by its three conceptions: Aristotelian (first principles), Cartesian (thinking self), Kantian (universal rules)."
+            },
+            ar: {
+                // General translations
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.present": "X",
+                "PhiH.general.absent": "",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "مجرى زياد",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.0.0",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.general.authors": "الفلاسفة",
+                // Windows bar translations
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.textAnalysis.kant.level": "السنة الثالثة ثانوي - الفلسفة",
+                "PhiH.textAnalysis.kant.title": "تحليل النص: القاعدة والانضباط - إيمانويل كانط",
+                "PhiH.textAnalysis.kant.introduction.title": "التمهيد",
+                "PhiH.textAnalysis.kant.introduction.content": "كثيراً ما تواجهنا الحياة العملية بأسئلة لا نقدر على الحسم في شأنها، فنجيب كما اتفق أو تحت ضغط المصلحة الخاصة والعاجلة. ولعلّ أبرز هذه الأسئلة يُطرح على النحو التالي: ماذا يجب عليَّ أن أفعل؟ أو ما العمل؟ وتصبح هذه الأسئلة أكثر إحراجاً عندما تتعلق بتربية الناشئة، إذ بقدر ما ندرك مقتضى التأسيس والثبات على المبدأ، تغرينا النتائج المرتقبة من الفعل، وقد لا تخلو مواقفنا حينها من تناقض.",
+                "PhiH.textAnalysis.kant.text.title": "النص",
+                "PhiH.textAnalysis.kant.text.content": "يجب أن تتأسس الثقافة الأخلاقية على القواعد[1] لا على الانضباط. فالانضباط يحول دون العيوب، والقواعد تكوّن طريقة التفكير. علينا أن نتصرف على نحو يُعدّ الطفل على العمل وفق القواعد لا وفق بواعث ما. فالانضباط لا يخلّف غير عادات تضمحلّ بمرور السنين. وعلى الطفل أن يتعلم العمل وفق قواعد يُدرك هو نفسه ما فيها من عدل. إننا نرى بيسر أنه من الصعب أن نُحدث هذا الأثر في الأطفال الصغار، وأنّ الثقافة الأخلاقية[2] تقتضي الكثير من التبصر من قبل الأولياء والمعلمين.<br><br>فعلى سبيل المثال، عندما يكذب طفل ما، لا يجب علينا أن نعاقبه، وإنما نعامله باستخفاف ونقول له بأننا لن نصدقه مستقبلاً، الخ. بينما إن نحن عاقبناه لشرّ أتاه أو جازيناه لخير قام به، فإنه سيأتي الخير، عند ذلك، من أجل أن نحسن معاملته، وعندما ينتقل بعد ذلك إلى عالم الحياة العملية حيث لا تجري الأمور على هذا النحو البتة، فإنه لن يهتمّ في فعله للخير أو الشرّ إلا بوسائل النجاح، فيكون طيباً أو خبيثاً بحسب تقديره للفائدة[3] المرتقبة من الطيبة أو الخبث.",
+                "PhiH.textAnalysis.kant.text.source": "كانط، مقال في البيداغوجيا، ترجمة لجنة التأليف - Kant, Traité de pédagogie, éd. numérique, p.14",
+                "PhiH.textAnalysis.kant.author.title": "تقديم المؤلف",
+                "PhiH.textAnalysis.kant.author.alt": "إيمانويل كانط",
+                "PhiH.textAnalysis.kant.author.content": "إيمانويل كانط (1724-1804) فيلسوف ألماني ولد بمدينة كونيغسبرغ (كونيسبرغ). يحدّد كانط فلسفته كفلسفة نقدية، انبنَت على محاورة النزعة العقلانية والخبرية وتجاوزهما نحو مشروع نقدي، يقوم على رسم حدود العقل رسماً آل به إلى التمييز بين مجال المعرفة ومجال التفكير. ويهدف المشروع النقدي إلى التأسيس الميتافيزيقي للمعرفة والأخلاق. أهم مؤلفاته: \"نقد العقل المحض\" (1781)، \"أسس ميتافيزيقا الأخلاق\" (1785)، \"نقد العقل العملي\" (1788)، \"نقد ملكة الحكم\" (1790).",
+                "PhiH.textAnalysis.kant.footnotes.title": "الهوامش",
+                "PhiH.textAnalysis.kant.footnotes.item1": "<strong>(1) \"القواعد\":</strong> القاعدة حسب كانط هي المبدأ الذاتي الذي يضع تحديداً لفعل الإرادة، وتُقاس قيمة قاعدة ما من خلال قابليتها لأن تكون كونية، أي قدرتها على التوجّه إلى كل كائن عاقل.",
+                "PhiH.textAnalysis.kant.footnotes.item2": "<strong>(2) \"الثقافة الأخلاقية\":</strong> أحد فروع الثقافة التي يميز الكاتب داخلها بين ثقافة نفعية تقوم على الانضباط دون معرفة بالمبادئ، وثقافة أخلاقية تقوم على احترام المبادئ. وقد كان قد تعرّض فيما تقدّم إلى تربية الجسم.",
+                "PhiH.textAnalysis.kant.footnotes.item3": "<strong>(3) \"لفائدة\":</strong> يميّز كانط في كتابه \"أسس ميتافيزيقا الأخلاق\" بين الأمر القطعي والأمر الشرطي، ويعني بهذا الأخير الأفعال التي يتحدّد الإقدام عليها والإحجام عنها في ضوء طبيعة النتائج المترتبة، إن كانت مفيدة أم ضارة.",
+                "PhiH.textAnalysis.kant.questions.title": "المهام",
+                "PhiH.textAnalysis.kant.questions.q1": "أحدّد صنفي التربية اللذين ذكرهما الكاتب.",
+                "PhiH.textAnalysis.kant.questions.q2": "أبيّن إيجابيات وسلبيات كل صنف.",
+                "PhiH.textAnalysis.kant.questions.q3": "أكشف عن الأساس الذي تنبني عليه الثقافة الأخلاقية الحقّة.",
+                "PhiH.textAnalysis.kant.questions.q4": "أبيّن مدى وجاهة التأسيس في حضارة موسومة بالعرضية.",
+                "PhiH.textAnalysis.kant.answers.title": "إجابات مقترحة",
+                "PhiH.textAnalysis.kant.answers.a1.title": "الإجابة عن المهمة الأولى:",
+                "PhiH.textAnalysis.kant.answers.a1.content": "يذكر كانط صنفين من التربية (أو من الثقافة)، يتمايزان بحسب أساسهما:<br><br><strong>1. التربية بالانضباط (التربية النفعية):</strong> وهي التربية التي تقوم على الانضباط، أي على العقاب والمكافأة، وعلى بواعث خارجية (الخوف من العقاب، أو الرغبة في المكافأة). وهدفها منع العيوب وتكوين عادات سلوكية.<br><br><strong>2. التربية بالقواعد (التربية الأخلاقية):</strong> وهي التربية التي تقوم على القواعد، أي على المبادئ التي يدرك الطفل بنفسه ما فيها من عدل. وهدفها تكوين طريقة تفكير، لا مجرد تكوين عادات.<br><br>ويمكن تلخيص الفرق في الجدول التالي:<table><thead><tr><th>المعيار</th><th>التربية بالانضباط</th><th>التربية بالقواعد</th></tr></thead><tbody><tr><td>الأساس</td><td>العقاب والمكافأة (بواعث خارجية)</td><td>القواعد والمبادئ (بواعث داخلية)</td></tr><tr><td>الهدف</td><td>منع العيوب</td><td>تكوين طريقة التفكير</td></tr><tr><td>النتيجة</td><td>عادات تضمحلّ بمرور السنين</td><td>طريقة تفكير راسخة</td></tr><tr><td>موقف الطفل</td><td>منقاد سلبيّ للبواعث الخارجية</td><td>مُدرِك لعدل القاعدة، وفاعل واعٍ</td></tr><tr><td>المدى</td><td>محدود (مرتبط بالمرحلة)</td><td>ممتدّ (يصاحب الطفل في حياته العملية)</td></tr></tbody></table>",
+                "PhiH.textAnalysis.kant.answers.a2.title": "الإجابة عن المهمة الثانية:",
+                "PhiH.textAnalysis.kant.answers.a2.content": "<strong>أ. إيجابيات وسلبيات التربية بالانضباط:</strong><br><br><em>الإيجابيات:</em><br>– <strong>الفعالية المباشرة:</strong> تُوقف السلوك السيئ فوراً (مثل الكذب أو العنف).<br>– <strong>السهولة:</strong> لا تتطلب من الطفل جهداً معرفياً، بل تتطلب فقط الانقياد.<br>– <strong>الوضوح:</strong> تُحدّد للطفل بوضوح ما هو مسموح وما هو ممنوع.<br><br><em>السلبيات:</em><br>– <strong>السطحية:</strong> تُعدّل السلوك دون أن تُعدّل الباعث الداخلي.<br>– <strong>الهشاشة:</strong> \"فالانضباط لا يخلّف غير عادات تضمحلّ بمرور السنين\". فبغياب الرقيب الخارجي، تختفي هذه العادات.<br>– <strong>الحسابية:</strong> يُصبح الطفل \"طيباً أو خبيثاً بحسب تقديره للفائدة المرتقبة\"، فيكون سلوكه نفعياً لا أخلاقياً.<br>– <strong>الانفصال عن الحياة العملية:</strong> عندما ينتقل الطفل إلى \"عالم الحياة العملية حيث لا تجري الأمور على هذا النحو البتة\"، لا يجد البواعث الخارجية، فيضيع.<br><br><strong>ب. إيجابيات وسلبيات التربية بالقواعد:</strong><br><br><em>الإيجابيات:</em><br>– <strong>العمق:</strong> تُكوّن طريقة تفكير، لا مجرد عادات سطحية.<br>– <strong>الرسوخ:</strong> القواعد الراسخة في العقل تبقى مع الطفل في حياته العملية.<br>– <strong>الأخلاقية الحقة:</strong> تجعل الطفل فاعلاً واعياً يُدرك بنفسه عدل القاعدة، فيكون سلوكه أخلاقياً لا نفعياً.<br>– <strong>الاستمرارية:</strong> لا ترتبط بوجود رقيب خارجي، لأن الباعث داخليّ.<br><br><em>السلبيات:</em><br>– <strong>الصعوبة:</strong> \"إننا نرى بيسر أنه من الصعب أن نُحدث هذا الأثر في الأطفال الصغار\".<br>– <strong>الحاجة إلى التبصر:</strong> \"الثقافة الأخلاقية تقتضي الكثير من التبصر من قبل الأولياء والمعلمين\".<br>– <strong>البطء:</strong> لا تُعطي نتائج فورية، بل تحتاج إلى وقت طويل.<br>– <strong>الاعتماد على نضج الطفل:</strong> تتطلب قدراً من النضج العقلي الذي قد لا يتوفر عند الأطفال الصغار.",
+                "PhiH.textAnalysis.kant.answers.a3.title": "الإجابة عن المهمة الثالثة:",
+                "PhiH.textAnalysis.kant.answers.a3.content": "تنبني الثقافة الأخلاقية الحقّة - حسب كانط - على الأساس التالي:<br><br><strong>1. الأساس: القواعد الكونية، لا البواعث الفردية:</strong><br>يقول كانط: \"يجب أن تتأسس الثقافة الأخلاقية على القواعد لا على الانضباط\". والقاعدة - كما يوضّح الهامش - هي \"المبدأ الذاتي الذي يضع تحديداً لفعل الإرادة\"، وتُقاس قيمتها من خلال \"قابليتها لأن تكون كونية\". فالثقافة الأخلاقية الحقّة تنبني على قواعد كونية، لا على بواعث فردية أو نفعية.<br><br><strong>2. الأساس: إدراك الطفل لعدل القاعدة، لا انصياعه الأعمى:</strong><br>يقول كانط: \"وعلى الطفل أن يتعلم العمل وفق قواعد يُدرك هو نفسه ما فيها من عدل\". فالثقافة الأخلاقية الحقّة لا تكتفي بأن يعمل الطفل وفق القواعد، بل يجب أن يُدرك بنفسه عدلها. وهذا الإدراك هو ما يحوّل السلوك من انصياع أعمى إلى فعل أخلاقي واعٍ.<br><br><strong>3. الأساس: الباعث الداخلي، لا الباعث الخارجي:</strong><br>يقول كانط: \"علينا أن نتصرف على نحو يُعدّ الطفل على العمل وفق القواعد لا وفق بواعث ما\". فالثقافة الأخلاقية الحقّة تنبني على الباعث الداخلي (احترام القاعدة لذاتها)، لا على الباعث الخارجي (الخوف من العقاب أو الرغبة في المكافأة).<br><br><strong>4. الأساس: تكوين طريقة التفكير، لا تكوين عادات:</strong><br>يقول كانط: \"فالانضباط يحول دون العيوب، والقواعد تكوّن طريقة التفكير\". فالثقافة الأخلاقية الحقّة تنبني على تكوين طريقة تفكير، لا على مجرد تكوين عادات. وطريقة التفكير هي ما يبقى مع الطفل في حياته العملية.<br><br><strong>الخلاصة:</strong> الثقافة الأخلاقية الحقّة تنبني على أساس مزدوج:<br>– <em>أساس موضوعي:</em> القواعد الكونية، لا البواعث النفعية.<br>– <em>أساس ذاتي:</em> إدراك الطفل لعدل القاعدة، لا انصياعه الأعمى.<br>وهذا الأساس المزدوج هو ما يميز التربية الأخلاقية الحقّة عن التربية النفعية بالانضباط.",
+                "PhiH.textAnalysis.kant.answers.a4.title": "الإجابة عن المهمة الرابعة:",
+                "PhiH.textAnalysis.kant.answers.a4.content": "يمكن معالجة هذا السؤال من زاويتين متكاملتين:<br><br><strong>1. من زاوية وجاهة التأسيس في حضارة موسومة بالعرضية (الموقف المؤيد):</strong><br>– <strong>الحاجة إلى بوصلة في زمن التعدد:</strong> كلما زادت العرضية (تعدد الآراء، تنوع القيم، غياب مرجعية واحدة)، زادت الحاجة إلى التأسيس على مبادئ راسخة، لا على العادات المتغيرة.<br>– <strong>الحصانة ضد النسبية:</strong> التأسيس على قواعد كونية هو الحصانة الوحيدة ضد النسبية الأخلاقية التي تنتج عن العرضية.<br>– <strong>الاستمرارية عبر التحولات:</strong> عندما تتغير الظروف (كما في الحياة العملية)، تبقى القواعد الراسخة هي البوصلة، بينما تضمحلّ العادات.<br>– <strong>التربية على النقد:</strong> التأسيس على \"قواعد يدرك الطفل نفسه ما فيها من عدل\" يربي على النقد والاستقلال، لا على الانصياع الأعمى - وهو ما تحتاجه الحضارة المعاصرة.<br><br><strong>2. من زاوية حدود التأسيس في حضارة موسومة بالعرضية (الموقف النقدي):</strong><br>– <strong>صعوبة التأسيس في غياب مرجعية مشتركة:</strong> العرضية تعني غياب مرجعية قيمية مشتركة، فكيف نؤسس على قواعد كونية في غياب إجماع عليها؟<br>– <strong>الخوف من الدوغمائية:</strong> التأسيس على قواعد قد يتحول إلى دوغمائية إذا لم يُقترن بالنقد والمراجعة.<br>– <strong>تحدي التعددية:</strong> هل يمكن لقواعد كونية واحدة أن تستوعب التعددية القيمية للحضارة المعاصرة؟<br>– <strong>خطر الوصاية:</strong> من يحدد هذه القواعد الكونية؟ ألا يمكن أن تتحوّل إلى أداة وصاية على الآخر؟<br><br><strong>3. الموقف التركيبي:</strong> التأسيس في حضارة موسومة بالعرضية يبقى وجيهاً وضرورياً، لكنه يحتاج إلى شروط:<br>– أن يكون تأسيساً <em>منفتحاً</em>، لا دوغمائياً، أي يقوم على قواعد قابلة للنقد والمراجعة.<br>– أن يكون تأسيساً <em>حواريّاً</em>، لا أحادياً، أي يبني القواعد المشتركة عبر الحوار لا عبر الوصاية.<br>– أن يكون تأسيساً <em>مُواكباً للتاريخ</em>، لا متجاهلاً له، أي يستوعب التحولات دون أن يفقد البوصلة.<br>– أن يكون تأسيساً على <em>الكرامة الإنسانية</em>، لا على قيم جزئية، أي على ما يمكن أن يلتقي حوله الجميع.<br><br><strong>الخلاصة:</strong> في حضارة موسومة بالعرضية، لا يكون التأسيس ترفاً فكرياً، بل ضرورة وجودية وأخلاقية. لكن هذه الضرورة تفرض على التأسيس أن يكون منفتحاً وحواريّاً ومواكباً للتاريخ، لا دوغمائياً وأحادياً ومتجاهلاً له. وبهذا الشكل، يبقى التأسيس الكانطي وجيهاً في زمن العرضية، لا كإعادة إنتاج للدوغمائية، بل كأساس للحوار والاستقلال.",
+                "PhiH.textAnalysis.kant.analysis.title": "تحليل النص",
+                "PhiH.textAnalysis.kant.analysis.thesis.title": "الأطروحة الأساسية:",
+                "PhiH.textAnalysis.kant.analysis.thesis.content": "يرى كانط أنّ الثقافة الأخلاقية الحقّة تنبني على القواعد (المبادئ الكونية التي يُدرك الطفل بنفسه عدلها) لا على الانضباط (البواعث الخارجية من عقاب ومكافأة). فالتربية بالانضباط تخلّف عادات سطحية تضمحلّ بمرور السنين، وتُكوّن سلوكاً نفعياً حساباتياً ينفصل عن الحياة العملية. أما التربية بالقواعد فتُكوّن طريقة تفكير راسخة، وتجعل السلوك أخلاقياً لا نفعياً. وهذا التأسيس الأخلاقي يتطلب جهداً كبيراً وتبصراً من الأولياء والمعلمين، بسبب صعوبة إحداث هذا الأثر في الأطفال الصغار.",
+                "PhiH.textAnalysis.kant.analysis.mechanisms.title": "آليات التأسيس الأخلاقي عند كانط:",
+                "PhiH.textAnalysis.kant.analysis.mechanisms.content": "- <strong>الانتقال من الباعث الخارجي إلى الباعث الداخلي:</strong> من العقاب والمكافأة إلى إدراك عدل القاعدة.<br>- <strong>الانتقال من العادة إلى طريقة التفكير:</strong> من سلوك آلي متكرر إلى مبدأ عقلي راسخ.<br>- <strong>الانتقال من النفعية إلى الأخلاقية:</strong> من \"الطيب أو الخبيث بحسب تقديره للفائدة\" إلى \"الطيب أو الخبيث بحسب القاعدة\".<br>- <strong>الانتقال من الانصياع الأعمى إلى الإدراك الواعي:</strong> من \"العمل وفق القواعد\" إلى \"إدراك ما فيها من عدل\".<br>- <strong>الانتقال من التربية الجزئية إلى التربية الشاملة:</strong> من تربية الجسم (التي سبق أن تعرض لها كانط) إلى الثقافة الأخلاقية.",
+                "PhiH.textAnalysis.kant.analysis.consequences.title": "النتائج المترتبة على هذه الأطروحة:",
+                "PhiH.textAnalysis.kant.analysis.consequences.content": "- <strong>تأسيس أخلاقية الواجب:</strong> النص يُمهّد لأخلاقية الواجب الكانطية، القائمة على الأمر القطعي، لا على البواعث النفعية (الأمر الشرطي).<br>- <strong>تأسيس مفهوم الكرامة الإنسانية:</strong> إذا كان الطفل يُدرك بنفسه عدل القاعدة، فإنه يُعامل ككائن عاقل، لا كوسيلة للتأديب.<br>- <strong>نقد التربية النفعية:</strong> النص يوجّه نقداً ضمنياً للتربية القائمة على العقاب والمكافأة، ويؤسّس لتربية أخلاقية حقة.<br>- <strong>تأسيس الاستقلالية الأخلاقية:</strong> إدراك الطفل لعدل القاعدة هو أساس الاستقلالية الأخلاقية، لا الانصياع الأعمى.<br>- <strong>ربط النظر بالعمل:</strong> التأسيس بالقواعد لا يقتصر على النظر، بل يمتدّ إلى الحياة العملية، حيث لا تجري الأمور على نحو البواعث الخارجية.",
+                "PhiH.textAnalysis.kant.analysis.significance.title": "دلالات وأبعاد المفهوم:",
+                "PhiH.textAnalysis.kant.analysis.significance.content": "يحمل هذا النص دلالة فلسفية عميقة في تاريخ الفلسفة الأخلاقية:<br><br><strong>1. دلالة أخلاقية:</strong> النص يؤسّس لأخلاقية الواجب، القائمة على القواعد الكونية لا على البواعث النفعية. وهو بذلك يميّز بين الأخلاقية والنفعية، ويرفض اختزال الأخلاق في الحسابات النفعية.<br><br><strong>2. دلالة تربوية:</strong> النص يقدّم تصوراً جديداً للتربية الأخلاقية، يقوم على تكوين طريقة تفكير لا على تكوين عادات. وهو بذلك يرفض التربية السلطوية القائمة على العقاب والمكافأة.<br><br><strong>3. دلالة أنثروبولوجية:</strong> النص يبيّن أنّ الإنسان كائن عاقل قادر على إدراك عدل القاعدة، لا مجرد كائن قابل للتكييف. وهذا ما يميّزه عن الحيوان.<br><br><strong>4. دلالة سياسية:</strong> النص يبيّن أنّ التربية الأخلاقية هي شرط المواطنة الحقة. فالمواطن ليس من ينصاع للقانون خوفاً من العقاب، بل من يُدرك عدل القانون ويلتزم به.<br><br><strong>5. صلة النص بالدرس (التأسيس):</strong> النص يُغلق درس التأسيس بنموذج مختلف عن النموذجين السابقين:<br>– بعد التأسيس على \"المبادئ الأولى\" (أرسطو)، وعلى \"الأنا المفكرة\" (ديكارت)، يأتي التأسيس على \"القواعد الكونية\" (كانط).<br>– وهذا التأسيس لا يقتصر على المعرفة، بل يمتدّ إلى الأخلاق والتربية، فيصبح تأسيساً أشمل وأعمق.<br>– وبذلك يكتمل درس التأسيس بتصوراته الثلاث: الأرسطية (المبادئ الأولى)، الديكارتية (الأنا المفكرة)، الكانطية (القواعد الكونية)."
+            }
+        };
+        // Set the current translations for the translation.js file to use
+        window.currentTranslations = window.translations_PhiHtextAnalysis;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

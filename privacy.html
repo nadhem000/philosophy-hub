@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسة الخصوصية - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#455a64">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Slate Gray / Steel Theme (shared with links & terms) */
+        :root {
+            --primary-color: #455a64;
+            --primary-light: #607d8b;
+            --primary-dark: #263238;
+            --secondary-color: #546e7a;
+            --secondary-light: #78909c;
+            --secondary-dark: #37474f;
+            --accent-color: #607d8b;
+            --accent-light: #90a4ae;
+            --accent-dark: #546e7a;
+            --light-color: #eceff1;
+            --dark-color: #1c2529;
+            --text-color: #37474f;
+            --heading-color: #263238;
+            --background-color: #f5f7f8;
+            --card-bg: #ffffff;
+            --definition-bg: #dde4e7;
+            --border-color: #b0bec5;
+            --table-even-bg: #eceff1;
+            --table-hover-bg: #cfd8dc;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(69, 90, 100, 0.15);
+            --gradient-primary: linear-gradient(135deg, #455a64 0%, #607d8b 100%);
+            --gradient-secondary: linear-gradient(135deg, #263238 0%, #546e7a 100%);
+            --gradient-slate: linear-gradient(135deg, #455a64 0%, #263238 100%);
+            --gradient-steel: linear-gradient(135deg, #607d8b 0%, #546e7a 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #90a4ae;
+            --primary-light: #b0bec5;
+            --primary-dark: #607d8b;
+            --secondary-color: #78909c;
+            --secondary-light: #90a4ae;
+            --secondary-dark: #546e7a;
+            --accent-color: #b0bec5;
+            --accent-light: #cfd8dc;
+            --accent-dark: #90a4ae;
+            --light-color: #2e3a40;
+            --dark-color: #1c2529;
+            --text-color: #cfd8dc;
+            --heading-color: #eceff1;
+            --background-color: #1c2529;
+            --card-bg: #2e3a40;
+            --definition-bg: #37474f;
+            --border-color: #546e7a;
+            --table-even-bg: #2e3a40;
+            --table-hover-bg: #37474f;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #546e7a 0%, #90a4ae 100%);
+            --gradient-secondary: linear-gradient(135deg: #37474f 0%, #78909c 100%);
+            --gradient-slate: linear-gradient(135deg, #90a4ae 0%, #1c2529 100%);
+            --gradient-steel: linear-gradient(135deg, #b0bec5 0%, #78909c 100%);
+        }
+        .PhiH-content-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        .PhiH-content-header {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            border-top: 5px solid var(--primary-color);
+        }
+        .PhiH-content-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        .PhiH-content-subtitle {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .PhiH-content-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.75rem 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-content-card h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        .PhiH-content-card h3 {
+            color: var(--secondary-color);
+            font-size: 1.15rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .PhiH-content-card p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        .PhiH-content-card ul {
+            margin: 1rem 0;
+            padding-right: 1.75rem;
+            padding-left: 1.75rem;
+        }
+        .PhiH-content-card ul li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+            color: var(--text-color);
+        }
+        .PhiH-last-updated {
+            background: var(--definition-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        .PhiH-highlight-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+            border-left: 4px solid #4caf50;
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            font-weight: 500;
+            color: #1b5e20;
+        }
+        [data-theme="dark"] .PhiH-highlight-box {
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+            color: #e8f5e9;
+        }
+        body.rtl .PhiH-last-updated {
+            border-left: none;
+            border-right: 4px solid var(--accent-color);
+        }
+        body.rtl .PhiH-highlight-box {
+            border-left: none;
+            border-right: 4px solid #4caf50;
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-definition" dir="ltr">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
+    <main class="PhiH-content-container">
+        <div class="PhiH-content-header">
+            <h1 class="PhiH-content-title" data-i18n="PhiH.privacy.title">سياسة الخصوصية</h1>
+            <p class="PhiH-content-subtitle" data-i18n="PhiH.privacy.subtitle">كيف نحمي بياناتك وخصوصيتك</p>
+        </div>
+
+        <div class="PhiH-last-updated" data-i18n="PhiH.privacy.lastUpdated">آخر تحديث: 2026</div>
+
+        <div class="PhiH-highlight-box" data-i18n="PhiH.privacy.summary">
+            <strong>ملخص:</strong> لا يجمع هذا الموقع أي بيانات شخصية. جميع التفضيلات (اللغة، الوضع الداكن) تُخزَّن محلياً على جهازك فقط، ولا تُرسَل إلى أي خادم.
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.privacy.s1.title">1. مقدمة</h2>
+            <p data-i18n="PhiH.privacy.s1.text">نحن في "مركز تعلم الفلسفة" نلتزم بحماية خصوصيتك. توضح هذه السياسة أنواع المعلومات التي قد نجمعها وكيفية استخدامها وحمايتها. باستخدامك للموقع، فإنك توافق على الممارسات الموضحة في هذه السياسة.</p>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.privacy.s2.title">2. المعلومات التي نجمعها</h2>
+            <p data-i18n="PhiH.privacy.s2.text">لا يجمع الموقع أي معلومات شخصية تعريفية مثل الاسم أو البريد الإلكتروني أو رقم الهاتف. المعلومات الوحيدة التي قد تُخزَّن هي:</p>
+            <ul>
+                <li data-i18n="PhiH.privacy.s2.i1"><strong>تفضيلات اللغة:</strong> اللغة التي اخترتها لعرض الموقع (العربية، الفرنسية، الإنجليزية).</li>
+                <li data-i18n="PhiH.privacy.s2.i2"><strong>تفضيلات المظهر:</strong> ما إذا كنت تفضّل الوضع الفاتح أو الداكن.</li>
+                <li data-i18n="PhiH.privacy.s2.i3"><strong>حالة تثبيت التطبيق:</strong> ما إذا كان التطبيق مثبتاً على جهازك (PWA).</li>
+            </ul>
+            <p data-i18n="PhiH.privacy.s2.text2">هذه المعلومات تُخزَّن محلياً في <strong>localStorage</strong> على جهازك، ولا تُرسَل إلى أي خادم أو طرف ثالث.</p>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.privacy.s3.title">3. كيف نستخدم معلوماتك</h2>
+            <p data-i18n="PhiH.privacy.s3.text">نستخدم المعلومات المخزَّنة محلياً فقط من أجل:</p>
+            <ul>
+                <li data-i18n="PhiH.privacy.s3.i1">تذكّر تفضيلاتك (اللغة، المظهر) عند زيارتك للمرة التالية.</li>
+                <li data-i18n="PhiH.privacy.s3.i2">تحسين تجربتك في استخدام الموقع.</li>
+                <li data-i18n="PhiH.privacy.s3.i3">إظهار إشعارات التثبيت والتحديثات المتعلقة بالتطبيق (PWA).</li>
+            </ul>
+            <p data-i18n="PhiH.privacy.s3.text2">لا نستخدم هذه المعلومات لأي أغراض تجارية أو تسويقية، ولا نشاركها مع أي طرف ثالث.</p>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.privacy.s4.title">4. الكوكيز والتخزين المحلي</h2>
+            <p data-i18n="PhiH.privacy.s4.text">لا يستخدم الموقع ملفات تعريف الارتباط (Cookies) للتتبع أو التحليل. يستخدم الموقع تقنية <strong>localStorage</strong> فقط لتخزين تفضيلاتك على جهازك. يمكنك حذف هذه البيانات في أي وقت من خلال إعدادات متصفحك.</p>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.privacy.s5.title">5. الأطراف الثالثة</h2>
+            <p data-i18n="PhiH.privacy.s5.text">لا يشارك الموقع أي بيانات مع أطراف ثالثة. الموقع لا يحتوي على إعلانات، ولا يستخدم أدوات تحليل مثل Google Analytics، ولا يتصل بأي خدمات خارجية لجمع البيانات.</p>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.privacy.s6.title">6. أمان البيانات</h2>
+            <p data-i18n="PhiH.privacy.s6.text">نظراً لأن الموقع لا يجمع بيانات شخصية على خوادم، فإن مخاطر تسريب البيانات منخفضة جداً. جميع بياناتك تبقى على جهازك، وأنت المسؤول الوحيد عن حمايتها (عبر كلمة سر جهازك، أو تشفير القرص، إلخ).</p>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.privacy.s7.title">7. حقوقك</h2>
+            <p data-i18n="PhiH.privacy.s7.text">لديك الحق في:</p>
+            <ul>
+                <li data-i18n="PhiH.privacy.s7.i1">معرفة البيانات المخزَّنة على جهازك (تفضيلات اللغة والمظهر فقط).</li>
+                <li data-i18n="PhiH.privacy.s7.i2">حذف هذه البيانات في أي وقت عبر إعدادات المتصفح.</li>
+                <li data-i18n="PhiH.privacy.s7.i3">استخدام الموقع دون تثبيته كتطبيق (PWA).</li>
+            </ul>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.privacy.s8.title">8. خصوصية الأطفال</h2>
+            <p data-i18n="PhiH.privacy.s8.text">الموقع مخصص لجميع الأعمار، ولا يجمع أي بيانات شخصية من الأطفال أو غيرهم. كونه منصة تعليمية، فإنه يشجع على استخدامه في إطار تعليمي آمن.</p>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.privacy.s9.title">9. التعديلات على هذه السياسة</h2>
+            <p data-i18n="PhiH.privacy.s9.text">قد نحدّث هذه السياسة من وقت لآخر. سيتم نشر أي تعديلات على هذه الصفحة. ننصحك بمراجعة هذه الصفحة دورياً للاطلاع على أي تحديثات.</p>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.privacy.s10.title">10. التواصل</h2>
+            <p data-i18n="PhiH.privacy.s10.text">لأي استفسار بخصوص سياسة الخصوصية، يمكنك التواصل مع مطوّر الموقع عبر قنوات الاتصال المتاحة في صفحة "الروابط".</p>
+        </div>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.2.6</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="links.html" data-i18n="PhiH.general.linksTitle">الروابط</a>
+                    <a href="terms.html" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="privacy.html" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        window.translations_PhiHprivacy = {
+            fr: {
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.2.6",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                "PhiH.privacy.title": "Politique de confidentialité",
+                "PhiH.privacy.subtitle": "Comment nous protégeons vos données et votre vie privée",
+                "PhiH.privacy.lastUpdated": "Dernière mise à jour : 2026",
+                "PhiH.privacy.summary": "<strong>Résumé :</strong> Ce site ne collecte aucune donnée personnelle. Toutes les préférences (langue, mode sombre) sont stockées localement sur votre appareil uniquement, et ne sont envoyées à aucun serveur.",
+                "PhiH.privacy.s1.title": "1. Introduction",
+                "PhiH.privacy.s1.text": "Au « Philosophy Learning Hub », nous nous engageons à protéger votre vie privée. Cette politique explique les types d'informations que nous pouvons collecter, comment nous les utilisons et les protégeons. En utilisant le site, vous acceptez les pratiques décrites dans cette politique.",
+                "PhiH.privacy.s2.title": "2. Informations que nous collectons",
+                "PhiH.privacy.s2.text": "Le site ne collecte aucune information personnelle identifiable telle que nom, email ou numéro de téléphone. Les seules informations qui peuvent être stockées sont :",
+                "PhiH.privacy.s2.i1": "<strong>Préférences linguistiques :</strong> la langue que vous avez choisie pour afficher le site (arabe, français, anglais).",
+                "PhiH.privacy.s2.i2": "<strong>Préférences d'apparence :</strong> si vous préférez le mode clair ou sombre.",
+                "PhiH.privacy.s2.i3": "<strong>État d'installation de l'application :</strong> si l'application est installée sur votre appareil (PWA).",
+                "PhiH.privacy.s2.text2": "Ces informations sont stockées localement dans <strong>localStorage</strong> sur votre appareil et ne sont envoyées à aucun serveur ou tiers.",
+                "PhiH.privacy.s3.title": "3. Comment nous utilisons vos informations",
+                "PhiH.privacy.s3.text": "Nous utilisons les informations stockées localement uniquement pour :",
+                "PhiH.privacy.s3.i1": "Mémoriser vos préférences (langue, apparence) lors de votre prochaine visite.",
+                "PhiH.privacy.s3.i2": "Améliorer votre expérience d'utilisation du site.",
+                "PhiH.privacy.s3.i3": "Afficher les notifications d'installation et de mise à jour relatives à l'application (PWA).",
+                "PhiH.privacy.s3.text2": "Nous n'utilisons pas ces informations à des fins commerciales ou marketing, et ne les partageons avec aucun tiers.",
+                "PhiH.privacy.s4.title": "4. Cookies et stockage local",
+                "PhiH.privacy.s4.text": "Le site n'utilise pas de cookies pour le suivi ou l'analyse. Le site utilise uniquement la technologie <strong>localStorage</strong> pour stocker vos préférences sur votre appareil. Vous pouvez supprimer ces données à tout moment via les paramètres de votre navigateur.",
+                "PhiH.privacy.s5.title": "5. Tiers",
+                "PhiH.privacy.s5.text": "Le site ne partage aucune donnée avec des tiers. Le site ne contient pas de publicités, n'utilise pas d'outils d'analyse comme Google Analytics, et ne se connecte à aucun service externe pour collecter des données.",
+                "PhiH.privacy.s6.title": "6. Sécurité des données",
+                "PhiH.privacy.s6.text": "Étant donné que le site ne collecte aucune donnée personnelle sur des serveurs, les risques de fuite de données sont très faibles. Toutes vos données restent sur votre appareil, et vous êtes seul responsable de leur protection (via le mot de passe de votre appareil, le chiffrement du disque, etc.).",
+                "PhiH.privacy.s7.title": "7. Vos droits",
+                "PhiH.privacy.s7.text": "Vous avez le droit de :",
+                "PhiH.privacy.s7.i1": "Savoir quelles données sont stockées sur votre appareil (préférences de langue et d'apparence uniquement).",
+                "PhiH.privacy.s7.i2": "Supprimer ces données à tout moment via les paramètres du navigateur.",
+                "PhiH.privacy.s7.i3": "Utiliser le site sans l'installer comme application (PWA).",
+                "PhiH.privacy.s8.title": "8. Confidentialité des enfants",
+                "PhiH.privacy.s8.text": "Le site est destiné à tous les âges et ne collecte aucune donnée personnelle des enfants ou d'autres. En tant que plateforme éducative, il encourage son utilisation dans un cadre éducatif sûr.",
+                "PhiH.privacy.s9.title": "9. Modifications de cette politique",
+                "PhiH.privacy.s9.text": "Nous pouvons mettre à jour cette politique de temps à autre. Toute modification sera publiée sur cette page. Nous vous conseillons de consulter régulièrement cette page pour prendre connaissance des mises à jour.",
+                "PhiH.privacy.s10.title": "10. Contact",
+                "PhiH.privacy.s10.text": "Pour toute question concernant la politique de confidentialité, vous pouvez contacter le développeur du site via les canaux de contact disponibles sur la page « Liens »."
+            },
+            en: {
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.2.6",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.privacy.title": "Privacy Policy",
+                "PhiH.privacy.subtitle": "How we protect your data and privacy",
+                "PhiH.privacy.lastUpdated": "Last updated: 2026",
+                "PhiH.privacy.summary": "<strong>Summary:</strong> This site does not collect any personal data. All preferences (language, dark mode) are stored locally on your device only, and are not sent to any server.",
+                "PhiH.privacy.s1.title": "1. Introduction",
+                "PhiH.privacy.s1.text": "At \"Philosophy Learning Hub\", we are committed to protecting your privacy. This policy explains the types of information we may collect, how we use it and protect it. By using the site, you agree to the practices described in this policy.",
+                "PhiH.privacy.s2.title": "2. Information We Collect",
+                "PhiH.privacy.s2.text": "The site does not collect any personally identifiable information such as name, email or phone number. The only information that may be stored is:",
+                "PhiH.privacy.s2.i1": "<strong>Language preferences:</strong> the language you have chosen to display the site (Arabic, French, English).",
+                "PhiH.privacy.s2.i2": "<strong>Appearance preferences:</strong> whether you prefer light or dark mode.",
+                "PhiH.privacy.s2.i3": "<strong>App installation status:</strong> whether the app is installed on your device (PWA).",
+                "PhiH.privacy.s2.text2": "This information is stored locally in <strong>localStorage</strong> on your device and is not sent to any server or third party.",
+                "PhiH.privacy.s3.title": "3. How We Use Your Information",
+                "PhiH.privacy.s3.text": "We use locally stored information only for:",
+                "PhiH.privacy.s3.i1": "Remembering your preferences (language, appearance) on your next visit.",
+                "PhiH.privacy.s3.i2": "Improving your experience using the site.",
+                "PhiH.privacy.s3.i3": "Displaying installation and update notifications related to the app (PWA).",
+                "PhiH.privacy.s3.text2": "We do not use this information for commercial or marketing purposes, and we do not share it with any third party.",
+                "PhiH.privacy.s4.title": "4. Cookies and Local Storage",
+                "PhiH.privacy.s4.text": "The site does not use cookies for tracking or analysis. The site uses only <strong>localStorage</strong> technology to store your preferences on your device. You can delete this data at any time through your browser settings.",
+                "PhiH.privacy.s5.title": "5. Third Parties",
+                "PhiH.privacy.s5.text": "The site does not share any data with third parties. The site does not contain advertisements, does not use analytics tools such as Google Analytics, and does not connect to any external services to collect data.",
+                "PhiH.privacy.s6.title": "6. Data Security",
+                "PhiH.privacy.s6.text": "Since the site does not collect personal data on servers, the risks of data leakage are very low. All your data stays on your device, and you are solely responsible for its protection (via your device password, disk encryption, etc.).",
+                "PhiH.privacy.s7.title": "7. Your Rights",
+                "PhiH.privacy.s7.text": "You have the right to:",
+                "PhiH.privacy.s7.i1": "Know what data is stored on your device (language and appearance preferences only).",
+                "PhiH.privacy.s7.i2": "Delete this data at any time through your browser settings.",
+                "PhiH.privacy.s7.i3": "Use the site without installing it as an app (PWA).",
+                "PhiH.privacy.s8.title": "8. Children's Privacy",
+                "PhiH.privacy.s8.text": "The site is intended for all ages and does not collect any personal data from children or others. As an educational platform, it encourages its use in a safe educational context.",
+                "PhiH.privacy.s9.title": "9. Modifications to This Policy",
+                "PhiH.privacy.s9.text": "We may update this policy from time to time. Any modifications will be published on this page. We encourage you to check this page regularly for updates.",
+                "PhiH.privacy.s10.title": "10. Contact",
+                "PhiH.privacy.s10.text": "For any questions regarding the privacy policy, you may contact the site developer through the contact channels available on the \"Links\" page."
+            },
+            ar: {
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "زياد الماجري",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.2.6",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.privacy.title": "سياسة الخصوصية",
+                "PhiH.privacy.subtitle": "كيف نحمي بياناتك وخصوصيتك",
+                "PhiH.privacy.lastUpdated": "آخر تحديث: 2026",
+                "PhiH.privacy.summary": "<strong>ملخص:</strong> لا يجمع هذا الموقع أي بيانات شخصية. جميع التفضيلات (اللغة، الوضع الداكن) تُخزَّن محلياً على جهازك فقط، ولا تُرسَل إلى أي خادم.",
+                "PhiH.privacy.s1.title": "1. مقدمة",
+                "PhiH.privacy.s1.text": "نحن في \"مركز تعلم الفلسفة\" نلتزم بحماية خصوصيتك. توضح هذه السياسة أنواع المعلومات التي قد نجمعها وكيفية استخدامها وحمايتها. باستخدامك للموقع، فإنك توافق على الممارسات الموضحة في هذه السياسة.",
+                "PhiH.privacy.s2.title": "2. المعلومات التي نجمعها",
+                "PhiH.privacy.s2.text": "لا يجمع الموقع أي معلومات شخصية تعريفية مثل الاسم أو البريد الإلكتروني أو رقم الهاتف. المعلومات الوحيدة التي قد تُخزَّن هي:",
+                "PhiH.privacy.s2.i1": "<strong>تفضيلات اللغة:</strong> اللغة التي اخترتها لعرض الموقع (العربية، الفرنسية، الإنجليزية).",
+                "PhiH.privacy.s2.i2": "<strong>تفضيلات المظهر:</strong> ما إذا كنت تفضّل الوضع الفاتح أو الداكن.",
+                "PhiH.privacy.s2.i3": "<strong>حالة تثبيت التطبيق:</strong> ما إذا كان التطبيق مثبتاً على جهازك (PWA).",
+                "PhiH.privacy.s2.text2": "هذه المعلومات تُخزَّن محلياً في <strong>localStorage</strong> على جهازك، ولا تُرسَل إلى أي خادم أو طرف ثالث.",
+                "PhiH.privacy.s3.title": "3. كيف نستخدم معلوماتك",
+                "PhiH.privacy.s3.text": "نستخدم المعلومات المخزَّنة محلياً فقط من أجل:",
+                "PhiH.privacy.s3.i1": "تذكّر تفضيلاتك (اللغة، المظهر) عند زيارتك للمرة التالية.",
+                "PhiH.privacy.s3.i2": "تحسين تجربتك في استخدام الموقع.",
+                "PhiH.privacy.s3.i3": "إظهار إشعارات التثبيت والتحديثات المتعلقة بالتطبيق (PWA).",
+                "PhiH.privacy.s3.text2": "لا نستخدم هذه المعلومات لأي أغراض تجارية أو تسويقية، ولا نشاركها مع أي طرف ثالث.",
+                "PhiH.privacy.s4.title": "4. الكوكيز والتخزين المحلي",
+                "PhiH.privacy.s4.text": "لا يستخدم الموقع ملفات تعريف الارتباط (Cookies) للتتبع أو التحليل. يستخدم الموقع تقنية <strong>localStorage</strong> فقط لتخزين تفضيلاتك على جهازك. يمكنك حذف هذه البيانات في أي وقت من خلال إعدادات متصفحك.",
+                "PhiH.privacy.s5.title": "5. الأطراف الثالثة",
+                "PhiH.privacy.s5.text": "لا يشارك الموقع أي بيانات مع أطراف ثالثة. الموقع لا يحتوي على إعلانات، ولا يستخدم أدوات تحليل مثل Google Analytics، ولا يتصل بأي خدمات خارجية لجمع البيانات.",
+                "PhiH.privacy.s6.title": "6. أمان البيانات",
+                "PhiH.privacy.s6.text": "نظراً لأن الموقع لا يجمع بيانات شخصية على خوادم، فإن مخاطر تسريب البيانات منخفضة جداً. جميع بياناتك تبقى على جهازك، وأنت المسؤول الوحيد عن حمايتها (عبر كلمة سر جهازك، أو تشفير القرص، إلخ).",
+                "PhiH.privacy.s7.title": "7. حقوقك",
+                "PhiH.privacy.s7.text": "لديك الحق في:",
+                "PhiH.privacy.s7.i1": "معرفة البيانات المخزَّنة على جهازك (تفضيلات اللغة والمظهر فقط).",
+                "PhiH.privacy.s7.i2": "حذف هذه البيانات في أي وقت عبر إعدادات المتصفح.",
+                "PhiH.privacy.s7.i3": "استخدام الموقع دون تثبيته كتطبيق (PWA).",
+                "PhiH.privacy.s8.title": "8. خصوصية الأطفال",
+                "PhiH.privacy.s8.text": "الموقع مخصص لجميع الأعمار، ولا يجمع أي بيانات شخصية من الأطفال أو غيرهم. كونه منصة تعليمية، فإنه يشجع على استخدامه في إطار تعليمي آمن.",
+                "PhiH.privacy.s9.title": "9. التعديلات على هذه السياسة",
+                "PhiH.privacy.s9.text": "قد نحدّث هذه السياسة من وقت لآخر. سيتم نشر أي تعديلات على هذه الصفحة. ننصحك بمراجعة هذه الصفحة دورياً للاطلاع على أي تحديثات.",
+                "PhiH.privacy.s10.title": "10. التواصل",
+                "PhiH.privacy.s10.text": "لأي استفسار بخصوص سياسة الخصوصية، يمكنك التواصل مع مطوّر الموقع عبر قنوات الاتصال المتاحة في صفحة \"الروابط\"."
+            }
+        };
+        window.currentTranslations = window.translations_PhiHprivacy;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

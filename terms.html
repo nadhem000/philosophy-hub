@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شروط الاستخدام - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#455a64">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Slate Gray / Steel Theme (shared with links & privacy) */
+        :root {
+            --primary-color: #455a64;
+            --primary-light: #607d8b;
+            --primary-dark: #263238;
+            --secondary-color: #546e7a;
+            --secondary-light: #78909c;
+            --secondary-dark: #37474f;
+            --accent-color: #607d8b;
+            --accent-light: #90a4ae;
+            --accent-dark: #546e7a;
+            --light-color: #eceff1;
+            --dark-color: #1c2529;
+            --text-color: #37474f;
+            --heading-color: #263238;
+            --background-color: #f5f7f8;
+            --card-bg: #ffffff;
+            --definition-bg: #dde4e7;
+            --border-color: #b0bec5;
+            --table-even-bg: #eceff1;
+            --table-hover-bg: #cfd8dc;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(69, 90, 100, 0.15);
+            --gradient-primary: linear-gradient(135deg, #455a64 0%, #607d8b 100%);
+            --gradient-secondary: linear-gradient(135deg, #263238 0%, #546e7a 100%);
+            --gradient-slate: linear-gradient(135deg, #455a64 0%, #263238 100%);
+            --gradient-steel: linear-gradient(135deg, #607d8b 0%, #546e7a 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #90a4ae;
+            --primary-light: #b0bec5;
+            --primary-dark: #607d8b;
+            --secondary-color: #78909c;
+            --secondary-light: #90a4ae;
+            --secondary-dark: #546e7a;
+            --accent-color: #b0bec5;
+            --accent-light: #cfd8dc;
+            --accent-dark: #90a4ae;
+            --light-color: #2e3a40;
+            --dark-color: #1c2529;
+            --text-color: #cfd8dc;
+            --heading-color: #eceff1;
+            --background-color: #1c2529;
+            --card-bg: #2e3a40;
+            --definition-bg: #37474f;
+            --border-color: #546e7a;
+            --table-even-bg: #2e3a40;
+            --table-hover-bg: #37474f;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #546e7a 0%, #90a4ae 100%);
+            --gradient-secondary: linear-gradient(135deg: #37474f 0%, #78909c 100%);
+            --gradient-slate: linear-gradient(135deg, #90a4ae 0%, #1c2529 100%);
+            --gradient-steel: linear-gradient(135deg, #b0bec5 0%, #78909c 100%);
+        }
+        .PhiH-content-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        .PhiH-content-header {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            border-top: 5px solid var(--primary-color);
+        }
+        .PhiH-content-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        .PhiH-content-subtitle {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .PhiH-content-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.75rem 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-content-card h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        .PhiH-content-card h3 {
+            color: var(--secondary-color);
+            font-size: 1.15rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .PhiH-content-card p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        .PhiH-content-card ul {
+            margin: 1rem 0;
+            padding-right: 1.75rem;
+            padding-left: 1.75rem;
+        }
+        .PhiH-content-card ul li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+            color: var(--text-color);
+        }
+        .PhiH-last-updated {
+            background: var(--definition-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        body.rtl .PhiH-last-updated {
+            border-left: none;
+            border-right: 4px solid var(--accent-color);
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-definition" dir="ltr">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
+    <main class="PhiH-content-container">
+        <div class="PhiH-content-header">
+            <h1 class="PhiH-content-title" data-i18n="PhiH.terms.title">شروط الاستخدام</h1>
+            <p class="PhiH-content-subtitle" data-i18n="PhiH.terms.subtitle">الشروط والأحكام الخاصة باستخدام الموقع</p>
+        </div>
+
+        <div class="PhiH-last-updated" data-i18n="PhiH.terms.lastUpdated">آخر تحديث: 2026</div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.terms.s1.title">1. القبول بالشروط</h2>
+            <p data-i18n="PhiH.terms.s1.text">باستخدامك لموقع "مركز تعلم الفلسفة"، فإنك تقرّ بأنك قرأت هذه الشروط وفهمتها وتوافق على الالتزام بها. إذا كنت لا توافق على أي جزء من هذه الشروط، يُرجى التوقف عن استخدام الموقع.</p>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.terms.s2.title">2. طبيعة الموقع والغرض منه</h2>
+            <p data-i18n="PhiH.terms.s2.text">الموقع منصة تعليمية تهدف إلى تسهيل تعلم الفلسفة وتوفير موارد تعليمية مجانية للتلاميذ والطلبة والمهتمين بالفكر الفلسفي. المحتوى المقدّم لأغراض تعليمية وثقافية فقط، ولا يُعتبر بديلاً عن التعليم الرسمي.</p>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.terms.s3.title">3. الملكية الفكرية</h2>
+            <p data-i18n="PhiH.terms.s3.text">جميع النصوص والترجمات والتحليلات والتصاميم المنشورة على الموقع محمية بحقوق الملكية الفكرية. يُسمح بالاستخدام الشخصي والتعليمي غير التجاري مع ذكر المصدر. يُحظر إعادة النشر التجاري أو التعديل أو التوزيع دون إذن كتابي مسبق.</p>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.terms.s4.title">4. مسؤوليات المستخدم</h2>
+            <p data-i18n="PhiH.terms.s4.text">يلتزم المستخدم بما يلي:</p>
+            <ul>
+                <li data-i18n="PhiH.terms.s4.i1">استخدام الموقع لأغراض تعليمية مشروعة فقط.</li>
+                <li data-i18n="PhiH.terms.s4.i2">عدم محاولة اختراق الموقع أو الإضرار به أو تعطيل خدماته.</li>
+                <li data-i18n="PhiH.terms.s4.i3">عدم إساءة استخدام المحتوى أو نسبته إلى غير مصدره.</li>
+                <li data-i18n="PhiH.terms.s4.i4">احترام حقوق الملكية الفكرية للمؤلفين والمترجمين.</li>
+            </ul>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.terms.s5.title">5. إخلاء المسؤولية</h2>
+            <p data-i18n="PhiH.terms.s5.text">يُقدَّم المحتوى "كما هو" دون أي ضمانات صريحة أو ضمنية. لا يتحمّل الموقع أي مسؤولية عن أي أخطاء أو سهو أو نتائج مترتبة على استخدام المحتوى. يُنصح بالتحقق من المعلومات من مصادر أكاديمية موثوقة قبل الاعتماد عليها في السياقات الرسمية.</p>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.terms.s6.title">6. التعديلات على الشروط</h2>
+            <p data-i18n="PhiH.terms.s6.text">يحتفظ الموقع بحق تعديل هذه الشروط في أي وقت. تسري التعديلات فور نشرها على هذه الصفحة. يُنصح بمراجعة هذه الصفحة دورياً للاطلاع على أي تحديثات.</p>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.terms.s7.title">7. التواصل</h2>
+            <p data-i18n="PhiH.terms.s7.text">لأي استفسار بخصوص هذه الشروط، يمكنك التواصل مع مطوّر الموقع عبر قنوات الاتصال المتاحة في صفحة "الروابط".</p>
+        </div>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.2.6</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="links.html" data-i18n="PhiH.general.linksTitle">الروابط</a>
+                    <a href="terms.html" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="privacy.html" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        window.translations_PhiHterms = {
+            fr: {
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.2.6",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                "PhiH.terms.title": "Conditions d'utilisation",
+                "PhiH.terms.subtitle": "Termes et conditions d'utilisation du site",
+                "PhiH.terms.lastUpdated": "Dernière mise à jour : 2026",
+                "PhiH.terms.s1.title": "1. Acceptation des conditions",
+                "PhiH.terms.s1.text": "En utilisant le site « Philosophy Learning Hub », vous reconnaissez avoir lu, compris et accepté de respecter les présentes conditions. Si vous n'acceptez pas une partie de ces conditions, veuillez cesser d'utiliser le site.",
+                "PhiH.terms.s2.title": "2. Nature et objet du site",
+                "PhiH.terms.s2.text": "Le site est une plateforme éducative visant à faciliter l'apprentissage de la philosophie et à offrir des ressources éducatives gratuites aux élèves, étudiants et passionnés de pensée philosophique. Le contenu est fourni à des fins éducatives et culturelles uniquement, et ne se substitue pas à l'enseignement officiel.",
+                "PhiH.terms.s3.title": "3. Propriété intellectuelle",
+                "PhiH.terms.s3.text": "Tous les textes, traductions, analyses et designs publiés sur le site sont protégés par le droit de la propriété intellectuelle. L'usage personnel et éducatif non commercial est autorisé avec mention de la source. La reproduction commerciale, la modification ou la distribution sont interdites sans autorisation écrite préalable.",
+                "PhiH.terms.s4.title": "4. Responsabilités de l'utilisateur",
+                "PhiH.terms.s4.text": "L'utilisateur s'engage à :",
+                "PhiH.terms.s4.i1": "Utiliser le site à des fins éducatives légitimes uniquement.",
+                "PhiH.terms.s4.i2": "Ne pas tenter de pirater, endommager ou perturber les services du site.",
+                "PhiH.terms.s4.i3": "Ne pas abuser du contenu ni l'attribuer à une source autre que la sienne.",
+                "PhiH.terms.s4.i4": "Respecter les droits de propriété intellectuelle des auteurs et traducteurs.",
+                "PhiH.terms.s5.title": "5. Clause de non-responsabilité",
+                "PhiH.terms.s5.text": "Le contenu est fourni « tel quel », sans garantie expresse ou implicite. Le site n'assume aucune responsabilité pour toute erreur, omission ou conséquence résultant de l'utilisation du contenu. Il est conseillé de vérifier les informations auprès de sources académiques fiables avant de s'y fier dans des contextes officiels.",
+                "PhiH.terms.s6.title": "6. Modifications des conditions",
+                "PhiH.terms.s6.text": "Le site se réserve le droit de modifier ces conditions à tout moment. Les modifications prennent effet dès leur publication sur cette page. Il est conseillé de consulter régulièrement cette page pour prendre connaissance des mises à jour.",
+                "PhiH.terms.s7.title": "7. Contact",
+                "PhiH.terms.s7.text": "Pour toute question concernant ces conditions, vous pouvez contacter le développeur du site via les canaux de contact disponibles sur la page « Liens »."
+            },
+            en: {
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.2.6",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.terms.title": "Terms of Use",
+                "PhiH.terms.subtitle": "Terms and conditions for using the site",
+                "PhiH.terms.lastUpdated": "Last updated: 2026",
+                "PhiH.terms.s1.title": "1. Acceptance of Terms",
+                "PhiH.terms.s1.text": "By using the \"Philosophy Learning Hub\" site, you acknowledge that you have read, understood and agree to be bound by these terms. If you do not agree with any part of these terms, please stop using the site.",
+                "PhiH.terms.s2.title": "2. Nature and Purpose of the Site",
+                "PhiH.terms.s2.text": "The site is an educational platform aiming to facilitate learning philosophy and provide free educational resources to students and enthusiasts of philosophical thought. Content is provided for educational and cultural purposes only, and is not a substitute for formal education.",
+                "PhiH.terms.s3.title": "3. Intellectual Property",
+                "PhiH.terms.s3.text": "All texts, translations, analyses and designs published on the site are protected by intellectual property rights. Personal and non-commercial educational use is permitted with source attribution. Commercial reproduction, modification or distribution is prohibited without prior written permission.",
+                "PhiH.terms.s4.title": "4. User Responsibilities",
+                "PhiH.terms.s4.text": "The user undertakes to:",
+                "PhiH.terms.s4.i1": "Use the site for legitimate educational purposes only.",
+                "PhiH.terms.s4.i2": "Not attempt to hack, damage or disrupt the site's services.",
+                "PhiH.terms.s4.i3": "Not misuse the content or attribute it to a source other than its own.",
+                "PhiH.terms.s4.i4": "Respect the intellectual property rights of authors and translators.",
+                "PhiH.terms.s5.title": "5. Disclaimer",
+                "PhiH.terms.s5.text": "Content is provided \"as is\", without any express or implied warranties. The site assumes no responsibility for any errors, omissions or consequences resulting from the use of the content. It is advisable to verify information from reliable academic sources before relying on it in official contexts.",
+                "PhiH.terms.s6.title": "6. Modifications to Terms",
+                "PhiH.terms.s6.text": "The site reserves the right to modify these terms at any time. Modifications take effect upon publication on this page. It is advisable to check this page regularly for updates.",
+                "PhiH.terms.s7.title": "7. Contact",
+                "PhiH.terms.s7.text": "For any questions regarding these terms, you may contact the site developer through the contact channels available on the \"Links\" page."
+            },
+            ar: {
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "زياد الماجري",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.2.6",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.terms.title": "شروط الاستخدام",
+                "PhiH.terms.subtitle": "الشروط والأحكام الخاصة باستخدام الموقع",
+                "PhiH.terms.lastUpdated": "آخر تحديث: 2026",
+                "PhiH.terms.s1.title": "1. القبول بالشروط",
+                "PhiH.terms.s1.text": "باستخدامك لموقع \"مركز تعلم الفلسفة\"، فإنك تقرّ بأنك قرأت هذه الشروط وفهمتها وتوافق على الالتزام بها. إذا كنت لا توافق على أي جزء من هذه الشروط، يُرجى التوقف عن استخدام الموقع.",
+                "PhiH.terms.s2.title": "2. طبيعة الموقع والغرض منه",
+                "PhiH.terms.s2.text": "الموقع منصة تعليمية تهدف إلى تسهيل تعلم الفلسفة وتوفير موارد تعليمية مجانية للتلاميذ والطلبة والمهتمين بالفكر الفلسفي. المحتوى المقدّم لأغراض تعليمية وثقافية فقط، ولا يُعتبر بديلاً عن التعليم الرسمي.",
+                "PhiH.terms.s3.title": "3. الملكية الفكرية",
+                "PhiH.terms.s3.text": "جميع النصوص والترجمات والتحليلات والتصاميم المنشورة على الموقع محمية بحقوق الملكية الفكرية. يُسمح بالاستخدام الشخصي والتعليمي غير التجاري مع ذكر المصدر. يُحظر إعادة النشر التجاري أو التعديل أو التوزيع دون إذن كتابي مسبق.",
+                "PhiH.terms.s4.title": "4. مسؤوليات المستخدم",
+                "PhiH.terms.s4.text": "يلتزم المستخدم بما يلي:",
+                "PhiH.terms.s4.i1": "استخدام الموقع لأغراض تعليمية مشروعة فقط.",
+                "PhiH.terms.s4.i2": "عدم محاولة اختراق الموقع أو الإضرار به أو تعطيل خدماته.",
+                "PhiH.terms.s4.i3": "عدم إساءة استخدام المحتوى أو نسبته إلى غير مصدره.",
+                "PhiH.terms.s4.i4": "احترام حقوق الملكية الفكرية للمؤلفين والمترجمين.",
+                "PhiH.terms.s5.title": "5. إخلاء المسؤولية",
+                "PhiH.terms.s5.text": "يُقدَّم المحتوى \"كما هو\" دون أي ضمانات صريحة أو ضمنية. لا يتحمّل الموقع أي مسؤولية عن أي أخطاء أو سهو أو نتائج مترتبة على استخدام المحتوى. يُنصح بالتحقق من المعلومات من مصادر أكاديمية موثوقة قبل الاعتماد عليها في السياقات الرسمية.",
+                "PhiH.terms.s6.title": "6. التعديلات على الشروط",
+                "PhiH.terms.s6.text": "يحتفظ الموقع بحق تعديل هذه الشروط في أي وقت. تسري التعديلات فور نشرها على هذه الصفحة. يُنصح بمراجعة هذه الصفحة دورياً للاطلاع على أي تحديثات.",
+                "PhiH.terms.s7.title": "7. التواصل",
+                "PhiH.terms.s7.text": "لأي استفسار بخصوص هذه الشروط، يمكنك التواصل مع مطوّر الموقع عبر قنوات الاتصال المتاحة في صفحة \"الروابط\"."
+            }
+        };
+        window.currentTranslations = window.translations_PhiHterms;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الروابط - Philosophy Learning Hub</title>
+    <meta name="theme-color" content="#455a64">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Philosophy Learning Hub">
+    <link rel="apple-touch-icon" href="assets/icons/icon-152x152.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Slate Gray / Steel Theme for utility pages */
+        :root {
+            --primary-color: #455a64;
+            --primary-light: #607d8b;
+            --primary-dark: #263238;
+            --secondary-color: #546e7a;
+            --secondary-light: #78909c;
+            --secondary-dark: #37474f;
+            --accent-color: #607d8b;
+            --accent-light: #90a4ae;
+            --accent-dark: #546e7a;
+            --light-color: #eceff1;
+            --dark-color: #1c2529;
+            --text-color: #37474f;
+            --heading-color: #263238;
+            --background-color: #f5f7f8;
+            --card-bg: #ffffff;
+            --definition-bg: #dde4e7;
+            --border-color: #b0bec5;
+            --table-even-bg: #eceff1;
+            --table-hover-bg: #cfd8dc;
+            --border-radius: 16px;
+            --box-shadow: 0 8px 20px rgba(69, 90, 100, 0.15);
+            --gradient-primary: linear-gradient(135deg, #455a64 0%, #607d8b 100%);
+            --gradient-secondary: linear-gradient(135deg, #263238 0%, #546e7a 100%);
+            --gradient-slate: linear-gradient(135deg, #455a64 0%, #263238 100%);
+            --gradient-steel: linear-gradient(135deg, #607d8b 0%, #546e7a 100%);
+        }
+        [data-theme="dark"] {
+            --primary-color: #90a4ae;
+            --primary-light: #b0bec5;
+            --primary-dark: #607d8b;
+            --secondary-color: #78909c;
+            --secondary-light: #90a4ae;
+            --secondary-dark: #546e7a;
+            --accent-color: #b0bec5;
+            --accent-light: #cfd8dc;
+            --accent-dark: #90a4ae;
+            --light-color: #2e3a40;
+            --dark-color: #1c2529;
+            --text-color: #cfd8dc;
+            --heading-color: #eceff1;
+            --background-color: #1c2529;
+            --card-bg: #2e3a40;
+            --definition-bg: #37474f;
+            --border-color: #546e7a;
+            --table-even-bg: #2e3a40;
+            --table-hover-bg: #37474f;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #546e7a 0%, #90a4ae 100%);
+            --gradient-secondary: linear-gradient(135deg: #37474f 0%, #78909c 100%);
+            --gradient-slate: linear-gradient(135deg, #90a4ae 0%, #1c2529 100%);
+            --gradient-steel: linear-gradient(135deg, #b0bec5 0%, #78909c 100%);
+        }
+        .PhiH-content-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        .PhiH-content-header {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            border-top: 5px solid var(--primary-color);
+        }
+        .PhiH-content-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        .PhiH-content-subtitle {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .PhiH-content-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.75rem 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        .PhiH-content-card h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        .PhiH-content-card h3 {
+            color: var(--secondary-color);
+            font-size: 1.15rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .PhiH-content-card p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        .PhiH-content-card ul {
+            margin: 1rem 0;
+            padding-right: 1.75rem;
+            padding-left: 1.75rem;
+        }
+        .PhiH-content-card ul li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+            color: var(--text-color);
+        }
+        .PhiH-link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .PhiH-link-card {
+            display: block;
+            background: linear-gradient(135deg, var(--definition-bg) 0%, var(--light-color) 100%);
+            border-radius: var(--border-radius);
+            padding: 1.25rem 1.5rem;
+            text-decoration: none;
+            color: var(--text-color);
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        .PhiH-link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+            border-left-color: var(--accent-color);
+        }
+        .PhiH-link-card-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.35rem;
+        }
+        .PhiH-link-card-desc {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            line-height: 1.5;
+        }
+        .PhiH-link-card-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        body.rtl .PhiH-link-card {
+            border-left: none;
+            border-right: 4px solid var(--primary-color);
+        }
+        body.rtl .PhiH-link-card:hover {
+            border-right-color: var(--accent-color);
+        }
+    </style>
+</head>
+<body class="PhiH-lesson-definition" dir="ltr">
+    <header class="PhiH-general-header">
+        <div class="PhiH-general-header-content">
+            <div class="PhiH-general-logo-container">
+                <a href="index.html">
+                    <img src="assets/icons/icon-96x96.png" alt="Logo" class="PhiH-general-logo" data-i18n-alt="PhiH.general.logoAlt">
+                </a>
+            </div>
+            <div class="PhiH-general-title-container">
+                <h1 data-i18n="PhiH.general.siteName">Philosophy Learning Hub</h1>
+            </div>
+            <div class="PhiH-general-header-controls">
+                <div class="PhiH-general-theme-toggle">
+                    <label class="PhiH-theme-toggle-label">
+                        <span data-i18n="PhiH.general.themeToggle">Dark mode</span>
+                        <div class="PhiH-theme-toggle-switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="PhiH-theme-toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+                <div class="PhiH-general-language-selector">
+                    <select class="PhiH-general-language-dropdown" id="languageSelect">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="PhiH-windows-bar">
+        <a href="index.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🏠</span>
+            <span data-i18n="PhiH.windows.home">Home</span>
+        </a>
+        <a href="authors.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">👥</span>
+            <span data-i18n="PhiH.windows.philosophers">Philosophers</span>
+        </a>
+        <a href="quotes.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">📚</span>
+            <span data-i18n="PhiH.windows.quotes">Quotes</span>
+        </a>
+        <a href="resources.html" class="PhiH-window-item">
+            <span class="PhiH-window-icon">🔍</span>
+            <span data-i18n="PhiH.windows.resources">Resources</span>
+        </a>
+    </nav>
+    <main class="PhiH-content-container">
+        <div class="PhiH-content-header">
+            <h1 class="PhiH-content-title" data-i18n="PhiH.links.title">الروابط</h1>
+            <p class="PhiH-content-subtitle" data-i18n="PhiH.links.subtitle">روابط سريعة إلى أقسام الموقع وموارده</p>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.links.quickAccess.title">الوصول السريع</h2>
+            <div class="PhiH-link-grid">
+                <a href="index.html" class="PhiH-link-card">
+                    <span class="PhiH-link-card-icon">🏠</span>
+                    <div class="PhiH-link-card-title" data-i18n="PhiH.links.home.title">الرئيسية</div>
+                    <div class="PhiH-link-card-desc" data-i18n="PhiH.links.home.desc">العودة إلى الصفحة الرئيسية للموقع</div>
+                </a>
+                <a href="authors.html" class="PhiH-link-card">
+                    <span class="PhiH-link-card-icon">👥</span>
+                    <div class="PhiH-link-card-title" data-i18n="PhiH.links.authors.title">الفلاسفة</div>
+                    <div class="PhiH-link-card-desc" data-i18n="PhiH.links.authors.desc">تصفح سير الفلاسفة وأعمالهم</div>
+                </a>
+                <a href="quotes.html" class="PhiH-link-card">
+                    <span class="PhiH-link-card-icon">📚</span>
+                    <div class="PhiH-link-card-title" data-i18n="PhiH.links.quotes.title">شواهد</div>
+                    <div class="PhiH-link-card-desc" data-i18n="PhiH.links.quotes.desc">اقتباسات وحكم فلسفية</div>
+                </a>
+                <a href="resources.html" class="PhiH-link-card">
+                    <span class="PhiH-link-card-icon">🔍</span>
+                    <div class="PhiH-link-card-title" data-i18n="PhiH.links.resources.title">الموارد</div>
+                    <div class="PhiH-link-card-desc" data-i18n="PhiH.links.resources.desc">موارد تعليمية وإضافات</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.links.program.title">البرامج التعليمية</h2>
+            <div class="PhiH-link-grid">
+                <a href="index.html" class="PhiH-link-card">
+                    <span class="PhiH-link-card-icon">🧠</span>
+                    <div class="PhiH-link-card-title" data-i18n="PhiH.links.general.title">الفلسفة العامة</div>
+                    <div class="PhiH-link-card-desc" data-i18n="PhiH.links.general.desc">مفاهيم أساسية ومقدمة في التفكير الفلسفي</div>
+                </a>
+                <a href="index.html" class="PhiH-link-card">
+                    <span class="PhiH-link-card-icon">3️⃣</span>
+                    <div class="PhiH-link-card-title" data-i18n="PhiH.links.grade3.title">السنة الثالثة ثانوي</div>
+                    <div class="PhiH-link-card-desc" data-i18n="PhiH.links.grade3.desc">منهج الفلسفة للسنة الثالثة</div>
+                </a>
+                <a href="index.html" class="PhiH-link-card">
+                    <span class="PhiH-link-card-icon">4️⃣</span>
+                    <div class="PhiH-link-card-title" data-i18n="PhiH.links.grade4.title">السنة الرابعة ثانوي</div>
+                    <div class="PhiH-link-card-desc" data-i18n="PhiH.links.grade4.desc">مفاهيم متقدمة وتحضير للامتحانات</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="PhiH-content-card">
+            <h2 data-i18n="PhiH.links.legal.title">الروابط القانونية</h2>
+            <div class="PhiH-link-grid">
+                <a href="terms.html" class="PhiH-link-card">
+                    <span class="PhiH-link-card-icon">📜</span>
+                    <div class="PhiH-link-card-title" data-i18n="PhiH.links.terms.title">شروط الاستخدام</div>
+                    <div class="PhiH-link-card-desc" data-i18n="PhiH.links.terms.desc">الشروط والأحكام الخاصة باستخدام الموقع</div>
+                </a>
+                <a href="privacy.html" class="PhiH-link-card">
+                    <span class="PhiH-link-card-icon">🔒</span>
+                    <div class="PhiH-link-card-title" data-i18n="PhiH.links.privacy.title">سياسة الخصوصية</div>
+                    <div class="PhiH-link-card-desc" data-i18n="PhiH.links.privacy.desc">كيف نحمي بياناتك وخصوصيتك</div>
+                </a>
+            </div>
+        </div>
+    </main>
+    <footer class="PhiH-general-footer">
+        <div class="PhiH-general-footer-content">
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.developerTitle">Developer</h4>
+                <p data-i18n="PhiH.general.developer">Mejri Ziad</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.versionTitle">Version</h4>
+                <p data-i18n="PhiH.general.version">v1.2.6</p>
+            </div>
+            <div class="PhiH-general-footer-column">
+                <h4 data-i18n="PhiH.general.linksTitle">Links</h4>
+                <div class="PhiH-general-footer-links">
+                    <a href="links.html" data-i18n="PhiH.general.linksTitle">الروابط</a>
+                    <a href="terms.html" data-i18n="PhiH.general.termsOfUse">شروط الاستخدام</a>
+                    <a href="privacy.html" data-i18n="PhiH.general.privacyPolicy">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        window.translations_PhiHlinks = {
+            fr: {
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Logo Philosophy Learning Hub",
+                "PhiH.general.developerTitle": "Développeur",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.2.6",
+                "PhiH.general.linksTitle": "Liens",
+                "PhiH.general.termsOfUse": "Conditions d'utilisation",
+                "PhiH.general.privacyPolicy": "Politique de confidentialité",
+                "PhiH.general.themeToggle": "Mode sombre",
+                "PhiH.windows.home": "Accueil",
+                "PhiH.windows.philosophers": "Philosophes",
+                "PhiH.windows.quotes": "Citations",
+                "PhiH.windows.resources": "Ressources",
+                "PhiH.links.title": "Liens",
+                "PhiH.links.subtitle": "Liens rapides vers les sections et ressources du site",
+                "PhiH.links.quickAccess.title": "Accès rapide",
+                "PhiH.links.home.title": "Accueil",
+                "PhiH.links.home.desc": "Retour à la page d'accueil du site",
+                "PhiH.links.authors.title": "Philosophes",
+                "PhiH.links.authors.desc": "Parcourir les biographies et œuvres des philosophes",
+                "PhiH.links.quotes.title": "Citations",
+                "PhiH.links.quotes.desc": "Citations et pensées philosophiques",
+                "PhiH.links.resources.title": "Ressources",
+                "PhiH.links.resources.desc": "Ressources éducatives et suppléments",
+                "PhiH.links.program.title": "Programmes éducatifs",
+                "PhiH.links.general.title": "Philosophie Générale",
+                "PhiH.links.general.desc": "Concepts fondamentaux et introduction à la pensée philosophique",
+                "PhiH.links.grade3.title": "3ème Secondaire",
+                "PhiH.links.grade3.desc": "Programme de philosophie pour la troisième secondaire",
+                "PhiH.links.grade4.title": "4ème Secondaire",
+                "PhiH.links.grade4.desc": "Concepts avancés et préparation aux examens",
+                "PhiH.links.legal.title": "Liens juridiques",
+                "PhiH.links.terms.title": "Conditions d'utilisation",
+                "PhiH.links.terms.desc": "Conditions et règles d'utilisation du site",
+                "PhiH.links.privacy.title": "Politique de confidentialité",
+                "PhiH.links.privacy.desc": "Comment nous protégeons vos données et votre vie privée"
+            },
+            en: {
+                "PhiH.general.siteName": "Philosophy Learning Hub",
+                "PhiH.general.logoAlt": "Philosophy Learning Hub Logo",
+                "PhiH.general.developerTitle": "Developer",
+                "PhiH.general.developer": "Mejri Ziad",
+                "PhiH.general.versionTitle": "Version",
+                "PhiH.general.version": "v1.2.6",
+                "PhiH.general.linksTitle": "Links",
+                "PhiH.general.termsOfUse": "Terms of Use",
+                "PhiH.general.privacyPolicy": "Privacy Policy",
+                "PhiH.general.themeToggle": "Dark mode",
+                "PhiH.windows.home": "Home",
+                "PhiH.windows.philosophers": "Philosophers",
+                "PhiH.windows.quotes": "Quotes",
+                "PhiH.windows.resources": "Resources",
+                "PhiH.links.title": "Links",
+                "PhiH.links.subtitle": "Quick links to site sections and resources",
+                "PhiH.links.quickAccess.title": "Quick Access",
+                "PhiH.links.home.title": "Home",
+                "PhiH.links.home.desc": "Return to the site's home page",
+                "PhiH.links.authors.title": "Philosophers",
+                "PhiH.links.authors.desc": "Browse philosophers' biographies and works",
+                "PhiH.links.quotes.title": "Quotes",
+                "PhiH.links.quotes.desc": "Philosophical quotes and sayings",
+                "PhiH.links.resources.title": "Resources",
+                "PhiH.links.resources.desc": "Educational resources and supplements",
+                "PhiH.links.program.title": "Educational Programs",
+                "PhiH.links.general.title": "General Philosophy",
+                "PhiH.links.general.desc": "Foundational concepts and introduction to philosophical thinking",
+                "PhiH.links.grade3.title": "3rd Secondary",
+                "PhiH.links.grade3.desc": "Philosophy curriculum for third secondary",
+                "PhiH.links.grade4.title": "4th Secondary",
+                "PhiH.links.grade4.desc": "Advanced concepts and exam preparation",
+                "PhiH.links.legal.title": "Legal Links",
+                "PhiH.links.terms.title": "Terms of Use",
+                "PhiH.links.terms.desc": "Terms and rules for using the site",
+                "PhiH.links.privacy.title": "Privacy Policy",
+                "PhiH.links.privacy.desc": "How we protect your data and privacy"
+            },
+            ar: {
+                "PhiH.general.siteName": "مركز تعلم الفلسفة",
+                "PhiH.general.logoAlt": "شعار مركز تعلم الفلسفة",
+                "PhiH.general.developerTitle": "المطور",
+                "PhiH.general.developer": "زياد الماجري",
+                "PhiH.general.versionTitle": "الإصدار",
+                "PhiH.general.version": "v1.2.6",
+                "PhiH.general.linksTitle": "الروابط",
+                "PhiH.general.termsOfUse": "شروط الاستخدام",
+                "PhiH.general.privacyPolicy": "سياسة الخصوصية",
+                "PhiH.general.themeToggle": "الوضع الداكن",
+                "PhiH.windows.home": "الرئيسية",
+                "PhiH.windows.philosophers": "الفلاسفة",
+                "PhiH.windows.quotes": "شواهد",
+                "PhiH.windows.resources": "الموارد",
+                "PhiH.links.title": "الروابط",
+                "PhiH.links.subtitle": "روابط سريعة إلى أقسام الموقع وموارده",
+                "PhiH.links.quickAccess.title": "الوصول السريع",
+                "PhiH.links.home.title": "الرئيسية",
+                "PhiH.links.home.desc": "العودة إلى الصفحة الرئيسية للموقع",
+                "PhiH.links.authors.title": "الفلاسفة",
+                "PhiH.links.authors.desc": "تصفح سير الفلاسفة وأعمالهم",
+                "PhiH.links.quotes.title": "شواهد",
+                "PhiH.links.quotes.desc": "اقتباسات وحكم فلسفية",
+                "PhiH.links.resources.title": "الموارد",
+                "PhiH.links.resources.desc": "موارد تعليمية وإضافات",
+                "PhiH.links.program.title": "البرامج التعليمية",
+                "PhiH.links.general.title": "الفلسفة العامة",
+                "PhiH.links.general.desc": "مفاهيم أساسية ومقدمة في التفكير الفلسفي",
+                "PhiH.links.grade3.title": "السنة الثالثة ثانوي",
+                "PhiH.links.grade3.desc": "منهج الفلسفة للسنة الثالثة",
+                "PhiH.links.grade4.title": "السنة الرابعة ثانوي",
+                "PhiH.links.grade4.desc": "مفاهيم متقدمة وتحضير للامتحانات",
+                "PhiH.links.legal.title": "الروابط القانونية",
+                "PhiH.links.terms.title": "شروط الاستخدام",
+                "PhiH.links.terms.desc": "الشروط والأحكام الخاصة باستخدام الموقع",
+                "PhiH.links.privacy.title": "سياسة الخصوصية",
+                "PhiH.links.privacy.desc": "كيف نحمي بياناتك وخصوصيتك"
+            }
+        };
+        window.currentTranslations = window.translations_PhiHlinks;
+    </script>
+    <script src="scripts/translation.js"></script>
+    <script src="scripts/pwa-handler.js"></script>
+</body>
+</html>
